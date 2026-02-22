@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbie Pink Quiz Playground ✨</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, sans-serif;
+    background: #1a1a2e;
+    color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  header {
+    background: #16213e;
+    border-bottom: 2px solid #ff69b4;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  header h1 { font-size: 1.2rem; color: #ff69b4; font-weight: 700; }
+
+  .preset-bar {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .preset-btn {
+    background: #0f3460;
+    border: 1px solid #ff69b4;
+    color: #ff69b4;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .preset-btn:hover { background: #ff69b4; color: #fff; }
+
+  .layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ── Controls panel ── */
+  .controls {
+    width: 300px;
+    flex-shrink: 0;
+    background: #16213e;
+    overflow-y: auto;
+    padding: 16px;
+    border-right: 2px solid #ff69b4;
+  }
+
+  .section {
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff69b4;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ff69b430;
+  }
+
+  .ctrl-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .ctrl-row label {
+    font-size: 0.78rem;
+    color: #ccc;
+    flex-shrink: 0;
+    min-width: 90px;
+  }
+
+  input[type=range] {
+    flex: 1;
+    accent-color: #ff69b4;
+    height: 4px;
+  }
+
+  input[type=range]:disabled { opacity: 0.3; }
+
+  select {
+    flex: 1;
+    background: #0f3460;
+    border: 1px solid #ff69b450;
+    color: #f0f0f0;
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+  }
+
+  input[type=text] {
+    flex: 1;
+    background: #0f3460;
+    border: 1px solid #ff69b450;
+    color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+  }
+
+  /* Toggle switch */
+  .toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .toggle {
+    position: relative;
+    width: 36px;
+    height: 20px;
+  }
+  .toggle input { display: none; }
+  .toggle-slider {
+    position: absolute;
+    inset: 0;
+    background: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+  .toggle input:checked + .toggle-slider { background: #ff69b4; }
+  .toggle input:checked + .toggle-slider::before { transform: translateX(16px); }
+
+  .val-display {
+    font-size: 0.72rem;
+    color: #ff69b4;
+    min-width: 36px;
+    text-align: right;
+  }
+
+  /* Prompt output */
+  .prompt-section {
+    padding: 12px 16px;
+    background: #0f3460;
+    border-top: 1px solid #ff69b430;
+    flex-shrink: 0;
+  }
+
+  .prompt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .prompt-label { font-size: 0.7rem; color: #ff69b4; letter-spacing: 1px; text-transform: uppercase; }
+
+  .copy-btn {
+    background: #ff69b4;
+    border: none;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.72rem;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover { background: #ff1493; }
+
+  .prompt-text {
+    font-size: 0.75rem;
+    color: #ddd;
+    line-height: 1.5;
+    max-height: 60px;
+    overflow-y: auto;
+    background: #1a1a2e;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #ff69b420;
+  }
+
+  /* ── Preview panel ── */
+  .preview-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .preview-bar {
+    padding: 8px 16px;
+    font-size: 0.72rem;
+    color: #666;
+    background: #1a1a2e;
+    border-bottom: 1px solid #ff69b420;
+    flex-shrink: 0;
+  }
+
+  #preview {
+    flex: 1;
+    border: none;
+    width: 100%;
+  }
+
+  /* Scrollbar */
+  .controls::-webkit-scrollbar { width: 6px; }
+  .controls::-webkit-scrollbar-track { background: #0f3460; }
+  .controls::-webkit-scrollbar-thumb { background: #ff69b460; border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>💖 Barbie Quiz Playground</h1>
+  <div class="preset-bar">
+    <button class="preset-btn" onclick="applyPreset(0)">Classic Barbie</button>
+    <button class="preset-btn" onclick="applyPreset(1)">Neon Dreamgirl</button>
+    <button class="preset-btn" onclick="applyPreset(2)">Soft Glam</button>
+    <button class="preset-btn" onclick="applyPreset(3)">Maximalist</button>
+    <button class="preset-btn" onclick="applyPreset(4)">Y2K Babe</button>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- Controls -->
+  <div class="controls">
+
+    <!-- Color -->
+    <div class="section">
+      <div class="section-title">Color</div>
+
+      <div class="ctrl-row">
+        <label>Pink shade</label>
+        <input type="range" id="pinkShade" min="0" max="100" value="50" oninput="updateVal('pinkShadeVal',this.value,''); update()">
+        <span class="val-display" id="pinkShadeVal"></span>
+      </div>
+
+      <div class="ctrl-row">
+        <label>Background</label>
+        <select id="bgType" onchange="update()">
+          <option value="solid">Solid</option>
+          <option value="gradient">Gradient</option>
+          <option value="polka">Polka-dots</option>
+        </select>
+      </div>
+
+      <div class="ctrl-row">
+        <label>Glitter overlay</label>
+        <label class="toggle"><input type="checkbox" id="glitter" onchange="update()"><span class="toggle-slider"></span></label>
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="section">
+      <div class="section-title">Typography</div>
+
+      <div class="ctrl-row">
+        <label>Font</label>
+        <select id="fontStyle" onchange="update()">
+          <option value="Georgia, serif">Georgia</option>
+          <option value="'Palatino Linotype', Palatino, serif">Playfair-style</option>
+          <option value="Impact, 'Arial Black', sans-serif">Impact</option>
+          <option value="'Times New Roman', serif">Classic Serif</option>
+          <option value="'Courier New', monospace">Y2K Mono</option>
+        </select>
+      </div>
+
+      <div class="ctrl-row">
+        <label>Title size</label>
+        <input type="range" id="titleSize" min="20" max="80" value="48" oninput="updateVal('titleSizeVal',this.value,'px'); update()">
+        <span class="val-display" id="titleSizeVal">48px</span>
+      </div>
+
+      <div class="ctrl-row">
+        <label>Text glow</label>
+        <label class="toggle"><input type="checkbox" id="textGlow" onchange="update()"><span class="toggle-slider"></span></label>
+      </div>
+    </div>
+
+    <!-- Decoration -->
+    <div class="section">
+      <div class="section-title">Decoration</div>
+
+      <div class="ctrl-row">
+        <label>Hearts</label>
+        <label class="toggle"><input type="checkbox" id="hearts" onchange="update()"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="ctrl-row">
+        <label>Heart density</label>
+        <input type="range" id="heartDensity" min="3" max="20" value="8" oninput="updateVal('heartDensityVal',this.value,''); update()">
+        <span class="val-display" id="heartDensityVal">8</span>
+      </div>
+
+      <div class="ctrl-row">
+        <label>Stars</label>
+        <label class="toggle"><input type="checkbox" id="stars" onchange="update()"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="ctrl-row">
+        <label>Star count</label>
+        <input type="range" id="starCount" min="3" max="20" value="6" oninput="updateVal('starCountVal',this.value,''); update()">
+        <span class="val-display" id="starCountVal">6</span>
+      </div>
+
+      <div class="ctrl-row">
+        <label>Confetti</label>
+        <label class="toggle"><input type="checkbox" id="confetti" onchange="update()"><span class="toggle-slider"></span></label>
+      </div>
+
+      <div class="ctrl-row">
+        <label>Border style</label>
+        <select id="borderStyle" onchange="update()">
+          <option value="none">None</option>
+          <option value="thick">Thick outline</option>
+          <option value="double">Double</option>
+          <option value="dashed">Dashed hot-pink</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Animation -->
+    <div class="section">
+      <div class="section-title">Animation</div>
+
+      <div class="ctrl-row">
+        <label>Mode</label>
+        <select id="animMode" onchange="update()">
+          <option value="none">None</option>
+          <option value="pulse">Subtle pulse</option>
+          <option value="party">Party mode 🎉</option>
+        </select>
+      </div>
+
+      <div class="ctrl-row">
+        <label>Speed</label>
+        <input type="range" id="animSpeed" min="1" max="5" value="3" oninput="updateVal('animSpeedVal',this.value,''); update()">
+        <span class="val-display" id="animSpeedVal">3</span>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="section">
+      <div class="section-title">Content</div>
+
+      <div class="ctrl-row">
+        <label>Title</label>
+        <input type="text" id="quizTitle" value="Are You That Girl?" oninput="update()">
+      </div>
+
+      <div class="ctrl-row">
+        <label>Subtitle</label>
+        <input type="text" id="subtitle" value="Take the ultimate Barbie quiz!" oninput="update()">
+      </div>
+
+      <div class="ctrl-row">
+        <label>Button</label>
+        <input type="text" id="btnLabel" value="Let's Go, Babe ✨" oninput="update()">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Preview + Prompt -->
+  <div class="preview-wrap">
+    <div class="preview-bar">Live Preview — updates on every change</div>
+    <iframe id="preview" sandbox="allow-scripts"></iframe>
+
+    <div class="prompt-section">
+      <div class="prompt-header">
+        <span class="prompt-label">Generated Prompt</span>
+        <button class="copy-btn" onclick="copyPrompt()">Copy</button>
+      </div>
+      <div class="prompt-text" id="promptText"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+function $id(id) { return document.getElementById(id); }
+
+function updateVal(valId, v, suffix) {
+  const el = $id(valId);
+  if (el) el.textContent = v + suffix;
+}
+
+function getState() {
+  return {
+    pinkShade:    +$id('pinkShade').value,
+    bgType:       $id('bgType').value,
+    glitter:      $id('glitter').checked,
+    fontStyle:    $id('fontStyle').value,
+    titleSize:    +$id('titleSize').value,
+    textGlow:     $id('textGlow').checked,
+    hearts:       $id('hearts').checked,
+    heartDensity: +$id('heartDensity').value,
+    stars:        $id('stars').checked,
+    starCount:    +$id('starCount').value,
+    confetti:     $id('confetti').checked,
+    borderStyle:  $id('borderStyle').value,
+    animMode:     $id('animMode').value,
+    animSpeed:    +$id('animSpeed').value,
+    quizTitle:    $id('quizTitle').value,
+    subtitle:     $id('subtitle').value,
+    btnLabel:     $id('btnLabel').value,
+  };
+}
+
+// ── Color math ───────────────────────────────────────────────────────────────
+
+function shadeToColor(shade) {
+  // 0=baby pink, 33=hot pink, 66=neon pink, 100=magenta
+  if (shade <= 33) {
+    const t = shade / 33;
+    return { h: 340, s: Math.round(60 + t * 35), l: Math.round(85 - t * 20) };
+  } else if (shade <= 66) {
+    const t = (shade - 33) / 33;
+    return { h: Math.round(340 - t * 20), s: 95, l: Math.round(65 - t * 10) };
+  } else {
+    const t = (shade - 66) / 34;
+    return { h: Math.round(320 - t * 10), s: 100, l: Math.round(55 - t * 10) };
+  }
+}
+
+function hslStr({ h, s, l }) { return `hsl(${h},${s}%,${l}%)`; }
+function hslStr2({ h, s, l }, dl) { return `hsl(${h},${s}%,${l + dl}%)`; }
+
+function shadeLabel(v) {
+  if (v < 25) return 'baby pink';
+  if (v < 50) return 'hot pink';
+  if (v < 75) return 'neon pink';
+  return 'magenta';
+}
+
+// ── Build preview HTML ────────────────────────────────────────────────────────
+
+function buildPreview(s) {
+  const c = shadeToColor(s.pinkShade);
+  const main = hslStr(c);
+  const dark = hslStr2(c, -20);
+  const light = hslStr2(c, 30);
+  const hex = hslToHex(c.h, c.s, c.l);
+
+  const speedMs = [2000, 1600, 1200, 800, 500][s.animSpeed - 1];
+
+  // background
+  let bgCSS;
+  if (s.bgType === 'solid') bgCSS = `background: ${main};`;
+  else if (s.bgType === 'gradient') bgCSS = `background: linear-gradient(135deg, ${main} 0%, ${dark} 50%, ${hslStr2(c,-10)} 100%);`;
+  else bgCSS = `background-color: ${main};
+    background-image: radial-gradient(circle, ${hslStr2(c,20)} 2px, transparent 2px);
+    background-size: 28px 28px;`;
+
+  // text glow
+  const glowCSS = s.textGlow
+    ? `text-shadow: 0 0 20px ${main}, 0 0 40px ${main}, 0 0 60px ${main};`
+    : '';
+
+  // button border
+  let btnBorderCSS = '';
+  if (s.borderStyle === 'thick') btnBorderCSS = `border: 5px solid white;`;
+  else if (s.borderStyle === 'double') btnBorderCSS = `border: 6px double white; outline: 3px double ${dark}; outline-offset: 4px;`;
+  else if (s.borderStyle === 'dashed') btnBorderCSS = `border: 4px dashed ${main};`;
+
+  // animation keyframes + class
+  let animKeyframes = '';
+  let titleAnimClass = '';
+  let bodyAnimClass = '';
+
+  if (s.animMode === 'pulse') {
+    animKeyframes = `
+      @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.04)} }
+      @keyframes btnPulse { 0%,100%{box-shadow:0 0 20px ${main}40} 50%{box-shadow:0 0 40px ${main}} }
+    `;
+    titleAnimClass = `animation: pulse ${speedMs}ms ease-in-out infinite;`;
+  } else if (s.animMode === 'party') {
+    animKeyframes = `
+      @keyframes partyTilt { 0%,100%{transform:rotate(-3deg) scale(1)} 50%{transform:rotate(3deg) scale(1.06)} }
+      @keyframes rainbow { 0%{filter:hue-rotate(0deg)} 100%{filter:hue-rotate(360deg)} }
+      @keyframes bodyShake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-3px)} 75%{transform:translateX(3px)} }
+    `;
+    titleAnimClass = `animation: partyTilt ${speedMs}ms ease-in-out infinite;`;
+    bodyAnimClass = `animation: rainbow ${speedMs * 4}ms linear infinite;`;
+  }
+
+  // glitter
+  const glitterCSS = s.glitter ? `
+    .glitter::before {
+      content:'';
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px) 0 0/30px 30px,
+        radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px) 15px 15px/30px 30px;
+      animation: glitterAnim 1.5s linear infinite;
+      z-index:5;
+    }
+    @keyframes glitterAnim {
+      0%{opacity:0.4} 50%{opacity:1} 100%{opacity:0.4}
+    }
+  ` : '';
+
+  // floating hearts
+  const heartCSS = s.hearts ? `
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(0.6) rotate(20deg); opacity: 0; }
+    }
+    .heart {
+      position: fixed;
+      bottom: -40px;
+      font-size: 1.6rem;
+      animation: floatUp linear infinite;
+      pointer-events: none;
+      z-index: 4;
+      user-select: none;
+    }
+  ` : '';
+
+  // stars
+  const starCSS = s.stars ? `
+    @keyframes twinkle {
+      0%,100% { opacity: 1; transform: scale(1) rotate(0deg); }
+      50% { opacity: 0.4; transform: scale(1.4) rotate(180deg); }
+    }
+    .star {
+      position: fixed;
+      font-size: 1.4rem;
+      animation: twinkle ease-in-out infinite;
+      pointer-events: none;
+      z-index: 4;
+      user-select: none;
+    }
+  ` : '';
+
+  // confetti
+  const confettiCSS = s.confetti ? `
+    @keyframes confettiFall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0.3; }
+    }
+    .confetti-bit {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      animation: confettiFall linear infinite;
+      pointer-events: none;
+      z-index: 3;
+    }
+  ` : '';
+
+  // generate heart elements
+  let heartEls = '';
+  if (s.hearts) {
+    for (let i = 0; i < s.heartDensity; i++) {
+      const left = Math.round(Math.random() * 95);
+      const dur = (3 + Math.random() * 5).toFixed(1);
+      const delay = (Math.random() * 4).toFixed(1);
+      const size = (1.2 + Math.random() * 1.2).toFixed(1);
+      heartEls += `<div class="heart" style="left:${left}%;animation-duration:${dur}s;animation-delay:-${delay}s;font-size:${size}rem;">💕</div>`;
+    }
+  }
+
+  // generate star elements
+  let starEls = '';
+  if (s.stars) {
+    for (let i = 0; i < s.starCount; i++) {
+      const left = Math.round(Math.random() * 95);
+      const top = Math.round(Math.random() * 85);
+      const dur = (1.5 + Math.random() * 2).toFixed(1);
+      const delay = (Math.random() * 2).toFixed(1);
+      starEls += `<div class="star" style="left:${left}%;top:${top}%;animation-duration:${dur}s;animation-delay:-${delay}s;">✨</div>`;
+    }
+  }
+
+  // generate confetti elements
+  let confettiEls = '';
+  if (s.confetti) {
+    const colors = [main, dark, light, '#fff', '#ffd700', '#ff1493'];
+    for (let i = 0; i < 25; i++) {
+      const left = Math.round(Math.random() * 100);
+      const dur = (3 + Math.random() * 4).toFixed(1);
+      const delay = (Math.random() * 5).toFixed(1);
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      confettiEls += `<div class="confetti-bit" style="left:${left}%;background:${color};animation-duration:${dur}s;animation-delay:-${delay}s;"></div>`;
+    }
+  }
+
+  return `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body {
+    min-height: 100vh;
+    ${bgCSS}
+    font-family: ${s.fontStyle};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    ${bodyAnimClass ? `animation: rainbow ${speedMs * 4}ms linear infinite;` : ''}
+  }
+  ${animKeyframes}
+  ${glitterCSS}
+  ${heartCSS}
+  ${starCSS}
+  ${confettiCSS}
+
+  .hero {
+    text-align: center;
+    padding: 40px 32px;
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+  }
+
+  .title {
+    font-size: ${s.titleSize}px;
+    color: white;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    ${glowCSS}
+    ${titleAnimClass}
+    display: inline-block;
+  }
+
+  .subtitle {
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 36px;
+    font-style: italic;
+    ${s.textGlow ? `text-shadow: 0 0 10px rgba(255,255,255,0.7);` : ''}
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: white;
+    color: ${main};
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: clamp(14px, 2.5vw, 20px);
+    font-weight: 800;
+    font-family: ${s.fontStyle};
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    ${btnBorderCSS}
+    ${s.borderStyle === 'none' ? '' : ''}
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    transition: transform 0.15s;
+    ${s.animMode === 'pulse' ? `animation: btnPulse ${speedMs}ms ease-in-out infinite;` : ''}
+    ${s.animMode === 'party' ? `animation: partyTilt ${speedMs * 0.8}ms ease-in-out infinite;` : ''}
+  }
+
+  .cta-btn:hover { transform: scale(1.05); }
+
+  .deco-row {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 6px;
+  }
+</style>
+</head>
+<body class="${s.glitter ? 'glitter' : ''}">
+  ${heartEls}
+  ${starEls}
+  ${confettiEls}
+
+  <div class="hero">
+    <div class="deco-row">💖 ✨ 💖 ✨ 💖</div>
+    <div class="title">${escHtml(s.quizTitle)}</div>
+    <div class="subtitle">${escHtml(s.subtitle)}</div>
+    <div class="cta-btn">${escHtml(s.btnLabel)}</div>
+    <div class="deco-row" style="margin-top:24px;margin-bottom:0;">✨ 💕 ✨ 💕 ✨</div>
+  </div>
+</body>
+</html>`;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── HSL → Hex ─────────────────────────────────────────────────────────────────
+
+function hslToHex(h, s, l) {
+  s /= 100; l /= 100;
+  const a = s * Math.min(l, 1 - l);
+  const f = n => {
+    const k = (n + h / 30) % 12;
+    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2, '0');
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+// ── Generate prompt ───────────────────────────────────────────────────────────
+
+function buildPrompt(s) {
+  const c = shadeToColor(s.pinkShade);
+  const hex = hslToHex(c.h, c.s, c.l);
+  const shade = shadeLabel(s.pinkShade);
+
+  const bgLabels = { solid: 'solid', gradient: 'gradient', polka: 'polka-dot pattern' };
+  const borderLabels = { none: 'no border', thick: 'thick white outline', double: 'double border', dashed: 'dashed hot-pink border' };
+  const animLabels = { none: 'no animation', pulse: 'subtle pulse animation', party: 'full party mode animations 🎉' };
+  const speedLabels = ['very slow', 'slow', 'medium', 'fast', 'very fast'];
+
+  const decos = [];
+  if (s.hearts) decos.push(`floating hearts at density ${s.heartDensity}`);
+  if (s.stars) decos.push(`${s.starCount} sparkling stars`);
+  if (s.confetti) decos.push('confetti burst');
+  if (s.glitter) decos.push('glitter overlay');
+
+  return `Build a Barbie-pink quiz frontpage with ${shade} (${hex}) ${bgLabels[s.bgType]} background, ${s.fontStyle.split(',')[0].replace(/'/g,'')} font at ${s.titleSize}px, ${decos.length ? decos.join(', ') + ',' : 'no floating decorations,'} ${s.textGlow ? 'hot-pink text glow,' : ''} ${animLabels[s.animMode]}${s.animMode !== 'none' ? ' at ' + speedLabels[s.animSpeed - 1] + ' speed,' : ','} and a ${borderLabels[s.borderStyle]} CTA button labeled "${s.btnLabel}". Title: "${s.quizTitle}". Subtitle: "${s.subtitle}".`;
+}
+
+// ── Main update ───────────────────────────────────────────────────────────────
+
+function update() {
+  const s = getState();
+
+  // Sync speed slider enabled state
+  $id('animSpeed').disabled = (s.animMode === 'none');
+
+  // Render preview
+  const html = buildPreview(s);
+  const preview = $id('preview');
+  preview.srcdoc = html;
+
+  // Render prompt
+  $id('promptText').textContent = buildPrompt(s);
+}
+
+function copyPrompt() {
+  const text = $id('promptText').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 1500);
+  });
+}
+
+// ── Presets ───────────────────────────────────────────────────────────────────
+
+const PRESETS = [
+  { // Classic Barbie
+    pinkShade: 50, bgType: 'solid', glitter: false,
+    fontStyle: 'Georgia, serif', titleSize: 52, textGlow: false,
+    hearts: true, heartDensity: 8, stars: false, starCount: 6,
+    confetti: false, borderStyle: 'thick',
+    animMode: 'pulse', animSpeed: 3,
+    quizTitle: 'Are You That Girl?', subtitle: 'Take the ultimate Barbie quiz!', btnLabel: "Let's Go, Babe ✨"
+  },
+  { // Neon Dreamgirl
+    pinkShade: 75, bgType: 'gradient', glitter: false,
+    fontStyle: 'Impact, \'Arial Black\', sans-serif', titleSize: 64, textGlow: true,
+    hearts: false, heartDensity: 8, stars: true, starCount: 15,
+    confetti: true, borderStyle: 'none',
+    animMode: 'party', animSpeed: 4,
+    quizTitle: 'Are You THAT Girl?', subtitle: 'Neon. Loud. Iconic.', btnLabel: "I Was Born Ready 💅"
+  },
+  { // Soft Glam
+    pinkShade: 15, bgType: 'solid', glitter: true,
+    fontStyle: "'Palatino Linotype', Palatino, serif", titleSize: 44, textGlow: false,
+    hearts: false, heartDensity: 5, stars: false, starCount: 4,
+    confetti: false, borderStyle: 'double',
+    animMode: 'pulse', animSpeed: 1,
+    quizTitle: 'Soft Girl Era ✨', subtitle: 'Gentle. Pretty. Perfect.', btnLabel: "Start Quiz 🌸"
+  },
+  { // Maximalist
+    pinkShade: 95, bgType: 'gradient', glitter: true,
+    fontStyle: 'Impact, \'Arial Black\', sans-serif', titleSize: 72, textGlow: true,
+    hearts: true, heartDensity: 18, stars: true, starCount: 18,
+    confetti: true, borderStyle: 'dashed',
+    animMode: 'party', animSpeed: 5,
+    quizTitle: 'MORE IS MORE 💖', subtitle: 'Turn it up to 100, babe', btnLabel: "YASSS QUEEN 👑"
+  },
+  { // Y2K Babe
+    pinkShade: 50, bgType: 'polka', glitter: false,
+    fontStyle: "'Courier New', monospace", titleSize: 48, textGlow: true,
+    hearts: true, heartDensity: 10, stars: true, starCount: 8,
+    confetti: false, borderStyle: 'dashed',
+    animMode: 'pulse', animSpeed: 3,
+    quizTitle: 'Y2K Baby 💿', subtitle: 'Like totally, which one are you?', btnLabel: "OMG Let's Go! 📱"
+  },
+];
+
+function applyPreset(idx) {
+  const p = PRESETS[idx];
+  $id('pinkShade').value = p.pinkShade;
+  $id('bgType').value = p.bgType;
+  $id('glitter').checked = p.glitter;
+  $id('fontStyle').value = p.fontStyle;
+  $id('titleSize').value = p.titleSize;
+  $id('textGlow').checked = p.textGlow;
+  $id('hearts').checked = p.hearts;
+  $id('heartDensity').value = p.heartDensity;
+  $id('stars').checked = p.stars;
+  $id('starCount').value = p.starCount;
+  $id('confetti').checked = p.confetti;
+  $id('borderStyle').value = p.borderStyle;
+  $id('animMode').value = p.animMode;
+  $id('animSpeed').value = p.animSpeed;
+  $id('quizTitle').value = p.quizTitle;
+  $id('subtitle').value = p.subtitle;
+  $id('btnLabel').value = p.btnLabel;
+
+  updateVal('titleSizeVal', p.titleSize, 'px');
+  updateVal('heartDensityVal', p.heartDensity, '');
+  updateVal('starCountVal', p.starCount, '');
+  updateVal('animSpeedVal', p.animSpeed, '');
+
+  update();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+updateVal('titleSizeVal', 48, 'px');
+updateVal('heartDensityVal', 8, '');
+updateVal('starCountVal', 6, '');
+updateVal('animSpeedVal', 3, '');
+update();
+</script>
+</body>
+</html>
