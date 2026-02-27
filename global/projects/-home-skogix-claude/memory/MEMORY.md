@@ -28,5 +28,28 @@
 ## Project Conventions
 
 - `.todo/` = curated reference collection (hooks, skills, templates, docs)
-- `todo/` = active review items
-- RTK reference docs live at `.todo/rtk-optimized.md`
+- RTK reference docs live at `.todo/rtk-optimized.md`; also embedded in CLAUDE.md
+
+## Merge History (2026-02-27)
+
+- `projects/hq/` merged into ~/claude: CONVENTIONS.md, DECISIONS.md, RULES.md updated
+- `projects/skogai-core/` relocated to ~/claude/projects/skogai-core/
+- `.todo/demodotfiles/` removed (redundant snapshot of projects/)
+- merge-log.md tracks full provenance
+- projects/dotfiles, git, system kept as external references (not merged)
+
+## Global ~/.claude/ Setup
+
+- Commands: wrapCliAsApi, wrapup, learn, catchup (all global)
+- Agents: nelson, doc-writer (global)
+- Skills: skogai-agent-prompting, nelson-base (global)
+- Hooks: rtk-rewrite.sh (global), rtk-auto-wrapper.sh (project-local)
+- csync.sh syncs: plans, memories, teams, tasks, projects, transcripts, session-env, usage-data, commands, agents, skills, hooks
+- rsync uses `-a` (recursive) but NO `--delete` — add-only policy
+- Bare repo at /mnt/sda1/claude-global.git tracks all of ~/.claude/
+
+## Beads / Dolt
+
+- Dolt SQL server required but often not running
+- `bd init` and `bd sync` will fail without it
+- Fallback: use git commits as traceability trail + merge-log.md
