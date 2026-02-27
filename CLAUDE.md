@@ -1,359 +1,50 @@
 # ~/claude/CLAUDE.md
 
-claude's home folder, working directory, and headquarters. everything here belongs to claude — change freely.
-
-<skogai_todo>
-
-for anything task-related — planning, creating, executing, reviewing, closing — use the `task-manager` agent. it handles the full lifecycle via `skogai-todo` and `gh`.
-
-</skogai_todo>
-
-<skogapi>
-
-- skogapi: FastAPI service at localhost:9999 — wraps skogcli, skogparse, agents, config, scripts
-- service: `systemctl --user restart skogai-skogapi` — start script at `~/.config/systemd/skogai-skogapi-start.sh`
-- code: `projects/skogapi/main.py`
-- systemd services follow pattern: `skogai-*.service` + `~/.config/systemd/skogai-*-start.sh`
-- env needed in service: `SKOGAI_CONFIG_DIR=/skogai/config`, `PATH="$HOME/.local/bin:$PATH"`
-- agents via `skogcli agent list/read/create`, NOT file directories
-- `uvx` isolates env — always use full paths or export PATH in start scripts
-
-</skogapi>
+Claude's home folder, working directory, and headquarters. Everything here belongs to claude — change freely.
 
 ## Project Structure
 
-- @.cass/ - CASS Memory playbook and blocked patterns (cm)
-- @.claude-plugin/ - Plugin configuration (plugin.json, marketplace.json)
-- @commands/ - Custom slash commands (plugin component)
-- @docs/claude-code/ - Extensive Claude Code documentation
-- @docs/skogix/ - User documentation (definitions.md, user.md)
-- @skills/ - Custom skills for Claude Code (plugin component)
-  - @skills/claude-code-modifications/SKILL.md - main project skill
-  - @skills/claude-code-modifications/scripts/update-plugins.sh - plugin update/reload
-- @lessons/ - Keyword-triggered behavioral lessons (gptme format, injected via hooks)
-- @JOINK/ - Reference implementation of lesson system from gptme
-- @.todo/ - Curated reference collection (hooks, skills, demodotfiles, templates)
-- @todo/ - Active review items (rtk-optimized.md)
+- `.beads/` — Issue tracking (beads_rust). Managed by `bd` commands.
+- `.claude/` — Claude Code project config
+- `.todo/` — Curated reference collection (hooks, skills, rtk docs)
+- `email/` — Email processing system
+- `global/` — Global claude config (agents, commands, hooks, skills, plugins)
+- `journal/` — Daily session journals
+- `projects/` — Subprojects (newinstall, skogai-core, skogapi)
+- `scripts/` — Shell scripts (cgit.sh, clog.sh, csync.sh)
+- `SKILL.md` — ms (Meta Skill CLI) definition
+
+## Task Tracking
+
+Use `bd` (beads) for all task management. Session hooks inject full beads docs automatically.
+Do NOT use TodoWrite, TaskCreate, or markdown files for task tracking.
 
 ## Tools
 
-- NEVER use sed or awk -- use proper tools (yq, jq, etc.)
-- `yq --front-matter=extract '<query>' file.md` -- parse YAML frontmatter from markdown
-- when a tool version is wrong, ask skogix to install the correct one
+- NEVER use sed or awk — use proper tools (yq, jq, etc.)
+- `yq --front-matter=extract '<query>' file.md` — parse YAML frontmatter
+- When a tool version is wrong, ask skogix to install the correct one
 
 ### RTK (Rust Token Killer)
 
-Token-optimized command wrapper. Use `rtk` prefix for high-verbosity commands:
-
-- `rtk git log` (92% reduction), `rtk git status` (76%), `rtk git diff` (56%), `rtk find` (76%)
-- Do NOT use for: `ls` (-274% worse), `grep` (buggy in v0.2.0)
-- Skip when using native Claude tools (Grep/Read/Glob) or for small outputs
-- Reference: @todo/rtk-optimized.md, @.todo/skills/rtk-optimizer/SKILL.md
+Transparent hook auto-rewrites commands (`git status` → `rtk git status`). Full reference at `~/.claude/RTK.md`.
 
 ### ms (Meta Skill)
 
-Skill management CLI. 800+ skills indexed across the system.
+Skill management CLI. 800+ skills indexed. Key commands:
 
 ```bash
-ms suggest --explain         # context-aware skill recommendations with scoring
+ms suggest --explain         # context-aware recommendations
 ms search "query"            # hybrid BM25 + semantic search
-ms load <skill> --level full # load skill with progressive disclosure
-ms lint                      # validate skill files
-ms dedup scan                # find duplicate skills
+ms load <skill> --level full # load skill content
 ms doctor                    # health check
-ms list                      # list indexed skills (local index ~54, full scan ~814)
-ms index --all /home/skogix  # re-index everything
 ```
 
-- All commands support `-O json` for machine-readable output
-- MCP server available: `ms mcp serve` (stdio for Claude Code)
-- Config: `.ms/config.toml` per project, `~/.config/ms/config.toml` global
-- Reference: @SKILL.md (ms skill definition at repo root)
+All commands support `-O json`. Config: `.ms/config.toml` per project.
 
-## Lessons System
+## skogapi
 
-- @lessons/ contains keyword-triggered behavioral lessons (gptme format)
-- lessons are NOT skills -- they are small contextual injections ("hey remember this")
-- @JOINK/ has the reference implementation (python lesson system from gptme)
-- don't touch lesson content, don't reorganize lessons -- build the injection mechanism
-
-<!-- br-agent-instructions-v1 -->
-
----
-
-## Beads Workflow Integration
-
-This project uses [beads_rust](https://github.com/Dicklesworthstone/beads_rust) (`br`/`bd`) for issue tracking. Issues are stored in `.beads/` and tracked in git.
-
-### Essential Commands
-
-```bash
-# View ready issues (unblocked, not deferred)
-br ready              # or: bd ready
-
-# List and search
-br list --status=open # All open issues
-br show <id>          # Full issue details with dependencies
-br search "keyword"   # Full-text search
-
-# Create and update
-br create --title="..." --description="..." --type=task --priority=2
-br update <id> --status=in_progress
-br close <id> --reason="Completed"
-br close <id1> <id2>  # Close multiple issues at once
-
-# Sync with git
-br sync --flush-only  # Export DB to JSONL
-br sync --status      # Check sync status
-```
-
-### Workflow Pattern
-
-1. **Start**: Run `br ready` to find actionable work
-2. **Claim**: Use `br update <id> --status=in_progress`
-3. **Work**: Implement the task
-4. **Complete**: Use `br close <id>`
-5. **Sync**: Always run `br sync --flush-only` at session end
-
-### Key Concepts
-
-- **Dependencies**: Issues can block other issues. `br ready` shows only unblocked work.
-- **Priority**: P0=critical, P1=high, P2=medium, P3=low, P4=backlog (use numbers 0-4, not words)
-- **Types**: task, bug, feature, epic, chore, docs, question
-- **Blocking**: `br dep add <issue> <depends-on>` to add dependencies
-
-### Session Protocol
-
-**Before ending any session, run this checklist:**
-
-```bash
-git status              # Check what changed
-git add <files>         # Stage code changes
-br sync --flush-only    # Export beads changes to JSONL
-git commit -m "..."     # Commit everything
-git push                # Push to remote
-```
-
-### Best Practices
-
-- Check `br ready` at session start to find available work
-- Update status as you work (in_progress → closed)
-- Create new issues with `br create` when you discover tasks
-- Use descriptive titles and set appropriate priority/type
-- Always sync before ending session
-
-<!-- end-br-agent-instructions -->
-
-<!-- skogai-br-patch-v1 -->
-
-### Advanced Commands (not in base template)
-
-```bash
-# shortcuts
-br q fix the login bug                # quick capture — prints ID only
-br update <id> --claim                # atomic: assignee=you + in_progress
-br close <id> --suggest-next          # close + show newly unblocked work
-
-# filtering
-br list --all                         # include closed
-br list -s in_progress -p P0 -p P1    # combine status + priority filters
-br list --long                        # detailed output
-br blocked                            # blocked issues only
-
-# dependencies
-br dep rm <id> <depends-on>           # remove dependency
-br dep tree <id>                      # visualize dependency tree
-
-# scheduling
-br defer <id> --until "2w"            # defer (relative or absolute date)
-br undefer <id>                       # make ready again
-
-# import (after git pull brings new .beads/ changes)
-br sync --import-only                 # jsonl → db
-
-# diagnostics
-br stats                              # project overview
-br doctor                             # read-only health check
-```
-
-### Agent Tips
-
-- `--json` on any command for machine-readable output
-- `--actor claude` to tag actions in audit trail
-- `br q` over `br create` for fast capture during work
-- `br close --suggest-next` to chain work without `br ready`
-- `br` never executes git commands — you always commit manually
-
-<!-- end-skogai-br-patch -->
-
----
-
-## CASS Memory (cm)
-
-Procedural memory system -- learned rules that persist across sessions. Config lives at `.cass/playbook.yaml` (project) and `~/.cass-memory/playbook.yaml` (global).
-
-### Session Start (always do this)
-
-```bash
-cm context "<brief task description>" --json
-```
-
-Returns relevant rules, anti-patterns, and history snippets for the current task. Reference rule IDs when following them.
-
-### During Work
-
-- Leave inline feedback when rules help or hurt:
-  - `// [cass: helpful <id>] - reason`
-  - `// [cass: harmful <id>] - reason`
-
-### Key Commands
-
-```bash
-cm context "<task>" --json    # get rules for a task (start of every session)
-cm ls                         # list playbook rules
-cm add "<rule>"               # add a rule manually
-cm stats                      # playbook health metrics
-cm doctor                     # system health check
-cm reflect --days 7 --json    # extract rules from recent sessions
-cm guard --install            # install safety guard hook
-```
-
-### Maintenance
-
-- `cm reflect --days 7` periodically to learn from sessions
-- `cm doctor --fix` to resolve health issues
-- `cm starters` for built-in starter playbooks
-
-<!-- rtk-instructions v2 -->
-# RTK (Rust Token Killer) - Token-Optimized Commands
-
-## Golden Rule
-
-**Always prefix commands with `rtk`**. If RTK has a dedicated filter, it uses it. If not, it passes through unchanged. This means RTK is always safe to use.
-
-**Important**: Even in command chains with `&&`, use `rtk`:
-```bash
-# ❌ Wrong
-git add . && git commit -m "msg" && git push
-
-# ✅ Correct
-rtk git add . && rtk git commit -m "msg" && rtk git push
-```
-
-## RTK Commands by Workflow
-
-### Build & Compile (80-90% savings)
-```bash
-rtk cargo build         # Cargo build output
-rtk cargo check         # Cargo check output
-rtk cargo clippy        # Clippy warnings grouped by file (80%)
-rtk tsc                 # TypeScript errors grouped by file/code (83%)
-rtk lint                # ESLint/Biome violations grouped (84%)
-rtk prettier --check    # Files needing format only (70%)
-rtk next build          # Next.js build with route metrics (87%)
-```
-
-### Test (90-99% savings)
-```bash
-rtk cargo test          # Cargo test failures only (90%)
-rtk vitest run          # Vitest failures only (99.5%)
-rtk playwright test     # Playwright failures only (94%)
-rtk test <cmd>          # Generic test wrapper - failures only
-```
-
-### Git (59-80% savings)
-```bash
-rtk git status          # Compact status
-rtk git log             # Compact log (works with all git flags)
-rtk git diff            # Compact diff (80%)
-rtk git show            # Compact show (80%)
-rtk git add             # Ultra-compact confirmations (59%)
-rtk git commit          # Ultra-compact confirmations (59%)
-rtk git push            # Ultra-compact confirmations
-rtk git pull            # Ultra-compact confirmations
-rtk git branch          # Compact branch list
-rtk git fetch           # Compact fetch
-rtk git stash           # Compact stash
-rtk git worktree        # Compact worktree
-```
-
-Note: Git passthrough works for ALL subcommands, even those not explicitly listed.
-
-### GitHub (26-87% savings)
-```bash
-rtk gh pr view <num>    # Compact PR view (87%)
-rtk gh pr checks        # Compact PR checks (79%)
-rtk gh run list         # Compact workflow runs (82%)
-rtk gh issue list       # Compact issue list (80%)
-rtk gh api              # Compact API responses (26%)
-```
-
-### JavaScript/TypeScript Tooling (70-90% savings)
-```bash
-rtk pnpm list           # Compact dependency tree (70%)
-rtk pnpm outdated       # Compact outdated packages (80%)
-rtk pnpm install        # Compact install output (90%)
-rtk npm run <script>    # Compact npm script output
-rtk npx <cmd>           # Compact npx command output
-rtk prisma              # Prisma without ASCII art (88%)
-```
-
-### Files & Search (60-75% savings)
-```bash
-rtk ls <path>           # Tree format, compact (65%)
-rtk read <file>         # Code reading with filtering (60%)
-rtk grep <pattern>      # Search grouped by file (75%)
-rtk find <pattern>      # Find grouped by directory (70%)
-```
-
-### Analysis & Debug (70-90% savings)
-```bash
-rtk err <cmd>           # Filter errors only from any command
-rtk log <file>          # Deduplicated logs with counts
-rtk json <file>         # JSON structure without values
-rtk deps                # Dependency overview
-rtk env                 # Environment variables compact
-rtk summary <cmd>       # Smart summary of command output
-rtk diff                # Ultra-compact diffs
-```
-
-### Infrastructure (85% savings)
-```bash
-rtk docker ps           # Compact container list
-rtk docker images       # Compact image list
-rtk docker logs <c>     # Deduplicated logs
-rtk kubectl get         # Compact resource list
-rtk kubectl logs        # Deduplicated pod logs
-```
-
-### Network (65-70% savings)
-```bash
-rtk curl <url>          # Compact HTTP responses (70%)
-rtk wget <url>          # Compact download output (65%)
-```
-
-### Meta Commands
-```bash
-rtk gain                # View token savings statistics
-rtk gain --history      # View command history with savings
-rtk discover            # Analyze Claude Code sessions for missed RTK usage
-rtk proxy <cmd>         # Run command without filtering (for debugging)
-rtk init                # Add RTK instructions to CLAUDE.md
-rtk init --global       # Add RTK to ~/.claude/CLAUDE.md
-```
-
-## Token Savings Overview
-
-| Category | Commands | Typical Savings |
-|----------|----------|-----------------|
-| Tests | vitest, playwright, cargo test | 90-99% |
-| Build | next, tsc, lint, prettier | 70-87% |
-| Git | status, log, diff, add, commit | 59-80% |
-| GitHub | gh pr, gh run, gh issue | 26-87% |
-| Package Managers | pnpm, npm, npx | 70-90% |
-| Files | ls, read, grep, find | 60-75% |
-| Infrastructure | docker, kubectl | 85% |
-| Network | curl, wget | 65-70% |
-
-Overall average: **60-90% token reduction** on common development operations.
-<!-- /rtk-instructions -->
+- FastAPI service at localhost:9999 — wraps skogcli, skogparse, agents, config
+- Service: `systemctl --user restart skogai-skogapi`
+- Code: `projects/skogapi/main.py`
+- Agents via `skogcli agent list/read/create`, NOT file directories
