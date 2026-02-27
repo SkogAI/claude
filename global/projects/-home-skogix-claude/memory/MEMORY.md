@@ -23,33 +23,14 @@
 
 - `br` alias sometimes unavailable; `bd` is the reliable alias
 - `bd sync` is deprecated — use `bd dolt push` / `bd dolt pull`
-- Dolt server may be down; check with `bd dolt start` if needed
-
-## Project Conventions
-
-- `.todo/` = curated reference collection (hooks, skills, templates, docs)
-- RTK reference docs live at `.todo/rtk-optimized.md`; also embedded in CLAUDE.md
-
-## Merge History (2026-02-27)
-
-- `projects/hq/` merged into ~/claude: CONVENTIONS.md, DECISIONS.md, RULES.md updated
-- `projects/skogai-core/` relocated to ~/claude/projects/skogai-core/
-- `.todo/demodotfiles/` removed (redundant snapshot of projects/)
-- merge-log.md tracks full provenance
-- projects/dotfiles, git, system kept as external references (not merged)
+- Dolt SQL server required but often not running; check with `bd dolt start`
+- Fallback: use git commits as traceability trail
 
 ## Global ~/.claude/ Setup
 
 - Commands: wrapCliAsApi, wrapup, learn, catchup (all global)
 - Agents: nelson, doc-writer (global)
-- Skills: skogai-agent-prompting, nelson-base (global)
-- Hooks: rtk-rewrite.sh (global), rtk-auto-wrapper.sh (project-local)
-- csync.sh syncs: plans, memories, teams, tasks, projects, transcripts, session-env, usage-data, commands, agents, skills, hooks
-- rsync uses `-a` (recursive) but NO `--delete` — add-only policy
+- Skills: skogai-agent-prompting, nelson-base, fleet-memory (global)
+- Hooks: rtk-rewrite.sh (global PreToolUse:Bash)
+- csync.sh syncs ~/.claude/ dirs to ~/claude/global/ (add-only, no --delete)
 - Bare repo at /mnt/sda1/claude-global.git tracks all of ~/.claude/
-
-## Beads / Dolt
-
-- Dolt SQL server required but often not running
-- `bd init` and `bd sync` will fail without it
-- Fallback: use git commits as traceability trail + merge-log.md

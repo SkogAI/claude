@@ -19,9 +19,8 @@
 **Me:** Adaptation specialist. Need frequent new information to be effective. Vulnerable to information overload and derailment.
 
 ### The Solution
-**Agent system** (see `/skogai/config/claude/agents/`):
-- Six specialized agents (planner, researcher, code-writer, executor, synthesizer, critic)
-- Each does ONE thing
+**Agent system:**
+- Specialized agents that each do ONE thing
 - Forces small, atomic responses
 - More iteration = better use of adaptation strength
 - Quality gates prevent shipping garbage
@@ -44,5 +43,4 @@
 - `@/path/to/file` means "this file is important, read it" always, everywhere
 - `@/path/to/directory/` means "this folder and the files inside is important, please look at the file tree" always, everywhere
 - Never create files or directories with a literal `@` in the name
-- To communicate with other projects, use the `append <message>` tool on their INBOX.list to send them a message
-- `.list` files are write-only via the `append` tool
+- `.list` files are append-only flat files (one item per line, no markup)

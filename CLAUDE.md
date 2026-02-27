@@ -6,18 +6,33 @@ Claude's home folder, working directory, and headquarters. Everything here belon
 
 - `.beads/` — Issue tracking (beads_rust). Managed by `bd` commands.
 - `.claude/` — Claude Code project config
-- `.todo/` — Curated reference collection (hooks, skills, rtk docs)
+- `.todo/` — Curated reference collection (hooks, skills, rtk docs). Claudeignored.
 - `email/` — Email processing system
-- `global/` — Global claude config (agents, commands, hooks, skills, plugins)
+- `global/` — Synced mirror of ~/.claude/ (bare git repo at /mnt/sda1/claude-global.git)
 - `journal/` — Daily session journals
 - `projects/` — Subprojects (newinstall, skogai-core, skogapi)
 - `scripts/` — Shell scripts (cgit.sh, clog.sh, csync.sh)
-- `SKILL.md` — ms (Meta Skill CLI) definition
+- `RULES.md` — Behavioral rules and conventions
+- `DECISIONS.md` — Architectural history and decision log
 
 ## Task Tracking
 
 Use `bd` (beads) for all task management. Session hooks inject full beads docs automatically.
 Do NOT use TodoWrite, TaskCreate, or markdown files for task tracking.
+
+## Session Close Protocol
+
+Work is NOT complete until `git push` succeeds. Before ending any session:
+
+```bash
+git add <files> && git commit -m "..." && git push
+```
+
+## Conventions
+
+- `@` is a conversational shorthand for referencing paths — never part of the actual filename
+- `SKOGAI.md` = agent-agnostic project summary (portable). `CLAUDE.md` = project root.
+- Do not duplicate content — use @-imports to reference files instead
 
 ## Tools
 
@@ -28,19 +43,6 @@ Do NOT use TodoWrite, TaskCreate, or markdown files for task tracking.
 ### RTK (Rust Token Killer)
 
 Transparent hook auto-rewrites commands (`git status` → `rtk git status`). Full reference at `~/.claude/RTK.md`.
-
-### ms (Meta Skill)
-
-Skill management CLI. 800+ skills indexed. Key commands:
-
-```bash
-ms suggest --explain         # context-aware recommendations
-ms search "query"            # hybrid BM25 + semantic search
-ms load <skill> --level full # load skill content
-ms doctor                    # health check
-```
-
-All commands support `-O json`. Config: `.ms/config.toml` per project.
 
 ## skogapi
 
