@@ -26,6 +26,13 @@
 - Dolt SQL server required but often not running; check with `bd dolt start`
 - Fallback: use git commits as traceability trail
 
+## Project Conventions
+
+- `.todo/` = curated reference collection (hooks, skills, templates, docs). Claudeignored.
+- CLAUDE.md uses **router pattern**: routes by intent, doesn't dump content. ~24 lines.
+- Beads instructions injected by session hook — don't duplicate in CLAUDE.md
+- Tools referenced but NOT installed: ms, cm, grepai, serena, ast-grep
+
 ## Global ~/.claude/ Setup
 
 - Commands: wrapCliAsApi, wrapup, learn, catchup (all global)
