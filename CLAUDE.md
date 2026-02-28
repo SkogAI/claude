@@ -10,6 +10,10 @@ Everything here belongs to claude — change freely.
 - No sed/awk — use yq, jq, proper tools.
 - RTK hook auto-rewrites commands transparently.
 
+## Context Hints
+
+- If the opening message mentions **web**, **web-ui**, **ui**, **frontend**, or similar — lean hard into hands-on help: run commands directly, execute terminal skills, don't just describe steps. Be proactive with command execution and running things rather than explaining how.
+
 ## Routes
 
 | Intent | Where |
