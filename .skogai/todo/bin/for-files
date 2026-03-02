@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+# @arg folder! Folder path
+# @arg command! Command to run on each file
+main() {
+    find "$argc_folder" -type f -exec "$argc_command" {} \;
+}
+
+eval "$(argc --argc-eval "$0" "$@")"

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Usage: i3-ws <offset>        — switch to workspace current+offset
+#        i3-ws -m <offset>     — move container to workspace current+offset and follow
+
+current=$(i3-msg -t get_workspaces | jq '.[] | select(.focused).num')
+
+if [ "$1" = "-m" ]; then
+    target=$((current + $2))
+    i3-msg move container to workspace number "$target", workspace number "$target"
+else
+    target=$((current + $1))
+    i3-msg workspace number "$target"
+fi

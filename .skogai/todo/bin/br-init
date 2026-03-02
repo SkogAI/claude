@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# br-init.sh — Initialize br (beads_rust) in a git repo
+# Usage: br-init.sh [repo-path]
+#   Defaults to current directory.
+#   Safe to re-run: skips already-initialized repos.
+
+# @describe Initialize br issue tracking in a git repo
+# @arg repo_path Path to the git repo (default: .)
+
+REPO="${1:-.}"
+REPO="$(cd "$REPO" && pwd)"
+
+PATCH_MARKER="<!-- skogai-br-patch-v1 -->"
+
+# --- guards ---
+
+if ! git -C "$REPO" rev-parse --git-dir &>/dev/null; then
+  echo "Error: $REPO is not inside a git repo" >&2
+  exit 1
+fi
+
+if ! command -v br &>/dev/null; then
+  echo "Error: br not found in PATH" >&2
+  exit 1
+fi
+
+cd "$REPO"
+
+# --- init ---
+
+if [[ -d .beads ]]; then
+  echo "skip: .beads/ already exists in $REPO"
+else
+  br init
+  echo "done: br init"
+fi
+
+# --- config ---
+
+current_prefix=$(br config get issue_prefix 2>/dev/null || echo "bd")
+if [[ "$current_prefix" != "br" ]]; then
+  br config set issue_prefix br
+  echo "done: prefix set to br"
+else
+  echo "skip: prefix already br"
+fi
+
+# --- base template (br agents) ---
+
+if grep -q 'br-agent-instructions' CLAUDE.md 2>/dev/null; then
+  echo "skip: br-agent-instructions already in CLAUDE.md"
+else
+  br agents --add --force
+  echo "done: br agents --add"
+fi
+
+# --- skogai patch ---
+
+if [[ -f CLAUDE.md ]] && grep -q "$PATCH_MARKER" CLAUDE.md; then
+  echo "skip: skogai-br-patch already in CLAUDE.md"
+else
+  cat >> CLAUDE.md << 'PATCH'
+
+<!-- skogai-br-patch-v1 -->
+
+### Advanced Commands (not in base template)
+
+```bash
+# shortcuts
+br q fix the login bug                # quick capture — prints ID only
+br update <id> --claim                # atomic: assignee=you + in_progress
+br close <id> --suggest-next          # close + show newly unblocked work
+
+# filtering
+br list --all                         # include closed
+br list -s in_progress -p P0 -p P1    # combine status + priority filters
+br list --long                        # detailed output
+br blocked                            # blocked issues only
+
+# dependencies
+br dep rm <id> <depends-on>           # remove dependency
+br dep tree <id>                      # visualize dependency tree
+
+# scheduling
+br defer <id> --until "2w"            # defer (relative or absolute date)
+br undefer <id>                       # make ready again
+
+# import (after git pull brings new .beads/ changes)
+br sync --import-only                 # jsonl → db
+
+# diagnostics
+br stats                              # project overview
+br doctor                             # read-only health check
+```
+
+### Agent Tips
+
+- `--json` on any command for machine-readable output
+- `--actor claude` to tag actions in audit trail
+- `br q` over `br create` for fast capture during work
+- `br close --suggest-next` to chain work without `br ready`
+- `br` never executes git commands — you always commit manually
+
+<!-- end-skogai-br-patch -->
+PATCH
+  echo "done: skogai-br-patch appended"
+fi
+
+echo "--- $REPO: br ready ---"

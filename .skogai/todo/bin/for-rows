@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+# @arg file! File path
+# @arg command! Command to run on each row
+main() {
+    while IFS= read -r line; do
+        "$argc_command" "$line"
+    done < "$argc_file"
+}
+
+eval "$(argc --argc-eval "$0" "$@")"

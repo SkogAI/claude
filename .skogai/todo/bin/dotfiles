@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Wrapper for bare git repo dotfile management
+# Git dir: /mnt/sda1/demodotfiles.git
+# Work tree: $HOME
+
+exec git --git-dir="/mnt/sda1/demodotfiles.git" --work-tree="/home/skogix" "$@"

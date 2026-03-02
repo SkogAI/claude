@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# br-init-all.sh — Initialize br across multiple repos
+# Usage: br-init-all.sh <dir-containing-repos>
+#   Finds all git repos under the given directory and runs br-init.sh on each.
+#   Example: br-init-all.sh ~/dev
+
+# @describe Initialize br in all git repos under a directory
+# @arg root_dir! Directory containing git repos
+
+ROOT="${1:?Usage: br-init-all.sh <dir-containing-repos>}"
+ROOT="$(cd "$ROOT" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+if [[ ! -x "$SCRIPT_DIR/br-init.sh" ]]; then
+  echo "Error: br-init.sh not found in $SCRIPT_DIR" >&2
+  exit 1
+fi
+
+ok=0
+fail=0
+skip=0
+
+while IFS= read -r gitdir; do
+  repo="$(dirname "$gitdir")"
+
+  # skip bare repos
+  if [[ ! -d "$repo" ]] || git -C "$repo" rev-parse --is-bare-repository 2>/dev/null | grep -q true; then
+    ((skip++))
+    continue
+  fi
+
+  echo "=== $repo ==="
+  if "$SCRIPT_DIR/br-init.sh" "$repo"; then
+    ((ok++))
+  else
+    echo "FAIL: $repo" >&2
+    ((fail++))
+  fi
+  echo ""
+done < <(find "$ROOT" -maxdepth 3 -name ".git" -type d 2>/dev/null | sort)
+
+echo "--- Summary: $ok ok, $fail failed, $skip skipped ---"

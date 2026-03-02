@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# tmux-dev — launch or attach to a dev session with 3 panes
+# usage: tmux-dev [session-name]
+
+SESSION="${1:-dev}"
+
+# attach if session already exists
+if tmux has-session -t "$SESSION" 2>/dev/null; then
+  exec tmux attach -t "$SESSION"
+fi
+
+# create session with 3 panes
+tmux new-session -d -s "$SESSION"
+tmux split-window -t "$SESSION"
+tmux split-window -t "$SESSION"
+tmux select-layout -t "$SESSION" even-horizontal
+
+# identify each pane (window index depends on base-index config)
+WIN=$(tmux list-windows -t "$SESSION" -F '#{window_index}')
+for i in 0 1 2; do
+  tmux-cli send "echo 'i am tmux-cli pane $SESSION:$WIN.$i'" --pane="$SESSION:$WIN.$i"
+done
+
+exec tmux attach -t "$SESSION"
