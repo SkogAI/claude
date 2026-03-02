@@ -10,6 +10,7 @@ done
 
 # bare repo: everything in ~/.claude/
 ./scripts/cgit.sh add ~/.claude/
+./scripts/cgit.sh add -u
 ./scripts/cgit.sh commit -m "auto-sync $TS" --no-verify || true
 
 # home repo
