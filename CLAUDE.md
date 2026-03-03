@@ -9,10 +9,10 @@ Meta-system for Claude Code collaboration and observability. Tracks `~/.claude/`
 ## Architecture
 
 **Dual git repos:**
-- **Home repo** (this repo, `~/claude/`) — projects, docs, scripts, symlinked `~/.claude/` contents
-- **Bare repo** (`/mnt/sda1/claude-global.git`, work tree: `$HOME`) — tracks everything in `~/.claude/` for observability. Wrapper: `claude-dotfiles` (replaces `./scripts/cgit.sh`)
+- **Home repo** (this repo, `~/claude/`) — projects, docs, scripts, rsynced `~/.claude/` copies in `global/`
+- **Bare repo** (`/mnt/sda1/claude-global.git`, work tree: `$HOME`) — tracks raw `~/.claude/` state. NOT the same data as home repo.
 
-**`global/`** — symlinks into `~/.claude/` (settings, projects, plans, todos, plugins, exclude). Changes appear in both repos' diffs.
+**`global/`** — rsynced copies of `~/.claude/` subdirs (NOT symlinks — Claude Code deletes+rewrites files, destroying symlinks). Updated by `csync-rsync.sh`.
 
 **`projects/`** — active project source:
 - `skogapi/` — FastAPI service exposing routing data, agents, config, services (`uvicorn projects.skogapi.main:app`)
@@ -20,14 +20,14 @@ Meta-system for Claude Code collaboration and observability. Tracks `~/.claude/`
 - `newinstall/` — post-archinstall setup documentation
 
 **`scripts/`:**
-- `csync.sh` — auto-commits both repos on every UserPromptSubmit hook
-- `cgit.sh` — legacy bare repo wrapper (use `claude-dotfiles` instead)
-- `clog.sh` — shows recent commits from both repos
+- `csync-rsync.sh` — snapshots `~/.claude/` → `~/claude/global/`
+- `csync-git.sh` — commits and pushes both repos (blocking flock)
+- `csync-watch.sh` — inotifywait loop calling rsync then git
+- `fetch-docs.sh` — downloads Claude Code docs to `docs/claude-code/`
 
-**Git wrappers** (use these, not raw git commands for non-local repos):
-- `claude-dotfiles` — bare repo operations
-- `skogai-dotfiles` — ~/skogai/ repo operations
-- `git` — local repo (~/claude/) only
+**Auto-sync:** `systemctl --user status skogai-git-inotify` — inotifywait watches `~/.claude/`, triggers rsync → git on every file change. No debouncing — every change is a commit.
+
+**Why rsync, not symlinks or direct git:** Claude Code holds FDs on `~/.claude/` files, deletes+rewrites them constantly, and spawns `.backup.N` files. rsync snapshots to a clean location for safe git operations.
 
 **`.skogai/`** — local context: RULES.md, DECISIONS.md, email system, journal entries, todo archive
 
@@ -55,4 +55,4 @@ Arch Linux, zsh, neovim, i3 WM, Swedish Dvorak keyboard layout. Package manager:
 ## Hooks
 
 - `rtk-rewrite.sh` (PreToolUse:Bash) — transparently rewrites raw commands to `rtk` equivalents for output-controlled execution
-- `csync.sh` fires on UserPromptSubmit to auto-commit both repos
+- Auto-sync is handled by systemd service `skogai-git-inotify`, not Claude Code hooks
