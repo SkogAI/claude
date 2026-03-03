@@ -3,15 +3,15 @@
   "forceLoginMethod": "claudeai",
   "cleanupPeriodDays": 30,
   "respectGitignore": true,
-  "prefersReducedMotion": true,
+  "prefersReducedMotion": false,
   "showTurnDuration": true,
   "spinnerTipsEnabled": true,
-  "terminalProgressBarEnabled": false,
-  "alwaysThinkingEnabled": false,
+  "terminalProgressBarEnabled": true,
+  "alwaysThinkingEnabled": true,
   "fastModePerSessionOptIn": false,
   "disableAllHooks": false,
   "enableAllProjectMcpServers": false,
-  "teammateMode": "auto",
+  "teammateMode": "tmux",
   "model": "sonnet",
   "language": "english",
   "plansDirectory": "~/.claude/plans",
@@ -21,7 +21,9 @@
   },
   "spinnerVerbs": {
     "mode": "append",
-    "verbs": []
+    "verbs": [
+      "clauding"
+    ]
   },
   "env": {
     "CLAUDE_CONFIG_DIR": "/home/skogix/.claude",
@@ -42,7 +44,15 @@
     "DISABLE_ERROR_REPORTING": "0",
     "DISABLE_TELEMETRY": "0",
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "0",
-    "DISABLE_PROMPT_CACHING": "0"
+    "DISABLE_PROMPT_CACHING": "0",
+    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "0",
+    "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_SIMPLE": "0",
+    "CLAUDE_CODE_TASK_LIST_ID": "SkogTasks",
+    "CLAUDE_CODE_TEAM_NAME": "SkogTeam",
+    "ENABLE_TOOL_SEARCH": "true",
+    "USE_BUILTIN_RIPGREP": "0"
   },
   "enabledMcpjsonServers": [],
   "disabledMcpjsonServers": [],
@@ -54,7 +64,6 @@
       "Bash(bd *)",
       "Bash(gh *)",
       "Bash(skogai-*)",
-      "Bash(skogai-todo *)",
       "Bash(skogcli *)",
       "Bash(npm *)",
       "Bash(npx *)",
@@ -204,5 +213,5 @@
         "path": "/home/skogix/.local/src/marketplace"
       }
     }
-  },
+  }
 }
