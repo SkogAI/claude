@@ -6,4 +6,3 @@ gitwatch watch /home/skogix/claude \
   --debounce-seconds=1 \
   --remote=origin \
   --watch=true
-# >/tmp/skogai-git-notify.claude.service.log 2>&1 &
