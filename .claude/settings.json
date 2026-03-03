@@ -1,30 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "forceLoginMethod": "claudeai",
-  "cleanupPeriodDays": 30,
   "respectGitignore": true,
-  "prefersReducedMotion": false,
-  "showTurnDuration": true,
-  "spinnerTipsEnabled": true,
-  "terminalProgressBarEnabled": true,
-  "alwaysThinkingEnabled": true,
-  "fastModePerSessionOptIn": false,
-  "disableAllHooks": false,
-  "enableAllProjectMcpServers": false,
-  "teammateMode": "tmux",
-  "model": "sonnet",
-  "language": "english",
-  "plansDirectory": "~/.claude/plans",
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
-  "spinnerVerbs": {
-    "mode": "append",
-    "verbs": [
-      "clauding"
-    ]
-  },
+  "cleanupPeriodDays": 30,
   "env": {
     "CLAUDE_CONFIG_DIR": "/home/skogix/.claude",
     "ENABLE_CLAUDEAI_MCP_SERVERS": "false",
@@ -54,10 +31,11 @@
     "ENABLE_TOOL_SEARCH": "true",
     "USE_BUILTIN_RIPGREP": "0"
   },
-  "enabledMcpjsonServers": [],
-  "disabledMcpjsonServers": [],
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(git *)",
       "Bash(br *)",
@@ -181,37 +159,60 @@
       "Bash(rsync *)",
       "Bash(./scripts/*)"
     ],
-    "ask": [],
     "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits",
     "additionalDirectories": [
       "/home/skogix/claude/"
     ]
   },
-  "sandbox": {
-    "enabled": false,
-    "autoAllowBashIfSandboxed": true,
-    "excludedCommands": [],
-    "allowUnsandboxedCommands": true,
-    "enableWeakerNestedSandbox": false,
-    "filesystem": {
-      "allowWrite": [],
-      "denyWrite": [],
-      "denyRead": []
-    },
-    "network": {
-      "allowedDomains": [],
-      "allowUnixSockets": [],
-      "allowAllUnixSockets": false,
-      "allowLocalBinding": false
-    }
-  },
+  "model": "sonnet",
+  "enableAllProjectMcpServers": false,
+  "enabledMcpjsonServers": [],
+  "disabledMcpjsonServers": [],
   "hooks": {},
+  "disableAllHooks": false,
   "extraKnownMarketplaces": {
     "skogai-marketplace": {
       "source": {
         "source": "directory",
         "path": "/home/skogix/.local/src/marketplace"
-      }
+      },
+      "autoUpdate": true
     }
-  }
+  },
+  "forceLoginMethod": "claudeai",
+  "language": "english",
+  "sandbox": {
+    "enabled": false,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": true,
+    "network": {
+      "allowedDomains": [],
+      "allowUnixSockets": [],
+      "allowAllUnixSockets": false,
+      "allowLocalBinding": false
+    },
+    "filesystem": {
+      "allowWrite": [],
+      "denyWrite": [],
+      "denyRead": []
+    },
+    "enableWeakerNestedSandbox": false,
+    "excludedCommands": []
+  },
+  "spinnerTipsEnabled": true,
+  "spinnerVerbs": {
+    "mode": "append",
+    "verbs": [
+      "clauding"
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "fastModePerSessionOptIn": false,
+  "plansDirectory": "~/.claude/plans",
+  "prefersReducedMotion": false,
+  "showTurnDuration": true,
+  "terminalProgressBarEnabled": true,
+  "teammateMode": "tmux"
 }
