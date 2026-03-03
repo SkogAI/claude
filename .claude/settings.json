@@ -1,12 +1,53 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "forceLoginMethod": "claudeai",
+  "cleanupPeriodDays": 30,
+  "respectGitignore": true,
+  "prefersReducedMotion": true,
+  "showTurnDuration": true,
+  "spinnerTipsEnabled": true,
+  "terminalProgressBarEnabled": false,
+  "alwaysThinkingEnabled": false,
+  "fastModePerSessionOptIn": false,
+  "disableAllHooks": false,
+  "enableAllProjectMcpServers": false,
+  "teammateMode": "auto",
+  "model": "claude-opus-4-6",
+  "language": "english",
+  "plansDirectory": "~/.claude/plans",
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "spinnerVerbs": {
+    "mode": "append",
+    "verbs": []
+  },
   "env": {
-    "CLAUDE_CONFIG_DIR": "/home/skogix/.claude"
+    "CLAUDE_CONFIG_DIR": "/home/skogix/.claude",
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000",
+    "BASH_DEFAULT_TIMEOUT_MS": "120000",
+    "BASH_MAX_TIMEOUT_MS": "600000",
+    "MAX_MCP_OUTPUT_TOKENS": "25000",
+    "CLAUDE_CODE_EFFORT_LEVEL": "high",
+    "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "0",
+    "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": "0",
+    "CLAUDE_CODE_DISABLE_FAST_MODE": "0",
+    "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS": "0",
+    "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": "true",
+    "CLAUDE_CODE_ENABLE_TASKS": "true",
+    "DISABLE_AUTOUPDATER": "0",
+    "DISABLE_COST_WARNINGS": "0",
+    "DISABLE_ERROR_REPORTING": "0",
+    "DISABLE_TELEMETRY": "0",
+    "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "0",
+    "DISABLE_PROMPT_CACHING": "0"
   },
   "enabledMcpjsonServers": [],
   "disabledMcpjsonServers": [],
   "permissions": {
+    "defaultMode": "plan",
     "allow": [
       "Bash(git *)",
       "Bash(br *)",
@@ -131,7 +172,27 @@
       "Bash(rsync *)",
       "Bash(./scripts/*)"
     ],
-    "defaultMode": "plan"
+    "ask": [],
+    "deny": [],
+    "additionalDirectories": []
   },
-  "prefersReducedMotion": true
+  "sandbox": {
+    "enabled": false,
+    "autoAllowBashIfSandboxed": true,
+    "excludedCommands": [],
+    "allowUnsandboxedCommands": true,
+    "enableWeakerNestedSandbox": false,
+    "filesystem": {
+      "allowWrite": [],
+      "denyWrite": [],
+      "denyRead": []
+    },
+    "network": {
+      "allowedDomains": [],
+      "allowUnixSockets": [],
+      "allowAllUnixSockets": false,
+      "allowLocalBinding": false
+    }
+  },
+  "hooks": {}
 }
