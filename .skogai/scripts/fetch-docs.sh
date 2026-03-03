@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DIR="$HOME/claude/docs/claude-code"
+DIR="$HOME/skogai/docs/claude-code"
 mkdir -p "$DIR"
 BASE="https://code.claude.com/docs/en"
 
