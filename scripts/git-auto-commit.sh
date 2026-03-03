@@ -5,4 +5,5 @@ gitwatch watch /home/skogix/claude \
   --commit-on-start=true \
   --debounce-seconds=1 \
   --remote=origin \
-  --watch=true >/tmp/skogai-git-notify.claude.service.log 2>&1 &
+  --watch=true
+# >/tmp/skogai-git-notify.claude.service.log 2>&1 &
