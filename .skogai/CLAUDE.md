@@ -51,6 +51,8 @@ eval "$(argc --argc-eval "$0" "$@")"
 <always_load>
 
 - @memory/context/current.md - what we are currently working on
+- @knowledge/SKOGAI.md - knowledge base index (decisions, learnings, patterns)
+- @knowledge/patterns/style/SKOGAI.md - 15 meta-patterns + style routing
 
 </always_load>
 
