@@ -33,6 +33,7 @@ staging areas (`skills/`, `commands/`, `hooks/`, `agents/`) are symlinked into `
 | current work state | @.skogai/memory/context/current.md (generated — run `skogai context refresh`) |
 | quick decisions log | @.skogai/memory/decisions.md |
 | @-reference system | @.skogai/knowledge/patterns/style/at-references.md |
+| gptme-contrib (gptodo, sessions, runloops) | @skills/gptme/SKILL.md |
 
 </routing>
 
@@ -45,5 +46,7 @@ staging areas (`skills/`, `commands/`, `hooks/`, `agents/`) are symlinked into `
 **Context philosophy:** routing over dumping. load the right thing at the right time. placeholders over pre-loading.
 
 **Symlink pattern:** `.claude/{skills,commands,hooks,agents}` → `../` counterparts. Edit in project root, active immediately. Graduate to `~/.claude/` or a plugin when stable.
+
+**Worktrees:** `.skogai/.worktrees` → `.claude/worktrees`. gptodo creates worktrees here. `GPTODO_TASKS_DIR=/home/skogix/claude/.skogai/tasks` must be set.
 
 </conventions>
