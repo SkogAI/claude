@@ -68,8 +68,8 @@ _in_worktree() {
 }
 
 _choice_worktrees() {
-  git worktree list --porcelain 2>/dev/null |
-    awk 'NR>1 && /^worktree/ {print $2}' |
+  git worktree list 2>/dev/null |
+    awk 'NR>1 {print $1}' |
     xargs -I{} basename {}
 }
 
