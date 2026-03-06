@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+# =============================================================================
+# SessionStart debug logger — skogai-base reference hook
+# =============================================================================
+#
+# Hook type:    SessionStart
+# Fires when:   startup, resume, clear, compact
+# Input (stdin): JSON with session_id, cwd, hook_event_name, source, model,
+#                transcript_path, permission_mode
+# Output:       JSON with hookSpecificOutput.additionalContext
+#
+# What this hook does:
+#   1. Reads the full hook input JSON from stdin
+#   2. Logs raw input + human-readable summary to a session log file
+#   3. Returns additionalContext so Claude knows debug logging is active
+#
+# Log location:  /tmp/claude-debug-<session_id>.log
+# =============================================================================
+
+set -euo pipefail
+
+# --- Read hook input from stdin ---
+INPUT=$(cat)
+
+# --- Extract fields ---
+# All SessionStart hooks receive these common fields:
+SESSION_ID=$(echo "$INPUT" | jq -r '.session_id // "unknown"')
+HOOK_EVENT=$(echo "$INPUT" | jq -r '.hook_event_name // "unknown"')
+CWD=$(echo "$INPUT" | jq -r '.cwd // "unknown"')
+TRANSCRIPT=$(echo "$INPUT" | jq -r '.transcript_path // "none"')
+PERM_MODE=$(echo "$INPUT" | jq -r '.permission_mode // "unknown"')
+
+# SessionStart-specific fields:
+SOURCE=$(echo "$INPUT" | jq -r '.source // "unknown"')
+MODEL=$(echo "$INPUT" | jq -r '.model // "unknown"')
+
+# Optional subagent fields (present when hook fires inside a subagent):
+AGENT_ID=$(echo "$INPUT" | jq -r '.agent_id // empty')
+AGENT_TYPE=$(echo "$INPUT" | jq -r '.agent_type // empty')
+
+# --- Set up log file ---
+LOG_DIR="/tmp"
+LOG_FILE="${LOG_DIR}/claude-debug-${SESSION_ID}.log"
+TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ" 2>/dev/null || date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+# --- Write log entry ---
+{
+  echo "========================================================================"
+  echo "[${TIMESTAMP}] SessionStart (source: ${SOURCE})"
+  echo "========================================================================"
+  echo ""
+  echo "session_id:      ${SESSION_ID}"
+  echo "source:          ${SOURCE}"
+  echo "model:           ${MODEL}"
+  echo "cwd:             ${CWD}"
+  echo "permission_mode: ${PERM_MODE}"
+  echo "transcript:      ${TRANSCRIPT}"
+
+  if [ -n "$AGENT_ID" ]; then
+    echo "agent_id:        ${AGENT_ID}"
+    echo "agent_type:      ${AGENT_TYPE}"
+  fi
+
+  echo ""
+  echo "--- raw input json ---"
+  echo "$INPUT" | jq '.' 2>/dev/null || echo "$INPUT"
+  echo ""
+} >> "$LOG_FILE"
+
+# --- Return hook output ---
+# hookSpecificOutput.additionalContext injects text into Claude's context.
+# We use it to signal that debug logging is active and where to find logs.
+#
+# Output schema for SessionStart:
+# {
+#   "hookSpecificOutput": {
+#     "hookEventName": "SessionStart",       # must match the hook event
+#     "additionalContext": "..."             # injected into Claude's context
+#   }
+# }
+#
+# Other possible top-level fields (not used here):
+#   "continue": false          — stops Claude entirely
+#   "stopReason": "..."        — shown to user when continue=false
+#   "suppressOutput": true     — hides stdout from verbose mode
+#   "systemMessage": "..."     — warning shown to user
+
+cat <<EOF
+{
+  "hookSpecificOutput": {
+    "hookEventName": "SessionStart",
+    "additionalContext": "[skogai-base] debug logging active — session log: ${LOG_FILE}"
+  }
+}
+EOF
+
+exit 0
