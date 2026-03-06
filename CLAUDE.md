@@ -15,6 +15,10 @@ Meta-repository for SkogAI's Claude Code configuration and documentation. Not ap
 ```
 marketplaces/     # git submodules — superpowers plugin suite (source repos)
   CLAUDE.md       # plugin registry: what each plugin does, hooks, skills, commands
+skills/           # staging area for WIP skills (active via .claude/skills symlink)
+commands/         # staging area for WIP commands (active via .claude/commands symlink)
+hooks/            # staging area for WIP hooks (active via .claude/hooks symlink)
+agents/           # staging area for WIP agents (active via .claude/agents symlink)
 docs/
   fetch-docs.sh   # fetches latest Claude Code docs → docs/claude-code/*.md
   claude-code/    # gitignored fetched docs (run fetch-docs.sh to populate)
@@ -65,5 +69,7 @@ Currently installed: `superpowers@superpowers-dev` v4.3.1.
 **@-references:** `@path/to/file` in prompts expands the real file at prompt-time (always current). Read tool may return cached content.
 
 **Context philosophy:** routing over dumping. load the right thing at the right time. placeholders over pre-loading.
+
+**Symlink pattern:** `.claude/{skills,commands,hooks,agents}` → `../` counterparts. Edit in project root, active immediately. Graduate to `~/.claude/` or a plugin when stable.
 
 </conventions>
