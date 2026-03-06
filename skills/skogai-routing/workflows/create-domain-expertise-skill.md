@@ -134,13 +134,13 @@ For EACH major library/tool/pattern found:
 
 ### Documentation Sources
 
-Use Context7 MCP when available:
+If Context7 MCP is available, use it for official library docs:
 ```
 mcp__context7__resolve-library-id: {library-name}
 mcp__context7__get-library-docs: {library-id}
 ```
 
-Focus on official docs, not tutorials.
+Otherwise use WebSearch or WebFetch on official docs directly. Focus on official docs, not tutorials.
 
 ## Step 5: Organize Knowledge Into Domain Areas
 
@@ -489,7 +489,7 @@ Test both use cases:
 - Workflow provides implementation steps
 - Success criteria are clear
 
-**Knowledge reference:** "Can create-plans load references to plan a project?"
+**Knowledge reference:** "Can another skill load references to plan a project?"
 - References contain decision guidance
 - All options compared
 - Complete lifecycle covered
@@ -497,32 +497,25 @@ Test both use cases:
 
 ## Step 10: Create Directory and Files
 
+Stage in project root `skills/` (symlinked to `.claude/skills/`):
+
 ```bash
 # Create structure
-mkdir -p ~/.claude/skills/expertise/{domain-name}
-mkdir -p ~/.claude/skills/expertise/{domain-name}/workflows
-mkdir -p ~/.claude/skills/expertise/{domain-name}/references
+mkdir -p skills/expertise/{domain-name}
+mkdir -p skills/expertise/{domain-name}/workflows
+mkdir -p skills/expertise/{domain-name}/references
 
 # Write SKILL.md
 # Write all workflow files
 # Write all reference files
 
 # Verify structure
-ls -R ~/.claude/skills/expertise/{domain-name}
+ls -R skills/expertise/{domain-name}
 ```
 
-## Step 11: Document in create-plans
+Graduate to `~/.claude/skills/` or a plugin when stable.
 
-Update `~/.claude/skills/create-plans/SKILL.md` to reference this new domain:
-
-Add to the domain inference table:
-```markdown
-| "{keyword}", "{domain term}" | expertise/{domain-name} |
-```
-
-So create-plans can auto-detect and offer to load it.
-
-## Step 12: Final Quality Check
+## Step 11: Final Quality Check
 
 Review entire skill:
 
@@ -556,7 +549,7 @@ Review entire skill:
 - [ ] Full lifecycle covered
 - [ ] Passes the "build from scratch through shipping" test
 - [ ] Can be invoked directly by users
-- [ ] Can be loaded by create-plans for knowledge
+- [ ] References structured so other skills can load domain knowledge from them
 
 </process>
 
@@ -573,8 +566,7 @@ Domain expertise skill is complete when:
 - [ ] Anti-patterns documented throughout
 - [ ] Full lifecycle covered (build → debug → test → optimize → ship)
 - [ ] Platform-specific considerations included
-- [ ] Located in ~/.claude/skills/expertise/{domain-name}/
-- [ ] Referenced in create-plans domain inference table
+- [ ] Staged in skills/expertise/{domain-name}/ (project root, symlinked to .claude/skills/)
 - [ ] Passes dual-purpose test: Can be invoked directly AND loaded for knowledge
 - [ ] User can build something professional from scratch through shipping
 </success_criteria>

@@ -1,5 +1,7 @@
 # Workflow: Create a New Skill
 
+**PREREQUISITE:** Invoke `superpowers:writing-skills` before this workflow — it is the authoritative guide for skill authoring, TDD-based testing, and CSO principles. This workflow provides the skogai-routing structure layer on top.
+
 <required_reading>
 **Read these reference files NOW:**
 1. references/recommended-structure.md
@@ -50,9 +52,9 @@ Options:
 2. **No, proceed with general patterns** - Use common patterns without specific API research
 
 If research requested:
-- Use Context7 MCP to fetch current library documentation
-- Or use WebSearch for recent API documentation
-- Focus on 2024-2025 sources
+- Use Context7 MCP if available (mcp__context7__resolve-library-id / get-library-docs)
+- Use WebSearch or WebFetch on official docs otherwise
+- Focus on current sources
 - Store findings for use in content generation
 
 ## Step 3: Decide Structure
@@ -89,15 +91,19 @@ See references/recommended-structure.md for templates.
 
 ## Step 4: Create Directory
 
+Skills are staged in the project root `skills/` directory (symlinked to `.claude/skills/`). Create there, not directly in `~/.claude/skills/`.
+
 ```bash
-mkdir -p ~/.claude/skills/{skill-name}
+mkdir -p skills/{skill-name}
 # If complex:
-mkdir -p ~/.claude/skills/{skill-name}/workflows
-mkdir -p ~/.claude/skills/{skill-name}/references
+mkdir -p skills/{skill-name}/workflows
+mkdir -p skills/{skill-name}/references
 # If needed:
-mkdir -p ~/.claude/skills/{skill-name}/templates  # for output structures
-mkdir -p ~/.claude/skills/{skill-name}/scripts    # for reusable code
+mkdir -p skills/{skill-name}/templates  # for output structures
+mkdir -p skills/{skill-name}/scripts    # for reusable code
 ```
+
+Graduate to `~/.claude/skills/` or a plugin when stable.
 
 ## Step 5: Write SKILL.md
 
@@ -144,17 +150,19 @@ Domain knowledge that:
 Check:
 - [ ] YAML frontmatter valid
 - [ ] Name matches directory (lowercase-with-hyphens)
-- [ ] Description says what it does AND when to use it (third person)
+- [ ] Description is trigger-focused ("Use when..."), NOT a workflow summary — see CSO principle in superpowers:writing-skills
 - [ ] No markdown headings (#) in body - use XML tags
 - [ ] Required tags present: objective, quick_start, success_criteria
 - [ ] All referenced files exist
 - [ ] SKILL.md under 500 lines
 - [ ] XML tags properly closed
 
-## Step 9: Create Slash Command
+## Step 9: Create Slash Command (optional)
+
+Stage in project root `commands/` (symlinked to `.claude/commands/`):
 
 ```bash
-cat > ~/.claude/commands/{skill-name}.md << 'EOF'
+cat > commands/{skill-name}.md << 'EOF'
 ---
 description: {Brief description}
 argument-hint: [{argument hint}]
