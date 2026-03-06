@@ -6,13 +6,10 @@ workspace() {
   :
 }
 
-# @cmd Start a new Claude session in an isolated git worktree
-# @alias n
-# @arg name             Worktree name (auto-generated if omitted)
-# @flag -t --tmux       Open in a tmux session
-workspace::new() {
+# @cmd Open or create a worktree session
+# @arg name[`_choice_worktrees`]  Worktree name (auto-generated if omitted)
+workspace::open() {
   echo "name: $argc_name"
-  echo "tmux: $argc_tmux"
 }
 
 # @cmd List all git worktrees
@@ -60,6 +57,10 @@ debug::interface() {
     (eval "$(argc --argc-eval "$script" $cmd --help)") 2>&1
     echo "---"
   done
+}
+
+_in_worktree() {
+  ! test -d .git
 }
 
 _choice_worktrees() {
