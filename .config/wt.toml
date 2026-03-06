@@ -13,5 +13,8 @@ done
 echo "symlinks ok"
 """
 
+# Push to set up remote tracking branch
+setup-tracking = "git push -u origin HEAD"
+
 # Rename tmux window to branch name on switch
 post-switch = "if [ -n \"$TMUX\" ]; then tmux rename-window {{ branch | sanitize }}; fi"
