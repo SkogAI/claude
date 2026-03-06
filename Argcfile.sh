@@ -15,7 +15,7 @@ workspace::open() {
 # @cmd List all git worktrees
 # @alias ls
 workspace::list() {
-  git worktree list
+  _choice_worktrees
 }
 
 # @cmd Remove a worktree by name
