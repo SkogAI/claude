@@ -1,6 +1,6 @@
 ---
 name: skogai-routing
-description: Create routing skills using progressive disclosure. Route agents to knowledge through guided discovery, not information dumps. Use when building skills that show what's needed to find what's needed.
+description: Use when creating or modifying Claude Code skills. Especially when building router patterns, writing workflows for subagents, or using @-references to pass context across agent boundaries.
 ---
 
 <essential_principles>
@@ -61,6 +61,10 @@ Keep markdown formatting within content (bold, lists, code blocks).
 SKILL.md under 500 lines. Split detailed content into reference files. Load only what's needed for the current workflow.
 
 **The power of routing:** 7 quick choices per level = exponential coverage. 7¹ = 7, 7² = 49, 7³ = 343. Massive documentation coverage while using say 500 \* 7 = 3500 tokens to cover a "information space" of hundreds or thousand times the size it would take to manually search - as would be the alternative.
+
+### 6. @-Linking for Subagents
+
+When routing to workflows or dispatching subagents, **@-link every file the subagent needs**. @-linking is both context AND permission — simultaneously passing contents and granting access. No @-link = no access, silently. Treat @-links like function arguments. See [at-linking.md](./references/at-linking.md).
 </essential_principles>
 
 <intake>
@@ -162,6 +166,7 @@ All in `references/`:
 - **Patterns:** [common-patterns.md](./references/common-patterns.md), [workflows-and-validation.md](./references/workflows-and-validation.md)
 - **Assets:** [using-templates.md](./references/using-templates.md), [using-scripts.md](./references/using-scripts.md)
 - **Advanced:** [executable-code.md](./references/executable-code.md), [api-security.md](./references/api-security.md), [iteration-and-testing.md](./references/iteration-and-testing.md)
+- **Context:** [at-linking.md](./references/at-linking.md) — @-references, permissions, subagent context rules
   </reference_index>
 
 <workflows_index>
