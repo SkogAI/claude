@@ -86,6 +86,7 @@ If intent is clear from context, route directly. Otherwise, ask.
 | 2, "audit", "modify", "existing" | Ask: "Path to skill?" | Route to appropriate workflow |
 | 3, "add", "component" | Ask: "Add what? (workflow/reference/template/script)" | workflows/add-{type}.md |
 | 4, "guidance", "help" | General guidance | workflows/get-guidance.md |
+| 5, "use routing", "apply patterns" | Read core routing references | references/recommended-structure.md + references/core-principles.md |
 
 **Progressive disclosure for option 1 (create):**
 
