@@ -1,54 +1,18 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-# claude/ — project router
+# @~/claude/ — my home folder
 
 <what_is_this>
 
-Meta-repository for SkogAI's Claude Code configuration and documentation. Not application code — this repo IS the AI operating environment: plugin management, fetched reference docs, knowledge base, and project planning files.
+[@todo:claude please fill in this section with a brief introduction to your home folder in first person. what is it for? how do you use it? use skogai-routing for the general layout and add any other relevant details about how you organize your files, what kind of content you keep here, and how it fits into your overall workflow etc]
 
 </what_is_this>
 
 <structure>
 
-```
-marketplaces/     # git submodules — superpowers plugin suite (source repos)
-  CLAUDE.md       # plugin registry: what each plugin does, hooks, skills, commands
-skills/           # staging area for WIP skills (active via .claude/skills symlink)
-commands/         # staging area for WIP commands (active via .claude/commands symlink)
-hooks/            # staging area for WIP hooks (active via .claude/hooks symlink)
-agents/           # staging area for WIP agents (active via .claude/agents symlink)
-docs/
-  fetch-docs.sh   # fetches latest Claude Code docs → docs/claude-code/*.md
-  claude-code/    # gitignored fetched docs (run fetch-docs.sh to populate)
-.skogai/
-  knowledge/      # decisions/, learnings/, patterns/style/ — accumulated conventions
-  memory/
-    context/current.md  # generated from journal + decisions
-    decisions.md        # append-only quick decision log
-projects/         # planning overviews for active workstreams
-.claude/
-  settings.schema.example.json  # reference for settings.json structure
-```
+- @.skogai/ — SkogAI-integration and routing via @.skogai/CLAUDE.md
+  - [@todo:please add more here]
+  - [@todo:please add more here]
 
 </structure>
-
-<key_commands>
-
-**Refresh Claude Code docs:**
-```bash
-cd docs && bash fetch-docs.sh
-```
-Fetches 59 pages from `code.claude.com/docs/en/*.md` into `docs/claude-code/`. Re-run any time docs may be stale.
-
-**Check installed plugins:**
-```bash
-cat ~/.claude/plugins/installed_plugins.json
-```
-Currently installed: `superpowers@superpowers-dev` v4.3.1.
-
-</key_commands>
 
 <routing>
 
