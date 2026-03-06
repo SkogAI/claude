@@ -13,22 +13,28 @@ consolidated report at the end.
 
 ## phase 1: ship it
 
-**beads sync:**
+**task sync:**
 
-1. run `br sync --flush-only` to export any dirty issues to JSONL
-2. run `br list -s in_progress` to check for stale in-progress issues —
-   close completed ones with `br close <id>`, update others as needed
+1. run `GPTODO_TASKS_DIR=/home/skogix/claude/.skogai/tasks gptodo fetch --all`
+   to refresh external issue states
+2. run `GPTODO_TASKS_DIR=/home/skogix/claude/.skogai/tasks gptodo list` to
+   check for stale in-progress tasks — update completed ones with
+   `gptodo edit <task> --state done`
 
 **commit:**
 
 3. run `git status` in each repo directory that was touched during the session
-4. if uncommitted changes exist (including .beads/), auto-commit with a
-   descriptive message
+4. if uncommitted changes exist, auto-commit with a descriptive message
 5. push to remote
+
+**worktree cleanup:**
+
+6. run `wt list` to check for worktrees that are done — merge completed ones
+   with `wt merge` and remove with `wt remove`
 
 **file placement check:**
 
-6. if any files were created or saved during this session:
+7. if any files were created or saved during this session:
    - verify they follow the project naming convention
    - auto-fix naming violations (rename the file)
    - could this file be merged into an existing one instead?
@@ -36,11 +42,6 @@ consolidated report at the end.
      `{AGENT,SKOGAI,CLAUDE}.md` file, it should live inside `./docs/`
      unless the user explicitly placed it elsewhere
    - auto-move misplaced files to their correct location
-
-**task cleanup:**
-
-7. check your internal task list (TaskList) for in-progress or stale items
-8. mark completed tasks as done, flag orphaned ones
 
 ## phase 2: remember it
 
@@ -62,10 +63,11 @@ knowledge belongs in the memory hierarchy:
   committed
 - **`@import` references** — when a claude.md would benefit from referencing
   another file rather than duplicating its content
-- **beads issue** (`br q "description"`) — use for "remember to do this in
+- **gptodo task** (`gptodo add "title"`) — use for "remember to do this in
   the future" when the task would extend outside the current context: needs
   extra research, has dependencies, or is more complex than "write this to
-  file". set appropriate priority and type.
+  file". optionally create a GitHub issue first and import with
+  `gptodo import`.
 
 **decision framework:**
 
@@ -75,7 +77,7 @@ knowledge belongs in the memory hierarchy:
 - is it a pattern or insight claude discovered? → auto memory
 - is it personal/ephemeral context? → `claude.local.md`
 - is it duplicating content from another file? → use `@import` instead
-- is it future work that needs research/dependencies/complexity? → beads issue
+- is it future work that needs research/dependencies/complexity? → gptodo task
 
 note anything important in the appropriate location.
 
@@ -105,7 +107,7 @@ was done.
 - **claude.md** — edit the relevant project or global claude.md
 - **rules** — create or update a `.claude/rules/` file
 - **auto memory** — save an insight for future sessions
-- **beads issue** — for skill/hook specs, complex improvements, or anything
+- **gptodo task** — for skill/hook specs, complex improvements, or anything
   needing a dedicated session to implement properly. prefer this over
   inline implementation when the fix would need research, testing, or
   multi-file changes beyond the current session's scope.
@@ -123,7 +125,7 @@ findings (applied):
    → [rules] added error-handling rules for worker
 
 3. automation: checking service health after deploy is manual
-   → [beads] br-xyz: create post-deploy health check skill
+   → [gptodo] create post-deploy health check skill
 
 ---
 
