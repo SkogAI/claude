@@ -7,27 +7,27 @@ workspace() {
 }
 
 # @cmd Open or create a worktree session
-# @arg name[`_choice_worktrees`]  Worktree name (auto-generated if omitted)
+# @option -n --name[?`_choice_worktrees`]  Worktree name (auto-generated if omitted)
 workspace::open() {
-  echo "name: $argc_name"
+  claude --worktree "$argc_name" --tmux=classic
 }
 
 # @cmd List all git worktrees
 # @alias ls
 workspace::list() {
-  _choice_worktrees
+  git worktree list
 }
 
 # @cmd Remove a worktree by name
 # @alias rm
 # @arg name![`_choice_worktrees`] Worktree name
 workspace::remove() {
-  echo "name: $argc_name"
+  git worktree remove "$(_worktree_path "$argc_name")"
 }
 
 # @cmd Prune stale worktree references
 workspace::prune() {
-  echo "prune"
+  git worktree prune
 }
 
 # @cmd Show interface for all commands
@@ -59,13 +59,17 @@ debug::interface() {
   done
 }
 
+_worktree_path() {
+  git worktree list --porcelain | awk -v name="$1" '/^worktree/ && $2 ~ name"$" {print $2}'
+}
+
 _in_worktree() {
   ! test -d .git
 }
 
 _choice_worktrees() {
-  git worktree list 2>/dev/null |
-    awk 'NR>1 {print $1}' |
+  git worktree list --porcelain 2>/dev/null |
+    awk 'NR>1 && /^worktree/ {print $2}' |
     xargs -I{} basename {}
 }
 
