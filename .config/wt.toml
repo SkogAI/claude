@@ -14,4 +14,4 @@ echo "symlinks ok"
 """
 
 # Rename tmux window to branch name on switch
-post-switch = "[ -n \"$TMUX\" ] && tmux rename-window {{ branch | sanitize }}"
+post-switch = "if [ -n \"$TMUX\" ]; then tmux rename-window {{ branch | sanitize }}; fi"
