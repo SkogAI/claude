@@ -7,22 +7,16 @@ persistent knowledge that accumulates over time.
 
 </what_is_this>
 
-<structure>
+<routing>
 
-@decisions/ # architectural decision records (adrs)
-@learnings/ # lessons learned from work
-@patterns/ # reusable patterns and approaches
-@patterns/style/ # skogai style conventions (routed references)
+| intent | go to |
+|--------|-------|
+| style, naming, XML, commits | @patterns/style/CLAUDE.md |
+| architectural decision (full) | @decisions/ |
+| insight, learning, gotcha | @learnings/ |
+| reusable pattern | @patterns/ |
 
-</structure>
-
-<when_to_use>
-
-- new insight worth preserving -> learnings/
-- significant architectural decision made -> decisions/
-- pattern identified for reuse -> patterns/
-
-</when_to_use>
+</routing>
 
 <frontmatter>
 
@@ -39,16 +33,16 @@ status: active
 ---
 ```
 
-fields are mandatory. use @templates/knowledge-entry.md as starting point.
+use @../templates/knowledge-entry.md as starting point.
 
 </frontmatter>
 
 <file_naming>
 
-use date prefix for chronological sorting:
+date prefix for chronological sorting:
 
-- decisions/2026-01-19-hq-location.md
-- learnings/2026-01-19-claude-routing.md
-- patterns/yaml-frontmatter.md (no date - patterns are timeless)
+- decisions/YYYY-MM-DD-slug.md
+- learnings/YYYY-MM-DD-slug.md
+- patterns/slug.md (no date — patterns are timeless)
 
 </file_naming>

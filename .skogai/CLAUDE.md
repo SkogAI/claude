@@ -1,33 +1,33 @@
-# @memory/ - memory system
+# .skogai/ — project intelligence router
 
 <what_is_this>
 
-session state and persistent context. what i'm working on, what decisions have been made.
-short-term and medium-term memory for continuity across sessions.
+tool-agnostic AI integration layer. not application code.
+knowledge base, memory, templates, and session notes for AI-augmented development.
 
 </what_is_this>
 
-<structure>
+<essential_principles>
 
-@context/ # persistent context files
-@context/current.md # what i'm actively working on
-@decisions.md # append-only quick decision log
+1. **routing over dumping** — load the right thing at the right time
+2. **@-references are lazy loading** — signal what to read, don't pre-load everything
+3. **generated artifacts are not source of truth** — edit sources, not outputs
+4. **tool-agnostic first** — claude code is a consumer, not the owner
 
-</structure>
+</essential_principles>
 
-<when_to_use>
+<routing>
 
-- update what you're working on -> context/current.md
-- quick decision record -> decisions.md (append)
-- detailed decision -> knowledge/decisions/ (full adr)
+| intent | go to |
+|--------|-------|
+| what am i working on? | @memory/context/current.md |
+| record a quick decision | @memory/decisions.md (append) |
+| full ADR / detailed decision | @knowledge/decisions/ + @templates/decision-record.md |
+| record a learning / insight | @knowledge/learnings/ + @templates/knowledge-entry.md |
+| style, naming, commit format | @knowledge/patterns/style/CLAUDE.md |
+| session notes | @journal/YYYY-MM-DD/<topic>.md |
+| start from a template | @templates/CLAUDE.md |
+| how does memory work? | @memory/CLAUDE.md |
+| how does knowledge work? | @knowledge/CLAUDE.md |
 
-</when_to_use>
-
-<workflow>
-
-1. start session: read context/current.md (generated — do not edit manually)
-2. during work: append to decisions.md for quick notes
-3. end session: add journal entry; current.md regenerates from journal + decisions
-4. significant decisions: promote to knowledge/decisions/
-
-</workflow>
+</routing>
