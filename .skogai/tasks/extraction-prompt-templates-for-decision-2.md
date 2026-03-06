@@ -1,6 +1,6 @@
 ---
 state: new
-created: 2026-03-06
+created: "2026-03-06"
 tracking: ["https://github.com/SkogAI/claude-memory/issues/2"]
 tags: ["enhancement", "pipeline", "github"]
 ---
