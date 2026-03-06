@@ -1,3 +1,12 @@
+---
+title: "@ File Reference - Claude Code's Context Expansion"
+date: 2026-01-20
+project: SkogAI
+tags: [at-references, context, claude-code, file-expansion]
+source: Session building .skogai framework
+status: active
+---
+
 # @ File Reference - Claude Code's Context Expansion
 
 ## What It Is
@@ -19,8 +28,7 @@ The `@` prefix in Claude Code expands file contents directly into the prompt at 
 
 ## Where It Works
 
-1. **SKOGAI.md
- files** (auto-loaded)
+1. **SKOGAI.md files** (auto-loaded)
    ```markdown
    <always_load>
    - @memory/context/current.md
@@ -38,8 +46,7 @@ The `@` prefix in Claude Code expands file contents directly into the prompt at 
 ## Context Chain
 
 ```
-SKOGAI.md
- (auto-loaded)
+SKOGAI.md (auto-loaded)
     └── @memory/context/current.md (expanded)
             └── any @references in that file (expanded)
                     └── ...recursive expansion
@@ -60,8 +67,7 @@ Claude Code's `@` and SkogAI's `@` operator share semantics:
 
 ## Implications
 
-1. **Always use `@` in SKOGAI.md
-** for files that must be current
+1. **Always use `@` in SKOGAI.md** for files that must be current
 2. **Don't trust Read tool for critical context** - may be cached
 3. **`@` references are deterministic** - we know exactly what context expands
 4. **Subagents get `@` expansion** - they see real files, not cache
