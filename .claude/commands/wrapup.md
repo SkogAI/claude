@@ -7,32 +7,50 @@ description: use when user says "wrap up", "close session", "end session",
 
 # session wrap-up
 
+## current state
+
+git status:
+!`git status --short 2>/dev/null || echo "(not a git repo)"`
+
+git branch:
+!`git branch --show-current 2>/dev/null || echo "(detached or not a repo)"`
+
+worktrees:
+!`wt list 2>/dev/null || echo "(wt not available)"`
+
+gptodo tasks:
+!`gptodo list 2>/dev/null || echo "(gptodo not available)"`
+
+---
+
 run four phases in order. each phase is conversational and inline — no
-separate documents. all phases auto-apply without asking; present a
-consolidated report at the end.
+separate documents. present a consolidated report at the end.
 
 ## phase 1: ship it
 
-**task sync:**
+### task sync
 
-1. run !`gptodo fetch --all`
-   to refresh external issue states
-2. run !`gptodo list` to
-   check for stale in-progress tasks — update completed ones with
-   `gptodo edit <task> --state done`
+1. if gptodo is available (check the injected state above):
+   - run `gptodo fetch --all` to refresh external issue states
+   - check for stale in-progress tasks — update completed ones with
+     `gptodo edit <task> --state done`
+2. if gptodo is not available, skip this step
 
-**commit:**
+### commit
 
-1. run !`git status` in each repo directory that was touched during the session
+1. check the injected git status above
 2. if uncommitted changes exist, auto-commit with a descriptive message
-3. push to remote
+3. **ask the user before pushing** — do not auto-push
 
-**worktree cleanup:**
+### worktree cleanup
 
-1. run !`wt list` to check for worktrees that are done — merge completed ones
-   with `wt merge` and remove with `wt remove`
+1. if wt is available (check the injected state above):
+   - check for worktrees that are done — suggest merging completed ones
+     with `wt merge` and removing with `wt remove`
+   - **ask the user before merging or removing**
+2. if wt is not available, skip this step
 
-**file placement check:**
+### file placement check
 
 1. if any files were created or saved during this session:
    - verify they follow the project naming convention
@@ -48,7 +66,7 @@ consolidated report at the end.
 review what was learned during the session. decide where each piece of
 knowledge belongs in the memory hierarchy:
 
-**memory placement guide:**
+### memory placement guide
 
 - **auto memory** (claude writes for itself) — debugging insights, patterns
   discovered during the session, project quirks
@@ -69,7 +87,7 @@ knowledge belongs in the memory hierarchy:
   file". optionally create a GitHub issue first and import with
   `gptodo import`.
 
-**decision framework:**
+### decision framework
 
 - is it a permanent project convention? → claude.md or `.claude/rules/`
 - is it scoped to specific file types? → `.claude/rules/` with `paths:`
@@ -91,7 +109,7 @@ to phase 4.
 on each one. apply the changes, commit them, then present a summary of what
 was done.
 
-**finding categories:**
+### finding categories
 
 - **skill gap** — things claude struggled with, got wrong, or needed multiple
   attempts
@@ -102,7 +120,7 @@ was done.
 - **automation** — repetitive patterns that could become skills, hooks, or
   scripts
 
-**action types:**
+### action types
 
 - **claude.md** — edit the relevant project or global claude.md
 - **rules** — create or update a `.claude/rules/` file
@@ -116,6 +134,7 @@ was done.
 present a summary after applying, in two sections — applied items first,
 then no-action items:
 
+```
 findings (applied):
 
 1. skill gap: cost estimates were wrong multiple times
@@ -133,6 +152,7 @@ no action needed:
 
 1. knowledge: discovered x works this way
    already documented in claude.md
+```
 
 ## phase 4: journal it
 
@@ -146,14 +166,17 @@ worth preserving. look for:
 
 **if journal-worthy material exists:**
 
-draft the entry and save to `!`echo $SKOGAI_CLAUDE_HOME`/.skogai/journal/yyyy-mm-dd/<description>.md`
+draft the entry and save to `$SKOGAI/.skogai/journal/YYYY-MM-DD/<description>.md`
+(use the actual current date).
 
 present the draft location in the report:
 
+```
 all wrap-up steps complete. journal entry saved:
 
 1. "title" — 1-2 sentence description.
-   saved to: .skogai/journal/2026-02-20/sniffing-claudes-context-window.md
+   saved to: $SKOGAI/.skogai/journal/2026-03-13/some-description.md
+```
 
 **if nothing journal-worthy:**
 
