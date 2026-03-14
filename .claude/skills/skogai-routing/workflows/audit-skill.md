@@ -49,8 +49,8 @@ Evaluate against each criterion:
 - [ ] Has `name:` field (lowercase-with-hyphens)
 - [ ] Name matches directory name
 - [ ] Has `description:` field
-- [ ] Description is trigger-focused ("Use when...") — NOT a summary of what the skill does
-- [ ] Description is third person, no workflow summary (CSO principle: summary → Claude skips the skill body)
+- [ ] Description says what it does AND when to use it
+- [ ] Description is third person ("Use when...")
 
 ### Structure
 - [ ] SKILL.md under 500 lines
