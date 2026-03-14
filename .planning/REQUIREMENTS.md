@@ -62,25 +62,25 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | TBD | Pending |
-| FOUND-02 | TBD | Pending |
-| FOUND-03 | TBD | Pending |
-| UNDR-01 | TBD | Pending |
-| UNDR-02 | TBD | Pending |
-| UNDR-03 | TBD | Pending |
-| WMEM-01 | TBD | Pending |
-| WMEM-02 | TBD | Pending |
-| WMEM-03 | TBD | Pending |
-| CHAP-01 | TBD | Pending |
-| CHAP-02 | TBD | Pending |
-| CHAP-03 | TBD | Pending |
-| CHAP-04 | TBD | Pending |
+| FOUND-01 | Phase 1 | Pending |
+| FOUND-02 | Phase 1 | Pending |
+| FOUND-03 | Phase 1 | Pending |
+| UNDR-01 | Phase 2 | Pending |
+| UNDR-02 | Phase 2 | Pending |
+| UNDR-03 | Phase 2 | Pending |
+| WMEM-01 | Phase 2 | Pending |
+| WMEM-02 | Phase 2 | Pending |
+| WMEM-03 | Phase 2 | Pending |
+| CHAP-01 | Phase 3 | Pending |
+| CHAP-02 | Phase 3 | Pending |
+| CHAP-03 | Phase 3 | Pending |
+| CHAP-04 | Phase 3 | Pending |
 
 **Coverage:**
 - v1 requirements: 13 total
-- Mapped to phases: 0
-- Unmapped: 13
+- Mapped to phases: 13
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 after initial definition*
+*Last updated: 2026-03-14 after roadmap creation*
