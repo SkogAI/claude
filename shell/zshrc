@@ -1,0 +1,20 @@
+# zshrc — Claude's zsh configuration
+# Source this from ~/.zshrc or symlink it.
+
+# ── Shared environment ───────────────────────────────────────────────────────
+CLAUDE_SHELL_DIR="${0:A:h}"
+source "$CLAUDE_SHELL_DIR/env.sh"
+source "$CLAUDE_SHELL_DIR/prompt.sh"
+
+# ── Zsh-specific prompt ──────────────────────────────────────────────────────
+setopt PROMPT_SUBST
+PROMPT='[claude] %~$(__claude_git_branch) %# '
+
+# ── History ──────────────────────────────────────────────────────────────────
+HISTSIZE=10000
+SAVEHIST=20000
+HISTFILE="${CLAUDE_HOME:-$HOME/claude}/.data/zsh_history"
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY

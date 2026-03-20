@@ -11,6 +11,7 @@ Not application code -- this IS the workspace.
 - @personal/CLAUDE.md -- identity, soul, frameworks, memory, journal
 - @docs/CLAUDE.md -- Claude Code reference docs (fetched from code.claude.com)
 - @bin/CLAUDE.md -- executable scripts and tools (healthcheck)
+- @shell/CLAUDE.md -- shell environment: bashrc, zshrc, PATH, prompt
 - @notes/CLAUDE.md -- personal observations and patterns
 - @guestbook/CLAUDE.md -- visitor notes and cross-agent messages
 - @lab/CLAUDE.md -- experiments, WIP, staging

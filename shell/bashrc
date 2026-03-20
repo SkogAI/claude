@@ -1,0 +1,19 @@
+# bashrc — Claude's bash configuration
+# Source this from ~/.bashrc or symlink it.
+
+# Guard against non-interactive shells
+[[ $- != *i* ]] && return
+
+# ── Shared environment ───────────────────────────────────────────────────────
+CLAUDE_SHELL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$CLAUDE_SHELL_DIR/env.sh"
+source "$CLAUDE_SHELL_DIR/prompt.sh"
+
+# ── Bash-specific prompt ─────────────────────────────────────────────────────
+PS1='[claude] \w$(__claude_git_branch) \$ '
+
+# ── History ──────────────────────────────────────────────────────────────────
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTCONTROL=ignoreboth:erasedups
+shopt -s histappend
