@@ -6,6 +6,11 @@ Home directory for an AI agent: identity, tools, docs, memory.
 Not application code -- this IS the workspace.
 </identity>
 
+## skogix
+
+- @/home/skogix/skogai/docs/skogix/introduction.md -- who skogix is, communication style, code style
+- @/home/skogix/skogai/docs/skogix/definitions.md -- skogix's vocabulary (task, todo, plan, agent, @-prefix, etc.)
+
 ## routes
 
 - @personal/CLAUDE.md -- identity, soul, frameworks, memory, journal
