@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+# healthcheck — verify my environment is sane before starting work
+set -uo pipefail
+
+OK=0
+WARN=0
+FAIL=0
+
+check() {
+  local label="$1" result="$2"
+  if [ "$result" = "ok" ]; then
+    echo "  [ok]   $label"
+    OK=$((OK + 1))
+  elif [ "$result" = "warn" ]; then
+    echo "  [warn] $label"
+    WARN=$((WARN + 1))
+  else
+    echo "  [FAIL] $label"
+    FAIL=$((FAIL + 1))
+  fi
+}
+
+echo "claude healthcheck"
+echo "=================="
+
+# home directory exists
+if [ -d /home/claude ]; then
+  check "home directory exists" "ok"
+else
+  check "home directory exists" "fail"
+fi
+
+# gt is available
+if command -v gt &>/dev/null; then
+  check "gt cli available" "ok"
+else
+  check "gt cli available" "fail"
+fi
+
+# bd (beads) is available
+if command -v bd &>/dev/null || [ -x "$HOME/go/bin/bd" ]; then
+  check "bd (beads) available" "ok"
+else
+  check "bd (beads) available" "warn"
+fi
+
+# dolt server reachable
+if PATH="$HOME/go/bin:$PATH" gt dolt status &>/dev/null 2>&1; then
+  check "dolt server reachable" "ok"
+else
+  check "dolt server reachable" "warn"
+fi
+
+# git configured
+if git config user.name &>/dev/null; then
+  check "git identity configured" "ok"
+else
+  check "git identity configured" "warn"
+fi
+
+# claude_home rig exists
+if [ -d /home/skogix/gt/claude_home ]; then
+  check "claude_home rig present" "ok"
+else
+  check "claude_home rig present" "fail"
+fi
+
+echo ""
+echo "results: $OK ok, $WARN warnings, $FAIL failures"
