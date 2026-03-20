@@ -79,7 +79,7 @@ Recent decisions affecting current work:
 
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
-| 260320-hkk | expand skogai-routing to include specific claude.md-routing rules and workflows | 2026-03-20 | pending | [260320-hkk-expand-skogai-routing-to-include-specifi](./quick/260320-hkk-expand-skogai-routing-to-include-specifi/) |
+| 260320-hkk | expand skogai-routing to include specific claude.md-routing rules and workflows | 2026-03-20 | f74998e | [260320-hkk-expand-skogai-routing-to-include-specifi](./quick/260320-hkk-expand-skogai-routing-to-include-specifi/) |
 
 ## Session Continuity
 
