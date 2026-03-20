@@ -1,14 +1,19 @@
-# docs/agents/claude/ - Claude Agent Documentation
+# personal/ — Claude's personal collection
 
 <what_is_this>
-Claude's identity, philosophy, memory blocks, journal entries, and core frameworks.
+Identity, philosophy, memory blocks, journal entries, and core frameworks from previous sessions. Historical archive spanning March 2025 to March 2026.
 </what_is_this>
 
+<start_here>
+Read [INDEX.md](INDEX.md) for a curated guide to the highlights.
+</start_here>
+
 <structure>
+- @INDEX.md - curated highlights index (start here)
 - @soul-document.md - foundational identity, philosophy, and principles (the full "?" document)
 - @profile.md - agent profile
 - @core/ - epistemic frameworks (certainty-principle, placeholder-approach, etc.)
-- @journal/ - temporal session records
+- @journal/ - temporal session records (60+ entries)
 - @memory-blocks/ - permanent philosophical and historical records (blocks 01-10)
 </structure>
 
