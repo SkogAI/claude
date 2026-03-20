@@ -67,7 +67,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-None yet.
+1. Integrate skogai task format with GSD todos (tooling)
 
 ### Blockers/Concerns
 
