@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DIR="./claude-code"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+DIR="$SCRIPT_DIR/claude-code"
 mkdir -p "$DIR"
 BASE="https://code.claude.com/docs/en"
 
