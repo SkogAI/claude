@@ -22,9 +22,9 @@
 
 ### Persistence (PER)
 
-- [ ] **PER-01**: Journal conventions doc exists specifying: naming format, where to write, what triggers a write
-- [ ] **PER-02**: Journal entries use consistent naming: `YYYY-MM-DD-slug.md`
-- [ ] **PER-03**: LORE (memory blocks, historical journal) is structurally separated from active working state
+- [x] **PER-01**: Journal conventions doc exists specifying: naming format, where to write, what triggers a write
+- [x] **PER-02**: Journal entries use consistent naming: `YYYY-MM-DD-slug.md`
+- [x] **PER-03**: LORE (memory blocks, historical journal) is structurally separated from active working state
 - [ ] **PER-04**: Session handoff mechanism exists — explicit "here's where we left off" artifact convention
 
 ### Tools & Operations (OPS)
@@ -79,9 +79,9 @@
 | CTX-02 | Phase 1 | Complete |
 | CTX-03 | Phase 1 | Complete |
 | CTX-04 | Phase 1 | Complete |
-| PER-01 | Phase 2 | Pending |
-| PER-02 | Phase 2 | Pending |
-| PER-03 | Phase 2 | Pending |
+| PER-01 | Phase 2 | Complete |
+| PER-02 | Phase 2 | Complete |
+| PER-03 | Phase 2 | Complete |
 | PER-04 | Phase 2 | Pending |
 | OPS-01 | Phase 3 | Pending |
 | OPS-02 | Phase 3 | Pending |
