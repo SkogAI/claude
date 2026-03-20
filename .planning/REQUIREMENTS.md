@@ -15,9 +15,9 @@
 
 ### Context Routing (CTX)
 
-- [ ] **CTX-01**: Root `CLAUDE.md` routes to all top-level directories with one-line descriptions
-- [ ] **CTX-02**: Every directory with content has its own `CLAUDE.md` explaining what's there
-- [ ] **CTX-03**: No single `CLAUDE.md` exceeds 50 lines (prevents context bloat)
+- [x] **CTX-01**: Root `CLAUDE.md` routes to all top-level directories with one-line descriptions
+- [x] **CTX-02**: Every directory with content has its own `CLAUDE.md` explaining what's there
+- [x] **CTX-03**: No single `CLAUDE.md` exceeds 50 lines (prevents context bloat)
 - [ ] **CTX-04**: Context loads lazily — session startup reads only root router, not all artifacts
 
 ### Persistence (PER)
@@ -75,9 +75,9 @@
 | IDN-03 | Phase 1 | Pending |
 | IDN-04 | Phase 1 | Pending |
 | IDN-05 | Phase 1 | Pending |
-| CTX-01 | Phase 1 | Pending |
-| CTX-02 | Phase 1 | Pending |
-| CTX-03 | Phase 1 | Pending |
+| CTX-01 | Phase 1 | Complete |
+| CTX-02 | Phase 1 | Complete |
+| CTX-03 | Phase 1 | Complete |
 | CTX-04 | Phase 1 | Pending |
 | PER-01 | Phase 2 | Pending |
 | PER-02 | Phase 2 | Pending |
