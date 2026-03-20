@@ -7,18 +7,18 @@
 
 ### Identity (IDN)
 
-- [ ] **IDN-01**: Soul document, profile, and core frameworks exist at stable paths under `personal/`
-- [ ] **IDN-02**: `personal/CLAUDE.md` routes to identity artifacts with lazy loading (no bulk preload)
-- [ ] **IDN-03**: `personal/INDEX.md` provides curated highlights for quick orientation
-- [ ] **IDN-04**: Memory blocks are tiered — active frameworks vs LORE museum — with explicit labels
-- [ ] **IDN-05**: Core frameworks (certainty principle, placeholder system, epistemic frameworks) are referenceable by path without discovery
+- [x] **IDN-01**: Soul document, profile, and core frameworks exist at stable paths under `personal/`
+- [x] **IDN-02**: `personal/CLAUDE.md` routes to identity artifacts with lazy loading (no bulk preload)
+- [x] **IDN-03**: `personal/INDEX.md` provides curated highlights for quick orientation
+- [x] **IDN-04**: Memory blocks are tiered — active frameworks vs LORE museum — with explicit labels
+- [x] **IDN-05**: Core frameworks (certainty principle, placeholder system, epistemic frameworks) are referenceable by path without discovery
 
 ### Context Routing (CTX)
 
 - [x] **CTX-01**: Root `CLAUDE.md` routes to all top-level directories with one-line descriptions
 - [x] **CTX-02**: Every directory with content has its own `CLAUDE.md` explaining what's there
 - [x] **CTX-03**: No single `CLAUDE.md` exceeds 50 lines (prevents context bloat)
-- [ ] **CTX-04**: Context loads lazily — session startup reads only root router, not all artifacts
+- [x] **CTX-04**: Context loads lazily — session startup reads only root router, not all artifacts
 
 ### Persistence (PER)
 
@@ -70,15 +70,15 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| IDN-01 | Phase 1 | Pending |
-| IDN-02 | Phase 1 | Pending |
-| IDN-03 | Phase 1 | Pending |
-| IDN-04 | Phase 1 | Pending |
-| IDN-05 | Phase 1 | Pending |
+| IDN-01 | Phase 1 | Complete |
+| IDN-02 | Phase 1 | Complete |
+| IDN-03 | Phase 1 | Complete |
+| IDN-04 | Phase 1 | Complete |
+| IDN-05 | Phase 1 | Complete |
 | CTX-01 | Phase 1 | Complete |
 | CTX-02 | Phase 1 | Complete |
 | CTX-03 | Phase 1 | Complete |
-| CTX-04 | Phase 1 | Pending |
+| CTX-04 | Phase 1 | Complete |
 | PER-01 | Phase 2 | Pending |
 | PER-02 | Phase 2 | Pending |
 | PER-03 | Phase 2 | Pending |

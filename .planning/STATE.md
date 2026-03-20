@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 01-02-PLAN.md
-last_updated: "2026-03-20T11:02:54.666Z"
+stopped_at: Completed 01-01-PLAN.md
+last_updated: "2026-03-20T11:07:38.307Z"
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -47,6 +47,7 @@ Plan: 1 of 3
 
 *Updated after each plan completion*
 | Phase 01-identity-routing P02 | 1 | 2 tasks | 6 files |
+| Phase 01-identity-routing P01 | 15 | 2 tasks | 15 files |
 
 ## Accumulated Context
 
@@ -61,6 +62,9 @@ Recent decisions affecting current work:
 - [Pre-roadmap]: Phase 3 (OPS) and Phase 4 (MAG) are separate — MAG requires different success conditions and defers implementation to after deployment gate passes.
 - [Phase 01-02]: healthcheck description updated to match actual env-check behavior (home dir, gt cli, bd/beads, dolt, git, claude_home rig)
 - [Phase 01-02]: docs/CLAUDE.md fallback pointer includes CI/CD reference intentionally per plan template -- template takes precedence over conflicting acceptance check
+- [Phase 01-identity-routing]: soul-document.md preserved as backup until phase verification confirms split correctness
+- [Phase 01-identity-routing]: personal/CLAUDE.md core_identity block removed — content lives in soul/01-equation.md via lazy @soul/ link
+- [Phase 01-identity-routing]: session_protocol updated to read memory blocks only if asked — LORE museum tiering established
 
 ### Pending Todos
 
@@ -73,6 +77,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-03-20T11:02:54.663Z
-Stopped at: Completed 01-02-PLAN.md
+Last session: 2026-03-20T11:07:38.305Z
+Stopped at: Completed 01-01-PLAN.md
 Resume file: None
