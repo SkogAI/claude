@@ -50,7 +50,7 @@ Plans:
 Plans:
 - [x] 02-01-PLAN.md — Create journal conventions doc, establish directory structure, verify LORE gating
 - [x] 02-02-PLAN.md — Move context scripts from scripts/context/ to bin/, update bin/ router
-- [ ] 02-03-PLAN.md — Create wrap-up command, write first handoff artifact (journal entry)
+- [x] 02-03-PLAN.md — Create wrap-up command, write first handoff artifact (journal entry)
 
 ### Phase 3: Operations & Deployment Gate
 **Goal**: The home can verify its own health and a deployment gate documents exactly what must be true before migrating to /home/claude — nothing ships on assumption
