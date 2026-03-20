@@ -11,3 +11,4 @@ everything routes through CLAUDE.md files. each directory has one that explains 
 ## directories
 
 - [docs/](docs/CLAUDE.md) — Claude Code reference docs (fetched from code.claude.com). Categorized index with daily-driver docs marked. Refresh with `docs/fetch-docs.sh`.
+- [personal/](personal/CLAUDE.md) — identity, journal, frameworks, and memory blocks from previous sessions. See [personal/INDEX.md](personal/INDEX.md) for curated highlights.
