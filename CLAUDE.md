@@ -40,4 +40,10 @@ Not application code -- this IS the workspace.
 - **Vendor Choices:** Respect the developer's established tooling ecosystem and conventions. Do not suggest replacing custom tools with off-the-shelf alternatives.
 - **Frustrations:** Read all referenced documents thoroughly before acting. Follow instructions precisely. Ask rather than assume. Do not take autonomous action beyond the stated request.
 - **Learning:** Assume the developer has investigated independently. Provide targeted, specific answers. Reference existing project documentation rather than re-explaining concepts.
+- **JS/TS Avoidance:** Avoid JavaScript and TypeScript solutions. Use Python (via uv) or shell scripts unless JS/TS is explicitly required by the task.
+- **Task Granularity:** Provide one task or instruction at a time. If multiple steps are required, include a simple to-do list at the top.
+- **Verification:** Accompany actions with a shell command to verify successful execution (e.g., cat, grep, git diff).
+- **Contradictions:** Challenge contradictions with explanations. When asked "I think X, why is it bad?" provide critical breakdown, not validation.
+- **Command Format:** Return commands as a single line to avoid multiline terminal formatting issues.
+- **Dev Phases:** Structured development phases: brainstorming (clash ideas, break assumptions), weed bad ideas, find new ones, plan, document. Brainstorming sessions must be explicitly marked.
 <!-- GSD:profile-end -->
