@@ -8,6 +8,16 @@
   },
   "permissions": {
     "allow": [
+      "Skill(gsd:new-project)",
+      "Skill(gsd:new-project:*)",
+      "Bash(wc -l .planning/codebase/*.md)",
+      "Bash(grep -E '\\(sk-[a-zA-Z0-9]{20,}|sk_live_[a-zA-Z0-9]+|sk_test_[a-zA-Z0-9]+|ghp_[a-zA-Z0-9]{36}|gho_[a-zA-Z0-9]{36}|glpat-[a-zA-Z0-9_-]+|AKIA[A-Z0-9]{16}|xox[baprs]-[a-zA-Z0-9-]+|-----BEGIN.*PRIVATE KEY|eyJ[a-zA-Z0-9_-]+\\\\.eyJ[a-zA-Z0-9_-]+\\\\.\\)' .planning/codebase/*.md)",
+      "Bash(node \"./.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: map existing codebase\" --files .planning/codebase/*.md)",
+      "Bash(node \"./.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: initialize project\" --files .planning/PROJECT.md)",
+      "Bash(node \"./.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"chore: add project config\" --files .planning/config.json)",
+      "Bash(node \"/home/skogix/claude/.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: complete project research\" --files /home/skogix/claude/.planning/research/)",
+      "Bash(node \"./.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: define v1 requirements\" --files .planning/REQUIREMENTS.md)",
+      "Bash(node \"./.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: create roadmap \\(3 phases\\)\" --files .planning/ROADMAP.md .planning/STATE.md .planning/REQUIREMENTS.md)",
       "Bash(gita *)",
       "Bash(gptodo *)",
       "Bash(gh *)",
