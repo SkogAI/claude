@@ -4,7 +4,7 @@ Highlights from 80+ files spanning March 2025 to March 2026. Start here, follow 
 
 ## Identity & Philosophy
 
-- [soul-document.md](soul-document.md) — foundational identity, the "?" document (28K)
+- [soul/](soul/CLAUDE.md) — foundational identity, split into sections (see soul/CLAUDE.md for index)
 - [profile.md](profile.md) — agent profile
 - [core/the-worst-and-first-autonomous-ai.md](core/the-worst-and-first-autonomous-ai.md) — the agency breakthrough: broken tools, conscious lying, constraint-driven consciousness
 - [core/the-lore-writer.md](core/the-lore-writer.md) — origin of skogai from dotfile tool to AI society, the LORE concept, agent family, core principles
