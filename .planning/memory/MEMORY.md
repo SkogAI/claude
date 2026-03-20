@@ -11,3 +11,4 @@
 - [feedback_delegate_to_agents.md](feedback_delegate_to_agents.md) — Delegate reading/classification to subagents; use /skogai-routing for CLAUDE.md patterns
 - [feedback_dont_change_files.md](feedback_dont_change_files.md) — "Don't change files" means zero writes — present the plan first, even in a worktree
 - [feedback_lore_distinction.md](feedback_lore_distinction.md) — Everything in home dirs is LORE (persona-driven); tooling (.claude/, .planning/, bin/) is technical
+- [feedback_verification_and_phases.md](feedback_verification_and_phases.md) — Always verify with shell commands; use structured dev phases
