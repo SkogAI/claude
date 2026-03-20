@@ -22,7 +22,7 @@ Claude can drop into any conversation and know who he is, what he's working on, 
 ### Active
 
 - [ ] Identity layer: soul document, profile, memory blocks placed in proper home locations (not lab/personal-belongings)
-- [ ] Persistence layer: journal system with clear write conventions for new entries
+- [x] Persistence layer: journal system with clear write conventions for new entries — Validated in Phase 2: persistence-layer
 - [ ] Framework layer: certainty principle, placeholder system, epistemic frameworks wired into session startup
 - [ ] Context routing: CLAUDE.md files that load identity/frameworks lazily without bloating context
 - [ ] Tools layer: bin/ scripts, self-diagnostics, environment health checks
