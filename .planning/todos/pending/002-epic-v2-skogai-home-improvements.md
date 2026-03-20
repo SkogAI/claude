@@ -1,7 +1,13 @@
 ---
-date: "2026-03-20 15:30"
-promoted: true
+title: "Epic: Claude's Home v2.0 — SkogAI Integration & Home Improvements"
+status: pending
+priority: P2
+source: "promoted from /gsd:note"
+created: 2026-03-20
+theme: general
 ---
+
+## Goal
 
 Epic: "Claude's Home v2.0 — SkogAI Integration & Home Improvements"
 
@@ -26,3 +32,13 @@ Context from prior conversation: Claude explored the SkogAI ecosystem (332 repos
 8. SKOGAI ECOSYSTEM EXPLORATION — understand the 332 repos, Gas Town infrastructure, how Claude fits as a first-class citizen in the multi-agent family. Discovery/research phase.
 
 Key insight from conversation: Dot (gptme agent) built manually what Claude gets natively (skills, hooks, subagents, memory). The interesting question is what Claude DOESN'T get for free. V2.0 should answer that.
+
+## Context
+
+Promoted from quick note captured on 2026-03-20 15:30.
+
+## Acceptance Criteria
+
+- [ ] v2.0 milestone created via /gsd:new-milestone after v1.0 completes
+- [ ] All 8 proposals evaluated and converted to phases in the v2.0 roadmap
+- [ ] SkogAI ecosystem exploration completed — 332 repos catalogued by relevance to Claude's home
