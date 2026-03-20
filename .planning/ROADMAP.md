@@ -45,11 +45,11 @@ Plans:
   2. All journal entries in personal/journal/ follow the YYYY-MM-DD/<description>.md date-folder convention (verifiable with ls)
   3. Reaching memory blocks from a fresh session requires an explicit navigation step — the default routing path does not auto-load LORE
   4. A session handoff convention exists: there is a known artifact format for "here is what to load next session," and at least one handoff artifact has been written using it
-**Plans:** 1/3 plans executed
+**Plans:** 2/3 plans executed
 
 Plans:
 - [x] 02-01-PLAN.md — Create journal conventions doc, establish directory structure, verify LORE gating
-- [ ] 02-02-PLAN.md — Move context scripts from scripts/context/ to bin/, update bin/ router
+- [x] 02-02-PLAN.md — Move context scripts from scripts/context/ to bin/, update bin/ router
 - [ ] 02-03-PLAN.md — Create wrap-up command, write first handoff artifact (journal entry)
 
 ### Phase 3: Operations & Deployment Gate
@@ -81,7 +81,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Identity & Routing | 2/3 | In Progress|  |
-| 2. Persistence Layer | 1/3 | In Progress|  |
+| 2. Persistence Layer | 2/3 | In Progress|  |
 | 3. Operations & Deployment Gate | 0/TBD | Not started | - |
 | 4. Multi-Agent Readiness | 0/TBD | Not started | - |
 

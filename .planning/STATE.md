@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-03-20T16:40:56.734Z"
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-03-20T16:42:32.330Z"
 last_activity: 2026-03-20
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 6
-  completed_plans: 4
+  completed_plans: 5
 ---
 
 # Project State
@@ -25,7 +25,7 @@ See: .planning/PROJECT.md (updated 2026-03-20)
 ## Current Position
 
 Phase: 02 (persistence-layer) — EXECUTING
-Plan: 2 of 3
+Plan: 1 of 3
 
 ## Performance Metrics
 
@@ -50,6 +50,7 @@ Plan: 2 of 3
 | Phase 01-identity-routing P02 | 1 | 2 tasks | 6 files |
 | Phase 01-identity-routing P01 | 15 | 2 tasks | 15 files |
 | Phase 02-persistence-layer P01 | 1 | 2 tasks | 2 files |
+| Phase 02-persistence-layer P02 | 2min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 02-01]: Journal naming uses date-folder structure (YYYY-MM-DD/<description>.md) not flat files
 - [Phase 02-01]: LORE gate verified intact from Phase 1 -- structural separation holds without changes
 - [Phase 02-01]: Append-only rule applies to content only; formatting corrections are explicitly permitted
+- [Phase 02-02]: No scripts/->bin/ symlink: scripts/ has 11 other subdirectories that would lose access
+- [Phase 02-02]: bin/ established as canonical location for all home directory scripts
 
 ### Pending Todos
 
@@ -93,5 +96,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last activity: 2026-03-20
-Stopped at: Completed 02-01-PLAN.md
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None
