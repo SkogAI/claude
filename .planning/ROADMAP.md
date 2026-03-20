@@ -29,7 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Each core framework (certainty-principle, placeholder-approach, epistemic-frameworks) is loadable via a direct path without reading adjacent frameworks
   4. Root CLAUDE.md routes to every top-level directory with content — personal/, docs/, bin/, notes/, guestbook/, lab/ — with one-line descriptions
   5. Every directory with content has a CLAUDE.md under 50 lines; a fresh session following root → one directory router reaches the right artifact without loading irrelevant files
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Split soul document, create sub-routers, rewrite personal/CLAUDE.md for lazy loading
+- [ ] 01-02-PLAN.md — Rewrite root router, create thin CLAUDE.md files, trim docs/CLAUDE.md
+- [ ] 01-03-PLAN.md — Automated verification of all requirements + human navigation checkpoint
 
 ### Phase 2: Persistence Layer
 **Goal**: Writing to the home is disciplined — journal conventions exist and are followed, LORE lives behind an explicit gate so it cannot be accidentally loaded as active context, and sessions can end with a context bridge the next session can pick up
@@ -70,7 +75,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Identity & Routing | 0/TBD | Not started | - |
+| 1. Identity & Routing | 0/3 | Planned | - |
 | 2. Persistence Layer | 0/TBD | Not started | - |
 | 3. Operations & Deployment Gate | 0/TBD | Not started | - |
 | 4. Multi-Agent Readiness | 0/TBD | Not started | - |
