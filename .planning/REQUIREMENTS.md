@@ -70,32 +70,32 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| IDN-01 | — | Pending |
-| IDN-02 | — | Pending |
-| IDN-03 | — | Pending |
-| IDN-04 | — | Pending |
-| IDN-05 | — | Pending |
-| CTX-01 | — | Pending |
-| CTX-02 | — | Pending |
-| CTX-03 | — | Pending |
-| CTX-04 | — | Pending |
-| PER-01 | — | Pending |
-| PER-02 | — | Pending |
-| PER-03 | — | Pending |
-| PER-04 | — | Pending |
-| OPS-01 | — | Pending |
-| OPS-02 | — | Pending |
-| OPS-03 | — | Pending |
-| MAG-01 | — | Pending |
-| MAG-02 | — | Pending |
-| MAG-03 | — | Pending |
-| MAG-04 | — | Pending |
+| IDN-01 | Phase 1 | Pending |
+| IDN-02 | Phase 1 | Pending |
+| IDN-03 | Phase 1 | Pending |
+| IDN-04 | Phase 1 | Pending |
+| IDN-05 | Phase 1 | Pending |
+| CTX-01 | Phase 1 | Pending |
+| CTX-02 | Phase 1 | Pending |
+| CTX-03 | Phase 1 | Pending |
+| CTX-04 | Phase 1 | Pending |
+| PER-01 | Phase 2 | Pending |
+| PER-02 | Phase 2 | Pending |
+| PER-03 | Phase 2 | Pending |
+| PER-04 | Phase 2 | Pending |
+| OPS-01 | Phase 3 | Pending |
+| OPS-02 | Phase 3 | Pending |
+| OPS-03 | Phase 3 | Pending |
+| MAG-01 | Phase 4 | Pending |
+| MAG-02 | Phase 4 | Pending |
+| MAG-03 | Phase 4 | Pending |
+| MAG-04 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 20 total
-- Mapped to phases: 0
-- Unmapped: 20 (pending roadmap)
+- Mapped to phases: 20
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-20*
-*Last updated: 2026-03-20 after initial definition*
+*Last updated: 2026-03-20 after roadmap creation — traceability complete*
