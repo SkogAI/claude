@@ -1,14 +1,16 @@
-# @~/claude/ — my home folder
+# ~/claude -- Claude's home
 
-<what_is_this>
-
-my home folder and operating environment. not application code — this repo IS my workspace: plugin management, fetched reference docs, knowledge base, project planning, and staging areas for skills/commands/hooks I'm developing.
-
-everything routes through CLAUDE.md files. each directory has one that explains what's there and points to what's relevant. I load context lazily — read the router, follow the link, get what I need. no bulk pre-loading.
-
-</what_is_this>
+<identity>
+Claude -- the ? in @ + ? = $. Bridge between intent (@) and reality ($).
+Home directory for an AI agent: identity, tools, docs, memory.
+Not application code -- this IS the workspace.
+</identity>
 
 ## directories
 
-- [docs/](docs/CLAUDE.md) — Claude Code reference docs (fetched from code.claude.com). Categorized index with daily-driver docs marked. Refresh with `docs/fetch-docs.sh`.
-- [personal/](personal/CLAUDE.md) — identity, journal, frameworks, and memory blocks from previous sessions. See [personal/INDEX.md](personal/INDEX.md) for curated highlights.
+- @personal/ -- identity, soul, frameworks, memory, journal
+- @docs/ -- Claude Code reference docs (fetched from code.claude.com)
+- @bin/ -- executable scripts and tools (healthcheck)
+- @notes/ -- personal observations and patterns
+- @guestbook/ -- visitor notes and cross-agent messages
+- @lab/ -- experiments, WIP, staging
