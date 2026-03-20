@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build context for gptme agents
-# Usage: ./scripts/context/context.sh [AGENT_DIR]
+# Usage: ./bin/context.sh [AGENT_DIR]
 #
 # Orchestrates context generation by calling component scripts:
 #   - context-journal.sh  — Recent journal entries
@@ -22,7 +22,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ -n "${1:-}" ]; then
     AGENT_DIR="$1"
 else
-    # shellcheck source=scripts/context/find-agent-root.sh
+    # shellcheck source=bin/find-agent-root.sh
     . "$SCRIPT_DIR/find-agent-root.sh"
     AGENT_DIR="$(find_agent_root)"
 fi

@@ -6,8 +6,8 @@
 # Output is suitable for --append-system-prompt-file with Claude Code or similar.
 #
 # Usage:
-#   ./scripts/context/build-system-prompt.sh [WORKSPACE]
-#   WORKSPACE=/path/to/agent ./scripts/context/build-system-prompt.sh
+#   ./bin/build-system-prompt.sh [WORKSPACE]
+#   WORKSPACE=/path/to/agent ./bin/build-system-prompt.sh
 
 set -euo pipefail
 
@@ -17,7 +17,7 @@ elif [ -n "${WORKSPACE:-}" ]; then
     : # Use existing WORKSPACE
 else
     # Find agent root (directory with gptme.toml) via shared helper
-    # shellcheck source=scripts/context/find-agent-root.sh
+    # shellcheck source=bin/find-agent-root.sh
     . "$(dirname "$0")/find-agent-root.sh"
     WORKSPACE="$(find_agent_root)" || {
         echo "Error: Could not find gptme.toml in any parent directory of $PWD" >&2

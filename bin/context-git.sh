@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Output git context for gptme agents
-# Usage: ./scripts/context/context-git.sh [AGENT_DIR]
+# Usage: ./bin/context-git.sh [AGENT_DIR]
 #
 # Shows git status (file list) and recent commits.
 # Uses plain `git status` (not -vv) to avoid prompt blowup from large diffs.

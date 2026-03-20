@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Output workspace structure context for gptme agents
-# Usage: ./scripts/context/context-workspace.sh [AGENT_DIR]
+# Usage: ./bin/context-workspace.sh [AGENT_DIR]
 #
 # Generates tree-based overview of key workspace directories.
 # If AGENT_DIR is not provided, uses parent of the script's directory.

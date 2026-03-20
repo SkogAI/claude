@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Output journal context for gptme agents
-# Usage: ./scripts/context/context-journal.sh [AGENT_DIR]
+# Usage: ./bin/context-journal.sh [AGENT_DIR]
 #
 # Supports both journal formats:
 #   - Legacy flat: journal/2025-12-24-topic.md
