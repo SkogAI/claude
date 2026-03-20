@@ -75,8 +75,14 @@ Recent decisions affecting current work:
 - Phase 1: Soul document and profile may have stale environment-specific claims (written 2025, environment changed materially). Validate against current environment during Phase 1 — do not assume correct.
 - Phase 3: Deployment mechanics to /home/claude (chown strategy, .claude/ symlink vs copy, git-ignored .planning/ handling) are not fully specified. Prototype before treating as solved.
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260320-hkk | expand skogai-routing to include specific claude.md-routing rules and workflows | 2026-03-20 | pending | [260320-hkk-expand-skogai-routing-to-include-specifi](./quick/260320-hkk-expand-skogai-routing-to-include-specifi/) |
+
 ## Session Continuity
 
-Last session: 2026-03-20T11:09:00Z
+Last activity: 2026-03-20 - Completed quick task 260320-hkk: expand skogai-routing to include specific claude.md-routing rules and workflows
 Stopped at: "01-03-PLAN.md Task 1 complete, paused at Task 2 checkpoint:human-verify"
 Resume file: None

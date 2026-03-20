@@ -70,7 +70,8 @@ What would you like to do?
 2. Audit/modify existing skill
 3. Add component (workflow/reference/template/script)
 4. Get guidance
-5. Use the routing patterns in your general workflow
+5. Create or audit a CLAUDE.md routing file
+6. Use the routing patterns in your general workflow
 
 If intent is clear from context, route directly. Otherwise, ask.
 </intake>
@@ -82,6 +83,7 @@ If intent is clear from context, route directly. Otherwise, ask.
 | 2, "audit", "modify", "existing" | Ask: "Path to skill?" | Route to appropriate workflow |
 | 3, "add", "component" | Ask: "Add what? (workflow/reference/template/script)" | workflows/add-{type}.md |
 | 4, "guidance", "help" | General guidance | workflows/get-guidance.md |
+| 5, "claude.md", "CLAUDE.md", "routing file" | Route to workflow | workflows/claude-md-routing.md |
 
 **Progressive disclosure for option 1 (create):**
 
@@ -103,6 +105,7 @@ If intent is clear from context, route directly. Otherwise, ask.
 - "create skill for X", "build new skill" → workflows/create-new-skill.md
 - "add workflow", "add reference", etc. → workflows/add-{type}.md
 - "upgrade to router" → workflows/upgrade-to-router.md
+- "create CLAUDE.md", "audit CLAUDE.md", "routing file", "@ links in CLAUDE.md" → workflows/claude-md-routing.md
 
 **After reading the workflow, follow it exactly.**
 </routing>
@@ -162,6 +165,7 @@ All in `references/`:
 - **Patterns:** [common-patterns.md](./references/common-patterns.md), [workflows-and-validation.md](./references/workflows-and-validation.md)
 - **Assets:** [using-templates.md](./references/using-templates.md), [using-scripts.md](./references/using-scripts.md)
 - **Advanced:** [executable-code.md](./references/executable-code.md), [api-security.md](./references/api-security.md), [iteration-and-testing.md](./references/iteration-and-testing.md)
+- **CLAUDE.md Routing:** [claude-md-rules.md](./references/claude-md-rules.md), [at-linking.md](./references/at-linking.md)
   </reference_index>
 
 <workflows_index>
@@ -182,6 +186,7 @@ All in `workflows/`:
 | add-script.md                    | Add a script to existing skill                    |
 | upgrade-to-router.md             | Convert simple skill to router pattern            |
 | get-guidance.md                  | Help decide what kind of skill to build           |
+| claude-md-routing.md             | Create or audit CLAUDE.md routing files            |
 
 </workflows_index>
 
