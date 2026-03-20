@@ -14,7 +14,7 @@ Historical archive spanning March 2025 onward.
 - soul/CLAUDE.md   -- foundational identity, split into 10 sections (loads all sections)
 - core/CLAUDE.md   -- epistemic frameworks: certainty, placeholder, context-destruction, learnings
 - profile.md       -- agent profile and business card
-- journal/         -- session records, append-only
+- journal/         -- session records, append-only (see journal/CONVENTIONS.md)
 - INDEX.md         -- curated highlights index across all personal files
 
 <session_protocol>
