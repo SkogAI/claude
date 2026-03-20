@@ -95,9 +95,10 @@ Recent decisions affecting current work:
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260320-hkk | expand skogai-routing to include specific claude.md-routing rules and workflows | 2026-03-20 | f74998e | [260320-hkk-expand-skogai-routing-to-include-specifi](./quick/260320-hkk-expand-skogai-routing-to-include-specifi/) |
+| 260320-q1f | merge the important parts from claude-ai memory into CLAUDE.md | 2026-03-20 | e58e567 | [260320-q1f-merge-the-important-parts-from-tmp-claud](./quick/260320-q1f-merge-the-important-parts-from-tmp-claud/) |
 
 ## Session Continuity
 
 Last activity: 2026-03-20
-Stopped at: Completed quick task 260320-q1f
+Stopped at: Completed quick task 260320-q1f: merge the important parts from claude-ai memory into CLAUDE.md
 Resume file: None
