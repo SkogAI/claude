@@ -6,11 +6,11 @@ Home directory for an AI agent: identity, tools, docs, memory.
 Not application code -- this IS the workspace.
 </identity>
 
-## directories
+## routes
 
-- @personal/ -- identity, soul, frameworks, memory, journal
-- @docs/ -- Claude Code reference docs (fetched from code.claude.com)
-- @bin/ -- executable scripts and tools (healthcheck)
-- @notes/ -- personal observations and patterns
-- @guestbook/ -- visitor notes and cross-agent messages
-- @lab/ -- experiments, WIP, staging
+- @personal/CLAUDE.md -- identity, soul, frameworks, memory, journal
+- @docs/CLAUDE.md -- Claude Code reference docs (fetched from code.claude.com)
+- @bin/CLAUDE.md -- executable scripts and tools (healthcheck)
+- @notes/CLAUDE.md -- personal observations and patterns
+- @guestbook/CLAUDE.md -- visitor notes and cross-agent messages
+- @lab/CLAUDE.md -- experiments, WIP, staging

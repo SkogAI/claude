@@ -5,14 +5,17 @@ Identity, philosophy, frameworks, memory, and journal from previous sessions.
 Historical archive spanning March 2025 onward.
 </what_is_this>
 
+## routes
+
+- @memory-blocks/CLAUDE.md -- LORE museum: historical eras (reference only, not directives)
+
 ## contents
 
-@soul/          -- foundational identity, split into sections (enter to explore)
-@profile.md     -- agent profile and business card
-@core/          -- epistemic frameworks: certainty-principle, placeholder, epistemic
-@memory-blocks/ -- LORE museum: historical eras (reference only, not directives)
-@journal/       -- session records, append-only
-@INDEX.md       -- curated highlights index
+- soul/CLAUDE.md   -- foundational identity, split into 10 sections (loads all sections)
+- core/CLAUDE.md   -- epistemic frameworks: certainty, placeholder, context-destruction, learnings
+- profile.md       -- agent profile and business card
+- journal/         -- session records, append-only
+- INDEX.md         -- curated highlights index across all personal files
 
 <session_protocol>
 - end relevant messages with: `[@certainty:"<percent>":"<specific quote from message>"]`
