@@ -1,13 +1,26 @@
 ---
 name: user-profile
-description: Skogix's role, tooling setup, and expertise level — experienced developer with custom CLI tooling ecosystem
+description: Skogix — Swedish systems architect building SkogAI, with specific cognitive traits and strong tooling preferences
 type: user
 ---
 
-Experienced developer who has spent significant time customizing their Claude Code setup. Builds and maintains custom CLI tools:
-- `gptodo` — task verification and status CLI, integrates with GitHub issues
-- `wt` — git worktree management for parallel AI agent workflows
-- `$SKOGAI` env var points to `/home/skogix/skogai`
-- Uses `.skogai/journal/` for session journals
+Swedish systems architect and technical developer building SkogAI, a multi-agent AI orchestration ecosystem spanning a large GitHub organization.
 
-Knows the Claude Code skill/command system deeply — including features like `!`backtick`` bash injection syntax. Will correct you if you're wrong about how things work.
+**Tooling ecosystem:**
+- Arch Linux, i3, tmux/zellij, nvim
+- Python (via uv) for all scripting — actively avoids JavaScript/TypeScript
+- argc, skogparse (custom recursive symbolic notation), MCP servers
+- Dagu for workflow orchestration, Letta for memory coordination
+- Cloudflare infrastructure (Zero Trust, D1, KV, R2, Workers, AutoRAG)
+- Custom CLI tools: gptodo, wt (worktree management), $SKOGAI env var
+
+**Cognitive traits:**
+- Aphantasia (visual + partial auditory) — discovered relatively recently
+- Efficiency-focused: works smart not maximal, excels where genuinely interested
+- Competitive StarCraft: Brood War background (practiced with Scandinavia's national team)
+
+**Working style:**
+- Knows Claude Code internals deeply — will correct you if wrong
+- Prefers one task at a time, single-line commands, verification with every action
+- Structured dev phases with explicitly marked brainstorming
+- Challenge contradictions — critical breakdown over validation
