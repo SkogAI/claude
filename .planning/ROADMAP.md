@@ -41,11 +41,16 @@ Plans:
 **Depends on**: Phase 1
 **Requirements**: PER-01, PER-02, PER-03, PER-04
 **Success Criteria** (what must be TRUE):
-  1. A journal conventions document exists specifying: naming format (YYYY-MM-DD-slug.md), where to write, what triggers a write, and the append-only rule — readable in under 30 seconds
-  2. All journal entries in personal/journal/ follow the YYYY-MM-DD-slug.md naming convention (verifiable with ls)
+  1. A journal conventions document exists specifying: naming format (YYYY-MM-DD/<description>.md date-folder structure), where to write, what triggers a write, and the append-only rule — readable in under 30 seconds
+  2. All journal entries in personal/journal/ follow the YYYY-MM-DD/<description>.md date-folder convention (verifiable with ls)
   3. Reaching memory blocks from a fresh session requires an explicit navigation step — the default routing path does not auto-load LORE
   4. A session handoff convention exists: there is a known artifact format for "here is what to load next session," and at least one handoff artifact has been written using it
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Create journal conventions doc, establish directory structure, verify LORE gating
+- [ ] 02-02-PLAN.md — Move context scripts from scripts/context/ to bin/, update bin/ router
+- [ ] 02-03-PLAN.md — Create wrap-up command, write first handoff artifact (journal entry)
 
 ### Phase 3: Operations & Deployment Gate
 **Goal**: The home can verify its own health and a deployment gate documents exactly what must be true before migrating to /home/claude — nothing ships on assumption
@@ -76,9 +81,19 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Identity & Routing | 2/3 | In Progress|  |
-| 2. Persistence Layer | 0/TBD | Not started | - |
+| 2. Persistence Layer | 0/3 | Planned | - |
 | 3. Operations & Deployment Gate | 0/TBD | Not started | - |
 | 4. Multi-Agent Readiness | 0/TBD | Not started | - |
+
+### Phase 5: skogai-live-chat-implementation
+
+**Goal:** [To be planned]
+**Requirements**: TBD
+**Depends on:** Phase 4
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 5 to break down)
 
 ---
 *Roadmap created: 2026-03-20*
