@@ -53,7 +53,21 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/gsd-context-monitor.js"
+            "command": "node .claude/hooks/gsd-context-monitor.js",
+            "timeout": 10
+          }
+        ],
+        "matcher": "Bash|Edit|Write|MultiEdit|Agent|Task"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/gsd-prompt-guard.js",
+            "timeout": 5
           }
         ]
       }
@@ -80,7 +94,9 @@
     "pr-review-toolkit@claude-plugins-official": false,
     "worktrunk@worktrunk": false,
     "chrome-devtools-mcp@claude-plugins-official": false,
-    "mintlify@claude-plugins-official": false
+    "mintlify@claude-plugins-official": false,
+    "core@skogai-marketplace": false,
+    "fakechat@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "worktrunk": {
@@ -88,9 +104,17 @@
         "source": "directory",
         "path": "/home/skogix/.local/src/worktrunk"
       }
+    },
+    "skogai-marketplace": {
+      "source": {
+        "source": "directory",
+        "path": "/home/skogix/.local/src/marketplace"
+      },
+      "autoUpdate": true
     }
   },
   "spinnerTipsEnabled": true,
+  "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
   "autoMemoryEnabled": true,
   "autoMemoryDirectory": "/home/skogix/claude/.planning/memory",
