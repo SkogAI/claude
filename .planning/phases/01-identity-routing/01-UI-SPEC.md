@@ -1,7 +1,8 @@
 ---
 phase: 1
 slug: identity-routing
-status: draft
+status: approved
+reviewed_at: 2026-03-20
 shadcn_initialized: false
 preset: none
 created: 2026-03-20
@@ -244,7 +245,7 @@ Every artifact: 1 active hop after root. Phase goal: achieved.
 - [ ] Dimension 5 Spacing: PASS — line-count budget declared per file type; 50-line hard max
 - [ ] Dimension 6 Registry Safety: PASS — no web frontend; no registry applicable
 
-**Approval:** pending
+**Approval:** approved 2026-03-20
 
 ---
 
