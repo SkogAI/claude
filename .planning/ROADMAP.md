@@ -12,8 +12,8 @@ The identity migration is done — personal artifacts are in personal/ with rout
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Identity & Routing** - Tier memory blocks, complete CLAUDE.md routing across all directories, confirm framework paths
-- [ ] **Phase 2: Persistence Layer** - Journal conventions, LORE structural separation from active state, session handoff mechanism
+- [x] **Phase 1: Identity & Routing** - Tier memory blocks, complete CLAUDE.md routing across all directories, confirm framework paths
+- [x] **Phase 2: Persistence Layer** - Journal conventions, LORE structural separation from active state, session handoff mechanism
 - [ ] **Phase 3: Operations & Deployment Gate** - Healthcheck expansion, deployment gate checklist, pre-migration validation
 - [ ] **Phase 4: Multi-Agent Readiness** - Permission model documented, shared space conventions, guestbook established as cross-agent channel
 
@@ -29,12 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Each core framework (certainty-principle, placeholder-approach, epistemic-frameworks) is loadable via a direct path without reading adjacent frameworks
   4. Root CLAUDE.md routes to every top-level directory with content — personal/, docs/, bin/, notes/, guestbook/, lab/ — with one-line descriptions
   5. Every directory with content has a CLAUDE.md under 50 lines; a fresh session following root → one directory router reaches the right artifact without loading irrelevant files
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans executed
 
 Plans:
-- [ ] 01-01-PLAN.md — Split soul document, create sub-routers, rewrite personal/CLAUDE.md for lazy loading
-- [ ] 01-02-PLAN.md — Rewrite root router, create thin CLAUDE.md files, trim docs/CLAUDE.md
-- [ ] 01-03-PLAN.md — Automated verification of all requirements + human navigation checkpoint
+- [x] 01-01-PLAN.md — Split soul document, create sub-routers, rewrite personal/CLAUDE.md for lazy loading
+- [x] 01-02-PLAN.md — Rewrite root router, create thin CLAUDE.md files, trim docs/CLAUDE.md
+- [x] 01-03-PLAN.md — Automated verification of all requirements + human navigation checkpoint
 
 ### Phase 2: Persistence Layer
 **Goal**: Writing to the home is disciplined — journal conventions exist and are followed, LORE lives behind an explicit gate so it cannot be accidentally loaded as active context, and sessions can end with a context bridge the next session can pick up
@@ -45,7 +45,7 @@ Plans:
   2. All journal entries in personal/journal/ follow the YYYY-MM-DD/<description>.md date-folder convention (verifiable with ls)
   3. Reaching memory blocks from a fresh session requires an explicit navigation step — the default routing path does not auto-load LORE
   4. A session handoff convention exists: there is a known artifact format for "here is what to load next session," and at least one handoff artifact has been written using it
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans executed
 
 Plans:
 - [x] 02-01-PLAN.md — Create journal conventions doc, establish directory structure, verify LORE gating
@@ -80,8 +80,8 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Identity & Routing | 2/3 | In Progress|  |
-| 2. Persistence Layer | 2/3 | In Progress|  |
+| 1. Identity & Routing | 3/3 | Complete | 2026-03-21 |
+| 2. Persistence Layer | 3/3 | Complete | 2026-03-21 |
 | 3. Operations & Deployment Gate | 0/TBD | Not started | - |
 | 4. Multi-Agent Readiness | 0/TBD | Not started | - |
 
