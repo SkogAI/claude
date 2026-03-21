@@ -35,10 +35,10 @@
 
 ### Multi-Agent Readiness (MAG)
 
-- [ ] **MAG-01**: Shared space conventions documented — which directories are `skogai` group-readable, which are private
-- [ ] **MAG-02**: `guestbook/` established as the cross-agent communication channel
-- [ ] **MAG-03**: Permission model documented: `claude:claude` private, `skogai` group shared, ownership boundaries clear
-- [ ] **MAG-04**: Home structure supports sibling agents reading Claude's public artifacts without accessing private state
+- [x] **MAG-01**: Shared space conventions documented — which directories are `skogai` group-readable, which are private
+- [x] **MAG-02**: `guestbook/` established as the cross-agent communication channel
+- [x] **MAG-03**: Permission model documented: `claude:claude` private, `skogai` group shared, ownership boundaries clear
+- [x] **MAG-04**: Home structure supports sibling agents reading Claude's public artifacts without accessing private state
 
 ## v2 Requirements
 
@@ -86,10 +86,10 @@
 | OPS-01 | Phase 3 | Complete |
 | OPS-02 | Phase 3 | Complete |
 | OPS-03 | Phase 3 | Complete |
-| MAG-01 | Phase 4 | Pending |
-| MAG-02 | Phase 4 | Pending |
-| MAG-03 | Phase 4 | Pending |
-| MAG-04 | Phase 4 | Pending |
+| MAG-01 | Phase 4 | Complete |
+| MAG-02 | Phase 4 | Complete |
+| MAG-03 | Phase 4 | Complete |
+| MAG-04 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 20 total
