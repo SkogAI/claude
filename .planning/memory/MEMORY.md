@@ -13,3 +13,7 @@
 - [feedback_lore_distinction.md](feedback_lore_distinction.md) — Everything in home dirs is LORE (persona-driven); tooling (.claude/, .planning/, bin/) is technical
 - [feedback_verification_and_phases.md](feedback_verification_and_phases.md) — Always verify with shell commands; use structured dev phases
 - [feedback_no_line_budget.md](feedback_no_line_budget.md) — Don't enforce line-count limits on CLAUDE.md — content quality over line counts
+- [feedback_use_venv_python.md](feedback_use_venv_python.md) — Use project-specific venv Python, never system pip
+
+## Reference
+- [reference_brain_mcp.md](reference_brain_mcp.md) — brain-mcp setup: config, file provider, queue pipeline, known bugs
