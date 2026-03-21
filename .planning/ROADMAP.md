@@ -60,7 +60,11 @@ Plans:
   1. Running bin/healthcheck verifies that known identity paths (soul document, profile, core frameworks) exist and are non-empty — exits non-zero with a clear diagnostic message if any are missing
   2. Running bin/healthcheck reports which memory block tier (active vs LORE) is accessible — not just a file count
   3. A deployment gate checklist exists at a stable path, each item is binary (pass/fail), and the checklist covers: routing test results, identity validation, permission audit, and healthcheck passing
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Extend bin/healthcheck with identity path checks, routing verification, and memory block tier reporting
+- [ ] 03-02-PLAN.md — Create deployment gate checklist at docs/deployment-gate.md
 
 ### Phase 4: Multi-Agent Readiness
 **Goal**: Shared space boundaries are documented and defensible before any sibling agent is provisioned — permission defaults are correct from day one so collaboration pressure cannot erode them
@@ -82,7 +86,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Identity & Routing | 3/3 | Complete | 2026-03-21 |
 | 2. Persistence Layer | 3/3 | Complete | 2026-03-21 |
-| 3. Operations & Deployment Gate | 0/TBD | Not started | - |
+| 3. Operations & Deployment Gate | 0/2 | Planning complete | - |
 | 4. Multi-Agent Readiness | 0/TBD | Not started | - |
 
 ### Phase 5: skogai-live-chat-implementation
