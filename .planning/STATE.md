@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-03-21T01:33:59.690Z"
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-03-21T01:37:12.002Z"
 last_activity: 2026-03-21
 progress:
   total_phases: 5
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 9
-  completed_plans: 8
+  completed_plans: 9
 ---
 
 # Project State
@@ -54,6 +54,7 @@ Plan: 1 of 1
 | Phase 02-persistence-layer P03 | 3min | 2 tasks | 2 files |
 | Phase 03-operations-deployment-gate P02 | 1min | 1 tasks | 1 files |
 | Phase 03-operations-deployment-gate P01 | 5min | 2 tasks | 2 files |
+| Phase 04 P01 | 2min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -83,6 +84,9 @@ Recent decisions affecting current work:
 - [Phase 03-01]: Tier counts use warn not fail when 0 — healthcheck stays useful before memory blocks are populated
 - [Phase 03-01]: exit $FAIL placed after results line so full report always prints regardless of failure count
 - [Phase 03-01]: CLAUDE_HOME resolved relative to script location via dirname for portability
+- [Phase 04]: Permission model is documentation not infrastructure — chown :skogai is the entire mechanism
+- [Phase 04]: guestbook is direct-message channel; gptme-dashboard is broadcast channel
+- [Phase 04]: Default private: all directories private unless explicitly chowned to :skogai group
 
 ### Pending Todos
 
@@ -107,5 +111,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last activity: 2026-03-21
-Stopped at: Completed 03-01-PLAN.md
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None
