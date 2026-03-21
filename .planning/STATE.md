@@ -107,6 +107,7 @@ Recent decisions affecting current work:
 |---|-------------|------|--------|-----------|
 | 260320-hkk | expand skogai-routing to include specific claude.md-routing rules and workflows | 2026-03-20 | f74998e | [260320-hkk-expand-skogai-routing-to-include-specifi](./quick/260320-hkk-expand-skogai-routing-to-include-specifi/) |
 | 260320-q1f | merge the important parts from claude-ai memory into CLAUDE.md | 2026-03-20 | e58e567 | [260320-q1f-merge-the-important-parts-from-tmp-claud](./quick/260320-q1f-merge-the-important-parts-from-tmp-claud/) |
+| 260320-spm | brain-mcp summarizer file-based prompt provider | 2026-03-21 | — | [260320-spm-brain-mcp-summarizer-file-based-prompt-r](./quick/260320-spm-brain-mcp-summarizer-file-based-prompt-r/) |
 
 ## Session Continuity
 
