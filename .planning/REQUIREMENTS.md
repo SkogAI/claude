@@ -31,7 +31,7 @@
 
 - [ ] **OPS-01**: `bin/healthcheck` verifies known identity paths exist and are non-empty
 - [ ] **OPS-02**: `bin/healthcheck` reports which tier of memory blocks are accessible
-- [ ] **OPS-03**: Deployment gate checklist exists documenting what must be true before migrating to `/home/claude`
+- [x] **OPS-03**: Deployment gate checklist exists documenting what must be true before migrating to `/home/claude`
 
 ### Multi-Agent Readiness (MAG)
 
@@ -85,7 +85,7 @@
 | PER-04 | Phase 2 | Complete |
 | OPS-01 | Phase 3 | Pending |
 | OPS-02 | Phase 3 | Pending |
-| OPS-03 | Phase 3 | Pending |
+| OPS-03 | Phase 3 | Complete |
 | MAG-01 | Phase 4 | Pending |
 | MAG-02 | Phase 4 | Pending |
 | MAG-03 | Phase 4 | Pending |

@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Identity & Routing** - Tier memory blocks, complete CLAUDE.md routing across all directories, confirm framework paths
 - [x] **Phase 2: Persistence Layer** - Journal conventions, LORE structural separation from active state, session handoff mechanism
-- [ ] **Phase 3: Operations & Deployment Gate** - Healthcheck expansion, deployment gate checklist, pre-migration validation
+- [x] **Phase 3: Operations & Deployment Gate** - Healthcheck expansion, deployment gate checklist, pre-migration validation (completed 2026-03-21)
 - [ ] **Phase 4: Multi-Agent Readiness** - Permission model documented, shared space conventions, guestbook established as cross-agent channel
 
 ## Phase Details
@@ -60,11 +60,11 @@ Plans:
   1. Running bin/healthcheck verifies that known identity paths (soul document, profile, core frameworks) exist and are non-empty — exits non-zero with a clear diagnostic message if any are missing
   2. Running bin/healthcheck reports which memory block tier (active vs LORE) is accessible — not just a file count
   3. A deployment gate checklist exists at a stable path, each item is binary (pass/fail), and the checklist covers: routing test results, identity validation, permission audit, and healthcheck passing
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 
 Plans:
-- [ ] 03-01-PLAN.md — Extend bin/healthcheck with identity path checks, routing verification, and memory block tier reporting
-- [ ] 03-02-PLAN.md — Create deployment gate checklist at docs/deployment-gate.md
+- [x] 03-01-PLAN.md — Extend bin/healthcheck with identity path checks, routing verification, and memory block tier reporting
+- [x] 03-02-PLAN.md — Create deployment gate checklist at docs/deployment-gate.md
 
 ### Phase 4: Multi-Agent Readiness
 **Goal**: Shared space boundaries are documented and defensible before any sibling agent is provisioned — permission defaults are correct from day one so collaboration pressure cannot erode them
@@ -86,7 +86,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Identity & Routing | 3/3 | Complete | 2026-03-21 |
 | 2. Persistence Layer | 3/3 | Complete | 2026-03-21 |
-| 3. Operations & Deployment Gate | 0/2 | Planning complete | - |
+| 3. Operations & Deployment Gate | 2/2 | Complete   | 2026-03-21 |
 | 4. Multi-Agent Readiness | 0/TBD | Not started | - |
 
 ### Phase 5: skogai-live-chat-implementation
