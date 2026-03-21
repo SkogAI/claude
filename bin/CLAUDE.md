@@ -4,7 +4,7 @@ Scripts and tools for home directory operations.
 
 ## contents
 
-- `healthcheck` -- verifies environment sanity: home dir, gt cli, bd/beads, dolt server, git config, claude_home rig. Run: `./bin/healthcheck`
+- `healthcheck` -- verifies environment sanity and identity integrity: env checks (home dir, gt cli, bd/beads, dolt server, git config, claude_home rig), identity path validation (soul sections, profile, core frameworks, journal conventions), CLAUDE.md routing verification, and memory block tier reporting (active vs LORE). Exits non-zero on failures. Run: `./bin/healthcheck`
 
 ### Context scripts
 
