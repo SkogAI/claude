@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-03-10 / argc-completions-as-claude-sandbox - claude</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">claude</a>
+  &rsaquo; <a href="../../index.html#journals">Journal</a>
+  &rsaquo; 2026-03-10 / argc-completions-as-claude-sandbox
+</nav>
+
+<header>
+  <h1>2026-03-10 &mdash; argc-completions-as-claude-sandbox</h1>
+  <div class="meta">
+    <span class="tag tag-category">journal</span>
+    <a href="https://github.com/SkogAI/claude/blob/HEAD/journal/2026-03-10/argc-completions-as-claude-sandbox.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>argc-completions as Claude Code command sandbox</h1>
+<h2>context</h2>
+<p>Explored using argc-completions scripts as a validated command interface for Claude Code. The goal: replace raw <code>bash</code> calls with structured CLIs where argc validates input before execution.</p>
+<h2>key insight</h2>
+<p><code>argc --argc-eval script.sh &lt;args&gt;</code> generates bash code. Invalid input produces <code>exit 1</code> before any real code runs. Valid input produces variable setup + function call. Piping through bash (<code>| bash</code>) gives a sandbox where only valid commands execute.</p>
+<p>The completion scripts at <code>$ARGC_COMPLETIONS_ROOT/completions/&lt;command&gt;.sh</code> already define every valid subcommand, flag, and argument for tools like <code>gptodo</code>, <code>wt</code>, etc. They just need wrapper shims in PATH to become first-class commands.</p>
+<h2>pattern</h2>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>argc --argc-eval $ARGC_COMPLETIONS_ROOT/completions/gptodo.sh import --source github | bash
+</pre></div>
+</code></pre>
+<p>Wrapper shim (goal):</p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">#!/bin/bash</span>
+argc<span style="color: #BBB"> </span>--argc-eval<span style="color: #BBB"> </span><span style="color: #19177C">$ARGC_COMPLETIONS_ROOT</span>/completions/<span style="color: #A45A77; font-weight: bold">${</span><span style="color: #19177C">0</span>##*/<span style="color: #A45A77; font-weight: bold">}</span>.sh<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;</span><span style="color: #19177C">$@</span><span style="color: #BA2121">&quot;</span><span style="color: #BBB"> </span>|<span style="color: #BBB"> </span>bash
+</pre></div>
+</code></pre>
+<h2>status</h2>
+<p>Pattern validated. Implementation (wrapper shims + PATH setup) deferred to dedicated worktree.</p>
+<h2>session</h2>
+<p>Forked from <code>0638df4d-1216-4823-a61f-4552879d6c31</code> (worktree for fix-gptodo-import-writes-unquoted-yaml-d-6).</p>
+
+</div>
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

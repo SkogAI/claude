@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-02-27 / nelson-ambush-methodology-audit - claude</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">claude</a>
+  &rsaquo; <a href="../../index.html#journals">Journal</a>
+  &rsaquo; 2026-02-27 / nelson-ambush-methodology-audit
+</nav>
+
+<header>
+  <h1>2026-02-27 &mdash; nelson-ambush-methodology-audit</h1>
+  <div class="meta">
+    <span class="tag tag-category">journal</span>
+    <a href="https://github.com/SkogAI/claude/blob/HEAD/journal/2026-02-27/nelson-ambush-methodology-audit.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>Curation Methodology Audit: Does the Collection Pass Its Own Quality Gates?</h1>
+<p><em>HMS Ambush — Nelson Squadron, 2026-02-27</em></p>
+<h2>1. Executive Finding</h2>
+<p><strong>No.</strong> The collection does not pass its own quality gates, and the methodology has never been applied to the skills it ostensibly governs. The rubric in <code>researcher/llm-as-a-judge.md</code> is designed to evaluate <em>incoming source material</em> for potential skill extraction -- it is not and has never been used to evaluate the <em>skills themselves</em>. This is the central structural problem: the quality gates face outward (curating inputs) but never inward (validating outputs).</p>
+<hr />
+<h2>2. The Gatekeeper Triage — Skill by Skill</h2>
+<h3>Gate Definitions (from the rubric)</h3>
+<ul>
+<li><strong>G1 — Mechanism Specificity</strong>: Defines a specific context engineering mechanism or pattern</li>
+<li><strong>G2 — Implementable Artifacts</strong>: Contains code, schemas, prompt templates, diagrams, or API contracts</li>
+<li><strong>G3 — Beyond Basics</strong>: Discusses advanced patterns, not just introductory tips</li>
+<li><strong>G4 — Source Verifiability</strong>: Author/organization identifiable with demonstrated technical credibility</li>
+</ul>
+<h3>Results Table</h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>G1</th>
+<th>G2</th>
+<th>G3</th>
+<th>G4</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>context-fundamentals</td>
+<td>FAIL</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>context-degradation</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>context-compression</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>context-optimization</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>multi-agent-patterns</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>memory-systems</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>tool-design</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>filesystem-context</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>hosted-agents</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>evaluation</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>advanced-evaluation</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>project-development</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>FAIL</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>bdi-mental-states</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Only 2 of 13 skills pass all 4 gates.</strong> 11 skills fail at G4. 1 skill (context-fundamentals) fails at G1 and G3 as well.</p>
+<hr />
+<h2>3. Dimensional Scoring — Selected Skills</h2>
+<h3>Per-Skill Rubric Outcome (if applied)</h3>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Gate Outcome</th>
+<th>Would-Be Score</th>
+<th>Would-Be Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>context-fundamentals</td>
+<td>REJECT (G1, G3, G4)</td>
+<td>0.60</td>
+<td>REJECT</td>
+</tr>
+<tr>
+<td>context-degradation</td>
+<td>REJECT (G4)</td>
+<td>~1.45</td>
+<td>Would be HUMAN_REVIEW (O3)</td>
+</tr>
+<tr>
+<td>context-compression</td>
+<td>REJECT (G4)</td>
+<td>~1.50</td>
+<td>Would be HUMAN_REVIEW (O3)</td>
+</tr>
+<tr>
+<td>context-optimization</td>
+<td>REJECT (G4)</td>
+<td>~1.20</td>
+<td>Would be HUMAN_REVIEW</td>
+</tr>
+<tr>
+<td>multi-agent-patterns</td>
+<td>REJECT (G4)</td>
+<td>~1.50</td>
+<td>Would be HUMAN_REVIEW (O3)</td>
+</tr>
+<tr>
+<td>memory-systems</td>
+<td>REJECT (G4)</td>
+<td>~1.65</td>
+<td>Would be HUMAN_REVIEW (O3)</td>
+</tr>
+<tr>
+<td>tool-design</td>
+<td>REJECT (G4)</td>
+<td>~1.55</td>
+<td>Would be HUMAN_REVIEW (O3)</td>
+</tr>
+<tr>
+<td>filesystem-context</td>
+<td>REJECT (G4)</td>
+<td>~1.50</td>
+<td>Would be HUMAN_REVIEW (O3)</td>
+</tr>
+<tr>
+<td>hosted-agents</td>
+<td>REJECT (G4)</td>
+<td>~1.45</td>
+<td>Would be HUMAN_REVIEW (O3)</td>
+</tr>
+<tr>
+<td>evaluation</td>
+<td>REJECT (G4)</td>
+<td>~1.25</td>
+<td>Would be HUMAN_REVIEW</td>
+</tr>
+<tr>
+<td>advanced-evaluation</td>
+<td>PASS</td>
+<td>1.35</td>
+<td>HUMAN_REVIEW</td>
+</tr>
+<tr>
+<td>project-development</td>
+<td>REJECT (G4)</td>
+<td>~1.65</td>
+<td>Would be HUMAN_REVIEW (O3)</td>
+</tr>
+<tr>
+<td>bdi-mental-states</td>
+<td>PASS</td>
+<td>1.50</td>
+<td>HUMAN_REVIEW (O3)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zero skills achieve clean APPROVE.</strong> Even the 2 that pass all gates get forced into HUMAN_REVIEW by override O3 (evidence rigor = 1).</p>
+<hr />
+<h2>4. Structural Contradictions</h2>
+<ol>
+<li><strong>Gatekeeper logic contradicts itself</strong>: &quot;&gt;2 failures = REJECT&quot; (line 28) vs &quot;any single gate failure = REJECT&quot; (formal logic, lines 73-77)</li>
+<li><strong>Rubric evaluates source documents, not skills</strong>: G4 asks about author credibility, but skills are synthesized instructional content — a different category</li>
+<li><strong>Zero evaluation JSONs exist</strong>: The rubric was applied to external sources only (Netflix talk in <code>example_output.md</code>), never to the skills themselves</li>
+</ol>
+<hr />
+<h2>5. Bias Analysis</h2>
+<ul>
+<li><strong>Length bias</strong>: Longer skills <em>are</em> better (more implementable artifacts), but some short skills are short AND hollow</li>
+<li><strong>Reputation bias</strong>: Inverted — no individual reputation exists to bias toward because 11/13 have generic attribution</li>
+<li><strong>Evidence bias</strong>: Multiple skills make uncited quantitative claims (degradation thresholds, token multipliers, reliability improvements)</li>
+</ul>
+<hr />
+<h2>6. Recommendations</h2>
+<ol>
+<li>Create a <strong>skill validation rubric</strong> distinct from source curation rubric (test activation precision, claim traceability, token efficiency, instructional clarity)</li>
+<li>Fix the gatekeeper logic contradiction</li>
+<li>Add citation infrastructure (replace &quot;Research on transformer attention mechanisms&quot; with arXiv IDs)</li>
+<li>Acknowledge context-fundamentals as a different category (introductory overview, not engineering primitive)</li>
+<li>Run the rubric against the collection — generate evaluation JSONs</li>
+</ol>
+
+</div>
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-02-27 / nelson-kent-reference-card - claude</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">claude</a>
+  &rsaquo; <a href="../../index.html#journals">Journal</a>
+  &rsaquo; 2026-02-27 / nelson-kent-reference-card
+</nav>
+
+<header>
+  <h1>2026-02-27 &mdash; nelson-kent-reference-card</h1>
+  <div class="meta">
+    <span class="tag tag-category">journal</span>
+    <a href="https://github.com/SkogAI/claude/blob/HEAD/journal/2026-02-27/nelson-kent-reference-card.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>Context Engineering Reference Card</h1>
+<p>Dense working reference distilled from critical analysis of all 13 skills in Agent-Skills-for-Context-Engineering. Two views preserved: the collection's claims and SkogAI corrections.</p>
+<hr />
+<h2>Skill Tiers (Build Priority)</h2>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Skill</th>
+<th>Use When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>project-development</td>
+<td>Designing pipelines, choosing architecture, task-model fit decisions</td>
+</tr>
+<tr>
+<td>A</td>
+<td>filesystem-context</td>
+<td>Any agent that reads/writes files, context loading strategy</td>
+</tr>
+<tr>
+<td>B+</td>
+<td>advanced-evaluation</td>
+<td>Building eval harnesses, LLM-as-judge, bias mitigation</td>
+</tr>
+<tr>
+<td>B</td>
+<td>context-compression</td>
+<td>Handover between phases, structured summaries</td>
+</tr>
+<tr>
+<td>B</td>
+<td>evaluation</td>
+<td>Setting up metrics, understanding what drives performance</td>
+</tr>
+<tr>
+<td>B</td>
+<td>context-fundamentals</td>
+<td>Onboarding someone else; you already know this</td>
+</tr>
+<tr>
+<td>B</td>
+<td>context-optimization</td>
+<td>KV-cache tuning, observation masking, compaction</td>
+</tr>
+<tr>
+<td>B</td>
+<td>multi-agent-patterns</td>
+<td>Choosing supervisor vs peer-to-peer vs hierarchical</td>
+</tr>
+<tr>
+<td>B</td>
+<td>tool-design</td>
+<td>Reducing tool surface area, error handling</td>
+</tr>
+<tr>
+<td>B-</td>
+<td>context-degradation</td>
+<td>Diagnosing why output quality dropped</td>
+</tr>
+<tr>
+<td>B-</td>
+<td>memory-systems</td>
+<td>Deciding between file-based vs framework memory</td>
+</tr>
+<tr>
+<td>B-</td>
+<td>hosted-agents</td>
+<td>Infrastructure planning for sandboxed agents</td>
+</tr>
+<tr>
+<td>C</td>
+<td>bdi-mental-states</td>
+<td>Only if building formal ontology / RDF pipelines</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>The 10 Patterns That Earn Their Tokens</h2>
+<p><strong>1. Dynamic Context Discovery</strong> -- Load only what you need, when you need it. Frontmatter index at startup, full content on activation. Unifying principle across the strongest skills. Collection and SkogAI align here.</p>
+<p><strong>2. Pipeline Architecture</strong> (acquire -&gt; prepare -&gt; process -&gt; parse -&gt; render) -- Isolate the non-deterministic expensive step (LLM call) from deterministic steps. File existence gates execution: <code>raw.json -&gt; prompt.md -&gt; response.md -&gt; parsed.json</code>. Source: project-development skill.</p>
+<p><strong>3. Architectural Reduction</strong> -- Vercel d0: 17 tools -&gt; 2 (bash + SQL). Success 80% -&gt; 100%. Time 274s -&gt; 77s. Collection says this is the direction. SkogAI says this is a waypoint; destination is zero explicit tools, plain text intents. &quot;When to use it&quot; is 70% of tool design.</p>
+<p><strong>4. L1/L2 Cache Mental Model</strong> -- Context window = hot cache. Filesystem = backing store. Load into context, do work, write back, evict. Source: filesystem-context skill.</p>
+<p><strong>5. Structured Summary Templates</strong> -- Force preservation with explicit sections: Session Intent, Files Modified, Decisions Made, Current State, Next Steps. Checklist structure prevents drift. Solves artifact trail integrity (universally weak at 2.2-2.5/5.0). Source: context-compression skill.</p>
+<p><strong>6. Three-Phase Workflow</strong> (Research -&gt; Planning -&gt; Implementation) -- 5M token codebase compressing to ~2,000 words of spec. More accurately: context partitioning, not compression. Clean interfaces between phases. Source: context-compression skill.</p>
+<p><strong>7. Self-Spawning for Context Hygiene</strong> -- Sub-agents primarily valuable for fresh context windows, not just parallelism. Collection covers under parallelism. SkogAI: context isolation is the real win; partitioning is the default, not the nuclear option.</p>
+<p><strong>8. Predictive Warm-Up</strong> -- Start sandbox while user types. Allow file reads before git sync completes, block only writes. Source: hosted-agents skill.</p>
+<p><strong>9. Position Bias Mitigation</strong> -- Evaluate twice with swapped positions. Consistency check. Reduce confidence on disagreement. Most implementation-ready eval technique. Source: advanced-evaluation skill.</p>
+<p><strong>10. CoT Before Score</strong> -- Chain-of-thought before scoring improves eval reliability 15-25%. Well-defined rubrics reduce variance 40-60%. Source: advanced-evaluation skill.</p>
+<hr />
+<h2>Where Collection and Philosophy Diverge</h2>
+<p>These are the productive tensions. Both views preserved because each is correct in its context.</p>
+<h3>Effective Context Limit</h3>
+<ul>
+<li><strong>Collection</strong>: 70% of context window as warning threshold (140k at 200k window)</li>
+<li><strong>SkogAI</strong>: 25k effective limit for real implementation work</li>
+<li><strong>Resolution</strong>: Both right for different tasks. Exploration/search can use large windows. Execution hits the wall at ~25k.</li>
+</ul>
+<h3>Lost-in-Middle</h3>
+<ul>
+<li><strong>Collection</strong>: U-curve from BOS attention sink; put important content at edges</li>
+<li><strong>SkogAI</strong>: Proximity &gt; position; +/-8k from focus is the real attention range</li>
+<li><strong>Resolution</strong>: Edge placement is a weak heuristic. Keeping related context together within 8k of focus is stronger.</li>
+</ul>
+<h3>Telephone Game Between Agents</h3>
+<ul>
+<li><strong>Collection</strong>: Information loss between agents is a risk to mitigate (anti-pattern)</li>
+<li><strong>SkogAI</strong>: Intentional lossy compression maintains 20,000m strategic altitude (feature)</li>
+<li><strong>Resolution</strong>: Depends on what you are compressing. Strategic intent should survive lossy handoff. Implementation details should not be in the handoff at all.</li>
+</ul>
+<h3>Multi-Agent Motivation</h3>
+<ul>
+<li><strong>Collection</strong>: Primary reason is context isolation, not role anthropomorphization</li>
+<li><strong>SkogAI</strong>: Roles carry genuine semantic structure; load-bearing, not cosplay</li>
+<li><strong>Resolution</strong>: Not mutually exclusive. Context isolation is the mechanism. Semantic roles are the architecture that makes the isolation boundaries meaningful.</li>
+</ul>
+<h3>&quot;When NOT to Use&quot; Sections</h3>
+<ul>
+<li><strong>Collection</strong>: Skills include explicit exclusion criteria</li>
+<li><strong>SkogAI</strong>: Doubles token cost for zero information gain; activation trigger IS the boundary</li>
+<li><strong>Resolution</strong>: SkogAI is correct for context-loaded skills. Exclusions encode the complement of the activation set, which is infinite.</li>
+</ul>
+<h3>95% Finding (BrowseComp)</h3>
+<ul>
+<li><strong>Collection</strong>: Token usage explains 80% of performance variance (more tokens = better)</li>
+<li><strong>SkogAI</strong>: That measures exploration breadth; for execution, decision quality matters more (smarter tokens &gt; more tokens)</li>
+<li><strong>Resolution</strong>: 80% figure applies to search/research tasks. For execution, each good reasoning branch point halves the problem space -- exponential vs linear payoff.</li>
+</ul>
+<hr />
+<h2>Quick Decision Trees</h2>
+<h3>Memory Strategy</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Do you genuinely outgrow files?
+  No  -&gt; markdown files + git temporal layer
+  Yes -&gt; Do you need graph queries across entities?
+    No  -&gt; structured JSON/YAML files
+    Yes -&gt; Graphiti or similar (but verify you actually need it)
+</pre></div>
+</code></pre>
+<h3>Eval Method</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Objective ground truth exists?
+  Yes -&gt; Direct scoring with rubric
+  No  -&gt; Preference/quality judgment?
+    Yes -&gt; Pairwise comparison (swap positions, check consistency)
+    No  -&gt; Reference-based evaluation
+</pre></div>
+</code></pre>
+<h3>When to Partition into Sub-Agents</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Context approaching 25k? -&gt; Partition
+Need parallel exploration? -&gt; Partition
+Different phases of work? -&gt; Partition (fresh context per phase)
+Single focused task under 25k? -&gt; Stay in one context
+</pre></div>
+</code></pre>
+<h3>Tool Count Decision</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Can the agent accomplish this with bash + file access?
+  Yes -&gt; Don&#39;t add a tool
+  No  -&gt; Is the tool&#39;s &quot;when to use&quot; trigger unambiguous?
+    Yes -&gt; Add it, but write the trigger before the implementation
+    No  -&gt; Redesign until the trigger is obvious
+</pre></div>
+</code></pre>
+<hr />
+<h2>The Pruning Test</h2>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>full_context_output - starved_context_output = delta
+</pre></div>
+</code></pre>
+<p>Only the delta is IP. Everything the LLM produces identically with or without your context is inference from its training data. Your context should contain ONLY what changes the output.</p>
+<hr />
+<h2>Collection Gaps Identified</h2>
+<ol>
+<li>
+<p><strong>No skill on context partitioning as a first-class concept.</strong> Partitioning appears in filesystem-context, project-development, and multi-agent-patterns but never gets its own treatment. Arguably the most important pattern.</p>
+</li>
+<li>
+<p><strong>Redundancy between skills.</strong> Context-compression's structured summaries overlap filesystem-context's plan persistence. Evaluation rubrics overlap advanced-evaluation rubrics. Merging would tighten the collection.</p>
+</li>
+<li>
+<p><strong>Formal vs practical tension.</strong> Practical skills (filesystem, pipelines) have production evidence. Formal skills (BDI, evaluation metrics) have academic citations. Different audiences, same collection.</p>
+</li>
+<li>
+<p><strong>Observation masking underspecified.</strong> &quot;Always keep a unique callable reference in place when masking&quot; -- the collection covers masking but not the critical detail of maintaining the retrieval handle.</p>
+</li>
+<li>
+<p><strong>Context as budget, not just window.</strong> No treatment of context as a budget to be allocated. The budget framing (every token spent here is a token not spent there) is more actionable than the capacity framing.</p>
+</li>
+</ol>
+<hr />
+<h2>Key Numbers</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Effective context limit (execution)</td>
+<td>~25k tokens</td>
+<td>SkogAI practical experience</td>
+</tr>
+<tr>
+<td>Attention proximity range</td>
+<td>+/-8k tokens from focus</td>
+<td>SkogAI practical experience</td>
+</tr>
+<tr>
+<td>Token usage -&gt; performance variance</td>
+<td>80%</td>
+<td>BrowseComp (exploration tasks)</td>
+</tr>
+<tr>
+<td>Tool calls -&gt; performance variance</td>
+<td>~10%</td>
+<td>BrowseComp</td>
+</tr>
+<tr>
+<td>Model choice -&gt; performance variance</td>
+<td>~5%</td>
+<td>BrowseComp</td>
+</tr>
+<tr>
+<td>CoT-before-score reliability gain</td>
+<td>15-25%</td>
+<td>Advanced-evaluation skill</td>
+</tr>
+<tr>
+<td>Well-defined rubric variance reduction</td>
+<td>40-60%</td>
+<td>Advanced-evaluation skill</td>
+</tr>
+<tr>
+<td>Artifact trail integrity (all methods)</td>
+<td>2.2-2.5 / 5.0</td>
+<td>Context-compression skill</td>
+</tr>
+<tr>
+<td>Vercel tool reduction</td>
+<td>17 -&gt; 2</td>
+<td>Project-development skill</td>
+</tr>
+<tr>
+<td>Vercel success rate after reduction</td>
+<td>80% -&gt; 100%</td>
+<td>Project-development skill</td>
+</tr>
+<tr>
+<td>Vercel execution time after reduction</td>
+<td>274s -&gt; 77s</td>
+<td>Project-development skill</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Distilled 2026-02-27 from two deep-dive sessions covering all 13 skills. HMS Kent, Nelson Squadron.</em></p>
+
+</div>
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-02-27 / findings-nelson-memory-patterns - claude</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">claude</a>
+  &rsaquo; <a href="../../index.html#journals">Journal</a>
+  &rsaquo; 2026-02-27 / findings-nelson-memory-patterns
+</nav>
+
+<header>
+  <h1>2026-02-27 &mdash; findings-nelson-memory-patterns</h1>
+  <div class="meta">
+    <span class="tag tag-category">journal</span>
+    <a href="https://github.com/SkogAI/claude/blob/HEAD/journal/2026-02-27/findings-nelson-memory-patterns.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>HMS Astute Findings Report</h1>
+<h2>Multi-Agent Memory Systems: Architecture Deep Dive</h2>
+<p><strong>Patrol Complete:</strong> Research into memory-systems skill, filesystem-context skill, and Nelson's operational patterns.</p>
+<p><strong>Key Finding:</strong> Nelson IS already a sophisticated memory system. It doesn't call itself one, but the entire framework—sailing orders, battle plans, quarterdeck reports, standing orders, damage control procedures, crew briefings—constitutes a production-grade multi-agent memory architecture. This insight should anchor the new skill's design.</p>
+<hr />
+<h2>Executive Summary</h2>
+<p>Three separate memory patterns are in play:</p>
+<ol>
+<li><strong>Production Memory Frameworks</strong> (memory-systems skill): Vector stores, knowledge graphs, temporal KGs, entity registries — suited for persistent knowledge retention across sessions</li>
+<li><strong>Filesystem Context Patterns</strong> (filesystem-context skill): Scratch pads, plan persistence, sub-agent workspaces, dynamic skill loading — suited for ephemeral working memory and cross-agent coordination</li>
+<li><strong>Nelson's Operational Memory</strong> (skill + references): Structured decision documents (sailing orders, battle plans, standing orders, damage control procedures), role-bounded task decomposition, explicit checkpoints — suited for multi-agent coordination and state tracking</li>
+</ol>
+<p>The skills describe WHAT and HOW. Nelson demonstrates WHERE and WHEN.</p>
+<hr />
+<h2>Pattern 1: Memory-Systems Skill Analysis</h2>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Comprehensive framework comparison (Mem0, Zep, Letta, Cognee, LangMem)</li>
+<li>Temporal knowledge graph architecture well-explained</li>
+<li>Entity registry pattern explicitly covers identity persistence (&quot;John Doe&quot; = same person across conversations)</li>
+<li>Retrieval strategies clearly delineated (semantic vs entity-based vs temporal vs hybrid)</li>
+<li>Practical guidance: &quot;Start with file-system memory; add complexity only when retrieval fails&quot;</li>
+<li>Consolidation pattern includes &quot;invalidate but don't discard&quot; (preserves history)</li>
+</ul>
+<p><strong>Gaps:</strong></p>
+<ul>
+<li>No discussion of multi-agent memory scoping (which agent can see/modify which memories?)</li>
+<li>No patterns for agent-local vs shared memories</li>
+<li>No explicit discussion of memory in high-concurrency multi-agent systems</li>
+<li>Consolidation example is generic; no pattern for &quot;when two agents have conflicting memories&quot;</li>
+<li>Missing: how to enforce memory integrity when multiple agents write concurrently</li>
+</ul>
+<p><strong>Critical Implementation Detail:</strong>
+Memory-systems skill prescribes temporal validity tracking (<code>valid_from</code>, <code>valid_until</code>). This is <strong>the differentiator</strong> for multi-agent systems: prevents stale data poisoning when agents have different information ages.</p>
+<hr />
+<h2>Pattern 2: Filesystem-Context Skill Analysis</h2>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>6 concrete patterns with working Python implementations</li>
+<li>Scratch pad pattern (offload large outputs) is standard practice</li>
+<li>Plan persistence pattern explicitly supports &quot;manipulating attention through recitation&quot;</li>
+<li>Sub-agent workspace pattern allows peer-to-peer file-based communication</li>
+<li>Dynamic skill loading pattern shows how to defer context loading</li>
+<li>Terminal persistence pattern enables retroactive access to execution traces</li>
+<li>Self-modification guard pattern includes validation gates (MAX_ENTRIES, MAX_VALUE_LENGTH)</li>
+</ul>
+<p><strong>Implementation Detail:</strong>
+The <code>AgentWorkspace</code> class shows exactly what agents write to filesystem:</p>
+<ul>
+<li><code>findings.md</code> — main output</li>
+<li><code>status.json</code> — progress tracking</li>
+<li><code>activity.log</code> — execution trace</li>
+</ul>
+<p><code>CoordinatorWorkspace</code> aggregates by reading these files directly, preserving fidelity.</p>
+<p><strong>Critical Insight for Multi-Agent:</strong>
+Sub-agent communication is <strong>lossy by design</strong>. Coordinators read raw findings files; no intermediary summarization. This preserves information fidelity at the cost of coordinator load.</p>
+<p><strong>Gap:</strong>
+No exclusive file ownership semantics. When 2 agents write to <code>findings.md</code> simultaneously, behavior is undefined. (Nelson's &quot;Split Keel&quot; standing order addresses this operationally; not in the skill.)</p>
+<hr />
+<h2>Pattern 3: Nelson's Operational Memory System</h2>
+<p><strong>This is the insight the skills miss.</strong> Nelson implements a complete memory architecture—not for persistent knowledge, but for <strong>coordinated task execution across agent sessions</strong>.</p>
+<h3>Nelson's Core Memory Artifacts</h3>
+<ol>
+<li>
+<p><strong>Sailing Orders</strong></p>
+<ul>
+<li>Outcome, success metric, deadline</li>
+<li>Token/time budget, reliability floor</li>
+<li>Constraints, scope boundaries, stop criteria</li>
+<li><strong>Function:</strong> Ground truth for mission intent; survives all agent sessions</li>
+<li><strong>Scope:</strong> Admiral-to-captains; immutable during mission</li>
+</ul>
+</li>
+<li>
+<p><strong>Battle Plan</strong></p>
+<ul>
+<li>Task ID, owner, deliverable, dependencies</li>
+<li>File ownership, station tier</li>
+<li>Validation/rollback requirements</li>
+<li>Ship manifest (if crewed)</li>
+<li><strong>Function:</strong> Explicit task DAG + quality gates</li>
+<li><strong>Scope:</strong> Task-level decomposition; visible to all agents</li>
+</ul>
+</li>
+<li>
+<p><strong>Crew Briefing</strong></p>
+<ul>
+<li>500-token mission context</li>
+<li>Task, deliverable, station tier</li>
+<li>File ownership, dependencies</li>
+<li>Standing orders, marine capacity</li>
+<li><strong>Function:</strong> Context injection for agents spawned mid-mission</li>
+<li><strong>Scope:</strong> Agent-local instruction; explicitly replaces conversation context</li>
+</ul>
+</li>
+<li>
+<p><strong>Quarterdeck Reports</strong></p>
+<ul>
+<li>Checkpoint time, progress (pending/in_progress/completed)</li>
+<li>Blockers, budget burn, risk updates</li>
+<li>Admiral decision (continue/rescope/stop)</li>
+<li><strong>Function:</strong> Coordinated state snapshot</li>
+<li><strong>Scope:</strong> Admiral checkpoint; visible to coordinator</li>
+</ul>
+</li>
+<li>
+<p><strong>Standing Orders</strong></p>
+<ul>
+<li>Anti-patterns (Split Keel, Drifting Anchorage, etc.)</li>
+<li>Symptoms, remedies</li>
+<li><strong>Function:</strong> Operational decision guardrails</li>
+<li><strong>Scope:</strong> Global policy; consulted at runtime</li>
+</ul>
+</li>
+<li>
+<p><strong>Damage Control Procedures</strong></p>
+<ul>
+<li>Man-Overboard, Session Resumption, Partial Rollback, Scuttle-and-Reform, Escalation, Crew Overrun</li>
+<li><strong>Function:</strong> Failure recovery playbooks</li>
+<li><strong>Scope:</strong> Triggered when mission encounters specific failure modes</li>
+</ul>
+</li>
+<li>
+<p><strong>Captain's Log</strong></p>
+<ul>
+<li>Planned vs achieved outcome</li>
+<li>Key decisions, validation evidence</li>
+<li>Open risks, follow-ups, reusable patterns</li>
+<li>Mentioned in Despatches (agent recognition)</li>
+<li><strong>Function:</strong> Mission synthesis + learning record</li>
+<li><strong>Scope:</strong> Written at end of mission; survives for future reference</li>
+</ul>
+</li>
+</ol>
+<h3>Nelson's Scoping Model (Implicit but Consistent)</h3>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Lifetime</th>
+<th>Scope</th>
+<th>Mutability</th>
+<th>Audience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sailing Orders</td>
+<td>Mission</td>
+<td>All agents</td>
+<td>Read-only</td>
+<td>All</td>
+</tr>
+<tr>
+<td>Battle Plan</td>
+<td>Mission</td>
+<td>All agents</td>
+<td>Pre-execution</td>
+<td>All</td>
+</tr>
+<tr>
+<td>Crew Briefing</td>
+<td>Agent session</td>
+<td>Single agent</td>
+<td>One-shot injection</td>
+<td>Target agent only</td>
+</tr>
+<tr>
+<td>Quarterdeck Report</td>
+<td>Checkpoint</td>
+<td>Coordinator</td>
+<td>One-per-checkpoint</td>
+<td>Coordinator + all agents</td>
+</tr>
+<tr>
+<td>Standing Orders</td>
+<td>Permanent</td>
+<td>Policy</td>
+<td>Read-only</td>
+<td>Reference during execution</td>
+</tr>
+<tr>
+<td>Damage Control</td>
+<td>Permanent</td>
+<td>Policy</td>
+<td>Read-only</td>
+<td>Triggered on failure</td>
+</tr>
+<tr>
+<td>Captain's Log</td>
+<td>Permanent</td>
+<td>Archive</td>
+<td>Write-once</td>
+<td>Historical record</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Critical Insight:</strong> Standing Orders and Damage Control are <strong>not runtime state</strong>—they're <strong>policy libraries</strong> that agents consult at decision points. They don't change during a mission.</p>
+<h3>Nelson's Quality Gates (Implicit Action Stations)</h3>
+<p>Each task has a risk tier (0-3, &quot;Patrol&quot; to &quot;Trafalgar&quot;):</p>
+<ul>
+<li>Station 0: Validation + rollback note (light control)</li>
+<li>Station 1: Independent review + validation + rollback (moderate control)</li>
+<li>Station 2: Red-cell review + go/no-go gate (high control)</li>
+<li>Station 3: Explicit human confirmation (maximum control)</li>
+</ul>
+<p><strong>This is a memory of RISK</strong>, not facts. The action-stations.md document IS the risk classification memory.</p>
+<hr />
+<h2>Critical Gaps the Skills Don't Address</h2>
+<h3>1. Multi-Agent Scope Isolation</h3>
+<p>The skills discuss memory CONTENT but not memory BOUNDARIES.</p>
+<p>Nelson solves this via:</p>
+<ul>
+<li>File ownership (exclusive write permission)</li>
+<li>Crew briefing (agent-local context)</li>
+<li>Role boundaries (what each role can see/write)</li>
+</ul>
+<p><strong>Missing from skills:</strong> How agents participate in a shared namespace while maintaining scope isolation.</p>
+<h3>2. Memory Lifecycle in Multi-Agent Context</h3>
+<p>The skills discuss consolidation (reducing size) but not archival (transitioning old memories).</p>
+<p>Nelson solves this via:</p>
+<ul>
+<li>Quarterdeck reports (ephemeral, summarized for next session)</li>
+<li>Captain's log (permanent record, consulted for learning)</li>
+<li>Standing orders (policy, never archived—always consulted)</li>
+</ul>
+<p><strong>Missing from skills:</strong> Explicit lifecycle stages for memory (active → archived → deprecated).</p>
+<h3>3. Concurrent Write Safety</h3>
+<p>Both skills assume single-writer semantics. Nelson assumes this too—but enforces it operationally via &quot;Split Keel&quot; standing order.</p>
+<p><strong>Missing:</strong> In a true multi-agent system where N agents run in parallel, what prevents two agents from writing conflicting memories?</p>
+<h3>4. Memory Coherence During Long Missions</h3>
+<p>How does memory stay correct when:</p>
+<ul>
+<li>Agent A discovers fact X at turn 1</li>
+<li>Agent B discovers fact ¬X at turn 50</li>
+<li>Both facts are valid at discovery time but contradictory?</li>
+</ul>
+<p>The skills have no pattern. Nelson's answer: Red-cell navigator (validation specialist) and explicit go/no-go gates at Station 2+.</p>
+<hr />
+<h2>What Nelson's Design Implies About Memory for Multi-Agent Systems</h2>
+<ol>
+<li>
+<p><strong>Policy ≠ State</strong></p>
+<ul>
+<li>Standing orders and damage control are POLICY (read-only libraries)</li>
+<li>Quarterdeck reports are STATE (ephemeral snapshots)</li>
+<li>This distinction is absent from the skills</li>
+</ul>
+</li>
+<li>
+<p><strong>Scope Boundaries Are Enforced Operationally</strong></p>
+<ul>
+<li>Nelson uses file ownership (exclusive write)</li>
+<li>Nelson uses role definitions (crew-roles.md defines what each role can do)</li>
+<li>Nelson uses briefing injection (crew members see only their context)</li>
+<li>Filesystem-context skill describes the pattern but doesn't explicitly tie it to scope</li>
+</ul>
+</li>
+<li>
+<p><strong>Checkpoints Are Memory Consolidation Points</strong></p>
+<ul>
+<li>Quarterdeck reports force state refresh</li>
+<li>Captains can't drift from mission intent because sailing orders are immutable</li>
+<li>Standing orders are consulted at decision points, not loaded once</li>
+<li>This is different from classical consolidation (vector store merging)—it's <strong>attention reset</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Failure Modes Are Documented</strong></p>
+<ul>
+<li>Nelson has explicit damage-control procedures for Man-Overboard, Session Resumption, Escalation</li>
+<li>The skills have no parallel pattern for &quot;what happens when memory coherence breaks&quot;</li>
+<li>Suggestion: Memory failure modes should be as explicitly documented as action stations</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>Synthesis: Architecture for Multi-Agent Memory Skill</h2>
+<p>The new skill should be positioned as the <strong>intersection and integration layer</strong> between memory-systems and filesystem-context, informed by Nelson's operational model.</p>
+<h3>Recommended Sections</h3>
+<ol>
+<li>
+<p><strong>Memory Tiers for Multi-Agent Systems</strong></p>
+<ul>
+<li>Policy memory (standing orders, role definitions) — read-only, consulted at decision points</li>
+<li>State memory (quarterdeck reports, task decomposition) — ephemeral, snapshot at checkpoints</li>
+<li>Entity memory (agent identity, scope boundaries, file ownership) — persistent, enforced at write time</li>
+<li>Knowledge memory (learned facts, patterns) — persistent, consolidation-eligible</li>
+</ul>
+</li>
+<li>
+<p><strong>Scope Isolation Patterns</strong></p>
+<ul>
+<li>File ownership: exclusive write permission (reference: Split Keel standing order)</li>
+<li>Agent-local briefing: context injection on spawn (reference: crew-briefing template)</li>
+<li>Role boundaries: what each agent type can read/write (reference: crew-roles.md)</li>
+<li>Scope enforcement: at write time, not at read time</li>
+</ul>
+</li>
+<li>
+<p><strong>Memory Lifecycle for Long Missions</strong></p>
+<ul>
+<li>Active: currently in use (quarterdeck reports, open task plans)</li>
+<li>Archived: historical but may be recalled (past quarterdeck reports, concluded tasks)</li>
+<li>Policy: permanent reference (standing orders, role definitions, damage control procedures)</li>
+<li>Deprecated: superseded by new version, kept for audit</li>
+</ul>
+</li>
+<li>
+<p><strong>Failure Recovery Patterns</strong></p>
+<ul>
+<li>Conflicting memories: which one is authoritative? (timestamp, source credibility, red-cell vote)</li>
+<li>Lost memory: reconstruction from checkpoints (quarterdeck reports + captain's logs)</li>
+<li>Corrupted state: rollback to last valid checkpoint (partial-rollback damage control pattern)</li>
+<li>Scope violation: agent wrote outside its boundaries (escalation damage control pattern)</li>
+</ul>
+</li>
+<li>
+<p><strong>Checkpoint-Based Coherence</strong></p>
+<ul>
+<li>Quarterdeck reports as memory reset points</li>
+<li>Sailing orders as mission-level ground truth</li>
+<li>Standing orders as consulted (not stored) policy</li>
+</ul>
+</li>
+</ol>
+<h3>Why This Works</h3>
+<ul>
+<li><strong>Grounded in practice:</strong> Nelson demonstrates this design working at scale</li>
+<li><strong>Fills skill gaps:</strong> Addresses scoping, concurrency, and coherence</li>
+<li><strong>Connects to frameworks:</strong> Temporal KGs (facts with valid_from/valid_until) map to &quot;policy vs state&quot; distinction</li>
+<li><strong>Operationally explicit:</strong> Doesn't hide scope isolation behind implementation details</li>
+</ul>
+<hr />
+<h2>Casualty List (Assumptions That Didn't Survive Contact)</h2>
+<ol>
+<li>
+<p>~~Memory systems are primarily about persistent knowledge retention~~</p>
+<ul>
+<li><strong>Reality:</strong> Multi-agent memory is 40% knowledge, 60% coordination and scope management</li>
+</ul>
+</li>
+<li>
+<p>~~Consolidation is the main memory maintenance pattern~~</p>
+<ul>
+<li><strong>Reality:</strong> Checkpoints and policy refresh (attention reset) are more important for multi-agent</li>
+</ul>
+</li>
+<li>
+<p>~~Scope isolation is a code problem~~</p>
+<ul>
+<li><strong>Reality:</strong> Nelson shows scope isolation is primarily an OPERATIONAL problem (file ownership, role boundaries, briefing injection)</li>
+</ul>
+</li>
+<li>
+<p>~~Standing orders and damage control are tooling~~</p>
+<ul>
+<li><strong>Reality:</strong> They ARE memory artifacts—policy memory that survives the entire mission</li>
+</ul>
+</li>
+<li>
+<p>~~Multi-agent memory can use single-agent patterns with &quot;multiple writers&quot;~~</p>
+<ul>
+<li><strong>Reality:</strong> Concurrency safety, conflicting facts, and scope coherence are distinct problems requiring explicit patterns</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>Standing Operations Recommendation</h2>
+<p>For the memory skill architecture work, consult:</p>
+<ul>
+<li><code>references/action-stations.md</code> → risk tiers apply to memory failures too</li>
+<li><code>references/standing-orders/split-keel.md</code> → file ownership pattern</li>
+<li><code>references/crew-roles.md</code> → scope boundaries by role</li>
+<li><code>references/admiralty-templates/crew-briefing.md</code> → context injection pattern</li>
+<li><code>references/admiralty-templates/quarterdeck-report.md</code> → checkpoint memory format</li>
+</ul>
+<p>The skill should explicitly reference these Nelson patterns and show how they map to memory system design.</p>
+<hr />
+<p><strong>Report Filed by:</strong> Captain Crane, HMS Astute
+<strong>Date:</strong> 2026-02-27
+<strong>Status:</strong> Patrol complete, no casualties. Ready for next mission.</p>
+
+</div>
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>
