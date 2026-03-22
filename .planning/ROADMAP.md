@@ -80,7 +80,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -88,17 +88,27 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 2. Persistence Layer | 3/3 | Complete | 2026-03-21 |
 | 3. Operations & Deployment Gate | 2/2 | Complete   | 2026-03-21 |
 | 4. Multi-Agent Readiness | 1/1 | Complete   | 2026-03-21 |
+| 5. Channel Integration | 0/2 | Planning   | — |
 
 ### Phase 5: skogai-live-chat-implementation
 
-**Goal:** [To be planned]
-**Requirements**: TBD
+**Goal:** A generic chat-io contract exists (transport-agnostic deliver/reply) with a routing script that detects [@agent:"msg"] notation and dispatches via skogparse, plus Claude instructions and a hook fallback that wire routing into the channel message flow
+**Requirements**: CHAT-01, CHAT-02, CHAT-03, CHAT-04, CHAT-05, CHAT-06, CHAT-07
 **Depends on:** Phase 4
-**Plans:** 1/1 plans complete
+**Success Criteria** (what must be TRUE):
+  1. A chat-io contract spec documents deliver/reply semantics, identity model, and routing behavior
+  2. A routing script detects [@agent:"msg"] notation, calls skogparse --execute, unwraps JSON, and outputs plain text
+  3. Plain text messages (no notation) pass through unrouted
+  4. Unknown agents produce human-readable errors, not raw JSON
+  5. Claude instructions (skill) teach Claude to detect and route channel messages
+  6. A hook fallback calls the same routing script as the instruction path (no divergence)
+  7. fakechat server.ts is completely unchanged (reference only)
+**Plans:** 2 plans
 
 Plans:
-- [ ] TBD (run /gsd:plan-phase 5 to break down)
+- [ ] 05-01-PLAN.md — Chat-io contract spec, routing script, bats test suite
+- [ ] 05-02-PLAN.md — CLAUDE.md routing skill, hook fallback, settings.json wiring, browser verification
 
 ---
 *Roadmap created: 2026-03-20*
-*Requirements coverage: 20/20 v1 requirements mapped*
+*Requirements coverage: 27/27 requirements mapped (20 v1 + 7 phase 5)*
