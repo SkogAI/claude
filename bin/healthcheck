@@ -35,10 +35,10 @@ echo "claude healthcheck"
 echo "=================="
 
 # home directory exists
-if [ -d /home/claude ]; then
-  check "home directory exists" "ok"
+if [ -d "$CLAUDE_HOME" ]; then
+  check "home directory exists ($CLAUDE_HOME)" "ok"
 else
-  check "home directory exists" "fail"
+  check "home directory exists ($CLAUDE_HOME)" "fail"
 fi
 
 # gt is available
