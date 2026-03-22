@@ -95,6 +95,18 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 **Goal:** A generic chat-io contract exists (transport-agnostic deliver/reply) with a routing script that detects [@agent:"msg"] notation and dispatches via skogparse, plus Claude instructions and a hook fallback that wire routing into the channel message flow
 **Requirements**: CHAT-01, CHAT-02, CHAT-03, CHAT-04, CHAT-05, CHAT-06, CHAT-07
 **Depends on:** Phase 4
+
+**Requirement Definitions:**
+- CHAT-01: Routing script detects `[@agent:"msg"]` and dispatches via skogparse
+- CHAT-02: Unknown agents produce human-readable error, not raw JSON
+- CHAT-03: Plain text without notation bypasses routing
+- CHAT-04: JSON envelope is unwrapped — only the value field reaches the caller
+- CHAT-05: Chat-io contract spec documents deliver/reply semantics
+- CHAT-06: Skill teaches Claude to detect and route channel messages
+- CHAT-07: Hook fallback calls the same routing script as the instruction path (no divergence)
+
+*Deferred from phase 5:* Agent stub scripts (Amy, Dot, Goose, Letta) — routing handles "script not found" gracefully; stubs are a separate concern.
+
 **Success Criteria** (what must be TRUE):
   1. A chat-io contract spec documents deliver/reply semantics, identity model, and routing behavior
   2. A routing script detects [@agent:"msg"] notation, calls skogparse --execute, unwraps JSON, and outputs plain text
@@ -106,8 +118,8 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 **Plans:** 2 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Chat-io contract spec, routing script, bats test suite
-- [ ] 05-02-PLAN.md — CLAUDE.md routing skill, hook fallback, settings.json wiring, browser verification
+- [ ] 05-01-PLAN.md — Chat-io contract spec, routing script, bats test suite (CHAT-01, CHAT-02, CHAT-03, CHAT-04, CHAT-05)
+- [ ] 05-02-PLAN.md — CLAUDE.md routing skill, hook fallback, settings.json wiring, browser verification (CHAT-06, CHAT-07)
 
 ---
 *Roadmap created: 2026-03-20*

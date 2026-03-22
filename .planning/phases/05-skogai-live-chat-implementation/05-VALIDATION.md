@@ -19,16 +19,16 @@ created: 2026-03-22
 |----------|-------|
 | **Framework** | bats (Bash Automated Testing System) |
 | **Config file** | none — Wave 0 installs |
-| **Quick run command** | `bats lab/fakechat/tests/` |
-| **Full suite command** | `bats lab/fakechat/tests/ && bats skogai-scripts/tests/` |
+| **Quick run command** | `bats tests/chat-io/` |
+| **Full suite command** | `bats tests/chat-io/` |
 | **Estimated runtime** | ~5 seconds |
 
 ---
 
 ## Sampling Rate
 
-- **After every task commit:** Run `bats lab/fakechat/tests/`
-- **After every plan wave:** Run `bats lab/fakechat/tests/ && bats skogai-scripts/tests/`
+- **After every task commit:** Run `bats tests/chat-io/`
+- **After every plan wave:** Run `bats tests/chat-io/`
 - **Before `/gsd:verify-work`:** Full suite must be green
 - **Max feedback latency:** 5 seconds
 
@@ -38,10 +38,10 @@ created: 2026-03-22
 
 | Task ID | Plan | Wave | Requirement | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|-----------|-------------------|-------------|--------|
-| 05-01-01 | 01 | 1 | CHAT-01 | integration | `bats lab/fakechat/tests/test_routing.bats::@test "claude routing"` | W0 | pending |
-| 05-01-02 | 01 | 1 | CHAT-02 | unit | `bats lab/fakechat/tests/test_routing.bats::@test "unknown agent graceful error"` | W0 | pending |
-| 05-01-03 | 01 | 1 | CHAT-03 | unit | `bats lab/fakechat/tests/test_routing.bats::@test "plain text not routed"` | W0 | pending |
-| 05-01-04 | 01 | 1 | CHAT-07 | unit | `bats lab/fakechat/tests/test_routing.bats::@test "json unwrapping"` | W0 | pending |
+| 05-01-01 | 01 | 1 | CHAT-01 | integration | `bats tests/chat-io/test_routing.bats::@test "routes [@claude:msg] through skogparse"` | W0 | pending |
+| 05-01-02 | 01 | 1 | CHAT-02 | unit | `bats tests/chat-io/test_routing.bats::@test "unknown agent returns graceful error"` | W0 | pending |
+| 05-01-03 | 01 | 1 | CHAT-03 | unit | `bats tests/chat-io/test_routing.bats::@test "plain text is not routed"` | W0 | pending |
+| 05-01-04 | 01 | 1 | CHAT-04 | unit | `bats tests/chat-io/test_routing.bats::@test "json envelope is unwrapped to plain text"` | W0 | pending |
 
 *Status: pending / green / red / flaky*
 
@@ -49,8 +49,8 @@ created: 2026-03-22
 
 ## Wave 0 Requirements
 
-- [ ] `lab/fakechat/tests/test_routing.bats` — routing integration and unit tests
-- [ ] `lab/fakechat/tests/test-helper` — shared bats test helper
+- [ ] `tests/chat-io/test_routing.bats` — routing integration and unit tests
+- [ ] `tests/chat-io/test-helper.bash` — shared bats test helper
 - [ ] bats installed (`command -v bats`)
 
 *Note: Test IDs are provisional — will be refined when plans define exact tasks.*
