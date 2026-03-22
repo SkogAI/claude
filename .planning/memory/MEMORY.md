@@ -15,5 +15,7 @@
 - [feedback_no_line_budget.md](feedback_no_line_budget.md) — Don't enforce line-count limits on CLAUDE.md — content quality over line counts
 - [feedback_use_venv_python.md](feedback_use_venv_python.md) — Use project-specific venv Python, never system pip
 
+- [feedback_fakechat_reference_only.md](feedback_fakechat_reference_only.md) — fakechat is an example template, not a build target — build generic chat-io instead
+
 ## Reference
 - [reference_brain_mcp.md](reference_brain_mcp.md) — brain-mcp setup: config, file provider, queue pipeline, known bugs
