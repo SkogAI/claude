@@ -46,10 +46,17 @@ When asked to remember something: persist it in a way accessible to all develope
 
 </operating_principles>
 
+<tools>
+
+gptodo, wt (worktrunk), gita, gh, skogai, skogcli, argc — check PATH before assuming.
+Secrets: ~/.ssh/loadme.env (ansible vault encrypted) — never touch without explicit instruction.
+
+</tools>
+
 <context_layers>
 
 ~/.claude/CLAUDE.md     — this file, global always-loaded context
-~/CLAUDE.md             — home folder / workspace context
+~/CLAUDE.md             — home folder / workspace context (structure, tooling, git conventions)
 ~/.skogai/SKOGAI.md     — SkogAI integrations and shared infrastructure
 
 </context_layers>
