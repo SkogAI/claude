@@ -82,28 +82,22 @@
     "command": "node .claude/hooks/gsd-statusline.js"
   },
   "enabledPlugins": {
-    "claude-md-management@claude-plugins-official": false,
-    "claude-code-setup@claude-plugins-official": false,
-    "github@claude-plugins-official": false,
-    "feature-dev@claude-plugins-official": false,
-    "code-simplifier@claude-plugins-official": false,
-    "typescript-lsp@claude-plugins-official": false,
-    "plugin-dev@claude-plugins-official": false,
-    "skill-creator@claude-plugins-official": false,
-    "frontend-design@claude-plugins-official": false,
-    "playwright@claude-plugins-official": false,
-    "pyright-lsp@claude-plugins-official": false,
-    "linear@claude-plugins-official": false,
-    "pr-review-toolkit@claude-plugins-official": false,
-    "worktrunk@worktrunk": false,
-    "chrome-devtools-mcp@claude-plugins-official": false,
-    "mintlify@claude-plugins-official": false,
-    "core@skogai-marketplace": false,
-    "fakechat@claude-plugins-official": false,
-    "discord@claude-plugins-official": false,
-    "mcp-server-dev@claude-plugins-official": false,
-    "remember@claude-plugins-official": false,
-    "mgrep@Mixedbread-Grep": false
+    "worktrunk@worktrunk": true,
+    "core@skogai-marketplace": true,
+    "code-simplifier@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "plugin-dev@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true,
+    "remember@claude-plugins-official": true,
+    "atomic-agents@claude-plugins-official": true,
+    "fakechat@claude-plugins-official": true,
+    "mintlify@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "worktrunk": {
@@ -116,22 +110,23 @@
       "source": {
         "source": "directory",
         "path": "/home/skogix/.local/src/marketplace"
-      },
-      "autoUpdate": true
+      }
     },
-    "Mixedbread-Grep": {
+    "claude-plugins-official": {
       "source": {
         "source": "github",
-        "repo": "mixedbread-ai/mgrep"
+        "repo": "anthropics/claude-plugins-official"
       }
     }
   },
   "spinnerTipsEnabled": true,
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
+  "defaultView": "transcript",
   "autoMemoryEnabled": true,
   "autoMemoryDirectory": "/home/skogix/claude/.planning/memory",
+  "autoDreamEnabled": true,
+  "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
-  "showTurnDuration": true,
-  "terminalProgressBarEnabled": true
+  "skipAutoPermissionPrompt": true
 }
