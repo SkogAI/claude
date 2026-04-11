@@ -15,13 +15,10 @@
   },
   "permissions": {
     "allow": [
+      "mcp__skogchat__reply",
       "Skill(gsd:new-project)",
       "Skill(gsd:new-project:*)",
       "Bash(wc -l .planning/codebase/*.md)",
-      "Bash(node \"./.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: initialize project\" --files .planning/PROJECT.md)",
-      "Bash(node \"./.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"chore: add project config\" --files .planning/config.json)",
-      "Bash(node \"/home/skogix/claude/.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: complete project research\" --files /home/skogix/claude/.planning/research/)",
-      "Bash(node \"./.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs: define v1 requirements\" --files .planning/REQUIREMENTS.md)",
       "Bash(gita *)",
       "Bash(gptodo *)",
       "Bash(gh *)",
@@ -41,74 +38,20 @@
   "model": "sonnet",
   "enableAllProjectMcpServers": false,
   "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/gsd-check-update.js"
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Bash|Edit|Write|MultiEdit|Agent|Task",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/gsd-context-monitor.js",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/gsd-prompt-guard.js",
-            "timeout": 5
-          }
-        ]
-      }
-    ]
   },
   "disableAllHooks": false,
-  "statusLine": {
-    "type": "command",
-    "command": "node .claude/hooks/gsd-statusline.js"
-  },
-  "enabledPlugins": {
-    "claude-md-management@claude-plugins-official": true,
-    "claude-code-setup@claude-plugins-official": false,
-    "github@claude-plugins-official": false,
-    "feature-dev@claude-plugins-official": false,
-    "code-simplifier@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "plugin-dev@claude-plugins-official": false,
-    "skill-creator@claude-plugins-official": false,
-    "frontend-design@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true,
-    "linear@claude-plugins-official": false,
-    "pr-review-toolkit@claude-plugins-official": true,
-    "worktrunk@worktrunk": true,
-    "chrome-devtools-mcp@claude-plugins-official": true,
-    "mintlify@claude-plugins-official": false,
-    "core@skogai-marketplace": false,
-    "fakechat@claude-plugins-official": false,
-    "discord@claude-plugins-official": true,
-    "mcp-server-dev@claude-plugins-official": true,
-    "remember@claude-plugins-official": true
-  },
+  "enabledPlugins": {},
   "extraKnownMarketplaces": {
     "worktrunk": {
       "source": {
         "source": "directory",
         "path": "/home/skogix/.local/src/worktrunk"
+      }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
       }
     },
     "skogai-marketplace": {
@@ -117,12 +60,6 @@
         "path": "/home/skogix/.local/src/marketplace"
       },
       "autoUpdate": true
-    },
-    "claude-plugins-official": {
-      "source": {
-        "source": "github",
-        "repo": "anthropics/claude-plugins-official"
-      }
     }
   },
   "spinnerTipsEnabled": true,
@@ -133,8 +70,6 @@
   "autoMemoryDirectory": "/home/skogix/claude/.planning/memory",
   "autoDreamEnabled": true,
   "showThinkingSummaries": true,
-  "showTurnDuration": true,
-  "terminalProgressBarEnabled": true,
   "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true
 }
