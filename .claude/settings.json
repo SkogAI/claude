@@ -52,7 +52,11 @@
     ]
   },
   "disableAllHooks": false,
-  "enabledPlugins": {},
+  "enabledPlugins": {
+    "core@skogai-marketplace": true,
+    "dreamers@skogai-marketplace": true,
+    "skogchat@skogai-marketplace": true
+  },
   "extraKnownMarketplaces": {
     "worktrunk": {
       "source": {
@@ -68,10 +72,9 @@
     },
     "skogai-marketplace": {
       "source": {
-        "source": "directory",
-        "path": "/home/skogix/.local/src/marketplace"
-      },
-      "autoUpdate": true
+        "source": "git",
+        "url": "git@github.com:SkogAI/marketplace.git"
+      }
     }
   },
   "spinnerTipsEnabled": true,
