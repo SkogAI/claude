@@ -1,6 +1,6 @@
 ---
 state: new
-created: 2026-03-21
+created: "2026-03-21"
 tracking: ["https://github.com/SkogAI/claude/issues/3"]
 ---
 
