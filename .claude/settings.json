@@ -31,7 +31,9 @@
       "Bash(wt *)"
     ],
     "defaultMode": "default",
-    "additionalDirectories": ["/home/skogix/claude/"]
+    "additionalDirectories": [
+      "/home/skogix/claude/"
+    ]
   },
   "model": "sonnet",
   "enableAllProjectMcpServers": false,
@@ -64,8 +66,7 @@
           {
             "type": "command",
             "command": "out=$(/home/skogix/claude/bin/healthcheck 2>&1); code=$?; if [ \"$code\" -ne 0 ]; then jq -nc --arg m \"$out\" '{\"systemMessage\":\"⚠ healthcheck failed\\n\\($m)\"}'; fi",
-            "timeout": 30,
-            "suppressOutput": true
+            "timeout": 30
           }
         ]
       }
@@ -102,7 +103,6 @@
   "spinnerTipsEnabled": true,
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
-  "effortLevel": "high",
   "defaultView": "transcript",
   "autoMemoryEnabled": true,
   "autoMemoryDirectory": "/home/skogix/claude/.planning/memory",
