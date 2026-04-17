@@ -1,9 +1,3 @@
----
-title: CLAUDE
-type: note
-permalink: claude/bin/claude
----
-
 # bin/ -- Executable scripts
 
 Scripts and tools for home directory operations.
