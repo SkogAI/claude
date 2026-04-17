@@ -1,0 +1,90 @@
+/* ============================================================
+   DRAG-AND-DROP SHIP PLACEMENT — Visual Feedback
+   ============================================================ */
+
+/* -- Draggable ship options -- */
+.ship-option[draggable="true"] {
+  cursor: grab;
+  transition: all var(--transition-mid);
+}
+
+.ship-option[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.ship-option.dragging {
+  opacity: 0.35;
+  transform: scale(0.92);
+  filter: grayscale(0.3);
+  box-shadow: none;
+}
+
+/* -- Ghost element following cursor during drag -- */
+.drag-ghost {
+  position: fixed;
+  z-index: 10000;
+  pointer-events: none;
+  display: flex;
+  gap: 1px;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 8px rgba(46, 204, 113, 0.3));
+  transition: none;
+}
+
+.drag-ghost .drag-ghost-cell {
+  width: var(--cell-size, 40px);
+  height: var(--cell-size, 40px);
+  background: linear-gradient(145deg, rgba(74, 111, 165, 0.7) 0%, rgba(61, 93, 138, 0.7) 50%, rgba(74, 111, 165, 0.7) 100%);
+  border: 1px solid rgba(90, 138, 191, 0.5);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.drag-ghost .drag-ghost-cell:first-child {
+  border-radius: 4px 2px 2px 4px;
+}
+
+.drag-ghost .drag-ghost-cell:last-child {
+  border-radius: 2px 4px 4px 2px;
+}
+
+.drag-ghost.vertical {
+  flex-direction: column;
+}
+
+.drag-ghost.vertical .drag-ghost-cell:first-child {
+  border-radius: 4px 4px 2px 2px;
+}
+
+.drag-ghost.vertical .drag-ghost-cell:last-child {
+  border-radius: 2px 2px 4px 4px;
+}
+
+/* -- Drop zone highlights on grid cells -- */
+.cell.drop-valid {
+  background: rgba(46, 204, 113, 0.35);
+  box-shadow: inset 0 0 12px rgba(46, 204, 113, 0.3);
+  border-color: rgba(46, 204, 113, 0.4);
+  z-index: 2;
+}
+
+.cell.drop-invalid {
+  background: rgba(231, 76, 60, 0.35);
+  box-shadow: inset 0 0 12px rgba(231, 76, 60, 0.3);
+  border-color: rgba(231, 76, 60, 0.4);
+  z-index: 2;
+}
+
+.cell.drop-hover {
+  background: rgba(46, 204, 113, 0.5);
+  box-shadow: inset 0 0 16px rgba(46, 204, 113, 0.4), 0 0 8px rgba(46, 204, 113, 0.2);
+  border-color: rgba(46, 204, 113, 0.5);
+  z-index: 3;
+}
+
+/* Override drop-hover when invalid */
+.cell.drop-invalid.drop-hover {
+  background: rgba(231, 76, 60, 0.5);
+  box-shadow: inset 0 0 16px rgba(231, 76, 60, 0.4), 0 0 8px rgba(231, 76, 60, 0.2);
+  border-color: rgba(231, 76, 60, 0.5);
+}

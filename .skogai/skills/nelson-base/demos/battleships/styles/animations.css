@@ -1,0 +1,122 @@
+/* ============================================================
+   BATTLESHIPS — Enhanced Visual Animations
+   ============================================================
+   New CSS animations for torpedo hits, radar sweep, sinking,
+   airstrike, and sonar effects. Uses CSS variables from main.css.
+   ============================================================ */
+
+/* -- Torpedo Hit: bright white-to-cyan flash -- */
+@keyframes torpedoHit {
+  0%   { background: #ffffff; box-shadow: inset 0 0 20px rgba(255,255,255,0.9), 0 0 30px rgba(79,195,247,0.8); }
+  40%  { background: #4fc3f7; box-shadow: inset 0 0 14px rgba(79,195,247,0.6), 0 0 20px rgba(79,195,247,0.4); }
+  100% { background: var(--signal-red); box-shadow: inset 0 0 8px rgba(231,76,60,0.3); }
+}
+
+.cell.torpedo-hit {
+  animation: torpedoHit 0.3s ease-out;
+  z-index: 2;
+}
+
+/* -- Radar Sweep Overlay: rotating conic gradient over enemy grid -- */
+@keyframes radarRotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--board-radius, 8px);
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.radar-sweep-overlay::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform-origin: center center;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(46,204,113,0.15) 20deg,
+    rgba(46,204,113,0.06) 40deg,
+    transparent 60deg,
+    transparent 360deg
+  );
+  animation: radarRotate 2s linear infinite;
+  margin-top: -100%;
+  margin-left: -100%;
+}
+
+/* -- Sinking Ship: tilt, translate down, fade -- */
+@keyframes sinkingShip {
+  0%   { transform: rotate(0deg) translateY(0); opacity: 1; }
+  30%  { transform: rotate(3deg) translateY(2px); opacity: 0.9; }
+  60%  { transform: rotate(-2deg) translateY(6px); opacity: 0.6; }
+  100% { transform: rotate(5deg) translateY(12px); opacity: 0.3; }
+}
+
+.cell.sinking-ship {
+  animation: sinkingShip 1s ease-in forwards;
+}
+
+/* -- Airstrike Target: red flash sequence before impact -- */
+@keyframes airstrikeFlash {
+  0%   { box-shadow: inset 0 0 0 0 rgba(231,76,60,0); }
+  20%  { box-shadow: inset 0 0 16px rgba(231,76,60,0.7); }
+  40%  { box-shadow: inset 0 0 4px rgba(231,76,60,0.2); }
+  60%  { box-shadow: inset 0 0 20px rgba(255,61,0,0.8); }
+  80%  { box-shadow: inset 0 0 6px rgba(231,76,60,0.3); }
+  100% { box-shadow: inset 0 0 24px rgba(255,107,0,0.9), 0 0 12px rgba(255,107,0,0.4); }
+}
+
+.cell.airstrike-target {
+  animation: airstrikeFlash 0.5s ease-in-out;
+  z-index: 2;
+}
+
+/* -- Sonar Revealed: green pulse glow on reveal -- */
+@keyframes sonarReveal {
+  0%   { box-shadow: inset 0 0 0 0 rgba(46,204,113,0); }
+  30%  { box-shadow: inset 0 0 14px rgba(46,204,113,0.5), 0 0 10px rgba(46,204,113,0.3); }
+  60%  { box-shadow: inset 0 0 6px rgba(46,204,113,0.2), 0 0 4px rgba(46,204,113,0.15); }
+  100% { box-shadow: inset 0 0 0 0 rgba(46,204,113,0); }
+}
+
+.cell.sonar-revealed {
+  animation: sonarReveal 0.8s ease-out;
+}
+
+/* -- Sonar Ship: detected ship outline pulse -- */
+@keyframes sonarShipPulse {
+  0%   { outline: 2px solid rgba(46,204,113,0); outline-offset: 0; }
+  30%  { outline: 2px solid rgba(46,204,113,0.7); outline-offset: -2px; }
+  60%  { outline: 2px solid rgba(46,204,113,0.3); outline-offset: -1px; }
+  100% { outline: 2px solid rgba(46,204,113,0.5); outline-offset: -2px; }
+}
+
+.cell.sonar-ship {
+  animation: sonarShipPulse 1s ease-in-out;
+  outline: 2px solid rgba(46,204,113,0.5);
+  outline-offset: -2px;
+}
+
+/* ============================================================
+   Reduced Motion: disable animations for accessibility
+   ============================================================ */
+.reduced-motion .cell.torpedo-hit,
+.reduced-motion .cell.sinking-ship,
+.reduced-motion .cell.airstrike-target,
+.reduced-motion .cell.sonar-revealed,
+.reduced-motion .cell.sonar-ship {
+  animation: none;
+}
+
+.reduced-motion .radar-sweep-overlay::before {
+  animation: none;
+}
