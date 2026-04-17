@@ -1,12 +1,8 @@
 ---
 state: new
 created: 2026-04-17
-tracking:
-  - https://github.com/SkogAI/dot-skogai/issues/7
-tags:
-  - epic
-  - github
-permalink: claude/tasks/epic-skogai-git-orchestrator-skill-gita-7
+tracking: ["https://github.com/SkogAI/dot-skogai/issues/7"]
+tags: ["epic", "github"]
 ---
 
 # epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)
@@ -27,7 +23,7 @@ Epic for creating a `skogai-git` skill that orchestrates three specialized sub-s
 
 - [ ] #8 — create worktrunk specialist skill
 - [ ] #9 — extract gptodo specialist skill from gptme
-- [ ] #10 — create skogai-git orchestrator
+- [ ] #10 — create skogai-git orchestrator 
 
 ## Notes
 

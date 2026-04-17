@@ -1,9 +1,8 @@
 ---
-state: new
 created: 2026-04-17
+state: done
 tracking:
-  - https://github.com/SkogAI/claude/issues/14
-permalink: claude/tasks/chore-migrate-planning-from-gsd-planning-14
+- https://github.com/SkogAI/claude/issues/14
 ---
 
 # chore: migrate planning from gsd/.planning to skogai-planning-with-files

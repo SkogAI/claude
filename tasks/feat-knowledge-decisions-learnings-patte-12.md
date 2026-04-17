@@ -1,9 +1,7 @@
 ---
 state: new
 created: 2026-04-17
-tracking:
-  - https://github.com/SkogAI/dot-skogai/issues/12
-permalink: claude/tasks/feat-knowledge-decisions-learnings-patte-12
+tracking: ["https://github.com/SkogAI/dot-skogai/issues/12"]
 ---
 
 # feat: knowledge/ — decisions, learnings, patterns
@@ -13,11 +11,9 @@ permalink: claude/tasks/feat-knowledge-decisions-learnings-patte-12
 ## Description
 
 ## Summary
-
 Structured knowledge base for a project: architectural decisions, session learnings, and reusable patterns.
 
 ## What
-
 ```
 knowledge/
 ├── decisions/    # architectural decision records (ADRs)
@@ -27,7 +23,7 @@ knowledge/
 
 - `decisions/` — when and why something was decided, alternatives considered
 - `learnings/` — things discovered during the work (dated, searchable)
-- `patterns/` — reusable approaches
+- `patterns/` — reusable approaches 
 
 ## Notes
 

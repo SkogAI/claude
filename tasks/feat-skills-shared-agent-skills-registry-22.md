@@ -1,9 +1,7 @@
 ---
 state: new
 created: 2026-04-17
-tracking:
-  - https://github.com/SkogAI/dot-skogai/issues/22
-permalink: claude/tasks/feat-skills-shared-agent-skills-registry-22
+tracking: ["https://github.com/SkogAI/dot-skogai/issues/22"]
 ---
 
 # feat: skills/ — shared agent skills registry
@@ -13,11 +11,9 @@ permalink: claude/tasks/feat-skills-shared-agent-skills-registry-22
 ## Description
 
 ## Summary
-
 Project-level (or household-level) skills that any Claude Code agent can load — with a registry for discovery.
 
 ## What
-
 ```
 skills/
 ├── skill-registry.json         # index of all available skills
@@ -30,7 +26,7 @@ skills/
     └── patterns/
 ```
 
-Existing skills: `api-design`, `java-best-practices`, \`typesc
+Existing skills: `api-design`, `java-best-practices`, `typesc
 
 ## Notes
 

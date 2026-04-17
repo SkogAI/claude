@@ -1,9 +1,8 @@
 ---
-state: new
 created: '2026-03-21'
+state: backlog
 tracking:
-  - https://github.com/SkogAI/claude/issues/3
-permalink: claude/tasks/document-and-integrate-all-binary-script-3
+- https://github.com/SkogAI/claude/issues/3
 ---
 
 # Document and integrate all binary/script/executables into CLAUDE.md
