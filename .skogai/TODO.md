@@ -1,2 +1,6 @@
-- [ ] .claude/skills/ci should be a reference document and not a skill to be called. move to .github/CLAUDE.md ?
-- [ ] .claude/skills/cleanup-worktrees should probably be managed by wt/worktrunk instead of being a callable skill
+- [x] .claude/skills/ci should be a reference document and not a skill to be called. move to .github/CLAUDE.md ?
+- [x] .claude/skills/cleanup-worktrees should probably be managed by wt/worktrunk instead of being a callable skill
+- [ ] .claude/skills/deploy-gate should be a workflow to be followed in a bigger skill which essentially we might call "migration" from /home/skogix/claude to /home/claude in the end
+  - [ ] .claude/skills/healthcheck would be ./scripts/healthcheck.sh in that new skill folder
+- [ ] moving back to the .skogai-setup in general slowly but surely
+  - [ ] start reworking and moving from the "gsd"-.planning setup to our own "skogai-planning-with-files"-setup

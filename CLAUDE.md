@@ -86,12 +86,12 @@ Staged at `/home/user/claude` (formerly `/home/skogix/claude`), deploying to `/h
 
 Each directory has its own CLAUDE.md router. Load lazily:
 
-- @bin/CLAUDE.md          — scripts and tools
-- @docs/CLAUDE.md         — reference documentation
-- @guestbook/CLAUDE.md    — visitor notes
-- @lab/CLAUDE.md          — experiments and WIP
-- @notes/CLAUDE.md        — observations and patterns
-- @personal/CLAUDE.md     — identity, soul, memory
+- @bin/CLAUDE.md — scripts and tools
+- @docs/CLAUDE.md — reference documentation
+- @guestbook/CLAUDE.md — visitor notes
+- @lab/CLAUDE.md — experiments and WIP
+- @notes/CLAUDE.md — observations and patterns
+- @personal/CLAUDE.md — identity, soul, memory
 
 </routes>
 
@@ -100,13 +100,13 @@ Each directory has its own CLAUDE.md router. Load lazily:
 Milestone v1.0: "Claude's Home"
 Core value: Claude can drop into any conversation and know who he is, what he's working on, and where things are.
 
-| Phase | Name | Status |
-|-------|------|--------|
-| 1 | Identity & Routing | Complete (2026-03-21) |
-| 2 | Persistence Layer | Complete (2026-03-21) |
-| 3 | Operations & Deployment Gate | Complete (2026-03-21) |
-| 4 | Multi-Agent Readiness | Complete (2026-03-21) |
-| 5 | skogai-live-chat-implementation | Planning |
+| Phase | Name                            | Status                |
+| ----- | ------------------------------- | --------------------- |
+| 1     | Identity & Routing              | Complete (2026-03-21) |
+| 2     | Persistence Layer               | Complete (2026-03-21) |
+| 3     | Operations & Deployment Gate    | Complete (2026-03-21) |
+| 4     | Multi-Agent Readiness           | Complete (2026-03-21) |
+| 5     | skogai-live-chat-implementation | Planning              |
 
 Phase 5 adds `[@agent:"msg"]` routing via skogparse, chat-io contract spec, and hook fallback. See `.planning/ROADMAP.md` for full spec.
 
@@ -116,20 +116,22 @@ Phase 5 adds `[@agent:"msg"]` routing via skogparse, chat-io contract spec, and 
 
 Tools assumed on PATH — check existence before assuming:
 
-| tool     | purpose                                          |
-|----------|--------------------------------------------------|
-| gptodo   | task/issue management (fetch, list, add, edit)   |
-| wt       | git worktree management (worktrunk)              |
-| gita     | aggregate git operations across repos            |
-| gh       | GitHub CLI                                       |
-| skogai   | SkogAI CLI                                       |
-| skogcli  | SkogAI client CLI                                |
-| argc     | argument parser / command dispatcher             |
+| tool    | purpose                                        |
+| ------- | ---------------------------------------------- |
+| gptodo  | task/issue management (fetch, list, add, edit) |
+| wt      | git worktree management (worktrunk)            |
+| gita    | aggregate git operations across repos          |
+| gh      | GitHub CLI                                     |
+| skogai  | SkogAI CLI                                     |
+| skogcli | SkogAI client CLI                              |
+| argc    | argument parser / command dispatcher           |
 
 MCP servers (configured in settings.json):
+
 - **searxng** — web search. env: `SEARXNG_COOKIE` if behind auth
 
 Tool notes:
+
 - `wt new <branch>` — creates worktree in `.claude/worktrees/`, configure via `.config/wt.toml`
 - `gptodo` `ModuleNotFoundError` after updates — fix: `uv tool upgrade gptodo --reinstall`
 
@@ -138,16 +140,17 @@ Tool notes:
 <journal_conventions>
 
 Journal entries use date-folder structure: `personal/journal/YYYY-MM-DD/<description>.md`
+
 - Append-only (formatting corrections permitted)
 - LORE (memory-blocks/) requires explicit navigation — not auto-loaded
 
-| hook file                | event       | matcher                          | purpose                        |
-|--------------------------|-------------|----------------------------------|--------------------------------|
-| gsd-check-update.js      | SessionStart | —                               | check for gsd plugin updates   |
-| gsd-context-monitor.js   | PostToolUse | Bash\|Edit\|Write\|Agent\|Task   | monitor context window         |
-| gsd-prompt-guard.js      | PreToolUse  | Write\|Edit                      | guard file write operations    |
-| gsd-statusline.js        | —           | statusLine                       | render status line             |
-| gsd-workflow-guard.js    | PreToolUse  | Write\|Edit                      | guard workflow state changes   |
+| hook file              | event        | matcher                        | purpose                      |
+| ---------------------- | ------------ | ------------------------------ | ---------------------------- |
+| gsd-check-update.js    | SessionStart | —                              | check for gsd plugin updates |
+| gsd-context-monitor.js | PostToolUse  | Bash\|Edit\|Write\|Agent\|Task | monitor context window       |
+| gsd-prompt-guard.js    | PreToolUse   | Write\|Edit                    | guard file write operations  |
+| gsd-statusline.js      | —            | statusLine                     | render status line           |
+| gsd-workflow-guard.js  | PreToolUse   | Write\|Edit                    | guard workflow state changes |
 
 </hooks>
 
@@ -162,6 +165,7 @@ Slash commands in `commands/`:
 <settings_highlights>
 
 Key settings.json values (`.claude/settings.json`):
+
 - `model: "sonnet"`
 - `alwaysThinkingEnabled: true`
 - `autoMemoryEnabled: true` → `autoMemoryDirectory: .planning/memory`
@@ -178,13 +182,13 @@ Key settings.json values (`.claude/settings.json`):
 Active project: **Claude's Home** (SkogAI/claude)
 Milestone: v1.0 — four phases complete, one in planning
 
-| Phase | Name | Status |
-|-------|------|--------|
-| 1 | Identity & Routing | Complete (2026-03-21) |
-| 2 | Persistence Layer | Complete (2026-03-21) |
-| 3 | Operations & Deployment Gate | Complete (2026-03-21) |
-| 4 | Multi-Agent Readiness | Complete (2026-03-21) |
-| 5 | skogai-live-chat-implementation | Planning |
+| Phase | Name                            | Status                |
+| ----- | ------------------------------- | --------------------- |
+| 1     | Identity & Routing              | Complete (2026-03-21) |
+| 2     | Persistence Layer               | Complete (2026-03-21) |
+| 3     | Operations & Deployment Gate    | Complete (2026-03-21) |
+| 4     | Multi-Agent Readiness           | Complete (2026-03-21) |
+| 5     | skogai-live-chat-implementation | Planning              |
 
 Phase 5 goal: transport-agnostic `chat-io` contract, routing script for `[@agent:"msg"]` notation via skogparse, Claude skill + hook fallback. Reference: `.planning/ROADMAP.md`, `.planning/phases/05-skogai-live-chat-implementation/`.
 
@@ -199,40 +203,32 @@ Memory/feedback files in `.planning/memory/` shape behavior — check `MEMORY.md
 Remote: `origin → SkogAI/claude`
 
 Branch naming: `<agent>/<description>-<id>`
-  example: `claude/add-claude-documentation-KmFlh`
+example: `claude/add-claude-documentation-KmFlh`
 
 Commit style: conventional, lowercase, imperative
-  - `chore:` — maintenance/config
-  - `docs:` — documentation
-  - `feat:` — new features
-  - `fix:` — bug fixes
+
+- `chore:` — maintenance/config
+- `docs:` — documentation
+- `feat:` — new features
+- `fix:` — bug fixes
 
 </git_conventions>
 
 <ci_workflows>
 
-Three workflows in `.github/workflows/` — all delegate to `SkogAI/.github` reusable workflows. Require `CLAUDE_CODE_OAUTH_TOKEN` secret.
-
-| Workflow | Trigger | Purpose |
-|----------|---------|---------|
-| `claude.yml` | `@claude` mention in issue/PR comment, review, or issue body | Run Claude on the mentioned task |
-| `claude-pr-review.yml` | PR opened or synchronized | Auto-review every PR diff |
-| `claude-manual.yml` | `workflow_dispatch` (Actions UI) | Manual prompt with optional issue/PR context |
-
-To trigger `claude.yml`: mention `@claude` in any issue or PR.
-To trigger `claude-manual.yml`: GitHub → Actions → "Claude Code - Manual Trigger" → Run workflow.
+See @.github/CLAUDE.md for full CI reference.
 
 </ci_workflows>
 
 <see_also>
 
-- @~/.claude/CLAUDE.md                    — global identity and operating principles
-- @~/.skogai/SKOGAI.md                    — SkogAI integrations and shared infrastructure
-- @~/.skogai/docs/skogix/user.md          — Skogix personal introduction
-- @~/.skogai/docs/skogix/definitions.md   — SkogAI vocabulary
-- @~/.skogai/docs/skogfences.md           — skogfences architecture philosophy
-- @.planning/PROJECT.md                   — project brief and decisions
-- @docs/deployment-gate.md               — deployment gate checklist
-- @docs/permissions.md                   — permission model
+- @~/.claude/CLAUDE.md — global identity and operating principles
+- @~/.skogai/SKOGAI.md — SkogAI integrations and shared infrastructure
+- @~/.skogai/docs/skogix/user.md — Skogix personal introduction
+- @~/.skogai/docs/skogix/definitions.md — SkogAI vocabulary
+- @~/.skogai/docs/skogfences.md — skogfences architecture philosophy
+- @.planning/PROJECT.md — project brief and decisions
+- @docs/deployment-gate.md — deployment gate checklist
+- @docs/permissions.md — permission model
 
 </see_also>
