@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-17
-tracking: ["https://github.com/SkogAI/dot-skogai/issues/10"]
+tracking:
+  - https://github.com/SkogAI/dot-skogai/issues/10
+permalink: claude/tasks/feat-create-skogai-git-orchestrator-skil-10
 ---
 
 # feat: create skogai-git orchestrator skill

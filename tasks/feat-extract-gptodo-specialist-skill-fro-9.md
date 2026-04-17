@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-17
-tracking: ["https://github.com/SkogAI/dot-skogai/issues/9"]
+tracking:
+  - https://github.com/SkogAI/dot-skogai/issues/9
+permalink: claude/tasks/feat-extract-gptodo-specialist-skill-fro-9
 ---
 
 # feat: extract gptodo specialist skill from gptme
