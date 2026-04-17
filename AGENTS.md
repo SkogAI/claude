@@ -1,6 +1,6 @@
 ---
 title: AGENTS
-type: note
+type: router
 permalink: claude/agents
 ---
 
@@ -42,3 +42,4 @@ This repository is a personal workspace (not a single app). Most context is docu
 
 - Existing `CLAUDE.md` files are still canonical context artifacts for this repo.
 - This `AGENTS.md` exists to make non-Claude coding agents work smoothly in the same workspace.
+- This repo uses @.skogai/docs/tools/rtk/RTK.md
