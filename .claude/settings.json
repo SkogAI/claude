@@ -109,7 +109,8 @@
     "core@skogai-marketplace": false,
     "dreamers@skogai-marketplace": false,
     "frontend-design@claude-plugins-official": false,
-    "worktrunk@worktrunk": true
+    "worktrunk@worktrunk": true,
+    "codex@openai-codex": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -129,17 +130,23 @@
         "source": "directory",
         "path": "/home/skogix/.local/src/worktrunk"
       }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
     }
   },
   "spinnerTipsEnabled": true,
   "syntaxHighlightingDisabled": false,
   "alwaysThinkingEnabled": true,
+  "advisorModel": "opus",
   "autoMemoryEnabled": true,
   "autoMemoryDirectory": "/home/skogix/claude/.planning/memory",
   "autoDreamEnabled": true,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true,
-  "defaultView": "transcript",
-  "advisorModel": "opus"
+  "defaultView": "transcript"
 }
