@@ -7,3 +7,18 @@
   - [ ] migrate .planning/ROADMAP.md, PROJECT.md, STATE.md references to .skogai/plan/claudes-home/
   - [ ] migrate or bridge .planning/memory/ (auto-memory) to .skogai/-compatible location
   - [ ] remove .planning/ once all references are updated
+- [x] symlink docs
+- [ ] rules
+- [ ] plan
+- [ ] todos
+- [ ] skogix
+- [ ] docker mcp
+- [ ] add the "return to base"-setting to claude so he find his way home
+- [ ] using-git-worktrees needs automation for the git worktree creation (we just did 20 manually)
+- [ ] decide on branch naming convention for worktrees - skill/_will probably break soon, consider feature/_, work/\*, or just flat names
+- [ ] create helper scripts in claude/skills/using-git-worktrees/ for common operations (create-all, cleanup-all, list-status)
+- [ ] should push to origin on creation for use outside local setup as well
+- [ ] using-git-worktrees skill should reference/bundle these automation scripts
+- [ ] stress test: verify all 20 worktrees work correctly with skill updates
+- [ ] document worktree workflow patterns for multi-skill parallel work
+- [ ] zshrc use exa instead of ls
