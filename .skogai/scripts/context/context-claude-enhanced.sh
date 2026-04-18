@@ -65,11 +65,11 @@ if command -v skogcli &>/dev/null; then
   echo
 
   # Try to use MCP todo system first
-  if todo list --status=active --limit=$TASKS_TO_SHOW &>/dev/null; then
+  if gptodo list --sort=state --active-only &>/dev/null; then
     echo "## Current MCP Todo Tasks"
     echo
     echo '```'
-    todo list --status=active --limit=$TASKS_TO_SHOW
+    gptodo list --sort=state --active-only
     echo '```'
     echo
   else
