@@ -1,39 +1,33 @@
 ---
-permalink: skogai/skills/skogai-routing/templates/router-skill
+name: {{SKILL_NAME}}
+description: {{What it does}} Use when {{trigger conditions}}.
 ---
 
-______________________________________________________________________
-
-## name: {{SKILL_NAME}} description: {{What it does}} Use when {{trigger conditions}}.
-
-\<essential_principles>
-
+<essential_principles>
 ## {{Core Concept}}
 
 {{Principles that ALWAYS apply, regardless of which workflow runs}}
 
 ### 1. {{First principle}}
-
 {{Explanation}}
 
 ### 2. {{Second principle}}
-
 {{Explanation}}
 
 ### 3. {{Third principle}}
-
-{{Explanation}} \</essential_principles>
+{{Explanation}}
+</essential_principles>
 
 <intake>
 **Ask the user:**
 
 What would you like to do?
-
 1. {{First option}}
-1. {{Second option}}
-1. {{Third option}}
+2. {{Second option}}
+3. {{Third option}}
 
-**Wait for response before proceeding.** </intake>
+**Wait for response before proceeding.**
+</intake>
 
 <routing>
 | Response | Workflow |
@@ -42,38 +36,38 @@ What would you like to do?
 | 2, "{{keywords}}" | `workflows/{{second-workflow}}.md` |
 | 3, "{{keywords}}" | `workflows/{{third-workflow}}.md` |
 
-**After reading the workflow, follow it exactly.** </routing>
+**After reading the workflow, follow it exactly.**
+</routing>
 
-\<quick_reference>
-
+<quick_reference>
 ## {{Skill Name}} Quick Reference
 
-{{Brief reference information always useful to have visible}} \</quick_reference>
+{{Brief reference information always useful to have visible}}
+</quick_reference>
 
-\<reference_index>
-
+<reference_index>
 ## Domain Knowledge
 
 All in `references/`:
-
 - {{reference-1.md}} - {{purpose}}
-- {{reference-2.md}} - {{purpose}} \</reference_index>
+- {{reference-2.md}} - {{purpose}}
+</reference_index>
 
-\<workflows_index>
-
+<workflows_index>
 ## Workflows
 
 All in `workflows/`:
 
-| Workflow               | Purpose     |
-| ---------------------- | ----------- |
-| {{first-workflow}}.md  | {{purpose}} |
+| Workflow | Purpose |
+|----------|---------|
+| {{first-workflow}}.md | {{purpose}} |
 | {{second-workflow}}.md | {{purpose}} |
-| {{third-workflow}}.md  | {{purpose}} |
-| \</workflows_index>    |             |
+| {{third-workflow}}.md | {{purpose}} |
+</workflows_index>
 
-\<success_criteria> A well-executed {{skill name}}:
-
+<success_criteria>
+A well-executed {{skill name}}:
 - {{First criterion}}
 - {{Second criterion}}
-- {{Third criterion}} \</success_criteria>
+- {{Third criterion}}
+</success_criteria>

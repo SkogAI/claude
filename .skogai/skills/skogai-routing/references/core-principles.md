@@ -1,22 +1,21 @@
----
-title: core-principles
-type: note
-permalink: skogai/skills/skogai-routing/references/core-principles
----
-
 <overview>
 Core principles guide skill authoring decisions. These principles ensure skills are efficient, effective, and maintainable across different models and use cases.
 </overview>
 
-\<xml_structure_principle> <description> Skills use pure XML structure for consistent parsing, efficient token usage, and improved Claude performance. </description>
+<xml_structure_principle>
+<description>
+Skills use pure XML structure for consistent parsing, efficient token usage, and improved Claude performance.
+</description>
 
-\<why_xml> <consistency> XML enforces consistent structure across all skills. All skills use the same tag names for the same purposes:
-
+<why_xml>
+<consistency>
+XML enforces consistent structure across all skills. All skills use the same tag names for the same purposes:
 - `<objective>` always defines what the skill does
 - `<quick_start>` always provides immediate guidance
 - `<success_criteria>` always defines completion
 
-This consistency makes skills predictable and easier to maintain. </consistency>
+This consistency makes skills predictable and easier to maintain.
+</consistency>
 
 <parseability>
 XML provides unambiguous boundaries and semantic meaning. Claude can reliably:
@@ -25,55 +24,63 @@ XML provides unambiguous boundaries and semantic meaning. Claude can reliably:
 - Skip irrelevant sections (progressive disclosure)
 - Parse programmatically (validation tools can check structure)
 
-Markdown headings are just visual formatting. Claude must infer meaning from heading text, which is less reliable. </parseability>
+Markdown headings are just visual formatting. Claude must infer meaning from heading text, which is less reliable.
+</parseability>
 
-\<token_efficiency> XML tags are more efficient than markdown headings:
+<token_efficiency>
+XML tags are more efficient than markdown headings:
 
 **Markdown headings**:
-
 ```markdown
 ## Quick start
 ## Workflow
 ## Advanced features
 ## Success criteria
 ```
-
 Total: ~20 tokens, no semantic meaning to Claude
 
 **XML tags**:
-
 ```xml
 <quick_start>
 <workflow>
 <advanced_features>
 <success_criteria>
 ```
-
 Total: ~15 tokens, semantic meaning built-in
 
-Savings compound across all skills in the ecosystem. \</token_efficiency>
+Savings compound across all skills in the ecosystem.
+</token_efficiency>
 
-\<claude_performance> Claude performs better with pure XML because:
-
+<claude_performance>
+Claude performs better with pure XML because:
 - Unambiguous section boundaries reduce parsing errors
 - Semantic tags convey intent directly (no inference needed)
 - Nested tags create clear hierarchies
 - Consistent structure across skills reduces cognitive load
 - Progressive disclosure works more reliably
 
-Pure XML structure is not just a style preference—it's a performance optimization. \</claude_performance> \</why_xml>
+Pure XML structure is not just a style preference—it's a performance optimization.
+</claude_performance>
+</why_xml>
 
-\<critical_rule> **Remove ALL markdown headings (#, ##, ###) from skill body content.** Replace with semantic XML tags. Keep markdown formatting WITHIN content (bold, italic, lists, code blocks, links). \</critical_rule>
+<critical_rule>
+**Remove ALL markdown headings (#, ##, ###) from skill body content.** Replace with semantic XML tags. Keep markdown formatting WITHIN content (bold, italic, lists, code blocks, links).
+</critical_rule>
 
-\<required_tags> Every skill MUST have:
-
+<required_tags>
+Every skill MUST have:
 - `<objective>` - What the skill does and why it matters
 - `<quick_start>` - Immediate, actionable guidance
 - `<success_criteria>` or `<when_successful>` - How to know it worked
 
-See [use-xml-tags.md](use-xml-tags.md) for conditional tags and intelligence rules. \</required_tags> \</xml_structure_principle>
+See [use-xml-tags.md](use-xml-tags.md) for conditional tags and intelligence rules.
+</required_tags>
+</xml_structure_principle>
 
-\<conciseness_principle> <description> The context window is shared. Your skill shares it with the system prompt, conversation history, other skills' metadata, and the actual request. </description>
+<conciseness_principle>
+<description>
+The context window is shared. Your skill shares it with the system prompt, conversation history, other skills' metadata, and the actual request.
+</description>
 
 <guidance>
 Only add context Claude doesn't already have. Challenge each piece of information:
@@ -81,11 +88,12 @@ Only add context Claude doesn't already have. Challenge each piece of informatio
 - "Can I assume Claude knows this?"
 - "Does this paragraph justify its token cost?"
 
-Assume Claude is smart. Don't explain obvious concepts. </guidance>
+Assume Claude is smart. Don't explain obvious concepts.
+</guidance>
 
-\<concise_example> **Concise** (~50 tokens):
-
-````xml
+<concise_example>
+**Concise** (~50 tokens):
+```xml
 <quick_start>
 Extract PDF text with pdfplumber:
 
@@ -94,11 +102,9 @@ import pdfplumber
 
 with pdfplumber.open("file.pdf") as pdf:
     text = pdf.pages[0].extract_text()
-````
-
-\</quick_start>
-
-````
+```
+</quick_start>
+```
 
 **Verbose** (~150 tokens):
 ```xml
@@ -110,11 +116,11 @@ import pdfplumber
 
 with pdfplumber.open("file.pdf") as pdf:
     text = pdf.pages[0].extract_text()
-````
+```
 
-This code opens the PDF and extracts text from the first page. \</quick_start>
-
-````
+This code opens the PDF and extracts text from the first page.
+</quick_start>
+```
 
 The concise version assumes Claude knows what PDFs are, understands Python imports, and can read code. All those assumptions are correct.
 </concise_example>
@@ -165,16 +171,19 @@ Review code for quality, bugs, and maintainability.
 - Suggestions are actionable and specific
 - Review balances praise and criticism
 </success_criteria>
-````
+```
 
-Claude has freedom to adapt the review based on what the code needs. </example> \</high_freedom>
+Claude has freedom to adapt the review based on what the code needs.
+</example>
+</high_freedom>
 
-\<medium_freedom> <when>
-
+<medium_freedom>
+<when>
 - A preferred pattern exists
 - Some variation is acceptable
 - Configuration affects behavior
-- Template can be adapted </when>
+- Template can be adapted
+</when>
 
 <example>
 ```xml
@@ -182,7 +191,8 @@ Claude has freedom to adapt the review based on what the code needs. </example> 
 Generate reports with customizable format and sections.
 </objective>
 
-\<report_template> Use this template and customize as needed:
+<report_template>
+Use this template and customize as needed:
 
 ```python
 def generate_report(data, format="markdown", include_charts=True):
@@ -190,16 +200,14 @@ def generate_report(data, format="markdown", include_charts=True):
     # Generate output in specified format
     # Optionally include visualizations
 ```
+</report_template>
 
-\</report_template>
-
-\<success_criteria>
-
+<success_criteria>
 - Report includes all required sections
 - Format matches user preference
-- Data accurately represented \</success_criteria>
-
-````
+- Data accurately represented
+</success_criteria>
+```
 
 Claude can customize the template based on requirements.
 </example>
@@ -224,17 +232,17 @@ Run exactly this script:
 
 ```bash
 python scripts/migrate.py --verify --backup
-````
+```
 
-**Do not modify the command or add additional flags.** </workflow>
+**Do not modify the command or add additional flags.**
+</workflow>
 
-\<success_criteria>
-
+<success_criteria>
 - Migration completes without errors
 - Backup created before migration
-- Verification confirms data integrity \</success_criteria>
-
-````
+- Verification confirms data integrity
+</success_criteria>
+```
 
 Claude must follow the exact command with no variation.
 </example>
@@ -322,11 +330,11 @@ Use pdfplumber for text extraction:
 import pdfplumber
 with pdfplumber.open("file.pdf") as pdf:
     text = pdf.pages[0].extract_text()
-````
+```
 
-For scanned PDFs requiring OCR, use pdf2image with pytesseract instead. \</quick_start>
-
-````
+For scanned PDFs requiring OCR, use pdf2image with pytesseract instead.
+</quick_start>
+```
 
 This works for all models:
 - Haiku gets complete working example
@@ -338,37 +346,41 @@ This works for all models:
 <quick_start>
 Use pdfplumber for text extraction.
 </quick_start>
-````
+```
 
 **Too verbose for Opus**:
-
 ```xml
 <quick_start>
 PDF files are documents that contain text. To extract that text, we use a library called pdfplumber. First, import the library at the top of your Python file. Then, open the PDF file using the pdfplumber.open() method. This returns a PDF object. Access the pages attribute to get a list of pages. Each page has an extract_text() method that returns the text content...
 </quick_start>
 ```
+</balancing_across_models>
 
-\</balancing_across_models>
-
-\<iterative_improvement>
-
+<iterative_improvement>
 1. Start with medium detail level
-1. Test with target models
-1. Observe where models struggle or succeed
-1. Adjust based on actual performance
-1. Re-test and iterate
+2. Test with target models
+3. Observe where models struggle or succeed
+4. Adjust based on actual performance
+5. Re-test and iterate
 
-Don't optimize for one model. Find the balance that works across your target models. \</iterative_improvement> \</model_testing_principle>
+Don't optimize for one model. Find the balance that works across your target models.
+</iterative_improvement>
+</model_testing_principle>
 
-\<progressive_disclosure_principle> <description> SKILL.md serves as an overview. Reference files contain details. Claude loads reference files only when needed. </description>
+<progressive_disclosure_principle>
+<description>
+SKILL.md serves as an overview. Reference files contain details. Claude loads reference files only when needed.
+</description>
 
-\<token_efficiency> Progressive disclosure keeps token usage proportional to task complexity:
+<token_efficiency>
+Progressive disclosure keeps token usage proportional to task complexity:
 
 - Simple task: Load SKILL.md only (~500 tokens)
 - Medium task: Load SKILL.md + one reference (~1000 tokens)
 - Complex task: Load SKILL.md + multiple references (~2000 tokens)
 
-Without progressive disclosure, every task loads all content regardless of need. \</token_efficiency>
+Without progressive disclosure, every task loads all content regardless of need.
+</token_efficiency>
 
 <implementation>
 - Keep SKILL.md under 500 lines
@@ -377,9 +389,14 @@ Without progressive disclosure, every task loads all content regardless of need.
 - Link to references from relevant sections
 - Use descriptive reference file names
 
-See [skill-structure.md](skill-structure.md) for progressive disclosure patterns. </implementation> \</progressive_disclosure_principle>
+See [skill-structure.md](skill-structure.md) for progressive disclosure patterns.
+</implementation>
+</progressive_disclosure_principle>
 
-\<validation_principle> <description> Validation scripts are force multipliers. They catch errors that Claude might miss and provide actionable feedback. </description>
+<validation_principle>
+<description>
+Validation scripts are force multipliers. They catch errors that Claude might miss and provide actionable feedback.
+</description>
 
 <characteristics>
 Good validation scripts:
@@ -389,19 +406,30 @@ Good validation scripts:
 - Suggest actionable fixes
 - Are deterministic and reliable
 
-See [workflows-and-validation.md](workflows-and-validation.md) for validation patterns. </characteristics> \</validation_principle>
+See [workflows-and-validation.md](workflows-and-validation.md) for validation patterns.
+</characteristics>
+</validation_principle>
 
-\<principle_summary> \<xml_structure> Use pure XML structure for consistency, parseability, and Claude performance. Required tags: objective, quick_start, success_criteria. \</xml_structure>
+<principle_summary>
+<xml_structure>
+Use pure XML structure for consistency, parseability, and Claude performance. Required tags: objective, quick_start, success_criteria.
+</xml_structure>
 
 <conciseness>
 Only add context Claude doesn't have. Assume Claude is smart. Challenge every piece of content.
 </conciseness>
 
-\<degrees_of_freedom> Match specificity to fragility. High freedom for creative tasks, low freedom for fragile operations, medium for standard work. \</degrees_of_freedom>
+<degrees_of_freedom>
+Match specificity to fragility. High freedom for creative tasks, low freedom for fragile operations, medium for standard work.
+</degrees_of_freedom>
 
-\<model_testing> Test with all target models. Balance detail level to work across Haiku, Sonnet, and Opus. \</model_testing>
+<model_testing>
+Test with all target models. Balance detail level to work across Haiku, Sonnet, and Opus.
+</model_testing>
 
-\<progressive_disclosure> Keep SKILL.md concise. Split details into reference files. Load reference files only when needed. \</progressive_disclosure>
+<progressive_disclosure>
+Keep SKILL.md concise. Split details into reference files. Load reference files only when needed.
+</progressive_disclosure>
 
 <validation>
 Make validation scripts verbose and specific. Catch errors early with actionable feedback.

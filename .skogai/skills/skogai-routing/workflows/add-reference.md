@@ -1,15 +1,10 @@
----
-title: add-reference
-type: note
-permalink: skogai/skills/skogai-routing/workflows/add-reference
----
-
 # Workflow: Add a Reference to Existing Skill
 
-\<required_reading> **Read these reference files NOW:**
-
+<required_reading>
+**Read these reference files NOW:**
 1. references/recommended-structure.md
-1. references/skill-structure.md \</required_reading>
+2. references/skill-structure.md
+</required_reading>
 
 <process>
 ## Step 1: Select the Skill
@@ -28,7 +23,6 @@ ls ~/.claude/skills/{skill-name}/references/ 2>/dev/null
 ```
 
 Determine:
-
 - **Has references/ folder?** → Good, can add directly
 - **Simple skill?** → May need to create references/ first
 - **What references exist?** → Understand the knowledge landscape
@@ -38,7 +32,6 @@ Report current references to user.
 ## Step 3: Gather Reference Requirements
 
 Ask:
-
 - What knowledge should this reference contain?
 - Which workflows will use it?
 - Is this reusable across workflows or specific to one?
@@ -50,7 +43,6 @@ Ask:
 Create `references/{reference-name}.md`:
 
 Use semantic XML tags to structure the content:
-
 ```xml
 <overview>
 Brief description of what this reference covers
@@ -75,7 +67,6 @@ Brief description of what this reference covers
 ## Step 5: Update SKILL.md
 
 Add the new reference to `<reference_index>`:
-
 ```markdown
 **Category:** existing.md, new-reference.md
 ```
@@ -85,19 +76,21 @@ Add the new reference to `<reference_index>`:
 For each workflow that should use this reference:
 
 1. Read the workflow file
-1. Add to its `<required_reading>` section
-1. Verify the workflow still makes sense with this addition
+2. Add to its `<required_reading>` section
+3. Verify the workflow still makes sense with this addition
 
 ## Step 7: Verify
 
 - [ ] Reference file exists and is well-structured
 - [ ] Reference is in SKILL.md reference_index
 - [ ] Relevant workflows have it in required_reading
-- [ ] No broken references </process>
+- [ ] No broken references
+</process>
 
-\<success_criteria> Reference addition is complete when:
-
+<success_criteria>
+Reference addition is complete when:
 - [ ] Reference file created with useful content
 - [ ] Added to reference_index in SKILL.md
 - [ ] Relevant workflows updated to read it
-- [ ] Content is reusable (not workflow-specific) \</success_criteria>
+- [ ] Content is reusable (not workflow-specific)
+</success_criteria>

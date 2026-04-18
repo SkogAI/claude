@@ -1,15 +1,10 @@
----
-title: upgrade-to-router
-type: note
-permalink: skogai/skills/skogai-routing/workflows/upgrade-to-router
----
-
 # Workflow: Upgrade Skill to Router Pattern
 
-\<required_reading> **Read these reference files NOW:**
-
+<required_reading>
+**Read these reference files NOW:**
 1. references/recommended-structure.md
-1. references/skill-structure.md \</required_reading>
+2. references/skill-structure.md
+</required_reading>
 
 <process>
 ## Step 1: Select the Skill
@@ -23,18 +18,18 @@ Present numbered list, ask: "Which skill should be upgraded to the router patter
 ## Step 2: Verify It Needs Upgrading
 
 Read the skill:
-
 ```bash
 cat ~/.claude/skills/{skill-name}/SKILL.md
 ls ~/.claude/skills/{skill-name}/
 ```
 
-**Already a router?** (has workflows/ and intake question) → Tell user it's already using router pattern, offer to add workflows instead
+**Already a router?** (has workflows/ and intake question)
+→ Tell user it's already using router pattern, offer to add workflows instead
 
-**Simple skill that should stay simple?** (under 200 lines, single workflow) → Explain that router pattern may be overkill, ask if they want to proceed anyway
+**Simple skill that should stay simple?** (under 200 lines, single workflow)
+→ Explain that router pattern may be overkill, ask if they want to proceed anyway
 
 **Good candidate for upgrade:**
-
 - Over 200 lines
 - Multiple distinct use cases
 - Essential principles that shouldn't be skipped
@@ -45,11 +40,10 @@ ls ~/.claude/skills/{skill-name}/
 Analyze the current skill and identify:
 
 1. **Essential principles** - Rules that apply to ALL use cases
-1. **Distinct workflows** - Different things a user might want to do
-1. **Reusable knowledge** - Patterns, examples, technical details
+2. **Distinct workflows** - Different things a user might want to do
+3. **Reusable knowledge** - Patterns, examples, technical details
 
 Present findings:
-
 ```
 ## Analysis
 
@@ -80,17 +74,17 @@ mkdir -p ~/.claude/skills/{skill-name}/references
 For each identified workflow:
 
 1. Create `workflows/{workflow-name}.md`
-1. Add required_reading section (references it needs)
-1. Add process section (steps from original skill)
-1. Add success_criteria section
+2. Add required_reading section (references it needs)
+3. Add process section (steps from original skill)
+4. Add success_criteria section
 
 ## Step 6: Extract References
 
 For each identified reference topic:
 
 1. Create `references/{reference-name}.md`
-1. Move relevant content from original skill
-1. Structure with semantic XML tags
+2. Move relevant content from original skill
+3. Structure with semantic XML tags
 
 ## Step 7: Rewrite SKILL.md as Router
 
@@ -139,7 +133,6 @@ What would you like to do?
 ## Step 8: Verify Nothing Was Lost
 
 Compare original skill content against new structure:
-
 - [ ] All principles preserved (now inline)
 - [ ] All procedures preserved (now in workflows)
 - [ ] All knowledge preserved (now in references)
@@ -148,20 +141,21 @@ Compare original skill content against new structure:
 ## Step 9: Test
 
 Invoke the upgraded skill:
-
 - Does intake question appear?
 - Does each routing option work?
 - Do workflows load correct references?
 - Does behavior match original skill?
 
-Report any issues. </process>
+Report any issues.
+</process>
 
-\<success_criteria> Upgrade is complete when:
-
+<success_criteria>
+Upgrade is complete when:
 - [ ] workflows/ directory created with workflow files
 - [ ] references/ directory created (if needed)
 - [ ] SKILL.md rewritten as router
 - [ ] Essential principles inline in SKILL.md
 - [ ] All original content preserved
 - [ ] Intake question routes correctly
-- [ ] Tested and working \</success_criteria>
+- [ ] Tested and working
+</success_criteria>

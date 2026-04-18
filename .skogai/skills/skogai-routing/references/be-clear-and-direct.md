@@ -1,10 +1,6 @@
----
-title: be-clear-and-direct
-type: note
-permalink: skogai/skills/skogai-routing/references/be-clear-and-direct
----
-
-\<golden_rule> Show your skill to someone with minimal context and ask them to follow the instructions. If they're confused, Claude will likely be too. \</golden_rule>
+<golden_rule>
+Show your skill to someone with minimal context and ask them to follow the instructions. If they're confused, Claude will likely be too.
+</golden_rule>
 
 <overview>
 Clarity and directness are fundamental to effective skill authoring. Clear instructions reduce errors, improve execution quality, and minimize token waste.
@@ -33,13 +29,17 @@ This analysis will be presented to investors who value transparency and actionab
 <specificity>
 Be specific about what you want Claude to do. If you want code only and nothing else, say so.
 
-**Vague**: "Help with the report" **Specific**: "Generate a markdown report with three sections: Executive Summary, Key Findings, Recommendations"
+**Vague**: "Help with the report"
+**Specific**: "Generate a markdown report with three sections: Executive Summary, Key Findings, Recommendations"
 
-**Vague**: "Process the data" **Specific**: "Extract customer names and email addresses from the CSV file, removing duplicates, and save to JSON format"
+**Vague**: "Process the data"
+**Specific**: "Extract customer names and email addresses from the CSV file, removing duplicates, and save to JSON format"
 
-Specificity eliminates ambiguity and reduces iteration cycles. </specificity>
+Specificity eliminates ambiguity and reduces iteration cycles.
+</specificity>
 
-\<sequential_steps> Provide instructions as sequential steps. Use numbered lists or bullet points.
+<sequential_steps>
+Provide instructions as sequential steps. Use numbered lists or bullet points.
 
 ```xml
 <workflow>
@@ -51,10 +51,12 @@ Specificity eliminates ambiguity and reduces iteration cycles. </specificity>
 </workflow>
 ```
 
-Sequential steps create clear expectations and reduce the chance Claude skips important operations. \</sequential_steps> </guidelines>
+Sequential steps create clear expectations and reduce the chance Claude skips important operations.
+</sequential_steps>
+</guidelines>
 
-\<example_comparison> \<unclear_example>
-
+<example_comparison>
+<unclear_example>
 ```xml
 <quick_start>
 Please remove all personally identifiable information from these customer feedback messages: {{FEEDBACK_DATA}}
@@ -62,15 +64,14 @@ Please remove all personally identifiable information from these customer feedba
 ```
 
 **Problems**:
-
 - What counts as PII?
 - What should replace PII?
 - What format should the output be?
 - What if no PII is found?
-- Should product names be redacted? \</unclear_example>
+- Should product names be redacted?
+</unclear_example>
 
-\<clear_example>
-
+<clear_example>
 ```xml
 <objective>
 Anonymize customer feedback for quarterly review presentation.
@@ -98,37 +99,39 @@ Data to process: {{FEEDBACK_DATA}}
 ```
 
 **Why this is better**:
-
 - States the purpose (quarterly review)
 - Provides explicit step-by-step rules
 - Defines output format clearly
 - Specifies edge cases (product names, no PII found)
-- Defines success criteria \</clear_example> \</example_comparison>
+- Defines success criteria
+</clear_example>
+</example_comparison>
 
-\<key_differences> The clear version:
-
+<key_differences>
+The clear version:
 - States the purpose (quarterly review)
 - Provides explicit step-by-step rules
 - Defines output format
 - Specifies edge cases (product names, no PII found)
 - Includes success criteria
 
-The unclear version leaves all these decisions to Claude, increasing the chance of misalignment with expectations. \</key_differences>
+The unclear version leaves all these decisions to Claude, increasing the chance of misalignment with expectations.
+</key_differences>
 
-\<show_dont_just_tell> <principle> When format matters, show an example rather than just describing it. </principle>
+<show_dont_just_tell>
+<principle>
+When format matters, show an example rather than just describing it.
+</principle>
 
-\<telling_example>
-
+<telling_example>
 ```xml
 <commit_messages>
 Generate commit messages in conventional format with type, scope, and description.
 </commit_messages>
 ```
+</telling_example>
 
-\</telling_example>
-
-\<showing_example>
-
+<showing_example>
 ```xml
 <commit_message_format>
 Generate commit messages following these examples:
@@ -137,11 +140,9 @@ Generate commit messages following these examples:
 <input>Added user authentication with JWT tokens</input>
 <output>
 ```
-
 feat(auth): implement JWT-based authentication
 
 Add login endpoint and token validation middleware
-
 ```
 </output>
 </example>
@@ -150,11 +151,9 @@ Add login endpoint and token validation middleware
 <input>Fixed bug where dates displayed incorrectly in reports</input>
 <output>
 ```
-
 fix(reports): correct date formatting in timezone conversion
 
 Use UTC timestamps consistently across report generation
-
 ```
 </output>
 </example>
@@ -162,27 +161,37 @@ Use UTC timestamps consistently across report generation
 Follow this style: type(scope): brief description, then detailed explanation.
 </commit_message_format>
 ```
+</showing_example>
 
-\</showing_example>
-
-\<why_showing_works> Examples communicate nuances that text descriptions can't:
-
+<why_showing_works>
+Examples communicate nuances that text descriptions can't:
 - Exact formatting (spacing, capitalization, punctuation)
 - Tone and style
 - Level of detail
 - Pattern across multiple cases
 
-Claude learns patterns from examples more reliably than from descriptions. \</why_showing_works> \</show_dont_just_tell>
+Claude learns patterns from examples more reliably than from descriptions.
+</why_showing_works>
+</show_dont_just_tell>
 
-\<avoid_ambiguity> <principle> Eliminate words and phrases that create ambiguity or leave decisions open. </principle>
+<avoid_ambiguity>
+<principle>
+Eliminate words and phrases that create ambiguity or leave decisions open.
+</principle>
 
-\<ambiguous_phrases> ❌ **"Try to..."** - Implies optional ✅ **"Always..."** or **"Never..."** - Clear requirement
+<ambiguous_phrases>
+❌ **"Try to..."** - Implies optional
+✅ **"Always..."** or **"Never..."** - Clear requirement
 
-❌ **"Should probably..."** - Unclear obligation ✅ **"Must..."** or **"May optionally..."** - Clear obligation level
+❌ **"Should probably..."** - Unclear obligation
+✅ **"Must..."** or **"May optionally..."** - Clear obligation level
 
-❌ **"Generally..."** - When are exceptions allowed? ✅ **"Always... except when..."** - Clear rule with explicit exceptions
+❌ **"Generally..."** - When are exceptions allowed?
+✅ **"Always... except when..."** - Clear rule with explicit exceptions
 
-❌ **"Consider..."** - Should Claude always do this or only sometimes? ✅ **"If X, then Y"** or **"Always..."** - Clear conditions \</ambiguous_phrases>
+❌ **"Consider..."** - Should Claude always do this or only sometimes?
+✅ **"If X, then Y"** or **"Always..."** - Clear conditions
+</ambiguous_phrases>
 
 <example>
 ❌ **Ambiguous**:
@@ -193,18 +202,17 @@ You should probably validate the output and try to fix any errors.
 ```
 
 ✅ **Clear**:
-
-````xml
+```xml
 <validation>
 Always validate output before proceeding:
 
 ```bash
 python scripts/validate.py output_dir/
-````
+```
 
-If validation fails, fix errors and re-validate. Only proceed when validation passes with zero errors. </validation>
-
-````
+If validation fails, fix errors and re-validate. Only proceed when validation passes with zero errors.
+</validation>
+```
 </example>
 </avoid_ambiguity>
 
@@ -218,18 +226,17 @@ Anticipate edge cases and define how to handle them. Don't leave Claude guessing
 <quick_start>
 Extract email addresses from the text file and save to a JSON array.
 </quick_start>
-````
+```
 
 **Questions left unanswered**:
-
 - What if no emails are found?
 - What if the same email appears multiple times?
 - What if emails are malformed?
-- What JSON format exactly? \</without_edge_cases>
+- What JSON format exactly?
+</without_edge_cases>
 
-\<with_edge_cases>
-
-````xml
+<with_edge_cases>
+```xml
 <quick_start>
 Extract email addresses from the text file and save to a JSON array.
 
@@ -246,11 +253,10 @@ Extract email addresses from the text file and save to a JSON array.
   "user1@example.com",
   "user2@example.com"
 ]
-````
-
-\</example_output> \</quick_start>
-
-````
+```
+</example_output>
+</quick_start>
+```
 </with_edge_cases>
 </define_edge_cases>
 
@@ -264,13 +270,11 @@ When output format matters, specify it precisely. Show examples.
 <output>
 Generate a report with the analysis results.
 </output>
-````
+```
+</vague_format>
 
-\</vague_format>
-
-\<specific_format>
-
-````xml
+<specific_format>
+```xml
 <output_format>
 Generate a markdown report with this exact structure:
 
@@ -291,17 +295,16 @@ Generate a markdown report with this exact structure:
 
 ## Appendix
 [Raw data and detailed calculations]
-````
+```
 
 **Requirements**:
-
 - Use exactly these section headings
 - Executive summary must be 1-2 paragraphs
 - List 3-5 key findings
 - Provide 2-4 recommendations
-- Include appendix with source data \</output_format>
-
-````
+- Include appendix with source data
+</output_format>
+```
 </specific_format>
 </output_format_specification>
 
@@ -315,12 +318,12 @@ When Claude must make decisions, provide clear criteria.
 <workflow>
 Analyze the data and decide which visualization to use.
 </workflow>
-````
+```
 
-**Problem**: What factors should guide this decision? \</no_criteria>
+**Problem**: What factors should guide this decision?
+</no_criteria>
 
-\<with_criteria>
-
+<with_criteria>
 ```xml
 <workflow>
 Analyze the data and select appropriate visualization:
@@ -344,12 +347,16 @@ Analyze the data and select appropriate visualization:
 </workflow>
 ```
 
-**Benefits**: Claude has objective criteria for making the decision rather than guessing. \</with_criteria> \</decision_criteria>
+**Benefits**: Claude has objective criteria for making the decision rather than guessing.
+</with_criteria>
+</decision_criteria>
 
-\<constraints_and_requirements> <principle> Clearly separate "must do" from "nice to have" from "must not do". </principle>
+<constraints_and_requirements>
+<principle>
+Clearly separate "must do" from "nice to have" from "must not do".
+</principle>
 
-\<unclear_requirements>
-
+<unclear_requirements>
 ```xml
 <requirements>
 The report should include financial data, customer metrics, and market analysis. It would be good to have visualizations. Don't make it too long.
@@ -357,13 +364,12 @@ The report should include financial data, customer metrics, and market analysis.
 ```
 
 **Problems**:
-
 - Are all three content types required?
 - Are visualizations optional or required?
-- How long is "too long"? \</unclear_requirements>
+- How long is "too long"?
+</unclear_requirements>
 
-\<clear_requirements>
-
+<clear_requirements>
 ```xml
 <requirements>
 <must_have>
@@ -387,22 +393,26 @@ The report should include financial data, customer metrics, and market analysis.
 </requirements>
 ```
 
-**Benefits**: Clear priorities and constraints prevent misalignment. \</clear_requirements> \</constraints_and_requirements>
+**Benefits**: Clear priorities and constraints prevent misalignment.
+</clear_requirements>
+</constraints_and_requirements>
 
-\<success_criteria> <principle> Define what success looks like. How will Claude know it succeeded? </principle>
+<success_criteria>
+<principle>
+Define what success looks like. How will Claude know it succeeded?
+</principle>
 
-\<without_success_criteria>
-
+<without_success_criteria>
 ```xml
 <objective>
 Process the CSV file and generate a report.
 </objective>
 ```
 
-**Problem**: When is this task complete? What defines success? \</without_success_criteria>
+**Problem**: When is this task complete? What defines success?
+</without_success_criteria>
 
-\<with_success_criteria>
-
+<with_success_criteria>
 ```xml
 <objective>
 Process the CSV file and generate a summary report.
@@ -418,23 +428,30 @@ Process the CSV file and generate a summary report.
 </success_criteria>
 ```
 
-**Benefits**: Clear completion criteria eliminate ambiguity about when the task is done. \</with_success_criteria> \</success_criteria>
+**Benefits**: Clear completion criteria eliminate ambiguity about when the task is done.
+</with_success_criteria>
+</success_criteria>
 
-\<testing_clarity> <principle> Test your instructions by asking: "Could I hand these instructions to a junior developer and expect correct results?" </principle>
+<testing_clarity>
+<principle>
+Test your instructions by asking: "Could I hand these instructions to a junior developer and expect correct results?"
+</principle>
 
-\<testing_process>
-
+<testing_process>
 1. Read your skill instructions
-1. Remove context only you have (project knowledge, unstated assumptions)
-1. Identify ambiguous terms or vague requirements
-1. Add specificity where needed
-1. Test with someone who doesn't have your context
-1. Iterate based on their questions and confusion
+2. Remove context only you have (project knowledge, unstated assumptions)
+3. Identify ambiguous terms or vague requirements
+4. Add specificity where needed
+5. Test with someone who doesn't have your context
+6. Iterate based on their questions and confusion
 
-If a human with minimal context struggles, Claude will too. \</testing_process> \</testing_clarity>
+If a human with minimal context struggles, Claude will too.
+</testing_process>
+</testing_clarity>
 
-\<practical_examples> <example domain="data_processing"> ❌ **Unclear**:
-
+<practical_examples>
+<example domain="data_processing">
+❌ **Unclear**:
 ```xml
 <quick_start>
 Clean the data and remove bad entries.
@@ -442,7 +459,6 @@ Clean the data and remove bad entries.
 ```
 
 ✅ **Clear**:
-
 ```xml
 <quick_start>
 <data_cleaning>
@@ -462,7 +478,6 @@ Clean the data and remove bad entries.
 </success_criteria>
 </quick_start>
 ```
-
 </example>
 
 <example domain="code_generation">
@@ -474,8 +489,7 @@ Write a function to process user input.
 ```
 
 ✅ **Clear**:
-
-````xml
+```xml
 <quick_start>
 <function_specification>
 Write a Python function with this signature:
@@ -494,25 +508,24 @@ def process_user_input(raw_input: str) -> dict:
     Raises:
         ValueError: If input format is invalid
     """
-````
+```
 
 **Requirements**:
-
 - Split input on colon delimiter
 - Validate email contains @ and domain
 - Convert age to integer, raise ValueError if not numeric
 - Return dictionary with specified keys
-- Include docstring and type hints \</function_specification>
+- Include docstring and type hints
+</function_specification>
 
-\<success_criteria>
-
+<success_criteria>
 - Function signature matches specification
 - All validation checks implemented
 - Proper error handling for invalid input
 - Type hints included
-- Docstring included \</success_criteria> \</quick_start>
-
+- Docstring included
+</success_criteria>
+</quick_start>
 ```
 </example>
 </practical_examples>
-```

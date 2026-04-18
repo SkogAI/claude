@@ -1,30 +1,29 @@
----
-title: executable-code
-type: note
-permalink: skogai/skills/skogai-routing/references/executable-code
----
-
-\<when_to_use_scripts> Even if Claude could write a script, pre-made scripts offer advantages:
-
+<when_to_use_scripts>
+Even if Claude could write a script, pre-made scripts offer advantages:
 - More reliable than generated code
 - Save tokens (no need to include code in context)
 - Save time (no code generation required)
 - Ensure consistency across uses
 
-\<execution_vs_reference> Make clear whether Claude should:
-
+<execution_vs_reference>
+Make clear whether Claude should:
 - **Execute the script** (most common): "Run `analyze_form.py` to extract fields"
 - **Read it as reference** (for complex logic): "See `analyze_form.py` for the extraction algorithm"
 
-For most utility scripts, execution is preferred. \</execution_vs_reference>
+For most utility scripts, execution is preferred.
+</execution_vs_reference>
 
-\<how_scripts_work> When Claude executes a script via bash:
-
+<how_scripts_work>
+When Claude executes a script via bash:
 1. Script code never enters context window
-1. Only script output consumes tokens
-1. Far more efficient than having Claude generate equivalent code \</how_scripts_work> \</when_to_use_scripts>
+2. Only script output consumes tokens
+3. Far more efficient than having Claude generate equivalent code
+</how_scripts_work>
+</when_to_use_scripts>
 
-\<file_organization> \<scripts_directory> **Best practice**: Place all executable scripts in a `scripts/` subdirectory within the skill folder.
+<file_organization>
+<scripts_directory>
+**Best practice**: Place all executable scripts in a `scripts/` subdirectory within the skill folder.
 
 ```
 skill-name/
@@ -38,7 +37,6 @@ skill-name/
 ```
 
 **Benefits**:
-
 - Keeps skill root clean and organized
 - Clear separation between documentation and executable code
 - Consistent pattern across all skills
@@ -49,11 +47,11 @@ skill-name/
 ```bash
 python ~/.claude/skills/skill-name/scripts/analyze.py input.har
 ```
+</scripts_directory>
+</file_organization>
 
-\</scripts_directory> \</file_organization>
-
-\<utility_scripts_pattern> <example>
-
+<utility_scripts_pattern>
+<example>
 ## Utility scripts
 
 **analyze_form.py**: Extract all form fields from PDF
@@ -63,7 +61,6 @@ python scripts/analyze_form.py input.pdf > fields.json
 ```
 
 Output format:
-
 ```json
 {
   "field_name": { "type": "text", "x": 100, "y": 200 },
@@ -83,11 +80,11 @@ python scripts/validate_boxes.py fields.json
 ```bash
 python scripts/fill_form.py input.pdf fields.json output.pdf
 ```
-
 </example>
 </utility_scripts_pattern>
 
-\<solve_dont_punt> Handle error conditions rather than punting to Claude.
+<solve_dont_punt>
+Handle error conditions rather than punting to Claude.
 
 <example type="good">
 ```python
@@ -115,7 +112,8 @@ def process_file(path):
 ```
 </example>
 
-\<configuration_values> Document configuration parameters to avoid "voodoo constants":
+<configuration_values>
+Document configuration parameters to avoid "voodoo constants":
 
 <example type="good">
 ```python
@@ -123,26 +121,25 @@ def process_file(path):
 REQUEST_TIMEOUT = 30
 
 # Three retries balances reliability vs speed
-
 MAX_RETRIES = 3
-
-````
+```
 </example>
 
 <example type="bad">
 ```python
 TIMEOUT = 47  # Why 47?
 RETRIES = 5   # Why 5?
-````
-
+```
 </example>
 </configuration_values>
 </solve_dont_punt>
 
-\<package_dependencies> \<runtime_constraints> Skills run in code execution environment with platform-specific limitations:
-
+<package_dependencies>
+<runtime_constraints>
+Skills run in code execution environment with platform-specific limitations:
 - **claude.ai**: Can install packages from npm and PyPI
-- **Anthropic API**: No network access and no runtime package installation \</runtime_constraints>
+- **Anthropic API**: No network access and no runtime package installation
+</runtime_constraints>
 
 <guidance>
 List required packages in your SKILL.md and verify they're available.
@@ -156,7 +153,6 @@ Then use it:
 from pypdf import PdfReader
 reader = PdfReader("file.pdf")
 ```
-
 </example>
 
 <example type="bad">
@@ -165,7 +161,8 @@ reader = PdfReader("file.pdf")
 </guidance>
 </package_dependencies>
 
-\<mcp_tool_references> If your Skill uses MCP (Model Context Protocol) tools, always use fully qualified tool names.
+<mcp_tool_references>
+If your Skill uses MCP (Model Context Protocol) tools, always use fully qualified tool names.
 
 <format>ServerName:tool_name</format>
 
@@ -174,4 +171,5 @@ reader = PdfReader("file.pdf")
 - Use the GitHub:create_issue tool to create issues.
 </examples>
 
-Without the server prefix, Claude may fail to locate the tool, especially when multiple MCP servers are available. \</mcp_tool_references>
+Without the server prefix, Claude may fail to locate the tool, especially when multiple MCP servers are available.
+</mcp_tool_references>

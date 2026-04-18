@@ -1,16 +1,14 @@
----
-title: common-patterns
-type: note
-permalink: skogai/skills/skogai-routing/references/common-patterns
----
-
 <overview>
 This reference documents common patterns for skill authoring, including templates, examples, terminology consistency, and anti-patterns. All patterns use pure XML structure.
 </overview>
 
-\<template_pattern> <description> Provide templates for output format. Match the level of strictness to your needs. </description>
+<template_pattern>
+<description>
+Provide templates for output format. Match the level of strictness to your needs.
+</description>
 
-\<strict_requirements> Use when output format must be exact and consistent:
+<strict_requirements>
+Use when output format must be exact and consistent:
 
 ````xml
 <report_structure>
@@ -32,7 +30,7 @@ ALWAYS use this exact template structure:
 2. Specific actionable recommendation
 ````
 
-\</report_structure>
+</report_structure>
 
 ````
 
@@ -59,7 +57,8 @@ Here is a sensible default format, but use your best judgment:
 [Tailor to the specific context]
 ````
 
-Adjust sections as needed for the specific analysis type. \</report_structure>
+Adjust sections as needed for the specific analysis type.
+</report_structure>
 
 ````
 
@@ -111,20 +110,24 @@ Follow this style: type(scope): brief description, then detailed explanation.
 </commit_message_format>
 ```
 
-\</commit_messages_example>
+</commit_messages_example>
 
-\<when_to_use>
+<when_to_use>
 
 - Output format has nuances that text explanations can't capture
 - Pattern recognition is easier than rule following
 - Examples demonstrate edge cases
-- Multi-shot learning improves quality \</when_to_use> \</examples_pattern>
+- Multi-shot learning improves quality
+  </when_to_use>
+  </examples_pattern>
 
+<consistent_terminology>
 <principle>
 Choose one term and use it throughout the skill. Inconsistent terminology confuses Claude and reduces execution quality.
 </principle>
 
-\<good_example> Consistent usage:
+<good_example>
+Consistent usage:
 
 - Always "API endpoint" (not mixing with "URL", "API route", "path")
 - Always "field" (not mixing with "box", "element", "control")
@@ -142,9 +145,10 @@ Extract data from API endpoints using field mappings.
 </quick_start>
 ```
 
-\</good_example>
+</good_example>
 
-\<bad_example> Inconsistent usage creates confusion:
+<bad_example>
+Inconsistent usage creates confusion:
 
 ```xml
 <objective>
@@ -158,7 +162,8 @@ Pull data from API routes using element mappings.
 </quick_start>
 ```
 
-Claude must now interpret: Are "API routes" and "URLs" the same? Are "fields", "boxes", "elements", and "controls" the same? \</bad_example>
+Claude must now interpret: Are "API routes" and "URLs" the same? Are "fields", "boxes", "elements", and "controls" the same?
+</bad_example>
 
 <implementation>
 1. Choose terminology early in skill development
@@ -168,9 +173,13 @@ Claude must now interpret: Are "API routes" and "URLs" the same? Are "fields", "
 </implementation>
 </consistent_terminology>
 
-\<provide_default_with_escape_hatch> <principle> Provide a default approach with an escape hatch for special cases, not a list of alternatives. Too many options paralyze decision-making. </principle>
+<provide_default_with_escape_hatch>
+<principle>
+Provide a default approach with an escape hatch for special cases, not a list of alternatives. Too many options paralyze decision-making.
+</principle>
 
-\<good_example> Clear default with escape hatch:
+<good_example>
+Clear default with escape hatch:
 
 ````xml
 <quick_start>
@@ -182,7 +191,8 @@ with pdfplumber.open("file.pdf") as pdf:
     text = pdf.pages[0].extract_text()
 ````
 
-For scanned PDFs requiring OCR, use pdf2image with pytesseract instead. \</quick_start>
+For scanned PDFs requiring OCR, use pdf2image with pytesseract instead.
+</quick_start>
 
 ````
 </good_example>
@@ -205,7 +215,8 @@ Choose based on your needs.
 </quick_start>
 ````
 
-Claude must now research and compare all options before starting. This wastes tokens and time. \</bad_example>
+Claude must now research and compare all options before starting. This wastes tokens and time.
+</bad_example>
 
 <implementation>
 1. Recommend ONE default approach
@@ -215,7 +226,10 @@ Claude must now research and compare all options before starting. This wastes to
 </implementation>
 </provide_default_with_escape_hatch>
 
-\<anti_patterns> <description> Common mistakes to avoid when authoring skills. </description>
+<anti_patterns>
+<description>
+Common mistakes to avoid when authoring skills.
+</description>
 
 <pitfall name="markdown_headings_in_body">
 ❌ **BAD**: Using markdown headings in skill body:
@@ -248,7 +262,8 @@ Form filling requires additional setup...
 </advanced_features>
 ```
 
-**Why it matters**: XML provides semantic meaning, reliable parsing, and token efficiency. </pitfall>
+**Why it matters**: XML provides semantic meaning, reliable parsing, and token efficiency.
+</pitfall>
 
 <pitfall name="vague_descriptions">
 ❌ **BAD**:
@@ -262,7 +277,8 @@ description: Helps with documents
 description: Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.
 ```
 
-**Why it matters**: Vague descriptions prevent Claude from discovering and using the skill appropriately. </pitfall>
+**Why it matters**: Vague descriptions prevent Claude from discovering and using the skill appropriately.
+</pitfall>
 
 <pitfall name="inconsistent_pov">
 ❌ **BAD**:
@@ -276,7 +292,8 @@ description: I can help you process Excel files and generate reports
 description: Processes Excel files and generates reports. Use when analyzing spreadsheets or .xlsx files.
 ```
 
-**Why it matters**: Skills must use third person. First/second person breaks the skill metadata pattern. </pitfall>
+**Why it matters**: Skills must use third person. First/second person breaks the skill metadata pattern.
+</pitfall>
 
 <pitfall name="wrong_naming_convention">
 ❌ **BAD**: Directory name doesn't match skill name or verb-noun convention:
@@ -290,7 +307,8 @@ description: Processes Excel files and generates reports. Use when analyzing spr
 - Directory: `setup-stripe-payments`, Name: `setup-stripe-payments`
 - Directory: `process-pdfs`, Name: `process-pdfs`
 
-**Why it matters**: Consistency in naming makes skills discoverable and predictable. </pitfall>
+**Why it matters**: Consistency in naming makes skills discoverable and predictable.
+</pitfall>
 
 <pitfall name="too_many_options">
 ❌ **BAD**:
@@ -310,7 +328,8 @@ Use pdfplumber for text extraction:
 import pdfplumber
 ````
 
-For scanned PDFs requiring OCR, use pdf2image with pytesseract instead. \</quick_start>
+For scanned PDFs requiring OCR, use pdf2image with pytesseract instead.
+</quick_start>
 
 ```
 
@@ -328,7 +347,9 @@ SKILL.md → advanced.md → details.md → examples.md
 ✅ **GOOD**: References one level deep from SKILL.md:
 ```
 
-SKILL.md → advanced.md SKILL.md → details.md SKILL.md → examples.md
+SKILL.md → advanced.md
+SKILL.md → details.md
+SKILL.md → examples.md
 
 ````
 
@@ -351,7 +372,8 @@ See scripts/validate.py for validation
 </reference_guides>
 ```
 
-**Why it matters**: Always use forward slashes for cross-platform compatibility. </pitfall>
+**Why it matters**: Always use forward slashes for cross-platform compatibility.
+</pitfall>
 
 <pitfall name="dynamic_context_and_file_reference_execution">
 **Problem**: When showing examples of dynamic context syntax (exclamation mark + backticks) or file references (@ prefix), the skill loader executes these during skill loading.
@@ -380,7 +402,8 @@ Review dependencies in: @ package.json (remove space after @ in actual usage)
 - Any documentation showing the exclamation mark prefix syntax or @ file references
 - Skills with example commands or file paths that shouldn't execute during loading
 
-**Why it matters**: Without the space, these execute during skill load, causing errors or unwanted file reads. </pitfall>
+**Why it matters**: Without the space, these execute during skill load, causing errors or unwanted file reads.
+</pitfall>
 
 <pitfall name="missing_required_tags">
 ❌ **BAD**: Missing required tags:
@@ -408,7 +431,8 @@ Use this tool for processing...
 </success_criteria>
 ```
 
-**Why it matters**: Every skill must have `<objective>`, `<quick_start>`, and `<success_criteria>` (or `<when_successful>`). </pitfall>
+**Why it matters**: Every skill must have `<objective>`, `<quick_start>`, and `<success_criteria>` (or `<when_successful>`).
+</pitfall>
 
 <pitfall name="hybrid_xml_markdown">
 ❌ **BAD**: Mixing XML tags with markdown headings:
@@ -442,7 +466,8 @@ Form filling...
 </advanced_features>
 ````
 
-**Why it matters**: Consistency in structure. Either use pure XML or pure markdown (prefer XML). </pitfall>
+**Why it matters**: Consistency in structure. Either use pure XML or pure markdown (prefer XML).
+</pitfall>
 
 <pitfall name="unclosed_xml_tags">
 ❌ **BAD**: Forgetting to close XML tags:
@@ -450,7 +475,9 @@ Form filling...
 <objective>
 Process PDF files
 
-\<quick_start> Use pdfplumber... \</quick_start>
+<quick_start>
+Use pdfplumber...
+</quick_start>
 
 ````
 
@@ -465,9 +492,14 @@ Use pdfplumber...
 </quick_start>
 ````
 
-**Why it matters**: Unclosed tags break XML parsing and create ambiguous boundaries. </pitfall> \</anti_patterns>
+**Why it matters**: Unclosed tags break XML parsing and create ambiguous boundaries.
+</pitfall>
+</anti_patterns>
 
-\<progressive_disclosure_pattern> <description> Keep SKILL.md concise by linking to detailed reference files. Claude loads reference files only when needed. </description>
+<progressive_disclosure_pattern>
+<description>
+Keep SKILL.md concise by linking to detailed reference files. Claude loads reference files only when needed.
+</description>
 
 <implementation>
 ```xml
@@ -475,9 +507,18 @@ Use pdfplumber...
 Manage Facebook Ads campaigns, ad sets, and ads via the Marketing API.
 </objective>
 
-\<quick_start> \<basic_operations> See [basic-operations.md](basic-operations.md) for campaign creation and management. \</basic_operations> \</quick_start>
+<quick_start>
+<basic_operations>
+See [basic-operations.md](basic-operations.md) for campaign creation and management.
+</basic_operations>
+</quick_start>
 
-\<advanced_features> **Custom audiences**: See [audiences.md](audiences.md) **Conversion tracking**: See [conversions.md](conversions.md) **Budget optimization**: See [budgets.md](budgets.md) **API reference**: See [api-reference.md](api-reference.md) \</advanced_features>
+<advanced_features>
+**Custom audiences**: See [audiences.md](audiences.md)
+**Conversion tracking**: See [conversions.md](conversions.md)
+**Budget optimization**: See [budgets.md](budgets.md)
+**API reference**: See [api-reference.md](api-reference.md)
+</advanced_features>
 
 ````
 
@@ -509,7 +550,8 @@ If validation fails, fix errors before continuing. Validation errors include:
 - **Type mismatch**: "Field 'order_total' expects number, got string"
 - **Missing required field**: "Required field 'customer_name' is missing"
 
-Only proceed when validation passes with zero errors. </validation>
+Only proceed when validation passes with zero errors.
+</validation>
 
 ````
 
@@ -584,4 +626,6 @@ If verification fails, return to Step 2.
 
 - Clear progress tracking
 - Prevents skipping steps
-- Easy to resume after interruption </implementation> \</checklist_pattern>
+- Easy to resume after interruption
+  </implementation>
+  </checklist_pattern>

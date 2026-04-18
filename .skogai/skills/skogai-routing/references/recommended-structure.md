@@ -1,9 +1,3 @@
----
-title: recommended-structure
-type: note
-permalink: skogai/skills/skogai-routing/references/recommended-structure
----
-
 # Recommended Skill Structure
 
 The optimal structure for complex skills separates routing, workflows, and knowledge.
@@ -23,20 +17,27 @@ skill-name/
 ```
 </structure>
 
-\<why_this_works>
-
+<why_this_works>
 ## Problems This Solves
 
-**Problem 1: Context gets skipped** When important principles are in a separate file, Claude may not read them. **Solution:** Put essential principles directly in SKILL.md. They load automatically.
+**Problem 1: Context gets skipped**
+When important principles are in a separate file, Claude may not read them.
+**Solution:** Put essential principles directly in SKILL.md. They load automatically.
 
-**Problem 2: Wrong context loaded** A "build" task loads debugging references. A "debug" task loads build references. **Solution:** Intake question determines intent → routes to specific workflow → workflow specifies which references to read.
+**Problem 2: Wrong context loaded**
+A "build" task loads debugging references. A "debug" task loads build references.
+**Solution:** Intake question determines intent → routes to specific workflow → workflow specifies which references to read.
 
-**Problem 3: Monolithic skills are overwhelming** 500+ lines of mixed content makes it hard to find relevant parts. **Solution:** Small router (SKILL.md) + focused workflows + reference library.
+**Problem 3: Monolithic skills are overwhelming**
+500+ lines of mixed content makes it hard to find relevant parts.
+**Solution:** Small router (SKILL.md) + focused workflows + reference library.
 
-**Problem 4: Procedures mixed with knowledge** "How to do X" mixed with "What X means" creates confusion. **Solution:** Workflows are procedures (steps). References are knowledge (patterns, examples). \</why_this_works>
+**Problem 4: Procedures mixed with knowledge**
+"How to do X" mixed with "What X means" creates confusion.
+**Solution:** Workflows are procedures (steps). References are knowledge (patterns, examples).
+</why_this_works>
 
-\<skill_md_template>
-
+<skill_md_template>
 ## SKILL.md Template
 
 ```markdown
@@ -95,11 +96,9 @@ All domain knowledge in `references/`:
 | option-c.md | [What it does] |
 </workflows_index>
 ```
+</skill_md_template>
 
-\</skill_md_template>
-
-\<workflow_template>
-
+<workflow_template>
 ## Workflow Template
 
 ```markdown
@@ -129,47 +128,41 @@ This workflow is complete when:
 - [ ] Criterion 3
 </success_criteria>
 ```
+</workflow_template>
 
-\</workflow_template>
-
-\<when_to_use_this_pattern>
-
+<when_to_use_this_pattern>
 ## When to Use This Pattern
 
 **Use router + workflows + references when:**
-
 - Multiple distinct workflows (build vs debug vs ship)
 - Different workflows need different references
 - Essential principles must not be skipped
 - Skill has grown beyond 200 lines
 
 **Use simple single-file skill when:**
-
 - One workflow
 - Small reference set
 - Under 200 lines total
-- No essential principles to enforce \</when_to_use_this_pattern>
+- No essential principles to enforce
+</when_to_use_this_pattern>
 
-\<key_insight>
-
+<key_insight>
 ## The Key Insight
 
 **SKILL.md is always loaded. Use this guarantee.**
 
 Put unavoidable content in SKILL.md:
-
 - Essential principles
 - Intake question
 - Routing logic
 
 Put workflow-specific content in workflows/:
-
 - Step-by-step procedures
 - Required references for that workflow
 - Success criteria for that workflow
 
 Put reusable knowledge in references/:
-
 - Patterns and examples
 - Technical details
-- Domain expertise \</key_insight>
+- Domain expertise
+</key_insight>

@@ -1,37 +1,33 @@
----
-title: create-domain-expertise-skill
-type: note
-permalink: skogai/skills/skogai-routing/workflows/create-domain-expertise-skill
----
-
 # Workflow: Create Exhaustive Domain Expertise Skill
 
 <objective>
 Build a comprehensive execution skill that does real work in a specific domain. Domain expertise skills are full-featured build skills with exhaustive domain knowledge in references, complete workflows for the full lifecycle (build → debug → optimize → ship), and can be both invoked directly by users AND loaded by other skills (like create-plans) for domain knowledge.
 </objective>
 
-\<critical_distinction> **Regular skill:** "Do one specific task" **Domain expertise skill:** "Do EVERYTHING in this domain, with complete practitioner knowledge"
+<critical_distinction>
+**Regular skill:** "Do one specific task"
+**Domain expertise skill:** "Do EVERYTHING in this domain, with complete practitioner knowledge"
 
 Examples:
-
 - `expertise/macos-apps` - Build macOS apps from scratch through shipping
 - `expertise/python-games` - Build complete Python games with full game dev lifecycle
 - `expertise/rust-systems` - Build Rust systems programs with exhaustive systems knowledge
 - `expertise/web-scraping` - Build scrapers, handle all edge cases, deploy at scale
 
 Domain expertise skills:
-
 - ✅ Execute tasks (build, debug, optimize, ship)
 - ✅ Have comprehensive domain knowledge in references
 - ✅ Are invoked directly by users ("build a macOS app")
 - ✅ Can be loaded by other skills (create-plans reads references for planning)
-- ✅ Cover the FULL lifecycle, not just getting started \</critical_distinction>
+- ✅ Cover the FULL lifecycle, not just getting started
+</critical_distinction>
 
-\<required_reading> **Read these reference files NOW:**
-
+<required_reading>
+**Read these reference files NOW:**
 1. references/recommended-structure.md
-1. references/core-principles.md
-1. references/use-xml-tags.md \</required_reading>
+2. references/core-principles.md
+3. references/use-xml-tags.md
+</required_reading>
 
 <process>
 ## Step 1: Identify Domain
@@ -39,7 +35,6 @@ Domain expertise skills:
 Ask user what domain expertise to build:
 
 **Example domains:**
-
 - macOS/iOS app development
 - Python game development
 - Rust systems programming
@@ -56,7 +51,6 @@ Get specific: "Python games" or "Python games with Pygame specifically"?
 ## Step 2: Confirm Target Location
 
 Explain:
-
 ```
 Domain expertise skills go in: ~/.claude/skills/expertise/{domain-name}/
 
@@ -77,16 +71,14 @@ Confirm or adjust name.
 Domain expertise skills cover the FULL lifecycle. Identify what workflows are needed.
 
 **Common workflows for most domains:**
-
 1. **build-new-{thing}.md** - Create from scratch
-1. **add-feature.md** - Extend existing {thing}
-1. **debug-{thing}.md** - Find and fix bugs
-1. **write-tests.md** - Test for correctness
-1. **optimize-performance.md** - Profile and speed up
-1. **ship-{thing}.md** - Deploy/distribute
+2. **add-feature.md** - Extend existing {thing}
+3. **debug-{thing}.md** - Find and fix bugs
+4. **write-tests.md** - Test for correctness
+5. **optimize-performance.md** - Profile and speed up
+6. **ship-{thing}.md** - Deploy/distribute
 
 **Domain-specific workflows:**
-
 - Games: `implement-game-mechanic.md`, `add-audio.md`, `polish-ui.md`
 - Web apps: `setup-auth.md`, `add-api-endpoint.md`, `setup-database.md`
 - Systems: `optimize-memory.md`, `profile-cpu.md`, `cross-compile.md`
@@ -102,31 +94,26 @@ Each workflow = one complete task type that users actually do.
 Run multiple web searches to ensure coverage:
 
 **Search 1: Current ecosystem**
-
 - "best {domain} libraries 2024 2025"
 - "popular {domain} frameworks comparison"
 - "{domain} tech stack recommendations"
 
 **Search 2: Architecture patterns**
-
 - "{domain} architecture patterns"
 - "{domain} best practices design patterns"
 - "how to structure {domain} projects"
 
 **Search 3: Lifecycle and tooling**
-
 - "{domain} development workflow"
 - "{domain} testing debugging best practices"
 - "{domain} deployment distribution"
 
 **Search 4: Common pitfalls**
-
 - "{domain} common mistakes avoid"
 - "{domain} anti-patterns"
 - "what not to do {domain}"
 
 **Search 5: Real-world usage**
-
 - "{domain} production examples GitHub"
 - "{domain} case studies"
 - "successful {domain} projects"
@@ -134,14 +121,12 @@ Run multiple web searches to ensure coverage:
 ### Verification Requirements
 
 For EACH major library/tool/pattern found:
-
 - **Check recency:** When was it last updated?
 - **Check adoption:** Is it actively maintained? Community size?
 - **Check alternatives:** What else exists? When to use each?
 - **Check deprecation:** Is anything being replaced?
 
 **Red flags for outdated content:**
-
 - Articles from before 2023 (unless fundamental concepts)
 - Abandoned libraries (no commits in 12+ months)
 - Deprecated APIs or patterns
@@ -150,7 +135,6 @@ For EACH major library/tool/pattern found:
 ### Documentation Sources
 
 Use Context7 MCP when available:
-
 ```
 mcp__context7__resolve-library-id: {library-name}
 mcp__context7__get-library-docs: {library-id}
@@ -163,7 +147,6 @@ Focus on official docs, not tutorials.
 Structure references by domain concerns, NOT by arbitrary categories.
 
 **For game development example:**
-
 ```
 references/
 ├── architecture.md         # ECS, component-based, state machines
@@ -185,7 +168,6 @@ references/
 ```
 
 **For macOS app development example:**
-
 ```
 references/
 ├── app-architecture.md     # State management, dependency injection
@@ -205,7 +187,6 @@ references/
 ```
 
 **For each reference file:**
-
 - Pure XML structure
 - Decision trees: "If X, use Y. If Z, use A instead."
 - Comparison tables: Library vs Library (speed, features, learning curve)
@@ -218,7 +199,7 @@ references/
 
 Domain expertise skills use router pattern with essential principles:
 
-````yaml
+```yaml
 ---
 name: build-{domain-name}
 description: Build {domain things} from scratch through shipping. Full lifecycle - build, debug, test, optimize, ship. {Any specific constraints like "CLI-only, no IDE"}.
@@ -281,39 +262,41 @@ Example for compiled languages:
 
 # 3. Does it run?
 {run command}
-````
+```
 
 Report to the user:
-
 - "Build: ✓"
 - "Tests: X pass, Y fail"
-- "Ready for you to check [specific thing]" \</verification_loop>
+- "Ready for you to check [specific thing]"
+</verification_loop>
 
-\<reference_index>
-
+<reference_index>
 ## Domain Knowledge
 
 All in `references/`:
 
-**Architecture:** {list files} **{Domain Area}:** {list files} **{Domain Area}:** {list files} **Development:** {list files} **Shipping:** {list files} \</reference_index>
+**Architecture:** {list files}
+**{Domain Area}:** {list files}
+**{Domain Area}:** {list files}
+**Development:** {list files}
+**Shipping:** {list files}
+</reference_index>
 
-\<workflows_index>
-
+<workflows_index>
 ## Workflows
 
 All in `workflows/`:
 
-| File                    | Purpose                         |
-| ----------------------- | ------------------------------- |
-| build-new-{thing}.md    | Create new {thing} from scratch |
-| debug-{thing}.md        | Find and fix bugs               |
-| add-feature.md          | Add to existing {thing}         |
-| write-tests.md          | Write and run tests             |
-| optimize-performance.md | Profile and speed up            |
-| ship-{thing}.md         | Deploy/distribute               |
-| \</workflows_index>     |                                 |
-
-````
+| File | Purpose |
+|------|---------|
+| build-new-{thing}.md | Create new {thing} from scratch |
+| debug-{thing}.md | Find and fix bugs |
+| add-feature.md | Add to existing {thing} |
+| write-tests.md | Write and run tests |
+| optimize-performance.md | Profile and speed up |
+| ship-{thing}.md | Deploy/distribute |
+</workflows_index>
+```
 
 ## Step 7: Write Workflows
 
@@ -350,26 +333,26 @@ For EACH workflow identified in Step 3:
 
 ```bash
 {verification commands}
-````
-
+```
 </process>
 
-\<anti_patterns> Avoid:
-
+<anti_patterns>
+Avoid:
 - {Common mistake 1}
 - {Common mistake 2}
-- {Common mistake 3} \</anti_patterns>
+- {Common mistake 3}
+</anti_patterns>
 
-\<success_criteria> A well-{completed task}:
-
+<success_criteria>
+A well-{completed task}:
 - {Criterion 1}
 - {Criterion 2}
 - {Criterion 3}
 - Builds/runs without errors
 - Tests pass
-- Feels {native/professional/correct} \</success_criteria>
-
-````
+- Feels {native/professional/correct}
+</success_criteria>
+```
 
 **Key workflow characteristics:**
 - Starts with required_reading (which references to load)
@@ -401,8 +384,7 @@ Brief introduction to this domain area
 
 ```code
 # Example usage
-````
-
+```
 </option>
 
 <option name="Library B">
@@ -410,13 +392,15 @@ Brief introduction to this domain area
 </option>
 </options>
 
-\<decision_tree>
-
+<decision_tree>
 ## Choosing the Right Approach
 
-**If you need \[X\]:** Use [Library A] **If you need \[Y\]:** Use [Library B] **If you have \[constraint Z\]:** Use [Library C]
+**If you need [X]:** Use [Library A]
+**If you need [Y]:** Use [Library B]
+**If you have [constraint Z]:** Use [Library C]
 
-**Avoid [Library D] if:** [specific scenarios] \</decision_tree>
+**Avoid [Library D] if:** [specific scenarios]
+</decision_tree>
 
 <patterns>
 ## Common Patterns
@@ -428,19 +412,25 @@ Brief introduction to this domain area
 </pattern>
 </patterns>
 
-\<anti_patterns>
-
+<anti_patterns>
 ## What NOT to Do
 
-\<anti_pattern name="Common Mistake"> **Problem:** [what people do wrong] **Why it's bad:** [consequences] **Instead:** [correct approach] \</anti_pattern> \</anti_patterns>
+<anti_pattern name="Common Mistake">
+**Problem:** [what people do wrong]
+**Why it's bad:** [consequences]
+**Instead:** [correct approach]
+</anti_pattern>
+</anti_patterns>
 
-\<platform_considerations>
-
+<platform_considerations>
 ## Platform-Specific Notes
 
-**Windows:** [considerations] **macOS:** [considerations] **Linux:** [considerations] **Mobile:** [if applicable] \</platform_considerations>
-
-````
+**Windows:** [considerations]
+**macOS:** [considerations]
+**Linux:** [considerations]
+**Mobile:** [if applicable]
+</platform_considerations>
+```
 
 ### Quality Standards
 
@@ -519,14 +509,13 @@ mkdir -p ~/.claude/skills/expertise/{domain-name}/references
 
 # Verify structure
 ls -R ~/.claude/skills/expertise/{domain-name}
-````
+```
 
 ## Step 11: Document in create-plans
 
 Update `~/.claude/skills/create-plans/SKILL.md` to reference this new domain:
 
 Add to the domain inference table:
-
 ```markdown
 | "{keyword}", "{domain term}" | expertise/{domain-name} |
 ```
@@ -538,7 +527,6 @@ So create-plans can auto-detect and offer to load it.
 Review entire skill:
 
 **SKILL.md:**
-
 - [ ] Name matches directory (build-{domain-name})
 - [ ] Description explains it builds things from scratch through shipping
 - [ ] Essential principles inline (always loaded)
@@ -548,7 +536,6 @@ Review entire skill:
 - [ ] Workflows index complete
 
 **Workflows:**
-
 - [ ] Each workflow starts with required_reading
 - [ ] Each workflow has actual implementation steps
 - [ ] Each workflow has verification steps
@@ -556,7 +543,6 @@ Review entire skill:
 - [ ] Workflows cover full lifecycle (build, debug, test, optimize, ship)
 
 **References:**
-
 - [ ] Pure XML structure (no markdown headings)
 - [ ] Decision guidance in every file
 - [ ] Current versions verified
@@ -565,7 +551,6 @@ Review entire skill:
 - [ ] Platform considerations included
 
 **Completeness:**
-
 - [ ] A professional practitioner would find this comprehensive
 - [ ] No major libraries/patterns missing
 - [ ] Full lifecycle covered
@@ -575,7 +560,8 @@ Review entire skill:
 
 </process>
 
-\<success_criteria> Domain expertise skill is complete when:
+<success_criteria>
+Domain expertise skill is complete when:
 
 - [ ] Comprehensive research completed (5+ web searches)
 - [ ] All sources verified for currency (2024-2025)
@@ -590,10 +576,11 @@ Review entire skill:
 - [ ] Located in ~/.claude/skills/expertise/{domain-name}/
 - [ ] Referenced in create-plans domain inference table
 - [ ] Passes dual-purpose test: Can be invoked directly AND loaded for knowledge
-- [ ] User can build something professional from scratch through shipping \</success_criteria>
+- [ ] User can build something professional from scratch through shipping
+</success_criteria>
 
-\<anti_patterns> **DON'T:**
-
+<anti_patterns>
+**DON'T:**
 - Copy tutorial content without verification
 - Include only "getting started" material
 - Skip the "when NOT to use" guidance
@@ -606,7 +593,6 @@ Review entire skill:
 - Create workflows that just say "read the references"
 
 **DO:**
-
 - Verify everything is current
 - Include complete lifecycle (build → ship)
 - Provide decision guidance
@@ -615,4 +601,5 @@ Review entire skill:
 - Start workflows with required_reading
 - Include verification in every workflow
 - Make it exhaustive, not minimal
-- Test both direct invocation and knowledge reference use cases \</anti_patterns>
+- Test both direct invocation and knowledge reference use cases
+</anti_patterns>
