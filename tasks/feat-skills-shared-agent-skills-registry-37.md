@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/37"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/37
+permalink: claude/tasks/feat-skills-shared-agent-skills-registry-37
 ---
 
 # feat: skills/ — shared agent skills registry
@@ -27,7 +29,7 @@ Project-level skills that any Claude Code agent can load — with a registry for
 
 ## Notes
 
-* Existing skills to migrate: `api-design`, `java-best-practices`, `typescript`, `workt
+- Existing skills to migrate: `api-design`, `java-best-practices`, `typescript`, \`workt
 
 ## Notes
 

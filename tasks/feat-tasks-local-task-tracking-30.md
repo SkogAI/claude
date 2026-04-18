@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/30"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/30
+permalink: claude/tasks/feat-tasks-local-task-tracking-30
 ---
 
 # feat: tasks/ — local task tracking
@@ -22,9 +24,9 @@ File-based task tracking for work that doesn't need a Linear/GitHub issue — sc
 
 ## Notes
 
-* Complements Linear, not a replacement — quick capture without needing network
-* Filename convention: `<slug>.md` (kebab-case)
-* Status in filename prefix optional: `pending-`, `done-`
+- Complements Linear, not a replacement — quick capture without needing network
+- Filename convention: `<slug>.md` (kebab-case)
+- Status in filename prefix optional: `pending-`, `done-`
 
 ## Notes
 

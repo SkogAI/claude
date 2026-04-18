@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/36"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/36
+permalink: claude/tasks/feat-bin-shared-executables-for-agent-ho-36
 ---
 
 # feat: bin/ — shared executables for agent home
@@ -26,8 +28,8 @@ Shared binaries/scripts available to all agents in the household — on PATH or 
 
 ## Notes
 
-* The equivalent of `/usr/local/bin` for the skogai household
-* Scripts here 
+- The equivalent of `/usr/local/bin` for the skogai household
+- Scripts here
 
 ## Notes
 

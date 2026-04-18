@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/29"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/29
+permalink: claude/tasks/feat-plan-project-planning-structure-29
 ---
 
 # feat: plan/ — project planning structure
@@ -14,7 +16,7 @@ Project planning scaffold: brief, roadmap, state, codebase map, and phases.
 
 ## Structure
 
-```
+````
 .skogai/plan/
 ├── PROJECT.md        # brief: what, why, constraints, key decisions
 ├── ROADMAP.md        # phase breakdown with status
@@ -29,4 +31,5 @@ Project planning scaffold: brief, roadmap, state, codebase map, and phases.
 
 ## Notes
 
-*Imported from external tracker. See source link for full context.*
+*Imported from external tracker. See source link for full context.*```
+````

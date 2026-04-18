@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/40"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/40
+permalink: claude/tasks/feat-create-skogai-git-orchestrator-skil-40
 ---
 
 # feat: create skogai-git orchestrator skill
@@ -14,17 +16,17 @@ Create `.skogai/skills/skogai-git/SKILL.md` that orchestrates gita, worktrunk, a
 
 ## Scope
 
-* Routing table: intent → sub-skill (status → gita, worktree → worktrunk, tasks → gptodo)
-* Composite workflows:
-  * Morning check (fetch all, show dirty/behind)
-  * Start task (pick issue → create worktree → assign)
-  * Ship task (commit → push → PR → merge → clean up)
-  * End of day (status across all worktrees + repos)
+- Routing table: intent → sub-skill (status → gita, worktree → worktrunk, tasks → gptodo)
+- Composite workflows:
+  - Morning check (fetch all, show dirty/behind)
+  - Start task (pick issue → create worktree → assign)
+  - Ship task (commit → push → PR → merge → clean up)
+  - End of day (status across all worktrees + repos)
 
 ## Depends on
 
-* worktrunk specialist skill
-* 
+- worktrunk specialist skill
+-
 
 ## Notes
 

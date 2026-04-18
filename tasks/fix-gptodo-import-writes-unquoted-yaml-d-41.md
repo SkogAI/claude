@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/41"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/41
+permalink: claude/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41
 ---
 
 # fix(gptodo): import writes unquoted YAML dates in created field

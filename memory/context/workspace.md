@@ -1,3 +1,9 @@
+---
+title: workspace
+type: note
+permalink: claude/memory/context/workspace
+---
+
 # Workspace Context
 
 ## Environment

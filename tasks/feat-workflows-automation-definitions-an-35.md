@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/35"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/35
+permalink: claude/tasks/feat-workflows-automation-definitions-an-35
 ---
 
 # feat: workflows/ — automation definitions and action lists
@@ -25,8 +27,8 @@ Workflow definitions for automation — sequences of actions agents can execute,
 
 ## Notes
 
-* Workflows are "lists of actions to do" — scripted multi-step operations
-* Engine-agnostic at the directory level (dagu, mak
+- Workflows are "lists of actions to do" — scripted multi-step operations
+- Engine-agnostic at the directory level (dagu, mak
 
 ## Notes
 

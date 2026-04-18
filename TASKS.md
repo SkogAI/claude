@@ -1,3 +1,9 @@
+---
+title: TASKS
+type: note
+permalink: claude/tasks
+---
+
 # Tasks
 
 ## Active

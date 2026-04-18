@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/38"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/38
+permalink: claude/tasks/feat-create-worktrunk-specialist-skill-38
 ---
 
 # feat: create worktrunk specialist skill
@@ -14,10 +16,10 @@ Create `.skogai/skills/worktrunk/SKILL.md` covering the full `wt` CLI for git wo
 
 ## Scope
 
-* All `wt` commands: create, open, list, merge, remove, switch, ship
-* Project hooks (`.config/wt.toml`)
-* User config (`~/.config/worktrunk/config.toml`)
-* Branching model: worktree branch → PR to master
+- All `wt` commands: create, open, list, merge, remove, switch, ship
+- Project hooks (`.config/wt.toml`)
+- User config (`~/.config/worktrunk/config.toml`)
+- Branching model: worktree branch → PR to master
 
 ## Acceptance criteria
 

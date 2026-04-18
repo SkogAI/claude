@@ -1,6 +1,12 @@
+---
+title: claudes-home
+type: note
+permalink: claude/memory/projects/claudes-home
+---
+
 # Claude's Home
 
-**Repo:** SkogAI/claude  
+**Repo:** SkogAI/claude\
 **Status:** v1.0 complete (4 phases), v2.0 in progress
 
 ## What it is
@@ -9,13 +15,13 @@ Claude's actual home directory as a git repo — identity, persistence, tools, a
 
 ## Phases
 
-| Phase | Name | Status |
-|-------|------|--------|
-| 1 | Identity & Routing | Complete (2026-03-21) |
-| 2 | Persistence Layer | Complete (2026-03-21) |
-| 3 | Operations & Deployment Gate | Complete (2026-03-21) |
-| 4 | Multi-Agent Readiness | Complete (2026-03-21) |
-| 5 | skogai-live-chat-implementation | Planning |
+| Phase | Name                            | Status                |
+| ----- | ------------------------------- | --------------------- |
+| 1     | Identity & Routing              | Complete (2026-03-21) |
+| 2     | Persistence Layer               | Complete (2026-03-21) |
+| 3     | Operations & Deployment Gate    | Complete (2026-03-21) |
+| 4     | Multi-Agent Readiness           | Complete (2026-03-21) |
+| 5     | skogai-live-chat-implementation | Planning              |
 
 ## Phase 5 key details
 
@@ -30,6 +36,7 @@ Claude's actual home directory as a git repo — identity, persistence, tools, a
 ## v2.0 Active work
 
 Epic #9 covers SkogAI integration & home improvements:
+
 - bin/ shared executables, email/, memory/, knowledge/, skills/
 - Context generation scripts, templates, workflows
 - skogai ecosystem integration (gas town, sibling agent discovery)

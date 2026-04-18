@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/28"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/28
+permalink: claude/tasks/feat-memory-session-context-and-decision-28
 ---
 
 # feat: memory/ — session context and decision log
@@ -21,8 +23,8 @@ Live project memory: what we're working on right now and a running log of decisi
 └── decisions.md     # append-only log of decisions (quick, informal)
 ```
 
-* `current.md` — the one file always injected into context. Short: what we're doing, what's next, what's blocked.
-* `decisions.md` — lightweight decision log (not full ADRs, just "decided X because Y")
+- `current.md` — the one file always injected into context. Short: what we're doing, what's next, what's blocked.
+- `decisions.md` — lightweight decision log (not full ADRs, just "decided X because Y")
 
 ## Notes
 

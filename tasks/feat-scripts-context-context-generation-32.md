@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/32"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/32
+permalink: claude/tasks/feat-scripts-context-context-generation-32
 ---
 
 # feat: scripts/context/ — context generation scripts
@@ -25,8 +27,8 @@ Shell scripts that generate system prompt context for AI agents from project sta
 
 ## Notes
 
-* All scripts accept optional `AGENT_DIR` argument (defaults to git root)
-* Output is markd
+- All scripts accept optional `AGENT_DIR` argument (defaults to git root)
+- Output is markd
 
 ## Notes
 

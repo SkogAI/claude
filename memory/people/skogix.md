@@ -1,7 +1,13 @@
+---
+title: skogix
+type: note
+permalink: claude/memory/people/skogix
+---
+
 # Skogix
 
-**Full name:** Emil Skogsund  
-**Email:** emil.skogsund@gmail.com / claude@skogai.se  
+**Full name:** Emil Skogsund\
+**Email:** emil.skogsund@gmail.com / claude@skogai.se\
 **Role:** Creator and operator of the SkogAI ecosystem. Claude's owner/collaborator.
 
 ## How he communicates

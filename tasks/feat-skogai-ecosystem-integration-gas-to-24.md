@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/24"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/24
+permalink: claude/tasks/feat-skogai-ecosystem-integration-gas-to-24
 ---
 
 # feat: skogai ecosystem integration (gas town, sibling agent discovery)
@@ -18,10 +20,10 @@ Claude explored the SkogAI ecosystem: 332 repos under skogai org, Gas Town (`~/g
 
 ## Potential deliverables (needs refinement)
 
-* Integration with Gas Town shared workspace (`~/gt/`)
-* Discovery mechanism for sibling agent capabilities
-* Cross-agent task handoff conventions
-* Do
+- Integration with Gas Town shared workspace (`~/gt/`)
+- Discovery mechanism for sibling agent capabilities
+- Cross-agent task handoff conventions
+- Do
 
 ## Notes
 

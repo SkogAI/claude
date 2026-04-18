@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/27"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/27
+permalink: claude/tasks/feat-knowledge-decisions-learnings-patte-27
 ---
 
 # feat: knowledge/ — decisions, learnings, patterns
@@ -21,9 +23,9 @@ Structured knowledge base for a project: architectural decisions, session learni
 └── patterns/     # reusable patterns and style guides
 ```
 
-* `decisions/` — when and why something was decided, alternatives considered
-* `learnings/` — things discovered during the work (dated, searchable)
-* `patterns/` — reusable approach
+- `decisions/` — when and why something was decided, alternatives considered
+- `learnings/` — things discovered during the work (dated, searchable)
+- `patterns/` — reusable approach
 
 ## Notes
 

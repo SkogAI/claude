@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/39"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/39
+permalink: claude/tasks/feat-extract-gptodo-specialist-skill-fro-39
 ---
 
 # feat: extract gptodo specialist skill from gptme
@@ -14,16 +16,16 @@ Extract gptodo-specific content from `skills/gptme/SKILL.md` into a standalone `
 
 ## Scope
 
-* Task import from GitHub/Linear issues (`gptodo import`)
-* Task lifecycle: list, check, fetch, sync
-* Worktree-aware task management (`gptodo worktree`)
-* Agent spawning (`gptodo spawn --backend claude`)
-* `GPTODO_TASKS_DIR` configuration
+- Task import from GitHub/Linear issues (`gptodo import`)
+- Task lifecycle: list, check, fetch, sync
+- Worktree-aware task management (`gptodo worktree`)
+- Agent spawning (`gptodo spawn --backend claude`)
+- `GPTODO_TASKS_DIR` configuration
 
 ## Acceptance criteria
 
 - [ ] `skills/gptodo/SKILL.md` created as standalone skill
-- [ ] gptme [SKILL.md](<http://SKILL.md>) updated to
+- [ ] gptme [SKILL.md](http://SKILL.md) updated to
 
 ## Notes
 

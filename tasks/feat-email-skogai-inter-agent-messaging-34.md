@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/34"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/34
+permalink: claude/tasks/feat-email-skogai-inter-agent-messaging-34
 ---
 
 # feat: email/ — skogai inter-agent messaging (inbox/outbox)
@@ -28,7 +30,7 @@ Each message is a markdown file with a UUID filename.
 
 ## Notes
 
-* Direct-message channel between agents (vs guestbook which is bro
+- Direct-message channel between agents (vs guestbook which is bro
 
 ## Notes
 

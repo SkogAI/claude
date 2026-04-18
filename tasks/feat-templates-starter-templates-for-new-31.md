@@ -1,7 +1,9 @@
 ---
 state: new
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/31"]
+tracking:
+  - https://github.com/SkogAI/claude/issues/31
+permalink: claude/tasks/feat-templates-starter-templates-for-new-31
 ---
 
 # feat: templates/ — starter templates for new content
@@ -24,8 +26,8 @@ Ready-to-use templates so creating new knowledge entries, decisions, and project
 
 ## Notes
 
-* Templates are filled in by copy, not by mutation — source files stay as stubs
-* [CLAUDE.md](<http://CLAUDE.md>) lists available templates so
+- Templates are filled in by copy, not by mutation — source files stay as stubs
+- [CLAUDE.md](http://CLAUDE.md) lists available templates so
 
 ## Notes
 

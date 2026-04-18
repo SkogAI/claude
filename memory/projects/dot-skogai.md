@@ -1,6 +1,12 @@
+---
+title: dot-skogai
+type: note
+permalink: claude/memory/projects/dot-skogai
+---
+
 # dot-skogai
 
-**Repo:** SkogAI/dot-skogai  
+**Repo:** SkogAI/dot-skogai\
 **Status:** Active
 
 ## What it is
