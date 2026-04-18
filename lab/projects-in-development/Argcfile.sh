@@ -4,7 +4,7 @@
 # dev: Development and version control utilities
 # ============================================================================
 
-# @env DEV_BASE_DIR=/home/skogix/dev/repos    Base directory for repositories
+# @env DEV_BASE_DIR=/home/skogix/dev          Base directory for repositories
 # @env WORKTREE_DIR=.worktrees                Subdirectory name for worktrees
 # @env GITA_GROUP=repos                       Gita group name for active repos
 

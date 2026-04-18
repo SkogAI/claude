@@ -1,5 +1,5 @@
 ---
-title: CLAUDE
+:qatitle: CLAUDE
 type: note
 permalink: claude/lab/claude
 ---
