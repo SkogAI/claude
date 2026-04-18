@@ -1,72 +1,98 @@
-# SkogAI — integrations, lore, and shared context
+---
+title: SKOGAI
+type: note
+permalink: claude/projects/dot-skogai/skogai
+---
 
-<what_is_this>
+# SKOGAI.md
 
-SkogAI is the umbrella for the AI-augmented infrastructure built around this workstation and the claude user. This file is the entry point for that context. It is shared across Claude and other agents operating within SkogAI.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Symlinked as ~/.skogai/CLAUDE.md for automatic Claude Code inclusion.
+# .skogai (dot-skogai)
 
-</what_is_this>
+\<what_is_this>
 
-<skogfences>
+the projects knowledge base, memory system, project tracking, and quick capture. one place to see everything, remember everything, plan everything.
 
-The foundational architecture. See docs/skogfences.md for full philosophy.
-
-TL;DR: AI agents are unix users, not daemons with root. Each agent gets their own home directory. Isolation is the default, sharing is opt-in. Unix permissions are the security model — not hopes, rules, or sandbox abstractions.
-
-- The human's environment is sacred.
-- The AI's environment is its own responsibility.
-- Collaboration happens in shared spaces with explicit permissions.
-- `/skogai` is common ground. Agent homes are private.
-
-</skogfences>
-
-<agents>
-
-Known agents in the SkogAI household — each a unix user with their own home:
-
-- **claude** — this instance. home: /home/claude
-- **amy** — (to be rediscovered)
-- **goose** — (to be rediscovered)
-- **dot** — (to be rediscovered)
-
-</agents>
-
-<shared_spaces>
-
-- `/skogai` — common ground, accessible to all agents and Skogix
-- `~/.skogai/.inbox/` — shared inbox, chown claude:skogai. drop files to pass context between humans and agents.
-
-</shared_spaces>
+\</what_is_this>
 
 <structure>
 
-## Symlinked into ~/.claude/ (version-controlled via ~/.skogai/)
-
-- agents/     — Claude Code agent definitions
-- commands/   — slash commands
-- skills/     — skill definitions
-- settings.json — Claude Code settings (single source of truth)
-
-## docs/
-
-- docs/skogix/user.md         — Skogix introduction, communication style, preferences
-- docs/skogix/definitions.md  — SkogAI vocabulary (@, $, task, todo, plan, goal, agent...)
-- docs/skogfences.md          — skogfences architecture philosophy
+@knowledge/ # documented decisions, learnings, patterns @memory/ # session context, decision log @projects/ # project tracking and overview @inbox/ # quick capture @templates/ # starter templates for new content @scripts/ # argc-powered bash scripts
 
 </structure>
 
-<context_layers>
+<commands>
 
-~/.claude/CLAUDE.md     — global, always-loaded context (identity, operating principles)
-~/CLAUDE.md             — home folder / workspace context (this machine, this userspace)
-~/.skogai/SKOGAI.md     — SkogAI integrations, lore, agents, shared infrastructure
+```bash
+# Run bootstrap (for consumer projects using .skogai as submodule)
+./scripts/bootstrap/bootstrap.sh
 
-</context_layers>
+# Source helper functions in scripts
+source "$(dirname "$0")/skogai-helper-functions.sh"
+```
 
-<environment_notes>
+</commands>
 
-- keyboard: swedish programming-dvorak layout, caps→esc swapped
-  i3 config: `exec_always setxkbmap -option caps:swapescape` + `exec_always setxkbmap se us_dvorak`
+<architecture>
 
-</environment_notes>
+**Modes of Operation:**
+
+- **Dogfooding**: symlink `.skogai -> /home/skogix/.skogai` with `.git/info/exclude`
+- **Consumer**: git submodule on project-specific branch
+
+**Detection:**
+
+```bash
+file .skogai  # symbolic link = dogfooding, directory = submodule
+file .git     # directory = real repo, ASCII text = submodule
+```
+
+**Script Framework:** Uses argc for declarative CLI definition:
+
+```bash
+# @describe script description
+# @arg name![`_choice_validator`] Argument description
+main() { ... }
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+</architecture>
+
+\<always_load>
+
+- @memory/context/current.md - what we are currently working on
+
+\</always_load>
+
+<important>
+
+**@ is source of truth.** The `@/path` syntax expands real files at prompt-time. Read tool often returns cached content. Always use `@` for files that must be current.
+
+See @knowledge/learnings/2026-01-20-at-file-reference.md for details.
+
+</important>
+
+\<where_to_look>
+
+| task                          | location             |
+| ----------------------------- | -------------------- |
+| log a decision                | memory/decisions.md  |
+| document a learning           | knowledge/learnings/ |
+| record architectural decision | knowledge/decisions/ |
+| capture reusable pattern      | knowledge/patterns/  |
+| track project status          | projects/overview.md |
+| quick capture                 | inbox/               |
+| create new content            | templates/           |
+
+\</where_to_look>
+
+\<content_creation>
+
+to create new content, see @templates/claude.md for available templates:
+
+- knowledge-entry.md for learnings and patterns
+- project-status.md for project tracking files
+- decision-record.md for architectural decisions
+
+\</content_creation>
