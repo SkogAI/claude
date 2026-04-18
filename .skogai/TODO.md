@@ -22,3 +22,4 @@
 - [ ] stress test: verify all 20 worktrees work correctly with skill updates
 - [ ] document worktree workflow patterns for multi-skill parallel work
 - [ ] zshrc use exa instead of ls
+- [ ] .claude/hooks/hooks.json and the rest of the native .claude folder is for testing purposes - what to keep and what not?
