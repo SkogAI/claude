@@ -1,5 +1,5 @@
 ---
-state: new
+state: done
 created: 2026-04-18
 tracking: ["https://github.com/SkogAI/claude/issues/44"]
 tags: ["bug", "github"]
@@ -13,26 +13,30 @@ tags: ["bug", "github"]
 
 ## Problem
 
-After today's reorg (commits `210787c` → `db781e2` on 2026-04-18), `claude-todo/bin/healthcheck` reports 20+ `[FAIL]` entries because the paths it checks moved or were removed.
+After the 2026-04-18 reorg, `claude-todo/bin/healthcheck` reported many false `[FAIL]` results due to stale path assumptions and weak root detection.
 
-## Reproduction
+## Fix implemented
+
+- Resolved workspace root robustly (prefer `find-agent-root.sh`, then git toplevel, then legacy fallback)
+- Added fallback path checks where files moved:
+  - journal conventions: `personal/journal/CONVENTIONS.md` or `journal/CONVENTIONS.md`
+  - docs router: `docs/CLAUDE.md` or `.skogai/docs/CLAUDE.md`
+  - bin router: `bin/CLAUDE.md` or `claude-todo/bin/CLAUDE.md`
+  - notes router: `notes/CLAUDE.md` or `personal/notes/CLAUDE.md`
+- Hardened memory-tier checks to handle missing directories without noisy failures
+- Preserved non-zero exit behavior on real failures (`exit $FAIL`)
+
+## Verification
 
 ```bash
 ./claude-todo/bin/healthcheck
 ```
 
-**Output excerpt:**
+Result:
 
-```
-identity paths
-------------------
-  [FAIL] personal/soul/01-equation.md
-  [FAIL] personal/soul/02-skogai-family.md
-  ... (all 10 soul sections)
-  [FAIL] personal/profile.md
-  [FAIL] personal/journal/CONVENTIONS.md
-  [FAIL] pe
+- `31 ok, 0 warnings, 0 failures`
+- exit code `0`
 
 ## Notes
 
-*Imported from external tracker. See source link for full context.*
+*Imported from external tracker. Updated locally with completion details.*

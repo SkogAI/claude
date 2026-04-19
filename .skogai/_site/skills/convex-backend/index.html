@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>convex-backend - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">.skogai</a>
+  &rsaquo; <a href="../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; convex-backend
+</nav>
+
+<header>
+  <h1>convex-backend</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">Convex backend development guidelines. Use when writing Convex functions, schemas, queries, mutations, actions, or any backend code in a Convex project. Triggers on tasks involving Convex database ope</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/convex-backend</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/convex-backend" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>Convex Backend Guidelines</h1>
+<h3>When to Load</h3>
+<ul>
+<li><strong>Trigger</strong>: Convex-specific development, writing Convex functions, schemas, queries, mutations, actions, or real-time subscriptions</li>
+<li><strong>Skip</strong>: Project does not use Convex as its backend</li>
+</ul>
+<p>Comprehensive guide for building Convex backends with TypeScript. Covers function syntax, validators, schemas, queries, mutations, actions, scheduling, and file storage.</p>
+<h2>When to Apply</h2>
+<p>Reference these guidelines when:</p>
+<ul>
+<li>Writing new Convex functions (queries, mutations, actions)</li>
+<li>Defining database schemas and validators</li>
+<li>Implementing real-time data fetching</li>
+<li>Setting up cron jobs or scheduled functions</li>
+<li>Working with file storage</li>
+<li>Designing API structure</li>
+</ul>
+<h2>Rule Categories</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Impact</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Function Syntax</td>
+<td>CRITICAL</td>
+<td>New function syntax with args/returns/handler</td>
+</tr>
+<tr>
+<td>Validators</td>
+<td>CRITICAL</td>
+<td>Type-safe argument and return validation</td>
+</tr>
+<tr>
+<td>Schema Design</td>
+<td>HIGH</td>
+<td>Table definitions, indexes, system fields</td>
+</tr>
+<tr>
+<td>Query Patterns</td>
+<td>HIGH</td>
+<td>Efficient data fetching with indexes</td>
+</tr>
+<tr>
+<td>Mutation Patterns</td>
+<td>MEDIUM</td>
+<td>Database writes, patch vs replace</td>
+</tr>
+<tr>
+<td>Action Patterns</td>
+<td>MEDIUM</td>
+<td>External API calls, Node.js runtime</td>
+</tr>
+<tr>
+<td>Scheduling</td>
+<td>MEDIUM</td>
+<td>Crons and delayed function execution</td>
+</tr>
+<tr>
+<td>File Storage</td>
+<td>LOW</td>
+<td>Blob storage and metadata</td>
+</tr>
+</tbody>
+</table>
+<h2>Quick Reference</h2>
+<h3>Function Registration</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// Public functions (exposed to clients)</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>query,<span style="color: #BBB"> </span>mutation,<span style="color: #BBB"> </span>action<span style="color: #BBB"> </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;./_generated/server&quot;</span>;
+
+<span style="color: #3D7B7B; font-style: italic">// Internal functions (only callable from other Convex functions)</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span>internalQuery,
+<span style="color: #BBB">  </span>internalMutation,
+<span style="color: #BBB">  </span>internalAction,
+}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;./_generated/server&quot;</span>;
+</pre></div>
+</code></pre>
+<h3>Function Syntax (Always Use This)</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">export</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>myFunction<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>query({
+<span style="color: #BBB">  </span>args<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>name<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">v.string</span>()<span style="color: #BBB"> </span>},
+<span style="color: #BBB">  </span>returns<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">v.string</span>(),
+<span style="color: #BBB">  </span>handler<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">async</span><span style="color: #BBB"> </span>(ctx,<span style="color: #BBB"> </span>args)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Hello &quot;</span><span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>args.name;
+<span style="color: #BBB">  </span>},
+});
+</pre></div>
+</code></pre>
+<h3>Common Validators</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Validator</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>String</td>
+<td><code>v.string()</code></td>
+<td><code>&quot;hello&quot;</code></td>
+</tr>
+<tr>
+<td>Number</td>
+<td><code>v.number()</code></td>
+<td><code>3.14</code></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td><code>v.boolean()</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>ID</td>
+<td><code>v.id(&quot;tableName&quot;)</code></td>
+<td><code>doc._id</code></td>
+</tr>
+<tr>
+<td>Array</td>
+<td><code>v.array(v.string())</code></td>
+<td><code>[&quot;a&quot;, &quot;b&quot;]</code></td>
+</tr>
+<tr>
+<td>Object</td>
+<td><code>v.object({...})</code></td>
+<td><code>{name: &quot;x&quot;}</code></td>
+</tr>
+<tr>
+<td>Optional</td>
+<td><code>v.optional(v.string())</code></td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td>Union</td>
+<td><code>v.union(v.string(), v.number())</code></td>
+<td><code>&quot;x&quot;</code> or <code>1</code></td>
+</tr>
+<tr>
+<td>Literal</td>
+<td><code>v.literal(&quot;status&quot;)</code></td>
+<td><code>&quot;status&quot;</code></td>
+</tr>
+<tr>
+<td>Null</td>
+<td><code>v.null()</code></td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Function References</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// Public functions</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>api<span style="color: #BBB"> </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;./_generated/api&quot;</span>;
+api.example.myQuery;<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// convex/example.ts → myQuery</span>
+
+<span style="color: #3D7B7B; font-style: italic">// Internal functions</span>
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>internal<span style="color: #BBB"> </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;./_generated/api&quot;</span>;
+internal.example.myInternalMutation;
+</pre></div>
+</code></pre>
+<h3>Query with Index</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// Schema</span>
+messages<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">defineTable</span>({...}).index(<span style="color: #BA2121">&quot;by_channel&quot;</span>,<span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;channelId&quot;</span>])
+
+<span style="color: #3D7B7B; font-style: italic">// Query</span>
+<span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>ctx.db
+<span style="color: #BBB">  </span>.query(<span style="color: #BA2121">&quot;messages&quot;</span>)
+<span style="color: #BBB">  </span>.withIndex(<span style="color: #BA2121">&quot;by_channel&quot;</span>,<span style="color: #BBB"> </span>(q)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>q.eq(<span style="color: #BA2121">&quot;channelId&quot;</span>,<span style="color: #BBB"> </span>channelId))
+<span style="color: #BBB">  </span>.order(<span style="color: #BA2121">&quot;desc&quot;</span>)
+<span style="color: #BBB">  </span>.take(<span style="color: #666">10</span>);
+</pre></div>
+</code></pre>
+<h3>Key Rules</h3>
+<ol>
+<li><strong>Always include <code>args</code> and <code>returns</code> validators</strong> on all functions</li>
+<li><strong>Use <code>v.null()</code> for void returns</strong> - never omit return validator</li>
+<li><strong>Use <code>withIndex()</code> not <code>filter()</code></strong> - define indexes in schema</li>
+<li><strong>Use <code>internalQuery/Mutation/Action</code></strong> for private functions</li>
+<li><strong>Actions cannot access <code>ctx.db</code></strong> - use runQuery/runMutation instead</li>
+<li><strong>Include type annotations</strong> when calling functions in same file</li>
+</ol>
+<h2>Full Compiled Document</h2>
+<p>For the complete guide with all rules and detailed code examples, see: <code>AGENTS.md</code></p>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

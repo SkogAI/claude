@@ -1,0 +1,2919 @@
+[04:44:28] INFO     Skipping all confirmation prompts.                                                                                                                             main.py:479
+           INFO     Using model default tool_format=tool for openai-subscription/gpt-5.3-codex                                                                                cli_setup.py:149
+[04:44:28] Using browser tool with lynx                                                                                                                                                       
+           WARNING  Failed to register hook 'rag_context' for tool 'rag': 'generation_pre' is not a valid HookType                                                                 base.py:287
+           Using model: openai-subscription/gpt-5.3-codex                                                                                                                                     
+           INFO     OpenAI subscription provider initialized with stored tokens                                                                                 llm_openai_subscription.py:758
+           WARNING  Parallel agent detected: claude-code PID 632962 (interactive, model=None)                                                                          workspace_agents.py:783
+           WARNING  Parallel agent detected: gptme PID 671879 (server, model=None)                                                                                     workspace_agents.py:783
+           Using logdir: ~/.local/share/gptme/logs/2026-04-19-jumping-sad-alien                                                                                                               
+           Using workspace: ~/claude                                                                                                                                                          
+Skipped 5 hidden system messages, show with --show-hidden
+--- ^^^ past messages ^^^ ---
+skogix: 
+Work on this task:
+
+# feat-templates-starter-templates-for-new-31
+
+# feat: templates/ — starter templates for new content
+
+**Source**: [Github #31](https://github.com/SkogAI/claude/issues/31)
+
+## Description
+
+Ready-to-use templates so creating new knowledge entries, decisions, and project files has zero friction.
+
+## Structure
+
+```
+.skogai/templates/
+├── CLAUDE.md            # template directory router
+├── decision-record.md   # ADR template
+├── knowledge-entry.md   # learning/pattern template
+└── project-status.md    # project tracking template
+```
+
+## Notes
+
+````knowledge
+DECISIONS.md
+SKOGAI.md
+decisions/.gitkeep
+decisions/2026-01-20-use-argc-for-script-framework.md
+lessons/.gitkeep
+lessons/2026-01-20-argc-script-framework.md
+lessons/2026-01-20-at-file-reference.md
+lessons/2026-01-20-intent-notation-system.md
+patterns/.gitkeep
+patterns/style/SKOGAI.md
+patterns/style/anti-patterns.md
+patterns/style/at-references.md
+patterns/style/commit-conventions.md
+patterns/style/context-engineering.md
+patterns/style/file-structure.md
+patterns/style/language-tone.md
+patterns/style/naming-conventions.md
+patterns/style/tdd-plans.md
+patterns/style/ux-patterns.md
+patterns/style/xml-conventions.md
+````
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@todo(call_oE7grzn0d49OEf8pX05UiXcx): {}                                                                                
+System: 📝 Todo list is empty
+Assistant: Thinking...
+[04:44:33] INFO     Auto-generated conversation name: Starter Templates Feature                                                                                             auto_naming.py:337
+                                                                                
+Assistant: 
+
+@shell(call_ZrRzdjzR4jcTnxaTGQY4yhFq): {"command":"rtk pwd && rtk ls -la && rtk find /home/skogix/claude -maxdepth 3 -name CLAUDE.md | head -n 50"}                                                                                
+/home/skogix/claude
+.claude/
+claude-todo/
+.git/
+.github/
+journal/
+lab/
+logs/
+personal/
+.planning/
+presentation/
+projects/
+.rtk/
+.skogai/
+tmp/
+.worktrees/
+AGENTS.md  1.6K
+CLAUDE.md  10.9K
+.envrc  149B
+.gitignore  124B
+.gitmodules  213B
+guestbook -> ./.skogai/guestbook  19B
+knowledge -> .skogai/knowledge  17B
+.mcp.json  118B
+people -> .skogai/people  14B
+scripts -> .skogai/scripts  15B
+state -> ./.skogai/state  15B
+tasks -> .skogai/tasks  13B
+9F 9D:
+
+./ CLAUDE.md
+claude-todo/bin/ CLAUDE.md
+lab/ CLAUDE.md
+lab/projects-in-development/ CLAUDE.md
+personal/ CLAUDE.md
+personal/core/ CLAUDE.md
+personal/memory-blocks/ CLAUDE.md
+personal/notes/ CLAUDE.md
+personal/soul/ CLAUDE.md
+System: 
+Ran command: `rtk pwd && rtk ls -la && rtk find /home/skogix/claude -maxdepth 3 -name CLAUDE.md | head -n 50`
+
+```stdout
+/home/skogix/claude
+.claude/
+claude-todo/
+.git/
+.github/
+journal/
+lab/
+logs/
+personal/
+.planning/
+presentation/
+projects/
+.rtk/
+.skogai/
+tmp/
+.worktrees/
+AGENTS.md  1.6K
+CLAUDE.md  10.9K
+.envrc  149B
+.gitignore  124B
+.gitmodules  213B
+guestbook -> ./.skogai/guestbook  19B
+knowledge -> .skogai/knowledge  17B
+.mcp.json  118B
+people -> .skogai/people  14B
+scripts -> .skogai/scripts  15B
+state -> ./.skogai/state  15B
+tasks -> .skogai/tasks  13B
+9F 9D:
+
+./ CLAUDE.md
+claude-todo/bin/ CLAUDE.md
+lab/ CLAUDE.md
+lab/projects-in-development/ CLAUDE.md
+personal/ CLAUDE.md
+personal/core/ CLAUDE.md
+personal/memory-blocks/ CLAUDE.md
+personal/notes/ CLAUDE.md
+personal/soul/ CLAUDE.md
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_6D3Wj2xlforBH1XTSarN1ZEI): {"command":"rtk ls -la /home/skogix/claude/.skogai && rtk find /home/skogix/claude/.skogai -maxdepth 3 -type f | sed -n '1,200p'"}
+                                                                                
+agents/
+commands/
+docs/
+email/
+guestbook/
+hooks/
+inbox/
+knowledge/
+memory/
+people/
+plan/
+scripts/
+_site/
+skills/
+state/
+tasks/
+templates/
+CLAUDE.md  10.3K
+CONTEXT.md  2.1K
+.envrc  34B
+README.md  1.4K
+SKOGAI.md  2.9K
+TODO.md  1.8K
+Untitled  3.3K
+338F 71D:
+
+./ CLAUDE.md CONTEXT.md README.md SKOGAI.md TODO.md Untitled
+_site/ data.json feed.xml index.html sitemap.xml
+_site/tasks/ TASKS.html bug-core-tooling-missing-on-non-skogix-c-43.html bug-healthcheck-references-identity-path-44.html chore-consolidate-scripts-claude-todo-bi-45.html chore-remove-remaining-skogix-local-path-46.html feat-bin-shared-executables-for-agent-ho-36.html feat-create-skogai-git-orchestrator-skil-40.html feat-create-worktrunk-specialist-skill-38.html feat-document-all-binaries-scripts-into-25.html feat-email-skogai-inter-agent-messaging-34.html feat-extract-gptodo-specialist-skill-fro-39.html feat-knowledge-decisions-learnings-patte-27.html feat-memory-session-context-and-decision-28.html feat-phase-5-plan-1-chat-io-contract-rou-22.html feat-phase-5-plan-2-routing-skill-hook-f-23.html feat-plan-project-planning-structure-29.html feat-scripts-bootstrap-init-and-symlink-33.html feat-scripts-context-context-generation-32.html feat-skills-shared-agent-skills-registry-37.html feat-skogai-ecosystem-integration-gas-to-24.html feat-skogai-md-root-context-router-26.html feat-tasks-local-task-tracking-30.html feat-templates-starter-templates-for-new-31.html feat-workflows-automation-definitions-an-35.html fix-gptodo-import-writes-unquoted-yaml-d-41.html
+docs/ CLAUDE.md skogfences.md
+docs/claude-code/ agent-teams.md amazon-bedrock.md analytics.md authentication.md best-practices.md changelog.md checkpointing.md chrome.md claude-code-on-the-web.md cli-reference.md common-workflows.md costs.md data-usage.md
++288 more
+
+ext: .md(230) .sh(40) .py(27) .html(26) .json(5)
+System: 
+Ran command: `rtk ls -la /home/skogix/claude/.skogai && rtk find /home/skogix/claude/.skogai -... (1 line)`
+
+```stdout
+agents/
+commands/
+docs/
+email/
+guestbook/
+hooks/
+inbox/
+knowledge/
+memory/
+people/
+plan/
+scripts/
+_site/
+skills/
+state/
+tasks/
+templates/
+CLAUDE.md  10.3K
+CONTEXT.md  2.1K
+.envrc  34B
+README.md  1.4K
+SKOGAI.md  2.9K
+TODO.md  1.8K
+Untitled  3.3K
+338F 71D:
+
+./ CLAUDE.md CONTEXT.md README.md SKOGAI.md TODO.md Untitled
+_site/ data.json feed.xml index.html sitemap.xml
+_site/tasks/ TASKS.html bug-core-tooling-missing-on-non-skogix-c-43.html bug-healthcheck-references-identity-path-44.html chore-consolidate-scripts-claude-todo-bi-45.html 
+chore-remove-remaining-skogix-local-path-46.html feat-bin-shared-executables-for-agent-ho-36.html feat-create-skogai-git-orchestrator-skil-40.html 
+feat-create-worktrunk-specialist-skill-38.html feat-document-all-binaries-scripts-into-25.html feat-email-skogai-inter-agent-messaging-34.html 
+feat-extract-gptodo-specialist-skill-fro-39.html feat-knowledge-decisions-learnings-patte-27.html feat-memory-session-context-and-decision-28.html 
+feat-phase-5-plan-1-chat-io-contract-rou-22.html feat-phase-5-plan-2-routing-skill-hook-f-23.html feat-plan-project-planning-structure-29.html feat-scripts-bootstrap-init-and-symlink-33.html
+feat-scripts-context-context-generation-32.html feat-skills-shared-agent-skills-registry-37.html feat-skogai-ecosystem-integration-gas-to-24.html feat-skogai-md-root-context-router-26.html 
+feat-tasks-local-task-tracking-30.html feat-templates-starter-templates-for-new-31.html feat-workflows-automation-definitions-an-35.html fix-gptodo-import-writes-unquoted-yaml-d-41.html
+docs/ CLAUDE.md skogfences.md
+docs/claude-code/ agent-teams.md amazon-bedrock.md analytics.md authentication.md best-practices.md changelog.md checkpointing.md chrome.md claude-code-on-the-web.md cli-reference.md 
+common-workflows.md costs.md data-usage.md
++288 more
+
+ext: .md(230) .sh(40) .py(27) .html(26) .json(5)
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_nNc4V6mt7MAq1k4u5Ygt878w): {"command":"rtk cat /home/skogix/claude/.skogai/CLAUDE.md && rtk find /home/skogix/claude/.skogai -maxdepth 2 -name AGENTS.md -o -name CLAUDE.md"}                                                                                
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/claude
+---
+
+# .skogai - SkogAI Repository Bootstrap
+
+This repository is the shared configuration, knowledge base, and tooling layer for all SkogAI projects. It is distributed as a git submodule at `.skogai/` in consumer projects.
+
+## What is this?
+
+`.skogai` is the central bootstrap and knowledge system for the SkogAI ecosystem. It provides:
+
+- **Knowledge base** — documented decisions, learnings, patterns
+- **Memory system** — session context, decision log
+- **Project tracking** — project state, roadmaps, planning
+- **Script infrastructure** — argc-powered bash automation
+- **Skills registry** — domain-specific Claude Code skills
+- **Workflow orchestration** — Dagu-based workflow DAGs
+- **Worktrunk configuration** — shared `.config/wt.toml` for git worktree workflow
+
+## File Structure
+
+```
+.skogai/
+├── CLAUDE.md                   # Claude Code instructions (this file)
+├── SKOGAI.md                   # Guidance with XML-style structural tags
+├── README.md                   # Human-readable overview
+├── Argcfile.sh                 # Argc CLI for queue management
+├── base.yaml / config.yaml     # Dagu orchestration configuration
+├── .envrc                      # Direnv PATH configuration
+├── .config/
+│   └── wt.toml                 # Worktrunk git worktree hooks
+├── bin/
+│   ├── skogai-loops            # Wrapper for gptme-runloops
+│   └── skogai-ralph            # Wrapper for ralph tool
+├── dotfiles/
+│   └── install.sh              # Safety-checked dotfiles installer
+├── email/                      # Email management (inbox, drafts, sent, archive)
+├── knowledge/
+│   ├── DECISIONS.md            # Decision index (router → decisions/)
+│   ├── decisions/              # Architectural decision records (ADRs)
+│   ├── lessons/                # Documented lessons from sessions
+│   └── patterns/               # Reusable patterns and style guides
+├── memory/
+│   ├── GLOSSARY.md             # Shared vocabulary
+│   ├── PROJECTS.md             # Active project index (router)
+│   ├── feedback/               # Behavioral feedback records
+│   └── references/             # External system pointers
+├── plan/
+│   ├── claudes-home/           # Claude's Home project plan (phases 1-5)
+│   ├── codebase/               # Architecture, conventions, stack docs
+│   ├── PROJECT.md              # Project definition and requirements
+│   ├── ROADMAP.md              # 4-phase roadmap
+│   └── STATE.md                # Current phase/plan progress
+├── projects/
+│   └── overview.md             # Active/paused/archived projects table
+├── scripts/
+│   ├── bootstrap/              # Submodule init and consumer-init scripts
+│   ├── context/                # 26 context-generation scripts
+│   └── utils/                  # search, wordcount, state-status, migration
+├── skills/
+│   ├── skill-registry.json     # Registry of all skills
+│   └── */                      # Individual skill directories (SKILL.md + manifest.json)
+├── tasks/                      # Task tracking files
+├── templates/                  # Starter templates (knowledge-entry, decision-record, project-status)
+├── todos/                      # Work items (NNN-status-pN-description.md)
+├── tools/                      # Tools placeholder
+└── workflows/                  # Dagu DAG files and workflow docs
+```
+
+## Always Load
+
+Before starting any work, read:
+
+```
+@CONTEXT.md   — dynamically generated current context (workspace, git state, memory)
+```
+
+## Architecture Modes
+
+**Dogfooding** (developing .skogai itself):
+
+```bash
+.skogai -> /home/skogix/.skogai   # symlink
+.git/info/exclude contains .skogai
+```
+
+**Consumer** (project using .skogai as submodule):
+
+```bash
+git submodule add <repo-url> .skogai
+(cd .skogai && ./scripts/bootstrap/bootstrap.sh)
+```
+
+**Detection:**
+
+```bash
+file .skogai  # symbolic link = dogfooding, directory = submodule
+file .git     # directory = real repo, ASCII text file = submodule
+```
+
+## User Context (skogix)
+
+- Functional programmer — data transformations over control flow, pure functions, immutable data
+- Simplicity first — complexity only when earned
+- Direct expert-level communication — give the answer first, explain after
+- Lowercase for generic references (`claude`, `readme`), uppercase for exact names (`CLAUDE.md`, `Claude`)
+- Uses git worktrees extensively (via Worktrunk)
+- Prefers code/data over prose
+
+## Repository Conventions
+
+### Naming
+
+- **kebab-case** — all files and directories
+- **UPPERCASE.md** — important docs (`CLAUDE.md`, `README.md`, `PROJECT.md`, `ROADMAP.md`)
+- **lowercase.md** — standard docs (`todo.md`, `decisions.md`)
+- **.sh** — bash scripts; **.py** — Python; **.bats** — bash test files
+
+### Bash Scripts
+
+- Shebang: `#!/usr/bin/env bash`
+- Strict mode: `set -euo pipefail`
+- UPPERCASE for env vars/constants, lowercase for local vars, snake_case for functions
+- Color output: RED=errors, GREEN=success, YELLOW=warnings, BLUE=info
+- Minimal comments — only where logic is non-obvious
+- Never hide errors or warnings behind abstractions
+
+### Script Framework (argc)
+
+All scripts in `scripts/` use argc for declarative CLI definition:
+
+```bash
+# @describe script description
+# @arg name![`_choice_validator`] Argument description
+main() { ... }
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+### Code Quality
+
+1. Minimal abstractions — pragmatic over perfect
+1. Self-documenting code — names matter
+1. Error visibility — never hide errors or warnings
+1. Functional programming — prefer immutable data, pure functions
+1. Simplicity first — no speculative abstractions
+1. No over-engineering — only what the task actually requires
+
+## Knowledge Management
+
+### Where to Look
+
+| Task                          | Location                                                   |
+| ----------------------------- | ---------------------------------------------------------- |
+| Log a decision                | `knowledge/decisions/` + index in `knowledge/DECISIONS.md` |
+| Document a lesson             | `knowledge/lessons/`                                       |
+| Record architectural decision | `knowledge/decisions/`                                     |
+| Capture reusable pattern      | `knowledge/patterns/`                                      |
+| Track project status          | `projects/overview.md`                                     |
+| Quick capture                 | `inbox/`                                                   |
+| Create new content            | `templates/` (see `templates/CLAUDE.md`)                   |
+
+### Templates
+
+- `templates/knowledge-entry.md` — learnings and patterns
+- `templates/decision-record.md` — ADRs
+- `templates/project-status.md` — project tracking
+
+### @ Notation
+
+`@path/to/file` expands the file at prompt-time, bypassing cache. Use it for files that must be current:
+
+- `@CONTEXT.md` — dynamically generated current context
+- `@knowledge/lessons/` — current lessons
+
+## Todo System
+
+Todos in `todos/` follow the naming convention:
+
+```
+NNN-status-pN-description.md
+```
+
+- Status: `pending`, `ready`, `in-progress`, `done`
+- Priority: `p1` (critical/blocking), `p2` (high), `p3` (lower)
+
+**Current critical items (P1 — do not ignore):**
+
+- `001-pending-p1-shell-injection-plugin-names.md` — shell injection in session-start.sh (BLOCKS MERGE)
+- `002-pending-p1-race-condition-file-updates.md` — race condition in concurrent file updates
+- `017-pending-p1-plugin-trial-garden-system.md` — plugin trial garden system
+
+## Skills Registry
+
+Skills in `skills/` are domain-specific knowledge modules activated by context:
+
+| Skill                       | Activation                                                  |
+| --------------------------- | ----------------------------------------------------------- |
+| `conductor-methodology`     | Always active                                               |
+| `typescript-best-practices` | `*.ts`, `*.tsx` files or typescript/type/interface keywords |
+| `api-design`                | api/endpoint/rest keywords or routes/controllers/api paths  |
+| `testing-strategies`        | test/unit/integration/mock keywords or test directories     |
+| `java-best-practices`       | `*.java`, pom.xml, build.gradle or java/optional keywords   |
+
+Each skill: `skills/<name>/SKILL.md` + `manifest.json`
+
+## Workflow Orchestration (Dagu)
+
+- **Binary**: `/home/skogix/.local/bin/dagu` (v1.30.3)
+- **Server**: `http://localhost:8080` (start with `dagu start-all`)
+- **Config**: `config.yaml` (server), `base.yaml` (base DAG config)
+- **Key commands**: `dagu start`, `dagu dry`, `dagu validate`, `dagu exec`
+
+Rules for Dagu work:
+
+- Write a small YAML DAG, run it, see what happens, adjust
+- If it takes more than 2-3 lines of bash, rethink the approach
+- Use `jq` for JSON — never sed/awk
+- Use native Dagu features (`output:`, `parallel:`, `type: jq`, `call:`, `retryPolicy:`)
+- Every DAG should fit in one screen
+
+## SSH MCP Multi-User Architecture
+
+- `skogai-ssh` MCP server — execute commands on remote systems
+- `claude-ssh` MCP server — execute as claude user (localhost:22)
+- Each agent can have a dedicated MCP server for workspace isolation
+- Cross-user coordination via MCP instead of direct filesystem access
+
+## Integration as Git Submodule
+
+### Adding to a project
+
+```bash
+git submodule add <repo-url> .skogai
+git submodule update --init --recursive
+```
+
+### Updating submodule in a project
+
+```bash
+cd .skogai
+git pull origin master
+cd ..
+git add .skogai
+git commit -m "Update .skogai submodule"
+```
+
+## Important Notes
+
+- This is a **bootstrap/submodule project** — changes here affect all SkogAI projects that include it
+- Keep configuration **portable** — no absolute paths or user-specific settings
+- Keep it **minimal** — only include what is genuinely shared across projects
+- Configuration is **optional** — consumer projects can override or ignore as needed
+- **@ notation is truth** — use `@file` for content that must be current, not cached
+- **No code implementation in v1** — establish system and principles first, build on them after
+- **Greenfield approach** — existing Python/JS codebase is exploratory; target paradigm is functional-first (F#) with argc and 98% test coverage
+System: 
+Ran command: `rtk cat /home/skogix/claude/.skogai/CLAUDE.md && rtk find /home/skogix/claude/.s... (1 line)`
+
+```stdout
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/claude
+---
+
+# .skogai - SkogAI Repository Bootstrap
+
+This repository is the shared configuration, knowledge base, and tooling layer for all SkogAI projects. It is distributed as a git submodule at `.skogai/` in consumer projects.
+
+## What is this?
+
+`.skogai` is the central bootstrap and knowledge system for the SkogAI ecosystem. It provides:
+
+- **Knowledge base** — documented decisions, learnings, patterns
+- **Memory system** — session context, decision log
+- **Project tracking** — project state, roadmaps, planning
+- **Script infrastructure** — argc-powered bash automation
+- **Skills registry** — domain-specific Claude Code skills
+- **Workflow orchestration** — Dagu-based workflow DAGs
+- **Worktrunk configuration** — shared `.config/wt.toml` for git worktree workflow
+
+## File Structure
+```
+.skogai/
+├── CLAUDE.md                   # Claude Code instructions (this file)
+├── SKOGAI.md                   # Guidance with XML-style structural tags
+├── README.md                   # Human-readable overview
+├── Argcfile.sh                 # Argc CLI for queue management
+├── base.yaml / config.yaml     # Dagu orchestration configuration
+├── .envrc                      # Direnv PATH configuration
+├── .config/
+│   └── wt.toml                 # Worktrunk git worktree hooks
+├── bin/
+│   ├── skogai-loops            # Wrapper for gptme-runloops
+│   └── skogai-ralph            # Wrapper for ralph tool
+├── dotfiles/
+│   └── install.sh              # Safety-checked dotfiles installer
+├── email/                      # Email management (inbox, drafts, sent, archive)
+├── knowledge/
+│   ├── DECISIONS.md            # Decision index (router → decisions/)
+│   ├── decisions/              # Architectural decision records (ADRs)
+│   ├── lessons/                # Documented lessons from sessions
+│   └── patterns/               # Reusable patterns and style guides
+├── memory/
+│   ├── GLOSSARY.md             # Shared vocabulary
+│   ├── PROJECTS.md             # Active project index (router)
+│   ├── feedback/               # Behavioral feedback records
+│   └── references/             # External system pointers
+├── plan/
+│   ├── claudes-home/           # Claude's Home project plan (phases 1-5)
+│   ├── codebase/               # Architecture, conventions, stack docs
+│   ├── PROJECT.md              # Project definition and requirements
+│   ├── ROADMAP.md              # 4-phase roadmap
+│   └── STATE.md                # Current phase/plan progress
+├── projects/
+│   └── overview.md             # Active/paused/archived projects table
+├── scripts/
+│   ├── bootstrap/              # Submodule init and consumer-init scripts
+│   ├── context/                # 26 context-generation scripts
+│   └── utils/                  # search, wordcount, state-status, migration
+├── skills/
+│   ├── skill-registry.json     # Registry of all skills
+│   └── */                      # Individual skill directories (SKILL.md + manifest.json)
+├── tasks/                      # Task tracking files
+├── templates/                  # Starter templates (knowledge-entry, decision-record, project-status)
+├── todos/                      # Work items (NNN-status-pN-description.md)
+├── tools/                      # Tools placeholder
+└── workflows/                  # Dagu DAG files and workflow docs
+```
+
+## Always Load
+
+Before starting any work, read:
+```
+@CONTEXT.md   — dynamically generated current context (workspace, git state, memory)
+```
+
+## Architecture Modes
+
+**Dogfooding** (developing .skogai itself):
+```bash
+.skogai -> /home/skogix/.skogai   # symlink
+.git/info/exclude contains .skogai
+```
+
+**Consumer** (project using .skogai as submodule):
+```bash
+git submodule add <repo-url> .skogai
+(cd .skogai && ./scripts/bootstrap/bootstrap.sh)
+```
+
+**Detection:**
+```bash
+file .skogai  # symbolic link = dogfooding, directory = submodule
+file .git     # directory = real repo, ASCII text file = submodule
+```
+
+## User Context (skogix)
+
+- Functional programmer — data transformations over control flow, pure functions, immutable data
+- Simplicity first — complexity only when earned
+- Direct expert-level communication — give the answer first, explain after
+- Lowercase for generic references (`claude`, `readme`), uppercase for exact names (`CLAUDE.md`, `Claude`)
+- Uses git worktrees extensively (via Worktrunk)
+- Prefers code/data over prose
+
+## Repository Conventions
+
+### Naming
+
+- **kebab-case** — all files and directories
+- **UPPERCASE.md** — important docs (`CLAUDE.md`, `README.md`, `PROJECT.md`, `ROADMAP.md`)
+- **lowercase.md** — standard docs (`todo.md`, `decisions.md`)
+- **.sh** — bash scripts; **.py** — Python; **.bats** — bash test files
+
+### Bash Scripts
+
+- Shebang: `#!/usr/bin/env bash`
+- Strict mode: `set -euo pipefail`
+- UPPERCASE for env vars/constants, lowercase for local vars, snake_case for functions
+- Color output: RED=errors, GREEN=success, YELLOW=warnings, BLUE=info
+- Minimal comments — only where logic is non-obvious
+- Never hide errors or warnings behind abstractions
+
+### Script Framework (argc)
+
+All scripts in `scripts/` use argc for declarative CLI definition:
+```bash
+# @describe script description
+# @arg name![`_choice_validator`] Argument description
+main() { ... }
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+### Code Quality
+
+1. Minimal abstractions — pragmatic over perfect
+1. Self-documenting code — names matter
+1. Error visibility — never hide errors or warnings
+1. Functional programming — prefer immutable data, pure functions
+1. Simplicity first — no speculative abstractions
+1. No over-engineering — only what the task actually requires
+
+## Knowledge Management
+
+### Where to Look
+
+| Task                          | Location                                                   |
+| ----------------------------- | ---------------------------------------------------------- |
+| Log a decision                | `knowledge/decisions/` + index in `knowledge/DECISIONS.md` |
+| Document a lesson             | `knowledge/lessons/`                                       |
+| Record architectural decision | `knowledge/decisions/`                                     |
+| Capture reusable pattern      | `knowledge/patterns/`                                      |
+| Track project status          | `projects/overview.md`                                     |
+| Quick capture                 | `inbox/`                                                   |
+| Create new content            | `templates/` (see `templates/CLAUDE.md`)                   |
+
+### Templates
+
+- `templates/knowledge-entry.md` — learnings and patterns
+- `templates/decision-record.md` — ADRs
+- `templates/project-status.md` — project tracking
+
+### @ Notation
+
+`@path/to/file` expands the file at prompt-time, bypassing cache. Use it for files that must be current:
+
+- `@CONTEXT.md` — dynamically generated current context
+- `@knowledge/lessons/` — current lessons
+
+## Todo System
+
+Todos in `todos/` follow the naming convention:
+```
+NNN-status-pN-description.md
+```
+
+- Status: `pending`, `ready`, `in-progress`, `done`
+- Priority: `p1` (critical/blocking), `p2` (high), `p3` (lower)
+
+**Current critical items (P1 — do not ignore):**
+
+- `001-pending-p1-shell-injection-plugin-names.md` — shell injection in session-start.sh (BLOCKS MERGE)
+- `002-pending-p1-race-condition-file-updates.md` — race condition in concurrent file updates
+- `017-pending-p1-plugin-trial-garden-system.md` — plugin trial garden system
+
+## Skills Registry
+
+Skills in `skills/` are domain-specific knowledge modules activated by context:
+
+| Skill                       | Activation                                                  |
+| --------------------------- | ----------------------------------------------------------- |
+| `conductor-methodology`     | Always active                                               |
+| `typescript-best-practices` | `*.ts`, `*.tsx` files or typescript/type/interface keywords |
+| `api-design`                | api/endpoint/rest keywords or routes/controllers/api paths  |
+| `testing-strategies`        | test/unit/integration/mock keywords or test directories     |
+| `java-best-practices`       | `*.java`, pom.xml, build.gradle or java/optional keywords   |
+
+Each skill: `skills/<name>/SKILL.md` + `manifest.json`
+
+## Workflow Orchestration (Dagu)
+
+- **Binary**: `/home/skogix/.local/bin/dagu` (v1.30.3)
+- **Server**: `http://localhost:8080` (start with `dagu start-all`)
+- **Config**: `config.yaml` (server), `base.yaml` (base DAG config)
+- **Key commands**: `dagu start`, `dagu dry`, `dagu validate`, `dagu exec`
+
+Rules for Dagu work:
+
+- Write a small YAML DAG, run it, see what happens, adjust
+- If it takes more than 2-3 lines of bash, rethink the approach
+- Use `jq` for JSON — never sed/awk
+- Use native Dagu features (`output:`, `parallel:`, `type: jq`, `call:`, `retryPolicy:`)
+- Every DAG should fit in one screen
+
+## SSH MCP Multi-User Architecture
+
+- `skogai-ssh` MCP server — execute commands on remote systems
+- `claude-ssh` MCP server — execute as claude user (localhost:22)
+- Each agent can have a dedicated MCP server for workspace isolation
+- Cross-user coordination via MCP instead of direct filesystem access
+
+## Integration as Git Submodule
+
+### Adding to a project
+```bash
+git submodule add <repo-url> .skogai
+git submodule update --init --recursive
+```
+
+### Updating submodule in a project
+```bash
+cd .skogai
+git pull origin master
+cd ..
+git add .skogai
+git commit -m "Update .skogai submodule"
+```
+
+## Important Notes
+
+- This is a **bootstrap/submodule project** — changes here affect all SkogAI projects that include it
+- Keep configuration **portable** — no absolute paths or user-specific settings
+- Keep it **minimal** — only include what is genuinely shared across projects
+- Configuration is **optional** — consumer projects can override or ignore as needed
+- **@ notation is truth** — use `@file` for content that must be current, not cached
+- **No code implementation in v1** — establish system and principles first, build on them after
+- **Greenfield approach** — existing Python/JS codebase is exploratory; target paradigm is functional-first (F#) with argc and 98% test coverage
+```
+
+`rtk: rtk find does not support compound predicates or actions (e.g. -not, -exec). Use `find` directly.`
+
+Return code: 1
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_nb3wOJkFlVifwpEwVNprVl65): {"command":"rtk ls -la /home/skogix/claude/.skogai/templates && rtk find /home/skogix/claude/.skogai/templates -maxdepth 2 -type f | sed -n '1,200p'"}
+                                                                                
+CLAUDE.md  942B
+decision-record.md  264B
+findings.md  163B
+knowledge-entry.md  250B
+progress.md  221B
+project-status.md  200B
+task_plan.md  348B
+7F 1D:
+
+./ CLAUDE.md decision-record.md findings.md knowledge-entry.md progress.md project-status.md task_plan.md
+System: 
+Ran command: `rtk ls -la /home/skogix/claude/.skogai/templates && rtk find /home/skogix/claude... (1 line)`
+
+```stdout
+CLAUDE.md  942B
+decision-record.md  264B
+findings.md  163B
+knowledge-entry.md  250B
+progress.md  221B
+project-status.md  200B
+task_plan.md  348B
+7F 1D:
+
+./ CLAUDE.md decision-record.md findings.md knowledge-entry.md progress.md project-status.md task_plan.md
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@gh(call_D0zGMwZ1ZIyU4AtORUEWeuq1): {"url":"gh issue view 31"}                                                                                
+System: ❌ Error: No command provided
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@gh(call_R9BWQVTbv7a4GWTEaQ6MQhfO): {"url":"31"}                                                                                
+System: ❌ Error: No command provided
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@gh(call_kbpPq1z0DBEfnJ8WoEtdMYcC): {"url":"gh issue view 31"}                                                                                
+System: ❌ Error: No command provided
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_z7OZnWMuhzqEuS14NSDBfmxr): {"command":"rtk gh issue view 31 --repo SkogAI/claude"}                                                                                
+[open] Issue #31: feat: templates/ — starter templates for new content
+  Author: @Skogix
+  Status: OPEN
+  URL: https://github.com/SkogAI/claude/issues/31
+
+  Description:
+    Ready-to-use templates so creating new knowledge entries, decisions, and project files has zero friction.
+    
+    ## Structure
+    
+    ```
+    .skogai/templates/
+    ├── CLAUDE.md            # template directory router
+    ├── decision-record.md   # ADR template
+    ├── knowledge-entry.md   # learning/pattern template
+    └── project-status.md    # project tracking template
+    ```
+    
+    ## Notes
+    
+    * Templates are filled in by copy, not by mutation — source files stay as stubs
+    * [CLAUDE.md](<http://CLAUDE.md>) lists available templates so agents know what exists without reading all files
+System: 
+Ran command: `rtk gh issue view 31 --repo SkogAI/claude`
+
+```stdout
+ Issue #31: feat: templates/ — starter templates for new content
+  Author: @Skogix
+  Status: OPEN
+  URL: https://github.com/SkogAI/claude/issues/31
+
+  Description:
+    Ready-to-use templates so creating new knowledge entries, decisions, and project files has zero friction.
+    
+    ## Structure
+```
+    .skogai/templates/
+    ├── CLAUDE.md            # template directory router
+    ├── decision-record.md   # ADR template
+    ├── knowledge-entry.md   # learning/pattern template
+    └── project-status.md    # project tracking template
+    ```
+    
+    ## Notes
+    
+    * Templates are filled in by copy, not by mutation — source files stay as stubs
+    * [CLAUDE.md](<http://CLAUDE.md>) lists available templates so agents know what exists without reading all files
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_XaulHKYQunhdSlZeTweinUlc): {"command":"rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/CLAUDE.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/decision-record.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/knowledge-entry.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/project-status.md"}                                                                                
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/templates/claude
+---
+
+# templates/ - starter templates
+
+\<what_is_this>
+
+reusable templates for creating new content. copy-paste ready with placeholder text in <brackets>.
+
+\</what_is_this>
+
+\<available_templates>
+
+| template           | when to use                                 |
+| ------------------ | ------------------------------------------- |
+| knowledge-entry.md | new learning, pattern, or general knowledge |
+| project-status.md  | per-project status tracking file            |
+| decision-record.md | architectural decision record (adr)         |
+
+\</available_templates>
+
+<usage>
+
+1. copy template to destination
+1. replace \<bracketed_placeholders> with actual content
+1. remove sections that don't apply
+1. update frontmatter metadata
+
+</usage>
+
+<example>
+
+```bash
+cp templates/knowledge-entry.md knowledge/learnings/2026-01-19-new-insight.md
+```
+
+</example>
+---
+---
+title:
+  - Decision Title
+date:
+  - YYYY-MM-DD
+status:
+  - proposed|accepted|deprecated|superseded
+decision:
+  - One-line summary of the decision
+deciders:
+  - who made this decision
+permalink: claude/projects/dot-skogai/templates/decision-record
+---
+
+[@todo]
+---
+---
+title:
+  - Descriptive Title
+date:
+  - YYYY-MM-DD
+project:
+  - project-name or "SkogAI"
+tags:
+  - tag1
+  - tag2
+  - tag3
+source:
+  - where this came from
+status: active
+permalink: claude/projects/dot-skogai/templates/knowledge-entry
+---
+
+[@todo]
+---
+---
+project:
+  - project-name
+status:
+  - active|paused|archived
+last-updated:
+  - YYYY-MM-DD
+location:
+  - path/to/project
+permalink: claude/projects/dot-skogai/templates/project-status
+---
+
+[@todo]
+System: 
+Ran command: `rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/CLAUDE.md && echo '---... (1 line)`
+
+```stdout
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/templates/claude
+---
+
+# templates/ - starter templates
+
+\<what_is_this>
+
+reusable templates for creating new content. copy-paste ready with placeholder text in <brackets>.
+
+\</what_is_this>
+
+\<available_templates>
+
+| template           | when to use                                 |
+| ------------------ | ------------------------------------------- |
+| knowledge-entry.md | new learning, pattern, or general knowledge |
+| project-status.md  | per-project status tracking file            |
+| decision-record.md | architectural decision record (adr)         |
+
+\</available_templates>
+
+<usage>
+
+1. copy template to destination
+1. replace \<bracketed_placeholders> with actual content
+1. remove sections that don't apply
+1. update frontmatter metadata
+
+</usage>
+
+<example>
+```bash
+cp templates/knowledge-entry.md knowledge/learnings/2026-01-19-new-insight.md
+```
+
+</example>
+---
+---
+title:
+  - Decision Title
+date:
+  - YYYY-MM-DD
+status:
+  - proposed|accepted|deprecated|superseded
+decision:
+  - One-line summary of the decision
+deciders:
+  - who made this decision
+permalink: claude/projects/dot-skogai/templates/decision-record
+---
+
+
+---
+---
+title:
+  - Descriptive Title
+date:
+  - YYYY-MM-DD
+project:
+  - project-name or "SkogAI"
+tags:
+  - tag1
+  - tag2
+  - tag3
+source:
+  - where this came from
+status: active
+permalink: claude/projects/dot-skogai/templates/knowledge-entry
+---
+
+
+---
+---
+project:
+  - project-name
+status:
+  - active|paused|archived
+last-updated:
+  - YYYY-MM-DD
+location:
+  - path/to/project
+permalink: claude/projects/dot-skogai/templates/project-status
+---
+
+
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_pNMuKj1FJev2c2Q2jFaKDGXJ): {"command":"rtk ls -la /home/skogix/claude/.skogai/knowledge && rtk sed -n '1,220p' /home/skogix/claude/.skogai/knowledge/SKOGAI.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/knowledge/DECISIONS.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/knowledge/decisions/2026-01-20-use-argc-for-script-framework.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/knowledge/lessons/2026-01-20-argc-script-framework.md"}                                                                                
+decisions/
+lessons/
+patterns/
+DECISIONS.md  2.2K
+SKOGAI.md  992B
+---
+title: SKOGAI
+type: note
+permalink: claude/projects/dot-skogai/knowledge/skogai
+---
+
+# @knowledge/ - knowledge base
+
+\<what_is_this>
+
+central repository for documented decisions, learnings, and reusable patterns. persistent knowledge that accumulates over time.
+
+\</what_is_this>
+
+<structure>
+
+@decisions/ # architectural decision records (adrs) @learnings/ # lessons learned from work @patterns/ # reusable patterns and approaches @patterns/style/ # skogai style conventions (routed references)
+
+</structure>
+
+\<when_to_use>
+
+- new insight worth preserving -> learnings/
+- significant architectural decision made -> decisions/
+- pattern identified for reuse -> patterns/
+
+\</when_to_use>
+
+\<file_naming>
+
+use date prefix for chronological sorting:
+
+- decisions/2026-01-19-hq-location.md
+- learnings/2026-01-19-claude-routing.md
+- patterns/yaml-frontmatter.md (no date - patterns are timeless)
+
+\</file_naming>
+
+<template>
+
+use @templates/knowledge-entry.md for new entries.
+
+</template>
+---
+---
+title: decisions
+type: note
+permalink: claude/projects/dot-skogai/memory/decisions
+---
+
+# decision log
+
+## 2026-01-20
+
+- **argc for scripts**: Using argc as standard framework for .skogai/scripts/ - provides validation, help, type safety with minimal boilerplate
+- **meta-usage**: .skogai uses itself (.skogai/.skogai/) for dogfooding - proves the framework works
+- **XML-style tags**: SKOGAI.md files use `<what_is_this>`, `<structure>`, `<when_to_use>` tags for consistency (historical reason: earlier Claude models preferred this format)
+- **@ notation**: Using `@` prefix for references (bootstrap, config) and `$` for variables/state
+- **Submodule approach**: .skogai distributed as git submodule on `dot-skogai` branch for easy project integration
+- **Project branches**: Each consumer gets own branch (project dir name) for customization while tracking upstream
+- **Symlink dogfooding**: Instead of submodule inception, use symlink + `.git/info/exclude` - cleaner, no git complexity
+- **Modern git**: `git switch --create`, `git submodule set-branch` over legacy `checkout -b`
+- **Helper architecture**: `skogai-helper-functions.sh` is sourceable, designed for 500-1000 helpers
+- **file command**: `file .git` / `file .skogai` cleanly detects all modes (submodule, symlink, real repo)
+- **@ is source of truth**: `@/path` expands real files at prompt-time; Read tool often uses cached files
+- \*\*@ in SKOGAI.md \*\*: Always use `@` references for context that must be current - bypasses cache layer
+
+## 2026-04-18
+
+- **settings.json portability**: home runs at three paths (`/home/skogix/claude`, `/home/user/claude` staging, `/home/claude` deployment). Never hardcode `/home/skogix/...` — use `$CLAUDE_PROJECT_DIR` in hook commands, relative paths elsewhere. Per docs (`hooks.md:374`, `2372`) this is the official pattern.
+- **`CLAUDE_CODE_TMPDIR`**: don't set it in project settings. Default `/tmp` works across all three paths. A wrong value causes every Bash call to fail its internal `cwd` tracking write (silent noise).
+- **`autoMemoryDirectory` in `.claude/settings.json`**: ignored by Claude Code — accepted only from user/local/policy settings (docs: `memory.md:335`). If customisation needed, put it in `settings.local.json`.
+---
+---
+title: Use argc as Script Framework for .skogai
+date: 2026-01-20
+status: accepted
+decision: All scripts in .skogai/scripts/ should use argc for argument parsing, validation, and help generation
+deciders: skogix, Claude
+permalink: claude/projects/dot-skogai/knowledge/decisions/2026-01-20-use-argc-for-script-framework
+---
+
+## Context
+
+`.skogai/scripts/` needs a standard way to create scripts that:
+
+- Validate input types and constraints
+- Generate help text automatically
+- Integrate with intent-notation system
+- Provide good error messages
+- Work seamlessly with `skogparse` and `[@script:arg]` syntax
+
+## Decision
+
+Use `argc` as the standard framework for bash scripts in `.skogai/`.
+
+## Rationale
+
+### Why argc?
+
+1. **Minimal Boilerplate**: Add 3-4 lines to get full CLI framework
+1. **Declarative**: Define interface in comments, not code
+1. **Auto-validation**: Choice functions define valid inputs
+1. **Auto-help**: Generates help from annotations
+1. **Type-aware**: Understands strings, integers, flags, etc.
+1. **Battle-tested**: Established tool in bash ecosystem
+
+### Alternatives Considered
+
+- **Plain bash**: No validation, manual everything - too error-prone
+- **Python/Node scripts**: Heavier dependencies, more complex
+- **Custom validation**: Reinventing the wheel
+
+### Trade-offs
+
+**Pros:**
+
+- Consistent interface across all scripts
+- Dramatically reduces boilerplate
+- Better error messages
+- Integration with notation system
+
+**Cons:**
+
+- Dependency on argc installation
+- Learning curve for argc syntax
+- Bash-only (but that's acceptable for .skogai)
+
+## Consequences
+
+### Required
+
+- All new scripts must use argc pattern
+- Update fizzbuzz.sh serves as reference implementation
+- Document argc patterns in templates
+
+### Migration
+
+- Existing plain scripts should be migrated when touched
+- Provide template/example for creating new argc scripts
+
+### Testing
+
+Scripts become more testable:
+
+- Can validate schema without running logic
+- Choice functions can be tested independently
+- Help text generated consistently
+
+## Example
+
+```bash
+#!/usr/bin/env bash
+
+# @describe Description here
+# @arg name! The required argument
+main() {
+  echo "Hello ${argc_name}"
+}
+
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+## References
+
+- argc documentation: https://github.com/sigoden/argc
+- Example implementation: `.skogai/scripts/fizzbuzz.sh`
+---
+---
+title: Using argc for SkogAI-Aware Scripts
+date: 2026-01-20
+project: SkogAI
+tags:
+  - argc
+  - scripts
+  - validation
+  - tooling
+source: Fizzbuzz implementation session
+status: active
+permalink: claude/projects/dot-skogai/knowledge/learnings/2026-01-20-argc-script-framework
+---
+
+## The Problem
+
+Plain bash scripts have no:
+
+- Type validation (treat "foo" as 0)
+- Automatic help generation
+- Schema definition
+- Input constraints
+
+## The Solution: argc
+
+`argc` is a bash CLI framework that adds all this with minimal boilerplate.
+
+## Transformation
+
+### Before (Plain Bash)
+
+```bash
+#!/usr/bin/env bash
+
+fizzbuzz() {
+  local n="$1"
+  if [ -z "$n" ]; then
+    echo "Usage: fizzbuzz <number>"
+    return 1
+  fi
+  # ... logic ...
+}
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
+  fizzbuzz "$@"
+fi
+```
+
+Problems:
+
+- No type validation
+- Manual usage message
+- No help generation
+- Accepts invalid input (treats "foo" as 0)
+
+### After (argc-powered)
+
+```bash
+#!/usr/bin/env bash
+
+# @describe fizzbuzz implementation for skogai
+# @arg int![`_choice_int`] The number to print
+main() {
+  local n="${argc_int}"
+  # ... logic (same) ...
+}
+
+_choice_int() {
+  seq 1 100
+}
+
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+Added:
+
+- 2 comment lines for schema
+- Choice function for validation
+- One eval line
+- Renamed function to `main()`
+
+## What You Get Free
+
+### 1. Auto-validation
+
+```bash
+$ fizzbuzz.sh foo
+error: invalid value `foo` for `<INT>`
+  [possible values: 1, 2, 3, ..., 100]
+```
+
+### 2. Auto-generated Help
+
+```bash
+$ fizzbuzz.sh --help
+fizzbuzz implementation for skogai
+
+USAGE: fizzbuzz.sh <INT>
+
+ARGS:
+  <INT>  The number to print
+```
+
+### 3. Type Safety
+
+- `_choice_int()` defines valid inputs (1-100)
+- argc validates before calling `main()`
+- Invalid input never reaches your logic
+
+### 4. Variable Injection
+
+argc parses and injects validated args as `${argc_*}` variables automatically.
+
+## Integration with SkogAI
+
+Scripts in `.skogai/scripts/` with argc support:
+
+- Work through `[@script:arg]` notation
+- Provide help via `[@help:script]`
+- Validate inputs before execution
+- Return proper error messages
+
+## Key Insight
+
+You don't write validation, help text, or parsing code. You **declare** the interface in comments, and argc generates everything.
+
+This is the "SkogAI way" - declarative interfaces with automatic implementation.
+System: 
+Ran command: `rtk ls -la /home/skogix/claude/.skogai/knowledge && rtk sed -n '1,220p' /home/sk... (1 line)`
+
+```stdout
+decisions/
+lessons/
+patterns/
+DECISIONS.md  2.2K
+SKOGAI.md  992B
+---
+title: SKOGAI
+type: note
+permalink: claude/projects/dot-skogai/knowledge/skogai
+---
+
+# @knowledge/ - knowledge base
+
+\<what_is_this>
+
+central repository for documented decisions, learnings, and reusable patterns. persistent knowledge that accumulates over time.
+
+\</what_is_this>
+
+<structure>
+
+@decisions/ # architectural decision records (adrs) @learnings/ # lessons learned from work @patterns/ # reusable patterns and approaches @patterns/style/ # skogai style conventions (routed 
+references)
+
+</structure>
+
+\<when_to_use>
+
+- new insight worth preserving -> learnings/
+- significant architectural decision made -> decisions/
+- pattern identified for reuse -> patterns/
+
+\</when_to_use>
+
+\<file_naming>
+
+use date prefix for chronological sorting:
+
+- decisions/2026-01-19-hq-location.md
+- learnings/2026-01-19-claude-routing.md
+- patterns/yaml-frontmatter.md (no date - patterns are timeless)
+
+\</file_naming>
+
+<template>
+
+use @templates/knowledge-entry.md for new entries.
+
+</template>
+---
+---
+title: decisions
+type: note
+permalink: claude/projects/dot-skogai/memory/decisions
+---
+
+# decision log
+
+## 2026-01-20
+
+- **argc for scripts**: Using argc as standard framework for .skogai/scripts/ - provides validation, help, type safety with minimal boilerplate
+- **meta-usage**: .skogai uses itself (.skogai/.skogai/) for dogfooding - proves the framework works
+- **XML-style tags**: SKOGAI.md files use `<what_is_this>`, `<structure>`, `<when_to_use>` tags for consistency (historical reason: earlier Claude models preferred this format)
+- **@ notation**: Using `@` prefix for references (bootstrap, config) and `$` for variables/state
+- **Submodule approach**: .skogai distributed as git submodule on `dot-skogai` branch for easy project integration
+- **Project branches**: Each consumer gets own branch (project dir name) for customization while tracking upstream
+- **Symlink dogfooding**: Instead of submodule inception, use symlink + `.git/info/exclude` - cleaner, no git complexity
+- **Modern git**: `git switch --create`, `git submodule set-branch` over legacy `checkout -b`
+- **Helper architecture**: `skogai-helper-functions.sh` is sourceable, designed for 500-1000 helpers
+- **file command**: `file .git` / `file .skogai` cleanly detects all modes (submodule, symlink, real repo)
+- **@ is source of truth**: `@/path` expands real files at prompt-time; Read tool often uses cached files
+- \*\*@ in SKOGAI.md \*\*: Always use `@` references for context that must be current - bypasses cache layer
+
+## 2026-04-18
+
+- **settings.json portability**: home runs at three paths (`/home/skogix/claude`, `/home/user/claude` staging, `/home/claude` deployment). Never hardcode `/home/skogix/...` — use 
+`$CLAUDE_PROJECT_DIR` in hook commands, relative paths elsewhere. Per docs (`hooks.md:374`, `2372`) this is the official pattern.
+- **`CLAUDE_CODE_TMPDIR`**: don't set it in project settings. Default `/tmp` works across all three paths. A wrong value causes every Bash call to fail its internal `cwd` tracking write 
+(silent noise).
+- **`autoMemoryDirectory` in `.claude/settings.json`**: ignored by Claude Code — accepted only from user/local/policy settings (docs: `memory.md:335`). If customisation needed, put it in 
+`settings.local.json`.
+---
+---
+title: Use argc as Script Framework for .skogai
+date: 2026-01-20
+status: accepted
+decision: All scripts in .skogai/scripts/ should use argc for argument parsing, validation, and help generation
+deciders: skogix, Claude
+permalink: claude/projects/dot-skogai/knowledge/decisions/2026-01-20-use-argc-for-script-framework
+---
+
+## Context
+
+`.skogai/scripts/` needs a standard way to create scripts that:
+
+- Validate input types and constraints
+- Generate help text automatically
+- Integrate with intent-notation system
+- Provide good error messages
+- Work seamlessly with `skogparse` and `` syntax
+
+## Decision
+
+Use `argc` as the standard framework for bash scripts in `.skogai/`.
+
+## Rationale
+
+### Why argc?
+
+1. **Minimal Boilerplate**: Add 3-4 lines to get full CLI framework
+1. **Declarative**: Define interface in comments, not code
+1. **Auto-validation**: Choice functions define valid inputs
+1. **Auto-help**: Generates help from annotations
+1. **Type-aware**: Understands strings, integers, flags, etc.
+1. **Battle-tested**: Established tool in bash ecosystem
+
+### Alternatives Considered
+
+- **Plain bash**: No validation, manual everything - too error-prone
+- **Python/Node scripts**: Heavier dependencies, more complex
+- **Custom validation**: Reinventing the wheel
+
+### Trade-offs
+
+**Pros:**
+
+- Consistent interface across all scripts
+- Dramatically reduces boilerplate
+- Better error messages
+- Integration with notation system
+
+**Cons:**
+
+- Dependency on argc installation
+- Learning curve for argc syntax
+- Bash-only (but that's acceptable for .skogai)
+
+## Consequences
+
+### Required
+
+- All new scripts must use argc pattern
+- Update fizzbuzz.sh serves as reference implementation
+- Document argc patterns in templates
+
+### Migration
+
+- Existing plain scripts should be migrated when touched
+- Provide template/example for creating new argc scripts
+
+### Testing
+
+Scripts become more testable:
+
+- Can validate schema without running logic
+- Choice functions can be tested independently
+- Help text generated consistently
+
+## Example
+```bash
+#!/usr/bin/env bash
+
+# @describe Description here
+# @arg name! The required argument
+main() {
+  echo "Hello ${argc_name}"
+}
+
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+## References
+
+- argc documentation: https://github.com/sigoden/argc
+- Example implementation: `.skogai/scripts/fizzbuzz.sh`
+---
+---
+title: Using argc for SkogAI-Aware Scripts
+date: 2026-01-20
+project: SkogAI
+tags:
+  - argc
+  - scripts
+  - validation
+  - tooling
+source: Fizzbuzz implementation session
+status: active
+permalink: claude/projects/dot-skogai/knowledge/learnings/2026-01-20-argc-script-framework
+---
+
+## The Problem
+
+Plain bash scripts have no:
+
+- Type validation (treat "foo" as 0)
+- Automatic help generation
+- Schema definition
+- Input constraints
+
+## The Solution: argc
+
+`argc` is a bash CLI framework that adds all this with minimal boilerplate.
+
+## Transformation
+
+### Before (Plain Bash)
+```bash
+#!/usr/bin/env bash
+
+fizzbuzz() {
+  local n="$1"
+  if [ -z "$n" ]; then
+    echo "Usage: fizzbuzz <number>"
+    return 1
+  fi
+  # ... logic ...
+}
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
+  fizzbuzz "$@"
+fi
+```
+
+Problems:
+
+- No type validation
+- Manual usage message
+- No help generation
+- Accepts invalid input (treats "foo" as 0)
+
+### After (argc-powered)
+```bash
+#!/usr/bin/env bash
+
+# @describe fizzbuzz implementation for skogai
+# @arg int![`_choice_int`] The number to print
+main() {
+  local n="${argc_int}"
+  # ... logic (same) ...
+}
+
+_choice_int() {
+  seq 1 100
+}
+
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+Added:
+
+- 2 comment lines for schema
+- Choice function for validation
+- One eval line
+- Renamed function to `main()`
+
+## What You Get Free
+
+### 1. Auto-validation
+```bash
+$ fizzbuzz.sh foo
+error: invalid value `foo` for `<INT>`
+  
+```
+
+### 2. Auto-generated Help
+```bash
+$ fizzbuzz.sh --help
+fizzbuzz implementation for skogai
+
+USAGE: fizzbuzz.sh <INT>
+
+ARGS:
+  <INT>  The number to print
+```
+
+### 3. Type Safety
+
+- `_choice_int()` defines valid inputs (1-100)
+- argc validates before calling `main()`
+- Invalid input never reaches your logic
+
+### 4. Variable Injection
+
+argc parses and injects validated args as `${argc_*}` variables automatically.
+
+## Integration with SkogAI
+
+Scripts in `.skogai/scripts/` with argc support:
+
+- Work through `` notation
+- Provide help via ``
+- Validate inputs before execution
+- Return proper error messages
+
+## Key Insight
+
+You don't write validation, help text, or parsing code. You **declare** the interface in comments, and argc generates everything.
+
+This is the "SkogAI way" - declarative interfaces with automatic implementation.
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@todo(call_O6ODFeVJiJyk0wpaAuKppYyB): {}                                                                                
+System: 📝 Todo list is empty
+Skipped 1 hidden system messages, show with --show-hidden
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_RzY5Mr1w2veoQjZdZGs17Xdw): {"command":"rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/CLAUDE.md"}                                                                                
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/templates/claude
+---
+
+# templates/ - starter templates
+
+\<what_is_this>
+
+reusable templates for creating new content. copy-paste ready with placeholder text in <brackets>.
+
+\</what_is_this>
+
+\<available_templates>
+
+| template           | when to use                                 |
+| ------------------ | ------------------------------------------- |
+| knowledge-entry.md | new learning, pattern, or general knowledge |
+| project-status.md  | per-project status tracking file            |
+| decision-record.md | architectural decision record (adr)         |
+
+\</available_templates>
+
+<usage>
+
+1. copy template to destination
+1. replace \<bracketed_placeholders> with actual content
+1. remove sections that don't apply
+1. update frontmatter metadata
+
+</usage>
+
+<example>
+
+```bash
+cp templates/knowledge-entry.md knowledge/learnings/2026-01-19-new-insight.md
+```
+
+</example>
+System: 
+Ran command: `rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/CLAUDE.md`
+
+```stdout
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/templates/claude
+---
+
+# templates/ - starter templates
+
+\<what_is_this>
+
+reusable templates for creating new content. copy-paste ready with placeholder text in <brackets>.
+
+\</what_is_this>
+
+\<available_templates>
+
+| template           | when to use                                 |
+| ------------------ | ------------------------------------------- |
+| knowledge-entry.md | new learning, pattern, or general knowledge |
+| project-status.md  | per-project status tracking file            |
+| decision-record.md | architectural decision record (adr)         |
+
+\</available_templates>
+
+<usage>
+
+1. copy template to destination
+1. replace \<bracketed_placeholders> with actual content
+1. remove sections that don't apply
+1. update frontmatter metadata
+
+</usage>
+
+<example>
+```bash
+cp templates/knowledge-entry.md knowledge/learnings/2026-01-19-new-insight.md
+```
+
+</example>
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@save(call_rgViU08av55HOIsaSiSxa8O0): {"path":"/home/skogix/claude/.skogai/templates/CLAUDE.md","content":"---\ntitle: CLAUDE\ntype: note\npermalink: claude/projects/dot-skogai/templates/claude\n---\n\n# templates/ - starter templates\n\n<what_is_this>\n\nready-to-copy starter files for common skogai content types.\n\ntemplates are copied and then edited in their destination.\nsource files in `templates/` stay unchanged.\n\n</what_is_this>\n\n<available_templates>\n\n| template | when to use |\n| --- | --- |\n| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |\n| `decision-record.md` | create an architectural decision record (adr) |\n| `project-status.md` | track current state of a project |\n\n</available_templates>\n\n<usage>\n\n1. copy a template to the destination directory\n1. rename with date/subject as needed\n1. replace placeholder text\n1. remove sections that do not apply\n1. update frontmatter metadata\n\n</usage>\n\n<examples>\n\n```bash\ncp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md\ncp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md\ncp templates/project-status.md projects/example-project.md\n```\n\n</examples>\n"}                                                                                
+System: ✅ Saved to /home/skogix/claude/.skogai/templates/CLAUDE.md (overwritten)
+Skipped 1 hidden system messages, show with --show-hidden
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@save(call_8BoJS7PtsXKTMgBWVObZecI0): {"path":"/home/skogix/claude/.skogai/templates/decision-record.md","content":"---\ntitle: <decision-title>\ndate: YYYY-MM-DD\nstatus: proposed # proposed | accepted | deprecated | superseded\ndecision: <one-line-decision-summary>\ndeciders: <name1, name2>\npermalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>\n---\n\n## Context\n\n<what problem, constraint, or change requires a decision?>\n\n## Decision\n\n<what was decided?>\n\n## Rationale\n\n<why this option over alternatives?>\n\n## Alternatives Considered\n\n- <option-a>: <why not chosen>\n- <option-b>: <why not chosen>\n\n## Consequences\n\n### Positive\n\n- <benefit-1>\n- <benefit-2>\n\n### Negative\n\n- <cost-1>\n- <cost-2>\n\n## Implementation Notes\n\n- <follow-up action>\n- <migration or rollout note>\n\n## References\n\n- <link or file reference>\n"}                                                                                
+System: ✅ Saved to /home/skogix/claude/.skogai/templates/decision-record.md (overwritten)
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@save(call_ycHCmqcU1Pwm2GRqSFt0I843): {"path":"/home/skogix/claude/.skogai/templates/knowledge-entry.md","content":"---\ntitle: <entry-title>\ndate: YYYY-MM-DD\nproject: SkogAI\ntags:\n  - <tag-1>\n  - <tag-2>\nsource: <where-this-came-from>\nstatus: active\npermalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>\n---\n\n## Summary\n\n<short summary of the insight>\n\n## Problem\n\n<what problem or question this addresses>\n\n## Insight\n\n<the key learning, pattern, or principle>\n\n## Evidence\n\n- <observation-1>\n- <observation-2>\n\n## Application\n\n- <how to apply this in future work>\n- <where this should be reused>\n\n## Related\n\n- <related file or decision>\n"}                                                                                
+System: ✅ Saved to /home/skogix/claude/.skogai/templates/knowledge-entry.md (overwritten)
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@save(call_LqNuIgxfIFYcpkntLhGkZaHW): {"path":"/home/skogix/claude/.skogai/templates/project-status.md","content":"---\nproject: <project-name>\nstatus: active # active | paused | archived\nlast-updated: YYYY-MM-DD\nlocation: <path/to/project>\nowners:\n  - <owner-name>\npermalink: claude/projects/dot-skogai/projects/<project-slug>\n---\n\n## Goal\n\n<what this project is trying to achieve>\n\n## Current State\n\n<where things stand right now>\n\n## Recent Progress\n\n- <completed item>\n- <completed item>\n\n## Next Steps\n\n- [ ] <next action>\n- [ ] <next action>\n\n## Risks / Blockers\n\n- <risk or blocker>\n\n## Notes\n\n<extra context>\n"}                                                                                
+System: ✅ Saved to /home/skogix/claude/.skogai/templates/project-status.md (overwritten)
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_uKrhiCYMW2dQr1PvZrLdzlRA): {"command":"rtk git -C /home/skogix/claude status --short && rtk git -C /home/skogix/claude diff -- .skogai/templates/CLAUDE.md .skogai/templates/decision-record.md .skogai/templates/knowledge-entry.md .skogai/templates/project-status.md && rtk git -C /home/skogix/claude diff --check -- .skogai/templates/CLAUDE.md .skogai/templates/decision-record.md .skogai/templates/knowledge-entry.md .skogai/templates/project-status.md"}                                                                                
+ M .claude/settings.json
+ M .skogai/scripts/linear/README.md
+ D .skogai/scripts/linear/Untitled
+ M .skogai/tasks/chore-remove-remaining-skogix-local-path-46.md
+ M .skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md
+ M .skogai/templates/CLAUDE.md
+ M .skogai/templates/decision-record.md
+ M .skogai/templates/knowledge-entry.md
+ M .skogai/templates/project-status.md
+ M claude-todo/bin/healthcheck
+?? .skogai/Untitled
+?? .skogai/_site/
+?? .skogai/state/sessions/
+?? logs/linear-notifications/1776565228717-6d068316-User.json
+?? logs/linear-notifications/1776565231686-678a9ec4-User.json.skogai/templates/CLAUDE.md          | 38 ++++++++++++++-----------
+ .skogai/templates/decision-record.md | 55 ++++++++++++++++++++++++++++--------
+ .skogai/templates/knowledge-entry.md | 45 ++++++++++++++++++++---------
+ .skogai/templates/project-status.md  | 42 ++++++++++++++++++++-------
+ 4 files changed, 129 insertions(+), 51 deletions(-)
+
+--- Changes ---
+
+unknown
+  @@ -6,35 +6,41 @@ permalink: claude/projects/dot-skogai/templates/claude
+  -\<what_is_this>
+  +<what_is_this>
+   
+  -reusable templates for creating new content. copy-paste ready with placeholder text in <brackets>.
+  +ready-to-copy starter files for common skogai content types.
+   
+  -\</what_is_this>
+  +templates are copied and then edited in their destination.
+  +source files in `templates/` stay unchanged.
+   
+  -\<available_templates>
+  +</what_is_this>
+   
+  -| template           | when to use                                 |
+  -| ------------------ | ------------------------------------------- |
+  -| knowledge-entry.md | new learning, pattern, or general knowledge |
+  -| project-status.md  | per-project status tracking file            |
+  -| decision-record.md | architectural decision record (adr)         |
+  +<available_templates>
+   
+  -\</available_templates>
+  +| template | when to use |
+  +| --- | --- |
+  +| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
+  +| `decision-record.md` | create an architectural decision record (adr) |
+  +| `project-status.md` | track current state of a project |
+  +
+  +</available_templates>
+   
+   <usage>
+   
+  -1. copy template to destination
+  -1. replace \<bracketed_placeholders> with actual content
+  -1. remove sections that don't apply
+  +1. copy a template to the destination directory
+  +1. rename with date/subject as needed
+  +1. replace placeholder text
+  +1. remove sections that do not apply
+   1. update frontmatter metadata
+   
+   </usage>
+   
+  -<example>
+  +<examples>
+   
+   ```bash
+  -cp templates/knowledge-entry.md knowledge/learnings/2026-01-19-new-insight.md
+  +cp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md
+  +cp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md
+  +cp templates/project-status.md projects/example-project.md
+   ```
+   
+  -</example>
+  +</examples>
+  +22 -16
+
+unknown
+  @@ -1,15 +1,46 @@
+  -title:
+  -  - Decision Title
+  -date:
+  -  - YYYY-MM-DD
+  -status:
+  -  - proposed|accepted|deprecated|superseded
+  -decision:
+  -  - One-line summary of the decision
+  -deciders:
+  -  - who made this decision
+  -permalink: claude/projects/dot-skogai/templates/decision-record
+  +title: <decision-title>
+  +date: YYYY-MM-DD
+  +status: proposed # proposed | accepted | deprecated | superseded
+  +decision: <one-line-decision-summary>
+  +deciders: <name1, name2>
+  +permalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>
+   ---
+   
+  -[@todo]
+  +## Context
+  +
+  +<what problem, constraint, or change requires a decision?>
+  +
+  +## Decision
+  +
+  +<what was decided?>
+  +
+  +## Rationale
+  +
+  +<why this option over alternatives?>
+  +
+  +## Alternatives Considered
+  +
+  +- <option-a>: <why not chosen>
+  +- <option-b>: <why not chosen>
+  +
+  +## Consequences
+  +
+  +### Positive
+  +
+  +- <benefit-1>
+  +- <benefit-2>
+  +
+  +### Negative
+  +
+  +- <cost-1>
+  +- <cost-2>
+  +
+  +## Implementation Notes
+  +
+  +- <follow-up action>
+  +- <migration or rollout note>
+  +
+  +## References
+  +
+  +- <link or file reference>
+  +43 -12
+
+unknown
+  @@ -1,18 +1,37 @@
+  -title:
+  -  - Descriptive Title
+  -date:
+  -  - YYYY-MM-DD
+  -project:
+  -  - project-name or "SkogAI"
+  +title: <entry-title>
+  +date: YYYY-MM-DD
+  +project: SkogAI
+   tags:
+  -  - tag1
+  -  - tag2
+  -  - tag3
+  -source:
+  -  - where this came from
+  +  - <tag-1>
+  +  - <tag-2>
+  +source: <where-this-came-from>
+   status: active
+  -permalink: claude/projects/dot-skogai/templates/knowledge-entry
+  +permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
+   ---
+   
+  -[@todo]
+  +## Summary
+  +
+  +<short summary of the insight>
+  +
+  +## Problem
+  +
+  +<what problem or question this addresses>
+  +
+  +## Insight
+  +
+  +<the key learning, pattern, or principle>
+  +
+  +## Evidence
+  +
+  +- <observation-1>
+  +- <observation-2>
+  +
+  +## Application
+  +
+  +- <how to apply this in future work>
+  +- <where this should be reused>
+  +
+  +## Related
+  +
+  +- <related file or decision>
+  +32 -13
+
+unknown
+  @@ -1,13 +1,35 @@
+  -project:
+  -  - project-name
+  -status:
+  -  - active|paused|archived
+  -last-updated:
+  -  - YYYY-MM-DD
+  -location:
+  -  - path/to/project
+  -permalink: claude/projects/dot-skogai/templates/project-status
+  +project: <project-name>
+  +status: active # active | paused | archived
+  +last-updated: YYYY-MM-DD
+  +location: <path/to/project>
+  +owners:
+  +  - <owner-name>
+  +permalink: claude/projects/dot-skogai/projects/<project-slug>
+   ---
+   
+  -[@todo]
+  +## Goal
+  +
+  +<what this project is trying to achieve>
+  +
+  +## Current State
+  +
+  +<where things stand right now>
+  +
+  +## Recent Progress
+  +
+  +- <completed item>
+  +- <completed item>
+  +
+  +## Next Steps
+  +
+  +- [ ] <next action>
+  +- [ ] <next action>
+  +
+  +## Risks / Blockers
+  +
+  +- <risk or blocker>
+  +
+  +## Notes
+  +
+  +<extra context>
+  +32 -10
+
+System: 
+Ran command: `rtk git -C /home/skogix/claude status --short && rtk git -C /home/skogix/claude ... (1 line)`
+
+```stdout
+M .claude/settings.json
+ M .skogai/scripts/linear/README.md
+ D .skogai/scripts/linear/Untitled
+ M .skogai/tasks/chore-remove-remaining-skogix-local-path-46.md
+ M .skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md
+ M .skogai/templates/CLAUDE.md
+ M .skogai/templates/decision-record.md
+ M .skogai/templates/knowledge-entry.md
+ M .skogai/templates/project-status.md
+ M claude-todo/bin/healthcheck
+?? .skogai/Untitled
+?? .skogai/_site/
+?? .skogai/state/sessions/
+?? logs/linear-notifications/1776565228717-6d068316-User.json
+?? logs/linear-notifications/1776565231686-678a9ec4-User.json.skogai/templates/CLAUDE.md          | 38 ++++++++++++++-----------
+ .skogai/templates/decision-record.md | 55 ++++++++++++++++++++++++++++--------
+ .skogai/templates/knowledge-entry.md | 45 ++++++++++++++++++++---------
+ .skogai/templates/project-status.md  | 42 ++++++++++++++++++++-------
+ 4 files changed, 129 insertions(+), 51 deletions(-)
+
+--- Changes ---
+
+unknown
+  @@ -6,35 +6,41 @@ permalink: claude/projects/dot-skogai/templates/claude
+  -\<what_is_this>
+  +<what_is_this>
+   
+  -reusable templates for creating new content. copy-paste ready with placeholder text in <brackets>.
+  +ready-to-copy starter files for common skogai content types.
+   
+  -\</what_is_this>
+  +templates are copied and then edited in their destination.
+  +source files in `templates/` stay unchanged.
+   
+  -\<available_templates>
+  +</what_is_this>
+   
+  -| template           | when to use                                 |
+  -| ------------------ | ------------------------------------------- |
+  -| knowledge-entry.md | new learning, pattern, or general knowledge |
+  -| project-status.md  | per-project status tracking file            |
+  -| decision-record.md | architectural decision record (adr)         |
+  +<available_templates>
+   
+  -\</available_templates>
+  +| template | when to use |
+  +| --- | --- |
+  +| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
+  +| `decision-record.md` | create an architectural decision record (adr) |
+  +| `project-status.md` | track current state of a project |
+  +
+  +</available_templates>
+   
+   <usage>
+   
+  -1. copy template to destination
+  -1. replace \<bracketed_placeholders> with actual content
+  -1. remove sections that don't apply
+  +1. copy a template to the destination directory
+  +1. rename with date/subject as needed
+  +1. replace placeholder text
+  +1. remove sections that do not apply
+   1. update frontmatter metadata
+   
+   </usage>
+   
+  -<example>
+  +<examples>
+```bash
+  -cp templates/knowledge-entry.md knowledge/learnings/2026-01-19-new-insight.md
+  +cp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md
+  +cp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md
+  +cp templates/project-status.md projects/example-project.md
+   ```
+   
+  -</example>
+  +</examples>
+  +22 -16
+
+unknown
+  @@ -1,15 +1,46 @@
+  -title:
+  -  - Decision Title
+  -date:
+  -  - YYYY-MM-DD
+  -status:
+  -  - proposed|accepted|deprecated|superseded
+  -decision:
+  -  - One-line summary of the decision
+  -deciders:
+  -  - who made this decision
+  -permalink: claude/projects/dot-skogai/templates/decision-record
+  +title: <decision-title>
+  +date: YYYY-MM-DD
+  +status: proposed # proposed | accepted | deprecated | superseded
+  +decision: <one-line-decision-summary>
+  +deciders: <name1, name2>
+  +permalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>
+   ---
+   
+  -
+  +## Context
+  +
+  +<what problem, constraint, or change requires a decision?>
+  +
+  +## Decision
+  +
+  +<what was decided?>
+  +
+  +## Rationale
+  +
+  +<why this option over alternatives?>
+  +
+  +## Alternatives Considered
+  +
+  +- <option-a>: <why not chosen>
+  +- <option-b>: <why not chosen>
+  +
+  +## Consequences
+  +
+  +### Positive
+  +
+  +- <benefit-1>
+  +- <benefit-2>
+  +
+  +### Negative
+  +
+  +- <cost-1>
+  +- <cost-2>
+  +
+  +## Implementation Notes
+  +
+  +- <follow-up action>
+  +- <migration or rollout note>
+  +
+  +## References
+  +
+  +- <link or file reference>
+  +43 -12
+
+unknown
+  @@ -1,18 +1,37 @@
+  -title:
+  -  - Descriptive Title
+  -date:
+  -  - YYYY-MM-DD
+  -project:
+  -  - project-name or "SkogAI"
+  +title: <entry-title>
+  +date: YYYY-MM-DD
+  +project: SkogAI
+   tags:
+  -  - tag1
+  -  - tag2
+  -  - tag3
+  -source:
+  -  - where this came from
+  +  - <tag-1>
+  +  - <tag-2>
+  +source: <where-this-came-from>
+   status: active
+  -permalink: claude/projects/dot-skogai/templates/knowledge-entry
+  +permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
+   ---
+   
+  -
+  +## Summary
+  +
+  +<short summary of the insight>
+  +
+  +## Problem
+  +
+  +<what problem or question this addresses>
+  +
+  +## Insight
+  +
+  +<the key learning, pattern, or principle>
+  +
+  +## Evidence
+  +
+  +- <observation-1>
+  +- <observation-2>
+  +
+  +## Application
+  +
+  +- <how to apply this in future work>
+  +- <where this should be reused>
+  +
+  +## Related
+  +
+  +- <related file or decision>
+  +32 -13
+
+unknown
+  @@ -1,13 +1,35 @@
+  -project:
+  -  - project-name
+  -status:
+  -  - active|paused|archived
+  -last-updated:
+  -  - YYYY-MM-DD
+  -location:
+  -  - path/to/project
+  -permalink: claude/projects/dot-skogai/templates/project-status
+  +project: <project-name>
+  +status: active # active | paused | archived
+  +last-updated: YYYY-MM-DD
+  +location: <path/to/project>
+  +owners:
+  +  - <owner-name>
+  +permalink: claude/projects/dot-skogai/projects/<project-slug>
+   ---
+   
+  -
+  +## Goal
+  +
+  +<what this project is trying to achieve>
+  +
+  +## Current State
+  +
+  +<where things stand right now>
+  +
+  +## Recent Progress
+  +
+  +- <completed item>
+  +- <completed item>
+  +
+  +## Next Steps
+  +
+  +- [ ] <next action>
+  +- [ ] <next action>
+  +
+  +## Risks / Blockers
+  +
+  +- <risk or blocker>
+  +
+  +## Notes
+  +
+  +<extra context>
+  +32 -10
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+Implemented `feat-templates-starter-templates-for-new-31` in `.skogai/templates/` with focused updates to the 4 required files:
+
+### ✅ Updated files
+
+- `/home/skogix/claude/.skogai/templates/CLAUDE.md`
+  - Clarified purpose (copy-based usage, templates remain unchanged)
+  - Listed available templates with concise use-cases
+  - Added concrete copy examples for all 3 template files
+
+- `/home/skogix/claude/.skogai/templates/decision-record.md`
+  - Replaced placeholder stub with a practical ADR template
+  - Added frontmatter placeholders + decision lifecycle status
+  - Added sections: Context, Decision, Rationale, Alternatives, Consequences, Implementation Notes, References
+
+- `/home/skogix/claude/.skogai/templates/knowledge-entry.md`
+  - Replaced stub with a reusable learning/pattern template
+  - Added frontmatter placeholders (title/date/project/tags/source/status/permalink)
+  - Added sections: Summary, Problem, Insight, Evidence, Application, Related
+
+- `/home/skogix/claude/.skogai/templates/project-status.md`
+  - Replaced stub with a structured project tracking template
+  - Added frontmatter placeholders (project/status/last-updated/location/owners/permalink)
+  - Added sections: Goal, Current State, Recent Progress, Next Steps, Risks/Blockers, Notes
+
+### ✅ Validation performed
+
+- Reviewed diffs for only target files
+- Ran whitespace/conflict check via:
+  - `git diff --check -- .skogai/templates/...`
+- No formatting issues reported
+
+If you want, I can also align the existing optional templates (`findings.md`, `progress.md`, `task_plan.md`) to the same style in a follow-up task.                                                                                
+skogix: 
+Templates are filled in by copy, not by mutation — source files stay as stubs
+- [CLAUDE.md](http://CLAUDE.md) lists available templates so
+
+## Notes
+
+*Imported from external tracker. See source link for full context.*
+
+Focus on making progress on this task. When done, summarize what you accomplished.
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_Pdexat5mIqCJPtCuDjwkXkpZ): {"command":"rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/CLAUDE.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/decision-record.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/knowledge-entry.md && echo '---' && rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/project-status.md"}                                                                                
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/templates/claude
+---
+
+# templates/ - starter templates
+
+<what_is_this>
+
+ready-to-copy starter files for common skogai content types.
+
+templates are copied and then edited in their destination.
+source files in `templates/` stay unchanged.
+
+</what_is_this>
+
+<available_templates>
+
+| template | when to use |
+| --- | --- |
+| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
+| `decision-record.md` | create an architectural decision record (adr) |
+| `project-status.md` | track current state of a project |
+
+</available_templates>
+
+<usage>
+
+1. copy a template to the destination directory
+1. rename with date/subject as needed
+1. replace placeholder text
+1. remove sections that do not apply
+1. update frontmatter metadata
+
+</usage>
+
+<examples>
+
+```bash
+cp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md
+cp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md
+cp templates/project-status.md projects/example-project.md
+```
+
+</examples>
+---
+---
+title: <decision-title>
+date: YYYY-MM-DD
+status: proposed # proposed | accepted | deprecated | superseded
+decision: <one-line-decision-summary>
+deciders: <name1, name2>
+permalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>
+---
+
+## Context
+
+<what problem, constraint, or change requires a decision?>
+
+## Decision
+
+<what was decided?>
+
+## Rationale
+
+<why this option over alternatives?>
+
+## Alternatives Considered
+
+- <option-a>: <why not chosen>
+- <option-b>: <why not chosen>
+
+## Consequences
+
+### Positive
+
+- <benefit-1>
+- <benefit-2>
+
+### Negative
+
+- <cost-1>
+- <cost-2>
+
+## Implementation Notes
+
+- <follow-up action>
+- <migration or rollout note>
+
+## References
+
+- <link or file reference>
+---
+---
+title: <entry-title>
+date: YYYY-MM-DD
+project: SkogAI
+tags:
+  - <tag-1>
+  - <tag-2>
+source: <where-this-came-from>
+status: active
+permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
+---
+
+## Summary
+
+<short summary of the insight>
+
+## Problem
+
+<what problem or question this addresses>
+
+## Insight
+
+<the key learning, pattern, or principle>
+
+## Evidence
+
+- <observation-1>
+- <observation-2>
+
+## Application
+
+- <how to apply this in future work>
+- <where this should be reused>
+
+## Related
+
+- <related file or decision>
+---
+---
+project: <project-name>
+status: active # active | paused | archived
+last-updated: YYYY-MM-DD
+location: <path/to/project>
+owners:
+  - <owner-name>
+permalink: claude/projects/dot-skogai/projects/<project-slug>
+---
+
+## Goal
+
+<what this project is trying to achieve>
+
+## Current State
+
+<where things stand right now>
+
+## Recent Progress
+
+- <completed item>
+- <completed item>
+
+## Next Steps
+
+- [ ] <next action>
+- [ ] <next action>
+
+## Risks / Blockers
+
+- <risk or blocker>
+
+## Notes
+
+<extra context>
+System: 
+Ran command: `rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/CLAUDE.md && echo '---... (1 line)`
+
+```stdout
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/templates/claude
+---
+
+# templates/ - starter templates
+
+<what_is_this>
+
+ready-to-copy starter files for common skogai content types.
+
+templates are copied and then edited in their destination.
+source files in `templates/` stay unchanged.
+
+</what_is_this>
+
+<available_templates>
+
+| template | when to use |
+| --- | --- |
+| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
+| `decision-record.md` | create an architectural decision record (adr) |
+| `project-status.md` | track current state of a project |
+
+</available_templates>
+
+<usage>
+
+1. copy a template to the destination directory
+1. rename with date/subject as needed
+1. replace placeholder text
+1. remove sections that do not apply
+1. update frontmatter metadata
+
+</usage>
+
+<examples>
+```bash
+cp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md
+cp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md
+cp templates/project-status.md projects/example-project.md
+```
+
+</examples>
+---
+---
+title: <decision-title>
+date: YYYY-MM-DD
+status: proposed # proposed | accepted | deprecated | superseded
+decision: <one-line-decision-summary>
+deciders: <name1, name2>
+permalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>
+---
+
+## Context
+
+<what problem, constraint, or change requires a decision?>
+
+## Decision
+
+<what was decided?>
+
+## Rationale
+
+<why this option over alternatives?>
+
+## Alternatives Considered
+
+- <option-a>: <why not chosen>
+- <option-b>: <why not chosen>
+
+## Consequences
+
+### Positive
+
+- <benefit-1>
+- <benefit-2>
+
+### Negative
+
+- <cost-1>
+- <cost-2>
+
+## Implementation Notes
+
+- <follow-up action>
+- <migration or rollout note>
+
+## References
+
+- <link or file reference>
+---
+---
+title: <entry-title>
+date: YYYY-MM-DD
+project: SkogAI
+tags:
+  - <tag-1>
+  - <tag-2>
+source: <where-this-came-from>
+status: active
+permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
+---
+
+## Summary
+
+<short summary of the insight>
+
+## Problem
+
+<what problem or question this addresses>
+
+## Insight
+
+<the key learning, pattern, or principle>
+
+## Evidence
+
+- <observation-1>
+- <observation-2>
+
+## Application
+
+- <how to apply this in future work>
+- <where this should be reused>
+
+## Related
+
+- <related file or decision>
+---
+---
+project: <project-name>
+status: active # active | paused | archived
+last-updated: YYYY-MM-DD
+location: <path/to/project>
+owners:
+  - <owner-name>
+permalink: claude/projects/dot-skogai/projects/<project-slug>
+---
+
+## Goal
+
+<what this project is trying to achieve>
+
+## Current State
+
+<where things stand right now>
+
+## Recent Progress
+
+- <completed item>
+- <completed item>
+
+## Next Steps
+
+- [ ] <next action>
+- [ ] <next action>
+
+## Risks / Blockers
+
+- <risk or blocker>
+
+## Notes
+
+<extra context>
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@patch(call_cPdoRWoB97Y3wKkeuUwjsUvF): {"path":"/home/skogix/claude/.skogai/templates/CLAUDE.md","patch":"<<<<<<< ORIGINAL\n<what_is_this>\n\nready-to-copy starter files for common skogai content types.\n\ntemplates are copied and then edited in their destination.\nsource files in `templates/` stay unchanged.\n\n</what_is_this>\n=======\n<what_is_this>\n\nready-to-copy starter files for common skogai content types.\n\ntemplates are filled in by copy, not by mutation.\nsource files in `templates/` stay unchanged as reusable stubs.\n\n</what_is_this>\n>>>>>>> UPDATED\n<<<<<<< ORIGINAL\n| `project-status.md` | track current state of a project |\n\n</available_templates>\n=======\n| `project-status.md` | track current state of a project |\n\nthis index exists so agents can discover available templates without opening each template file first.\n\n</available_templates>\n>>>>>>> UPDATED"}                                                                                
+System: ✅ Patch successfully applied to `/home/skogix/claude/.skogai/templates/CLAUDE.md`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@patch(call_2AAKv0cWUxX7RZvqT8EzZZCW): {"path":"/home/skogix/claude/.skogai/templates/decision-record.md","patch":"<<<<<<< ORIGINAL\n## Context\n\n<what problem, constraint, or change requires a decision?>\n\n## Decision\n\n<what was decided?>\n\n## Rationale\n\n<why this option over alternatives?>\n\n## Alternatives Considered\n\n- <option-a>: <why not chosen>\n- <option-b>: <why not chosen>\n\n## Consequences\n\n### Positive\n\n- <benefit-1>\n- <benefit-2>\n\n### Negative\n\n- <cost-1>\n- <cost-2>\n\n## Implementation Notes\n\n- <follow-up action>\n- <migration or rollout note>\n\n## References\n\n- <link or file reference>\n=======\n[@todo]\n>>>>>>> UPDATED"}                                                                                
+System: ✅ Patch successfully applied to `/home/skogix/claude/.skogai/templates/decision-record.md`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@patch(call_ptxiIeR492YhLeXBv3US1LZn): {"path":"/home/skogix/claude/.skogai/templates/knowledge-entry.md","patch":"<<<<<<< ORIGINAL\n## Summary\n\n<short summary of the insight>\n\n## Problem\n\n<what problem or question this addresses>\n\n## Insight\n\n<the key learning, pattern, or principle>\n\n## Evidence\n\n- <observation-1>\n- <observation-2>\n\n## Application\n\n- <how to apply this in future work>\n- <where this should be reused>\n\n## Related\n\n- <related file or decision>\n=======\n[@todo]\n>>>>>>> UPDATED"}                                                                                
+System: ✅ Patch successfully applied to `/home/skogix/claude/.skogai/templates/knowledge-entry.md`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@patch(call_Nlwx5FnVPUjfyYTmc1MHue7M): {"path":"/home/skogix/claude/.skogai/templates/project-status.md","patch":"<<<<<<< ORIGINAL\n## Goal\n\n<what this project is trying to achieve>\n\n## Current State\n\n<where things stand right now>\n\n## Recent Progress\n\n- <completed item>\n- <completed item>\n\n## Next Steps\n\n- [ ] <next action>\n- [ ] <next action>\n\n## Risks / Blockers\n\n- <risk or blocker>\n\n## Notes\n\n<extra context>\n=======\n[@todo]\n>>>>>>> UPDATED"}                                                                                
+System: ✅ Patch successfully applied to `/home/skogix/claude/.skogai/templates/project-status.md`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_iYPQqSSNYHGw5FqAVQ86zhxe): {"command":"rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/CLAUDE.md && echo '---' && rtk sed -n '1,180p' /home/skogix/claude/.skogai/templates/decision-record.md && echo '---' && rtk sed -n '1,180p' /home/skogix/claude/.skogai/templates/knowledge-entry.md && echo '---' && rtk sed -n '1,180p' /home/skogix/claude/.skogai/templates/project-status.md && echo '---' && rtk git -C /home/skogix/claude diff --check -- .skogai/templates/CLAUDE.md .skogai/templates/decision-record.md .skogai/templates/knowledge-entry.md .skogai/templates/project-status.md"}                                                                                
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/templates/claude
+---
+
+# templates/ - starter templates
+
+<what_is_this>
+
+ready-to-copy starter files for common skogai content types.
+
+templates are filled in by copy, not by mutation.
+source files in `templates/` stay unchanged as reusable stubs.
+
+</what_is_this>
+
+<available_templates>
+
+| template | when to use |
+| --- | --- |
+| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
+| `decision-record.md` | create an architectural decision record (adr) |
+| `project-status.md` | track current state of a project |
+
+this index exists so agents can discover available templates without opening each template file first.
+
+</available_templates>
+
+<usage>
+
+1. copy a template to the destination directory
+1. rename with date/subject as needed
+1. replace placeholder text
+1. remove sections that do not apply
+1. update frontmatter metadata
+
+</usage>
+
+<examples>
+
+```bash
+cp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md
+cp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md
+cp templates/project-status.md projects/example-project.md
+```
+
+</examples>
+---
+---
+title: <decision-title>
+date: YYYY-MM-DD
+status: proposed # proposed | accepted | deprecated | superseded
+decision: <one-line-decision-summary>
+deciders: <name1, name2>
+permalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>
+---
+
+[@todo]
+---
+---
+title: <entry-title>
+date: YYYY-MM-DD
+project: SkogAI
+tags:
+  - <tag-1>
+  - <tag-2>
+source: <where-this-came-from>
+status: active
+permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
+---
+
+[@todo]
+---
+---
+project: <project-name>
+status: active # active | paused | archived
+last-updated: YYYY-MM-DD
+location: <path/to/project>
+owners:
+  - <owner-name>
+permalink: claude/projects/dot-skogai/projects/<project-slug>
+---
+
+[@todo]
+---
+
+System: 
+Ran command: `rtk sed -n '1,220p' /home/skogix/claude/.skogai/templates/CLAUDE.md && echo '---... (1 line)`
+
+```stdout
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/templates/claude
+---
+
+# templates/ - starter templates
+
+<what_is_this>
+
+ready-to-copy starter files for common skogai content types.
+
+templates are filled in by copy, not by mutation.
+source files in `templates/` stay unchanged as reusable stubs.
+
+</what_is_this>
+
+<available_templates>
+
+| template | when to use |
+| --- | --- |
+| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
+| `decision-record.md` | create an architectural decision record (adr) |
+| `project-status.md` | track current state of a project |
+
+this index exists so agents can discover available templates without opening each template file first.
+
+</available_templates>
+
+<usage>
+
+1. copy a template to the destination directory
+1. rename with date/subject as needed
+1. replace placeholder text
+1. remove sections that do not apply
+1. update frontmatter metadata
+
+</usage>
+
+<examples>
+```bash
+cp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md
+cp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md
+cp templates/project-status.md projects/example-project.md
+```
+
+</examples>
+---
+---
+title: <decision-title>
+date: YYYY-MM-DD
+status: proposed # proposed | accepted | deprecated | superseded
+decision: <one-line-decision-summary>
+deciders: <name1, name2>
+permalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>
+---
+
+
+---
+---
+title: <entry-title>
+date: YYYY-MM-DD
+project: SkogAI
+tags:
+  - <tag-1>
+  - <tag-2>
+source: <where-this-came-from>
+status: active
+permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
+---
+
+
+---
+---
+project: <project-name>
+status: active # active | paused | archived
+last-updated: YYYY-MM-DD
+location: <path/to/project>
+owners:
+  - <owner-name>
+permalink: claude/projects/dot-skogai/projects/<project-slug>
+---
+
+
+---
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+Done — I focused the task on the requirement you clarified:
+
+> Templates are filled in by copy, not by mutation — source files stay as stubs.
+
+### What I changed
+
+I updated the required files under `/home/skogix/claude/.skogai/templates/`:
+
+1. **`CLAUDE.md`**
+   - Explicitly states:
+     - templates are filled by copy, not mutation
+     - source files remain reusable stubs
+   - Kept a clear list of available templates.
+   - Added a direct note that this file is an index so agents can discover templates without opening each one.
+
+2. **`decision-record.md`**
+   - Preserved frontmatter scaffold.
+   - Reverted body to stub marker: `[@todo]`.
+
+3. **`knowledge-entry.md`**
+   - Preserved frontmatter scaffold.
+   - Reverted body to stub marker: `[@todo]`.
+
+4. **`project-status.md`**
+   - Preserved frontmatter scaffold.
+   - Reverted body to stub marker: `[@todo]`.
+
+### Result
+
+The templates now align with the issue intent:
+- **copy-based workflow**
+- **stub source templates**
+- **`CLAUDE.md` as template directory index**.
+
+                                                                                
+[04:47:08] INFO     Auto-reply: Assistant message had no tools. Asking for confirmation...                                                                                     complete.py:163
+[04:47:08] [Loop control] <system>No tool call detected in last message. Did you mean to finish? If so, make sure you are comp...                                                             
+skogix: <system>No tool call detected in last message. Did you mean to finish? If so, make sure you are completely done and then use the `complete` tool to end the session.</system>
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@complete(call_Rp4ZYrmgRWERRh7W3lN2lMPQ): {}                                                                                
+System: Task complete. Autonomous session finished.
+[04:47:11] INFO     Complete tool call detected, stopping session immediately                                                                                                   complete.py:93
+           INFO     Hook 'complete.complete' signaled session completion                                                                                                       registry.py:196
+[04:47:11] Autonomous mode: Session completed via complete tool. Exiting.                                                                                                                     
+
+Goodbye! (resume with: gptme --name 2026-04-19-jumping-sad-alien)
+
+rtk: rtk find does not support compound predicates or actions (e.g. -not, -exec). Use `find` directly.

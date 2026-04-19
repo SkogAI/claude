@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skogai Worktrunk - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">.skogai</a>
+  &rsaquo; <a href="../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; Skogai Worktrunk
+</nav>
+
+<header>
+  <h1>Skogai Worktrunk</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">Worktrunk + Gita</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/skogai-worktrunk</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <hr />
+<h2>name: worktrunk description: &quot;How does this tool work?&quot; — wt and gita tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. For workflow guidance (&quot;What should I do?&quot;), see skogai-git.</h2>
+<h1>Worktrunk + Gita</h1>
+<p>Together, these tools replace most git workflows:</p>
+<ul>
+<li><strong>wt (worktrunk)</strong>: Single repo, multiple worktrees - work on many branches simultaneously</li>
+<li><strong>gita</strong>: Multiple repos, unified operations - manage entire ecosystems</li>
+</ul>
+<h2>Core Commands</h2>
+<h3>Worktrunk (wt) - Single Repo Worktree Management</h3>
+<p><strong>Essential commands:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>wt<span style="color: #BBB"> </span>list<span style="color: #BBB">                    </span><span style="color: #3D7B7B; font-style: italic"># List all worktrees and branches</span>
+wt<span style="color: #BBB"> </span>switch<span style="color: #BBB"> </span>&lt;branch&gt;<span style="color: #BBB">         </span><span style="color: #3D7B7B; font-style: italic"># Switch to existing worktree</span>
+wt<span style="color: #BBB"> </span>switch<span style="color: #BBB"> </span>--create<span style="color: #BBB"> </span>&lt;name&gt;<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic"># Create new worktree from current branch</span>
+wt<span style="color: #BBB"> </span>merge<span style="color: #BBB"> </span><span style="color: #666">[</span>target<span style="color: #666">]</span><span style="color: #BBB">          </span><span style="color: #3D7B7B; font-style: italic"># Merge current worktree back to target (default: main/develop)</span>
+wt<span style="color: #BBB"> </span>remove<span style="color: #BBB"> </span>&lt;branch&gt;<span style="color: #BBB">         </span><span style="color: #3D7B7B; font-style: italic"># Remove worktree and optionally branch</span>
+</pre></div>
+</code></pre>
+<p><strong>Configuration commands:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>wt<span style="color: #BBB"> </span>config<span style="color: #BBB"> </span>show<span style="color: #BBB">            </span><span style="color: #3D7B7B; font-style: italic"># Show config files and locations</span>
+wt<span style="color: #BBB"> </span>config<span style="color: #BBB"> </span>create<span style="color: #BBB">          </span><span style="color: #3D7B7B; font-style: italic"># Create user config (~/.config/worktrunk/config.toml)</span>
+</pre></div>
+</code></pre>
+<p><strong>Workflow commands (wt step):</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>wt<span style="color: #BBB"> </span>step<span style="color: #BBB"> </span>commit<span style="color: #BBB">            </span><span style="color: #3D7B7B; font-style: italic"># Commit with LLM-generated message</span>
+wt<span style="color: #BBB"> </span>step<span style="color: #BBB"> </span>push<span style="color: #BBB"> </span>&lt;target&gt;<span style="color: #BBB">     </span><span style="color: #3D7B7B; font-style: italic"># Push changes to target branch</span>
+wt<span style="color: #BBB"> </span>step<span style="color: #BBB"> </span>rebase<span style="color: #BBB"> </span>&lt;target&gt;<span style="color: #BBB">   </span><span style="color: #3D7B7B; font-style: italic"># Rebase onto target</span>
+wt<span style="color: #BBB"> </span>step<span style="color: #BBB"> </span>post-create<span style="color: #BBB">       </span><span style="color: #3D7B7B; font-style: italic"># Manually run post-create hook</span>
+wt<span style="color: #BBB"> </span>step<span style="color: #BBB"> </span>pre-merge<span style="color: #BBB">         </span><span style="color: #3D7B7B; font-style: italic"># Manually run pre-merge hook</span>
+</pre></div>
+</code></pre>
+<h3>Gita - Multi-Repo Management</h3>
+<p><strong>Essential commands:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>gita<span style="color: #BBB"> </span>ll<span style="color: #BBB">                   </span><span style="color: #3D7B7B; font-style: italic"># List all managed repos with status</span>
+gita<span style="color: #BBB"> </span>st<span style="color: #BBB">                   </span><span style="color: #3D7B7B; font-style: italic"># Show git status across all repos</span>
+gita<span style="color: #BBB"> </span>add<span style="color: #BBB"> </span>&lt;path&gt;<span style="color: #BBB">           </span><span style="color: #3D7B7B; font-style: italic"># Add repo(s) to gita management</span>
+gita<span style="color: #BBB"> </span>pull<span style="color: #BBB">                 </span><span style="color: #3D7B7B; font-style: italic"># Pull all repos (or specific ones)</span>
+gita<span style="color: #BBB"> </span>push<span style="color: #BBB">                 </span><span style="color: #3D7B7B; font-style: italic"># Push all repos</span>
+gita<span style="color: #BBB"> </span>fetch<span style="color: #BBB">                </span><span style="color: #3D7B7B; font-style: italic"># Fetch all repos</span>
+</pre></div>
+</code></pre>
+<p><strong>Organization commands:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>gita<span style="color: #BBB"> </span>group<span style="color: #BBB"> </span>add<span style="color: #BBB"> </span>&lt;name&gt;<span style="color: #BBB"> </span>&lt;repos&gt;<span style="color: #BBB">   </span><span style="color: #3D7B7B; font-style: italic"># Create repo group</span>
+gita<span style="color: #BBB"> </span>group<span style="color: #BBB"> </span>ls<span style="color: #BBB">                   </span><span style="color: #3D7B7B; font-style: italic"># List all groups</span>
+gita<span style="color: #BBB"> </span>ll<span style="color: #BBB"> </span>&lt;group&gt;<span style="color: #BBB">                 </span><span style="color: #3D7B7B; font-style: italic"># List repos in group</span>
+</pre></div>
+</code></pre>
+<p><strong>Operations across repos:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>gita<span style="color: #BBB"> </span>super<span style="color: #BBB"> </span>&lt;git-command&gt;<span style="color: #BBB">        </span><span style="color: #3D7B7B; font-style: italic"># Run arbitrary git command on all repos</span>
+gita<span style="color: #BBB"> </span>shell<span style="color: #BBB"> </span>&lt;shell-command&gt;<span style="color: #BBB">      </span><span style="color: #3D7B7B; font-style: italic"># Run shell command on all repos</span>
+</pre></div>
+</code></pre>
+<h2>When to Use Which</h2>
+<p><strong>Use wt (worktrunk):</strong></p>
+<ul>
+<li>✅ Working on multiple branches of ONE repo simultaneously</li>
+<li>✅ Git-flow workflows (feature/release/hotfix branches)</li>
+<li>✅ Projects with submodules that need isolation per branch</li>
+<li>✅ Need to switch between branches without stashing</li>
+</ul>
+<p><strong>Use gita:</strong></p>
+<ul>
+<li>✅ Managing MULTIPLE related repositories</li>
+<li>✅ Checking status across many repos</li>
+<li>✅ Syncing (pull/push) multiple repos at once</li>
+<li>✅ Running commands across repo groups</li>
+</ul>
+<p><strong>Use both together:</strong></p>
+<ul>
+<li>Main project with submodules (wt for main, gita for overview)</li>
+<li>Monorepo ecosystem (wt for features, gita for related services)</li>
+</ul>
+<h2>Workflows</h2>
+<blockquote>
+<p>For complete git workflow guidance (feature branch flows, PR workflows, commit philosophy, branch management), see <strong>skogai-git</strong>. This skill covers tool configuration and operation details.</p>
+<ul>
+<li><code>skogai-git/workflows/worktree-parallel.md</code> — parallel worktree development workflow</li>
+<li><code>skogai-git/workflows/worktree-review.md</code> — isolated PR review workflow</li>
+<li><code>skogai-git/workflows/multi-repo.md</code> — gita multi-repo workflow</li>
+<li><code>skogai-git/workflows/commit-push.md</code> — semantic commit workflow</li>
+<li><code>skogai-git/workflows/branch-management.md</code> — branch lifecycle</li>
+<li><code>skogai-git/workflows/pr-workflow.md</code> — PR creation and review</li>
+<li><code>skogai-git/references/commit-philosophy.md</code> — commit outcomes, not process</li>
+</ul>
+</blockquote>
+<h2>Available Documentation</h2>
+<ul>
+<li><strong>SKILL.md</strong>: This file - configuration workflows and common patterns</li>
+<li><strong>reference/README.md</strong>: Features, installation, examples, FAQ</li>
+<li><strong>reference/*.md</strong>: Detailed configuration and hook specifications</li>
+<li><strong>Completion files</strong>: Full command syntax
+<ul>
+<li><code>/home/skogix/.local/src/argc-completions/completions/wt.sh</code></li>
+<li><code>/home/skogix/.local/src/argc-completions/completions/gita.sh</code></li>
+</ul>
+</li>
+</ul>
+<h2>Two Types of Configuration</h2>
+<p>Worktrunk uses two separate config files with different scopes and behaviors:</p>
+<h3>User Config (<code>~/.config/worktrunk/config.toml</code>)</h3>
+<ul>
+<li><strong>Scope</strong>: Personal preferences for the individual developer</li>
+<li><strong>Location</strong>: <code>~/.config/worktrunk/config.toml</code> (never checked into git)</li>
+<li><strong>Contains</strong>: LLM integration, worktree path templates, approved commands</li>
+<li><strong>Permission model</strong>: Always propose changes and get consent before editing</li>
+<li><strong>See</strong>: <code>reference/user-config.md</code> for detailed guidance</li>
+</ul>
+<h3>Project Config (<code>.config/wt.toml</code>)</h3>
+<ul>
+<li><strong>Scope</strong>: Team-wide automation shared by all developers</li>
+<li><strong>Location</strong>: <code>&lt;repo&gt;/.config/wt.toml</code> (checked into git)</li>
+<li><strong>Contains</strong>: Hooks for worktree lifecycle (post-create, pre-merge, etc.)</li>
+<li><strong>Permission model</strong>: Proactive (create directly, changes are reversible via git)</li>
+<li><strong>See</strong>: <code>reference/project-config.md</code> for detailed guidance</li>
+</ul>
+<h2>Determining Which Config to Use</h2>
+<p>When a user asks for configuration help, determine which type based on:</p>
+<p><strong>User config indicators</strong>:</p>
+<ul>
+<li>&quot;set up LLM&quot; or &quot;configure commit generation&quot;</li>
+<li>&quot;change where worktrees are created&quot;</li>
+<li>&quot;customize commit message templates&quot;</li>
+<li>Affects only their environment</li>
+</ul>
+<p><strong>Project config indicators</strong>:</p>
+<ul>
+<li>&quot;set up hooks for this project&quot;</li>
+<li>&quot;automate npm install&quot;</li>
+<li>&quot;run tests before merge&quot;</li>
+<li>Affects the entire team</li>
+</ul>
+<p><strong>Both configs may be needed</strong>: For example, setting up LLM integration requires user config, but automating quality checks requires project config.</p>
+<h2>Core Workflows</h2>
+<h3>Setting Up LLM Integration (User Config)</h3>
+<p>Most common request. Follow this sequence:</p>
+<ol>
+<li>
+<p><strong>Check if LLM tool exists</strong></p>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #717171">which llm  # or: which aichat</span>
+</pre></div>
+</code></pre>
+</li>
+<li>
+<p><strong>If not installed, guide installation (don't run it)</strong></p>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #717171">uv tool install -U llm</span>
+</pre></div>
+</code></pre>
+</li>
+<li>
+<p><strong>Guide API key setup (don't run it)</strong></p>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #717171">llm install llm-anthropic</span>
+<span style="color: #717171">llm keys set anthropic</span>
+<span style="color: #717171">llm models default claude-haiku-4-5-20251001</span>
+</pre></div>
+</code></pre>
+</li>
+<li>
+<p><strong>Propose config change</strong></p>
+<pre><code class="language-toml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">[commit-generation]</span>
+command<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;llm&quot;</span>
+</pre></div>
+</code></pre>
+<p>Ask: &quot;Should I add this to your config?&quot;</p>
+</li>
+<li>
+<p><strong>After approval, apply</strong></p>
+<ul>
+<li>Check if config exists: <code>wt config list</code></li>
+<li>If not, guide through <code>wt config create</code></li>
+<li>Read, modify, write preserving structure</li>
+</ul>
+</li>
+<li>
+<p><strong>Suggest testing</strong></p>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #717171">llm &quot;say hello&quot;</span>
+<span style="color: #717171">wt merge  # in a repo with uncommitted changes</span>
+</pre></div>
+</code></pre>
+</li>
+</ol>
+<p><strong>See <code>reference/user-config.md</code> for complete details.</strong></p>
+<h3>Setting Up Project Hooks (Project Config)</h3>
+<p>Common request for workflow automation. Follow discovery process:</p>
+<ol>
+<li>
+<p><strong>Detect project type</strong></p>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #717171">ls package.json Cargo.toml pyproject.toml</span>
+</pre></div>
+</code></pre>
+</li>
+<li>
+<p><strong>Identify available commands</strong></p>
+<ul>
+<li>For npm: Read <code>package.json</code> scripts</li>
+<li>For Rust: Common cargo commands</li>
+<li>For Python: Check pyproject.toml</li>
+</ul>
+</li>
+<li>
+<p><strong>Design appropriate hooks</strong></p>
+<ul>
+<li>Dependencies (fast, must complete) → <code>post-create</code></li>
+<li>Tests/linting (must pass) → <code>pre-commit</code> or <code>pre-merge</code></li>
+<li>Long builds → <code>post-start</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Validate commands work</strong></p>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #717171">npm run lint  # verify exists</span>
+<span style="color: #717171">which cargo   # verify tool exists</span>
+</pre></div>
+</code></pre>
+</li>
+<li>
+<p><strong>Create <code>.config/wt.toml</code></strong></p>
+<pre><code class="language-toml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Install dependencies when creating worktrees</span>
+post-create<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;npm install&quot;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Validate code quality before committing</span>
+pre-commit<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;npm run lint&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;npm run typecheck&quot;</span>]
+
+<span style="color: #3D7B7B; font-style: italic"># Run tests before merging</span>
+pre-merge<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;npm test&quot;</span>
+</pre></div>
+</code></pre>
+</li>
+<li>
+<p><strong>Add comments explaining choices</strong></p>
+</li>
+<li>
+<p><strong>Suggest testing</strong></p>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #717171">wt switch --create test-hooks</span>
+</pre></div>
+</code></pre>
+</li>
+</ol>
+<p><strong>See <code>reference/project-config.md</code> for complete details.</strong></p>
+<h2>Permission Models</h2>
+<h3>User Config: Conservative</h3>
+<ul>
+<li><strong>Never edit without consent</strong> - Always show proposed change and wait for approval</li>
+<li><strong>Never install tools</strong> - Provide commands for users to run themselves</li>
+<li><strong>Preserve structure</strong> - Keep existing comments and organization</li>
+<li><strong>Validate first</strong> - Ensure TOML is valid before writing</li>
+</ul>
+<h3>Project Config: Proactive</h3>
+<ul>
+<li><strong>Create directly</strong> - Changes are versioned, easily reversible</li>
+<li><strong>Validate commands</strong> - Check commands exist before adding</li>
+<li><strong>Explain choices</strong> - Add comments documenting why hooks exist</li>
+<li><strong>Warn on danger</strong> - Flag destructive operations before adding</li>
+</ul>
+<h2>Common Tasks Reference</h2>
+<h3>User Config Tasks</h3>
+<ul>
+<li>Set up LLM integration → <code>reference/user-config.md#llm-setup</code></li>
+<li>Customize worktree paths → <code>reference/user-config.md#worktree-paths</code></li>
+<li>Custom commit templates → <code>reference/user-config.md#templates</code></li>
+<li>Troubleshoot LLM issues → <code>reference/user-config.md#troubleshooting</code></li>
+</ul>
+<h3>Project Config Tasks</h3>
+<ul>
+<li>Set up hooks for new project → <code>reference/project-config.md#new-project</code></li>
+<li>Add hook to existing config → <code>reference/project-config.md#add-hook</code></li>
+<li>Use template variables → <code>reference/project-config.md#variables</code></li>
+<li>Convert command formats → <code>reference/project-config.md#formats</code></li>
+<li>Troubleshoot hook execution → <code>reference/project-config.md#troubleshooting</code></li>
+</ul>
+<h2>Key Commands</h2>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #000080; font-weight: bold"># </span>View<span style="color: #BBB"> </span>all<span style="color: #BBB"> </span>configuration
+<span style="color: #717171">wt config list</span>
+
+<span style="color: #000080; font-weight: bold"># </span>Create<span style="color: #BBB"> </span>initial<span style="color: #BBB"> </span>user<span style="color: #BBB"> </span>config
+<span style="color: #717171">wt config create</span>
+
+<span style="color: #000080; font-weight: bold"># </span>LLM<span style="color: #BBB"> </span>setup<span style="color: #BBB"> </span>guide
+<span style="color: #717171">wt config --help</span>
+</pre></div>
+</code></pre>
+<h2>Common Patterns</h2>
+<h3>Submodule Workflows (Complete Lifecycle)</h3>
+<p>Projects with git submodules need <strong>both</strong> initialization and cleanup hooks.</p>
+<p><strong>Problem:</strong> New worktrees have empty submodule directories. Merging without cleanup creates dirty submodule references.</p>
+<p><strong>Solution:</strong> Complete submodule lifecycle management</p>
+<pre><code class="language-toml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># .config/wt.toml</span>
+<span style="color: #3D7B7B; font-style: italic"># Initialize submodules when creating worktrees</span>
+post-create<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;git submodule update --init --recursive&quot;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Clean submodule state before merging</span>
+pre-merge<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;git submodule deinit --all&quot;</span>
+</pre></div>
+</code></pre>
+<p><strong>Why both hooks?</strong></p>
+<ul>
+<li><code>post-create</code>: Ensures fresh submodules in every worktree (avoid manual <code>git submodule update</code>)</li>
+<li><code>pre-merge</code>: Deinitializes submodules before merge (ensures clean merge, no dirty references)</li>
+</ul>
+<p><strong>Real-world example</strong> (from skogai project):</p>
+<pre><code class="language-toml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>post-create<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>[
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;git submodule update --init --recursive&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;cd tools &amp;&amp; argc list@tool &gt; tools.txt&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;cd tools &amp;&amp; argc list@agent &gt; agents.txt&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;cd tools &amp;&amp; argc build&quot;</span>,
+]
+
+pre-merge<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;git submodule deinit --all&quot;</span>
+</pre></div>
+</code></pre>
+<h3>Git-Flow Integration</h3>
+<p>Worktrunk integrates naturally with git-flow workflows. For the complete git-flow workflow (feature/release/hotfix branch patterns), see <strong>skogai-git</strong> <code>workflows/branch-management.md</code>.</p>
+<p><strong>Hook integration with submodules in git-flow:</strong> The hooks handle the submodule lifecycle automatically:</p>
+<ol>
+<li><code>post-create</code> initializes submodules in new worktree</li>
+<li>Work normally (submodules already initialized)</li>
+<li><code>pre-merge</code> deinits submodules (clean merge)</li>
+<li><code>wt merge</code> completes (no submodule conflicts)</li>
+</ol>
+<h3>Custom Build Systems</h3>
+<p>Non-standard build tools (argc, task, etc.) can integrate via hooks.</p>
+<p><strong>Pattern: Subdirectory operations</strong></p>
+<pre><code class="language-toml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>post-create<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>[
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;cd tools &amp;&amp; argc list@tool &gt; tools.txt&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;cd tools &amp;&amp; argc build&quot;</span>,
+]
+</pre></div>
+</code></pre>
+<p><strong>Pattern: Custom tool validation</strong> Before adding custom tool to hooks, validate it exists:</p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>which<span style="color: #BBB"> </span>argc<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic"># verify tool exists</span>
+argc<span style="color: #BBB"> </span>--help<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic"># verify it works</span>
+</pre></div>
+</code></pre>
+<p><strong>Pattern: Mixed standard + custom</strong></p>
+<pre><code class="language-toml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>post-create<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>[
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;git submodule update --init --recursive&quot;</span>,<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic"># Standard</span>
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;npm install&quot;</span>,<span style="color: #BBB">                               </span><span style="color: #3D7B7B; font-style: italic"># Standard</span>
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;cd tools &amp;&amp; argc build&quot;</span>,<span style="color: #BBB">                    </span><span style="color: #3D7B7B; font-style: italic"># Custom</span>
+]
+</pre></div>
+</code></pre>
+<p><strong>Why validate first?</strong> Custom tools might not be available to all developers. Add installation instructions to project README if using non-standard tools.</p>
+<h3>Multi-Repo + Submodules Pattern</h3>
+<p>When managing multiple repos that each have submodules:</p>
+<p><strong>Use gita for overview:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Add all your repos to gita</span>
+gita<span style="color: #BBB"> </span>add<span style="color: #BBB"> </span>~/skogai<span style="color: #BBB"> </span>~/skogai-tools<span style="color: #BBB"> </span>~/skogai-docs
+
+<span style="color: #3D7B7B; font-style: italic"># Check status across all</span>
+gita<span style="color: #BBB"> </span>ll
+
+<span style="color: #3D7B7B; font-style: italic"># Pull all repos and their submodules</span>
+gita<span style="color: #BBB"> </span>super<span style="color: #BBB"> </span>git<span style="color: #BBB"> </span>pull<span style="color: #BBB"> </span>--recurse-submodules
+</pre></div>
+</code></pre>
+<p><strong>Use wt for feature work:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Work on feature in main repo</span>
+<span style="color: #008000">cd</span><span style="color: #BBB"> </span>~/skogai
+wt<span style="color: #BBB"> </span>switch<span style="color: #BBB"> </span>--create<span style="color: #BBB"> </span>feature/new-thing
+<span style="color: #3D7B7B; font-style: italic"># Submodules initialized via post-create hook</span>
+</pre></div>
+</code></pre>
+<h2>Loading Additional Documentation</h2>
+<p>Load <strong>reference/README.md</strong> for general features, installation, commands, and examples.</p>
+<p>Load <strong>reference files</strong> for detailed configuration, hook specifications, and troubleshooting.</p>
+<p>Find specific sections with grep:</p>
+<pre><code class="language-console"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #717171">grep -A 20 &quot;## Installation&quot; reference/README.md</span>
+<span style="color: #717171">grep -A 20 &quot;## LLM Setup&quot; reference/user-config.md</span>
+<span style="color: #717171">grep -A 30 &quot;### post-create&quot; reference/project-config.md</span>
+</pre></div>
+</code></pre>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

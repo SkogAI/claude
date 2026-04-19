@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>devops-infrastructure - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">.skogai</a>
+  &rsaquo; <a href="../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; devops-infrastructure
+</nav>
+
+<header>
+  <h1>devops-infrastructure</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">Guides Docker, CI/CD pipelines, deployment strategies, infrastructure as code, and observability setup. Use when writing Dockerfiles, configuring GitHub Actions, planning deployments, setting up monit</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/devops-infrastructure</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/devops-infrastructure" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>DevOps &amp; Infrastructure</h1>
+<h3>When to Load</h3>
+<ul>
+<li><strong>Trigger</strong>: Docker, CI/CD pipelines, deployment configuration, monitoring, infrastructure as code</li>
+<li><strong>Skip</strong>: Application logic only with no infrastructure or deployment concerns</li>
+</ul>
+<h2>DevOps Workflow</h2>
+<p>Copy this checklist and track progress:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>DevOps Setup Progress:
+- [ ] Step 1: Containerize application (Dockerfile)
+- [ ] Step 2: Set up CI/CD pipeline
+- [ ] Step 3: Define deployment strategy
+- [ ] Step 4: Configure monitoring &amp; alerting
+- [ ] Step 5: Set up environment management
+- [ ] Step 6: Document runbooks
+- [ ] Step 7: Validate against anti-patterns checklist
+</pre></div>
+</code></pre>
+<h2>Docker Best Practices</h2>
+<h3>Multi-Stage Build</h3>
+<pre><code class="language-dockerfile"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># WRONG: Single stage, bloated image</span>
+<span style="color: #008000; font-weight: bold">FROM</span><span style="color: #BBB"> </span><span style="color: #BA2121">node:20</span>
+<span style="color: #008000; font-weight: bold">WORKDIR</span><span style="color: #BBB"> </span><span style="color: #BA2121">/app</span>
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>.<span style="color: #BBB"> </span>.
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>npm<span style="color: #BBB"> </span>install
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>npm<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>build
+<span style="color: #008000; font-weight: bold">CMD</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;node&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;dist/index.js&quot;</span>]
+<span style="color: #3D7B7B; font-style: italic"># Result: 1.2GB image with devDependencies and source code</span>
+
+<span style="color: #3D7B7B; font-style: italic"># CORRECT: Multi-stage build</span>
+<span style="color: #008000; font-weight: bold">FROM</span><span style="color: #BBB"> </span><span style="color: #BA2121">node:20-alpine</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">AS</span><span style="color: #BBB"> </span><span style="color: #BA2121">builder</span>
+<span style="color: #008000; font-weight: bold">WORKDIR</span><span style="color: #BBB"> </span><span style="color: #BA2121">/app</span>
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>package*.json<span style="color: #BBB"> </span>./
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>npm<span style="color: #BBB"> </span>ci
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>.<span style="color: #BBB"> </span>.
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>npm<span style="color: #BBB"> </span>run<span style="color: #BBB"> </span>build
+
+<span style="color: #008000; font-weight: bold">FROM</span><span style="color: #BBB"> </span><span style="color: #BA2121">node:20-alpine</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">AS</span><span style="color: #BBB"> </span><span style="color: #BA2121">runner</span>
+<span style="color: #008000; font-weight: bold">WORKDIR</span><span style="color: #BBB"> </span><span style="color: #BA2121">/app</span>
+<span style="color: #008000; font-weight: bold">ENV</span><span style="color: #BBB"> </span><span style="color: #19177C">NODE_ENV</span><span style="color: #666">=</span>production
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>addgroup<span style="color: #BBB"> </span>-g<span style="color: #BBB"> </span><span style="color: #666">1001</span><span style="color: #BBB"> </span>appgroup<span style="color: #BBB"> </span><span style="color: #666">&amp;&amp;</span><span style="color: #BBB"> </span>adduser<span style="color: #BBB"> </span>-u<span style="color: #BBB"> </span><span style="color: #666">1001</span><span style="color: #BBB"> </span>-G<span style="color: #BBB"> </span>appgroup<span style="color: #BBB"> </span>-s<span style="color: #BBB"> </span>/bin/sh<span style="color: #BBB"> </span>-D<span style="color: #BBB"> </span>appuser
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>--from<span style="color: #666">=</span>builder<span style="color: #BBB"> </span>/app/dist<span style="color: #BBB"> </span>./dist
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>--from<span style="color: #666">=</span>builder<span style="color: #BBB"> </span>/app/node_modules<span style="color: #BBB"> </span>./node_modules
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>--from<span style="color: #666">=</span>builder<span style="color: #BBB"> </span>/app/package.json<span style="color: #BBB"> </span>./
+<span style="color: #008000; font-weight: bold">USER</span><span style="color: #BBB"> </span><span style="color: #BA2121">appuser</span>
+<span style="color: #008000; font-weight: bold">EXPOSE</span><span style="color: #BBB"> </span><span style="color: #BA2121">3000</span>
+<span style="color: #008000; font-weight: bold">CMD</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;node&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;dist/index.js&quot;</span>]
+<span style="color: #3D7B7B; font-style: italic"># Result: ~150MB image, no devDependencies, non-root user</span>
+</pre></div>
+</code></pre>
+<h3>Python Multi-Stage</h3>
+<pre><code class="language-dockerfile"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">FROM</span><span style="color: #BBB"> </span><span style="color: #BA2121">python:3.12-slim</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">AS</span><span style="color: #BBB"> </span><span style="color: #BA2121">builder</span>
+<span style="color: #008000; font-weight: bold">WORKDIR</span><span style="color: #BBB"> </span><span style="color: #BA2121">/app</span>
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>pip<span style="color: #BBB"> </span>install<span style="color: #BBB"> </span>uv
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>pyproject.toml<span style="color: #BBB"> </span>uv.lock<span style="color: #BBB"> </span>./
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>uv<span style="color: #BBB"> </span>sync<span style="color: #BBB"> </span>--frozen<span style="color: #BBB"> </span>--no-dev
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>.<span style="color: #BBB"> </span>.
+
+<span style="color: #008000; font-weight: bold">FROM</span><span style="color: #BBB"> </span><span style="color: #BA2121">python:3.12-slim</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">AS</span><span style="color: #BBB"> </span><span style="color: #BA2121">runner</span>
+<span style="color: #008000; font-weight: bold">WORKDIR</span><span style="color: #BBB"> </span><span style="color: #BA2121">/app</span>
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>useradd<span style="color: #BBB"> </span>-r<span style="color: #BBB"> </span>-s<span style="color: #BBB"> </span>/bin/false<span style="color: #BBB"> </span>appuser
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>--from<span style="color: #666">=</span>builder<span style="color: #BBB"> </span>/app/.venv<span style="color: #BBB"> </span>/app/.venv
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>--from<span style="color: #666">=</span>builder<span style="color: #BBB"> </span>/app/src<span style="color: #BBB"> </span>./src
+<span style="color: #008000; font-weight: bold">ENV</span><span style="color: #BBB"> </span><span style="color: #19177C">PATH</span><span style="color: #666">=</span><span style="color: #BA2121">&quot;/app/.venv/bin:</span><span style="color: #19177C">$PATH</span><span style="color: #BA2121">&quot;</span>
+<span style="color: #008000; font-weight: bold">USER</span><span style="color: #BBB"> </span><span style="color: #BA2121">appuser</span>
+<span style="color: #008000; font-weight: bold">CMD</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;python&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;-m&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;src.main&quot;</span>]
+</pre></div>
+</code></pre>
+<h3>Layer Caching</h3>
+<pre><code class="language-dockerfile"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># WRONG: Cache busted on every code change</span>
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>.<span style="color: #BBB"> </span>.
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>npm<span style="color: #BBB"> </span>ci
+
+<span style="color: #3D7B7B; font-style: italic"># CORRECT: Dependencies cached separately</span>
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>package*.json<span style="color: #BBB"> </span>./
+<span style="color: #008000; font-weight: bold">RUN</span><span style="color: #BBB"> </span>npm<span style="color: #BBB"> </span>ci<span style="color: #BBB">                  </span>#<span style="color: #BBB"> </span>cached<span style="color: #BBB"> </span>unless<span style="color: #BBB"> </span>package.json<span style="color: #BBB"> </span>changes
+<span style="color: #008000; font-weight: bold">COPY</span><span style="color: #BBB"> </span>.<span style="color: #BBB"> </span>.<span style="color: #BBB">                    </span>#<span style="color: #BBB"> </span>only<span style="color: #BBB"> </span><span style="color: #008000">source</span><span style="color: #BBB"> </span>code<span style="color: #BBB"> </span>changes<span style="color: #BBB"> </span>bust<span style="color: #BBB"> </span>this<span style="color: #BBB"> </span>layer
+</pre></div>
+</code></pre>
+<h3>.dockerignore</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>node_modules
+.git
+.env
+*.md
+.vscode
+coverage
+dist
+__pycache__
+.pytest_cache
+*.pyc
+</pre></div>
+</code></pre>
+<h3>Security</h3>
+<pre><code class="language-dockerfile"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Always pin versions</span>
+<span style="color: #008000; font-weight: bold">FROM</span><span style="color: #BBB"> </span><span style="color: #BA2121">node:20.11.0-alpine</span><span style="color: #BBB">   </span><span style="color: #3D7B7B; font-style: italic"># NOT node:latest</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Don&#39;t run as root</span>
+<span style="color: #008000; font-weight: bold">USER</span><span style="color: #BBB"> </span><span style="color: #BA2121">appuser</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Read-only filesystem where possible</span>
+<span style="color: #3D7B7B; font-style: italic"># docker run --read-only --tmpfs /tmp myapp</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Scan images</span>
+<span style="color: #3D7B7B; font-style: italic"># docker scout cves myimage:latest</span>
+<span style="color: #3D7B7B; font-style: italic"># trivy image myimage:latest</span>
+</pre></div>
+</code></pre>
+<h2>CI/CD Pipeline Design</h2>
+<h3>GitHub Actions Structure</h3>
+<pre><code class="language-yaml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">name</span>:<span style="color: #BBB"> </span>CI/CD
+<span style="color: #008000; font-weight: bold">on</span>:
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">push</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">branches</span>:<span style="color: #BBB"> </span>[<span style="color: #19177C">main</span>]
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">pull_request</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">branches</span>:<span style="color: #BBB"> </span>[<span style="color: #19177C">main</span>]
+
+<span style="color: #008000; font-weight: bold">jobs</span>:
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">lint</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">runs-on</span>:<span style="color: #BBB"> </span>ubuntu-latest
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">steps</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>actions/checkout@v4
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>actions/setup-node@v4
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">with</span>:
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">node-version</span>:<span style="color: #BBB"> </span>20
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">cache</span>:<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;npm&quot;</span>
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">run</span>:<span style="color: #BBB"> </span>npm ci
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">run</span>:<span style="color: #BBB"> </span>npm run lint
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">test</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">runs-on</span>:<span style="color: #BBB"> </span>ubuntu-latest
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">needs</span>:<span style="color: #BBB"> </span>lint
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">services</span>:
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">postgres</span>:
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">image</span>:<span style="color: #BBB"> </span>postgres:16
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">env</span>:
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">POSTGRES_DB</span>:<span style="color: #BBB"> </span>testdb
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">ports</span>:<span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;5432:5432&quot;</span>]
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">options</span>:<span style="color: #BBB"> </span>&gt;-
+<span style="color: #BBB">          </span><span style="color: #800">--health-cmd pg_isready</span>
+<span style="color: #BBB">          </span><span style="color: #800">--health-interval 10s</span>
+<span style="color: #BBB">          </span><span style="color: #800">--health-timeout 5s</span>
+<span style="color: #BBB">          </span><span style="color: #800">--health-retries 5</span>
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">steps</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>actions/checkout@v4
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>actions/setup-node@v4
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">with</span>:
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">node-version</span>:<span style="color: #BBB"> </span>20
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">cache</span>:<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;npm&quot;</span>
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">run</span>:<span style="color: #BBB"> </span>npm ci
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">run</span>:<span style="color: #BBB"> </span>npm test
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">build</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">runs-on</span>:<span style="color: #BBB"> </span>ubuntu-latest
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">needs</span>:<span style="color: #BBB"> </span>test
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">steps</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>actions/checkout@v4
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>docker/setup-buildx-action@v3
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>docker/build-push-action@v5
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">with</span>:
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">push</span>:<span style="color: #BBB"> </span>${{ github.event_name == &#39;push&#39; }}
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">tags</span>:<span style="color: #BBB"> </span>ghcr.io/${{ github.repository }}:${{ github.sha }}
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">cache-from</span>:<span style="color: #BBB"> </span>type=gha
+<span style="color: #BBB">          </span><span style="color: #008000; font-weight: bold">cache-to</span>:<span style="color: #BBB"> </span>type=gha,mode=max
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">deploy</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">runs-on</span>:<span style="color: #BBB"> </span>ubuntu-latest
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">needs</span>:<span style="color: #BBB"> </span>build
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">if</span>:<span style="color: #BBB"> </span>github.ref == &#39;refs/heads/main&#39;
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">environment</span>:<span style="color: #BBB"> </span>production
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">steps</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">run</span>:<span style="color: #BBB"> </span>echo &quot;Deploy to production&quot;
+</pre></div>
+</code></pre>
+<h3>Caching Strategies</h3>
+<pre><code class="language-yaml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Node modules</span>
+-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>actions/setup-node@v4
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">with</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">cache</span>:<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;npm&quot;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># Python with uv</span>
+-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">name</span>:<span style="color: #BBB"> </span>Cache uv
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>actions/cache@v4
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">with</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">path</span>:<span style="color: #BBB"> </span>~/.cache/uv
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">key</span>:<span style="color: #BBB"> </span>uv-${{ runner.os }}-${{ hashFiles(&#39;uv.lock&#39;) }}
+
+<span style="color: #3D7B7B; font-style: italic"># Docker layer caching</span>
+-<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">uses</span>:<span style="color: #BBB"> </span>docker/build-push-action@v5
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">with</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">cache-from</span>:<span style="color: #BBB"> </span>type=gha
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">cache-to</span>:<span style="color: #BBB"> </span>type=gha,mode=max
+</pre></div>
+</code></pre>
+<h2>Deployment Strategies</h2>
+<h3>Blue-Green Deployment</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>1. Run two identical environments: Blue (live) and Green (idle)
+2. Deploy new version to Green
+3. Run smoke tests on Green
+4. Switch load balancer to Green
+5. Green is now live, Blue is idle
+6. Rollback: switch back to Blue
+
+Pros: Instant rollback, zero downtime
+Cons: 2x infrastructure cost during deploy
+</pre></div>
+</code></pre>
+<h3>Canary Deployment</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>1. Deploy new version to small subset (5% of traffic)
+2. Monitor error rates and latency
+3. Gradually increase: 5% -&gt; 25% -&gt; 50% -&gt; 100%
+4. Rollback: route all traffic back to old version
+
+Pros: Limited blast radius, real-world testing
+Cons: More complex routing, longer rollout
+</pre></div>
+</code></pre>
+<h3>Rolling Deployment</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>1. Replace instances one at a time
+2. Each new instance passes health checks before next starts
+3. Continue until all instances updated
+
+Pros: No extra infrastructure, gradual rollout
+Cons: Mixed versions during deploy, slower rollback
+</pre></div>
+</code></pre>
+<h3>Feature Flags</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// Simple feature flag implementation</span>
+<span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>features<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span>NEW_CHECKOUT<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">process.env.FF_NEW_CHECKOUT</span><span style="color: #BBB"> </span><span style="color: #666">===</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;true&quot;</span>,
+<span style="color: #BBB">  </span>DARK_MODE<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">process.env.FF_DARK_MODE</span><span style="color: #BBB"> </span><span style="color: #666">===</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;true&quot;</span>,
+};
+
+<span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>getCheckoutFlow(user<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">User</span>)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(features.NEW_CHECKOUT<span style="color: #BBB"> </span><span style="color: #666">&amp;&amp;</span><span style="color: #BBB"> </span>user.betaGroup)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>newCheckoutFlow(user);
+<span style="color: #BBB">  </span>}
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>legacyCheckoutFlow(user);
+}
+
+<span style="color: #3D7B7B; font-style: italic">// Use a proper service for production: LaunchDarkly, Unleash, Flagsmith</span>
+</pre></div>
+</code></pre>
+<h2>Infrastructure as Code</h2>
+<h3>Terraform Basics</h3>
+<pre><code class="language-hcl"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># main.tf</span>
+<span style="color: #008000">terraform</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #687822">required_version</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;&gt;= 1.5&quot;</span>
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">backend</span><span style="color: #BBB"> </span><span style="color: #19177C">&quot;s3&quot;</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #687822">bucket</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;myapp-terraform-state&quot;</span>
+<span style="color: #BBB">    </span><span style="color: #687822">key</span><span style="color: #BBB">    </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;prod/terraform.tfstate&quot;</span>
+<span style="color: #BBB">    </span><span style="color: #687822">region</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;us-east-1&quot;</span>
+<span style="color: #BBB">  </span>}
+}
+
+<span style="color: #008000; font-weight: bold">resource</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">&quot;aws_instance&quot;</span><span style="color: #BBB"> </span><span style="color: #19177C">&quot;web&quot;</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #687822">ami</span><span style="color: #BBB">           </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #19177C">var.ami_id</span>
+<span style="color: #BBB">  </span><span style="color: #687822">instance_type</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #19177C">var.instance_type</span>
+<span style="color: #BBB">  </span><span style="color: #008000">tags</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #687822">Name</span><span style="color: #BBB">        </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;web-${var.environment}&quot;</span>
+<span style="color: #BBB">    </span><span style="color: #687822">Environment</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #19177C">var.environment</span>
+<span style="color: #BBB">    </span><span style="color: #687822">ManagedBy</span><span style="color: #BBB">   </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;terraform&quot;</span>
+<span style="color: #BBB">  </span>}
+}
+
+<span style="color: #3D7B7B; font-style: italic"># variables.tf</span>
+<span style="color: #008000; font-weight: bold">variable</span><span style="color: #BBB"> </span><span style="color: #19177C">&quot;environment&quot;</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #687822">type</span><span style="color: #BBB">    </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>
+<span style="color: #BBB">  </span><span style="color: #687822">default</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;dev&quot;</span>
+}
+
+<span style="color: #008000; font-weight: bold">variable</span><span style="color: #BBB"> </span><span style="color: #19177C">&quot;instance_type&quot;</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #687822">type</span><span style="color: #BBB">    </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>
+<span style="color: #BBB">  </span><span style="color: #687822">default</span><span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;t3.micro&quot;</span>
+}
+</pre></div>
+</code></pre>
+<h3>Terraform Rules</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>1. Always use remote state (S3, GCS, Terraform Cloud)
+2. Lock state files to prevent concurrent modifications
+3. Use variables and modules for reusability
+4. Tag all resources with environment and ManagedBy
+5. Run `terraform plan` before `terraform apply`
+6. Never edit infrastructure manually (all changes via code)
+7. Use workspaces or separate state files per environment
+</pre></div>
+</code></pre>
+<h2>Monitoring &amp; Observability</h2>
+<h3>The Three Pillars</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>METRICS: Numeric measurements over time
+  - Request rate, error rate, latency (RED method)
+  - CPU, memory, disk, network (USE method)
+  - Business metrics (signups, purchases)
+  Tools: Prometheus, Datadog, CloudWatch
+
+LOGS: Discrete events with context
+  - Structured JSON format
+  - Correlation IDs across services
+  - Log levels: DEBUG, INFO, WARN, ERROR
+  Tools: ELK Stack, Loki, CloudWatch Logs
+
+TRACES: Request flow across services
+  - Distributed tracing with span context
+  - Latency breakdown per service
+  - Dependency mapping
+  Tools: Jaeger, Zipkin, Datadog APM
+</pre></div>
+</code></pre>
+<h3>Health Check Endpoint</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// Express health check</span>
+app.get(<span style="color: #BA2121">&quot;/health&quot;</span>,<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">async</span><span style="color: #BBB"> </span>(req,<span style="color: #BBB"> </span>res)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>checks<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span>uptime<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">process.uptime</span>(),
+<span style="color: #BBB">    </span>timestamp<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Date.now</span>(),
+<span style="color: #BBB">    </span>database<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;unknown&quot;</span>,
+<span style="color: #BBB">    </span>redis<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;unknown&quot;</span>,
+<span style="color: #BBB">  </span>};
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">try</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>db.query(<span style="color: #BA2121">&quot;SELECT 1&quot;</span>);
+<span style="color: #BBB">    </span>checks.database<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;healthy&quot;</span>;
+<span style="color: #BBB">  </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #BBB"> </span>(e)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span>checks.database<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;unhealthy&quot;</span>;
+<span style="color: #BBB">  </span>}
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">try</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>redis.ping();
+<span style="color: #BBB">    </span>checks.redis<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;healthy&quot;</span>;
+<span style="color: #BBB">  </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #BBB"> </span>(e)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span>checks.redis<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;unhealthy&quot;</span>;
+<span style="color: #BBB">  </span>}
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>isHealthy<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>checks.database<span style="color: #BBB"> </span><span style="color: #666">===</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;healthy&quot;</span>;
+<span style="color: #BBB">  </span>res.status(isHealthy<span style="color: #BBB"> </span><span style="color: #666">?</span><span style="color: #BBB"> </span>200<span style="color: #BBB"> </span><span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">503</span>).json(checks);
+});
+</pre></div>
+</code></pre>
+<h3>Alerting Rules</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Good alerts:
+- Error rate &gt; 1% for 5 minutes (actionable)
+- P99 latency &gt; 2s for 10 minutes (meaningful)
+- Disk usage &gt; 80% (preventive)
+
+Bad alerts:
+- CPU spike for 30 seconds (too noisy)
+- Any single 500 error (too sensitive)
+- &quot;Something might be wrong&quot; (not actionable)
+
+Alert fatigue is real. Every alert should require human action.
+</pre></div>
+</code></pre>
+<h2>Environment Management</h2>
+<h3>Dev/Staging/Prod Parity</h3>
+<pre><code class="language-yaml"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># docker-compose.yml for local development</span>
+<span style="color: #008000; font-weight: bold">services</span>:
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">app</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">build</span>:<span style="color: #BBB"> </span>.
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">env_file</span>:<span style="color: #BBB"> </span>.env
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">ports</span>:<span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;3000:3000&quot;</span>]
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">depends_on</span>:
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">postgres</span>:
+<span style="color: #BBB">        </span><span style="color: #008000; font-weight: bold">condition</span>:<span style="color: #BBB"> </span>service_healthy
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">postgres</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">image</span>:<span style="color: #BBB"> </span>postgres:16
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">environment</span>:
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">POSTGRES_DB</span>:<span style="color: #BBB"> </span>myapp
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">healthcheck</span>:
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">test</span>:<span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;CMD-SHELL&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;pg_isready&quot;</span>]
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">interval</span>:<span style="color: #BBB"> </span>5s
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">volumes</span>:
+<span style="color: #BBB">      </span>-<span style="color: #BBB"> </span>pgdata:/var/lib/postgresql/data
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">redis</span>:
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">image</span>:<span style="color: #BBB"> </span>redis:7-alpine
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">ports</span>:<span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;6379:6379&quot;</span>]
+
+<span style="color: #008000; font-weight: bold">volumes</span>:
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">pgdata</span>:
+</pre></div>
+</code></pre>
+<h3>Environment Variables</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span># .env.example (committed to git, no real values)
+DATABASE_URL=postgresql://user:placeholder@localhost:5432/myapp
+REDIS_URL=redis://localhost:6379
+LOG_LEVEL=debug
+API_KEY=your-key-here
+
+# .env (never committed, listed in .gitignore)
+# Contains real values for local development
+</pre></div>
+</code></pre>
+<h2>Common Anti-Patterns Summary</h2>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>AVOID                              DO INSTEAD
+-------------------------------------------------------------------
+FROM node:latest                   Pin exact versions (node:20.11.0-alpine)
+Running as root in container       Create and use non-root user
+No .dockerignore                   Exclude .git, node_modules, .env
+Single CI job does everything      Separate lint, test, build, deploy stages
+Manual deployment                  Automated pipeline with approvals
+No health checks                   Liveness + readiness probes
+Alerts on every error              Alert on error RATE thresholds
+Same config in all environments    Per-environment configuration
+No rollback plan                   Test rollback before every deploy
+Logs as unstructured strings       Structured JSON logs with correlation IDs
+</pre></div>
+</code></pre>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-state: new
+state: done
 created: 2026-04-18
 tracking:
   - https://github.com/SkogAI/claude/issues/32
@@ -33,3 +33,21 @@ Shell scripts that generate system prompt context for AI agents from project sta
 ## Notes
 
 *Imported from external tracker. See source link for full context.*
+
+## Completion
+
+- Context script suite exists under `.skogai/scripts/context/`
+- Orchestrator and component scripts are present, including root detection and prompt builder
+
+## Verification
+
+Confirmed presence of:
+
+- `context.sh` and all `context-*.sh` component scripts listed in task scope
+- `build-system-prompt.sh`
+- `find-agent-root.sh`
+- `tasks.py`
+
+## Notes
+
+*Imported from external tracker. Updated locally with completion details.*

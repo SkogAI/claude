@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>planning-with-files - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../../index.html">.skogai</a>
+  &rsaquo; <a href="../../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; planning-with-files
+</nav>
+
+<header>
+  <h1>planning-with-files</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">Manus-style file-based planning for complex tasks. Use task_plan.md, findings.md, and progress.md to maintain persistent context. Use for multi-step tasks, research, or work spanning many tool calls.</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/.dev-skogai/skogai-file-based-workflow</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/.dev-skogai/skogai-file-based-workflow" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>Planning with Files - Manus-Style File-Based Planning</h1>
+<p>Work like Manus (the $2B AI agent Meta acquired): Use persistent markdown files as your &quot;working memory on disk.&quot;</p>
+<h2>Core Principle</h2>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Context Window = RAM (volatile, limited)
+Filesystem = Disk (persistent, unlimited)
+
+→ Anything important gets written to disk.
+</pre></div>
+</code></pre>
+<h2>The 3-File Pattern</h2>
+<p>For every complex task, create THREE files in <code>.skogai/plan/&lt;project&gt;/</code>:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>.skogai/plan/&lt;project&gt;/
+  task_plan.md      → Track phases and progress
+  findings.md       → Store research and findings
+  progress.md       → Session log and test results
+</pre></div>
+</code></pre>
+<p><strong>Templates are available at:</strong> <code>.skogai/templates/</code></p>
+<h2>When to Use This Pattern</h2>
+<p><strong>Use for:</strong></p>
+<ul>
+<li>Multi-step tasks (3+ steps)</li>
+<li>Research tasks</li>
+<li>Building/creating projects</li>
+<li>Tasks spanning many tool calls</li>
+<li>Anything requiring organization</li>
+</ul>
+<p><strong>Skip for:</strong></p>
+<ul>
+<li>Simple questions</li>
+<li>Single-file edits</li>
+<li>Quick lookups</li>
+</ul>
+<h2>Critical Timing Rules</h2>
+<p>These rules simulate hooks to ensure proper workflow:</p>
+<h3>📌 At Task Start (SessionStart)</h3>
+<p><strong>MUST</strong> create all three files FIRST before any other work:</p>
+<ol>
+<li>Create <code>.skogai/plan/&lt;project&gt;/task_plan.md</code> using the template</li>
+<li>Create <code>.skogai/plan/&lt;project&gt;/findings.md</code> using the template</li>
+<li>Create <code>.skogai/plan/&lt;project&gt;/progress.md</code> using the template</li>
+<li>Fill in the Goal section in task_plan.md</li>
+</ol>
+<p><strong>Why:</strong> Without planning files, you'll forget goals after 50+ tool calls.</p>
+<h3>📌 Before Major Decisions (PreToolUse)</h3>
+<p><strong>MUST</strong> re-read <code>task_plan.md</code> before:</p>
+<ul>
+<li>Writing or editing files</li>
+<li>Executing commands</li>
+<li>Making architectural decisions</li>
+<li>Implementing features</li>
+</ul>
+<p><strong>How:</strong> Use the Read tool to refresh the plan in your context.</p>
+<p><strong>Why:</strong> This keeps goals fresh in your attention window (Manus's &quot;attention manipulation&quot;).</p>
+<h3>📌 After File Operations (PostToolUse)</h3>
+<p><strong>MUST</strong> update status immediately after:</p>
+<ul>
+<li>Writing files</li>
+<li>Editing files</li>
+<li>Completing a task phase</li>
+</ul>
+<p><strong>How:</strong> Edit task_plan.md to update phase status:</p>
+<pre><code class="language-markdown"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">-</span><span style="color: #BBB"> </span><span style="font-weight: bold">**Status:**</span> pending → in_progress → complete
+</pre></div>
+</code></pre>
+<p><strong>Why:</strong> Tracks progress and prevents losing track of what's done.</p>
+<h3>📌 Before Task End (Stop)</h3>
+<p><strong>MUST</strong> verify completion:</p>
+<ul>
+<li>Check all phases marked as <code>complete</code></li>
+<li>Review deliverables section</li>
+<li>Ensure no errors left unresolved</li>
+</ul>
+<p><strong>Why:</strong> Prevents premature completion with missing work.</p>
+<h2>The 6 Critical Rules</h2>
+<h3>1. Create Plan First</h3>
+<p>Never start a complex task without <code>task_plan.md</code>. Non-negotiable.</p>
+<pre><code class="language-markdown"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #800080; font-weight: bold">## Goal</span>
+
+[One sentence describing the end state]
+
+<span style="color: #800080; font-weight: bold">## Current Phase</span>
+
+Phase 1
+
+<span style="color: #800080; font-weight: bold">## Phases</span>
+
+<span style="color: #800080; font-weight: bold">### Phase 1: Requirements &amp; Discovery</span>
+
+<span style="color: #008000; font-weight: bold">- [ ]</span> Understand user intent
+<span style="color: #008000; font-weight: bold">- [ ]</span> Identify constraints
+<span style="color: #008000; font-weight: bold">-</span><span style="color: #BBB"> </span><span style="font-weight: bold">**Status:**</span> in_progress
+</pre></div>
+</code></pre>
+<h3>2. The 2-Action Rule</h3>
+<blockquote>
+<p>&quot;After every 2 view/browser/search operations, IMMEDIATELY save key findings to findings.md.&quot;</p>
+</blockquote>
+<p>This prevents visual/multimodal information from being lost.</p>
+<pre><code class="language-markdown"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #800080; font-weight: bold">## Visual/Browser Findings</span>
+
+<span style="color: #008000; font-weight: bold">-</span><span style="color: #BBB"> </span>Screenshot shows login form with email and password fields
+<span style="color: #008000; font-weight: bold">-</span><span style="color: #BBB"> </span>API documentation indicates JSON response format
+</pre></div>
+</code></pre>
+<h3>3. Read Before Decide</h3>
+<p>Before major decisions, read the plan file. This keeps goals in your attention window.</p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Before implementing a feature:</span>
+Read<span style="color: #BBB"> </span>tool<span style="color: #BBB"> </span>→<span style="color: #BBB"> </span>task_plan.md
+<span style="color: #3D7B7B; font-style: italic"># Now proceed with implementation</span>
+</pre></div>
+</code></pre>
+<h3>4. Update After Act</h3>
+<p>After completing any phase:</p>
+<ul>
+<li>Mark phase status: <code>pending</code> → <code>in_progress</code> → <code>complete</code></li>
+<li>Log any errors encountered</li>
+<li>Note files created/modified</li>
+</ul>
+<pre><code class="language-markdown"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #800080; font-weight: bold">## Errors Encountered</span>
+
+| Error             | Attempt | Resolution             |
+| ----------------- | ------- | ---------------------- |
+| FileNotFoundError | 1       | Created default config |
+</pre></div>
+</code></pre>
+<h3>5. Log ALL Errors</h3>
+<p>Every error goes in the plan file. This builds knowledge and prevents repetition.</p>
+<h3>6. Never Repeat Failures</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>if action_failed:
+    next_action != same_action
+</pre></div>
+</code></pre>
+<p>Track what you tried. Mutate the approach.</p>
+<h2>The 3-Strike Error Protocol</h2>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>ATTEMPT 1: Diagnose &amp; Fix
+  → Read error carefully
+  → Identify root cause
+  → Apply targeted fix
+
+ATTEMPT 2: Alternative Approach
+  → Same error? Try different method
+  → Different tool? Different library?
+  → NEVER repeat exact same failing action
+
+ATTEMPT 3: Broader Rethink
+  → Question assumptions
+  → Search for solutions
+  → Consider updating the plan
+
+AFTER 3 FAILURES: Escalate to User
+  → Explain what you tried
+  → Share the specific error
+  → Ask for guidance
+</pre></div>
+</code></pre>
+<h2>File Purposes</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+<th>When to Update</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task_plan.md</code></td>
+<td>Phases, progress, decisions</td>
+<td>After each phase</td>
+</tr>
+<tr>
+<td><code>findings.md</code></td>
+<td>Research, discoveries</td>
+<td>After ANY discovery</td>
+</tr>
+<tr>
+<td><code>progress.md</code></td>
+<td>Session log, test results</td>
+<td>Throughout session</td>
+</tr>
+</tbody>
+</table>
+<h2>Read vs Write Decision Matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Action</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Just wrote a file</td>
+<td>DON'T read</td>
+<td>Content still in context</td>
+</tr>
+<tr>
+<td>Viewed image/PDF</td>
+<td>Write findings NOW</td>
+<td>Multimodal → text before lost</td>
+</tr>
+<tr>
+<td>Browser returned data</td>
+<td>Write to file</td>
+<td>Screenshots don't persist</td>
+</tr>
+<tr>
+<td>Starting new phase</td>
+<td>Read plan/findings</td>
+<td>Re-orient if context stale</td>
+</tr>
+<tr>
+<td>Error occurred</td>
+<td>Read relevant file</td>
+<td>Need current state to fix</td>
+</tr>
+<tr>
+<td>Resuming after gap</td>
+<td>Read all planning files</td>
+<td>Recover state</td>
+</tr>
+</tbody>
+</table>
+<h2>The 5-Question Reboot Test</h2>
+<p>If you can answer these, your context management is solid:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Where am I?</td>
+<td>Current phase in task_plan.md</td>
+</tr>
+<tr>
+<td>Where am I going?</td>
+<td>Remaining phases</td>
+</tr>
+<tr>
+<td>What's the goal?</td>
+<td>Goal statement in plan</td>
+</tr>
+<tr>
+<td>What have I learned?</td>
+<td>findings.md</td>
+</tr>
+<tr>
+<td>What have I done?</td>
+<td>progress.md</td>
+</tr>
+</tbody>
+</table>
+<h2>Template Structure</h2>
+<p>Templates are in <code>.skogai/templates/</code>:</p>
+<ul>
+<li><code>task_plan.md</code> — phases, progress, decisions</li>
+<li><code>findings.md</code> — research, discoveries, resources</li>
+<li><code>progress.md</code> — session log, test results, error log</li>
+</ul>
+<p>Copy to <code>.skogai/plan/&lt;project&gt;/</code> and fill in.</p>
+<h2>Iron Laws</h2>
+<ol>
+<li><strong>ALWAYS</strong> create <code>task_plan.md</code>, <code>findings.md</code>, and <code>progress.md</code> before starting any complex task — filesystem memory survives context resets, working memory does not.</li>
+<li><strong>ALWAYS</strong> re-read <code>task_plan.md</code> before making major decisions — context windows are volatile, files persist indefinitely.</li>
+<li><strong>NEVER</strong> retry a failed action with identical inputs — log the failure in the plan file, diagnose the root cause, and mutate the approach.</li>
+<li><strong>ALWAYS</strong> write multimodal findings (screenshots, browser data) to <code>findings.md</code> immediately after capture — visual context cannot be retrieved once it leaves the attention window.</li>
+<li><strong>NEVER</strong> mark a task complete without verifying all phases are <code>complete</code> and all deliverables are present in the progress file.</li>
+</ol>
+<h2>Anti-Patterns</h2>
+<table>
+<thead>
+<tr>
+<th>Anti-Pattern</th>
+<th>Why It Fails</th>
+<th>Correct Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Using session task tools for persistence</td>
+<td>In-memory task tracking is volatile; lost on context reset</td>
+<td>Create <code>task_plan.md</code> file on disk — survives resets</td>
+</tr>
+<tr>
+<td>Stating goals once and forgetting them</td>
+<td>Context fills; goals drift without anchoring</td>
+<td>Re-read plan file before every major decision</td>
+</tr>
+<tr>
+<td>Hiding errors and retrying silently</td>
+<td>Silent retries repeat the same failure endlessly</td>
+<td>Log every error to plan file with attempt count</td>
+</tr>
+<tr>
+<td>Stuffing all research into context</td>
+<td>Context window fills; earlier content gets lost</td>
+<td>Store large content and discoveries in <code>findings.md</code></td>
+</tr>
+<tr>
+<td>Starting execution without a plan</td>
+<td>Undefined scope leads to wasted work and missed steps</td>
+<td>Create all three planning files FIRST before any action</td>
+</tr>
+</tbody>
+</table>
+<h2>The Manus Principles</h2>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filesystem as memory</td>
+<td>Store in files, not context</td>
+</tr>
+<tr>
+<td>Attention manipulation</td>
+<td>Re-read plan before decisions</td>
+</tr>
+<tr>
+<td>Error persistence</td>
+<td>Log failures in plan file</td>
+</tr>
+<tr>
+<td>Goal tracking</td>
+<td>Checkboxes show progress</td>
+</tr>
+<tr>
+<td>Completion verification</td>
+<td>Check all phases before stopping</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Remember:</strong> The more context you gather upfront and write to disk, the better your execution will be. Files are your persistent memory.</p>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

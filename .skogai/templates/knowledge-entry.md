@@ -1,18 +1,13 @@
 ---
-title:
-  - Descriptive Title
-date:
-  - YYYY-MM-DD
-project:
-  - project-name or "SkogAI"
+title: <entry-title>
+date: YYYY-MM-DD
+project: SkogAI
 tags:
-  - tag1
-  - tag2
-  - tag3
-source:
-  - where this came from
+  - <tag-1>
+  - <tag-2>
+source: <where-this-came-from>
 status: active
-permalink: claude/projects/dot-skogai/templates/knowledge-entry
+permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
 ---
 
 [@todo]

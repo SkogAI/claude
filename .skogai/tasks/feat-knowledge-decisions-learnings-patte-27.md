@@ -1,5 +1,5 @@
 ---
-state: new
+state: done
 created: 2026-04-18
 tracking:
   - https://github.com/SkogAI/claude/issues/27
@@ -30,3 +30,17 @@ Structured knowledge base for a project: architectural decisions, session learni
 ## Notes
 
 *Imported from external tracker. See source link for full context.*
+
+## Completion
+
+- `knowledge/` exists with decision, lesson, and pattern structures populated
+- `knowledge/DECISIONS.md` and `knowledge/SKOGAI.md` present
+- seed entries and style pattern files are in place under `knowledge/decisions/`, `knowledge/lessons/`, and `knowledge/patterns/style/`
+
+## Verification
+
+- Confirmed files listed in task inventory are present in `knowledge/`
+
+## Notes
+
+*Imported from external tracker. Updated locally with completion details.*

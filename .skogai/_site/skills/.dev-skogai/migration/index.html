@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>migration - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../../index.html">.skogai</a>
+  &rsaquo; <a href="../../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; migration
+</nav>
+
+<header>
+  <h1>migration</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">Orchestrate the full migration from /home/skogix/claude to /home/claude — healthcheck, deployment gate, and execution in one workflow</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/.dev-skogai/migration</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/.dev-skogai/migration" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>Migration: /home/skogix/claude → /home/claude</h1>
+<p>Full migration workflow. Do not start deployment without completing every phase.</p>
+<h2>Phase 1: Automated checks</h2>
+<p>Run <code>./bin/healthcheck</code> and wait for exit code.</p>
+<ul>
+<li>Exit 0 → proceed to Phase 2</li>
+<li>Exit non-zero → triage failures by category (environment, identity paths, routing, memory blocks), suggest fixes, stop here until resolved</li>
+</ul>
+<h2>Phase 2: Manual gate checks</h2>
+<p>Walk through each item in <code>docs/deployment-gate.md</code> → Manual Checks section. Check each one explicitly:</p>
+<p><strong>Routing validation</strong></p>
+<ul>
+<li>Can you navigate root CLAUDE.md → any artifact in 2 hops?</li>
+<li>No CLAUDE.md file exceeds 50 lines?</li>
+<li>Session startup reads only the root router?</li>
+</ul>
+<p><strong>Identity validation</strong></p>
+<ul>
+<li>Soul sections: exactly 10 files under <code>personal/soul/</code>?</li>
+<li><code>personal/profile.md</code> is current, not a stale placeholder?</li>
+<li>Core frameworks in <code>personal/core/</code> are complete documents, not stubs?</li>
+</ul>
+<p><strong>Persistence validation</strong></p>
+<ul>
+<li><code>personal/journal/CONVENTIONS.md</code> exists and is accurate?</li>
+<li>LORE gating: default routing does NOT auto-load <code>personal/memory-blocks/</code>?</li>
+<li>Wrap-up convention documented?</li>
+</ul>
+<p><strong>Permission model</strong></p>
+<ul>
+<li><code>docs/permissions.md</code> exists?</li>
+<li>Shared space conventions documented?</li>
+</ul>
+<p>Report a table:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+</table>
+<p>If anything is FAIL or PENDING: stop, produce a punch list of what must be fixed. Do not proceed to Phase 3.</p>
+<h2>Phase 3: Deployment</h2>
+<p>All checks green → execute the deployment mechanics:</p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>git<span style="color: #BBB"> </span>clone<span style="color: #BBB"> </span>&lt;repo-url&gt;<span style="color: #BBB"> </span>/home/claude
+chown<span style="color: #BBB"> </span>-R<span style="color: #BBB"> </span>claude:claude<span style="color: #BBB"> </span>/home/claude
+usermod<span style="color: #BBB"> </span>-aG<span style="color: #BBB"> </span>skogai<span style="color: #BBB"> </span>claude
+su<span style="color: #BBB"> </span>-<span style="color: #BBB"> </span>claude<span style="color: #BBB"> </span>-c<span style="color: #BBB"> </span><span style="color: #BA2121">&#39;/home/claude/bin/healthcheck&#39;</span>
+</pre></div>
+</code></pre>
+<p>Confirm each command before running. After clone: verify <code>/home/claude/CLAUDE.md</code> exists. After chown: verify ownership. After healthcheck: exit 0 required.</p>
+<p>If the post-deploy healthcheck fails: do not declare success. Triage and fix in <code>/home/claude</code> directly or note what needs a re-clone.</p>
+<h2>Phase 4: Post-deployment</h2>
+<ul>
+<li>Update <code>.planning/STATE.md</code> in the staging repo with deployment date and outcome</li>
+<li>Record a journal entry: <code>personal/journal/YYYY-MM-DD/migration-to-home-claude.md</code></li>
+</ul>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

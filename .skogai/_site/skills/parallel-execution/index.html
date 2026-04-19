@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>parallel-execution - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">.skogai</a>
+  &rsaquo; <a href="../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; parallel-execution
+</nav>
+
+<header>
+  <h1>parallel-execution</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">Patterns for parallel subagent execution using Task tool with run_in_background. Use when coordinating multiple independent tasks, spawning dynamic subagents, or implementing features that can be para</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/parallel-execution</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/parallel-execution" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>Parallel Execution Patterns</h1>
+<h3>When to Load</h3>
+<ul>
+<li><strong>Trigger</strong>: Multi-agent tasks, concurrent operations, spawning subagents, parallelizing independent work</li>
+<li><strong>Skip</strong>: Single-step tasks or sequential workflows with no parallelization opportunity</li>
+</ul>
+<h2>Core Concept</h2>
+<p>Parallel execution spawns multiple subagents simultaneously using the Task tool with <code>run_in_background: true</code>. This enables N tasks to run concurrently, dramatically reducing total execution time.</p>
+<p><strong>Critical Rule</strong>: ALL Task calls MUST be in a SINGLE assistant message for true parallelism. If Task calls are in separate messages, they run sequentially.</p>
+<h2>Execution Protocol</h2>
+<h3>Step 1: Identify Parallelizable Tasks</h3>
+<p>Before spawning, verify tasks are independent:</p>
+<ul>
+<li>No task depends on another's output</li>
+<li>Tasks target different files or concerns</li>
+<li>Can run simultaneously without conflicts</li>
+</ul>
+<h3>Step 2: Prepare Dynamic Subagent Prompts</h3>
+<p>Each subagent receives a custom prompt defining its role:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>You are a [ROLE] specialist for this specific task.
+
+Task: [CLEAR DESCRIPTION]
+
+Context:
+[RELEVANT CONTEXT ABOUT THE CODEBASE/PROJECT]
+
+Files to work with:
+[SPECIFIC FILES OR PATTERNS]
+
+Output format:
+[EXPECTED OUTPUT STRUCTURE]
+
+Focus areas:
+- [PRIORITY 1]
+- [PRIORITY 2]
+</pre></div>
+</code></pre>
+<h3>Step 3: Launch All Tasks in ONE Message</h3>
+<p><strong>CRITICAL</strong>: Make ALL Task calls in the SAME assistant message:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>I&#39;m launching N parallel subagents:
+
+[Task 1]
+description: &quot;Subagent A - [brief purpose]&quot;
+prompt: &quot;[detailed instructions for subagent A]&quot;
+run_in_background: true
+
+[Task 2]
+description: &quot;Subagent B - [brief purpose]&quot;
+prompt: &quot;[detailed instructions for subagent B]&quot;
+run_in_background: true
+
+[Task 3]
+description: &quot;Subagent C - [brief purpose]&quot;
+prompt: &quot;[detailed instructions for subagent C]&quot;
+run_in_background: true
+</pre></div>
+</code></pre>
+<h3>Step 4: Retrieve Results with TaskOutput</h3>
+<p>After launching, retrieve each result:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>[Wait for completion, then retrieve]
+
+TaskOutput: task_1_id
+TaskOutput: task_2_id
+TaskOutput: task_3_id
+</pre></div>
+</code></pre>
+<h3>Step 5: Synthesize Results</h3>
+<p>Combine all subagent outputs into unified result:</p>
+<ul>
+<li>Merge related findings</li>
+<li>Resolve conflicts between recommendations</li>
+<li>Prioritize by severity/importance</li>
+<li>Create actionable summary</li>
+</ul>
+<h2>Dynamic Subagent Patterns</h2>
+<h3>Pattern 1: Task-Based Parallelization</h3>
+<p>When you have N tasks to implement, spawn N subagents:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Plan:
+1. Implement auth module
+2. Create API endpoints
+3. Add database schema
+4. Write unit tests
+5. Update documentation
+
+Spawn 5 subagents (one per task):
+- Subagent 1: Implements auth module
+- Subagent 2: Creates API endpoints
+- Subagent 3: Adds database schema
+- Subagent 4: Writes unit tests
+- Subagent 5: Updates documentation
+</pre></div>
+</code></pre>
+<h3>Pattern 2: Directory-Based Parallelization</h3>
+<p>Analyze multiple directories simultaneously:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Directories: src/auth, src/api, src/db
+
+Spawn 3 subagents:
+- Subagent 1: Analyzes src/auth
+- Subagent 2: Analyzes src/api
+- Subagent 3: Analyzes src/db
+</pre></div>
+</code></pre>
+<h3>Pattern 3: Perspective-Based Parallelization</h3>
+<p>Review from multiple angles simultaneously:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Perspectives: Security, Performance, Testing, Architecture
+
+Spawn 4 subagents:
+- Subagent 1: Security review
+- Subagent 2: Performance analysis
+- Subagent 3: Test coverage review
+- Subagent 4: Architecture assessment
+</pre></div>
+</code></pre>
+<h2>TodoWrite Integration</h2>
+<p>When using parallel execution, TodoWrite behavior differs:</p>
+<p><strong>Sequential execution</strong>: Only ONE task <code>in_progress</code> at a time
+<strong>Parallel execution</strong>: MULTIPLE tasks can be <code>in_progress</code> simultaneously</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span># Before launching parallel tasks
+todos = [
+  { content: &quot;Task A&quot;, status: &quot;in_progress&quot; },
+  { content: &quot;Task B&quot;, status: &quot;in_progress&quot; },
+  { content: &quot;Task C&quot;, status: &quot;in_progress&quot; },
+  { content: &quot;Synthesize results&quot;, status: &quot;pending&quot; }
+]
+
+# After each TaskOutput retrieval, mark as completed
+todos = [
+  { content: &quot;Task A&quot;, status: &quot;completed&quot; },
+  { content: &quot;Task B&quot;, status: &quot;completed&quot; },
+  { content: &quot;Task C&quot;, status: &quot;completed&quot; },
+  { content: &quot;Synthesize results&quot;, status: &quot;in_progress&quot; }
+]
+</pre></div>
+</code></pre>
+<h2>When to Use Parallel Execution</h2>
+<p><strong>Good candidates:</strong></p>
+<ul>
+<li>Multiple independent analyses (code review, security, tests)</li>
+<li>Multi-file processing where files are independent</li>
+<li>Exploratory tasks with different perspectives</li>
+<li>Verification tasks with different checks</li>
+<li>Feature implementation with independent components</li>
+</ul>
+<p><strong>Avoid parallelization when:</strong></p>
+<ul>
+<li>Tasks have dependencies (Task B needs Task A's output)</li>
+<li>Sequential workflows are required (commit -&gt; push -&gt; PR)</li>
+<li>Tasks modify the same files (risk of conflicts)</li>
+<li>Order matters for correctness</li>
+</ul>
+<h2>Performance Benefits</h2>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>5 Tasks @ 30s each</th>
+<th>Total Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sequential</td>
+<td>30s + 30s + 30s + 30s + 30s</td>
+<td>~150s</td>
+</tr>
+<tr>
+<td>Parallel</td>
+<td>All 5 run simultaneously</td>
+<td>~30s</td>
+</tr>
+</tbody>
+</table>
+<p>Parallel execution is approximately Nx faster where N is the number of independent tasks.</p>
+<h2>Example: Feature Implementation</h2>
+<p><strong>User request</strong>: &quot;Implement user authentication with login, registration, and password reset&quot;</p>
+<p><strong>Orchestrator creates plan</strong>:</p>
+<ol>
+<li>Implement login endpoint</li>
+<li>Implement registration endpoint</li>
+<li>Implement password reset endpoint</li>
+<li>Add authentication middleware</li>
+<li>Write integration tests</li>
+</ol>
+<p><strong>Parallel execution</strong>:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Launching 5 subagents in parallel:
+
+[Task 1] Login endpoint implementation
+[Task 2] Registration endpoint implementation
+[Task 3] Password reset endpoint implementation
+[Task 4] Auth middleware implementation
+[Task 5] Integration test writing
+
+All tasks run simultaneously...
+
+[Collect results via TaskOutput]
+
+[Synthesize into cohesive implementation]
+</pre></div>
+</code></pre>
+<h2>Troubleshooting</h2>
+<p><strong>Tasks running sequentially?</strong></p>
+<ul>
+<li>Verify ALL Task calls are in SINGLE message</li>
+<li>Check <code>run_in_background: true</code> is set for each</li>
+</ul>
+<p><strong>Results not available?</strong></p>
+<ul>
+<li>Use TaskOutput with correct task IDs</li>
+<li>Wait for tasks to complete before retrieving</li>
+</ul>
+<p><strong>Conflicts in output?</strong></p>
+<ul>
+<li>Ensure tasks don't modify same files</li>
+<li>Add conflict resolution in synthesis step</li>
+</ul>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

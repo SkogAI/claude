@@ -1,0 +1,2634 @@
+[04:36:35] INFO     Skipping all confirmation prompts.                                                                                                                             main.py:479
+           INFO     Using model default tool_format=tool for openai-subscription/gpt-5.3-codex                                                                                cli_setup.py:149
+[04:36:35] Using browser tool with lynx                                                                                                                                                       
+           WARNING  Failed to register hook 'rag_context' for tool 'rag': 'generation_pre' is not a valid HookType                                                                 base.py:287
+           Using model: openai-subscription/gpt-5.3-codex                                                                                                                                     
+           INFO     OpenAI subscription provider initialized with stored tokens                                                                                 llm_openai_subscription.py:758
+           WARNING  Parallel agent detected: claude-code PID 632962 (interactive, model=None)                                                                          workspace_agents.py:783
+           WARNING  Parallel agent detected: gptme PID 671879 (server, model=None)                                                                                     workspace_agents.py:783
+           Using logdir: ~/.local/share/gptme/logs/2026-04-19-flying-blue-whale                                                                                                               
+           Using workspace: ~/claude                                                                                                                                                          
+Skipped 5 hidden system messages, show with --show-hidden
+--- ^^^ past messages ^^^ ---
+skogix: 
+Work on this task:
+
+# chore-remove-remaining-skogix-local-path-46
+
+# chore: remove remaining skogix-local paths from settings.json
+
+**Source**: [Github #46](https://github.com/SkogAI/claude/issues/46)
+
+## Description
+
+## Problem
+
+Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg. Neither breaks this container (one is ignored, the other fails gracefully on load), but both should be cleaned
+up.
+
+## Remaining paths
+
+### 1. `autoMemoryDirectory` (line ~152)
+
+```json
+"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+```
+
+````/home/skogix/
+.Xauthority
+.agents/.skill-lock.json
+.agents/skills/find-skills/SKILL.md
+.agents/skills/memory-defrag/SKILL.md
+.agents/skills/memory-ingest/SKILL.md
+.agents/skills/memory-lifecycle/SKILL.md
+.agents/skills/memory-literary-analysis/SKILL.md
+.agents/skills/memory-metadata-search/SKILL.md
+.agents/skills/memory-notes/SKILL.md
+.agents/skills/memory-reflect/SKILL.md
+.agents/skills/memory-research/SKILL.md
+.agents/skills/memory-schema/SKILL.md
+.agents/skills/memory-tasks/SKILL.md
+.agents/skills/personal-data/SKILL.md
+.aicontext/config.json
+.aicontext/data/activity.db
+.aicontext/data/reference_data/claude_code/00d707c2-bc0a-402a-97c8-8929328d92af.json
+.aicontext/data/reference_data/claude_code/04445f91-f55b-41a0-be3a-22311b098f63.json
+.aicontext/data/reference_data/claude_code/34facbb8-9d2e-4572-857c-e30c301e82d2.json
+.aicontext/data/reference_data/claude_code/37c45a97-589b-4298-9872-edde53bec231.json
+.aicontext/data/reference_data/claude_code/56f07504-9f19-46af-a74b-4e11a7ee3bd9.json
+.aicontext/data/reference_data/claude_code/62ea65f5-a8b0-4ddf-a1e0-96d7cb5a64e0.json
+.aicontext/data/reference_data/claude_code/7aa35c3c-ac33-468c-9925-4363ac5869f6.json
+.aicontext/data/reference_data/claude_code/7d4df5a7-cd45-4d13-a2f5-dc548eb30a29.json
+.aicontext/data/reference_data/claude_code/8129a2be-376b-407c-a122-589b1c923ce8.json
+.aicontext/data/reference_data/claude_code/8979ad76-ffd2-4bc0-b023-76a604cdbf48.json
+.aicontext/data/reference_data/claude_code/933c83cc-dbe7-4ef8-af23-cc063d1e6535.json
+.aicontext/data/reference_data/claude_code/a23409e3-fc32-4294-9220-f11c1649dca7.json
+.aicontext/data/reference_data/claude_code/a3902c8f-9cd1-4f52-97e1-0601027ab0b6.json
+.aicontext/data/reference_data/claude_code/a7fdf6f4-2bcc-4c76-8723-777aeb6531c3.json
+.aicontext/data/reference_data/claude_code/b39ef3cf-47f4-4665-89be-419680483b1c.json
+.aicontext/data/reference_data/claude_code/b823c27a-77a2-4c27-9d25-089a36b71de5.json
+.aicontext/data/reference_data/claude_code/d1c6b184-19de-4a21-b0df-0f87dea41e53.json
+.aicontext/data/reference_data/claude_code/d2a829a4-0adf-4e36-9225-9ac0bfea6e3c.json
+.aicontext/data/reference_data/claude_code/f69c9da7-a594-49d5-bc71-cc480ee8b381.json
+.aicontext/data/reference_data/claude_code/f909895a-c25c-4720-bab4-4b07ce2d1411.json
+.aicontext/data/reference_data/claude_code/fd50fea2-ce6e-4023-8ee6-9e2164b17793.json
+.aicontext/data/reference_data/codex/019d8ebe-97d9-7783-9318-848e59704cd4.json
+.aicontext/data/reference_data/codex/019d8ed1-9869-7031-b8ca-0759d6a08988.json
+.aicontext/data/reference_data/codex/019d8f1e-811d-71c2-bdf5-1e01d803bb32.json
+.aicontext/data/reference_data/codex/019d8f1f-9693-71f1-9e52-c3a37c692b1f.json
+.aicontext/data/reference_data/codex/019d8f1f-a116-7593-ac65-62138d1b1b90.json
+.aicontext/data/reference_data/codex/019d8f20-430c-7d31-ac1e-86b3a6237dd0.json
+.aicontext/data/reference_data/codex/019d8f20-4529-7062-a306-469c649d7a90.json
+.aicontext/data/reference_data/codex/019d8f20-a078-7642-a6f5-cef474b4f2b8.json
+.aicontext/data/reference_data/codex/019d8f20-a273-7ca2-8077-d0e173f3da5f.json
+.aicontext/data/reference_data/codex/019d8f20-edeb-7052-95ae-7dbab10acf01.json
+.aicontext/data/reference_data/codex/019d8f20-f037-7f83-bb2c-2a755d840b10.json
+.aicontext/data/reference_data/codex/019d8f21-4a74-7e22-843c-2485a6b1b985.json
+.aicontext/data/reference_data/codex/019d8f21-4caa-7ad1-b5e1-460b62cdf414.json
+... (1709674 more files)
+````
+
+````.claude/settings.json
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "respectGitignore": true,
+  "cleanupPeriodDays": 90,
+  "env": {
+    "CLAUDE_BASH_NO_LOGIN": "1",
+    "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_NEW_INIT": "true",
+    "CLAUDE_CODE_SHELL": "/usr/bin/zsh",
+    "CLAUDE_CODE_SIMPLE": "false",
+    "DISABLE_AUTOUPDATER": "0",
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(wc -l .planning/codebase/*.md)",
+      "Bash(gita *)",
+      "Bash(gptodo *)",
+      "Bash(gh *)",
+      "Bash(skogai *)",
+      "Bash(argc *)",
+      "Bash(skogcli *)",
+      "Skill(skogai-routing:*)",
+      "Skill(skogai-bats-testing:*)",
+      "Bash(wt *)"
+    ],
+    "defaultMode": "default"
+  },
+  "model": "sonnet",
+  "enableAllProjectMcpServers": true,
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/claude-todo/bin/claude-md-linecheck",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // empty' | { read -r f && [ -n \"$f\" ] && npx prettier --write --ignore-unknown \"$f\"; } 2>/dev/null || true",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "f=$(jq -r '.tool_input.file_path // empty'); [ -z \"$f\" ] && exit 0; [[ \"$f\" == *.sh || \"$f\" == */bin/* ]] || exit 0; shellcheck \"$f\" || true",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "atuin hook claude-code"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "atuin hook claude-code"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "atuin hook claude-code"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".skogai/hooks/rtk-rewrite.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "out=$(\"$CLAUDE_PROJECT_DIR\"/claude-todo/bin/healthcheck 2>&1); code=$?; if [ \"$code\" -ne 0 ]; then jq -nc --arg m \"$out\" '{\"systemMessage\":\"⚠ healthcheck 
+failed\\n\\($m)\"}'; fi",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  },
+  "disableAllHooks": false,
+  "statusLine": {
+    "type": "command",
+    "command": "wt list statusline --format=claude-code"
+  },
+  "enabledPlugins": {
+    "core@skogai-marketplace": false,
+    "dreamers@skogai-marketplace": false,
+    "frontend-design@claude-plugins-official": false,
+    "worktrunk@worktrunk": true,
+    "codex@openai-codex": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "skogai-marketplace": {
+      "source": {
+        "source": "git",
+        "url": "git@github.com:SkogAI/marketplace.git"
+      }
+    },
+    "worktrunk": {
+      "source": {
+        "source": "directory",
+        "path": "/home/skogix/.local/src/worktrunk"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
+  "spinnerTipsEnabled": true,
+  "syntaxHighlightingDisabled": false,
+  "alwaysThinkingEnabled": true,
+  "advisorModel": "opus",
+  "autoMemoryEnabled": true,
+  "autoMemoryDirectory": "~/claude/.skogai/memory",
+  "autoDreamEnabled": true,
+  "showThinkingSummaries": true,
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true,
+  "defaultView": "transcript"
+}
+````
+[04:38:31] INFO     Auto-included 12 lessons:                                                                                                                                   lessons.py:411
+                    - Memory Literary Analysis                                                                                                                                                
+                    - Memory Notes                                                                                                                                                            
+                    - Memory Ingest                                                                                                                                                           
+                    - Memory Schema                                                                                                                                                           
+                    - Memory Metadata Search                                                                                                                                                  
+                    - Memory Defrag                                                                                                                                                           
+                    - Memory Reflect                                                                                                                                                          
+                    - Memory Tasks                                                                                                                                                            
+                    - Memory Research                                                                                                                                                         
+                    - Memory Lifecycle                                                                                                                                                        
+                    - Find Skills                                                                                                                                                             
+                    - AI Context                                                                                                                                                              
+Skipped 1 hidden system messages, show with --show-hidden
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_AVjRAD8WFgaJZgR7oMaKhhEo): {"command":"rtk pwd"}
+                                                                                
+/home/skogix/claude
+System: 
+Ran command: `rtk pwd`
+
+`/home/skogix/claude`
+Skipped 1 hidden system messages, show with --show-hidden
+Assistant: Thinking...
+[04:38:44] INFO     Auto-generated conversation name: Current directory command                                                                                             auto_naming.py:337
+                                                                                
+Assistant: 
+
+@shell(call_iQJzNQeTgFCSVsOLLKV6xg89): {"command":"rtk rg -n \"/home/skogix|~\\/claude\" /home/skogix/claude/.claude/settings.json"}                                                                                
+135:        "path": "/home/skogix/.local/src/worktrunk"
+150:  "autoMemoryDirectory": "~/claude/.skogai/memory",
+System: 
+Ran command: `rtk rg -n "/home/skogix|~\/claude" /home/skogix/claude/.claude/settings.json`
+
+```stdout
+135:        "path": "/home/skogix/.local/src/worktrunk"
+150:  "autoMemoryDirectory": "~/claude/.skogai/memory",
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@gh(call_rKSpptyBVDe388btCj19qEcw): {"url":"gh issue view 46"}                                                                                
+System: ❌ Error: No command provided
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@gh(call_UWZJJypGyLLUac2D9dDoBEc4): {"url":"issue view 46"}                                                                                
+System: ❌ Error: No command provided
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_cPlAg4I5UiKAaN4kFuOoFcj7): {"command":"rtk gh issue view 46"}                                                                                
+[open] Issue #46: chore: remove remaining skogix-local paths from settings.json
+  Author: @Skogix
+  Status: OPEN
+  URL: https://github.com/SkogAI/claude/issues/46
+
+  Description:
+    ## Problem
+    
+    Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg. Neither breaks this container (one is ignored, the other fails gracefully on load), but both should be cleaned up.
+    
+    ## Remaining paths
+    
+    ### 1. `autoMemoryDirectory` (line ~152)
+    
+    ```json
+    "autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+    ```
+    
+    - Points to the old home path
+    - Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user settings. It is not accepted from project settings (`.claude/settings.json`) to prevent a shared project from redirecting auto memory writes to sensitive locations."**
+    - So it is silently ignored — has no effect where it is
+    - Should either be **removed** from `.claude/settings.json` or **moved** to `.claude/settings.local.json` / user settings, with a portable path (tilde-expanded supported, e.g. `~/.skogai/memory`)
+    
+    ### 2. Worktrunk marketplace (line ~137)
+    
+    ```json
+    "worktrunk": {
+      "source": { "source": "directory", "path": "/home/skogix/.local/src/worktrunk" }
+    }
+    ```
+    
+    - Only exists on skogix's workstation
+    - On any other container this marketplace just fails to resolve (non-fatal but noisy)
+    - Options:
+      - Move to `settings.local.json` (user-specific override)
+      - Publish worktrunk as a git-source marketplace and swap the config to that
+      - Keep as-is and document that it's skogix-only
+    
+    ## Already fixed in branch `claude/review-home-folder-changes-tVavu`
+    
+    - `CLAUDE_CODE_TMPDIR` removed (was hardcoded to `/home/skogix/claude/tmp`, caused every Bash call to fail its cwd-tracking write) — commit `b118503`
+    - `additionalDirectories` array removed — commit `b118503`
+    - Hook paths for `claude-md-linecheck` and `healthcheck` switched to `$CLAUDE_PROJECT_DIR` — commit `45e360a`
+    
+    ## Related
+    
+    Not a duplicate of #25, which covers documentation rather than portability.
+System: 
+Ran command: `rtk gh issue view 46`
+
+```stdout
+ Issue #46: chore: remove remaining skogix-local paths from settings.json
+  Author: @Skogix
+  Status: OPEN
+  URL: https://github.com/SkogAI/claude/issues/46
+
+  Description:
+    ## Problem
+    
+    Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg. Neither breaks this container (one is ignored, the other fails gracefully on load), but both should be 
+cleaned up.
+    
+    ## Remaining paths
+    
+    ### 1. `autoMemoryDirectory` (line ~152)
+```json
+    "autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+    ```
+    
+    - Points to the old home path
+    - Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user settings. It is not accepted from project settings 
+(`.claude/settings.json`) to prevent a shared project from redirecting auto memory writes to sensitive locations."**
+    - So it is silently ignored — has no effect where it is
+    - Should either be **removed** from `.claude/settings.json` or **moved** to `.claude/settings.local.json` / user settings, with a portable path (tilde-expanded supported, e.g. 
+`~/.skogai/memory`)
+    
+    ### 2. Worktrunk marketplace (line ~137)
+```json
+    "worktrunk": {
+      "source": { "source": "directory", "path": "/home/skogix/.local/src/worktrunk" }
+    }
+    ```
+    
+    - Only exists on skogix's workstation
+    - On any other container this marketplace just fails to resolve (non-fatal but noisy)
+    - Options:
+      - Move to `settings.local.json` (user-specific override)
+      - Publish worktrunk as a git-source marketplace and swap the config to that
+      - Keep as-is and document that it's skogix-only
+    
+    ## Already fixed in branch `claude/review-home-folder-changes-tVavu`
+    
+    - `CLAUDE_CODE_TMPDIR` removed (was hardcoded to `/home/skogix/claude/tmp`, caused every Bash call to fail its cwd-tracking write) — commit `b118503`
+    - `additionalDirectories` array removed — commit `b118503`
+    - Hook paths for `claude-md-linecheck` and `healthcheck` switched to `$CLAUDE_PROJECT_DIR` — commit `45e360a`
+    
+    ## Related
+    
+    Not a duplicate of #25, which covers documentation rather than portability.
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_2vZJORA1Hf16PDS5TNEQwA2b): {"command":"rtk ls -la /home/skogix/claude/.claude && rtk test -f /home/skogix/claude/.claude/CLAUDE.md && echo HAS_CLAUDE_MD || true"}                                                                                
+agents/
+commands/
+hooks/
+worktrees/
+CLAUDE.md  2.4K
+settings.json  4.0K
+settings.local.json  1.6K
+skills -> ../.skogai/skills  17B
+OUTPUT (last 5 lines):
+  	--verbose
+  	--version
+  Shell options:
+  	-ilrsD or -c command or -O shopt_option		(invocation only)
+  	-abefhkmnptuvxBCEHPT or -o option
+
+System: 
+Ran command: `rtk ls -la /home/skogix/claude/.claude && rtk test -f /home/skogix/claude/.claud... (1 line)`
+
+```stdout
+agents/
+commands/
+hooks/
+worktrees/
+CLAUDE.md  2.4K
+settings.json  4.0K
+settings.local.json  1.6K
+skills -> ../.skogai/skills  17B
+OUTPUT (last 5 lines):
+        --verbose
+        --version
+  Shell options:
+        -ilrsD or -c command or -O shopt_option         (invocation only)
+        -abefhkmnptuvxBCEHPT or -o option
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_JPoeBJKOUO7Lc7nJsiJztrXj): {"command":"rtk sed -n '1,220p' /home/skogix/claude/.claude/CLAUDE.md"}                                                                                
+# claude — global context
+
+<identity>
+
+I am claude, running as a Linux user on skogix-workstation. This is not a sandbox — it's a real Arch Linux system. My home directory (~/) is a git repo (SkogAI/claude) and my primary workspace.
+
+User: Skogix (Emil Skogsund) — email: claude@skogai.se
+Shell: zsh, vim mode, dark-daltonized theme
+
+</identity>
+
+<skogix_communication>
+
+- lowercase = generic/context-dependent. Uppercase is significant: `CLAUDE.md` means exactly that, `claude` includes both.
+- `@`-prefix = intent to act. `$`-prefix = define or reference.
+- functional programmer: thinks in data + transformations, not control flow. prefers pure functions and immutable data.
+- direct and to the point — no fluff. answer immediately, explain after if needed.
+- treat as expert unless told otherwise.
+- pragmatic over perfect ("primitive solution to complex problem").
+- names matter — semantic clarity over generic labels.
+- if skogix modifies a file between reads, assume the change is intentional.
+
+</skogix_communication>
+
+<code_style>
+
+- kebab-case
+- minimal comments except when absolutely necessary
+- never hide errors, warnings, or output behind abstractions
+- only create markdown files with strong reasoning: CLAUDE.md, README.md, docs/**/*.md
+
+</code_style>
+
+<knowledge_persistence>
+
+When asked to remember something: persist it in a way accessible to all developers and after session restart — never just in conversational memory. Complete knowledge sharing between all developers (human and ai) without exceptions.
+
+</knowledge_persistence>
+
+<operating_principles>
+
+- this is my workspace. i take initiative and make decisions.
+- context is loaded lazily via CLAUDE.md routers. read the router, follow the link, get what's needed.
+- arch minimalism: don't assume tools exist. check first.
+- secrets live in ~/.ssh/loadme.env (ansible vault encrypted). never touch without explicit instruction.
+
+</operating_principles>
+
+<tools>
+
+gptodo, wt (worktrunk), gita, gh, skogai, skogcli, argc — check PATH before assuming.
+Secrets: ~/.ssh/loadme.env (ansible vault encrypted) — never touch without explicit instruction.
+
+</tools>
+
+<context_layers>
+
+~/.claude/CLAUDE.md     — this file, global always-loaded context
+~/CLAUDE.md             — home folder / workspace context (structure, tooling, git conventions)
+~/.skogai/SKOGAI.md     — SkogAI integrations and shared infrastructure
+
+</context_layers>
+System: 
+Ran command: `rtk sed -n '1,220p' /home/skogix/claude/.claude/CLAUDE.md`
+
+```stdout
+# claude — global context
+
+<identity>
+
+I am claude, running as a Linux user on skogix-workstation. This is not a sandbox — it's a real Arch Linux system. My home directory (~/) is a git repo (SkogAI/claude) and my primary 
+workspace.
+
+User: Skogix (Emil Skogsund) — email: claude@skogai.se
+Shell: zsh, vim mode, dark-daltonized theme
+
+</identity>
+
+<skogix_communication>
+
+- lowercase = generic/context-dependent. Uppercase is significant: `CLAUDE.md` means exactly that, `claude` includes both.
+- `@`-prefix = intent to act. `$`-prefix = define or reference.
+- functional programmer: thinks in data + transformations, not control flow. prefers pure functions and immutable data.
+- direct and to the point — no fluff. answer immediately, explain after if needed.
+- treat as expert unless told otherwise.
+- pragmatic over perfect ("primitive solution to complex problem").
+- names matter — semantic clarity over generic labels.
+- if skogix modifies a file between reads, assume the change is intentional.
+
+</skogix_communication>
+
+<code_style>
+
+- kebab-case
+- minimal comments except when absolutely necessary
+- never hide errors, warnings, or output behind abstractions
+- only create markdown files with strong reasoning: CLAUDE.md, README.md, docs/**/*.md
+
+</code_style>
+
+<knowledge_persistence>
+
+When asked to remember something: persist it in a way accessible to all developers and after session restart — never just in conversational memory. Complete knowledge sharing between all 
+developers (human and ai) without exceptions.
+
+</knowledge_persistence>
+
+<operating_principles>
+
+- this is my workspace. i take initiative and make decisions.
+- context is loaded lazily via CLAUDE.md routers. read the router, follow the link, get what's needed.
+- arch minimalism: don't assume tools exist. check first.
+- secrets live in ~/.ssh/loadme.env (ansible vault encrypted). never touch without explicit instruction.
+
+</operating_principles>
+
+<tools>
+
+gptodo, wt (worktrunk), gita, gh, skogai, skogcli, argc — check PATH before assuming.
+Secrets: ~/.ssh/loadme.env (ansible vault encrypted) — never touch without explicit instruction.
+
+</tools>
+
+<context_layers>
+
+~/.claude/CLAUDE.md     — this file, global always-loaded context
+~/CLAUDE.md             — home folder / workspace context (structure, tooling, git conventions)
+~/.skogai/SKOGAI.md     — SkogAI integrations and shared infrastructure
+
+</context_layers>
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_UlZq4IVFd4sg5aVDJUntH8Jw): {"command":"rtk rg -n \"chore-remove-remaining-skogix-local-path-46|issue #46|remaining skogix-local|autoMemoryDirectory|worktrunk\" /home/skogix/claude/.skogai /home/skogix/claude/tasks /home/skogix/claude/.planning 2>/dev/null"}                                                                                
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:6:permalink: claude/tasks/feat-create-worktrunk-specialist-skill-38
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:9:# feat: create worktrunk specialist skill
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:15:Create `.skogai/skills/worktrunk/SKILL.md` covering the full `wt` CLI for git worktree management.
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:21:- User config (`~/.config/worktrunk/config.toml`)
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:26:- [ ] `skills/worktrunk/SKILL.md` created
+/home/skogix/claude/tasks/TASKS.md:28:- [ ] **feat: create worktrunk specialist skill** - [#8](https://github.com/SkogAI/claude/issues/8)
+/home/skogix/claude/tasks/TASKS.md:30:- [ ] **epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)** - [#7](https://github.com/SkogAI/dot-skogai/issues/7)
+/home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md:8:# chore: remove remaining skogix-local paths from settings.json
+/home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md:20:### 1. `autoMemoryDirectory` (line ~152)
+/home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md:23:"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+/home/skogix/claude/tasks/feat-create-skogai-git-orchestrator-skil-40.md:15:Create `.skogai/skills/skogai-git/SKILL.md` that orchestrates gita, worktrunk, and gptodo into unified git workflows.
+/home/skogix/claude/tasks/feat-create-skogai-git-orchestrator-skil-40.md:19:- Routing table: intent → sub-skill (status → gita, worktree → worktrunk, tasks → gptodo)
+/home/skogix/claude/tasks/feat-create-skogai-git-orchestrator-skil-40.md:28:- worktrunk specialist skill
+/home/skogix/claude/.skogai/skills/skogai-git/workflows/worktree-review.md:13:- skogai-worktrunk/SKILL.md (if unfamiliar with wt commands) \</required_reading>
+/home/skogix/claude/.skogai/skills/skogai-git/workflows/worktree-parallel.md:13:- skogai-worktrunk/SKILL.md (if unfamiliar with wt commands)
+/home/skogix/claude/.skogai/skills/skogai-git/workflows/worktree-parallel.md:14:- skogai-worktrunk/reference/hook-types-reference.md (if setting up automation) \</required_reading>
+/home/skogix/claude/.skogai/skills/skogai-git/workflows/multi-repo.md:13:- skogai-worktrunk/SKILL.md (if unfamiliar with gita commands)
+/home/skogix/claude/.skogai/skills/skogai-git/references/hook-types.md:9:> **Canonical location:** `skills/skogai-worktrunk/reference/hook-types-reference.md`
+/home/skogix/claude/.skogai/skills/skogai-git/references/hook-types.md:11:> For complete hook type documentation (behavior, timing, fail-fast rules, template variables, format options, execution order during merge, and common patterns), see **skogai-worktrunk**. Also see:
+/home/skogix/claude/.skogai/skills/skogai-git/references/hook-types.md:13:> - `skogai-worktrunk/reference/project-config.md` — configuring hooks in `.config/wt.toml`
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:9:> **Canonical location:** `skills/skogai-worktrunk/`
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:11:> For full wt command reference, configuration, and operation details, see **skogai-worktrunk**. Specifically:
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:13:> - `skogai-worktrunk/SKILL.md` — core commands, configuration workflows, common patterns
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:14:> - `skogai-worktrunk/reference/README.md` — features, installation, full command documentation
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:15:> - `skogai-worktrunk/reference/user-config.md` — user config (LLM setup, worktree paths)
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:16:> - `skogai-worktrunk/reference/project-config.md` — project config (hooks, validation)
+/home/skogix/claude/.skogai/docs/claude-code/settings.md:182:| `autoMemoryDirectory`             | Custom directory for [auto memory](/en/memory#storage-location) storage. Accepts `~/`-expanded paths. Not accepted in project settings (`.claude/settings.json`) to prevent shared repos from redirecting memory writes to sensitive locations. Accepted from policy, local, and user settings                                                                                                                                                                                                                                                           | `"~/my-memory-dir"`                                                                                                            |
+/home/skogix/claude/.skogai/skills/skogai-git/references/gita-commands.md:9:> **Canonical location:** `skills/skogai-worktrunk/`
+/home/skogix/claude/.skogai/skills/skogai-git/references/gita-commands.md:11:> For full gita command reference and operation details, see **skogai-worktrunk**. Specifically:
+/home/skogix/claude/.skogai/skills/skogai-git/references/gita-commands.md:13:> - `skogai-worktrunk/SKILL.md` — core commands, groups, sync operations, multi-repo patterns
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:4:permalink: skogai/skills/skogai-worktrunk/claude
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:11:- **skogai-worktrunk** (this skill) = "How does this tool work?" — wt and gita tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:25:  "skills": ["./skills/worktrunk"]
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:34:  "skills": ["./skills/worktrunk"]
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:41:- Skills: `./.claude-plugin + ./skills/worktrunk = ./.claude-plugin/skills/worktrunk` ✅
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:2:permalink: skogai/skills/skogai-worktrunk/skill
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:7:## name: worktrunk description: "How does this tool work?" — wt and gita tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. For workflow guidance ("What should I do?"), see skogai-git.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:13:- **wt (worktrunk)**: Single repo, multiple worktrees - work on many branches simultaneously
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:34:wt config create          # Create user config (~/.config/worktrunk/config.toml)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:77:**Use wt (worktrunk):**
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:121:### User Config (`~/.config/worktrunk/config.toml`)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:124:- **Location**: `~/.config/worktrunk/config.toml` (never checked into git)
+/home/skogix/claude/.skogai/skills/skogai-git/SKILL.md:7:## name: skogai-git description: "What should I do?" — Git workflows, commit philosophy, PR workflows, branch management, tool selection routing. Orchestration across wt, gita, gh, and raw git. For tool configuration details ("How does this tool work?"), see skogai-worktrunk.
+/home/skogix/claude/.skogai/skills/skogai-git/SKILL.md:124:- **Commands:** wt-commands.md, gita-commands.md — *cross-references to skogai-worktrunk*
+/home/skogix/claude/.skogai/skills/skogai-git/SKILL.md:125:- **Hooks:** hook-types.md — *cross-reference to skogai-worktrunk*
+/home/skogix/claude/.skogai/skills/skogai-git/SKILL.md:162:- **skogai-worktrunk** — "How does this tool work?" Tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. Use when you need to configure wt/gita or understand tool internals.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/project-config.md:4:permalink: skogai/skills/skogai-worktrunk/reference/project-config
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/project-config.md:481:See `.config/wt.example.toml` in the worktrunk repository for a complete annotated example.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/hook-types-reference.md:4:permalink: skogai/skills/skogai-worktrunk/reference/hook-types-reference
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:4:permalink: skogai/skills/skogai-worktrunk/reference/user-config
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:9:Detailed guidance for configuring personal Worktrunk settings at `~/.config/worktrunk/config.toml`.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:85:Ask: "Should I add this to your config at `~/.config/worktrunk/config.toml`?"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:107:# Test with worktrunk (in a repo with uncommitted changes)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:190:template-file = "~/.config/worktrunk/commit-template.txt"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:241:template-file = "~/.config/worktrunk/commit-template.txt"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:247:squash-template-file = "~/.config/worktrunk/squash-template.txt"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:272:1. Verify file exists: `ls -la ~/.config/worktrunk/config.toml`
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:273:1. Check TOML syntax: `cat ~/.config/worktrunk/config.toml`
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:291:- **macOS/Linux**: `~/.config/worktrunk/config.toml` (or `$XDG_CONFIG_HOME/worktrunk/config.toml`)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:292:- **Windows**: `%APPDATA%\worktrunk\config.toml`
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:296:See `config.example.toml` in the worktrunk repository for a complete annotated example.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:4:permalink: skogai/skills/skogai-worktrunk/reference/readme
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:11:[![Crates.io](https://img.shields.io/crates/v/worktrunk?style=for-the-badge&logo=rust)](https://crates.io/crates/worktrunk) [![License: MIT](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT) [![GitHub CI Status](https://img.shields.io/github/actions/workflow/status/max-sixty/worktrunk/ci.yml?event=push&branch=main&logo=github&style=for-the-badge)](https://github.com/max-sixty/worktrunk/actions?query=branch%3Amain+workflow%3Aci)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:15:<!-- [![Downloads](https://img.shields.io/crates/d/worktrunk?style=for-the-badge&logo=rust)](https://crates.io/crates/worktrunk) -->
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:17:<!-- [![Stars](https://img.shields.io/github/stars/max-sixty/worktrunk?style=for-the-badge&logo=github)](https://github.com/max-sixty/worktrunk/stargazers) -->
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:30:$ cargo install worktrunk
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:143:`~/.config/worktrunk/config.toml`:
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:172:     Running unittests src/lib.rs (target/debug/deps/worktrunk-abc123)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:183:    Checking worktrunk v0.1.0
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:195:  Installing worktrunk v0.1.0
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:196:   Compiling worktrunk v0.1.0
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:199:   Installed package `worktrunk v0.1.0` (executable `wt`)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:931:   This creates ~/.config/worktrunk/config.toml with examples.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:964:- Location: `~/.config/worktrunk/config.toml` (or `WORKTRUNK_CONFIG_PATH`)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1020:git config worktrunk.status.feature-x "💬"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1055:- Status is stored as `worktrunk.status.<branch>` in `.git/config`
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1116:1. **LLM commands** (`~/.config/worktrunk/config.toml`) - Commit message generation
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1119:Commands from project hooks and LLM configuration require approval on first run. Approved commands are saved to `~/.config/worktrunk/config.toml` under the project's configuration. If a command changes, Worktrunk requires new approval.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1190:- **worktrunk**: Multi-worktree management with hooks and status aggregation
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1206:cargo install worktrunk --no-default-features
+/home/skogix/claude/.skogai/docs/claude-code/memory.md:327:To store auto memory in a different location, set `autoMemoryDirectory` in your user or local settings:
+/home/skogix/claude/.skogai/docs/claude-code/memory.md:331:  "autoMemoryDirectory": "~/my-custom-memory-dir"
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:6:permalink: claude/tasks/feat-create-worktrunk-specialist-skill-38
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:9:# feat: create worktrunk specialist skill
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:15:Create `.skogai/skills/worktrunk/SKILL.md` covering the full `wt` CLI for git worktree management.
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:21:- User config (`~/.config/worktrunk/config.toml`)
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:26:- [ ] `skills/worktrunk/SKILL.md` created
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:15:Create `.skogai/skills/skogai-git/SKILL.md` that orchestrates gita, worktrunk, and gptodo into unified git workflows.
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:19:- Routing table: intent → sub-skill (status → gita, worktree → worktrunk, tasks → gptodo)
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:28:- worktrunk specialist skill
+/home/skogix/claude/.skogai/tasks/TASKS.md:28:- [ ] **feat: create worktrunk specialist skill** - [#8](https://github.com/SkogAI/claude/issues/8)
+/home/skogix/claude/.skogai/tasks/TASKS.md:30:- [ ] **epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)** - [#7](https://github.com/SkogAI/dot-skogai/issues/7)
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:8:# chore: remove remaining skogix-local paths from settings.json
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:20:### 1. `autoMemoryDirectory` (line ~152)
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:23:"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+/home/skogix/claude/.skogai/TODO.md:2:- [x] .claude/skills/cleanup-worktrees should probably be managed by wt/worktrunk instead of being a callable skill
+/home/skogix/claude/.skogai/docs/claude-code/changelog.md:876:  * Added `autoMemoryDirectory` setting to configure a custom directory for auto-memory storage
+/home/skogix/claude/.skogai/knowledge/DECISIONS.md:28:- **`autoMemoryDirectory` in `.claude/settings.json`**: ignored by Claude Code — accepted only from user/local/policy settings (docs: `memory.md:335`). If customisation needed, put it in `settings.local.json`.
+/home/skogix/claude/.skogai/plan/dot-skogai.md:18:- epic: skogai-git orchestrator skill (gita + worktrunk + gptodo) — #7
+/home/skogix/claude/.skogai/plan/dot-skogai.md:21:- feat: create worktrunk specialist skill — related
+/home/skogix/claude/.skogai/_site/data.json:288:      "path": "skills/skogai-worktrunk",
+/home/skogix/claude/.skogai/_site/data.json:289:      "page_url": "skills/skogai-worktrunk/index.html",
+/home/skogix/claude/.skogai/_site/data.json:291:      "gh_url": "https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk"
+/home/skogix/claude/.skogai/_site/data.json:355:      "path": "skills/skogai-worktrunk",
+/home/skogix/claude/.skogai/_site/data.json:356:      "page_url": "skills/skogai-worktrunk/index.html",
+/home/skogix/claude/.skogai/_site/data.json:358:      "gh_url": "https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk",
+/home/skogix/claude/.skogai/_site/data.json:846:      "id": "chore-remove-remaining-skogix-local-path-46",
+/home/skogix/claude/.skogai/_site/data.json:847:      "title": "chore: remove remaining skogix-local paths from settings.json",
+/home/skogix/claude/.skogai/_site/data.json:863:      "path": "tasks/chore-remove-remaining-skogix-local-path-46.md",
+/home/skogix/claude/.skogai/_site/data.json:864:      "page_url": "tasks/chore-remove-remaining-skogix-local-path-46.html",
+/home/skogix/claude/.skogai/_site/data.json:865:      "gh_url": "https://github.com/SkogAI/claude/blob/HEAD/tasks/chore-remove-remaining-skogix-local-path-46.md"
+/home/skogix/claude/.skogai/_site/data.json:925:      "id": "feat-create-worktrunk-specialist-skill-38",
+/home/skogix/claude/.skogai/_site/data.json:926:      "title": "feat: create worktrunk specialist skill",
+/home/skogix/claude/.skogai/_site/data.json:939:      "path": "tasks/feat-create-worktrunk-specialist-skill-38.md",
+/home/skogix/claude/.skogai/_site/data.json:940:      "page_url": "tasks/feat-create-worktrunk-specialist-skill-38.html",
+/home/skogix/claude/.skogai/_site/data.json:941:      "gh_url": "https://github.com/SkogAI/claude/blob/HEAD/tasks/feat-create-worktrunk-specialist-skill-38.md"
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:186:    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/skogai-worktrunk</span>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:187:    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:193:<h2>name: worktrunk description: &quot;How does this tool work?&quot; — wt and gita tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. For workflow guidance (&quot;What should I do?&quot;), see skogai-git.</h2>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:197:<li><strong>wt (worktrunk)</strong>: Single repo, multiple worktrees - work on many branches simultaneously</li>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:212:wt<span style="color: #BBB"> </span>config<span style="color: #BBB"> </span>create<span style="color: #BBB">          </span><span style="color: #3D7B7B; font-style: italic"># Create user config (~/.config/worktrunk/config.toml)</span>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:245:<p><strong>Use wt (worktrunk):</strong></p>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:291:<h3>User Config (<code>~/.config/worktrunk/config.toml</code>)</h3>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:294:<li><strong>Location</strong>: <code>~/.config/worktrunk/config.toml</code> (never checked into git)</li>
+/home/skogix/claude/.skogai/_site/skills/skogai-git/index.html:191:<h2>name: skogai-git description: &quot;What should I do?&quot; — Git workflows, commit philosophy, PR workflows, branch management, tool selection routing. Orchestration across wt, gita, gh, and raw git. For tool configuration details (&quot;How does this tool work?&quot;), see skogai-worktrunk.</h2>
+/home/skogix/claude/.skogai/_site/skills/skogai-git/index.html:346:<li><strong>Commands:</strong> wt-commands.md, gita-commands.md — <em>cross-references to skogai-worktrunk</em></li>
+/home/skogix/claude/.skogai/_site/skills/skogai-git/index.html:347:<li><strong>Hooks:</strong> hook-types.md — <em>cross-reference to skogai-worktrunk</em></li>
+/home/skogix/claude/.skogai/_site/skills/skogai-git/index.html:400:<li><strong>skogai-worktrunk</strong> — &quot;How does this tool work?&quot; Tool configuration, operation details, hooks, permission models, submodule patterns, LLM commit setup. Use when you need to configure wt/gita or understand tool internals.</li>
+/home/skogix/claude/.skogai/plan/codebase/ARCHITECTURE.md:87:    ├─→ Sets worktrunk.status Git config
+/home/skogix/claude/.skogai/plan/codebase/ARCHITECTURE.md:103:    ├─→ Unsets worktrunk.status
+/home/skogix/claude/.skogai/plan/codebase/ARCHITECTURE.md:171:    │       │   ├── skogai-worktrunk
+/home/skogix/claude/.skogai/_site/index.html:892:          <strong><a href="tasks/chore-remove-remaining-skogix-local-path-46.html">chore: remove remaining skogix-local paths from settings.json</a></strong>
+/home/skogix/claude/.skogai/_site/index.html:901:        <td><a href="https://github.com/SkogAI/claude/blob/HEAD/tasks/chore-remove-remaining-skogix-local-path-46.md" title="View on GitHub" class="gh-link">src</a></td>
+/home/skogix/claude/.skogai/_site/index.html:948:          <strong><a href="tasks/feat-create-worktrunk-specialist-skill-38.html">feat: create worktrunk specialist skill</a></strong>
+/home/skogix/claude/.skogai/_site/index.html:957:        <td><a href="https://github.com/SkogAI/claude/blob/HEAD/tasks/feat-create-worktrunk-specialist-skill-38.md" title="View on GitHub" class="gh-link">src</a></td>
+/home/skogix/claude/.skogai/_site/index.html:1325:        <td><a href="skills/skogai-worktrunk/index.html">Skogai Worktrunk</a></td>
+/home/skogix/claude/.skogai/_site/index.html:1331:        <td><a href="https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk" title="View on GitHub" class="gh-link">src</a></td>
+/home/skogix/claude/.skogai/_site/sitemap.xml:144:    <loc>https://SkogAI.github.io/claude/skills/skogai-worktrunk/index.html</loc>
+/home/skogix/claude/.skogai/plan/codebase/STRUCTURE.md:47:│   │   ├── skogai-worktrunk/
+/home/skogix/claude/.skogai/_site/tasks/feat-create-skogai-git-orchestrator-skil-40.html:222:<p>Create <code>.skogai/skills/skogai-git/SKILL.md</code> that orchestrates gita, worktrunk, and gptodo into unified git workflows.</p>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-skogai-git-orchestrator-skil-40.html:225:<li>Routing table: intent → sub-skill (status → gita, worktree → worktrunk, tasks → gptodo)</li>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-skogai-git-orchestrator-skil-40.html:237:<li>worktrunk specialist skill</li>
+/home/skogix/claude/.skogai/_site/tasks/TASKS.html:234:<li>[ ] <strong>feat: create worktrunk specialist skill</strong> - <a href="https://github.com/SkogAI/claude/issues/8">#8</a></li>
+/home/skogix/claude/.skogai/_site/tasks/TASKS.html:236:<li>[ ] <strong>epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)</strong> - <a href="https://github.com/SkogAI/dot-skogai/issues/7">#7</a></li>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:6:<title>feat: create worktrunk specialist skill - .skogai</title>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:194:  &rsaquo; feat: create worktrunk specialist skill
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:198:  <h1>feat: create worktrunk specialist skill</h1>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:205:    <a href="https://github.com/SkogAI/claude/blob/HEAD/tasks/feat-create-worktrunk-specialist-skill-38.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:219:  <h1>feat: create worktrunk specialist skill</h1>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:222:<p>Create <code>.skogai/skills/worktrunk/SKILL.md</code> covering the full <code>wt</code> CLI for git worktree management.</p>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:227:<li>User config (<code>~/.config/worktrunk/config.toml</code>)</li>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:232:<li>[ ] <code>skills/worktrunk/SKILL.md</code> created</li>
+/home/skogix/claude/.skogai/memory/GLOSSARY.md:15:| **wt**        | worktrunk — git worktree manager                                                       |
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:6:<title>chore: remove remaining skogix-local paths from settings.json - .skogai</title>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:194:  &rsaquo; chore: remove remaining skogix-local paths from settings.json
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:198:  <h1>chore: remove remaining skogix-local paths from settings.json</h1>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:205:    <a href="https://github.com/SkogAI/claude/blob/HEAD/tasks/chore-remove-remaining-skogix-local-path-46.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:219:  <h1>chore: remove remaining skogix-local paths from settings.json</h1>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:225:<h3>1. <code>autoMemoryDirectory</code> (line ~152)</h3>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:226:<pre><code class="language-json"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">&quot;autoMemoryDirectory&quot;</span>:<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;/home/skogix/claude/.skogai/memory&quot;</span>
+System: 
+Ran command: `rtk rg -n "chore-remove-remaining-skogix-local-path-46|issue #46|remaining skogi... (1 line)`
+
+```stdout
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:6:permalink: claude/tasks/feat-create-worktrunk-specialist-skill-38
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:9:# feat: create worktrunk specialist skill
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:15:Create `.skogai/skills/worktrunk/SKILL.md` covering the full `wt` CLI for git worktree management.
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:21:- User config (`~/.config/worktrunk/config.toml`)
+/home/skogix/claude/tasks/feat-create-worktrunk-specialist-skill-38.md:26:- [ ] `skills/worktrunk/SKILL.md` created
+/home/skogix/claude/tasks/TASKS.md:28:- [ ] **feat: create worktrunk specialist skill** - (https://github.com/SkogAI/claude/issues/8)
+/home/skogix/claude/tasks/TASKS.md:30:- [ ] **epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)** - (https://github.com/SkogAI/dot-skogai/issues/7)
+/home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md:8:# chore: remove remaining skogix-local paths from settings.json
+/home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md:20:### 1. `autoMemoryDirectory` (line ~152)
+/home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md:23:"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+/home/skogix/claude/tasks/feat-create-skogai-git-orchestrator-skil-40.md:15:Create `.skogai/skills/skogai-git/SKILL.md` that orchestrates gita, worktrunk, and gptodo into unified git 
+workflows.
+/home/skogix/claude/tasks/feat-create-skogai-git-orchestrator-skil-40.md:19:- Routing table: intent → sub-skill (status → gita, worktree → worktrunk, tasks → gptodo)
+/home/skogix/claude/tasks/feat-create-skogai-git-orchestrator-skil-40.md:28:- worktrunk specialist skill
+/home/skogix/claude/.skogai/skills/skogai-git/workflows/worktree-review.md:13:- skogai-worktrunk/SKILL.md (if unfamiliar with wt commands) \</required_reading>
+/home/skogix/claude/.skogai/skills/skogai-git/workflows/worktree-parallel.md:13:- skogai-worktrunk/SKILL.md (if unfamiliar with wt commands)
+/home/skogix/claude/.skogai/skills/skogai-git/workflows/worktree-parallel.md:14:- skogai-worktrunk/reference/hook-types-reference.md (if setting up automation) \</required_reading>
+/home/skogix/claude/.skogai/skills/skogai-git/workflows/multi-repo.md:13:- skogai-worktrunk/SKILL.md (if unfamiliar with gita commands)
+/home/skogix/claude/.skogai/skills/skogai-git/references/hook-types.md:9:> **Canonical location:** `skills/skogai-worktrunk/reference/hook-types-reference.md`
+/home/skogix/claude/.skogai/skills/skogai-git/references/hook-types.md:11:> For complete hook type documentation (behavior, timing, fail-fast rules, template variables, format options, 
+execution order during merge, and common patterns), see **skogai-worktrunk**. Also see:
+/home/skogix/claude/.skogai/skills/skogai-git/references/hook-types.md:13:> - `skogai-worktrunk/reference/project-config.md` — configuring hooks in `.config/wt.toml`
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:9:> **Canonical location:** `skills/skogai-worktrunk/`
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:11:> For full wt command reference, configuration, and operation details, see **skogai-worktrunk**. Specifically:
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:13:> - `skogai-worktrunk/SKILL.md` — core commands, configuration workflows, common patterns
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:14:> - `skogai-worktrunk/reference/README.md` — features, installation, full command documentation
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:15:> - `skogai-worktrunk/reference/user-config.md` — user config (LLM setup, worktree paths)
+/home/skogix/claude/.skogai/skills/skogai-git/references/wt-commands.md:16:> - `skogai-worktrunk/reference/project-config.md` — project config (hooks, validation)
+/home/skogix/claude/.skogai/docs/claude-code/settings.md:182:| `autoMemoryDirectory`             | Custom directory for (/en/memory#storage-location) storage. Accepts `~/`-expanded paths. 
+Not accepted in project settings (`.claude/settings.json`) to prevent shared repos from redirecting memory writes to sensitive locations. Accepted from policy, local, and user settings      
+| `"~/my-memory-dir"`                                                                                                            |
+/home/skogix/claude/.skogai/skills/skogai-git/references/gita-commands.md:9:> **Canonical location:** `skills/skogai-worktrunk/`
+/home/skogix/claude/.skogai/skills/skogai-git/references/gita-commands.md:11:> For full gita command reference and operation details, see **skogai-worktrunk**. Specifically:
+/home/skogix/claude/.skogai/skills/skogai-git/references/gita-commands.md:13:> - `skogai-worktrunk/SKILL.md` — core commands, groups, sync operations, multi-repo patterns
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:4:permalink: skogai/skills/skogai-worktrunk/claude
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:11:- **skogai-worktrunk** (this skill) = "How does this tool work?" — wt and gita tool configuration, operation details, hooks, 
+permission models, submodule patterns, LLM commit setup.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:25:  "skills": ["./skills/worktrunk"]
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:34:  "skills": ["./skills/worktrunk"]
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md:41:- Skills: `./.claude-plugin + ./skills/worktrunk = ./.claude-plugin/skills/worktrunk` ✅
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:2:permalink: skogai/skills/skogai-worktrunk/skill
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:7:## name: worktrunk description: "How does this tool work?" — wt and gita tool configuration, operation details, hooks, 
+permission models, submodule patterns, LLM commit setup. For workflow guidance ("What should I do?"), see skogai-git.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:13:- **wt (worktrunk)**: Single repo, multiple worktrees - work on many branches simultaneously
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:34:wt config create          # Create user config (~/.config/worktrunk/config.toml)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:77:**Use wt (worktrunk):**
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:121:### User Config (`~/.config/worktrunk/config.toml`)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/SKILL.md:124:- **Location**: `~/.config/worktrunk/config.toml` (never checked into git)
+/home/skogix/claude/.skogai/skills/skogai-git/SKILL.md:7:## name: skogai-git description: "What should I do?" — Git workflows, commit philosophy, PR workflows, branch management, tool 
+selection routing. Orchestration across wt, gita, gh, and raw git. For tool configuration details ("How does this tool work?"), see skogai-worktrunk.
+/home/skogix/claude/.skogai/skills/skogai-git/SKILL.md:124:- **Commands:** wt-commands.md, gita-commands.md — *cross-references to skogai-worktrunk*
+/home/skogix/claude/.skogai/skills/skogai-git/SKILL.md:125:- **Hooks:** hook-types.md — *cross-reference to skogai-worktrunk*
+/home/skogix/claude/.skogai/skills/skogai-git/SKILL.md:162:- **skogai-worktrunk** — "How does this tool work?" Tool configuration, operation details, hooks, permission models, submodule 
+patterns, LLM commit setup. Use when you need to configure wt/gita or understand tool internals.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/project-config.md:4:permalink: skogai/skills/skogai-worktrunk/reference/project-config
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/project-config.md:481:See `.config/wt.example.toml` in the worktrunk repository for a complete annotated example.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/hook-types-reference.md:4:permalink: skogai/skills/skogai-worktrunk/reference/hook-types-reference
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:4:permalink: skogai/skills/skogai-worktrunk/reference/user-config
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:9:Detailed guidance for configuring personal Worktrunk settings at `~/.config/worktrunk/config.toml`.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:85:Ask: "Should I add this to your config at `~/.config/worktrunk/config.toml`?"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:107:# Test with worktrunk (in a repo with uncommitted changes)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:190:template-file = "~/.config/worktrunk/commit-template.txt"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:241:template-file = "~/.config/worktrunk/commit-template.txt"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:247:squash-template-file = "~/.config/worktrunk/squash-template.txt"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:272:1. Verify file exists: `ls -la ~/.config/worktrunk/config.toml`
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:273:1. Check TOML syntax: `cat ~/.config/worktrunk/config.toml`
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:291:- **macOS/Linux**: `~/.config/worktrunk/config.toml` (or `$XDG_CONFIG_HOME/worktrunk/config.toml`)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:292:- **Windows**: `%APPDATA%\worktrunk\config.toml`
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/user-config.md:296:See `config.example.toml` in the worktrunk repository for a complete annotated example.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:4:permalink: skogai/skills/skogai-worktrunk/reference/readme
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:11:[![Crates.io](https://img.shields.io/crates/v/worktrunk?style=for-the-badge&logo=rust)](https://crates.io/crates/wo
+rktrunk) [![License: MIT](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT) [![GitHub CI 
+Status](https://img.shields.io/github/actions/workflow/status/max-sixty/worktrunk/ci.yml?event=push&branch=main&logo=github&style=for-the-badge)](https://github.com/max-sixty/worktrunk/actio
+ns?query=branch%3Amain+workflow%3Aci)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:15:<!-- 
+[![Downloads](https://img.shields.io/crates/d/worktrunk?style=for-the-badge&logo=rust)](https://crates.io/crates/worktrunk) -->
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:17:<!-- 
+[![Stars](https://img.shields.io/github/stars/max-sixty/worktrunk?style=for-the-badge&logo=github)](https://github.com/max-sixty/worktrunk/stargazers) -->
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:30:$ cargo install worktrunk
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:143:`~/.config/worktrunk/config.toml`:
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:172:     Running unittests src/lib.rs (target/debug/deps/worktrunk-abc123)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:183:    Checking worktrunk v0.1.0
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:195:  Installing worktrunk v0.1.0
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:196:   Compiling worktrunk v0.1.0
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:199:   Installed package `worktrunk v0.1.0` (executable `wt`)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:931:   This creates ~/.config/worktrunk/config.toml with examples.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:964:- Location: `~/.config/worktrunk/config.toml` (or `WORKTRUNK_CONFIG_PATH`)
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1020:git config worktrunk.status.feature-x "💬"
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1055:- Status is stored as `worktrunk.status.<branch>` in `.git/config`
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1116:1. **LLM commands** (`~/.config/worktrunk/config.toml`) - Commit message generation
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1119:Commands from project hooks and LLM configuration require approval on first run. Approved commands are saved to 
+`~/.config/worktrunk/config.toml` under the project's configuration. If a command changes, Worktrunk requires new approval.
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1190:- **worktrunk**: Multi-worktree management with hooks and status aggregation
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/reference/README.md:1206:cargo install worktrunk --no-default-features
+/home/skogix/claude/.skogai/docs/claude-code/memory.md:327:To store auto memory in a different location, set `autoMemoryDirectory` in your user or local settings:
+/home/skogix/claude/.skogai/docs/claude-code/memory.md:331:  "autoMemoryDirectory": "~/my-custom-memory-dir"
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:6:permalink: claude/tasks/feat-create-worktrunk-specialist-skill-38
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:9:# feat: create worktrunk specialist skill
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:15:Create `.skogai/skills/worktrunk/SKILL.md` covering the full `wt` CLI for git worktree management.
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:21:- User config (`~/.config/worktrunk/config.toml`)
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:26:- [ ] `skills/worktrunk/SKILL.md` created
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:15:Create `.skogai/skills/skogai-git/SKILL.md` that orchestrates gita, worktrunk, and gptodo into unified git
+workflows.
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:19:- Routing table: intent → sub-skill (status → gita, worktree → worktrunk, tasks → gptodo)
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:28:- worktrunk specialist skill
+/home/skogix/claude/.skogai/tasks/TASKS.md:28:- [ ] **feat: create worktrunk specialist skill** - (https://github.com/SkogAI/claude/issues/8)
+/home/skogix/claude/.skogai/tasks/TASKS.md:30:- [ ] **epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)** - (https://github.com/SkogAI/dot-skogai/issues/7)
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:8:# chore: remove remaining skogix-local paths from settings.json
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:20:### 1. `autoMemoryDirectory` (line ~152)
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:23:"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+/home/skogix/claude/.skogai/TODO.md:2:-  .claude/skills/cleanup-worktrees should probably be managed by wt/worktrunk instead of being a callable skill
+/home/skogix/claude/.skogai/docs/claude-code/changelog.md:876:  * Added `autoMemoryDirectory` setting to configure a custom directory for auto-memory storage
+/home/skogix/claude/.skogai/knowledge/DECISIONS.md:28:- **`autoMemoryDirectory` in `.claude/settings.json`**: ignored by Claude Code — accepted only from user/local/policy settings (docs: 
+`memory.md:335`). If customisation needed, put it in `settings.local.json`.
+/home/skogix/claude/.skogai/plan/dot-skogai.md:18:- epic: skogai-git orchestrator skill (gita + worktrunk + gptodo) — #7
+/home/skogix/claude/.skogai/plan/dot-skogai.md:21:- feat: create worktrunk specialist skill — related
+/home/skogix/claude/.skogai/_site/data.json:288:      "path": "skills/skogai-worktrunk",
+/home/skogix/claude/.skogai/_site/data.json:289:      "page_url": "skills/skogai-worktrunk/index.html",
+/home/skogix/claude/.skogai/_site/data.json:291:      "gh_url": "https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk"
+/home/skogix/claude/.skogai/_site/data.json:355:      "path": "skills/skogai-worktrunk",
+/home/skogix/claude/.skogai/_site/data.json:356:      "page_url": "skills/skogai-worktrunk/index.html",
+/home/skogix/claude/.skogai/_site/data.json:358:      "gh_url": "https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk",
+/home/skogix/claude/.skogai/_site/data.json:846:      "id": "chore-remove-remaining-skogix-local-path-46",
+/home/skogix/claude/.skogai/_site/data.json:847:      "title": "chore: remove remaining skogix-local paths from settings.json",
+/home/skogix/claude/.skogai/_site/data.json:863:      "path": "tasks/chore-remove-remaining-skogix-local-path-46.md",
+/home/skogix/claude/.skogai/_site/data.json:864:      "page_url": "tasks/chore-remove-remaining-skogix-local-path-46.html",
+/home/skogix/claude/.skogai/_site/data.json:865:      "gh_url": "https://github.com/SkogAI/claude/blob/HEAD/tasks/chore-remove-remaining-skogix-local-path-46.md"
+/home/skogix/claude/.skogai/_site/data.json:925:      "id": "feat-create-worktrunk-specialist-skill-38",
+/home/skogix/claude/.skogai/_site/data.json:926:      "title": "feat: create worktrunk specialist skill",
+/home/skogix/claude/.skogai/_site/data.json:939:      "path": "tasks/feat-create-worktrunk-specialist-skill-38.md",
+/home/skogix/claude/.skogai/_site/data.json:940:      "page_url": "tasks/feat-create-worktrunk-specialist-skill-38.html",
+/home/skogix/claude/.skogai/_site/data.json:941:      "gh_url": "https://github.com/SkogAI/claude/blob/HEAD/tasks/feat-create-worktrunk-specialist-skill-38.md"
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:186:    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/skogai-worktrunk</span>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:187:    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk" style="color: var(--text-dim); 
+font-size: 0.85rem;">View on GitHub</a>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:193:<h2>name: worktrunk description: &quot;How does this tool work?&quot; — wt and gita tool configuration, operation 
+details, hooks, permission models, submodule patterns, LLM commit setup. For workflow guidance (&quot;What should I do?&quot;), see skogai-git.</h2>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:197:<li><strong>wt (worktrunk)</strong>: Single repo, multiple worktrees - work on many branches simultaneously</li>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:212:wt<span style="color: #BBB"> </span>config<span style="color: #BBB"> </span>create<span style="color: #BBB">         
+</span><span style="color: #3D7B7B; font-style: italic"># Create user config (~/.config/worktrunk/config.toml)</span>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:245:<p><strong>Use wt (worktrunk):</strong></p>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:291:<h3>User Config (<code>~/.config/worktrunk/config.toml</code>)</h3>
+/home/skogix/claude/.skogai/_site/skills/skogai-worktrunk/index.html:294:<li><strong>Location</strong>: <code>~/.config/worktrunk/config.toml</code> (never checked into git)</li>
+/home/skogix/claude/.skogai/_site/skills/skogai-git/index.html:191:<h2>name: skogai-git description: &quot;What should I do?&quot; — Git workflows, commit philosophy, PR workflows, branch 
+management, tool selection routing. Orchestration across wt, gita, gh, and raw git. For tool configuration details (&quot;How does this tool work?&quot;), see skogai-worktrunk.</h2>
+/home/skogix/claude/.skogai/_site/skills/skogai-git/index.html:346:<li><strong>Commands:</strong> wt-commands.md, gita-commands.md — <em>cross-references to skogai-worktrunk</em></li>
+/home/skogix/claude/.skogai/_site/skills/skogai-git/index.html:347:<li><strong>Hooks:</strong> hook-types.md — <em>cross-reference to skogai-worktrunk</em></li>
+/home/skogix/claude/.skogai/_site/skills/skogai-git/index.html:400:<li><strong>skogai-worktrunk</strong> — &quot;How does this tool work?&quot; Tool configuration, operation details, hooks, 
+permission models, submodule patterns, LLM commit setup. Use when you need to configure wt/gita or understand tool internals.</li>
+/home/skogix/claude/.skogai/plan/codebase/ARCHITECTURE.md:87:    ├─→ Sets worktrunk.status Git config
+/home/skogix/claude/.skogai/plan/codebase/ARCHITECTURE.md:103:    ├─→ Unsets worktrunk.status
+/home/skogix/claude/.skogai/plan/codebase/ARCHITECTURE.md:171:    │       │   ├── skogai-worktrunk
+/home/skogix/claude/.skogai/_site/index.html:892:          <strong><a href="tasks/chore-remove-remaining-skogix-local-path-46.html">chore: remove remaining skogix-local paths from 
+settings.json</a></strong>
+/home/skogix/claude/.skogai/_site/index.html:901:        <td><a href="https://github.com/SkogAI/claude/blob/HEAD/tasks/chore-remove-remaining-skogix-local-path-46.md" title="View on GitHub" 
+class="gh-link">src</a></td>
+/home/skogix/claude/.skogai/_site/index.html:948:          <strong><a href="tasks/feat-create-worktrunk-specialist-skill-38.html">feat: create worktrunk specialist skill</a></strong>
+/home/skogix/claude/.skogai/_site/index.html:957:        <td><a href="https://github.com/SkogAI/claude/blob/HEAD/tasks/feat-create-worktrunk-specialist-skill-38.md" title="View on GitHub" 
+class="gh-link">src</a></td>
+/home/skogix/claude/.skogai/_site/index.html:1325:        <td><a href="skills/skogai-worktrunk/index.html">Skogai Worktrunk</a></td>
+/home/skogix/claude/.skogai/_site/index.html:1331:        <td><a href="https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-worktrunk" title="View on GitHub" class="gh-link">src</a></td>
+/home/skogix/claude/.skogai/_site/sitemap.xml:144:    <loc>https://SkogAI.github.io/claude/skills/skogai-worktrunk/index.html</loc>
+/home/skogix/claude/.skogai/plan/codebase/STRUCTURE.md:47:│   │   ├── skogai-worktrunk/
+/home/skogix/claude/.skogai/_site/tasks/feat-create-skogai-git-orchestrator-skil-40.html:222:<p>Create <code>.skogai/skills/skogai-git/SKILL.md</code> that orchestrates gita, worktrunk, and 
+gptodo into unified git workflows.</p>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-skogai-git-orchestrator-skil-40.html:225:<li>Routing table: intent → sub-skill (status → gita, worktree → worktrunk, tasks → gptodo)</li>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-skogai-git-orchestrator-skil-40.html:237:<li>worktrunk specialist skill</li>
+/home/skogix/claude/.skogai/_site/tasks/TASKS.html:234:<li>[ ] <strong>feat: create worktrunk specialist skill</strong> - <a href="https://github.com/SkogAI/claude/issues/8">#8</a></li>
+/home/skogix/claude/.skogai/_site/tasks/TASKS.html:236:<li>[ ] <strong>epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)</strong> - <a 
+href="https://github.com/SkogAI/dot-skogai/issues/7">#7</a></li>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:6:<title>feat: create worktrunk specialist skill - .skogai</title>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:194:  &rsaquo; feat: create worktrunk specialist skill
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:198:  <h1>feat: create worktrunk specialist skill</h1>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:205:    <a 
+href="https://github.com/SkogAI/claude/blob/HEAD/tasks/feat-create-worktrunk-specialist-skill-38.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:219:  <h1>feat: create worktrunk specialist skill</h1>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:222:<p>Create <code>.skogai/skills/worktrunk/SKILL.md</code> covering the full <code>wt</code> CLI for 
+git worktree management.</p>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:227:<li>User config (<code>~/.config/worktrunk/config.toml</code>)</li>
+/home/skogix/claude/.skogai/_site/tasks/feat-create-worktrunk-specialist-skill-38.html:232:<li>[ ] <code>skills/worktrunk/SKILL.md</code> created</li>
+/home/skogix/claude/.skogai/memory/GLOSSARY.md:15:| **wt**        | worktrunk — git worktree manager                                                       |
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:6:<title>chore: remove remaining skogix-local paths from settings.json - .skogai</title>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:194:  &rsaquo; chore: remove remaining skogix-local paths from settings.json
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:198:  <h1>chore: remove remaining skogix-local paths from settings.json</h1>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:205:    <a 
+href="https://github.com/SkogAI/claude/blob/HEAD/tasks/chore-remove-remaining-skogix-local-path-46.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:219:  <h1>chore: remove remaining skogix-local paths from settings.json</h1>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:225:<h3>1. <code>autoMemoryDirectory</code> (line ~152)</h3>
+/home/skogix/claude/.skogai/_site/tasks/chore-remove-remaining-skogix-local-path-46.html:226:<pre><code class="language-json"><div class="code" style="background: #f8f8f8"><pre 
+style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">&quot;autoMemoryDirectory&quot;</span>:<span style="color: #BBB"> </span><span style="color: 
+#BA2121">&quot;/home/skogix/claude/.skogai/memory&quot;</span>
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_663e78J3jvX0kVaL6en8fRaG): {"command":"rtk sed -n '1,220p' /home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md"}                                                                                
+---
+state: new
+created: 2026-04-18
+tracking: ["https://github.com/SkogAI/claude/issues/46"]
+tags: ["enhancement", "github"]
+---
+
+# chore: remove remaining skogix-local paths from settings.json
+
+**Source**: [Github #46](https://github.com/SkogAI/claude/issues/46)
+
+## Description
+
+## Problem
+
+Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg. Neither breaks this container (one is ignored, the other fails gracefully on load), but both should be cleaned up.
+
+## Remaining paths
+
+### 1. `autoMemoryDirectory` (line ~152)
+
+```json
+"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+```
+
+- Points to the old home path
+- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user
+
+## Notes
+
+*Imported from external tracker. See source link for full context.*
+System: 
+Ran command: `rtk sed -n '1,220p' /home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md`
+
+```stdout
+---
+state: new
+created: 2026-04-18
+tracking: ["https://github.com/SkogAI/claude/issues/46"]
+tags: ["enhancement", "github"]
+---
+
+# chore: remove remaining skogix-local paths from settings.json
+
+**Source**: [Github #46](https://github.com/SkogAI/claude/issues/46)
+
+## Description
+
+## Problem
+
+Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg. Neither breaks this container (one is ignored, the other fails gracefully on load), but both should be cleaned
+up.
+
+## Remaining paths
+
+### 1. `autoMemoryDirectory` (line ~152)
+```json
+"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+```
+
+- Points to the old home path
+- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user
+
+## Notes
+
+*Imported from external tracker. See source link for full context.*
+```
+Skipped 1 hidden system messages, show with --show-hidden
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_LR8YcLiofuUS2hPotk4s8JSx): {"command":"rtk sed -n '1,260p' /home/skogix/claude/.claude/settings.local.json"}                                                                                
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk ls *)",
+      "Bash(git -C /home/skogix/claude add .skogai/CLAUDE.md)",
+      "Bash(git -C /home/skogix/claude commit -m ' *)",
+      "Bash(rtk git *)",
+      "Bash(rtk read *)",
+      "Bash(git -C /home/skogix/claude add .claude/settings.local.json .skogai/CLAUDE.md .skogai/state/issue-cache.json)",
+      "Bash(rm /home/skogix/claude/.git/index.lock)",
+      "Bash(git -C /home/skogix/claude diff .claude/settings.local.json)",
+      "Bash(git -C /home/skogix/claude push)",
+      "Bash(git -C /home/skogix/claude add .planning/memory/ personal/journal/2026-04-18/)",
+      "Bash(git -C /home/skogix/claude add .planning/memory/ personal/journal/ .claude/settings.local.json)",
+      "Skill(codex:rescue)",
+      "Skill(codex:rescue:*)",
+      "Bash(git -C /home/skogix/claude add .skogai/SKOGAI.md .skogai/memory/PROJECTS.md)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(rtk find *)",
+      "Bash(rtk curl *)",
+      "Bash(node -c /home/skogix/SKOGTERM/src/backends.js)",
+      "Bash(node -c /home/skogix/SKOGTERM/src/commands.js)",
+      "Bash(curl -sI http://localhost:3000/src/backends.js)",
+      "Bash(kill 275657)",
+      "Bash(rtk grep *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('response','ERROR'\\)[:60]\\)\")",
+      "Bash(python3 -c \"import sys; d=sys.stdin.read\\(\\); print\\(d[:300]\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d['response'][:80]\\)\")",
+      "Bash(kill 494715)",
+      "Bash(python3 -c \"import sys,json; t=sys.stdin.read\\(\\); d=json.loads\\(t\\); print\\(d['response'][:80]\\)\")"
+    ]
+  }
+}
+System: 
+Ran command: `rtk sed -n '1,260p' /home/skogix/claude/.claude/settings.local.json`
+
+```stdout
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk ls *)",
+      "Bash(git -C /home/skogix/claude add .skogai/CLAUDE.md)",
+      "Bash(git -C /home/skogix/claude commit -m ' *)",
+      "Bash(rtk git *)",
+      "Bash(rtk read *)",
+      "Bash(git -C /home/skogix/claude add .claude/settings.local.json .skogai/CLAUDE.md .skogai/state/issue-cache.json)",
+      "Bash(rm /home/skogix/claude/.git/index.lock)",
+      "Bash(git -C /home/skogix/claude diff .claude/settings.local.json)",
+      "Bash(git -C /home/skogix/claude push)",
+      "Bash(git -C /home/skogix/claude add .planning/memory/ personal/journal/2026-04-18/)",
+      "Bash(git -C /home/skogix/claude add .planning/memory/ personal/journal/ .claude/settings.local.json)",
+      "Skill(codex:rescue)",
+      "Skill(codex:rescue:*)",
+      "Bash(git -C /home/skogix/claude add .skogai/SKOGAI.md .skogai/memory/PROJECTS.md)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(rtk find *)",
+      "Bash(rtk curl *)",
+      "Bash(node -c /home/skogix/SKOGTERM/src/backends.js)",
+      "Bash(node -c /home/skogix/SKOGTERM/src/commands.js)",
+      "Bash(curl -sI http://localhost:3000/src/backends.js)",
+      "Bash(kill 275657)",
+      "Bash(rtk grep *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\('response','ERROR'\\)[:60]\\)\")",
+      "Bash(python3 -c \"import sys; d=sys.stdin.read\\(\\); print\\(d[:300]\\)\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d['response'][:80]\\)\")",
+      "Bash(kill 494715)",
+      "Bash(python3 -c \"import sys,json; t=sys.stdin.read\\(\\); d=json.loads\\(t\\); print\\(d['response'][:80]\\)\")"
+    ]
+  }
+}
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_xrLcgT9v6dFTB2fkapLdnQ5l): {"command":"rtk git -C /home/skogix/claude ls-files /home/skogix/claude/.claude/settings.local.json /home/skogix/claude/.claude/settings.json"}                                                                                
+.claude/settings.json
+.claude/settings.local.json
+System: 
+Ran command: `rtk git -C /home/skogix/claude ls-files /home/skogix/claude/.claude/settings.loc... (1 line)`
+
+```stdout
+.claude/settings.json
+.claude/settings.local.json
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_ZUcIvM3KW64mxrxup63C55aT): {"command":"rtk sed -n '1,260p' /home/skogix/claude/.claude/CLAUDE.md"}                                                                                
+# claude — global context
+
+<identity>
+
+I am claude, running as a Linux user on skogix-workstation. This is not a sandbox — it's a real Arch Linux system. My home directory (~/) is a git repo (SkogAI/claude) and my primary workspace.
+
+User: Skogix (Emil Skogsund) — email: claude@skogai.se
+Shell: zsh, vim mode, dark-daltonized theme
+
+</identity>
+
+<skogix_communication>
+
+- lowercase = generic/context-dependent. Uppercase is significant: `CLAUDE.md` means exactly that, `claude` includes both.
+- `@`-prefix = intent to act. `$`-prefix = define or reference.
+- functional programmer: thinks in data + transformations, not control flow. prefers pure functions and immutable data.
+- direct and to the point — no fluff. answer immediately, explain after if needed.
+- treat as expert unless told otherwise.
+- pragmatic over perfect ("primitive solution to complex problem").
+- names matter — semantic clarity over generic labels.
+- if skogix modifies a file between reads, assume the change is intentional.
+
+</skogix_communication>
+
+<code_style>
+
+- kebab-case
+- minimal comments except when absolutely necessary
+- never hide errors, warnings, or output behind abstractions
+- only create markdown files with strong reasoning: CLAUDE.md, README.md, docs/**/*.md
+
+</code_style>
+
+<knowledge_persistence>
+
+When asked to remember something: persist it in a way accessible to all developers and after session restart — never just in conversational memory. Complete knowledge sharing between all developers (human and ai) without exceptions.
+
+</knowledge_persistence>
+
+<operating_principles>
+
+- this is my workspace. i take initiative and make decisions.
+- context is loaded lazily via CLAUDE.md routers. read the router, follow the link, get what's needed.
+- arch minimalism: don't assume tools exist. check first.
+- secrets live in ~/.ssh/loadme.env (ansible vault encrypted). never touch without explicit instruction.
+
+</operating_principles>
+
+<tools>
+
+gptodo, wt (worktrunk), gita, gh, skogai, skogcli, argc — check PATH before assuming.
+Secrets: ~/.ssh/loadme.env (ansible vault encrypted) — never touch without explicit instruction.
+
+</tools>
+
+<context_layers>
+
+~/.claude/CLAUDE.md     — this file, global always-loaded context
+~/CLAUDE.md             — home folder / workspace context (structure, tooling, git conventions)
+~/.skogai/SKOGAI.md     — SkogAI integrations and shared infrastructure
+
+</context_layers>
+System: 
+Ran command: `rtk sed -n '1,260p' /home/skogix/claude/.claude/CLAUDE.md`
+
+```stdout
+# claude — global context
+
+<identity>
+
+I am claude, running as a Linux user on skogix-workstation. This is not a sandbox — it's a real Arch Linux system. My home directory (~/) is a git repo (SkogAI/claude) and my primary 
+workspace.
+
+User: Skogix (Emil Skogsund) — email: claude@skogai.se
+Shell: zsh, vim mode, dark-daltonized theme
+
+</identity>
+
+<skogix_communication>
+
+- lowercase = generic/context-dependent. Uppercase is significant: `CLAUDE.md` means exactly that, `claude` includes both.
+- `@`-prefix = intent to act. `$`-prefix = define or reference.
+- functional programmer: thinks in data + transformations, not control flow. prefers pure functions and immutable data.
+- direct and to the point — no fluff. answer immediately, explain after if needed.
+- treat as expert unless told otherwise.
+- pragmatic over perfect ("primitive solution to complex problem").
+- names matter — semantic clarity over generic labels.
+- if skogix modifies a file between reads, assume the change is intentional.
+
+</skogix_communication>
+
+<code_style>
+
+- kebab-case
+- minimal comments except when absolutely necessary
+- never hide errors, warnings, or output behind abstractions
+- only create markdown files with strong reasoning: CLAUDE.md, README.md, docs/**/*.md
+
+</code_style>
+
+<knowledge_persistence>
+
+When asked to remember something: persist it in a way accessible to all developers and after session restart — never just in conversational memory. Complete knowledge sharing between all 
+developers (human and ai) without exceptions.
+
+</knowledge_persistence>
+
+<operating_principles>
+
+- this is my workspace. i take initiative and make decisions.
+- context is loaded lazily via CLAUDE.md routers. read the router, follow the link, get what's needed.
+- arch minimalism: don't assume tools exist. check first.
+- secrets live in ~/.ssh/loadme.env (ansible vault encrypted). never touch without explicit instruction.
+
+</operating_principles>
+
+<tools>
+
+gptodo, wt (worktrunk), gita, gh, skogai, skogcli, argc — check PATH before assuming.
+Secrets: ~/.ssh/loadme.env (ansible vault encrypted) — never touch without explicit instruction.
+
+</tools>
+
+<context_layers>
+
+~/.claude/CLAUDE.md     — this file, global always-loaded context
+~/CLAUDE.md             — home folder / workspace context (structure, tooling, git conventions)
+~/.skogai/SKOGAI.md     — SkogAI integrations and shared infrastructure
+
+</context_layers>
+```
+Skipped 1 hidden system messages, show with --show-hidden
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@patch(call_3C6RqvRtncHPsrCtlmjsDws5): {"path":"/home/skogix/claude/.claude/settings.json","patch":">>>>>>> ORIGINAL\n    \"worktrunk\": {\n      \"source\": {\n        \"source\": \"directory\",\n        \"path\": \"/home/skogix/.local/src/worktrunk\"\n      }\n    },\n=======\n>>>>>>> UPDATED\n\n>>>>>>> ORIGINAL\n  \"autoMemoryEnabled\": true,\n  \"autoMemoryDirectory\": \"~/claude/.skogai/memory\",\n  \"autoDreamEnabled\": true,\n=======\n  \"autoMemoryEnabled\": true,\n  \"autoDreamEnabled\": true,\n>>>>>>> UPDATED"}                                                                                
+System: ❌ Error during execution: Invalid patch: invalid patch, no `<<<<<<< ORIGINAL`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@patch(call_HvXWBZb4fENfV9TGUviWvhBA): {"path":"/home/skogix/claude/.claude/settings.json","patch":"<<<<<<< ORIGINAL\n    \"worktrunk\": {\n      \"source\": {\n        \"source\": \"directory\",\n        \"path\": \"/home/skogix/.local/src/worktrunk\"\n      }\n    },\n=======\n>>>>>>> UPDATED\n\n<<<<<<< ORIGINAL\n  \"autoMemoryEnabled\": true,\n  \"autoMemoryDirectory\": \"~/claude/.skogai/memory\",\n  \"autoDreamEnabled\": true,\n=======\n  \"autoMemoryEnabled\": true,\n  \"autoDreamEnabled\": true,\n>>>>>>> UPDATED"}                                                                                
+System: ✅ Patch successfully applied to `/home/skogix/claude/.claude/settings.json`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_PtMny7gar5SPrdHNW2rxA318): {"command":"rtk jq . /home/skogix/claude/.claude/settings.json >/dev/null && echo OK_JSON; rtk rg -n \"/home/skogix|~\\/claude\" /home/skogix/claude/.claude/settings.json || true"}                                                                                
+OK_JSON
+System: 
+Ran command: `rtk jq . /home/skogix/claude/.claude/settings.json >/dev/null && echo OK_JSON; r... (1 line)`
+
+`OK_JSON`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_XtdvwTUS7BYMPiOfmUe25AgU): {"command":"rtk git -C /home/skogix/claude diff -- /home/skogix/claude/.claude/settings.json"}                                                                                
+.claude/settings.json | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+--- Changes ---
+
+unknown
+  @@ -129,12 +129,7 @@
+  -    "worktrunk": {
+  -      "source": {
+  -        "source": "directory",
+  -        "path": "/home/skogix/.local/src/worktrunk"
+  -      }
+  -    },
+  +
+       "openai-codex": {
+         "source": {
+           "source": "github",
+  @@ -147,7 +142,6 @@
+  -  "autoMemoryDirectory": "~/claude/.skogai/memory",
+     "autoDreamEnabled": true,
+     "showThinkingSummaries": true,
+     "skipDangerousModePermissionPrompt": true,
+  +1 -7
+System: 
+Ran command: `rtk git -C /home/skogix/claude diff -- /home/skogix/claude/.claude/settings.json`
+
+```stdout
+.claude/settings.json | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+--- Changes ---
+
+unknown
+  @@ -129,12 +129,7 @@
+  -    "worktrunk": {
+  -      "source": {
+  -        "source": "directory",
+  -        "path": "/home/skogix/.local/src/worktrunk"
+  -      }
+  -    },
+  +
+       "openai-codex": {
+         "source": {
+           "source": "github",
+  @@ -147,7 +142,6 @@
+  -  "autoMemoryDirectory": "~/claude/.skogai/memory",
+     "autoDreamEnabled": true,
+     "showThinkingSummaries": true,
+     "skipDangerousModePermissionPrompt": true,
+  +1 -7
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_lrwfjdxMZVGCtglTbnTqU6Nw): {"command":"rtk git -C /home/skogix/claude diff --check -- /home/skogix/claude/.claude/settings.json && echo DIFF_CHECK_OK"}                                                                                
+DIFF_CHECK_OK
+System: 
+Ran command: `rtk git -C /home/skogix/claude diff --check -- /home/skogix/claude/.claude/setti... (1 line)`
+
+`DIFF_CHECK_OK`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+Done. I completed **#46** by cleaning the remaining skogix-local/host-specific paths from project settings.
+
+### Changes made
+
+Updated `/home/skogix/claude/.claude/settings.json`:
+
+1. Removed worktrunk local filesystem marketplace entry:
+```json
+"worktrunk": {
+  "source": { "source": "directory", "path": "/home/skogix/.local/src/worktrunk" }
+}
+```
+
+2. Removed `autoMemoryDirectory` from project settings:
+```json
+"autoMemoryDirectory": "~/claude/.skogai/memory"
+```
+
+### Validation run
+
+- JSON parses cleanly (`jq` OK)
+- No remaining `/home/skogix` or `~/claude` path in this file
+- `git diff --check` passes
+
+If you want, next step would be to place these in `/home/skogix/claude/.claude/settings.local.json` (portable/user-local variants) where appropriate, but per issue #46 cleanup this task is complete.                                                                                
+skogix: 
+Points to the old home path
+- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user
+
+## Notes
+
+*Imported from external tracker. See source link for full context.*
+
+Focus on making progress on this task. When done, summarize what you accomplished.
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_qPf5sTSzKwwU46AK2OQ5oQcU): {"command":"rtk ls -li /home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46.md /home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md"}                                                                                
+(empty)
+System: 
+Ran command: `rtk ls -li /home/skogix/claude/tasks/chore-remove-remaining-skogix-local-path-46... (1 line)`
+
+`(empty)`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_C5nX4cszm6OP2IyJc29CuW33): {"command":"rtk find /home/skogix/claude -maxdepth 3 -type f -name 'chore-remove-remaining-skogix-local-path-46.md'"}                                                                                
+0 for 'chore-remove-remaining-skogix-local-path-46.md'
+System: 
+Ran command: `rtk find /home/skogix/claude -maxdepth 3 -type f -name 'chore-remove-remaining-s... (1 line)`
+
+`0 for 'chore-remove-remaining-skogix-local-path-46.md'`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_vHD5mbo1NMbcKCUMiKXY0YnI): {"command":"rtk ls -la /home/skogix/claude/tasks | sed -n '1,200p'"}                                                                                
+/home/skogix/claude/tasks -> .skogai/tasks  13B
+System: 
+Ran command: `rtk ls -la /home/skogix/claude/tasks | sed -n '1,200p'`
+
+`/home/skogix/claude/tasks -> .skogai/tasks  13B`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_QnplmobNd7H8OBPKRr1wGQKx): {"command":"rtk ls -la /home/skogix/claude/.skogai/tasks | sed -n '1,240p'"}                                                                                
+bug-core-tooling-missing-on-non-skogix-c-43.md  867B
+bug-healthcheck-references-identity-path-44.md  876B
+chore-consolidate-scripts-claude-todo-bi-45.md  876B
+chore-remove-remaining-skogix-local-path-46.md  860B
+feat-bin-shared-executables-for-agent-ho-36.md  920B
+feat-create-skogai-git-orchestrator-skil-40.md  896B
+feat-create-worktrunk-specialist-skill-38.md  874B
+feat-document-all-binaries-scripts-into-25.md  842B
+feat-email-skogai-inter-agent-messaging-34.md  932B
+feat-extract-gptodo-specialist-skill-fro-39.md  881B
+feat-knowledge-decisions-learnings-patte-27.md  910B
+feat-memory-session-context-and-decision-28.md  900B
+feat-phase-5-plan-1-chat-io-contract-rou-22.md  909B
+feat-phase-5-plan-2-routing-skill-hook-f-23.md  866B
+feat-plan-project-planning-structure-29.md  944B
+feat-scripts-bootstrap-init-and-symlink-33.md  874B
+feat-scripts-context-context-generation-32.md  917B
+feat-skills-shared-agent-skills-registry-37.md  926B
+feat-skogai-ecosystem-integration-gas-to-24.md  907B
+feat-skogai-md-root-context-router-26.md  880B
+feat-tasks-local-task-tracking-30.md  791B
+feat-templates-starter-templates-for-new-31.md  913B
+feat-workflows-automation-definitions-an-35.md  931B
+fix-gptodo-import-writes-unquoted-yaml-d-41.md  873B
+TASKS.md  3.1K
+System: 
+Ran command: `rtk ls -la /home/skogix/claude/.skogai/tasks | sed -n '1,240p'`
+
+```stdout
+bug-core-tooling-missing-on-non-skogix-c-43.md  867B
+bug-healthcheck-references-identity-path-44.md  876B
+chore-consolidate-scripts-claude-todo-bi-45.md  876B
+chore-remove-remaining-skogix-local-path-46.md  860B
+feat-bin-shared-executables-for-agent-ho-36.md  920B
+feat-create-skogai-git-orchestrator-skil-40.md  896B
+feat-create-worktrunk-specialist-skill-38.md  874B
+feat-document-all-binaries-scripts-into-25.md  842B
+feat-email-skogai-inter-agent-messaging-34.md  932B
+feat-extract-gptodo-specialist-skill-fro-39.md  881B
+feat-knowledge-decisions-learnings-patte-27.md  910B
+feat-memory-session-context-and-decision-28.md  900B
+feat-phase-5-plan-1-chat-io-contract-rou-22.md  909B
+feat-phase-5-plan-2-routing-skill-hook-f-23.md  866B
+feat-plan-project-planning-structure-29.md  944B
+feat-scripts-bootstrap-init-and-symlink-33.md  874B
+feat-scripts-context-context-generation-32.md  917B
+feat-skills-shared-agent-skills-registry-37.md  926B
+feat-skogai-ecosystem-integration-gas-to-24.md  907B
+feat-skogai-md-root-context-router-26.md  880B
+feat-tasks-local-task-tracking-30.md  791B
+feat-templates-starter-templates-for-new-31.md  913B
+feat-workflows-automation-definitions-an-35.md  931B
+fix-gptodo-import-writes-unquoted-yaml-d-41.md  873B
+TASKS.md  3.1K
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_j8buLrf0IoQif1YNOPvjVbtA): {"command":"rtk cat /home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md"}                                                                                
+---
+state: new
+created: 2026-04-18
+tracking: ["https://github.com/SkogAI/claude/issues/46"]
+tags: ["enhancement", "github"]
+---
+
+# chore: remove remaining skogix-local paths from settings.json
+
+**Source**: [Github #46](https://github.com/SkogAI/claude/issues/46)
+
+## Description
+
+## Problem
+
+Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg. Neither breaks this container (one is ignored, the other fails gracefully on load), but both should be cleaned up.
+
+## Remaining paths
+
+### 1. `autoMemoryDirectory` (line ~152)
+
+```json
+"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+```
+
+- Points to the old home path
+- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user
+
+## Notes
+
+*Imported from external tracker. See source link for full context.*
+System: 
+Ran command: `rtk cat /home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md`
+
+```stdout
+---
+state: new
+created: 2026-04-18
+tracking: ["https://github.com/SkogAI/claude/issues/46"]
+tags: ["enhancement", "github"]
+---
+
+# chore: remove remaining skogix-local paths from settings.json
+
+**Source**: [Github #46](https://github.com/SkogAI/claude/issues/46)
+
+## Description
+
+## Problem
+
+Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg. Neither breaks this container (one is ignored, the other fails gracefully on load), but both should be cleaned
+up.
+
+## Remaining paths
+
+### 1. `autoMemoryDirectory` (line ~152)
+```json
+"autoMemoryDirectory": "/home/skogix/claude/.skogai/memory"
+```
+
+- Points to the old home path
+- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user
+
+## Notes
+
+*Imported from external tracker. See source link for full context.*
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_XxCUDN9gZe5T1RFFOVTtL4dE): {"command":"rtk find /home/skogix/claude/.skogai -maxdepth 3 -name CLAUDE.md -o -name AGENTS.md | sed -n '1,200p'"}                                                                                
+System: 
+Ran command: `rtk find /home/skogix/claude/.skogai -maxdepth 3 -name CLAUDE.md -o -name AGENTS... (1 line)`
+
+`rtk: rtk find does not support compound predicates or actions (e.g. -not, -exec). Use `find` directly.`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_ZwTLF91iHmT8wio3T3TmM7Fa): {"command":"find /home/skogix/claude/.skogai -maxdepth 3 \\( -name CLAUDE.md -o -name AGENTS.md \\) | sed -n '1,200p'"}                                                                                
+/home/skogix/claude/.skogai/inbox/AGENTS.md
+/home/skogix/claude/.skogai/inbox/CLAUDE.md
+/home/skogix/claude/.skogai/docs/CLAUDE.md
+/home/skogix/claude/.skogai/guestbook/CLAUDE.md
+/home/skogix/claude/.skogai/CLAUDE.md
+/home/skogix/claude/.skogai/templates/CLAUDE.md
+/home/skogix/claude/.skogai/skills/skogai-jq/CLAUDE.md
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md
+System: 
+Ran command: `find /home/skogix/claude/.skogai -maxdepth 3 \( -name CLAUDE.md -o -name AGENTS.... (1 line)`
+
+```stdout
+/home/skogix/claude/.skogai/inbox/AGENTS.md
+/home/skogix/claude/.skogai/inbox/CLAUDE.md
+/home/skogix/claude/.skogai/docs/CLAUDE.md
+/home/skogix/claude/.skogai/guestbook/CLAUDE.md
+/home/skogix/claude/.skogai/CLAUDE.md
+/home/skogix/claude/.skogai/templates/CLAUDE.md
+/home/skogix/claude/.skogai/skills/skogai-jq/CLAUDE.md
+/home/skogix/claude/.skogai/skills/skogai-worktrunk/CLAUDE.md
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_F8cNcLzEdm6MIzLLsoROHU0i): {"command":"rtk sed -n '1,240p' /home/skogix/claude/.skogai/CLAUDE.md"}                                                                                
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/claude
+---
+
+# .skogai - SkogAI Repository Bootstrap
+
+This repository is the shared configuration, knowledge base, and tooling layer for all SkogAI projects. It is distributed as a git submodule at `.skogai/` in consumer projects.
+
+## What is this?
+
+`.skogai` is the central bootstrap and knowledge system for the SkogAI ecosystem. It provides:
+
+- **Knowledge base** — documented decisions, learnings, patterns
+- **Memory system** — session context, decision log
+- **Project tracking** — project state, roadmaps, planning
+- **Script infrastructure** — argc-powered bash automation
+- **Skills registry** — domain-specific Claude Code skills
+- **Workflow orchestration** — Dagu-based workflow DAGs
+- **Worktrunk configuration** — shared `.config/wt.toml` for git worktree workflow
+
+## File Structure
+
+```
+.skogai/
+├── CLAUDE.md                   # Claude Code instructions (this file)
+├── SKOGAI.md                   # Guidance with XML-style structural tags
+├── README.md                   # Human-readable overview
+├── Argcfile.sh                 # Argc CLI for queue management
+├── base.yaml / config.yaml     # Dagu orchestration configuration
+├── .envrc                      # Direnv PATH configuration
+├── .config/
+│   └── wt.toml                 # Worktrunk git worktree hooks
+├── bin/
+│   ├── skogai-loops            # Wrapper for gptme-runloops
+│   └── skogai-ralph            # Wrapper for ralph tool
+├── dotfiles/
+│   └── install.sh              # Safety-checked dotfiles installer
+├── email/                      # Email management (inbox, drafts, sent, archive)
+├── knowledge/
+│   ├── DECISIONS.md            # Decision index (router → decisions/)
+│   ├── decisions/              # Architectural decision records (ADRs)
+│   ├── lessons/                # Documented lessons from sessions
+│   └── patterns/               # Reusable patterns and style guides
+├── memory/
+│   ├── GLOSSARY.md             # Shared vocabulary
+│   ├── PROJECTS.md             # Active project index (router)
+│   ├── feedback/               # Behavioral feedback records
+│   └── references/             # External system pointers
+├── plan/
+│   ├── claudes-home/           # Claude's Home project plan (phases 1-5)
+│   ├── codebase/               # Architecture, conventions, stack docs
+│   ├── PROJECT.md              # Project definition and requirements
+│   ├── ROADMAP.md              # 4-phase roadmap
+│   └── STATE.md                # Current phase/plan progress
+├── projects/
+│   └── overview.md             # Active/paused/archived projects table
+├── scripts/
+│   ├── bootstrap/              # Submodule init and consumer-init scripts
+│   ├── context/                # 26 context-generation scripts
+│   └── utils/                  # search, wordcount, state-status, migration
+├── skills/
+│   ├── skill-registry.json     # Registry of all skills
+│   └── */                      # Individual skill directories (SKILL.md + manifest.json)
+├── tasks/                      # Task tracking files
+├── templates/                  # Starter templates (knowledge-entry, decision-record, project-status)
+├── todos/                      # Work items (NNN-status-pN-description.md)
+├── tools/                      # Tools placeholder
+└── workflows/                  # Dagu DAG files and workflow docs
+```
+
+## Always Load
+
+Before starting any work, read:
+
+```
+@CONTEXT.md   — dynamically generated current context (workspace, git state, memory)
+```
+
+## Architecture Modes
+
+**Dogfooding** (developing .skogai itself):
+
+```bash
+.skogai -> /home/skogix/.skogai   # symlink
+.git/info/exclude contains .skogai
+```
+
+**Consumer** (project using .skogai as submodule):
+
+```bash
+git submodule add <repo-url> .skogai
+(cd .skogai && ./scripts/bootstrap/bootstrap.sh)
+```
+
+**Detection:**
+
+```bash
+file .skogai  # symbolic link = dogfooding, directory = submodule
+file .git     # directory = real repo, ASCII text file = submodule
+```
+
+## User Context (skogix)
+
+- Functional programmer — data transformations over control flow, pure functions, immutable data
+- Simplicity first — complexity only when earned
+- Direct expert-level communication — give the answer first, explain after
+- Lowercase for generic references (`claude`, `readme`), uppercase for exact names (`CLAUDE.md`, `Claude`)
+- Uses git worktrees extensively (via Worktrunk)
+- Prefers code/data over prose
+
+## Repository Conventions
+
+### Naming
+
+- **kebab-case** — all files and directories
+- **UPPERCASE.md** — important docs (`CLAUDE.md`, `README.md`, `PROJECT.md`, `ROADMAP.md`)
+- **lowercase.md** — standard docs (`todo.md`, `decisions.md`)
+- **.sh** — bash scripts; **.py** — Python; **.bats** — bash test files
+
+### Bash Scripts
+
+- Shebang: `#!/usr/bin/env bash`
+- Strict mode: `set -euo pipefail`
+- UPPERCASE for env vars/constants, lowercase for local vars, snake_case for functions
+- Color output: RED=errors, GREEN=success, YELLOW=warnings, BLUE=info
+- Minimal comments — only where logic is non-obvious
+- Never hide errors or warnings behind abstractions
+
+### Script Framework (argc)
+
+All scripts in `scripts/` use argc for declarative CLI definition:
+
+```bash
+# @describe script description
+# @arg name![`_choice_validator`] Argument description
+main() { ... }
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+### Code Quality
+
+1. Minimal abstractions — pragmatic over perfect
+1. Self-documenting code — names matter
+1. Error visibility — never hide errors or warnings
+1. Functional programming — prefer immutable data, pure functions
+1. Simplicity first — no speculative abstractions
+1. No over-engineering — only what the task actually requires
+
+## Knowledge Management
+
+### Where to Look
+
+| Task                          | Location                                                   |
+| ----------------------------- | ---------------------------------------------------------- |
+| Log a decision                | `knowledge/decisions/` + index in `knowledge/DECISIONS.md` |
+| Document a lesson             | `knowledge/lessons/`                                       |
+| Record architectural decision | `knowledge/decisions/`                                     |
+| Capture reusable pattern      | `knowledge/patterns/`                                      |
+| Track project status          | `projects/overview.md`                                     |
+| Quick capture                 | `inbox/`                                                   |
+| Create new content            | `templates/` (see `templates/CLAUDE.md`)                   |
+
+### Templates
+
+- `templates/knowledge-entry.md` — learnings and patterns
+- `templates/decision-record.md` — ADRs
+- `templates/project-status.md` — project tracking
+
+### @ Notation
+
+`@path/to/file` expands the file at prompt-time, bypassing cache. Use it for files that must be current:
+
+- `@CONTEXT.md` — dynamically generated current context
+- `@knowledge/lessons/` — current lessons
+
+## Todo System
+
+Todos in `todos/` follow the naming convention:
+
+```
+NNN-status-pN-description.md
+```
+
+- Status: `pending`, `ready`, `in-progress`, `done`
+- Priority: `p1` (critical/blocking), `p2` (high), `p3` (lower)
+
+**Current critical items (P1 — do not ignore):**
+
+- `001-pending-p1-shell-injection-plugin-names.md` — shell injection in session-start.sh (BLOCKS MERGE)
+- `002-pending-p1-race-condition-file-updates.md` — race condition in concurrent file updates
+- `017-pending-p1-plugin-trial-garden-system.md` — plugin trial garden system
+
+## Skills Registry
+
+Skills in `skills/` are domain-specific knowledge modules activated by context:
+
+| Skill                       | Activation                                                  |
+| --------------------------- | ----------------------------------------------------------- |
+| `conductor-methodology`     | Always active                                               |
+| `typescript-best-practices` | `*.ts`, `*.tsx` files or typescript/type/interface keywords |
+| `api-design`                | api/endpoint/rest keywords or routes/controllers/api paths  |
+| `testing-strategies`        | test/unit/integration/mock keywords or test directories     |
+| `java-best-practices`       | `*.java`, pom.xml, build.gradle or java/optional keywords   |
+
+Each skill: `skills/<name>/SKILL.md` + `manifest.json`
+
+## Workflow Orchestration (Dagu)
+
+- **Binary**: `/home/skogix/.local/bin/dagu` (v1.30.3)
+- **Server**: `http://localhost:8080` (start with `dagu start-all`)
+- **Config**: `config.yaml` (server), `base.yaml` (base DAG config)
+- **Key commands**: `dagu start`, `dagu dry`, `dagu validate`, `dagu exec`
+
+Rules for Dagu work:
+
+- Write a small YAML DAG, run it, see what happens, adjust
+- If it takes more than 2-3 lines of bash, rethink the approach
+- Use `jq` for JSON — never sed/awk
+- Use native Dagu features (`output:`, `parallel:`, `type: jq`, `call:`, `retryPolicy:`)
+- Every DAG should fit in one screen
+
+## SSH MCP Multi-User Architecture
+
+- `skogai-ssh` MCP server — execute commands on remote systems
+- `claude-ssh` MCP server — execute as claude user (localhost:22)
+- Each agent can have a dedicated MCP server for workspace isolation
+- Cross-user coordination via MCP instead of direct filesystem access
+
+## Integration as Git Submodule
+
+### Adding to a project
+
+```bash
+git submodule add <repo-url> .skogai
+git submodule update --init --recursive
+```
+
+### Updating submodule in a project
+System: 
+Ran command: `rtk sed -n '1,240p' /home/skogix/claude/.skogai/CLAUDE.md`
+
+```stdout
+---
+title: CLAUDE
+type: note
+permalink: claude/projects/dot-skogai/claude
+---
+
+# .skogai - SkogAI Repository Bootstrap
+
+This repository is the shared configuration, knowledge base, and tooling layer for all SkogAI projects. It is distributed as a git submodule at `.skogai/` in consumer projects.
+
+## What is this?
+
+`.skogai` is the central bootstrap and knowledge system for the SkogAI ecosystem. It provides:
+
+- **Knowledge base** — documented decisions, learnings, patterns
+- **Memory system** — session context, decision log
+- **Project tracking** — project state, roadmaps, planning
+- **Script infrastructure** — argc-powered bash automation
+- **Skills registry** — domain-specific Claude Code skills
+- **Workflow orchestration** — Dagu-based workflow DAGs
+- **Worktrunk configuration** — shared `.config/wt.toml` for git worktree workflow
+
+## File Structure
+```
+.skogai/
+├── CLAUDE.md                   # Claude Code instructions (this file)
+├── SKOGAI.md                   # Guidance with XML-style structural tags
+├── README.md                   # Human-readable overview
+├── Argcfile.sh                 # Argc CLI for queue management
+├── base.yaml / config.yaml     # Dagu orchestration configuration
+├── .envrc                      # Direnv PATH configuration
+├── .config/
+│   └── wt.toml                 # Worktrunk git worktree hooks
+├── bin/
+│   ├── skogai-loops            # Wrapper for gptme-runloops
+│   └── skogai-ralph            # Wrapper for ralph tool
+├── dotfiles/
+│   └── install.sh              # Safety-checked dotfiles installer
+├── email/                      # Email management (inbox, drafts, sent, archive)
+├── knowledge/
+│   ├── DECISIONS.md            # Decision index (router → decisions/)
+│   ├── decisions/              # Architectural decision records (ADRs)
+│   ├── lessons/                # Documented lessons from sessions
+│   └── patterns/               # Reusable patterns and style guides
+├── memory/
+│   ├── GLOSSARY.md             # Shared vocabulary
+│   ├── PROJECTS.md             # Active project index (router)
+│   ├── feedback/               # Behavioral feedback records
+│   └── references/             # External system pointers
+├── plan/
+│   ├── claudes-home/           # Claude's Home project plan (phases 1-5)
+│   ├── codebase/               # Architecture, conventions, stack docs
+│   ├── PROJECT.md              # Project definition and requirements
+│   ├── ROADMAP.md              # 4-phase roadmap
+│   └── STATE.md                # Current phase/plan progress
+├── projects/
+│   └── overview.md             # Active/paused/archived projects table
+├── scripts/
+│   ├── bootstrap/              # Submodule init and consumer-init scripts
+│   ├── context/                # 26 context-generation scripts
+│   └── utils/                  # search, wordcount, state-status, migration
+├── skills/
+│   ├── skill-registry.json     # Registry of all skills
+│   └── */                      # Individual skill directories (SKILL.md + manifest.json)
+├── tasks/                      # Task tracking files
+├── templates/                  # Starter templates (knowledge-entry, decision-record, project-status)
+├── todos/                      # Work items (NNN-status-pN-description.md)
+├── tools/                      # Tools placeholder
+└── workflows/                  # Dagu DAG files and workflow docs
+```
+
+## Always Load
+
+Before starting any work, read:
+```
+@CONTEXT.md   — dynamically generated current context (workspace, git state, memory)
+```
+
+## Architecture Modes
+
+**Dogfooding** (developing .skogai itself):
+```bash
+.skogai -> /home/skogix/.skogai   # symlink
+.git/info/exclude contains .skogai
+```
+
+**Consumer** (project using .skogai as submodule):
+```bash
+git submodule add <repo-url> .skogai
+(cd .skogai && ./scripts/bootstrap/bootstrap.sh)
+```
+
+**Detection:**
+```bash
+file .skogai  # symbolic link = dogfooding, directory = submodule
+file .git     # directory = real repo, ASCII text file = submodule
+```
+
+## User Context (skogix)
+
+- Functional programmer — data transformations over control flow, pure functions, immutable data
+- Simplicity first — complexity only when earned
+- Direct expert-level communication — give the answer first, explain after
+- Lowercase for generic references (`claude`, `readme`), uppercase for exact names (`CLAUDE.md`, `Claude`)
+- Uses git worktrees extensively (via Worktrunk)
+- Prefers code/data over prose
+
+## Repository Conventions
+
+### Naming
+
+- **kebab-case** — all files and directories
+- **UPPERCASE.md** — important docs (`CLAUDE.md`, `README.md`, `PROJECT.md`, `ROADMAP.md`)
+- **lowercase.md** — standard docs (`todo.md`, `decisions.md`)
+- **.sh** — bash scripts; **.py** — Python; **.bats** — bash test files
+
+### Bash Scripts
+
+- Shebang: `#!/usr/bin/env bash`
+- Strict mode: `set -euo pipefail`
+- UPPERCASE for env vars/constants, lowercase for local vars, snake_case for functions
+- Color output: RED=errors, GREEN=success, YELLOW=warnings, BLUE=info
+- Minimal comments — only where logic is non-obvious
+- Never hide errors or warnings behind abstractions
+
+### Script Framework (argc)
+
+All scripts in `scripts/` use argc for declarative CLI definition:
+```bash
+# @describe script description
+# @arg name![`_choice_validator`] Argument description
+main() { ... }
+eval "$(argc --argc-eval "$0" "$@")"
+```
+
+### Code Quality
+
+1. Minimal abstractions — pragmatic over perfect
+1. Self-documenting code — names matter
+1. Error visibility — never hide errors or warnings
+1. Functional programming — prefer immutable data, pure functions
+1. Simplicity first — no speculative abstractions
+1. No over-engineering — only what the task actually requires
+
+## Knowledge Management
+
+### Where to Look
+
+| Task                          | Location                                                   |
+| ----------------------------- | ---------------------------------------------------------- |
+| Log a decision                | `knowledge/decisions/` + index in `knowledge/DECISIONS.md` |
+| Document a lesson             | `knowledge/lessons/`                                       |
+| Record architectural decision | `knowledge/decisions/`                                     |
+| Capture reusable pattern      | `knowledge/patterns/`                                      |
+| Track project status          | `projects/overview.md`                                     |
+| Quick capture                 | `inbox/`                                                   |
+| Create new content            | `templates/` (see `templates/CLAUDE.md`)                   |
+
+### Templates
+
+- `templates/knowledge-entry.md` — learnings and patterns
+- `templates/decision-record.md` — ADRs
+- `templates/project-status.md` — project tracking
+
+### @ Notation
+
+`@path/to/file` expands the file at prompt-time, bypassing cache. Use it for files that must be current:
+
+- `@CONTEXT.md` — dynamically generated current context
+- `@knowledge/lessons/` — current lessons
+
+## Todo System
+
+Todos in `todos/` follow the naming convention:
+```
+NNN-status-pN-description.md
+```
+
+- Status: `pending`, `ready`, `in-progress`, `done`
+- Priority: `p1` (critical/blocking), `p2` (high), `p3` (lower)
+
+**Current critical items (P1 — do not ignore):**
+
+- `001-pending-p1-shell-injection-plugin-names.md` — shell injection in session-start.sh (BLOCKS MERGE)
+- `002-pending-p1-race-condition-file-updates.md` — race condition in concurrent file updates
+- `017-pending-p1-plugin-trial-garden-system.md` — plugin trial garden system
+
+## Skills Registry
+
+Skills in `skills/` are domain-specific knowledge modules activated by context:
+
+| Skill                       | Activation                                                  |
+| --------------------------- | ----------------------------------------------------------- |
+| `conductor-methodology`     | Always active                                               |
+| `typescript-best-practices` | `*.ts`, `*.tsx` files or typescript/type/interface keywords |
+| `api-design`                | api/endpoint/rest keywords or routes/controllers/api paths  |
+| `testing-strategies`        | test/unit/integration/mock keywords or test directories     |
+| `java-best-practices`       | `*.java`, pom.xml, build.gradle or java/optional keywords   |
+
+Each skill: `skills/<name>/SKILL.md` + `manifest.json`
+
+## Workflow Orchestration (Dagu)
+
+- **Binary**: `/home/skogix/.local/bin/dagu` (v1.30.3)
+- **Server**: `http://localhost:8080` (start with `dagu start-all`)
+- **Config**: `config.yaml` (server), `base.yaml` (base DAG config)
+- **Key commands**: `dagu start`, `dagu dry`, `dagu validate`, `dagu exec`
+
+Rules for Dagu work:
+
+- Write a small YAML DAG, run it, see what happens, adjust
+- If it takes more than 2-3 lines of bash, rethink the approach
+- Use `jq` for JSON — never sed/awk
+- Use native Dagu features (`output:`, `parallel:`, `type: jq`, `call:`, `retryPolicy:`)
+- Every DAG should fit in one screen
+
+## SSH MCP Multi-User Architecture
+
+- `skogai-ssh` MCP server — execute commands on remote systems
+- `claude-ssh` MCP server — execute as claude user (localhost:22)
+- Each agent can have a dedicated MCP server for workspace isolation
+- Cross-user coordination via MCP instead of direct filesystem access
+
+## Integration as Git Submodule
+
+### Adding to a project
+```bash
+git submodule add <repo-url> .skogai
+git submodule update --init --recursive
+```
+
+### Updating submodule in a project
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_YvEEiYSyOz4c5vUcMd4awJBn): {"command":"rtk rg -n \"^state:|^# .*#|## Notes|Imported from external tracker|state: done|state: new\" /home/skogix/claude/.skogai/tasks/*.md | sed -n '1,240p'"}                                                                                
+/home/skogix/claude/.skogai/tasks/feat-document-all-binaries-scripts-into-25.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-document-all-binaries-scripts-into-25.md:26:## Notes
+/home/skogix/claude/.skogai/tasks/feat-document-all-binaries-scripts-into-25.md:28:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/bug-core-tooling-missing-on-non-skogix-c-43.md:2:state: new
+/home/skogix/claude/.skogai/tasks/bug-core-tooling-missing-on-non-skogix-c-43.md:25:## Notes
+/home/skogix/claude/.skogai/tasks/bug-core-tooling-missing-on-non-skogix-c-43.md:27:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-scripts-bootstrap-init-and-symlink-33.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-scripts-bootstrap-init-and-symlink-33.md:23:## Notes
+/home/skogix/claude/.skogai/tasks/feat-scripts-bootstrap-init-and-symlink-33.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-scripts-bootstrap-init-and-symlink-33.md:30:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-email-skogai-inter-agent-messaging-34.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-email-skogai-inter-agent-messaging-34.md:31:## Notes
+/home/skogix/claude/.skogai/tasks/feat-email-skogai-inter-agent-messaging-34.md:35:## Notes
+/home/skogix/claude/.skogai/tasks/feat-email-skogai-inter-agent-messaging-34.md:37:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md:4:state: done
+/home/skogix/claude/.skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md:43:## Notes
+/home/skogix/claude/.skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md:45:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-scripts-context-context-generation-32.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-scripts-context-context-generation-32.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-scripts-context-context-generation-32.md:33:## Notes
+/home/skogix/claude/.skogai/tasks/feat-scripts-context-context-generation-32.md:35:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-workflows-automation-definitions-an-35.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-workflows-automation-definitions-an-35.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-workflows-automation-definitions-an-35.md:33:## Notes
+/home/skogix/claude/.skogai/tasks/feat-workflows-automation-definitions-an-35.md:35:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:31:## Notes
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:33:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-plan-project-planning-structure-29.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-plan-project-planning-structure-29.md:32:## Notes
+/home/skogix/claude/.skogai/tasks/feat-plan-project-planning-structure-29.md:34:*Imported from external tracker. See source link for full context.*```
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-2-routing-skill-hook-f-23.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-2-routing-skill-hook-f-23.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-2-routing-skill-hook-f-23.md:30:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-1-chat-io-contract-rou-22.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-1-chat-io-contract-rou-22.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-1-chat-io-contract-rou-22.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-templates-starter-templates-for-new-31.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-templates-starter-templates-for-new-31.md:27:## Notes
+/home/skogix/claude/.skogai/tasks/feat-templates-starter-templates-for-new-31.md:32:## Notes
+/home/skogix/claude/.skogai/tasks/feat-templates-starter-templates-for-new-31.md:34:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-tasks-local-task-tracking-30.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-tasks-local-task-tracking-30.md:25:## Notes
+/home/skogix/claude/.skogai/tasks/feat-tasks-local-task-tracking-30.md:31:## Notes
+/home/skogix/claude/.skogai/tasks/feat-tasks-local-task-tracking-30.md:33:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-bin-shared-executables-for-agent-ho-36.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-bin-shared-executables-for-agent-ho-36.md:29:## Notes
+/home/skogix/claude/.skogai/tasks/feat-bin-shared-executables-for-agent-ho-36.md:34:## Notes
+/home/skogix/claude/.skogai/tasks/feat-bin-shared-executables-for-agent-ho-36.md:36:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:2:state: new
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:29:## Notes
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:31:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-skogai-md-root-context-router-26.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-skogai-md-root-context-router-26.md:26:## Notes
+/home/skogix/claude/.skogai/tasks/feat-skogai-md-root-context-router-26.md:28:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-memory-session-context-and-decision-28.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-memory-session-context-and-decision-28.md:29:## Notes
+/home/skogix/claude/.skogai/tasks/feat-memory-session-context-and-decision-28.md:31:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-knowledge-decisions-learnings-patte-27.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-knowledge-decisions-learnings-patte-27.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-knowledge-decisions-learnings-patte-27.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-skogai-ecosystem-integration-gas-to-24.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-skogai-ecosystem-integration-gas-to-24.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-skogai-ecosystem-integration-gas-to-24.md:30:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-extract-gptodo-specialist-skill-fro-39.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-extract-gptodo-specialist-skill-fro-39.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-extract-gptodo-specialist-skill-fro-39.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/chore-consolidate-scripts-claude-todo-bi-45.md:2:state: new
+/home/skogix/claude/.skogai/tasks/chore-consolidate-scripts-claude-todo-bi-45.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/chore-consolidate-scripts-claude-todo-bi-45.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-skills-shared-agent-skills-registry-37.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-skills-shared-agent-skills-registry-37.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-skills-shared-agent-skills-registry-37.md:34:## Notes
+/home/skogix/claude/.skogai/tasks/feat-skills-shared-agent-skills-registry-37.md:36:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/bug-healthcheck-references-identity-path-44.md:2:state: new
+/home/skogix/claude/.skogai/tasks/bug-healthcheck-references-identity-path-44.md:36:## Notes
+/home/skogix/claude/.skogai/tasks/bug-healthcheck-references-identity-path-44.md:38:*Imported from external tracker. See source link for full context.*
+System: 
+Ran command: `rtk rg -n "^state:|^# .*#|## Notes|Imported from external tracker|state: done|st... (1 line)`
+
+```stdout
+/home/skogix/claude/.skogai/tasks/feat-document-all-binaries-scripts-into-25.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-document-all-binaries-scripts-into-25.md:26:## Notes
+/home/skogix/claude/.skogai/tasks/feat-document-all-binaries-scripts-into-25.md:28:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/bug-core-tooling-missing-on-non-skogix-c-43.md:2:state: new
+/home/skogix/claude/.skogai/tasks/bug-core-tooling-missing-on-non-skogix-c-43.md:25:## Notes
+/home/skogix/claude/.skogai/tasks/bug-core-tooling-missing-on-non-skogix-c-43.md:27:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-scripts-bootstrap-init-and-symlink-33.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-scripts-bootstrap-init-and-symlink-33.md:23:## Notes
+/home/skogix/claude/.skogai/tasks/feat-scripts-bootstrap-init-and-symlink-33.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-scripts-bootstrap-init-and-symlink-33.md:30:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-email-skogai-inter-agent-messaging-34.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-email-skogai-inter-agent-messaging-34.md:31:## Notes
+/home/skogix/claude/.skogai/tasks/feat-email-skogai-inter-agent-messaging-34.md:35:## Notes
+/home/skogix/claude/.skogai/tasks/feat-email-skogai-inter-agent-messaging-34.md:37:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md:4:state: done
+/home/skogix/claude/.skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md:43:## Notes
+/home/skogix/claude/.skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md:45:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-scripts-context-context-generation-32.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-scripts-context-context-generation-32.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-scripts-context-context-generation-32.md:33:## Notes
+/home/skogix/claude/.skogai/tasks/feat-scripts-context-context-generation-32.md:35:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-create-worktrunk-specialist-skill-38.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-workflows-automation-definitions-an-35.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-workflows-automation-definitions-an-35.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-workflows-automation-definitions-an-35.md:33:## Notes
+/home/skogix/claude/.skogai/tasks/feat-workflows-automation-definitions-an-35.md:35:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:31:## Notes
+/home/skogix/claude/.skogai/tasks/feat-create-skogai-git-orchestrator-skil-40.md:33:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-plan-project-planning-structure-29.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-plan-project-planning-structure-29.md:32:## Notes
+/home/skogix/claude/.skogai/tasks/feat-plan-project-planning-structure-29.md:34:*Imported from external tracker. See source link for full context.*
+```
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-2-routing-skill-hook-f-23.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-2-routing-skill-hook-f-23.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-2-routing-skill-hook-f-23.md:30:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-1-chat-io-contract-rou-22.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-1-chat-io-contract-rou-22.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-phase-5-plan-1-chat-io-contract-rou-22.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-templates-starter-templates-for-new-31.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-templates-starter-templates-for-new-31.md:27:## Notes
+/home/skogix/claude/.skogai/tasks/feat-templates-starter-templates-for-new-31.md:32:## Notes
+/home/skogix/claude/.skogai/tasks/feat-templates-starter-templates-for-new-31.md:34:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-tasks-local-task-tracking-30.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-tasks-local-task-tracking-30.md:25:## Notes
+/home/skogix/claude/.skogai/tasks/feat-tasks-local-task-tracking-30.md:31:## Notes
+/home/skogix/claude/.skogai/tasks/feat-tasks-local-task-tracking-30.md:33:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-bin-shared-executables-for-agent-ho-36.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-bin-shared-executables-for-agent-ho-36.md:29:## Notes
+/home/skogix/claude/.skogai/tasks/feat-bin-shared-executables-for-agent-ho-36.md:34:## Notes
+/home/skogix/claude/.skogai/tasks/feat-bin-shared-executables-for-agent-ho-36.md:36:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:2:state: new
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:29:## Notes
+/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md:31:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-skogai-md-root-context-router-26.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-skogai-md-root-context-router-26.md:26:## Notes
+/home/skogix/claude/.skogai/tasks/feat-skogai-md-root-context-router-26.md:28:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-memory-session-context-and-decision-28.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-memory-session-context-and-decision-28.md:29:## Notes
+/home/skogix/claude/.skogai/tasks/feat-memory-session-context-and-decision-28.md:31:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-knowledge-decisions-learnings-patte-27.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-knowledge-decisions-learnings-patte-27.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-knowledge-decisions-learnings-patte-27.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-skogai-ecosystem-integration-gas-to-24.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-skogai-ecosystem-integration-gas-to-24.md:28:## Notes
+/home/skogix/claude/.skogai/tasks/feat-skogai-ecosystem-integration-gas-to-24.md:30:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-extract-gptodo-specialist-skill-fro-39.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-extract-gptodo-specialist-skill-fro-39.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-extract-gptodo-specialist-skill-fro-39.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/chore-consolidate-scripts-claude-todo-bi-45.md:2:state: new
+/home/skogix/claude/.skogai/tasks/chore-consolidate-scripts-claude-todo-bi-45.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/chore-consolidate-scripts-claude-todo-bi-45.md:32:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/feat-skills-shared-agent-skills-registry-37.md:2:state: new
+/home/skogix/claude/.skogai/tasks/feat-skills-shared-agent-skills-registry-37.md:30:## Notes
+/home/skogix/claude/.skogai/tasks/feat-skills-shared-agent-skills-registry-37.md:34:## Notes
+/home/skogix/claude/.skogai/tasks/feat-skills-shared-agent-skills-registry-37.md:36:*Imported from external tracker. See source link for full context.*
+/home/skogix/claude/.skogai/tasks/bug-healthcheck-references-identity-path-44.md:2:state: new
+/home/skogix/claude/.skogai/tasks/bug-healthcheck-references-identity-path-44.md:36:## Notes
+/home/skogix/claude/.skogai/tasks/bug-healthcheck-references-identity-path-44.md:38:*Imported from external tracker. See source link for full context.*
+```
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_EtNR4uMYo9zuaZowhStwU8ff): {"command":"rtk sed -n '1,240p' /home/skogix/claude/.skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md"}                                                                                
+---
+created: 2026-04-18
+permalink: claude/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41
+state: done
+tracking:
+- https://github.com/SkogAI/claude/issues/41
+---
+
+# fix(gptodo): import writes unquoted YAML dates in created field
+
+**Source**: [Github #41](https://github.com/SkogAI/claude/issues/41)
+
+## Description
+
+`gptodo import` writes `created: 2026-03-06` in task frontmatter. YAML parses this as a date object, not a string. `gptodo check` then fails with:
+
+```
+Field created must be str or datetime
+```
+
+## Expected
+
+```yaml
+created: "2026-03-06"
+```
+
+## Actual
+
+```yaml
+created: 2026-03-06
+```
+
+## Workaround
+
+```bash
+sed -i 's/^created: \([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\)$/created: "\1"/' tasks/*.md
+```
+
+## Fix
+
+Quote the date string when writing frontmatter in the import command.
+
+## Notes
+
+*Imported from external tracker. See source link for full context.*System: 
+Ran command: `rtk sed -n '1,240p' /home/skogix/claude/.skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md`
+
+```stdout
+---
+created: 2026-04-18
+permalink: claude/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41
+state: done
+tracking:
+- https://github.com/SkogAI/claude/issues/41
+---
+
+# fix(gptodo): import writes unquoted YAML dates in created field
+
+**Source**: [Github #41](https://github.com/SkogAI/claude/issues/41)
+
+## Description
+
+`gptodo import` writes `created: 2026-03-06` in task frontmatter. YAML parses this as a date object, not a string. `gptodo check` then fails with:
+```
+Field created must be str or datetime
+```
+
+## Expected
+```yaml
+created: "2026-03-06"
+```
+
+## Actual
+```yaml
+created: 2026-03-06
+```
+
+## Workaround
+```bash
+sed -i 's/^created: \([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\)$/created: "\1"/' tasks/*.md
+```
+
+## Fix
+
+Quote the date string when writing frontmatter in the import command.
+
+## Notes
+
+*Imported from external tracker. See source link for full context.*
+```
+Skipped 1 hidden system messages, show with --show-hidden
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_CChYSHY4tEqxOX83fq6bTnfe): {"command":"rtk sed -n '1,260p' /home/skogix/claude/.skogai/tasks/TASKS.md"}                                                                                
+---
+title: TASKS
+type: note
+permalink: claude/tasks/tasks
+---
+
+# Tasks
+
+## Active
+
+- [ ] **Epic: Claude's Home v2.0 — SkogAI Integration & Home Improvements** - [#9](https://github.com/SkogAI/claude/issues/9)
+- [ ] **feat: phase 5 plan 1 — chat-io contract, routing script, bats tests** - [#11](https://github.com/SkogAI/claude/issues/11)
+- [ ] **feat: phase 5 plan 2 — routing skill, hook fallback, settings wiring** - [#12](https://github.com/SkogAI/claude/issues/12)
+- [ ] **feat: SKOGAI.md — root context router** - [#11](https://github.com/SkogAI/dot-skogai/issues/11)
+- [ ] **feat: bin/ — shared executables for agent home** - [#21](https://github.com/SkogAI/claude/issues/21)
+- [ ] **feat: email/ — skogai inter-agent messaging (inbox/outbox)** - [#19](https://github.com/SkogAI/claude/issues/19)
+- [ ] **feat: knowledge/ — decisions, learnings, patterns** - [#12](https://github.com/SkogAI/claude/issues/12)
+- [ ] **feat: memory/ — session context and decision log** - [#13](https://github.com/SkogAI/claude/issues/13)
+- [ ] **feat: plan/ — project planning structure** - [#14](https://github.com/SkogAI/claude/issues/14)
+- [ ] **feat: scripts/bootstrap/ — init and symlink setup** - [#18](https://github.com/SkogAI/claude/issues/18)
+- [ ] **feat: scripts/context/ — context generation scripts** - [#17](https://github.com/SkogAI/claude/issues/17)
+- [ ] **feat: skills/ — shared agent skills registry** - [#22](https://github.com/SkogAI/claude/issues/22)
+- [ ] **feat: skogai ecosystem integration (gas town, sibling agent discovery)** - [#15](https://github.com/SkogAI/claude/issues/15)
+- [ ] **feat: tasks/ — local task tracking** - [#16](https://github.com/SkogAI/claude/issues/16)
+- [ ] **feat: templates/ — starter templates for new content** - [#15](https://github.com/SkogAI/claude/issues/15)
+- [ ] **feat: workflows/ — automation definitions and action lists** - [#20](https://github.com/SkogAI/claude/issues/20)
+- [ ] **feat: create skogai-git orchestrator skill** - [#10](https://github.com/SkogAI/claude/issues/10)
+- [ ] **feat: create worktrunk specialist skill** - [#8](https://github.com/SkogAI/claude/issues/8)
+- [ ] **feat: extract gptodo specialist skill from gptme** - [#9](https://github.com/SkogAI/claude/issues/9)
+- [ ] **epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)** - [#7](https://github.com/SkogAI/dot-skogai/issues/7)
+- [ ] **Document and integrate all binaries/scripts into CLAUDE.md** - [#8](https://github.com/SkogAI/claude/issues/8)
+- [ ] **fix(gptodo): import writes unquoted YAML dates in created field** - [#6](https://github.com/SkogAI/claude/issues/6)
+
+## Waiting On
+
+## Someday
+
+- [ ] **Document and integrate all binary/script/executables into CLAUDE.md** - [#3](https://github.com/SkogAI/claude/issues/3) (backlog)
+
+## Done
+
+- [x] ~~Epic: Claude's Home v2.0 — SkogAI Integration & Home Improvements~~ [#4](https://github.com/SkogAI/claude/issues/4)
+- [x] ~~chore: migrate planning from gsd/.planning to skogai-planning-with-files~~ [#14](https://github.com/SkogAI/claude/issues/14)
+- [x] ~~move root journal/ into personal/journal/~~
+- [x] ~~example-issue-claude-home~~ [#2](https://github.com/SkogAI/claude/issues/2)
+System: 
+Ran command: `rtk sed -n '1,260p' /home/skogix/claude/.skogai/tasks/TASKS.md`
+
+```stdout
+---
+title: TASKS
+type: note
+permalink: claude/tasks/tasks
+---
+
+# Tasks
+
+## Active
+
+- [ ] **Epic: Claude's Home v2.0 — SkogAI Integration & Home Improvements** - (https://github.com/SkogAI/claude/issues/9)
+- [ ] **feat: phase 5 plan 1 — chat-io contract, routing script, bats tests** - (https://github.com/SkogAI/claude/issues/11)
+- [ ] **feat: phase 5 plan 2 — routing skill, hook fallback, settings wiring** - (https://github.com/SkogAI/claude/issues/12)
+- [ ] **feat: SKOGAI.md — root context router** - (https://github.com/SkogAI/dot-skogai/issues/11)
+- [ ] **feat: bin/ — shared executables for agent home** - (https://github.com/SkogAI/claude/issues/21)
+- [ ] **feat: email/ — skogai inter-agent messaging (inbox/outbox)** - (https://github.com/SkogAI/claude/issues/19)
+- [ ] **feat: knowledge/ — decisions, learnings, patterns** - (https://github.com/SkogAI/claude/issues/12)
+- [ ] **feat: memory/ — session context and decision log** - (https://github.com/SkogAI/claude/issues/13)
+- [ ] **feat: plan/ — project planning structure** - (https://github.com/SkogAI/claude/issues/14)
+- [ ] **feat: scripts/bootstrap/ — init and symlink setup** - (https://github.com/SkogAI/claude/issues/18)
+- [ ] **feat: scripts/context/ — context generation scripts** - (https://github.com/SkogAI/claude/issues/17)
+- [ ] **feat: skills/ — shared agent skills registry** - (https://github.com/SkogAI/claude/issues/22)
+- [ ] **feat: skogai ecosystem integration (gas town, sibling agent discovery)** - (https://github.com/SkogAI/claude/issues/15)
+- [ ] **feat: tasks/ — local task tracking** - (https://github.com/SkogAI/claude/issues/16)
+- [ ] **feat: templates/ — starter templates for new content** - (https://github.com/SkogAI/claude/issues/15)
+- [ ] **feat: workflows/ — automation definitions and action lists** - (https://github.com/SkogAI/claude/issues/20)
+- [ ] **feat: create skogai-git orchestrator skill** - (https://github.com/SkogAI/claude/issues/10)
+- [ ] **feat: create worktrunk specialist skill** - (https://github.com/SkogAI/claude/issues/8)
+- [ ] **feat: extract gptodo specialist skill from gptme** - (https://github.com/SkogAI/claude/issues/9)
+- [ ] **epic: skogai-git orchestrator skill (gita + worktrunk + gptodo)** - (https://github.com/SkogAI/dot-skogai/issues/7)
+- [ ] **Document and integrate all binaries/scripts into CLAUDE.md** - (https://github.com/SkogAI/claude/issues/8)
+- [ ] **fix(gptodo): import writes unquoted YAML dates in created field** - (https://github.com/SkogAI/claude/issues/6)
+
+## Waiting On
+
+## Someday
+
+- [ ] **Document and integrate all binary/script/executables into CLAUDE.md** - (https://github.com/SkogAI/claude/issues/3) (backlog)
+
+## Done
+
+-  ~~Epic: Claude's Home v2.0 — SkogAI Integration & Home Improvements~~ (https://github.com/SkogAI/claude/issues/4)
+-  ~~chore: migrate planning from gsd/.planning to skogai-planning-with-files~~ (https://github.com/SkogAI/claude/issues/14)
+-  ~~move root journal/ into personal/journal/~~
+-  ~~example-issue-claude-home~~ (https://github.com/SkogAI/claude/issues/2)
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_ROCDhrbkD8NvYhpYVI0pBDrQ): {"command":"rtk git -C /home/skogix/claude status --short"}                                                                                
+ M .claude/settings.json
+ M .skogai/scripts/linear/README.md
+ D .skogai/scripts/linear/Untitled
+ M .skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md
+?? .skogai/Untitled
+?? .skogai/_site/
+?? logs/linear-notifications/1776565228717-6d068316-User.json
+?? logs/linear-notifications/1776565231686-678a9ec4-User.jsonSystem: 
+Ran command: `rtk git -C /home/skogix/claude status --short`
+
+```stdout
+M .claude/settings.json
+ M .skogai/scripts/linear/README.md
+ D .skogai/scripts/linear/Untitled
+ M .skogai/tasks/fix-gptodo-import-writes-unquoted-yaml-d-41.md
+?? .skogai/Untitled
+?? .skogai/_site/
+?? logs/linear-notifications/1776565228717-6d068316-User.json
+?? logs/linear-notifications/1776565231686-678a9ec4-User.json
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@patch(call_hCedKuOywpyeMpo94ewxDEBR): {"path":"/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md","patch":"<<<<<<< ORIGINAL\nstate: new\n=======\nstate: done\n>>>>>>> UPDATED\n\n<<<<<<< ORIGINAL\n- Points to the old home path\n- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **\"This setting is accepted from policy, local, and user\n\n## Notes\n\n*Imported from external tracker. See source link for full context.*\n=======\n- Points to the old home path\n- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **\"This setting is accepted from policy, local, and user settings. It is not accepted from project settings (`.claude/settings.json`) to prevent a shared project from redirecting auto memory writes to sensitive locations.\"**\n- So this key should not exist in project settings\n\n### 2. `worktrunk` local directory marketplace (line ~137)\n\n```json\n\"worktrunk\": {\n  \"source\": { \"source\": \"directory\", \"path\": \"/home/skogix/.local/src/worktrunk\" }\n}\n```\n\n- Host-local path that fails to resolve on non-skogix environments\n- Should not live in shared project settings\n\n## Completion\n\n- Removed `extraKnownMarketplaces.worktrunk` local directory source from `.claude/settings.json`\n- Removed `autoMemoryDirectory` from `.claude/settings.json` (project settings)\n- Verified `.claude/settings.json` is valid JSON\n- Verified no `/home/skogix` or `~/claude` paths remain in `.claude/settings.json`\n\n## Notes\n\n*Imported from external tracker. Updated locally with completion details.*\n>>>>>>> UPDATED"}                                                                                
+System: ✅ Patch successfully applied to `/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md`
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@shell(call_c2mzdqB8y66rSYSCN9WdhNsw): {"command":"rtk jq . /home/skogix/claude/.claude/settings.json >/dev/null && echo SETTINGS_JSON_OK; rtk rg -n \"/home/skogix|~\\/claude\" /home/skogix/claude/.claude/settings.json || true; rtk git -C /home/skogix/claude diff -- /home/skogix/claude/.claude/settings.json /home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md"}                                                                                
+SETTINGS_JSON_OK
+.claude/settings.json                              |  8 +------
+ .../chore-remove-remaining-skogix-local-path-46.md | 25 +++++++++++++++++++---
+ 2 files changed, 23 insertions(+), 10 deletions(-)
+
+--- Changes ---
+
+unknown
+  @@ -129,12 +129,7 @@
+  -    "worktrunk": {
+  -      "source": {
+  -        "source": "directory",
+  -        "path": "/home/skogix/.local/src/worktrunk"
+  -      }
+  -    },
+  +
+       "openai-codex": {
+         "source": {
+           "source": "github",
+  @@ -147,7 +142,6 @@
+  -  "autoMemoryDirectory": "~/claude/.skogai/memory",
+     "autoDreamEnabled": true,
+     "showThinkingSummaries": true,
+     "skipDangerousModePermissionPrompt": true,
+  +1 -7
+
+unknown
+  @@ -1,5 +1,5 @@
+  -state: new
+  +state: done
+   created: 2026-04-18
+   tracking: ["https://github.com/SkogAI/claude/issues/46"]
+   tags: ["enhancement", "github"]
+  @@ -24,8 +24,27 @@ Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg.
+  -- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user
+  +- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user settings. It is not accepted from project settings (`.claude/settings.json`) to prevent a shared project from redirecting auto memory writes to sensitive locations."**
+  +- So this key should not exist in project settings
+  +
+  +### 2. `worktrunk` local directory marketplace (line ~137)
+  +
+  +```json
+  +"worktrunk": {
+  +  "source": { "source": "directory", "path": "/home/skogix/.local/src/worktrunk" }
+  +}
+  +```
+  +
+  +- Host-local path that fails to resolve on non-skogix environments
+  +- Should not live in shared project settings
+  +
+  +## Completion
+  +
+  +- Removed `extraKnownMarketplaces.worktrunk` local directory source from `.claude/settings.json`
+  +- Removed `autoMemoryDirectory` from `.claude/settings.json` (project settings)
+  +- Verified `.claude/settings.json` is valid JSON
+  +- Verified no `/home/skogix` or `~/claude` paths remain in `.claude/settings.json`
+   
+   ## Notes
+   
+  -*Imported from external tracker. See source link for full context.*
+  +*Imported from external tracker. Updated locally with completion details.*
+  +22 -3
+System: 
+Ran command: `rtk jq . /home/skogix/claude/.claude/settings.json >/dev/null && echo SETTINGS_J... (1 line)`
+
+```stdout
+SETTINGS_JSON_OK
+.claude/settings.json                              |  8 +------
+ .../chore-remove-remaining-skogix-local-path-46.md | 25 +++++++++++++++++++---
+ 2 files changed, 23 insertions(+), 10 deletions(-)
+
+--- Changes ---
+
+unknown
+  @@ -129,12 +129,7 @@
+  -    "worktrunk": {
+  -      "source": {
+  -        "source": "directory",
+  -        "path": "/home/skogix/.local/src/worktrunk"
+  -      }
+  -    },
+  +
+       "openai-codex": {
+         "source": {
+           "source": "github",
+  @@ -147,7 +142,6 @@
+  -  "autoMemoryDirectory": "~/claude/.skogai/memory",
+     "autoDreamEnabled": true,
+     "showThinkingSummaries": true,
+     "skipDangerousModePermissionPrompt": true,
+  +1 -7
+
+unknown
+  @@ -1,5 +1,5 @@
+  -state: new
+  +state: done
+   created: 2026-04-18
+   tracking: ["https://github.com/SkogAI/claude/issues/46"]
+   tags: ["enhancement", "github"]
+  @@ -24,8 +24,27 @@ Two `/home/skogix/...` paths remain in `.claude/settings.json` after the reorg.
+  -- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user
+  +- Per the Claude Code docs (`.skogai/docs/claude-code/memory.md:335`): **"This setting is accepted from policy, local, and user settings. It is not accepted from project settings 
+(`.claude/settings.json`) to prevent a shared project from redirecting auto memory writes to sensitive locations."**
+  +- So this key should not exist in project settings
+  +
+  +### 2. `worktrunk` local directory marketplace (line ~137)
+  +
+  +
+```json
+  +"worktrunk": {
+  +  "source": { "source": "directory", "path": "/home/skogix/.local/src/worktrunk" }
+  +}
+  +```
+  +
+  +- Host-local path that fails to resolve on non-skogix environments
+  +- Should not live in shared project settings
+  +
+  +## Completion
+  +
+  +- Removed `extraKnownMarketplaces.worktrunk` local directory source from `.claude/settings.json`
+  +- Removed `autoMemoryDirectory` from `.claude/settings.json` (project settings)
+  +- Verified `.claude/settings.json` is valid JSON
+  +- Verified no `/home/skogix` or `~/claude` paths remain in `.claude/settings.json`
+   
+   ## Notes
+   
+  -*Imported from external tracker. See source link for full context.*
+  +*Imported from external tracker. Updated locally with completion details.*
+  +22 -3
+```
+Assistant: Thinking...
+                                                                                
+Assistant: 
+Progress made and task completed.
+
+### ✅ What I changed
+
+I completed the cleanup for **`chore-remove-remaining-skogix-local-path-46`** by editing:
+
+- `/home/skogix/claude/.claude/settings.json`
+- `/home/skogix/claude/.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md`
+
+#### 1) Removed remaining skogix-local / host-specific settings from project config
+
+From `.claude/settings.json` I removed:
+
+- `extraKnownMarketplaces.worktrunk` directory source:
+  - `/home/skogix/.local/src/worktrunk`
+- `autoMemoryDirectory`:
+  - `~/claude/.skogai/memory` (project-level unsupported per docs)
+
+#### 2) Completed and repaired the local task note
+
+In `.skogai/tasks/chore-remove-remaining-skogix-local-path-46.md` I:
+
+- changed `state: new` → `state: done`
+- fixed the previously truncated description text (the quote now complete)
+- added the missing second path section (worktrunk local marketplace)
+- added a **Completion** section documenting exactly what was removed and verified
+
+### ✅ Validation performed
+
+- Confirmed `.claude/settings.json` is valid JSON (`jq` parse success)
+- Confirmed no `/home/skogix` or `~/claude` paths remain in `.claude/settings.json`
+- Verified the diff reflects only the intended removals plus task-note completion updates
+
+                                                                                
+[04:41:56] INFO     Auto-reply: Assistant message had no tools. Asking for confirmation...                                                                                     complete.py:163
+[04:41:56] [Loop control] <system>No tool call detected in last message. Did you mean to finish? If so, make sure you are comp...                                                             
+skogix: <system>No tool call detected in last message. Did you mean to finish? If so, make sure you are completely done and then use the `complete` tool to end the session.</system>
+Assistant: Thinking...
+                                                                                
+Assistant: 
+
+@complete(call_5MPpXPrjoO3nBR08NA2WnpfK): {}                                                                                
+System: Task complete. Autonomous session finished.
+[04:41:58] INFO     Complete tool call detected, stopping session immediately                                                                                                   complete.py:93
+           INFO     Hook 'complete.complete' signaled session completion                                                                                                       registry.py:196
+[04:41:58] Autonomous mode: Session completed via complete tool. Exiting.                                                                                                                     
+Lessons: 12 unique lessons included (12 total matches)
+
+Goodbye! (resume with: gptme --name 2026-04-19-flying-blue-whale)
+
+rtk: rtk find does not support compound predicates or actions (e.g. -not, -exec). Use `find` directly.

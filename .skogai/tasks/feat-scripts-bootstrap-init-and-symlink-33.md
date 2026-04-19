@@ -1,5 +1,5 @@
 ---
-state: new
+state: done
 created: 2026-04-18
 tracking:
   - https://github.com/SkogAI/claude/issues/33
@@ -28,3 +28,17 @@ Bootstrap scripts for initializing `.skogai/` in a new consumer project and for 
 ## Notes
 
 *Imported from external tracker. See source link for full context.*
+
+## Completion
+
+- `scripts/bootstrap/bootstrap.sh` present
+- `scripts/bootstrap/consumer-init.sh` present
+- `scripts/bootstrap/symlink.sh` present
+
+## Verification
+
+- Confirmed all expected bootstrap scripts exist under `.skogai/scripts/bootstrap/`
+
+## Notes
+
+*Imported from external tracker. Updated locally with completion details.*

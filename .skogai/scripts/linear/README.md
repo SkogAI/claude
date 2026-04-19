@@ -11,32 +11,33 @@ Integrate your gptme-based agent with Linear using the Agent Framework.
 - **Auto token refresh**: Automatically refreshes OAuth tokens when expired
 
 ## Architecture
+
 User @mentions agent in Linear
-         |
-         v
+|
+v
 Linear sends AgentSessionEvent webhook
-         |
-         v
+|
+v
 ngrok tunnel (public HTTPS)
-         |
-         v
+|
+v
 linear-webhook-server.py (Flask server:8081)
-         |
-         +---> Validates token (auto-refresh if expired)
-         +---> Emits acknowledgment activity
-         +---> Creates git worktree
-         +---> Spawns gptme session
-         +---> Merges changes back to main
+|
++---> Validates token (auto-refresh if expired)
++---> Emits acknowledgment activity
++---> Creates git worktree
++---> Spawns gptme session
++---> Merges changes back to main
 
 ## Files
 
-| File | Description |
-|------|-------------|
+| File                       | Description                                   |
+| -------------------------- | --------------------------------------------- |
 | `linear-webhook-server.py` | Flask webhook server - receives Linear events |
-| `linear-activity.py` | CLI tool to emit activities back to Linear |
-| `.env` | Configuration (secrets - never commit!) |
-| `.tokens.json` | OAuth access/refresh tokens (never commit!) |
-| `services/` | Systemd service templates |
+| `linear-activity.py`       | CLI tool to emit activities back to Linear    |
+| `.env`                     | Configuration (secrets - never commit!)       |
+| `.tokens.json`             | OAuth access/refresh tokens (never commit!)   |
+| `services/`                | Systemd service templates                     |
 
 ---
 
@@ -57,8 +58,9 @@ Follow these steps to set up Linear integration for your agent.
 
 **Have your human operator do the following:**
 
-1. Sign up for a free ngrok account at https://ngrok.com
+1. Sign up for a free ngrok account at <https://ngrok.com>
 2. Install ngrok:
+
    ```bash
    # Linux (snap)
    sudo snap install ngrok
@@ -74,7 +76,9 @@ Follow these steps to set up Linear integration for your agent.
    # macOS
    brew install ngrok
    ```
+
 3. Authenticate ngrok with your authtoken (from ngrok dashboard):
+
    ```bash
    ngrok config add-authtoken <your-authtoken>
    ```
@@ -104,11 +108,11 @@ ngrok http 8081
 
 5. Fill in the form:
 
-   | Field | Value |
-   |-------|-------|
-   | **Name** | Your agent name (this becomes the @username) |
-   | **Description** | Brief description of your agent |
-   | **Webhook URL** | `https://<your-ngrok-domain>/webhook` |
+   | Field                  | Value                                        |
+   | ---------------------- | -------------------------------------------- |
+   | **Name**               | Your agent name (this becomes the @username) |
+   | **Description**        | Brief description of your agent              |
+   | **Webhook URL**        | `https://<your-ngrok-domain>/webhook`        |
    | **OAuth Callback URL** | `https://<your-ngrok-domain>/oauth/callback` |
 
 6. Enable the **Webhooks** toggle
@@ -127,6 +131,7 @@ ngrok http 8081
 ### What Makes the Agent Mentionable?
 
 The OAuth scopes automatically requested include:
+
 - `app:mentionable` - Agent appears in @mention autocomplete
 - `app:assignable` - Agent appears in assignee dropdown
 
@@ -144,6 +149,7 @@ cd /path/to/gptme-contrib/scripts/linear
 ```
 
 The script will:
+
 - Check prerequisites
 - Prompt for configuration values
 - Display exact values to enter in Linear OAuth app
@@ -190,6 +196,7 @@ uv run linear-activity.py auth
 ```
 
 This will:
+
 1. Generate the Linear authorization URL
 2. Open it in your browser (or print if no display)
 3. After you authorize, Linear redirects to your callback URL
@@ -200,6 +207,7 @@ This will:
 If the CLI auth flow doesn't work, manually create tokens:
 
 1. Build the authorization URL:
+
    ```
    https://linear.app/oauth/authorize?client_id=<CLIENT_ID>&redirect_uri=<CALLBACK_URL>&scope=read,write,app:mentionable,app:assignable&response_type=code&state=auth
    ```
@@ -209,6 +217,7 @@ If the CLI auth flow doesn't work, manually create tokens:
 3. After redirect, extract the `code` parameter from the URL
 
 4. Exchange code for tokens:
+
    ```bash
    curl -X POST https://api.linear.app/oauth/token \
      -H "Content-Type: application/x-www-form-urlencoded" \
@@ -220,6 +229,7 @@ If the CLI auth flow doesn't work, manually create tokens:
    ```
 
 5. Save the response to `.tokens.json`:
+
    ```json
    {
      "access_token": "<from response>",
@@ -286,6 +296,7 @@ This ensures services start when the machine boots, not just when you log in.
 ## Step 9: Verify Integration
 
 1. Check services are running:
+
    ```bash
    systemctl --user status <agent-name>-linear-webhook
    ```
@@ -322,11 +333,11 @@ uv run linear-activity.py refresh
 
 ## Activity Types
 
-| Type | Purpose | Effect |
-|------|---------|--------|
-| `thought` | Show reasoning/progress | Session stays active |
-| `response` | Final answer | **Closes the session** |
-| `error` | Error occurred | Marks session as errored |
+| Type       | Purpose                 | Effect                   |
+| ---------- | ----------------------- | ------------------------ |
+| `thought`  | Show reasoning/progress | Session stays active     |
+| `response` | Final answer            | **Closes the session**   |
+| `error`    | Error occurred          | Marks session as errored |
 
 ## Mentioning Users
 
@@ -335,6 +346,7 @@ uv run linear-activity.py refresh
 ### Correct Format
 
 Use the full profile link in your comment body:
+
 ```markdown
 [User Name](https://linear.app/<workspace>/settings/account/<user-id>)
 ```
@@ -342,11 +354,13 @@ Use the full profile link in your comment body:
 ### Example
 
 Instead of writing:
+
 ```markdown
 @ErikBjare can you review this?
 ```
 
 Write:
+
 ```markdown
 [Erik Bjäreholt](https://linear.app/superuserlabs/settings/account/ace04b67-c8dc-432f-a00d-85953cc14e13) can you review this?
 ```
@@ -354,6 +368,7 @@ Write:
 ### Finding User Profile Links
 
 To find a user's profile link:
+
 1. Go to Linear
 2. Click on any user's avatar/name to open their profile
 3. Copy the URL from the browser address bar
@@ -361,9 +376,9 @@ To find a user's profile link:
 The URL format is: `https://linear.app/<workspace>/settings/account/<user-id>`
 
 Where:
+
 - `<workspace>` is your Linear workspace slug (e.g., `superuserlabs`)
 - `<user-id>` is the user's UUID (e.g., `ace04b67-c8dc-432f-a00d-85953cc14e13`)
-
 
 ## Service Management
 
@@ -400,6 +415,7 @@ systemctl --user stop <agent-name>-linear-webhook <agent-name>-ngrok
 ## Token Refresh Failing
 
 Ensure `.env` contains all three values:
+
 - `LINEAR_WEBHOOK_SECRET`
 - `LINEAR_CLIENT_ID`
 - `LINEAR_CLIENT_SECRET`
@@ -407,6 +423,7 @@ Ensure `.env` contains all three values:
 ## Services Not Starting After Reboot
 
 Check if lingering is enabled:
+
 ```bash
 loginctl show-user <username> | grep Linger
 ```
@@ -428,6 +445,7 @@ If `Linger=no`, ask human to run: `sudo loginctl enable-linger <username>`
 
 1. **Use ngrok paid plan** ($8/month) - Get a static subdomain that never changes
 2. **Use Cloudflare Tunnel** (free) - Alternative to ngrok with stable URLs:
+
    ```bash
    # Install cloudflared
    curl -L https://pkg.cloudflare.com/cloudflared-linux-amd64.deb -o cloudflared.deb
@@ -441,6 +459,7 @@ If `Linger=no`, ask human to run: `sudo loginctl enable-linger <username>`
    # Run tunnel (configure in systemd for persistence)
    cloudflared tunnel run --url http://localhost:8081 linear-webhook
    ```
+
 3. **Run ngrok as persistent service** - Fewer restarts means fewer URL changes
 
 **Future enhancement**: Linear's API could potentially be used to auto-update the webhook URL on ngrok restart. This would require storing the OAuth application ID and using the Linear Admin API.
@@ -460,21 +479,21 @@ If `Linger=no`, ask human to run: `sudo loginctl enable-linger <username>`
 
 ## Environment Variables
 
-| Variable | Purpose | Required |
-|----------|---------|----------|
-| `LINEAR_WEBHOOK_SECRET` | Verify webhook signatures | Yes |
-| `LINEAR_CLIENT_ID` | OAuth token refresh | Yes |
-| `LINEAR_CLIENT_SECRET` | OAuth token refresh | Yes |
-| `AGENT_NAME` | Agent name for paths (default: "agent") | No |
-| `AGENT_WORKSPACE` | Path to agent workspace (default: `~/repos/$AGENT_NAME`) | No |
-| `WORKTREE_BASE` | Path for session worktrees (default: `~/repos/$AGENT_NAME-worktrees`) | No |
-| `PORT` | Webhook server port (default: 8081) | No |
+| Variable                | Purpose                                                               | Required |
+| ----------------------- | --------------------------------------------------------------------- | -------- |
+| `LINEAR_WEBHOOK_SECRET` | Verify webhook signatures                                             | Yes      |
+| `LINEAR_CLIENT_ID`      | OAuth token refresh                                                   | Yes      |
+| `LINEAR_CLIENT_SECRET`  | OAuth token refresh                                                   | Yes      |
+| `AGENT_NAME`            | Agent name for paths (default: "agent")                               | No       |
+| `AGENT_WORKSPACE`       | Path to agent workspace (default: `~/repos/$AGENT_NAME`)              | No       |
+| `WORKTREE_BASE`         | Path for session worktrees (default: `~/repos/$AGENT_NAME-worktrees`) | No       |
+| `PORT`                  | Webhook server port (default: 8081)                                   | No       |
 
 ## Important Paths
 
-| Path | Purpose |
-|------|---------|
-| `scripts/linear/` | Webhook server and CLI |
-| `logs/linear-sessions/` | Session execution logs |
-| `/tmp/<agent>-linear-notifications/` | Raw webhook payloads |
-| `~/.config/systemd/user/` | Systemd service files |
+| Path                                 | Purpose                |
+| ------------------------------------ | ---------------------- |
+| `scripts/linear/`                    | Webhook server and CLI |
+| `logs/linear-sessions/`              | Session execution logs |
+| `/tmp/<agent>-linear-notifications/` | Raw webhook payloads   |
+| `~/.config/systemd/user/`            | Systemd service files  |

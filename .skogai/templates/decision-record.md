@@ -1,15 +1,10 @@
 ---
-title:
-  - Decision Title
-date:
-  - YYYY-MM-DD
-status:
-  - proposed|accepted|deprecated|superseded
-decision:
-  - One-line summary of the decision
-deciders:
-  - who made this decision
-permalink: claude/projects/dot-skogai/templates/decision-record
+title: <decision-title>
+date: YYYY-MM-DD
+status: proposed # proposed | accepted | deprecated | superseded
+decision: <one-line-decision-summary>
+deciders: <name1, name2>
+permalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>
 ---
 
 [@todo]

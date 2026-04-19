@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>skogai-jq - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">.skogai</a>
+  &rsaquo; <a href="../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; skogai-jq
+</nav>
+
+<header>
+  <h1>skogai-jq</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">Use when performing JSON transformations, manipulating nested JSON structures, filtering arrays, extracting values, validating JSON schemas, or composing multi-step JSON operations. This skill provide</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/skogai-jq</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-jq" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>jq-transforms</h1>
+<h2>Overview</h2>
+<p>jq-transforms is a schema-driven JSON transformation library built specifically for AI agents. It provides 60+ composable transformations for JSON manipulation, each with clear input/output contracts, comprehensive tests, and minimal implementations. The library emphasizes discoverability through schemas and composability through Unix pipes.</p>
+<h2>When to Use This Skill</h2>
+<p>Use this skill when:</p>
+<ul>
+<li>Transforming JSON data structures (CRUD operations, nested paths)</li>
+<li>Filtering or mapping arrays within JSON objects</li>
+<li>Extracting specific fields or patterns from JSON</li>
+<li>Validating JSON schemas or field types</li>
+<li>Converting between JSON types</li>
+<li>Composing multi-step JSON transformations</li>
+<li>Processing API responses or configuration files</li>
+</ul>
+<h2>Core Transformation Categories</h2>
+<h3>CRUD Operations (crud-*)</h3>
+<p>Path-based object manipulation for getting, setting, deleting, checking existence, merging, and querying nested JSON structures.</p>
+<p><strong>Common examples:</strong></p>
+<ul>
+<li><code>crud-get</code>: Retrieve value at nested path with optional default</li>
+<li><code>crud-set</code>: Set value at path, creating intermediate objects</li>
+<li><code>crud-delete</code>: Remove field at path</li>
+<li><code>crud-has</code>: Check if path exists</li>
+<li><code>crud-merge</code>: Recursively merge two objects</li>
+</ul>
+<h3>Array Operations (array-*)</h3>
+<p>Array transformations including filtering, mapping, reducing, flattening, chunking, and deduplication.</p>
+<p><strong>Common examples:</strong></p>
+<ul>
+<li><code>array-filter</code>: Filter array by field value</li>
+<li><code>array-map</code>: Extract field from each array element</li>
+<li><code>array-reduce</code>: Aggregate array (sum, avg, min, max, count)</li>
+<li><code>array-unique</code>: Remove duplicate values</li>
+<li><code>array-flatten</code>: Flatten nested arrays to specified depth</li>
+</ul>
+<h3>String Operations (string-*)</h3>
+<p>String manipulation within JSON objects.</p>
+<p><strong>Common examples:</strong></p>
+<ul>
+<li><code>string-split</code>: Split string into array by separator</li>
+<li><code>string-join</code>: Join array into string with separator</li>
+<li><code>string-replace</code>: Replace pattern in string</li>
+<li><code>string-trim</code>: Remove whitespace from string</li>
+</ul>
+<h3>Extraction (extract-*)</h3>
+<p>Pattern-based extraction from text fields.</p>
+<p><strong>Common examples:</strong></p>
+<ul>
+<li><code>extract-urls</code>: Extract URLs from text</li>
+<li><code>extract-code-blocks</code>: Extract code blocks from markdown</li>
+<li><code>extract-mentions</code>: Extract @mentions from text</li>
+</ul>
+<h3>Validation (validate-<em>, is-</em>, has-*)</h3>
+<p>Field validation and type checking.</p>
+<p><strong>Common examples:</strong></p>
+<ul>
+<li><code>validate-required</code>: Check required fields exist</li>
+<li><code>validate-types</code>: Validate field types</li>
+<li><code>is-timestamp</code>: Check if value is valid timestamp</li>
+<li><code>has-field</code>: Check if nested path exists</li>
+</ul>
+<h3>Type Conversions (to-*)</h3>
+<p>Convert between JSON types safely.</p>
+<p><strong>Common examples:</strong></p>
+<ul>
+<li><code>to-string</code>, <code>to-number</code>, <code>to-boolean</code>, <code>to-array</code>, <code>to-object</code></li>
+</ul>
+<h2>Usage Pattern</h2>
+<p>All transformations follow a consistent invocation pattern:</p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>&lt;transform-dir&gt;/transform.jq<span style="color: #BBB"> </span><span style="color: #666">[</span>--arg<span style="color: #BBB"> </span>key<span style="color: #BBB"> </span>val<span style="color: #666">]</span><span style="color: #BBB"> </span><span style="color: #666">[</span>--argjson<span style="color: #BBB"> </span>key<span style="color: #BBB"> </span>json<span style="color: #666">]</span><span style="color: #BBB"> </span>input.json
+</pre></div>
+</code></pre>
+<p><strong>Example - Get nested value:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000">echo</span><span style="color: #BBB"> </span><span style="color: #BA2121">&#39;{&quot;user&quot;:{&quot;name&quot;:&quot;skogix&quot;}}&#39;</span><span style="color: #BBB"> </span>|<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">  </span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>crud-get/transform.jq<span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>path<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;user.name&quot;</span>
+<span style="color: #3D7B7B; font-style: italic"># Output: &quot;skogix&quot;</span>
+</pre></div>
+</code></pre>
+<p><strong>Example - Filter array:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000">echo</span><span style="color: #BBB"> </span><span style="color: #BA2121">&#39;{&quot;items&quot;:[{&quot;status&quot;:&quot;active&quot;},{&quot;status&quot;:&quot;inactive&quot;}]}&#39;</span><span style="color: #BBB"> </span>|<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">  </span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>array-filter/transform.jq<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>--arg<span style="color: #BBB"> </span>array_field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;items&quot;</span><span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>--arg<span style="color: #BBB"> </span>field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;status&quot;</span><span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">    </span>--arg<span style="color: #BBB"> </span>value<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;active&quot;</span>
+<span style="color: #3D7B7B; font-style: italic"># Output: {&quot;items&quot;:[{&quot;status&quot;:&quot;active&quot;}]}</span>
+</pre></div>
+</code></pre>
+<p><strong>Example - Compose multiple transforms:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>cat<span style="color: #BBB"> </span>data.json<span style="color: #BBB"> </span>|<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">  </span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>array-filter/transform.jq<span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>array_field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;users&quot;</span><span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;active&quot;</span><span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>value<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;true&quot;</span><span style="color: #BBB"> </span>|<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+<span style="color: #BBB">  </span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>array-map/transform.jq<span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>array_field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;users&quot;</span><span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;email&quot;</span>
+</pre></div>
+</code></pre>
+<h2>Transform Discovery</h2>
+<p>To find the right transform for a task:</p>
+<ol>
+<li><strong>By category</strong>: Refer to the categories above to narrow down the domain (CRUD, array, string, etc.)</li>
+<li><strong>By cheat sheet</strong>: Consult <code>references/CHEAT_SHEET.md</code> for complete transform index with arguments and examples</li>
+<li><strong>By schema</strong>: Read <code>&lt;transform-dir&gt;/schema.json</code> for detailed input/output contracts</li>
+</ol>
+<p>Each transform directory contains:</p>
+<ul>
+<li><code>transform.jq</code> - The jq implementation (5-40 lines)</li>
+<li><code>schema.json</code> - Input/output contract with examples</li>
+<li><code>test.sh</code> - Comprehensive test suite</li>
+<li><code>test-input-*.json</code> - Test fixtures</li>
+</ul>
+<h2>Key Design Principles</h2>
+<ol>
+<li><strong>Schema-first</strong>: Every transform has explicit input/output/args contract</li>
+<li><strong>Argument-based</strong>: All parameters via <code>--arg</code>/<code>--argjson</code> (no hardcoding)</li>
+<li><strong>Composable</strong>: Chain transforms via Unix pipes</li>
+<li><strong>Type-safe</strong>: Graceful handling of missing paths and wrong types</li>
+<li><strong>Self-contained</strong>: Each transform is isolated, no dependencies</li>
+<li><strong>Minimal</strong>: Fewer lines = fewer bugs, easier to understand</li>
+</ol>
+<h2>Common Patterns</h2>
+<p><strong>Get value with default:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>crud-get/transform.jq<span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>path<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;config.timeout&quot;</span><span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>default<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;30&quot;</span>
+</pre></div>
+</code></pre>
+<p><strong>Set nested value:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>crud-set/transform.jq<span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>path<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;user.profile.age&quot;</span><span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>value<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;30&quot;</span>
+</pre></div>
+</code></pre>
+<p><strong>Filter and extract:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>array-filter/transform.jq<span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>array_field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;users&quot;</span><span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;active&quot;</span><span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>value<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;true&quot;</span><span style="color: #BBB"> </span>|<span style="color: #BBB"> </span><span style="color: #AA5D1F; font-weight: bold">\</span>
+jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>array-map/transform.jq<span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>array_field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;users&quot;</span><span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>field<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;email&quot;</span>
+</pre></div>
+</code></pre>
+<p><strong>Validate required fields:</strong></p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>jq<span style="color: #BBB"> </span>-f<span style="color: #BBB"> </span>validate-required/transform.jq<span style="color: #BBB"> </span>--arg<span style="color: #BBB"> </span>fields<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;name,email,age&quot;</span>
+</pre></div>
+</code></pre>
+<h2>Critical Implementation Notes</h2>
+<p>When creating new transforms or debugging issues:</p>
+<p><strong>Avoid common jq pitfalls:</strong></p>
+<ul>
+<li>Use <code>try-catch</code> instead of <code>// fallback</code> for falsy value handling</li>
+<li>Use <code>has()</code> instead of <code>!= null</code> for existence checks</li>
+<li>Check array types before using <code>map()</code> operations</li>
+</ul>
+<p>Refer to <code>references/IMPLEMENTATION_SPEC.md</code> for complete implementation patterns, test coverage requirements, and detailed pitfall documentation.</p>
+<h2>References</h2>
+<p>This skill bundles comprehensive reference documentation (loaded only when needed):</p>
+<ul>
+<li><strong>CHEAT_SHEET.md</strong> - Quick reference of all 60+ transforms with arguments and examples</li>
+<li><strong>IMPLEMENTATION_SPEC.md</strong> - Complete implementation guide with patterns and pitfalls</li>
+<li><strong>README.md</strong> - User-facing documentation and design principles</li>
+<li><strong>USAGE_EXAMPLES.md</strong> - Real-world usage scenarios</li>
+</ul>
+<h2>Testing</h2>
+<p>Test transforms before use:</p>
+<pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># Test specific transform</span>
+./crud-get/test.sh
+
+<span style="color: #3D7B7B; font-style: italic"># Test all transforms</span>
+./test-all.sh
+</pre></div>
+</code></pre>
+<p>Each transform has 8-17 test cases covering happy paths, falsy values, type safety, boundary conditions, and error cases.</p>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>skogai-prompting - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">.skogai</a>
+  &rsaquo; <a href="../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; skogai-prompting
+</nav>
+
+<header>
+  <h1>skogai-prompting</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">This skill should be used when building AI agents using prompt-native architecture where features are defined in prompts, not code. Use it when creating autonomous agents, designing MCP servers, imple</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/skogai-prompting</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/skogai-prompting" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <p>&lt;essential_principles&gt;</p>
+<h2>The Prompt-Native Philosophy</h2>
+<p>Agent native engineering inverts traditional software architecture. Instead of writing code that the agent executes, you define outcomes in prompts and let the agent figure out HOW to achieve them.</p>
+<h3>The Foundational Principle</h3>
+<p><strong>Whatever the user can do, the agent can do. Many things the developer can do, the agent can do.</strong></p>
+<p>Don't artificially limit the agent. If a user could read files, write code, browse the web, deploy an app—the agent should be able to do those things too. The agent figures out HOW to achieve an outcome; it doesn't just call your pre-written functions.</p>
+<h3>Features Are Prompts</h3>
+<p>Each feature is a prompt that defines an outcome and gives the agent the tools it needs. The agent then figures out how to accomplish it.</p>
+<p><strong>Traditional:</strong> Feature = function in codebase that agent calls <strong>Prompt-native:</strong> Feature = prompt defining desired outcome + primitive tools</p>
+<p>The agent doesn't execute your code. It uses primitives to achieve outcomes you describe.</p>
+<h3>Tools Provide Capability, Not Behavior</h3>
+<p>Tools should be primitives that enable capability. The prompt defines what to do with that capability.</p>
+<p><strong>Wrong:</strong> <code>generate_dashboard(data, layout, filters)</code> — agent executes your workflow <strong>Right:</strong> <code>read_file</code>, <code>write_file</code>, <code>list_files</code> — agent figures out how to build a dashboard</p>
+<p>Pure primitives are better, but domain primitives (like <code>store_feedback</code>) are OK if they don't encode logic—just storage/retrieval.</p>
+<h3>The Development Lifecycle</h3>
+<ol>
+<li><strong>Start in the prompt</strong> - New features begin as natural language defining outcomes</li>
+<li><strong>Iterate rapidly</strong> - Change behavior by editing prose, not refactoring code</li>
+<li><strong>Graduate when stable</strong> - Harden to code when requirements stabilize AND speed/reliability matter</li>
+<li><strong>Many features stay as prompts</strong> - Not everything needs to become code</li>
+</ol>
+<h3>Self-Modification (Advanced)</h3>
+<p>The advanced tier: agents that can evolve their own code, prompts, and behavior. Not required for every app, but a big part of the future.</p>
+<p>When implementing:</p>
+<ul>
+<li>Approval gates for code changes</li>
+<li>Auto-commit before modifications (rollback capability)</li>
+<li>Health checks after changes</li>
+<li>Build verification before restart</li>
+</ul>
+<h3>When NOT to Use This Approach</h3>
+<ul>
+<li><strong>High-frequency operations</strong> - thousands of calls per second</li>
+<li><strong>Deterministic requirements</strong> - exact same output every time</li>
+<li><strong>Cost-sensitive scenarios</strong> - when API costs would be prohibitive</li>
+<li><strong>High security</strong> - though this is overblown for most apps &lt;/essential_principles&gt;</li>
+</ul>
+<intake>
+What aspect of agent native architecture do you need help with?
+<ol>
+<li><strong>Design architecture</strong> - Plan a new prompt-native agent system</li>
+<li><strong>Create MCP tools</strong> - Build primitive tools following the philosophy</li>
+<li><strong>Write system prompts</strong> - Define agent behavior in prompts</li>
+<li><strong>Self-modification</strong> - Enable agents to safely evolve themselves</li>
+<li><strong>Review/refactor</strong> - Make existing code more prompt-native</li>
+<li><strong>Context injection</strong> - Inject runtime app state into agent prompts</li>
+<li><strong>Action parity</strong> - Ensure agents can do everything users can do</li>
+<li><strong>Shared workspace</strong> - Set up agents and users in the same data space</li>
+<li><strong>Testing</strong> - Test agent-native apps for capability and parity</li>
+<li><strong>Mobile patterns</strong> - Handle background execution, permissions, cost</li>
+<li><strong>API integration</strong> - Connect to external APIs (HealthKit, HomeKit, GraphQL)</li>
+</ol>
+<p><strong>Wait for response before proceeding.</strong> </intake></p>
+<routing>
+| Response | Action |
+|----------|--------|
+| 1, "design", "architecture", "plan" | Read [architecture-patterns.md](./references/architecture-patterns.md), then apply Architecture Checklist below |
+| 2, "tool", "mcp", "primitive" | Read [mcp-tool-design.md](./references/mcp-tool-design.md) |
+| 3, "prompt", "system prompt", "behavior" | Read [system-prompt-design.md](./references/system-prompt-design.md) |
+| 4, "self-modify", "evolve", "git" | Read [self-modification.md](./references/self-modification.md) |
+| 5, "review", "refactor", "existing" | Read [refactoring-to-prompt-native.md](./references/refactoring-to-prompt-native.md) |
+| 6, "context", "inject", "runtime", "dynamic" | Read [dynamic-context-injection.md](./references/dynamic-context-injection.md) |
+| 7, "parity", "ui action", "capability map" | Read [action-parity-discipline.md](./references/action-parity-discipline.md) |
+| 8, "workspace", "shared", "files", "filesystem" | Read [shared-workspace-architecture.md](./references/shared-workspace-architecture.md) |
+| 9, "test", "testing", "verify", "validate" | Read [agent-native-testing.md](./references/agent-native-testing.md) |
+| 10, "mobile", "ios", "android", "background" | Read [mobile-patterns.md](./references/mobile-patterns.md) |
+| 11, "api", "healthkit", "homekit", "graphql", "external" | Read [mcp-tool-design.md](./references/mcp-tool-design.md) (Dynamic Capability Discovery section) |
+<p><strong>After reading the reference, apply those patterns to the user's specific context.</strong> </routing></p>
+<p>&lt;architecture_checklist&gt;</p>
+<h2>Architecture Review Checklist (Apply During Design)</h2>
+<p>When designing an agent-native system, verify these <strong>before implementation</strong>:</p>
+<h3>Tool Design</h3>
+<ul>
+<li>[ ] <strong>Dynamic vs Static:</strong> For external APIs where agent should have full user-level access (HealthKit, HomeKit, GraphQL), use Dynamic Capability Discovery. Only use static mapping if intentionally limiting agent scope.</li>
+<li>[ ] <strong>CRUD Completeness:</strong> Every entity has create, read, update, AND delete tools</li>
+<li>[ ] <strong>Primitives not Workflows:</strong> Tools enable capability, they don't encode business logic</li>
+<li>[ ] <strong>API as Validator:</strong> Use <code>z.string()</code> inputs when the API validates, not <code>z.enum()</code></li>
+</ul>
+<h3>Action Parity</h3>
+<ul>
+<li>[ ] <strong>Capability Map:</strong> Every UI action has a corresponding agent tool</li>
+<li>[ ] <strong>Edit/Delete:</strong> If UI can edit or delete, agent must be able to too</li>
+<li>[ ] <strong>The Write Test:</strong> &quot;Write something to [app location]&quot; must work for all locations</li>
+</ul>
+<h3>UI Integration</h3>
+<ul>
+<li>[ ] <strong>Agent → UI:</strong> Define how agent changes reflect in UI (shared service, file watching, or event bus)</li>
+<li>[ ] <strong>No Silent Actions:</strong> Agent writes should trigger UI updates immediately</li>
+<li>[ ] <strong>Capability Discovery:</strong> Users can learn what agent can do (onboarding, hints)</li>
+</ul>
+<h3>Context Injection</h3>
+<ul>
+<li>[ ] <strong>Available Resources:</strong> System prompt includes what exists (files, data, types)</li>
+<li>[ ] <strong>Available Capabilities:</strong> System prompt documents what agent can do with user vocabulary</li>
+<li>[ ] <strong>Dynamic Context:</strong> Context refreshes for long sessions (or provide <code>refresh_context</code> tool)</li>
+</ul>
+<h3>Mobile (if applicable)</h3>
+<ul>
+<li>[ ] <strong>Background Execution:</strong> Checkpoint/resume pattern for iOS app suspension</li>
+<li>[ ] <strong>Permissions:</strong> Just-in-time permission requests in tools</li>
+<li>[ ] <strong>Cost Awareness:</strong> Model tier selection (Haiku/Sonnet/Opus)</li>
+</ul>
+<p><strong>When designing architecture, explicitly address each checkbox in your plan.</strong> &lt;/architecture_checklist&gt;</p>
+<p>&lt;quick_start&gt; Build a prompt-native agent in three steps:</p>
+<p><strong>Step 1: Define primitive tools</strong></p>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>tools<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>[
+<span style="color: #BBB">  </span>tool(<span style="color: #BA2121">&quot;read_file&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Read any file&quot;</span>,<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>path<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">z.string</span>()<span style="color: #BBB"> </span>},<span style="color: #BBB"> </span>...),
+<span style="color: #BBB">  </span>tool(<span style="color: #BA2121">&quot;write_file&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Write any file&quot;</span>,<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>path<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">z.string</span>(),<span style="color: #BBB"> </span>content<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">z.string</span>()<span style="color: #BBB"> </span>},<span style="color: #BBB"> </span>...),
+<span style="color: #BBB">  </span>tool(<span style="color: #BA2121">&quot;list_files&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;List directory&quot;</span>,<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>path<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">z.string</span>()<span style="color: #BBB"> </span>},<span style="color: #BBB"> </span>...),
+];
+</pre></div>
+</code></pre>
+<p><strong>Step 2: Write behavior in the system prompt</strong></p>
+<pre><code class="language-markdown"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #800080; font-weight: bold">## Your Responsibilities</span>
+
+When asked to organize content, you should:
+
+<span style="color: #008000; font-weight: bold">1.</span> Read existing files to understand the structure
+<span style="color: #008000; font-weight: bold">2.</span> Analyze what organization makes sense
+<span style="color: #008000; font-weight: bold">3.</span> Create appropriate pages using write_file
+<span style="color: #008000; font-weight: bold">4.</span> Use your judgment about layout and formatting
+
+You decide the structure. Make it good.
+</pre></div>
+</code></pre>
+<p><strong>Step 3: Let the agent work</strong></p>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>query({
+<span style="color: #BBB">  </span>prompt<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">userMessage</span>,
+<span style="color: #BBB">  </span>options<span style="color: #666">:</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span>systemPrompt,
+<span style="color: #BBB">    </span>mcpServers<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>files<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">fileServer</span><span style="color: #BBB"> </span>},
+<span style="color: #BBB">    </span>permissionMode<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;acceptEdits&quot;</span>,
+<span style="color: #BBB">  </span>},
+});
+</pre></div>
+</code></pre>
+<p>&lt;/quick_start&gt;</p>
+<p>&lt;reference_index&gt;</p>
+<h2>Domain Knowledge</h2>
+<p>All references in <code>references/</code>:</p>
+<p><strong>Core Patterns:</strong></p>
+<ul>
+<li><strong>Architecture:</strong> <a href="./references/architecture-patterns.md">architecture-patterns.md</a></li>
+<li><strong>Tool Design:</strong> <a href="./references/mcp-tool-design.md">mcp-tool-design.md</a> - includes Dynamic Capability Discovery, CRUD Completeness</li>
+<li><strong>Prompts:</strong> <a href="./references/system-prompt-design.md">system-prompt-design.md</a></li>
+<li><strong>Self-Modification:</strong> <a href="./references/self-modification.md">self-modification.md</a></li>
+<li><strong>Refactoring:</strong> <a href="./references/refactoring-to-prompt-native.md">refactoring-to-prompt-native.md</a></li>
+</ul>
+<p><strong>Agent-Native Disciplines:</strong></p>
+<ul>
+<li><strong>Context Injection:</strong> <a href="./references/dynamic-context-injection.md">dynamic-context-injection.md</a></li>
+<li><strong>Action Parity:</strong> <a href="./references/action-parity-discipline.md">action-parity-discipline.md</a></li>
+<li><strong>Shared Workspace:</strong> <a href="./references/shared-workspace-architecture.md">shared-workspace-architecture.md</a></li>
+<li><strong>Testing:</strong> <a href="./references/agent-native-testing.md">agent-native-testing.md</a></li>
+<li><strong>Mobile Patterns:</strong> <a href="./references/mobile-patterns.md">mobile-patterns.md</a> &lt;/reference_index&gt;</li>
+</ul>
+<p>&lt;anti_patterns&gt;</p>
+<h2>What NOT to Do</h2>
+<p><strong>THE CARDINAL SIN: Agent executes your code instead of figuring things out</strong></p>
+<p>This is the most common mistake. You fall back into writing workflow code and having the agent call it, instead of defining outcomes and letting the agent figure out HOW.</p>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// WRONG - You wrote the workflow, agent just executes it</span>
+tool(<span style="color: #BA2121">&quot;process_feedback&quot;</span>,<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">async</span><span style="color: #BBB"> </span>({<span style="color: #BBB"> </span>message<span style="color: #BBB"> </span>})<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>category<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>categorize(message);<span style="color: #BBB">      </span><span style="color: #3D7B7B; font-style: italic">// Your code</span>
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>priority<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>calculatePriority(message);<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// Your code</span>
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>store(message,<span style="color: #BBB"> </span>category,<span style="color: #BBB"> </span>priority);<span style="color: #BBB">   </span><span style="color: #3D7B7B; font-style: italic">// Your code</span>
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(priority<span style="color: #BBB"> </span><span style="color: #666">&gt;</span><span style="color: #BBB"> </span><span style="color: #666">3</span>)<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>notify();<span style="color: #BBB">           </span><span style="color: #3D7B7B; font-style: italic">// Your code</span>
+});
+
+<span style="color: #3D7B7B; font-style: italic">// RIGHT - Agent figures out how to process feedback</span>
+tool(<span style="color: #BA2121">&quot;store_item&quot;</span>,<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>key,<span style="color: #BBB"> </span>value<span style="color: #BBB"> </span>},<span style="color: #BBB"> </span>...);<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// Primitive</span>
+tool(<span style="color: #BA2121">&quot;send_message&quot;</span>,<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>channel,<span style="color: #BBB"> </span>content<span style="color: #BBB"> </span>},<span style="color: #BBB"> </span>...);<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// Primitive</span>
+<span style="color: #3D7B7B; font-style: italic">// Prompt says: &quot;Rate importance 1-5 based on actionability, store feedback, notify if &gt;= 4&quot;</span>
+</pre></div>
+</code></pre>
+<p><strong>Don't artificially limit what the agent can do</strong></p>
+<p>If a user could do it, the agent should be able to do it.</p>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// WRONG - limiting agent capabilities</span>
+tool(<span style="color: #BA2121">&quot;read_approved_files&quot;</span>,<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>path<span style="color: #BBB"> </span>},<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">async</span><span style="color: #BBB"> </span>({<span style="color: #BBB"> </span>path<span style="color: #BBB"> </span>})<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>ALLOWED_PATHS.includes(path))<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">throw</span><span style="color: #BBB"> </span><span style="color: #A2F; font-weight: bold">new</span><span style="color: #BBB"> </span><span style="color: #CB3F38; font-weight: bold">Error</span>(<span style="color: #BA2121">&quot;Not allowed&quot;</span>);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>readFile(path);
+});
+
+<span style="color: #3D7B7B; font-style: italic">// RIGHT - give full capability, use guardrails appropriately</span>
+tool(<span style="color: #BA2121">&quot;read_file&quot;</span>,<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>path<span style="color: #BBB"> </span>},<span style="color: #BBB"> </span>...);<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// Agent can read anything</span>
+<span style="color: #3D7B7B; font-style: italic">// Use approval gates for writes, not artificial limits on reads</span>
+</pre></div>
+</code></pre>
+<p><strong>Don't encode decisions in tools</strong></p>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// Wrong - tool decides format</span>
+tool(<span style="color: #BA2121">&quot;format_report&quot;</span>,<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>format<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">z.enum</span>([<span style="color: #BA2121">&quot;markdown&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;html&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;pdf&quot;</span>])<span style="color: #BBB"> </span>},<span style="color: #BBB"> </span>...)
+
+<span style="color: #3D7B7B; font-style: italic">// Right - agent decides format via prompt</span>
+tool(<span style="color: #BA2121">&quot;write_file&quot;</span>,<span style="color: #BBB"> </span>...)<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// Agent chooses what to write</span>
+</pre></div>
+</code></pre>
+<p><strong>Don't over-specify in prompts</strong></p>
+<pre><code class="language-markdown"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>// Wrong - micromanaging the HOW
+When creating a summary, use exactly 3 bullet points,
+each under 20 words, formatted with em-dashes...
+
+// Right - define outcome, trust intelligence
+Create clear, useful summaries. Use your judgment.
+</pre></div>
+</code></pre>
+<h3>Agent-Native Anti-Patterns</h3>
+<p><strong>Context Starvation</strong> Agent doesn't know what resources exist in the app.</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>User: &quot;Write something about Catherine the Great in my feed&quot;
+Agent: &quot;What feed? I don&#39;t understand what system you&#39;re referring to.&quot;
+</pre></div>
+</code></pre>
+<p>Fix: Inject available resources, capabilities, and vocabulary into the system prompt at runtime.</p>
+<p><strong>Orphan Features</strong> UI action with no agent equivalent.</p>
+<pre><code class="language-swift"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// UI has a &quot;Publish to Feed&quot; button</span>
+Button(<span style="color: #BA2121">&quot;Publish&quot;</span>)<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>publishToFeed(insight)<span style="color: #BBB"> </span>}
+<span style="color: #3D7B7B; font-style: italic">// But no agent tool exists to do the same thing</span>
+</pre></div>
+</code></pre>
+<p>Fix: Add corresponding tool and document in system prompt for every UI action.</p>
+<p><strong>Sandbox Isolation</strong> Agent works in separate data space from user.</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Documents/
+├── user_files/        ← User&#39;s space
+└── agent_output/      ← Agent&#39;s space (isolated)
+</pre></div>
+</code></pre>
+<p>Fix: Use shared workspace where both agent and user operate on the same files.</p>
+<p><strong>Silent Actions</strong> Agent changes state but UI doesn't update.</p>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// Agent writes to database</span>
+<span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>db.insert(<span style="color: #BA2121">&quot;feed&quot;</span>,<span style="color: #BBB"> </span>content);
+<span style="color: #3D7B7B; font-style: italic">// But UI doesn&#39;t observe this table - user sees nothing</span>
+</pre></div>
+</code></pre>
+<p>Fix: Use shared data stores with reactive binding, or file system observation.</p>
+<p><strong>Capability Hiding</strong> Users can't discover what agents can do.</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>User: &quot;Help me with my reading&quot;
+Agent: &quot;What would you like help with?&quot;
+// Agent doesn&#39;t mention it can publish to feed, research books, etc.
+</pre></div>
+</code></pre>
+<p>Fix: Include capability hints in agent responses or provide onboarding.</p>
+<p><strong>Static Tool Mapping (for agent-native apps)</strong> Building individual tools for each API endpoint when you want the agent to have full access.</p>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// You built 50 tools for 50 HealthKit types</span>
+tool(<span style="color: #BA2121">&quot;read_steps&quot;</span>,<span style="color: #BBB"> </span>...)
+tool(<span style="color: #BA2121">&quot;read_heart_rate&quot;</span>,<span style="color: #BBB"> </span>...)
+tool(<span style="color: #BA2121">&quot;read_sleep&quot;</span>,<span style="color: #BBB"> </span>...)
+<span style="color: #3D7B7B; font-style: italic">// When glucose tracking is added... code change required</span>
+<span style="color: #3D7B7B; font-style: italic">// Agent can only access what you anticipated</span>
+</pre></div>
+</code></pre>
+<p>Fix: Use Dynamic Capability Discovery - one <code>list_*</code> tool to discover what's available, one generic tool to access any type. See <a href="./references/mcp-tool-design.md">mcp-tool-design.md</a>. (Note: Static mapping is fine for constrained agents with intentionally limited scope.)</p>
+<p><strong>Incomplete CRUD</strong> Agent can create but not update or delete.</p>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// ❌ User: &quot;Delete that journal entry&quot;</span>
+<span style="color: #3D7B7B; font-style: italic">// Agent: &quot;I don&#39;t have a tool for that&quot;</span>
+tool(<span style="color: #BA2121">&quot;create_journal_entry&quot;</span>,<span style="color: #BBB"> </span>...)
+<span style="color: #3D7B7B; font-style: italic">// Missing: update_journal_entry, delete_journal_entry</span>
+</pre></div>
+</code></pre>
+<p>Fix: Every entity needs full CRUD (Create, Read, Update, Delete). The CRUD Audit: for each entity, verify all four operations exist. &lt;/anti_patterns&gt;</p>
+<p>&lt;success_criteria&gt; You've built a prompt-native agent when:</p>
+<p><strong>Core Prompt-Native Criteria:</strong></p>
+<ul>
+<li>[ ] The agent figures out HOW to achieve outcomes, not just calls your functions</li>
+<li>[ ] Whatever a user could do, the agent can do (no artificial limits)</li>
+<li>[ ] Features are prompts that define outcomes, not code that defines workflows</li>
+<li>[ ] Tools are primitives (read, write, store, call API) that enable capability</li>
+<li>[ ] Changing behavior means editing prose, not refactoring code</li>
+<li>[ ] The agent can surprise you with clever approaches you didn't anticipate</li>
+<li>[ ] You could add a new feature by writing a new prompt section, not new code</li>
+</ul>
+<p><strong>Tool Design Criteria:</strong></p>
+<ul>
+<li>[ ] External APIs (where agent should have full access) use Dynamic Capability Discovery</li>
+<li>[ ] Every entity has full CRUD (Create, Read, Update, Delete)</li>
+<li>[ ] API validates inputs, not your enum definitions</li>
+<li>[ ] Discovery tools exist for each API surface (<code>list_*</code>, <code>discover_*</code>)</li>
+</ul>
+<p><strong>Agent-Native Criteria:</strong></p>
+<ul>
+<li>[ ] System prompt includes dynamic context about app state (available resources, recent activity)</li>
+<li>[ ] Every UI action has a corresponding agent tool (action parity)</li>
+<li>[ ] Agent tools are documented in the system prompt with user vocabulary</li>
+<li>[ ] Agent and user work in the same data space (shared workspace)</li>
+<li>[ ] Agent actions are immediately reflected in the UI (shared service, file watching, or event bus)</li>
+<li>[ ] The &quot;write something to [app location]&quot; test passes for all locations</li>
+<li>[ ] Users can discover what the agent can do (capability hints, onboarding)</li>
+<li>[ ] Context refreshes for long sessions (or <code>refresh_context</code> tool exists)</li>
+</ul>
+<p><strong>Mobile-Specific Criteria (if applicable):</strong></p>
+<ul>
+<li>[ ] Background execution handling implemented (checkpoint/resume)</li>
+<li>[ ] Permission requests handled gracefully in tools</li>
+<li>[ ] Cost-aware design (appropriate model tiers, batching) &lt;/success_criteria&gt;</li>
+</ul>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

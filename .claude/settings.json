@@ -46,7 +46,7 @@
           },
           {
             "type": "command",
-            "command": "f=$(jq -r '.tool_input.file_path // empty'); [ -z \"$f\" ] && exit 0; [[ \"$f\" == *.sh || \"$f\" == */bin/* ]] || exit 0; shellcheck \"$f\" || true",
+            "command": "f=$(jq -r '.tool_input.file_path // empty'); [ -z \"$f\" ] && exit 0; [[ \"$f\" == *.sh || \"$f\" == */bin/* ]] || exit 0; command -v shellcheck >/dev/null 2>&1 || exit 0; shellcheck \"$f\" || true",
             "timeout": 15
           }
         ]
@@ -56,7 +56,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "atuin hook claude-code"
+            "command": "command -v atuin >/dev/null 2>&1 && atuin hook claude-code || true"
           }
         ]
       }
@@ -67,7 +67,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "atuin hook claude-code"
+            "command": "command -v atuin >/dev/null 2>&1 && atuin hook claude-code || true"
           }
         ]
       }
@@ -78,7 +78,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "atuin hook claude-code"
+            "command": "command -v atuin >/dev/null 2>&1 && atuin hook claude-code || true"
           }
         ]
       },
@@ -97,7 +97,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "out=$(\"$CLAUDE_PROJECT_DIR\"/claude-todo/bin/healthcheck 2>&1); code=$?; if [ \"$code\" -ne 0 ]; then jq -nc --arg m \"$out\" '{\"systemMessage\":\"⚠ healthcheck failed\\n\\($m)\"}'; fi",
+            "command": "out=$(\"$CLAUDE_PROJECT_DIR\"/claude-todo/bin/healthcheck 2>&1); code=$?; if [ \"$code\" -ne 0 ]; then jq -nc --arg m \"$out\" '{\"systemMessage\":\"\u26a0 healthcheck failed\\n\\($m)\"}'; fi",
             "timeout": 30
           }
         ]
@@ -107,7 +107,7 @@
   "disableAllHooks": false,
   "statusLine": {
     "type": "command",
-    "command": "wt list statusline --format=claude-code"
+    "command": "command -v wt >/dev/null 2>&1 && wt list statusline --format=claude-code || git rev-parse --abbrev-ref HEAD 2>/dev/null || true"
   },
   "enabledPlugins": {
     "core@skogai-marketplace": false,
@@ -129,12 +129,6 @@
         "url": "git@github.com:SkogAI/marketplace.git"
       }
     },
-    "worktrunk": {
-      "source": {
-        "source": "directory",
-        "path": "/home/skogix/.local/src/worktrunk"
-      }
-    },
     "openai-codex": {
       "source": {
         "source": "github",
@@ -147,7 +141,6 @@
   "alwaysThinkingEnabled": true,
   "advisorModel": "opus",
   "autoMemoryEnabled": true,
-  "autoMemoryDirectory": "~/claude/.skogai/memory",
   "autoDreamEnabled": true,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,

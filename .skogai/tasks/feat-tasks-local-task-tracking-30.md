@@ -1,5 +1,5 @@
 ---
-state: new
+state: done
 created: 2026-04-18
 tracking:
   - https://github.com/SkogAI/claude/issues/30
@@ -31,3 +31,17 @@ File-based task tracking for work that doesn't need a Linear/GitHub issue — sc
 ## Notes
 
 *Imported from external tracker. See source link for full context.*
+
+## Completion
+
+- `tasks/` directory exists and is populated with local task files
+- `TASKS.md` index exists for active/waiting/someday/done tracking
+- one-file-per-task structure is in use across imported and local entries
+
+## Verification
+
+- Confirmed all expected task files are present under `.skogai/tasks/`
+
+## Notes
+
+*Imported from external tracker. Updated locally with completion details.*

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>security-patterns - .skogai</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+/* Kind chip colours */
+.tag-kind-lesson { border-color: var(--accent); color: var(--accent); }
+.tag-kind-skill  { border-color: var(--cyan);   color: var(--cyan);   }
+
+/* Keywords section */
+.keywords-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.keywords-section h3 {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">.skogai</a>
+  &rsaquo; <a href="../../index.html#guidance">Lessons &amp; Skills</a>
+  &rsaquo; security-patterns
+</nav>
+
+<header>
+  <h1>security-patterns</h1>
+  <div class="meta">
+    <span class="tag tag-kind-skill">skill</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.9rem;">Implements authentication, authorization, encryption, secrets management, and security hardening patterns. Use when designing auth flows, managing secrets, configuring CORS, implementing rate limiting</span>
+    
+    <span style="color: var(--text-dim); font-size: 0.85rem;">skills/security-patterns</span>
+    <a href="https://github.com/SkogAI/claude/tree/HEAD/skills/security-patterns" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <h1>Security Patterns</h1>
+<h3>When to Load</h3>
+<ul>
+<li><strong>Trigger</strong>: Auth flows, encryption, secrets management, CORS configuration, input validation, rate limiting</li>
+<li><strong>Skip</strong>: No security surface involved in the current task</li>
+</ul>
+<h2>Security Implementation Workflow</h2>
+<p>Copy this checklist and track progress:</p>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Security Implementation Progress:
+- [ ] Step 1: Choose authentication strategy
+- [ ] Step 2: Implement authorization model
+- [ ] Step 3: Set up password hashing
+- [ ] Step 4: Configure secrets management
+- [ ] Step 5: Enable encryption (transit + rest)
+- [ ] Step 6: Configure CORS
+- [ ] Step 7: Add rate limiting
+- [ ] Step 8: Validate against anti-patterns checklist
+</pre></div>
+</code></pre>
+<h2>Authentication Patterns</h2>
+<h3>JWT (JSON Web Tokens)</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>jwt<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;jsonwebtoken&quot;</span>;
+
+<span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>generateTokens(user<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">User</span>)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>accessToken<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>jwt.sign(
+<span style="color: #BBB">    </span>{<span style="color: #BBB"> </span>sub<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">user.id</span>,<span style="color: #BBB"> </span>role<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">user.role</span><span style="color: #BBB"> </span>},
+<span style="color: #BBB">    </span>process.env.JWT_SECRET<span style="color: #666">!</span>,
+<span style="color: #BBB">    </span>{<span style="color: #BBB"> </span>expiresIn<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;15m&quot;</span>,<span style="color: #BBB"> </span>algorithm<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;HS256&quot;</span><span style="color: #BBB"> </span>},
+<span style="color: #BBB">  </span>);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>refreshToken<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>jwt.sign(
+<span style="color: #BBB">    </span>{<span style="color: #BBB"> </span>sub<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">user.id</span>,<span style="color: #BBB"> </span>tokenVersion<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">user.tokenVersion</span><span style="color: #BBB"> </span>},
+<span style="color: #BBB">    </span>process.env.JWT_REFRESH_SECRET<span style="color: #666">!</span>,
+<span style="color: #BBB">    </span>{<span style="color: #BBB"> </span>expiresIn<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;7d&quot;</span><span style="color: #BBB"> </span>},
+<span style="color: #BBB">  </span>);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>accessToken,<span style="color: #BBB"> </span>refreshToken<span style="color: #BBB"> </span>};
+}
+
+<span style="color: #3D7B7B; font-style: italic">// WRONG: localStorage (XSS vulnerable) | CORRECT: httpOnly cookie for refresh, memory for access</span>
+res.cookie(<span style="color: #BA2121">&quot;refreshToken&quot;</span>,<span style="color: #BBB"> </span>refreshToken,<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span>httpOnly<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">true</span>,
+<span style="color: #BBB">  </span>secure<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">true</span>,
+<span style="color: #BBB">  </span>sameSite<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;strict&quot;</span>,
+<span style="color: #BBB">  </span>maxAge<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">7</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">24</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">60</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">60</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">1000</span>,
+<span style="color: #BBB">  </span>path<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;/api/auth/refresh&quot;</span>,
+});
+</pre></div>
+</code></pre>
+<h3>JWT Verification Middleware</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>authenticate(req<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Request</span>,<span style="color: #BBB"> </span>res<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Response</span>,<span style="color: #BBB"> </span>next<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">NextFunction</span>)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>header<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>req.headers.authorization;
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>header<span style="color: #666">?</span>.startsWith(<span style="color: #BA2121">&quot;Bearer &quot;</span>))<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">401</span>).json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Missing token&quot;</span><span style="color: #BBB"> </span>});
+<span style="color: #BBB">  </span>}
+
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">try</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>token<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>header.slice(<span style="color: #666">7</span>);
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>payload<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>jwt.verify(token,<span style="color: #BBB"> </span>process.env.JWT_SECRET<span style="color: #666">!</span>)<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">as</span><span style="color: #BBB"> </span>JwtPayload;
+<span style="color: #BBB">    </span>req.user<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>id<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">payload.sub</span>,<span style="color: #BBB"> </span>role<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">payload.role</span><span style="color: #BBB"> </span>};
+<span style="color: #BBB">    </span>next();
+<span style="color: #BBB">  </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">catch</span><span style="color: #BBB"> </span>(err)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(err<span style="color: #BBB"> </span><span style="color: #A2F; font-weight: bold">instanceof</span><span style="color: #BBB"> </span>jwt.TokenExpiredError)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">401</span>).json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Token expired&quot;</span><span style="color: #BBB"> </span>});
+<span style="color: #BBB">    </span>}
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">401</span>).json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Invalid token&quot;</span><span style="color: #BBB"> </span>});
+<span style="color: #BBB">  </span>}
+}
+</pre></div>
+</code></pre>
+<h3>Session-Based Auth</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>session<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;express-session&quot;</span>;
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>RedisStore<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;connect-redis&quot;</span>;
+
+app.use(
+<span style="color: #BBB">  </span>session({
+<span style="color: #BBB">    </span>store<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">new</span><span style="color: #BBB"> </span>RedisStore({<span style="color: #BBB"> </span>client<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">redisClient</span><span style="color: #BBB"> </span>}),
+<span style="color: #BBB">    </span>secret<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">process.env.SESSION_SECRET</span><span style="color: #666">!</span>,
+<span style="color: #BBB">    </span>resave<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">false</span>,
+<span style="color: #BBB">    </span>saveUninitialized<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">false</span>,
+<span style="color: #BBB">    </span>cookie<span style="color: #666">:</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">      </span>httpOnly<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">true</span>,
+<span style="color: #BBB">      </span>secure<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">process.env.NODE_ENV</span><span style="color: #BBB"> </span><span style="color: #666">===</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;production&quot;</span>,
+<span style="color: #BBB">      </span>sameSite<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;strict&quot;</span>,
+<span style="color: #BBB">      </span>maxAge<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">24</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">60</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">60</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">1000</span>,<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// 24 hours</span>
+<span style="color: #BBB">    </span>},
+<span style="color: #BBB">  </span>}),
+);
+</pre></div>
+</code></pre>
+<h3>OAuth 2.0 / OIDC Flow Summary</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>Authorization Code Flow (web apps with backend):
+1. Redirect to provider: /authorize?response_type=code&amp;client_id=...&amp;redirect_uri=...&amp;scope=openid email
+2. User authenticates, provider redirects back with ?code=AUTHORIZATION_CODE
+3. Backend exchanges code for tokens (POST /token with client_secret)
+4. Backend receives access_token + id_token, creates session/JWT
+
+PKCE Flow (SPAs, mobile): Same but with code_verifier/code_challenge instead of client_secret
+NEVER use Implicit Flow (deprecated, tokens exposed in URL)
+</pre></div>
+</code></pre>
+<h3>API Key Authentication</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">async</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>authenticateApiKey(
+<span style="color: #BBB">  </span>req<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Request</span>,
+<span style="color: #BBB">  </span>res<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Response</span>,
+<span style="color: #BBB">  </span>next<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">NextFunction</span>,
+)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>apiKey<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>req.headers[<span style="color: #BA2121">&quot;x-api-key&quot;</span>]<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">as</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>;
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>apiKey)<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">401</span>).json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;API key required&quot;</span><span style="color: #BBB"> </span>});
+
+<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// WRONG: Direct comparison (timing attack) | CORRECT: Hash-based lookup</span>
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>hashedKey<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>crypto.createHash(<span style="color: #BA2121">&quot;sha256&quot;</span>).update(apiKey).digest(<span style="color: #BA2121">&quot;hex&quot;</span>);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>keyRecord<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>db.apiKey.findUnique({<span style="color: #BBB"> </span>where<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>hash<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">hashedKey</span><span style="color: #BBB"> </span>}<span style="color: #BBB"> </span>});
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>keyRecord<span style="color: #BBB"> </span><span style="color: #666">||</span><span style="color: #BBB"> </span>keyRecord.revokedAt)
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">401</span>).json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Invalid API key&quot;</span><span style="color: #BBB"> </span>});
+
+<span style="color: #BBB">  </span>req.apiClient<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>id<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">keyRecord.clientId</span>,<span style="color: #BBB"> </span>scopes<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">keyRecord.scopes</span><span style="color: #BBB"> </span>};
+<span style="color: #BBB">  </span>next();
+}
+</pre></div>
+</code></pre>
+<h2>Authorization Models</h2>
+<h3>RBAC (Role-Based Access Control)</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>PERMISSIONS<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span>admin<span style="color: #666">:</span><span style="color: #BBB"> </span>[
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;users:read&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;users:write&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;users:delete&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;posts:read&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;posts:write&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;posts:delete&quot;</span>,
+<span style="color: #BBB">  </span>],
+<span style="color: #BBB">  </span>editor<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;posts:read&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;posts:write&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;posts:delete&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;users:read&quot;</span>],
+<span style="color: #BBB">  </span>viewer<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;posts:read&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;users:read&quot;</span>],
+}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">as</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">const</span>;
+
+<span style="color: #008000; font-weight: bold">type</span><span style="color: #BBB"> </span>Role<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>keyof<span style="color: #BBB"> </span><span style="color: #A2F; font-weight: bold">typeof</span><span style="color: #BBB"> </span>PERMISSIONS;
+
+<span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>authorize(...requiredPermissions<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>[])<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>(req<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Request</span>,<span style="color: #BBB"> </span>res<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Response</span>,<span style="color: #BBB"> </span>next<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">NextFunction</span>)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>userPermissions<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>PERMISSIONS[req.user.role<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">as</span><span style="color: #BBB"> </span>Role]<span style="color: #BBB"> </span><span style="color: #666">||</span><span style="color: #BBB"> </span>[];
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>hasPermission<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>requiredPermissions.every((p)<span style="color: #BBB"> </span>=&gt;
+<span style="color: #BBB">      </span>(userPermissions<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">as</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">readonly</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>[]).includes(p),
+<span style="color: #BBB">    </span>);
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>hasPermission)
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">403</span>).json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Insufficient permissions&quot;</span><span style="color: #BBB"> </span>});
+<span style="color: #BBB">    </span>next();
+<span style="color: #BBB">  </span>};
+}
+
+<span style="color: #3D7B7B; font-style: italic">// Usage: app.delete(&quot;/api/users/:id&quot;, authenticate, authorize(&quot;users:delete&quot;), deleteUser);</span>
+</pre></div>
+</code></pre>
+<h3>Resource-Level Authorization</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// WRONG: Only checking role, not ownership -- any editor can edit ANY post</span>
+<span style="color: #3D7B7B; font-style: italic">// CORRECT: Check ownership or admin role</span>
+app.put(
+<span style="color: #BBB">  </span><span style="color: #BA2121">&quot;/api/posts/:id&quot;</span>,
+<span style="color: #BBB">  </span>authenticate,
+<span style="color: #BBB">  </span>authorize(<span style="color: #BA2121">&quot;posts:write&quot;</span>),
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">async</span><span style="color: #BBB"> </span>(req,<span style="color: #BBB"> </span>res)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>post<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>db.post.findUnique({<span style="color: #BBB"> </span>where<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>id<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">req.params.id</span><span style="color: #BBB"> </span>}<span style="color: #BBB"> </span>});
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>post)<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">404</span>).json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Not found&quot;</span><span style="color: #BBB"> </span>});
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(post.authorId<span style="color: #BBB"> </span><span style="color: #666">!==</span><span style="color: #BBB"> </span>req.user.id<span style="color: #BBB"> </span><span style="color: #666">&amp;&amp;</span><span style="color: #BBB"> </span>req.user.role<span style="color: #BBB"> </span><span style="color: #666">!==</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;admin&quot;</span>)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res
+<span style="color: #BBB">        </span>.status(<span style="color: #666">403</span>)
+<span style="color: #BBB">        </span>.json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Not authorized to edit this post&quot;</span><span style="color: #BBB"> </span>});
+<span style="color: #BBB">    </span>}
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>db.post.update({<span style="color: #BBB"> </span>where<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>id<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">req.params.id</span><span style="color: #BBB"> </span>},<span style="color: #BBB"> </span>data<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">req.body</span><span style="color: #BBB"> </span>});
+<span style="color: #BBB">  </span>},
+);
+</pre></div>
+</code></pre>
+<h2>Password Handling</h2>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>bcrypt<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;bcrypt&quot;</span>;
+<span style="color: #3D7B7B; font-style: italic">// WRONG: plaintext or MD5/SHA256 (too fast, brute-forceable)</span>
+<span style="color: #3D7B7B; font-style: italic">// CORRECT: bcrypt with appropriate cost factor</span>
+<span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>SALT_ROUNDS<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #666">12</span>;<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// ~250ms on modern hardware</span>
+
+<span style="color: #008000; font-weight: bold">async</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>hashPassword(password<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>)<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #008000">Promise</span><span style="color: #666">&lt;</span><span style="color: #B00040">string</span><span style="color: #666">&gt;</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>bcrypt.hash(password,<span style="color: #BBB"> </span>SALT_ROUNDS);
+}
+<span style="color: #008000; font-weight: bold">async</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>verifyPassword(
+<span style="color: #BBB">  </span>password<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>,
+<span style="color: #BBB">  </span>hash<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>,
+)<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #008000">Promise</span><span style="color: #666">&lt;</span><span style="color: #B00040">boolean</span><span style="color: #666">&gt;</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>bcrypt.compare(password,<span style="color: #BBB"> </span>hash);<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// constant-time comparison built-in</span>
+}
+
+<span style="color: #3D7B7B; font-style: italic">// Registration</span>
+<span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>db.user.create({
+<span style="color: #BBB">  </span>data<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>email,<span style="color: #BBB"> </span>password<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">await</span><span style="color: #BBB"> </span>hashPassword(req.body.password)<span style="color: #BBB"> </span>},
+});
+
+<span style="color: #3D7B7B; font-style: italic">// Login -- WRONG: &quot;Invalid password&quot; (reveals email exists) | CORRECT: generic message</span>
+<span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>user<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>db.user.findUnique({<span style="color: #BBB"> </span>where<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>email<span style="color: #BBB"> </span>}<span style="color: #BBB"> </span>});
+<span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>user<span style="color: #BBB"> </span><span style="color: #666">||</span><span style="color: #BBB"> </span><span style="color: #666">!</span>(<span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>verifyPassword(req.body.password,<span style="color: #BBB"> </span>user.password)))<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">401</span>).json({<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Invalid email or password&quot;</span><span style="color: #BBB"> </span>});
+}
+</pre></div>
+</code></pre>
+<h3>Password Policies</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>validatePassword(password<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>)<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>[]<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>errors<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>[]<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>[];
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(password.length<span style="color: #BBB"> </span><span style="color: #666">&lt;</span><span style="color: #BBB"> </span><span style="color: #666">12</span>)<span style="color: #BBB"> </span>errors.push(<span style="color: #BA2121">&quot;Minimum 12 characters&quot;</span>);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(password.length<span style="color: #BBB"> </span><span style="color: #666">&gt;</span><span style="color: #BBB"> </span><span style="color: #666">128</span>)<span style="color: #BBB"> </span>errors.push(<span style="color: #BA2121">&quot;Maximum 128 characters&quot;</span>);
+
+<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// Check against breached password lists (haveibeenpwned API or local)</span>
+<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// Do NOT enforce arbitrary complexity rules (uppercase + number + symbol)</span>
+<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// NIST 800-63B recommends length over complexity</span>
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>errors;
+}
+</pre></div>
+</code></pre>
+<h2>Secrets Management</h2>
+<pre><code class="language-python"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic"># WRONG: Hardcoded values in source code</span>
+<span style="color: #3D7B7B; font-style: italic"># API_KEY = &quot;some-value-here&quot;</span>
+
+<span style="color: #3D7B7B; font-style: italic"># CORRECT: Environment variables loaded from .env</span>
+<span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">dotenv</span><span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">import</span> load_dotenv
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span><span style="color: #00F; font-weight: bold">os</span>
+
+load_dotenv()
+api_key <span style="color: #666">=</span> os<span style="color: #666">.</span>getenv(<span style="color: #BA2121">&quot;API_KEY&quot;</span>)
+db_url <span style="color: #666">=</span> os<span style="color: #666">.</span>getenv(<span style="color: #BA2121">&quot;DATABASE_URL&quot;</span>)
+
+<span style="color: #3D7B7B; font-style: italic"># CORRECT: Secrets manager for production</span>
+<span style="color: #3D7B7B; font-style: italic"># AWS: Secrets Manager, Parameter Store</span>
+<span style="color: #3D7B7B; font-style: italic"># GCP: Secret Manager</span>
+<span style="color: #3D7B7B; font-style: italic"># HashiCorp Vault for self-hosted</span>
+</pre></div>
+</code></pre>
+<h3>Secret Rotation</h3>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>1. Generate new secret value
+2. Deploy code that accepts BOTH old and new values
+3. Update all consumers to use the new value
+4. Verify old value is no longer in use
+5. Revoke old value
+
+Never: Rotate in-place without a transition period
+</pre></div>
+</code></pre>
+<h2>Encryption Patterns</h2>
+<h3>In Transit</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #3D7B7B; font-style: italic">// Redirect HTTP to HTTPS in production</span>
+app.use((req,<span style="color: #BBB"> </span>res,<span style="color: #BBB"> </span>next)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(
+<span style="color: #BBB">    </span>req.headers[<span style="color: #BA2121">&quot;x-forwarded-proto&quot;</span>]<span style="color: #BBB"> </span><span style="color: #666">!==</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;https&quot;</span><span style="color: #BBB"> </span><span style="color: #666">&amp;&amp;</span>
+<span style="color: #BBB">    </span>process.env.NODE_ENV<span style="color: #BBB"> </span><span style="color: #666">===</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;production&quot;</span>
+<span style="color: #BBB">  </span>)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.redirect(<span style="color: #666">301</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">`https://</span><span style="color: #A45A77; font-weight: bold">${</span>req.hostname<span style="color: #A45A77; font-weight: bold">}${</span>req.url<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">`</span>);
+<span style="color: #BBB">  </span>}
+<span style="color: #BBB">  </span>next();
+});
+<span style="color: #3D7B7B; font-style: italic">// HSTS header</span>
+app.use((req,<span style="color: #BBB"> </span>res,<span style="color: #BBB"> </span>next)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span>res.setHeader(
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;Strict-Transport-Security&quot;</span>,
+<span style="color: #BBB">    </span><span style="color: #BA2121">&quot;max-age=31536000; includeSubDomains&quot;</span>,
+<span style="color: #BBB">  </span>);
+<span style="color: #BBB">  </span>next();
+});
+</pre></div>
+</code></pre>
+<h3>At Rest</h3>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>crypto<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;crypto&quot;</span>;
+<span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>ALGORITHM<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;aes-256-gcm&quot;</span>;
+
+<span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>encrypt(
+<span style="color: #BBB">  </span>plaintext<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>,
+<span style="color: #BBB">  </span>key<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Buffer</span>,
+)<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>ciphertext<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>;<span style="color: #BBB"> </span>iv<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>;<span style="color: #BBB"> </span>tag<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span><span style="color: #BBB"> </span>}<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>iv<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>crypto.randomBytes(<span style="color: #666">16</span>);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>cipher<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>crypto.createCipheriv(ALGORITHM,<span style="color: #BBB"> </span>key,<span style="color: #BBB"> </span>iv);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">let</span><span style="color: #BBB"> </span>ciphertext<span style="color: #BBB"> </span><span style="color: #666">=</span>
+<span style="color: #BBB">    </span>cipher.update(plaintext,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;utf8&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;hex&quot;</span>)<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>cipher.<span style="color: #008000; font-weight: bold">final</span>(<span style="color: #BA2121">&quot;hex&quot;</span>);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span>ciphertext,
+<span style="color: #BBB">    </span>iv<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">iv.toString</span>(<span style="color: #BA2121">&quot;hex&quot;</span>),
+<span style="color: #BBB">    </span>tag<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">cipher.getAuthTag</span>().toString(<span style="color: #BA2121">&quot;hex&quot;</span>),
+<span style="color: #BBB">  </span>};
+}
+
+<span style="color: #008000; font-weight: bold">function</span><span style="color: #BBB"> </span>decrypt(
+<span style="color: #BBB">  </span>ciphertext<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>,
+<span style="color: #BBB">  </span>key<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">Buffer</span>,
+<span style="color: #BBB">  </span>iv<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>,
+<span style="color: #BBB">  </span>tag<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span>,
+)<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">string</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>decipher<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>crypto.createDecipheriv(
+<span style="color: #BBB">    </span>ALGORITHM,
+<span style="color: #BBB">    </span>key,
+<span style="color: #BBB">    </span>Buffer.<span style="color: #008000; font-weight: bold">from</span>(iv,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;hex&quot;</span>),
+<span style="color: #BBB">  </span>);
+<span style="color: #BBB">  </span>decipher.setAuthTag(Buffer.<span style="color: #008000; font-weight: bold">from</span>(tag,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;hex&quot;</span>));
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>decipher.update(ciphertext,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;hex&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;utf8&quot;</span>)<span style="color: #BBB"> </span><span style="color: #666">+</span><span style="color: #BBB"> </span>decipher.<span style="color: #008000; font-weight: bold">final</span>(<span style="color: #BA2121">&quot;utf8&quot;</span>);
+}
+<span style="color: #3D7B7B; font-style: italic">// Use for PII, sensitive data. Encryption key in secrets manager, NOT in code.</span>
+</pre></div>
+</code></pre>
+<h2>CORS Configuration</h2>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>cors<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;cors&quot;</span>;
+
+<span style="color: #3D7B7B; font-style: italic">// WRONG: Allow everything</span>
+app.use(cors());<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// origin: *, credentials: false</span>
+
+<span style="color: #3D7B7B; font-style: italic">// WRONG: Wildcard with credentials</span>
+app.use(cors({<span style="color: #BBB"> </span>origin<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;*&quot;</span>,<span style="color: #BBB"> </span>credentials<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">true</span><span style="color: #BBB"> </span>}));<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// browsers reject this</span>
+
+<span style="color: #3D7B7B; font-style: italic">// CORRECT: Explicit allowed origins</span>
+<span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>ALLOWED_ORIGINS<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>[
+<span style="color: #BBB">  </span><span style="color: #BA2121">&quot;https://myapp.com&quot;</span>,
+<span style="color: #BBB">  </span><span style="color: #BA2121">&quot;https://admin.myapp.com&quot;</span>,
+<span style="color: #BBB">  </span>...(process.env.NODE_ENV<span style="color: #BBB"> </span><span style="color: #666">!==</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;production&quot;</span><span style="color: #BBB"> </span><span style="color: #666">?</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;http://localhost:3000&quot;</span>]<span style="color: #BBB"> </span><span style="color: #666">:</span><span style="color: #BBB"> </span>[]),
+];
+
+app.use(
+<span style="color: #BBB">  </span>cors({
+<span style="color: #BBB">    </span>origin<span style="color: #666">:</span><span style="color: #BBB"> </span>(origin,<span style="color: #BBB"> </span>callback)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">      </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>origin<span style="color: #BBB"> </span><span style="color: #666">||</span><span style="color: #BBB"> </span>ALLOWED_ORIGINS.includes(origin))<span style="color: #BBB"> </span>{
+<span style="color: #BBB">        </span>callback(<span style="color: #008000; font-weight: bold">null</span>,<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">true</span>);
+<span style="color: #BBB">      </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">else</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">        </span>callback(<span style="color: #A2F; font-weight: bold">new</span><span style="color: #BBB"> </span><span style="color: #CB3F38; font-weight: bold">Error</span>(<span style="color: #BA2121">&quot;Not allowed by CORS&quot;</span>));
+<span style="color: #BBB">      </span>}
+<span style="color: #BBB">    </span>},
+<span style="color: #BBB">    </span>credentials<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">true</span>,
+<span style="color: #BBB">    </span>methods<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;GET&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;POST&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;PUT&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;PATCH&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;DELETE&quot;</span>],
+<span style="color: #BBB">    </span>allowedHeaders<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;Content-Type&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Authorization&quot;</span>],
+<span style="color: #BBB">    </span>maxAge<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">86400</span>,<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// cache preflight for 24 hours</span>
+<span style="color: #BBB">  </span>}),
+);
+</pre></div>
+</code></pre>
+<h2>Rate Limiting</h2>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>rateLimit<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;express-rate-limit&quot;</span>;
+<span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>RedisStore<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;rate-limit-redis&quot;</span>;
+
+<span style="color: #3D7B7B; font-style: italic">// Global rate limit</span>
+app.use(
+<span style="color: #BBB">  </span>rateLimit({
+<span style="color: #BBB">    </span>windowMs<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">15</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">60</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">1000</span>,<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// 15 minutes</span>
+<span style="color: #BBB">    </span>max<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">100</span>,<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// 100 requests per window</span>
+<span style="color: #BBB">    </span>standardHeaders<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">true</span>,<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// RateLimit-* headers</span>
+<span style="color: #BBB">    </span>legacyHeaders<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">false</span>,
+<span style="color: #BBB">    </span>store<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">new</span><span style="color: #BBB"> </span>RedisStore({
+<span style="color: #BBB">      </span>sendCommand<span style="color: #666">:</span><span style="color: #BBB"> </span>(...args)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>redisClient.sendCommand(args),
+<span style="color: #BBB">    </span>}),
+<span style="color: #BBB">  </span>}),
+);
+
+<span style="color: #3D7B7B; font-style: italic">// Strict limit on auth endpoints</span>
+app.use(
+<span style="color: #BBB">  </span><span style="color: #BA2121">&quot;/api/auth/login&quot;</span>,
+<span style="color: #BBB">  </span>rateLimit({
+<span style="color: #BBB">    </span>windowMs<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">15</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">60</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">1000</span>,
+<span style="color: #BBB">    </span>max<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">5</span>,<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// 5 login attempts per 15 min</span>
+<span style="color: #BBB">    </span>message<span style="color: #666">:</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>error<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;Too many login attempts. Try again later.&quot;</span><span style="color: #BBB"> </span>},
+<span style="color: #BBB">  </span>}),
+);
+
+<span style="color: #3D7B7B; font-style: italic">// Per-API-key rate limiting for developer APIs</span>
+app.use(
+<span style="color: #BBB">  </span><span style="color: #BA2121">&quot;/api/v1/&quot;</span>,
+<span style="color: #BBB">  </span>rateLimit({
+<span style="color: #BBB">    </span>windowMs<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">60</span><span style="color: #BBB"> </span><span style="color: #666">*</span><span style="color: #BBB"> </span><span style="color: #666">1000</span>,<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// 1 minute</span>
+<span style="color: #BBB">    </span>max<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">60</span>,<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// 60 requests per minute</span>
+<span style="color: #BBB">    </span>keyGenerator<span style="color: #666">:</span><span style="color: #BBB"> </span>(req)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>req.apiClient<span style="color: #666">?</span>.id<span style="color: #BBB"> </span><span style="color: #666">||</span><span style="color: #BBB"> </span>req.ip,
+<span style="color: #BBB">  </span>}),
+);
+</pre></div>
+</code></pre>
+<h2>Security Headers</h2>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>helmet<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;helmet&quot;</span>;
+
+app.use(helmet());<span style="color: #BBB"> </span><span style="color: #3D7B7B; font-style: italic">// Sets many secure headers at once</span>
+
+<span style="color: #3D7B7B; font-style: italic">// Key headers helmet sets:</span>
+<span style="color: #3D7B7B; font-style: italic">// X-Content-Type-Options: nosniff</span>
+<span style="color: #3D7B7B; font-style: italic">// X-Frame-Options: DENY</span>
+<span style="color: #3D7B7B; font-style: italic">// Strict-Transport-Security: max-age=15552000; includeSubDomains</span>
+<span style="color: #3D7B7B; font-style: italic">// Content-Security-Policy: default-src &#39;self&#39;</span>
+
+<span style="color: #3D7B7B; font-style: italic">// Customize CSP for your app</span>
+app.use(
+<span style="color: #BBB">  </span>helmet.contentSecurityPolicy({
+<span style="color: #BBB">    </span>directives<span style="color: #666">:</span><span style="color: #BBB"> </span>{
+<span style="color: #BBB">      </span>defaultSrc<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;&#39;self&#39;&quot;</span>],
+<span style="color: #BBB">      </span>scriptSrc<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;&#39;self&#39;&quot;</span>],
+<span style="color: #BBB">      </span>styleSrc<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;&#39;self&#39;&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;&#39;unsafe-inline&#39;&quot;</span>],
+<span style="color: #BBB">      </span>imgSrc<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;&#39;self&#39;&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;data:&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;https://cdn.example.com&quot;</span>],
+<span style="color: #BBB">      </span>connectSrc<span style="color: #666">:</span><span style="color: #BBB"> </span>[<span style="color: #BA2121">&quot;&#39;self&#39;&quot;</span>,<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;https://api.example.com&quot;</span>],
+<span style="color: #BBB">    </span>},
+<span style="color: #BBB">  </span>}),
+);
+</pre></div>
+</code></pre>
+<h2>Input Validation</h2>
+<pre><code class="language-typescript"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">import</span><span style="color: #BBB"> </span>{<span style="color: #BBB"> </span>z<span style="color: #BBB"> </span>}<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">from</span><span style="color: #BBB"> </span><span style="color: #BA2121">&quot;zod&quot;</span>;
+
+<span style="color: #3D7B7B; font-style: italic">// WRONG: Trusting user input directly (SQL injection risk)</span>
+app.post(<span style="color: #BA2121">&quot;/api/users&quot;</span>,<span style="color: #BBB"> </span>(req,<span style="color: #BBB"> </span>res)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span>db.query(<span style="color: #BA2121">`SELECT * FROM users WHERE email = &#39;</span><span style="color: #A45A77; font-weight: bold">${</span>req.body.email<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">&#39;`</span>);
+});
+
+<span style="color: #3D7B7B; font-style: italic">// CORRECT: Validate with schema, use parameterized queries</span>
+<span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>CreateUserSchema<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>z.object({
+<span style="color: #BBB">  </span>email<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">z.string</span>().email().max(<span style="color: #666">255</span>),
+<span style="color: #BBB">  </span>name<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">z.string</span>().min(<span style="color: #666">1</span>).max(<span style="color: #666">100</span>).trim(),
+<span style="color: #BBB">  </span>age<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">z.number</span>().<span style="color: #008000; font-weight: bold">int</span>().min(<span style="color: #666">13</span>).max(<span style="color: #666">150</span>).optional(),
+});
+
+app.post(<span style="color: #BA2121">&quot;/api/users&quot;</span>,<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">async</span><span style="color: #BBB"> </span>(req,<span style="color: #BBB"> </span>res)<span style="color: #BBB"> </span>=&gt;<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">const</span><span style="color: #BBB"> </span>result<span style="color: #BBB"> </span><span style="color: #666">=</span><span style="color: #BBB"> </span>CreateUserSchema.safeParse(req.body);
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">if</span><span style="color: #BBB"> </span>(<span style="color: #666">!</span>result.success)<span style="color: #BBB"> </span>{
+<span style="color: #BBB">    </span><span style="color: #008000; font-weight: bold">return</span><span style="color: #BBB"> </span>res.status(<span style="color: #666">400</span>).json({<span style="color: #BBB"> </span>errors<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">result.error.flatten</span>()<span style="color: #BBB"> </span>});
+<span style="color: #BBB">  </span>}
+<span style="color: #BBB">  </span><span style="color: #3D7B7B; font-style: italic">// Use parameterized query (ORM or prepared statement)</span>
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">await</span><span style="color: #BBB"> </span>db.user.create({<span style="color: #BBB"> </span>data<span style="color: #666">:</span><span style="color: #BBB"> </span><span style="color: #B00040">result.data</span><span style="color: #BBB"> </span>});
+});
+</pre></div>
+</code></pre>
+<h2>Common Anti-Patterns Summary</h2>
+<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>AVOID                              DO INSTEAD
+-------------------------------------------------------------------
+JWT in localStorage                httpOnly secure cookie (refresh), memory (access)
+MD5/SHA for passwords              bcrypt or argon2 with proper cost factor
+Hardcoded secrets in code          Environment variables + secrets manager
+cors({ origin: &#39;*&#39; })             Explicit allowed origins list
+&quot;Invalid password&quot; message         &quot;Invalid email or password&quot; (no enumeration)
+No rate limiting on auth           Strict rate limits on login/register
+Rolling your own crypto            Use established libraries (jose, bcrypt)
+Trusting user input                Validate with zod/joi, parameterized queries
+Same API key forever               Rotate keys regularly, support multiple active
+No HTTPS redirect                  Force HTTPS + HSTS header
+Symmetric JWT for multi-service    Use RS256/ES256 (asymmetric) for distributed
+No input length limits             Max length on all string inputs
+</pre></div>
+</code></pre>
+
+</div>
+
+
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>
