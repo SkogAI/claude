@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-19T09:45:57.110316+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:45:56.084Z",
+    "data": {
+      "id": "dbb2a9eb-8622-4400-95ee-c1c82e74b580",
+      "createdAt": "2026-04-17T13:49:54.606Z",
+      "updatedAt": "2026-04-19T09:45:56.083Z",
+      "number": 157,
+      "title": "feat: phase 5 plan 1 \u2014 chat-io contract, routing script, bats tests",
+      "priority": 4,
+      "sortOrder": -25302.45,
+      "prioritySortOrder": -2043.63,
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-17T13:49:54.769Z",
+      "addedToTeamAt": "2026-04-17T13:49:54.769Z",
+      "labelIds": [],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "subIssueSortOrder": 55,
+      "reactionData": [],
+      "priorityLabel": "Low",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-157",
+      "url": "https://linear.app/skogai/issue/SKO-157/feat-phase-5-plan-1-chat-io-contract-routing-script-bats-tests",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "c6b19cf1-9eaf-44a3-8fea-b186f3ca7c14",
+      "project": {
+        "id": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+        "name": "SkogAI",
+        "url": "https://linear.app/skogai/project/skogai-08eb8e1f4091"
+      },
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "syncedWith": [
+        {
+          "id": "4283089621",
+          "service": "github",
+          "metadata": {
+            "repo": "claude",
+            "owner": "SkogAI",
+            "number": 22
+          }
+        }
+      ],
+      "labels": [],
+      "description": "Implements ROADMAP Phase 5, Plan 1.\n\n## Requirements\n\n* CHAT-01: Routing script detects `[@agent:\"msg\"]` and dispatches via skogparse\n* CHAT-02: Unknown agents produce human-readable error, not raw JSON\n* CHAT-03: Plain text without notation bypasses routing\n* CHAT-04: JSON envelope is unwrapped \u2014 only the value field reaches the caller\n* CHAT-05: Chat-io contract spec documents deliver/reply semantics\n\n## Deliverables\n\n* `docs/chat-io-contract.md` \u2014 transport-agnostic contract spec\n* `bin/route-message.sh` \u2014 routing script using `skogparse --execute`\n* Bats test suite covering all CHAT-0x requirements\n\n## Notes\n\n* skogparse binary: `/home/skogix/.local/bin/skogparse --execute`\n* Output format: `{\"type\":\"string\",\"value\":\"...\"}` \u2014 always unwrap `.value`\n* Only messages starting with `[@` are routed",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Implements ROADMAP Phase 5, Plan 1.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"6c7b03fe-832d-49f1-9521-b671c934acac\"},\"content\":[{\"type\":\"text\",\"text\":\"Requirements\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CHAT-01: Routing script detects \"},{\"type\":\"text\",\"text\":\"[@agent:\\\"msg\\\"]\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" and dispatches via skogparse\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CHAT-02: Unknown agents produce human-readable error, not raw JSON\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CHAT-03: Plain text without notation bypasses routing\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CHAT-04: JSON envelope is unwrapped \u2014 only the value field reaches the caller\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CHAT-05: Chat-io contract spec documents deliver/reply semantics\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"d792d1c7-9b76-4d31-b8b6-2655db2b69cd\"},\"content\":[{\"type\":\"text\",\"text\":\"Deliverables\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"docs/chat-io-contract.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 transport-agnostic contract spec\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"bin/route-message.sh\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 routing script using \"},{\"type\":\"text\",\"text\":\"skogparse --execute\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Bats test suite covering all CHAT-0x requirements\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"5e9ab13f-69d1-4a6d-bf1f-aa0c06891fc9\"},\"content\":[{\"type\":\"text\",\"text\":\"Notes\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogparse binary: \"},{\"type\":\"text\",\"text\":\"/home/skogix/.local/bin/skogparse --execute\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Output format: \"},{\"type\":\"text\",\"text\":\"{\\\"type\\\":\\\"string\\\",\\\"value\\\":\\\"...\\\"}\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 always unwrap \"},{\"type\":\"text\",\"text\":\".value\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Only messages starting with \"},{\"type\":\"text\",\"text\":\"[@\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" are routed\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "sortOrder": -23,
+      "updatedAt": "2026-04-19T09:45:29.366Z"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-157/feat-phase-5-plan-1-chat-io-contract-routing-script-bats-tests",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776591956998,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

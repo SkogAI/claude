@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-04-19T09:45:30.025713+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:45:29.386Z",
+    "data": {
+      "id": "94dc5a97-10ae-43de-95af-cc99f98741bd",
+      "createdAt": "2026-04-17T13:49:38.459Z",
+      "updatedAt": "2026-04-19T09:45:29.385Z",
+      "number": 155,
+      "title": "Epic: Migrate dot-skogai \u2192 .skogai/",
+      "priority": 4,
+      "sortOrder": -3074.63,
+      "prioritySortOrder": -2956.4,
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-17T13:49:38.497Z",
+      "addedToTeamAt": "2026-04-17T13:49:38.497Z",
+      "labelIds": [],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "Low",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-155",
+      "url": "https://linear.app/skogai/issue/SKO-155/epic-migrate-dot-skogai-skogai",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "project": {
+        "id": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+        "name": "SkogAI",
+        "url": "https://linear.app/skogai/project/skogai-08eb8e1f4091"
+      },
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "syncedWith": [
+        {
+          "id": "4283088205",
+          "service": "github",
+          "metadata": {
+            "repo": "claude",
+            "owner": "SkogAI",
+            "number": 20
+          }
+        }
+      ],
+      "labels": [],
+      "description": "Consolidate `SkogAI/dot-skogai` into the `.skogai/` folder of `SkogAI/claude`. The dot-skogai repo is being deprecated \u2014 all its structure, scripts, and skills move here.\n\n## Context\n\ndot-skogai was a standalone repo for shared SkogAI agent infrastructure. The skogfences principle says agents are unix users \u2014 their shared infrastructure belongs in their shared home, not a separate repo. `.skogai/` in `SkogAI/claude` is that home.\n\n## Sub-tasks\n\n* [SKOGAI.md](<http://SKOGAI.md>) \u2014 root context router\n* knowledge/ \u2014 decisions, learnings, patterns\n* memory/ \u2014 session context and decision log\n* plan/ \u2014 project planning structure\n* tasks/ \u2014 local task tracking\n* templates/ \u2014 starter templates for new content\n* scripts/context/ \u2014 context generation scripts\n* scripts/bootstrap/ \u2014 init and symlink setup\n* email/ \u2014 skogai inter-agent messaging (inbox/outbox)\n* workflows/ \u2014 automation definitions and action lists\n* bin/ \u2014 shared executables for agent home\n* skills/ \u2014 shared agent skills registry\n\n## Repo\n\n`SkogAI/claude` (`.skogai/` folder)",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Consolidate \"},{\"type\":\"text\",\"text\":\"SkogAI/dot-skogai\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" into the \"},{\"type\":\"text\",\"text\":\".skogai/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" folder of \"},{\"type\":\"text\",\"text\":\"SkogAI/claude\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\". The dot-skogai repo is being deprecated \u2014 all its structure, scripts, and skills move here.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"32f18911-a8eb-46b8-a885-b11177455f3b\"},\"content\":[{\"type\":\"text\",\"text\":\"Context\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"dot-skogai was a standalone repo for shared SkogAI agent infrastructure. The skogfences principle says agents are unix users \u2014 their shared infrastructure belongs in their shared home, not a separate repo. \"},{\"type\":\"text\",\"text\":\".skogai/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" in \"},{\"type\":\"text\",\"text\":\"SkogAI/claude\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is that home.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"8eb95224-d726-4af0-b790-dd192332f996\"},\"content\":[{\"type\":\"text\",\"text\":\"Sub-tasks\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"SKOGAI.md\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://SKOGAI.md\"}}]},{\"type\":\"text\",\"text\":\" \u2014 root context router\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"knowledge/ \u2014 decisions, learnings, patterns\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"memory/ \u2014 session context and decision log\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"plan/ \u2014 project planning structure\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"tasks/ \u2014 local task tracking\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"templates/ \u2014 starter templates for new content\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"scripts/context/ \u2014 context generation scripts\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"scripts/bootstrap/ \u2014 init and symlink setup\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"email/ \u2014 skogai inter-agent messaging (inbox/outbox)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"workflows/ \u2014 automation definitions and action lists\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"bin/ \u2014 shared executables for agent home\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skills/ \u2014 shared agent skills registry\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"87447f41-d38f-4462-9c3c-efd3aee0de49\"},\"content\":[{\"type\":\"text\",\"text\":\"Repo\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"SkogAI/claude\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" (\"},{\"type\":\"text\",\"text\":\".skogai/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" folder)\"}]}]}"
+    },
+    "updatedFrom": {
+      "priority": 2,
+      "updatedAt": "2026-04-19T08:31:15.066Z",
+      "prioritySortOrder": 1060.5
+    },
+    "url": "https://linear.app/skogai/issue/SKO-155/epic-migrate-dot-skogai-skogai",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776591929944,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

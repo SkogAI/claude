@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-04-19T09:52:18.163524+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:52:15.251Z",
+    "data": {
+      "id": "ee719449-1e91-459b-8ded-b472246d7281",
+      "createdAt": "2026-04-17T08:04:35.000Z",
+      "updatedAt": "2026-04-19T09:52:15.250Z",
+      "number": 128,
+      "title": "feat: email/ \u2014 skogai inter-agent messaging (inbox/outbox)",
+      "priority": 0,
+      "sortOrder": -9804.46,
+      "prioritySortOrder": 0.06164548647286236,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:20.725Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-128",
+      "url": "https://linear.app/skogai/issue/SKO-128/feat-email-skogai-inter-agent-messaging-inboxoutbox",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "## Summary\n\nFile-based messaging system for SkogAI agents \u2014 inbox, drafts, sent, archive.\n\n## What\n\n```\nemail/\n\u251c\u2500\u2500 inbox/      # incoming messages (unread)\n\u251c\u2500\u2500 drafts/     # messages being composed\n\u251c\u2500\u2500 sent/       # delivered messages\n\u251c\u2500\u2500 archive/    # processed/read messages\n\u251c\u2500\u2500 filters/    # routing rules\n\u2514\u2500\u2500 SKOGAI.md   # router: conventions, message format\n```\n\nEach message is a markdown file with a UUID filename.\n\n## Notes\n\n* This is the direct-message channel between agents (vs guestbook which is broadcast)\n* Agents poll inbox/, process messages, move to archive/\n* `locks/` for preventing concurrent write conflicts",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"6cda39e2-d228-462a-b1ed-9d0e378eec86\"},\"content\":[{\"type\":\"text\",\"text\":\"Summary\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"File-based messaging system for SkogAI agents \u2014 inbox, drafts, sent, archive.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"b4cdf661-ce33-4549-b5cd-160de331b25a\"},\"content\":[{\"type\":\"text\",\"text\":\"What\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"6a622459-ff6b-4099-a532-6176a63fd915\"},\"content\":[{\"type\":\"text\",\"text\":\"email/\\n\u251c\u2500\u2500 inbox/      # incoming messages (unread)\\n\u251c\u2500\u2500 drafts/     # messages being composed\\n\u251c\u2500\u2500 sent/       # delivered messages\\n\u251c\u2500\u2500 archive/    # processed/read messages\\n\u251c\u2500\u2500 filters/    # routing rules\\n\u2514\u2500\u2500 SKOGAI.md   # router: conventions, message format\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Each message is a markdown file with a UUID filename.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"0db565a6-ed8e-42e2-a4e9-74acbf317c95\"},\"content\":[{\"type\":\"text\",\"text\":\"Notes\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"This is the direct-message channel between agents (vs guestbook which is broadcast)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Agents poll inbox/, process messages, move to archive/\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"locks/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" for preventing concurrent write conflicts\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-04-19T09:47:41.469Z",
+      "prioritySortOrder": 0
+    },
+    "url": "https://linear.app/skogai/issue/SKO-128/feat-email-skogai-inter-agent-messaging-inboxoutbox",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592338095,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

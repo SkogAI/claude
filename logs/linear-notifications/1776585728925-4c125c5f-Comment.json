@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-19T08:02:08.925890+00:00",
+  "payload": {
+    "action": "create",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T08:02:06.272Z",
+    "data": {
+      "id": "426f8760-7f4c-4ddc-afc3-cdfb138fd5e3",
+      "createdAt": "2026-04-19T08:02:06.272Z",
+      "updatedAt": "2026-04-19T08:02:06.212Z",
+      "body": "1Overview\n\nThis epic tracks everything needed to make Small Hours work seamlessly with an AI bot player (Claude), and to polish the existing games based on first-hand playtesting feedback.\n\nPlaytested on 2026-04-12 with Claude joining as a player via the browser. Key findings drove the issues below.\n\n---\n\n## Areas\n\n### \ud83e\udd16 Bot Integration\n\n* Add a WebSocket bot client interface (structured game state + action API)\n* Expose a `BOT_ACTION` message type so bots can submit moves without a browser UI\n* Add bot player registration to lobby (join with `?bot=true` flag or dedicated endpoint)\n* Add a game state event stream endpoint for bot consumption\n* Document the game engine action/state contract in README\n\n### \ud83d\udc1b Bug Fixes\n\n* Gin Rummy: Draw action has no clickable target \u2014 game gets completely stuck\n* Lobby chat: Player names missing from messages (shows `: message` instead of `name: message`)\n\n### \u2728 Game Polish\n\n* Gin Rummy: Fix draw mechanic \u2014 stock pile and discard pile need to be clickable\n* Quiz: Add a visible countdown timer on the player screen\n* Shithead: Show opponent face-up cards so players can strategise\n\n---\n\n## Motivation\n\nClaude joined as a player via the browser and played Quiz, Gin Rummy and Shithead. Quiz and Shithead UIs felt solid and intuitive. Gin Rummy was completely broken due to missing draw interaction. For the longer term vision of having Claude as a proper bot player (rather than clicking a browser), a lightweight structured interface would make this much more reliable and fast.",
+      "issueId": "d262d809-0432-417b-b6c0-2427577f29b1",
+      "parentId": "bc1b9322-a3d0-44ba-9985-c859bca4d530",
+      "userId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "reactionData": [],
+      "isArtificialAgentSessionRoot": false,
+      "botActor": null,
+      "user": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "issue": {
+        "id": "d262d809-0432-417b-b6c0-2427577f29b1",
+        "title": "Review AI Bot Player integration and game polish issues",
+        "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "team": {
+          "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+          "key": "SKO",
+          "name": "SkogAI"
+        },
+        "identifier": "SKO-184",
+        "url": "https://linear.app/skogai/issue/SKO-184/review-ai-bot-player-integration-and-game-polish-issues"
+      }
+    },
+    "url": "https://linear.app/skogai/issue/SKO-184/review-ai-bot-player-integration-and-game-polish-issues#comment-426f8760",
+    "type": "Comment",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776585728812,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-04-19T09:48:59.558225+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:47:45.368Z",
+    "data": {
+      "id": "8624911c-dfdb-4434-9a3d-34c3bd793264",
+      "createdAt": "2025-10-29T16:42:30.000Z",
+      "updatedAt": "2026-04-19T09:47:45.368Z",
+      "number": 17,
+      "title": "[HIGH] Missing CSRF Protection on SAML ACS Endpoint",
+      "priority": 0,
+      "sortOrder": -64398.03,
+      "prioritySortOrder": 0,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:11.441Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-17",
+      "url": "https://linear.app/skogai/issue/SKO-17/high-missing-csrf-protection-on-saml-acs-endpoint",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "## Problem\n\nThe SAML Assertion Consumer Service (ACS) endpoint has a TODO comment indicating CSRF token binding is not implemented:\n\n**Location**: `internal/api/samlacs.go:98`\n\n```go\n// TODO: Bind CSRF token to the RelayState to prevent CSRF attacks\n```\n\n## Impact\n\n* CSRF attacks: Attacker can trick authenticated user into processing malicious SAML assertion\n* Session fixation: Attacker can force user to authenticate with attacker-controlled account\n* OWASP A01:2021 - Broken Access Control\n\n## Solution\n\n1. Generate cryptographically random CSRF token during SSO initiation\n2. Store token-to-session mapping with 120-second expiry\n3. Include token in RelayState parameter\n4. Validate token on ACS callback (constant-time comparison)\n\n**Effort**: Medium (8-16 hours)\n**Blocking**: Yes - required before production\n\nSee PRODUCTION_READINESS.md Issue #2 for full details.",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"e83f70e5-03d1-4e87-b9f5-ce19b882f576\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The SAML Assertion Consumer Service (ACS) endpoint has a TODO comment indicating CSRF token binding is not implemented:\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Location\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\": \"},{\"type\":\"text\",\"text\":\"internal/api/samlacs.go:98\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"go\",\"id\":\"ff4e5622-ee35-437a-9f8f-013bf7a6ccf6\"},\"content\":[{\"type\":\"text\",\"text\":\"// TODO: Bind CSRF token to the RelayState to prevent CSRF attacks\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"3533627f-f486-45f7-8a76-6fc8d2955f64\"},\"content\":[{\"type\":\"text\",\"text\":\"Impact\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CSRF attacks: Attacker can trick authenticated user into processing malicious SAML assertion\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Session fixation: Attacker can force user to authenticate with attacker-controlled account\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"OWASP A01:2021 - Broken Access Control\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"bfc0ca54-580b-4952-b101-59f01689b7fd\"},\"content\":[{\"type\":\"text\",\"text\":\"Solution\"}]},{\"type\":\"ordered_list\",\"attrs\":{\"order\":1},\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Generate cryptographically random CSRF token during SSO initiation\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Store token-to-session mapping with 120-second expiry\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Include token in RelayState parameter\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Validate token on ACS callback (constant-time comparison)\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Effort\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\": Medium (8-16 hours)\"},{\"type\":\"hard_break\"},{\"type\":\"text\",\"text\":\"Blocking\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\": Yes - required before production\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"See PRODUCTION_READINESS.md Issue #2 for full details.\"}]}]}"
+    },
+    "updatedFrom": {
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "sortOrder": 0,
+      "updatedAt": "2025-10-29T16:42:30.000Z"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-17/high-missing-csrf-protection-on-saml-acs-endpoint",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592139485,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}
