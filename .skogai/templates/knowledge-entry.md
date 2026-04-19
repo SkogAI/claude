@@ -10,4 +10,27 @@ status: active
 permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
 ---
 
-[@todo]
+## summary
+
+<one paragraph summary>
+
+## context
+
+<where this came from>
+
+## observation
+
+<what we learned>
+
+## applicability
+
+- use when: <condition>
+- avoid when: <condition>
+
+## evidence
+
+- <link/file/commit>
+
+## related
+
+- <related-note-or-decision>

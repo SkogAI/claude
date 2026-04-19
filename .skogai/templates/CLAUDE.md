@@ -8,41 +8,23 @@ permalink: claude/projects/dot-skogai/templates/claude
 
 <what_is_this>
 
-ready-to-copy starter files for common skogai content types.
-
-templates are filled in by copy, not by mutation.
-source files in `templates/` stay unchanged as reusable stubs.
+copy-and-fill stubs for new content in `.skogai`.
+this file is a directory router for template discovery.
 
 </what_is_this>
 
-<available_templates>
+<contents>
 
-| template | when to use |
-| --- | --- |
-| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
-| `decision-record.md` | create an architectural decision record (adr) |
-| `project-status.md` | track current state of a project |
+- `knowledge-entry.md` - lesson/pattern note template for `knowledge/lessons/`
+- `decision-record.md` - adr template for `knowledge/decisions/`
+- `project-status.md` - project snapshot template for `projects/`
 
-this index exists so agents can discover available templates without opening each template file first.
-
-</available_templates>
+</contents>
 
 <usage>
 
-1. copy a template to the destination directory
-1. rename with date/subject as needed
-1. replace placeholder text
-1. remove sections that do not apply
-1. update frontmatter metadata
+- copy template to destination; never edit files inside `templates/`
+- rename with date/slug
+- replace placeholders and remove non-applicable sections
 
 </usage>
-
-<examples>
-
-```bash
-cp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md
-cp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md
-cp templates/project-status.md projects/example-project.md
-```
-
-</examples>
