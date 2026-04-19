@@ -1,7 +1,7 @@
 ---
 title: linear-setup-and-dot-skogai-migration
 type: note
-permalink: claude/personal/journal/2026-04-17/linear-setup-and-dot-skogai-migration
+permalink: claude/journal/2026-04-17/linear-setup-and-dot-skogai-migration
 ---
 
 # Linear setup and dot-skogai migration plan

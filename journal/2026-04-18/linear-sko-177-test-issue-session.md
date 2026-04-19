@@ -5,7 +5,7 @@ tags:
   - linear
   - github-sync
   - session
-permalink: journal/2026-04-18/linear-sko-177-test-issue-session
+permalink: claude/journal/2026-04-18/linear-sko-177-test-issue-session
 title: Linear SKO-177 test issue session
 type: journal
 ---
