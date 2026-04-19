@@ -13,21 +13,25 @@ permalink: claude/projects/dot-skogai/knowledge/lessons/YYYY-MM-DD-<slug>
 
 ## summary
 
-<one-paragraph summary of the key learning>
+<one paragraph summary>
 
 ## context
 
-<where/when this came up and why it mattered>
+<where this came from>
 
 ## observation
 
-<what was found, learned, or validated>
+<what we learned>
 
-## implications
+## applicability
 
-- <what this changes going forward>
-- <what to avoid or repeat>
+- use when: <condition>
+- avoid when: <condition>
 
-## references
+## evidence
 
-- <file, url, or related decision>
+- <link/file/commit>
+
+## related
+
+- <related-note-or-decision>

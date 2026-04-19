@@ -11,23 +11,30 @@ permalink: claude/projects/dot-skogai/projects/<project-slug>
 
 ## summary
 
-<one-paragraph current status>
+<current state in 2-4 lines>
 
-## current-focus
+## goals
 
-- <priority 1>
-- <priority 2>
+- <goal-1>
+- <goal-2>
 
-## milestones
+## progress
 
-| milestone | status | target |
-| --- | --- | --- |
-| <milestone> | <pending/in-progress/done> | YYYY-MM-DD |
+- done: <what completed>
+- in-progress: <what is ongoing>
+- blocked: <what is blocked>
 
 ## risks
 
-- <risk> — <mitigation>
+- <risk + mitigation>
 
-## next-update
+## next-actions
 
-YYYY-MM-DD
+1. <next action>
+2. <next action>
+
+## links
+
+- issue: <url>
+- plan: <path/url>
+- pr: <url>

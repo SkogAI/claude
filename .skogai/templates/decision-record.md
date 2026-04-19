@@ -11,27 +11,19 @@ permalink: claude/projects/dot-skogai/knowledge/decisions/YYYY-MM-DD-<slug>
 
 ## context
 
-<what problem or pressure led to this decision>
+<what problem are we solving and why now?>
+
+## options-considered
+
+1. **<option-a>** - <pros/cons>
+2. **<option-b>** - <pros/cons>
 
 ## decision
 
-<the decision in detail>
-
-## alternatives-considered
-
-- <option-a> — <why not chosen>
-- <option-b> — <why not chosen>
+<what we chose>
 
 ## consequences
 
-### positive
-
-- <benefit>
-
-### negative
-
-- <trade-off>
-
-## follow-up
-
-- [ ] <next action>
+- positive: <impact>
+- negative: <tradeoff>
+- follow-up: <next action>

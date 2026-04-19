@@ -8,28 +8,26 @@ permalink: claude/projects/dot-skogai/templates/claude
 
 <what_is_this>
 
-ready-to-copy starter files for common skogai content types.
-
-templates are filled in by copy, not by mutation.
-source files in `templates/` stay unchanged as reusable stubs.
+copy-and-fill stubs for new content in `.skogai`.
+this file is a lightweight router for template discovery.
 
 </what_is_this>
 
-## contents
+<contents>
 
-| template | when to use |
-| --- | --- |
-| `decision-record.md` | create an architectural decision record (adr) |
-| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
-| `project-status.md` | track current state of a project |
-| `findings.md` | capture research/findings during active implementation |
-| `progress.md` | log session progress and outcomes over time |
-| `task_plan.md` | break work into phases, steps, and deliverables |
+- `decision-record.md` - adr template for `knowledge/decisions/`
+- `knowledge-entry.md` - lesson/pattern note template for `knowledge/lessons/`
+- `project-status.md` - project snapshot template for `projects/`
+- `findings.md` - research/findings capture during implementation
+- `progress.md` - session progress log over time
+- `task_plan.md` - phased execution plan for tasks
 
-## usage
+</contents>
 
-1. copy a template to the destination directory
-1. rename with date/subject as needed
-1. replace placeholders
-1. remove sections that do not apply
-1. update frontmatter metadata
+<usage>
+
+- copy template to destination; do not edit files inside `templates/`
+- rename with date/slug as needed
+- replace placeholders and remove non-applicable sections
+
+</usage>
