@@ -1,9 +1,9 @@
 ---
-state: done
 created: 2026-04-18
-tracking:
-  - https://github.com/SkogAI/claude/issues/30
 permalink: claude/tasks/feat-tasks-local-task-tracking-30
+state: active
+tracking:
+- https://github.com/SkogAI/claude/issues/30
 ---
 
 # feat: tasks/ — local task tracking

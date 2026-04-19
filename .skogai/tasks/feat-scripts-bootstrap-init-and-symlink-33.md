@@ -1,9 +1,9 @@
 ---
-state: done
 created: 2026-04-18
-tracking:
-  - https://github.com/SkogAI/claude/issues/33
 permalink: claude/tasks/feat-scripts-bootstrap-init-and-symlink-33
+state: active
+tracking:
+- https://github.com/SkogAI/claude/issues/33
 ---
 
 # feat: scripts/bootstrap/ — init and symlink setup

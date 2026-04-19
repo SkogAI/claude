@@ -1,8 +1,11 @@
 ---
-state: done
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/46"]
-tags: ["enhancement", "github"]
+state: active
+tags:
+- enhancement
+- github
+tracking:
+- https://github.com/SkogAI/claude/issues/46
 ---
 
 # chore: remove remaining skogix-local paths from settings.json

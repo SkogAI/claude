@@ -1,9 +1,9 @@
 ---
-state: done
 created: 2026-04-18
-tracking:
-  - https://github.com/SkogAI/claude/issues/32
 permalink: claude/tasks/feat-scripts-context-context-generation-32
+state: active
+tracking:
+- https://github.com/SkogAI/claude/issues/32
 ---
 
 # feat: scripts/context/ — context generation scripts

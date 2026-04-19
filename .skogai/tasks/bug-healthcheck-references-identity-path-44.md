@@ -1,8 +1,11 @@
 ---
-state: done
 created: 2026-04-18
-tracking: ["https://github.com/SkogAI/claude/issues/44"]
-tags: ["bug", "github"]
+state: active
+tags:
+- bug
+- github
+tracking:
+- https://github.com/SkogAI/claude/issues/44
 ---
 
 # bug: healthcheck references identity paths that no longer exist after .skogai reorg

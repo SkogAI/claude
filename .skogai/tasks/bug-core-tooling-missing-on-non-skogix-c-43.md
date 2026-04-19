@@ -1,9 +1,12 @@
 ---
-state: done
 created: 2026-04-18
+state: active
+tags:
+- bug
+- github
+tracking:
+- https://github.com/SkogAI/claude/issues/43
 updated: 2026-04-19
-tracking: ["https://github.com/SkogAI/claude/issues/43"]
-tags: ["bug", "github"]
 ---
 
 # bug: core tooling missing on non-skogix containers (staging, deployment)

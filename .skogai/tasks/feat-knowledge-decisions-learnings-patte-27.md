@@ -1,9 +1,9 @@
 ---
-state: done
 created: 2026-04-18
-tracking:
-  - https://github.com/SkogAI/claude/issues/27
 permalink: claude/tasks/feat-knowledge-decisions-learnings-patte-27
+state: active
+tracking:
+- https://github.com/SkogAI/claude/issues/27
 ---
 
 # feat: knowledge/ — decisions, learnings, patterns
