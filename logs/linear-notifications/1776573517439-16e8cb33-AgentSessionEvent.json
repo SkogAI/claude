@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-04-19T04:38:37.439253+00:00",
+  "payload": {
+    "type": "AgentSessionEvent",
+    "action": "created",
+    "createdAt": "2026-04-19T04:38:37.227Z",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "oauthClientId": "e01308f086a6af93ed2191adfcfc9c3c",
+    "appUserId": "7cc703ad-906d-4cca-8418-f5e01c9e5c0e",
+    "agentSession": {
+      "id": "af12a79e-797a-4321-b7fd-991676d817c4",
+      "createdAt": "2026-04-19T04:38:36.917Z",
+      "updatedAt": "2026-04-19T04:38:36.917Z",
+      "archivedAt": null,
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "appUserId": "7cc703ad-906d-4cca-8418-f5e01c9e5c0e",
+      "commentId": "40ca39a3-e1ae-450b-ad46-3ade1b00e64d",
+      "sourceCommentId": null,
+      "issueId": "f1e5ac6c-2cb4-47f5-9d70-1c9255d6a361",
+      "slugId": "58b62eb6ec475",
+      "status": "pending",
+      "startedAt": null,
+      "endedAt": null,
+      "dismissedAt": null,
+      "dismissedById": null,
+      "externalLink": null,
+      "summary": null,
+      "sourceMetadata": {
+        "type": "comment",
+        "agentSessionMetadata": {
+          "sourceCommentId": "40ca39a3-e1ae-450b-ad46-3ade1b00e64d"
+        }
+      },
+      "plan": null,
+      "context": [],
+      "url": "https://linear.app/skogai/issue/SKO-166/feat-templates-starter-templates-for-new-content#agent-session-af12a79e",
+      "externalUrls": [],
+      "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+      "creator": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "comment": {
+        "id": "40ca39a3-e1ae-450b-ad46-3ade1b00e64d",
+        "body": "@claude can you please look over so that the templates follow the basics from `skogai-routing` as well as just look them over overall?",
+        "userId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "issueId": "f1e5ac6c-2cb4-47f5-9d70-1c9255d6a361"
+      },
+      "issue": {
+        "id": "f1e5ac6c-2cb4-47f5-9d70-1c9255d6a361",
+        "title": "feat: templates/ \u2014 starter templates for new content",
+        "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "team": {
+          "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+          "key": "SKO",
+          "name": "SkogAI"
+        },
+        "identifier": "SKO-166",
+        "url": "https://linear.app/skogai/issue/SKO-166/feat-templates-starter-templates-for-new-content",
+        "description": "Ready-to-use templates so creating new knowledge entries, decisions, and project files has zero friction.\n\n## Structure\n\n```\n.skogai/templates/\n\u251c\u2500\u2500 CLAUDE.md            # template directory router\n\u251c\u2500\u2500 decision-record.md   # ADR template\n\u251c\u2500\u2500 knowledge-entry.md   # learning/pattern template\n\u2514\u2500\u2500 project-status.md    # project tracking template\n```\n\n## Notes\n\n* Templates are filled in by copy, not by mutation \u2014 source files stay as stubs\n* [CLAUDE.md](<http://CLAUDE.md>) lists available templates so agents know what exists without reading all files"
+      }
+    },
+    "previousComments": [
+      {
+        "id": "40ca39a3-e1ae-450b-ad46-3ade1b00e64d",
+        "body": "@claude can you please look over so that the templates follow the basics from `skogai-routing` as well as just look them over overall?",
+        "userId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "issueId": "f1e5ac6c-2cb4-47f5-9d70-1c9255d6a361"
+      }
+    ],
+    "guidance": null,
+    "promptContext": "<issue identifier=\"SKO-166\">\n<title>feat: templates/ \u2014 starter templates for new content</title>\n<description>\nReady-to-use templates so creating new knowledge entries, decisions, and project files has zero friction.\n\n## Structure\n\n```\n.skogai/templates/\n\u251c\u2500\u2500 CLAUDE.md            # template directory router\n\u251c\u2500\u2500 decision-record.md   # ADR template\n\u251c\u2500\u2500 knowledge-entry.md   # learning/pattern template\n\u2514\u2500\u2500 project-status.md    # project tracking template\n```\n\n## Notes\n\n* Templates are filled in by copy, not by mutation \u2014 source files stay as stubs\n* [CLAUDE.md](<http://CLAUDE.md>) lists available templates so agents know what exists without reading all files\n</description>\n<team name=\"SkogAI\"/>\n<project name=\"SkogAI\"/>\n<parent-issue identifier=\"SKO-155\">\n<id>94dc5a97-10ae-43de-95af-cc99f98741bd</id>\n<title>Epic: Migrate dot-skogai \u2192 .skogai/</title>\n<description>\nConsolidate `SkogAI/dot-skogai` into the `.skogai/` folder of `SkogAI/claude`. The dot-skogai repo is being deprecated \u2014 all its structure, scripts, and skills move here.\n\n## Context\n\ndot-skogai was a standalone repo for shared SkogAI agent infrastructure. The skogfences principle says agents are unix users \u2014 their shared infrastructure belongs in their shared home, not a separate repo. `.skogai/` in `SkogAI/claude` is that home.\n\n## Sub-tasks\n\n* [SKOGAI.md](<http://SKOGAI.md>) \u2014 root context router\n* knowledge/ \u2014 decisions, learnings, patterns\n* memory/ \u2014 session context and decision log\n* plan/ \u2014 project planning structure\n* tasks/ \u2014 local task tracking\n* templates/ \u2014 starter templates for new content\n* scripts/context/ \u2014 context generation scripts\n* scripts/bootstrap/ \u2014 init and symlink setup\n* email/ \u2014 skogai inter-agent messaging (inbox/outbox)\n* workflows/ \u2014 automation definitions and action lists\n* bin/ \u2014 shared executables for agent home\n* skills/ \u2014 shared agent skills registry\n\n## Repo\n\n`SkogAI/claude` (`.skogai/` folder)\n</description>\n<status>Backlog</status>\n<priority>High</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<created-at>2026-04-17T13:49:38.459Z</created-at>\n<updated-at>2026-04-17T13:50:45.319Z</updated-at>\n<trashed>false</trashed>\n<sub-issues>\n<id>f7fe2943-ae4f-4aed-a5c7-2aa400c175ae</id>\n<title>feat: workflows/ \u2014 automation definitions and action lists</title>\n<identifier>SKO-170</identifier>\n<status>Backlog</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-17T13:50:56.956Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>0e23f0d5-f26b-4e4c-8fc6-74af07a775a2</id>\n<title>feat: bin/ \u2014 shared executables for agent home</title>\n<identifier>SKO-171</identifier>\n<status>Backlog</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-18T14:06:57.142Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>652613e4-c1ad-49b1-baee-7a674e79700c</id>\n<title>feat: email/ \u2014 skogai inter-agent messaging (inbox/outbox)</title>\n<identifier>SKO-169</identifier>\n<status>Backlog</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-17T13:50:54.958Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>86b20c74-faac-4a27-b6df-3f267e040114</id>\n<title>feat: knowledge/ \u2014 decisions, learnings, patterns</title>\n<identifier>SKO-162</identifier>\n<status>Backlog</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<assignee>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</assignee>\n<updated-at>2026-04-18T16:04:59.734Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>b68b994b-efc9-487c-9fe0-62dd2765d28d</id>\n<title>feat: SKOGAI.md \u2014 root context router</title>\n<identifier>SKO-161</identifier>\n<status>Todo</status>\n<priority>High</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-17T13:50:09.197Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>b9198330-0fb6-43fd-b8e0-a429c7867f68</id>\n<title>feat: memory/ \u2014 session context and decision log</title>\n<identifier>SKO-163</identifier>\n<status>Backlog</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-17T13:50:17.016Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>248d1805-c68a-417a-8c71-21cad7a72cc4</id>\n<title>feat: plan/ \u2014 project planning structure</title>\n<identifier>SKO-164</identifier>\n<status>Backlog</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-17T13:50:19.120Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>785572f7-96e9-43c5-8edc-bad1212fc72c</id>\n<title>feat: tasks/ \u2014 local task tracking</title>\n<identifier>SKO-165</identifier>\n<status>Backlog</status>\n<priority>Low</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-17T13:50:22.546Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>55643372-e51f-4c49-bcb1-23d79b5df787</id>\n<title>feat: scripts/context/ \u2014 context generation scripts</title>\n<identifier>SKO-167</identifier>\n<status>Backlog</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-18T14:06:57.142Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>8378e68c-7b5d-4208-8d0a-aac4a90f85dd</id>\n<title>feat: scripts/bootstrap/ \u2014 init and symlink setup</title>\n<identifier>SKO-168</identifier>\n<status>Backlog</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-18T14:06:57.142Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>eb61ddf9-0070-4fab-af61-f5aba1e07d0e</id>\n<title>feat: skills/ \u2014 shared agent skills registry</title>\n<identifier>SKO-172</identifier>\n<status>In Progress</status>\n<priority>Medium</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<assignee>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</assignee>\n<updated-at>2026-04-19T04:36:41.406Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<sub-issues>\n<id>f1e5ac6c-2cb4-47f5-9d70-1c9255d6a361</id>\n<title>feat: templates/ \u2014 starter templates for new content</title>\n<identifier>SKO-166</identifier>\n<status>Backlog</status>\n<priority>Low</priority>\n<team>\n<id>ac4c7f2d-98ae-438f-b85a-33374856fd1b</id>\n<name>SkogAI</name>\n<key>SKO</key>\n</team>\n<project>\n<id>7e941c1b-5b57-4c97-af87-8cc08fdea539</id>\n<name>SkogAI</name>\n</project>\n<creator>\n<id>bd8e4951-8b83-4952-8fc5-09e9e6a61987</id>\n<name>Emil Skogsund</name>\n</creator>\n<updated-at>2026-04-19T04:37:47.540Z</updated-at>\n<trashed>false</trashed>\n</sub-issues>\n<comments>\n<id>33c7557f-a581-49ea-9982-c890186ff569</id>\n<body>This comment thread is synced to a corresponding [GitHub issue](<https://github.com/SkogAI/claude/issues/20>). All replies are displayed in both locations.</body>\n<created-at>2026-04-17T13:49:39.940Z</created-at>\n<is-resolved>false</is-resolved>\n<is-resolving-comment>false</is-resolving-comment>\n</comments>\n<synced-with>\n<source-type>github</source-type>\n<title>#20 Epic: Migrate dot-skogai \u2192 .skogai/</title>\n<url>https://github.com/SkogAI/claude/issues/20</url>\n</synced-with>\n</parent-issue>\n</issue>\n\n<primary-directive-thread comment-id=\"40ca39a3-e1ae-450b-ad46-3ade1b00e64d\"><comment author=\"Emil Skogsund\" created-at=\"2026-04-19T04:38:36.797Z\"><user id=\"7cc703ad-906d-4cca-8418-f5e01c9e5c0e\">claude</user> can you please look over so that the templates follow the basics from `skogai-routing` as well as just look them over overall?</comment></primary-directive-thread>\n\n<other-thread comment-id=\"1c5eee46-0e01-40a2-beac-28dbcf2dd31f\"><comment created-at=\"2026-04-17T13:50:28.285Z\">This comment thread is synced to a corresponding [GitHub issue](<https://github.com/SkogAI/claude/issues/31>). All replies are displayed in both locations.</comment></other-thread>",
+    "webhookTimestamp": 1776573517365,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}
