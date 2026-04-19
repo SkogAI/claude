@@ -197,7 +197,7 @@ header h1 {
 <header>
   <h1>chore: remove remaining skogix-local paths from settings.json</h1>
   <div class="meta">
-    <span class="tag ">new</span>
+    <span class="tag tag-deprecated">done</span>
     
     
     <span class="tag tag-category">enhancement</span><span class="tag tag-category">github</span>
@@ -228,10 +228,28 @@ header h1 {
 </code></pre>
 <ul>
 <li>Points to the old home path</li>
-<li>Per the Claude Code docs (<code>.skogai/docs/claude-code/memory.md:335</code>): **&quot;This setting is accepted from policy, local, and user</li>
+<li>Per the Claude Code docs (<code>.skogai/docs/claude-code/memory.md:335</code>): <strong>&quot;This setting is accepted from policy, local, and user settings. It is not accepted from project settings (<code>.claude/settings.json</code>) to prevent a shared project from redirecting auto memory writes to sensitive locations.&quot;</strong></li>
+<li>So this key should not exist in project settings</li>
+</ul>
+<h3>2. <code>worktrunk</code> local directory marketplace (line ~137)</h3>
+<pre><code class="language-json"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000; font-weight: bold">&quot;worktrunk&quot;</span>:<span style="color: #BBB"> </span>{
+<span style="color: #BBB">  </span><span style="color: #008000; font-weight: bold">&quot;source&quot;</span>:<span style="color: #BBB"> </span>{<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">&quot;source&quot;</span>:<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;directory&quot;</span>,<span style="color: #BBB"> </span><span style="color: #008000; font-weight: bold">&quot;path&quot;</span>:<span style="color: #BBB"> </span><span style="color: #BA2121">&quot;/home/skogix/.local/src/worktrunk&quot;</span><span style="color: #BBB"> </span>}
+}
+</pre></div>
+</code></pre>
+<ul>
+<li>Host-local path that fails to resolve on non-skogix environments</li>
+<li>Should not live in shared project settings</li>
+</ul>
+<h2>Completion</h2>
+<ul>
+<li>Removed <code>extraKnownMarketplaces.worktrunk</code> local directory source from <code>.claude/settings.json</code></li>
+<li>Removed <code>autoMemoryDirectory</code> from <code>.claude/settings.json</code> (project settings)</li>
+<li>Verified <code>.claude/settings.json</code> is valid JSON</li>
+<li>Verified no <code>/home/skogix</code> or <code>~/claude</code> paths remain in <code>.claude/settings.json</code></li>
 </ul>
 <h2>Notes</h2>
-<p><em>Imported from external tracker. See source link for full context.</em></p>
+<p><em>Imported from external tracker. Updated locally with completion details.</em></p>
 
 </div>
 

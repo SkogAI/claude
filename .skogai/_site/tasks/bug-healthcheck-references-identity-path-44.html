@@ -197,7 +197,7 @@ header h1 {
 <header>
   <h1>bug: healthcheck references identity paths that no longer exist after .skogai reorg</h1>
   <div class="meta">
-    <span class="tag ">new</span>
+    <span class="tag tag-deprecated">done</span>
     
     
     <span class="tag tag-category">bug</span><span class="tag tag-category">github</span>
@@ -220,26 +220,32 @@ header h1 {
 <p><strong>Source</strong>: <a href="https://github.com/SkogAI/claude/issues/44">Github #44</a></p>
 <h2>Description</h2>
 <h2>Problem</h2>
-<p>After today's reorg (commits <code>210787c</code> → <code>db781e2</code> on 2026-04-18), <code>claude-todo/bin/healthcheck</code> reports 20+ <code>[FAIL]</code> entries because the paths it checks moved or were removed.</p>
-<h2>Reproduction</h2>
+<p>After the 2026-04-18 reorg, <code>claude-todo/bin/healthcheck</code> reported many false <code>[FAIL]</code> results due to stale path assumptions and weak root detection.</p>
+<h2>Fix implemented</h2>
+<ul>
+<li>Resolved workspace root robustly (prefer <code>find-agent-root.sh</code>, then git toplevel, then legacy fallback)</li>
+<li>Added fallback path checks where files moved:
+<ul>
+<li>journal conventions: <code>personal/journal/CONVENTIONS.md</code> or <code>journal/CONVENTIONS.md</code></li>
+<li>docs router: <code>docs/CLAUDE.md</code> or <code>.skogai/docs/CLAUDE.md</code></li>
+<li>bin router: <code>bin/CLAUDE.md</code> or <code>claude-todo/bin/CLAUDE.md</code></li>
+<li>notes router: <code>notes/CLAUDE.md</code> or <code>personal/notes/CLAUDE.md</code></li>
+</ul>
+</li>
+<li>Hardened memory-tier checks to handle missing directories without noisy failures</li>
+<li>Preserved non-zero exit behavior on real failures (<code>exit $FAIL</code>)</li>
+</ul>
+<h2>Verification</h2>
 <pre><code class="language-bash"><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>./claude-todo/bin/healthcheck
 </pre></div>
 </code></pre>
-<p><strong>Output excerpt:</strong></p>
-<pre><code><div class="code" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span>identity paths
-------------------
-  [FAIL] personal/soul/01-equation.md
-  [FAIL] personal/soul/02-skogai-family.md
-  ... (all 10 soul sections)
-  [FAIL] personal/profile.md
-  [FAIL] personal/journal/CONVENTIONS.md
-  [FAIL] pe
-
-## Notes
-
-*Imported from external tracker. See source link for full context.*
-</pre></div>
-</code></pre>
+<p>Result:</p>
+<ul>
+<li><code>31 ok, 0 warnings, 0 failures</code></li>
+<li>exit code <code>0</code></li>
+</ul>
+<h2>Notes</h2>
+<p><em>Imported from external tracker. Updated locally with completion details.</em></p>
 
 </div>
 
