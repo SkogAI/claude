@@ -15,34 +15,21 @@ source files in `templates/` stay unchanged as reusable stubs.
 
 </what_is_this>
 
-<available_templates>
+## contents
 
 | template | when to use |
 | --- | --- |
-| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
 | `decision-record.md` | create an architectural decision record (adr) |
+| `knowledge-entry.md` | capture a lesson, pattern, or knowledge note |
 | `project-status.md` | track current state of a project |
+| `findings.md` | capture research/findings during active implementation |
+| `progress.md` | log session progress and outcomes over time |
+| `task_plan.md` | break work into phases, steps, and deliverables |
 
-this index exists so agents can discover available templates without opening each template file first.
-
-</available_templates>
-
-<usage>
+## usage
 
 1. copy a template to the destination directory
 1. rename with date/subject as needed
-1. replace placeholder text
+1. replace placeholders
 1. remove sections that do not apply
 1. update frontmatter metadata
-
-</usage>
-
-<examples>
-
-```bash
-cp templates/knowledge-entry.md knowledge/lessons/2026-04-19-example-lesson.md
-cp templates/decision-record.md knowledge/decisions/2026-04-19-example-decision.md
-cp templates/project-status.md projects/example-project.md
-```
-
-</examples>
