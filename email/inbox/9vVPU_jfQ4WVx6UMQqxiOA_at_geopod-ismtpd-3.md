@@ -1,0 +1,20 @@
+MIME-Version: 1.0
+From: authy <noreply@authy.com>
+To: emil.skogsund@gmail.com
+Date: Wed, 29 Oct 2025 09:02:18 +0000
+Subject: 495376 is your Twilio Authy verification code
+Message-ID: <9vVPU_jfQ4WVx6UMQqxiOA@geopod-ismtpd-3>
+Content-Type: multipart/alternative; boundary="020a971750050d6cdbf64a0200d457036d2e9c159950a88d9279d5ce05ed"
+
+( https://u2726373.ct.sendgrid.net/ls/click?upn=u001.0zLTpaQBoMBBLqfd1mFIQG7CTipU2tZ6cLtviOEodjw-3Dj9Vi_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmDSg80ni9Y6kWWR8WuR9LTJ38N4b-2BA1-2FT8OprPNDOOrVBrGrcEgf-2FnpS-2BhnM8bFC5MSvm22FnEY7e2yXBNqZQrlxtUcq9zS9T7HqXUZkJTUgepXGACMhcdKaFYdlVIBgh-2BM32OVkY074l7ToGUuq29h-2BoO6YXZPi5iCku1mdJTw-2B2YeWdH5oaww-2FFAZdj0X9oJ9nD-2FDhahLFOSBclKJGe4GurHRcbDsp7-2BDIiiuraaRq0i-2FIhQuAr9bKqy2uMNYfrkN-2BXceDuX5dkygYDllZmF2YDz9Yf-2BNTgeEo81O0xTiEowm4Lnq-2FLZQOP0CLrJRAdxcMU54T0mZQKoFPI-2FrExs0LNkUZE5G-2Bseblm-2FcsmV-2F6CDy-2F9ypIUDbFp2UdQSAFmoLePayCBTdLgNOcM2Y2lRf9e-2BOVVpyS9O1g00djQU6u5UnLROqcZDN41W4lBTLuie4mAPaMQPOEpkw9O7Jf-2F-2Fh2ONN7CqV24FhyJMsyXa9k-2FNERWX5NcQyloc2lhNmFQzdkC31N3mEM7nb06S5RLPVv896BN47FHNfw3hw8UEOtVL5nzHO7iokZzGeUsYM-2FwfhabgRNOD6M5LsfUA223MUaWVhUam0X7K4CfmcIA5sRFHAnlj32mR9G2nA2uCBDAqVMLXtG1BRYxKAt4OFrV0G )
+
+Confirm your email address
+
+Please enter your verification code in your Twilio Authy app when prompted. This code will expire after 10 minutes .
+
+*495376*
+
+( https://u2726373.ct.sendgrid.net/ls/click?upn=u001.0zLTpaQBoMBBLqfd1mFIQG7CTipU2tZ6cLtviOEodjw-3DaS9a_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmDSg80ni9Y6kWWR8WuR9LTJ38N4b-2BA1-2FT8OprPNDOOrVBrGrcEgf-2FnpS-2BhnM8bFC5MSvm22FnEY7e2yXBNqZQrlxtUcq9zS9T7HqXUZkJTUgepXGACMhcdKaFYdlVIBgh-2BM32OVkY074l7ToGUuq29h-2BoO6YXZPi5iCku1mdJTw-2B2YeWdH5oaww-2FFAZdj0X9oJ9nD-2FDhahLFOSBclKJGe4GurHRcbDsp7-2BDIiiuraaRq0i-2FIhQuAr9bKqy2uMNYfrkN-2BXceDuX5dkygYDllZmF2YDz9Yf-2BNTgeEo81O0xTiEowm4Lnq-2FLZQOP0CLrJRAdxcMU54T0mZQKoFPI-2FrExs0LNkUZE5G-2Bseblm-2FcsmV-2F6CDy-2F9ypIUDbFp2UdQSAFmoLePayCBTdLgNOcM2Y2lRf9e-2BOVVpyS9O1g00djQU6u5UnLROqcZDN41W4lBTLuie4mAPaMQPOEpkw9O7Jf-2F-2Fh2ONN7CqV24FhyJMsyXa9k-2FNERWX5NcQyloc2lhNmFQzdkC31N3mEM7nb06S5RLPViM2ICHdI3pnZirm17f7XKY3BAif2rhnsrdAZYJK3lcIPNEEUQ22rYi3uA61Gf3raly8ead45Tktf2ahp1yrHY1VZTY8jZzoL9DyPjwT5J4T-2FXsMzAMP88UWzwrckjb70 )
+
+Authy - a Twilio company, 375 Beale St, Suite 300, San Francisco, CA 94105
+Authy - a Twilio company, 375 Beale St, Suite 300, San Francisco, CA 94105
