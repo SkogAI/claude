@@ -1,0 +1,9 @@
+MIME-Version: 1.0
+From: Plus500 <updates@plus500.com>
+To: emil.skogsund@gmail.com
+Date: Thu, 08 Mar 2018 15:04:18 +0000
+Subject: New CFD instrument at Plus500: CBOE Volatility Index (VIX)
+Message-ID: <h8CfuHm-Tuahl3NOCoRIZw@ismtpd0006p1lon1.sendgrid.net>
+Content-Type: multipart/alternative; boundary="39dafea13578684638a2b42d379ca85ab285dc2ad5a997749ad9be4c2b0c"
+
+Trade the Market’s VIX Index with Attractive Leverage and Low Spread    &#xA0;  We've added a new and exciting CFD instrument: CBOE Volatility Index (VIX), an up-to-the-minute 'fear gauge' of the market's expected volatility based on aggregate prices of futures options on USA 500.   &#xA0;  VIX is considered a popular index among global investors. Recently, it spiked close to 100% after financial markets suffered their worst week in years, erasing $4 trillion in value.   &#xA0;  Benefits of trading the VIX index with Plus500: Tighter Buy/Sell spreads than main competitorsAttractive leverage - up to 1:20No trading commissions         &#xA0;      Start Trading      &#xA0; CFD Service. Capital at risk                                        &#xA0;  VIX Volatility Index                        &#xA0;  Buy    &#xA0;            &#xA0;  Sell    &#xA0;                             &#xA0;  USA 500    &#xA0;                         &#xA0;  Buy    &#xA0;            &#xA0;  Sell    &#xA0;                             &#xA0;  USA 30                        &#xA0;  Buy    &#xA0;            &#xA0;  Sell    &#xA0;                             &#xA0;  USA 2000                        &#xA0;  Buy    &#xA0;            &#xA0;  Sell    &#xA0;              

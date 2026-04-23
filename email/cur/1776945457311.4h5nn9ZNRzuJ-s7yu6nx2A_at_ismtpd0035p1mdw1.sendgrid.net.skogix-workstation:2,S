@@ -1,0 +1,47 @@
+MIME-Version: 1.0
+From: MTG Arena <MTGArena@magic.wizards.com>
+To: emil.skogsund@gmail.com
+Date: Thu, 12 Jul 2018 23:25:26 +0000
+Subject: Core Set 2019 Available in MTG Arena
+Message-ID: <4h5nn9ZNRzuJ-s7yu6nx2A@ismtpd0035p1mdw1.sendgrid.net>
+Content-Type: multipart/alternative; boundary="623128106aa8cef6a386d362db51ecf9608073c436a7fcbc8890275f09e1"
+
+Magic: The Gathering Arena         CLICK TO EDIT HEADER TEXT -->
+image 1          The biggest update yet has hit the Magic: The
+Gathering Arena Closed Beta. Launch the game to download the
+update automatically, or download it here 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9AylwfxB4SFs-2Bjv8LKGxx-2F5OuPETMkrEdVfb-2BLy96HfSyqSNR9SlVBueaxa5gPjhRANbn2lc5by099IMo1P-2BLbw-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIDhGXk-2FNUfyaUkM4wF-2BCYJ85G6a7K3uLKgCFa-2F10BoupZy3dU-2BfmtkWeHycj4fBRa8L3fufNi5gNWZVQvqSSVWfwVbwiP5n6AZJr0MzJ6nbE7-2FMir4sLilkTTnpMlVolK365klH-2BrKVWQ7bzQAkr9gMHtBeaqts6ypIXmrgES4lg2JqfknPULQVZvreZ9KzeT2TDCe-2Fb1S30QzwYUXKK1MsOhtqx440OZIKzninB-2Bz3USD-2Bo3Un0HISG4HAnFt3PxeVCYOfuxpLCPozEJkY4djn1Rt-2BzH-2FsSSiULaB5su8pokkY7Gbp4pUPOBIxD1SW0tw-2F4G3KA0bl1PRQQjHzjsD-2BKTS0wE8-2F90H10zB-2FVHErJiqAwC9Xjtr79Yc6JSrUiOWMEsINYFTQykATJ8e8nx4FXLWLwKHYIx2473a1jokNw-3D-3D )
+.
+
+Core Set 2019
+Magic's new card set is now available in MTG Arena. This is
+Magic at its core. Get 3 Core Set 2019 packs just by logging in.
+Complete weekly quests to unlock more packs.
+
+New Player Intro Experience
+The next time you launch MTG Arena, you will have the option to
+play through 5 quick games that introduce you to Magic. The new
+player experience is in an early alpha state. There's plenty more
+to improve, but it's at a point where we're ready for player
+feedback. So, please share your feedback 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HJYzEDWGL9N-2B9TzX7NKhX9mU2dkb4mAEy-2Bne0VxVONXhIL4GOj-2FPjQ2VMdkJYq9JQ-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIDhGXk-2FNUfyaUkM4wF-2BCYJ85G6a7K3uLKgCFa-2F10BoulzhYy-2FVcR-2FR5Fu76XWVLvoCQxgF4cs5GZmp31fbJMcQwRBhbbO8ep6Ix8jCZzp2dgmsz2PNCXt-2FD-2BA3eicateGWZ3qsmptKnZ-2Fd2-2FFEZs0fWVXL2W7LiDyFA5bpk2AI8-2F7tsAB4qC5AaxG9cBU8Yu6DceFqb3PIRaD1UpLwUfIbvLCCmcf0XHy4o22EaLFRdEn0AhJ0YRQGDW1c7CVD94aUK1q6IAr4zcu3vGHuDveW0r-2FNZaDhwk-2F6dfe7GIFOL9buDWTKgqd0jseGHk2PrQdQ-2Bx8IjSfZ54IJHiUp9bmRPtoB7QrL2lOC-2FvzRd6JhwLkJ4RbIq5N9qqgpU7SIHTs7g9un7n0HzJFRSuHED-2BtQzw1ADTJq3WtRgs8cvh3Z3g-3D-3D )!
+
+New Languages & More
+Plenty more has been added with this update, including:
+
+* Support for 5 new languages (French, Italian, German,
+Portuguese, and Spanish)
+* Customizable avatar images
+* Best-of-three constructed gameplay
+* Plenty of Bug Fixes
+* …And More! (read the latest release notes 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9J7bnwOkchgrvqG8IJTGJFFjlt-2BnsJfLoMSXbwpvMBbvLryEKiXU-2FAO0XYiCcVm6dg-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIDhGXk-2FNUfyaUkM4wF-2BCYJ85G6a7K3uLKgCFa-2F10BousFvWyLT-2FFIGgKwuhI-2ByVUXHg3uCVRP5-2BQFQ3WCKFLg-2BcbklFl-2FDnjnNPWr33EcDNFugszXbmq7BspmPyyEP3mpkJH4wANyLOoF3iDy4RUqKeRrukFNyntvoQNsyz7KUIRazp9UN9L5fRyOTqj-2Fh05eSUwUlYSDYKyQNkZA2i3eU-2FLAXFqB1I0sZCZpCKM0C3AqmaTnSskjnZfZMD5wDJQ7wxSSp5DdM0Ur4kvWQ19oRwQ6cMyjvA9zv00-2B8D-2BQEBUAlo32kFhgFODoIOpwJY-2BEQsvcN3u40jFmw8mtk7rmEB9njL-2BsHPDSkFBCi54lHF-2BVOh6nKHOy1sjzukxNNh04dVkFs5iuUjIZvJr19-2FSAKsTsZCquXlXTjL1bzaUufqA-3D-3D ))
+We'll see you in-game!
+
+©1995-2018 Wizards of the Coast LLC, a subsidiary of
+Hasbro, Inc. All Rights Reserved.
+1600 Lind Ave SW #400, Renton, WA 98057
+Terms of Use ( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldNDLg3uyjCpayQYh4zvIoJNapkJWHuSItSWHdVLUd4j7w-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIDhGXk-2FNUfyaUkM4wF-2BCYJ85G6a7K3uLKgCFa-2F10BoukPWpkHhJozt3sMf1XIg5XMGiVwRSGw-2F-2FQFKnX4p-2FasyaJ7ndiyf3u3bZQgvT817IPm4smygQugmZueJvcV9tdhCsn7AftYlBdD8BpTXdMJ0-2BhCrqBBL1nlcZK4x-2Br2qVT5ag2NuuC2FN6q3NnhMMqFGfl3gzoSuIX0nsSgXrRc2iHOGUxy-2FjtBQvjZdIALiEankbHXvk2iOKpJf-2B-2BmNv7WwGY41Te-2BwHT4NZ27VRgaG-2BFGsbpFba2rsRstULWlh9NZhl0OogbqAaS2FoGh21-2Bxh3BtRh791466wCVo-2FV6sxSSqVqVpORgnmLfCdcjEgQdPK7ftvizFJMt-2FOBg7icVgAv4WxxHAO-2FrTF5Pm572hmH48-2F3WjsGFWAjBaXCiUtTQ-3D-3D ) |
+Privacy Statement 
+( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldM928HSZwg0inMCjvrgBFx3Lw-2F4jKKC-2FOfx9jN4AH5iNxDeDR4YTOCk08OMVuZcyJo-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIDhGXk-2FNUfyaUkM4wF-2BCYJ85G6a7K3uLKgCFa-2F10BouuFN-2FlcVFopvlw-2FdrMp-2FypKfRqsM5k1z-2FmIB43oaebxJNchTJK4oZ6s2YhvzTr7eczUg4cVNYGhkjuHLVWy2v6B2Py6UdcxT8QjC6KBwvnqpN8UUarit4-2BHGCq-2F0pxHTbWKNdL1mmnUqgbAg-2F72dPZqZsRke8NA9ihw7CWLKKJp56S8h95sOa1owKz5v-2BBiACvs3x-2BAWC6vL-2Bd1dQOQyAmabSupTtfhnHVO8Qx3WtC6jR-2BPYEcaFpiApoPhfEACNKSz3ydwAcxdz8gb2xHLozx2N3ayjR5bQv-2FVyZ1mOJBaHJOK0WQjnwhFfBIDQssEjn-2FCpAVZAfY7BgLuKDJZw2okfe4lwIKiyjmKyEaxoYS9Cn2o55C0WpeVzPTCIYezJkw-3D-3D )
+| Unsubscribe ( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HGb-2BFPWQd7B-2F6V33xs2rZHCoikVDuQJidzR-2BYY5uh6tNrF8RZCM845qV-2FChNpF2wPlIAmVE7jwCy-2FRYZU0mt8joolFmmTF7uvxxCwhr8BF6wLrKdqAlKBZtMMAJk4jeN-2FbkW2D7a0REKpL0OOTRxvLX6svw072JBrmnPVxvUgbQewQFXirVNkSyUF-2FnrbhgfOA-2Fv4Wb76UP-2BcdKBDw-2FF8IxBULkexTz1hp-2B4XXdJiFvC-2FTUGzvXz-2FY0iNGgow2KUrSl7kmqmZrL-2F3sNET47l4IMdd-2FqwnYORn90Kf3V4H7S5Gy07sihtVqICx9PpiFTBbSa6vNFv6xZGvgZqaCueJg3-2F9-2F7X-2BfE7s5BuooIIYFh9jCBsO5yuZE-2B151UKokoTi4pL2xEwM6HJw65hKRUwegyykD9mt28OYgHxIlN9ii-2F_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIDhGXk-2FNUfyaUkM4wF-2BCYJ85G6a7K3uLKgCFa-2F10BouqFQeCCZX3hPcKTj0UCDGPF4CsSGgeR8DCylCjO3ukc-2FVIV3vH5vyWeK-2BMG53i25uK2BysBhPFqIAzVR5GMD1MQOh5nXoS16uW0Az6OAE7CVHnzgPlj7bdsn-2FOUYloXM-2FriyEdgklZx8DJ-2FnESOjpKKUazGGXRlfo9u7XeVVsfjupeBbGW7gsPw6PsTCBpugGMDBGzaAOVwt6LFhp1E6l7Xl4hgfMyBkrmP6T6-2FeEPV6c6HE9519bOqa3aCo1p6mgV1h1mUvbENPTAs7uButzqYZJIqRCsVBvLkIboKVSXSp5MHto8M7yji-2FKw8DC5mstg7IVxLwtAWtZ76QSBhPMKbAjAkaE2xluCxnmM18a-2BCHCNxkBKpkxZqlAjSfrb522Q-3D-3D )

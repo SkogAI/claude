@@ -1,0 +1,18 @@
+MIME-Version: 1.0
+From: Vaultwarden <auth@aldervall.se>
+To: emil@skogsund.se
+Date: Sat, 29 Nov 2025 02:54:36 +0000
+Subject: Join Vaultwarden
+Message-ID: <ebc7517b-624d-47b6-a36d-c68b925cd676@aldervall.se>
+Content-Type: multipart/alternative; boundary="LEROqI9kPwmim5XAAz9CopxPPg7BFA9jysiioB9A"
+
+You have been invited to join the *Vaultwarden* organization.
+
+
+Click here to join: https://bw-new.aldervall.se/#/accept-organization/?email=emil%40skogsund.se&organizationName=Vaultwarden&organizationId=00000000-0000-0000-0000-000000000000&organizationUserId=00000000-0000-0000-0000-000000000000&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJuYmYiOjE3NjQzODQ4NzYsImV4cCI6MTc2NDgxNjg3NiwiaXNzIjoiaHR0cHM6Ly9idy1uZXcuYWxkZXJ2YWxsLnNlfGludml0ZSIsInN1YiI6IjkxNmNhMWYzLTMxODQtNDI5Ny04YzA4LTllODRjMzkxZTdjZCIsImVtYWlsIjoiZW1pbEBza29nc3VuZC5zZSIsIm9yZ19pZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsIm1lbWJlcl9pZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCIsImludml0ZWRfYnlfZW1haWwiOm51bGx9.AQ-l6954dy3oW7yo1TTUb6mn08B6QZyVv85_QKl9XNphVLgk0gM1dSgfAfeHRE1euRHOms01YEyVe5mDNaw50Og65Hhjg_YHxf7Ro5WHqcuLFn61HNHcZ5l2nC4Qkk76CAb5w8xLVzjc5io4zKzNvpSp5HyTbg0vQZfrOV_Iph2I3bYobbQT_-UshbuxzhY2QlIc5cczQVKDdkBKn02gnlpjdaWH4uQgns6i2ZRU4dTABVBux7Eq1K6JdtbM1h1D52TP9oLClGv147grfQmfg2d-l2ly2GFSPeTV2wE0ijGPdRavA2w-wD6Ec6chwIGngh4zVQt9svmjONnNMfRAZg&orgUserHasExistingUser=false&orgSsoIdentifier=00000000-0000-0000-0000-000000000000
+
+
+If you do not wish to join this organization, you can safely ignore this email.
+
+===
+Github: https://github.com/dani-garcia/vaultwarden

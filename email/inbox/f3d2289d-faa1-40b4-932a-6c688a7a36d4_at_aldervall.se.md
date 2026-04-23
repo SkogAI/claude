@@ -1,0 +1,18 @@
+MIME-Version: 1.0
+From: Vaultwarden <auth@aldervall.se>
+To: emil@skogsund.se
+Date: Tue, 30 Dec 2025 21:48:06 +0000
+Subject: Join Internal Admin
+Message-ID: <f3d2289d-faa1-40b4-932a-6c688a7a36d4@aldervall.se>
+Content-Type: multipart/alternative; boundary="eMATvE6EFUU9k9bYyDVNossNjaPLehyXNhIegcNd"
+
+You have been invited to join the *Internal Admin* organization.
+
+
+Click here to join: https://bw.aldervall.se/#/accept-organization/?email=emil%40skogsund.se&organizationName=Internal+Admin&organizationId=c7ed2c8a-8133-4d2d-ae4b-1df8698daaed&organizationUserId=08f2eebc-81fb-4b7e-84e0-4b718729a7e5&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJuYmYiOjE3NjcxMzEyODYsImV4cCI6MTc2NzU2MzI4NiwiaXNzIjoiaHR0cHM6Ly9idy5hbGRlcnZhbGwuc2V8aW52aXRlIiwic3ViIjoiZDM3MDQ4MmEtMzhlNC00YjQzLThmZWMtZjRiZjk0MzI5YTk5IiwiZW1haWwiOiJlbWlsQHNrb2dzdW5kLnNlIiwib3JnX2lkIjoiYzdlZDJjOGEtODEzMy00ZDJkLWFlNGItMWRmODY5OGRhYWVkIiwibWVtYmVyX2lkIjoiMDhmMmVlYmMtODFmYi00YjdlLTg0ZTAtNGI3MTg3MjlhN2U1IiwiaW52aXRlZF9ieV9lbWFpbCI6Im5pa2xhc0BhbGRlcnZhbGwuc2UifQ.ectwpRX9UH7s_5ky3EN48yzzywtWiBxBhRcl3vfkvWD9Jrf3AXVhHxWuHVlrto4qIjk9wIRdoSAVk1YqlV79hAj4WWlJmFs3AkJe_r3239RWrFebhMAPdnh0VIpa6yDpJfUnooiAlKMI7gcNo_b0TgcSl1g60QQ8sgQdSdsRq4OI_E3uK1WtjcW0MeaqMErw54YVLT4fo4VtwE99-8mrO0yve9RfabQqyFf-UlOd28cw9RlOEKwweVr26P26sJYULAWtIbMVpFncEp0qiTa-pYIktOEZlM9bgotwUf24-hxk2Azijf1BK4NukkUgJMeN5atp50oc8LNrSjZEUPbhrg&orgUserHasExistingUser=false&orgSsoIdentifier=c7ed2c8a-8133-4d2d-ae4b-1df8698daaed
+
+
+If you do not wish to join this organization, you can safely ignore this email.
+
+===
+Github: https://github.com/dani-garcia/vaultwarden

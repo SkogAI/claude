@@ -1,0 +1,28 @@
+MIME-Version: 1.0
+From: MTG Arena <MTGArena@magic.wizards.com>
+To: emil.skogsund@gmail.com
+Date: Wed, 25 Jul 2018 18:54:56 +0000
+Subject: Login By August 1 to Claim Your Reward!
+Message-ID: <EZhoOwKNQgyOatljScvVVg@ismtpd0010p1iad1.sendgrid.net>
+Content-Type: multipart/alternative; boundary="a3213c7037335a036a9aad32316adaf6871059bccd3a5a315c34c608d57f"
+
+Magic: The Gathering Arena         CLICK TO EDIT HEADER TEXT -->
+image 1          Thanks to all players who helped break the MTG
+Arena servers on July 20. You helped MTG Arena hit a record
+number of players and we learned a lot 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HJYzEDWGL9N-2B9TzX7NKhX9mU2dkb4mAEy-2Bne0VxVONX234i-2BTB8NuYJeWPFhyFEsw-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiLiTNsNP4Tdye-2FqROw3-2B6DHcBVZNeajkL-2FdHGAJ1712wgXCVwr7A2Ct2z0S1cdngJy7zoucCdYRGm8nMjeKp14gHsi12XbxBF3MMavSTqSTUW9RSsHo8etmRVLyqk0GzTxKETw9EhDxRHSf1wfffIwxuJi-2BbqVHJsi1ryFS9lIqwZvIjnM3FlfCVHbKzizrzbxWRXJpwnlJu4NAOoR7NWpA9W8EXwaTyE-2FXb427DulJfC9IGMFqjE-2BvFdU1na9JZbttPvLZWzL6ELPtn6L3QRzWWuPUHYPD-2FGBPDDQZNQNu2vYf-2F0HWFvYs097ZwfFcBKycMH0efwPH8MHoWg8OjMhb982QBNlRSTHSkqOS9Q6NKBXYilaJuYidfVsXb6XdbHW9fhdsxZajdyA2vZ9CLbiPHQuj2exvcWx-2Bma99AFFVTw-3D-3D ) because of
+that.
+
+As a thank you, get 5,000 gold and 3 Core Set 2019 packs the
+next time you log in to MTG Arena between now and August 1.
+
+Note: You will need to launch the game by August 1 to be
+eligible to receive this reward.
+
+©1995-2018 Wizards of the Coast LLC, a subsidiary of
+Hasbro, Inc. All Rights Reserved.
+1600 Lind Ave SW #400, Renton, WA 98057
+Terms of Use ( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldNDLg3uyjCpayQYh4zvIoJNapkJWHuSItSWHdVLUd4j7w-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiLiTNsNP4Tdye-2FqROw3-2B6DHcBVZNeajkL-2FdHGAJ1712wgjnm8uKA67739oLu9LKiEhDPNMmkyBKTnZQ7MnAC29212HIscd8tH4WI45GRdLz34gQfa4q-2FjK-2B5cTHa3yz4B7UKbuYXZQhK3Sg0tq37GzUoVQrURD32rKD8HG59QqxwNNbw2j8maAjROU1PpqthHOgxVJE1MlPbo4oiLyOmlQhnLQBMHQauGu-2BubUlVJoW-2FKsCXoJ-2BkfiurcHV2nDhKLnv-2FDJoXO7X8I7ngIJfPP4Z7fHcyObNUI4XZtLkj-2Fp2Nb140kAZyK-2BXtRMPEgC8swDT-2FTpNw-2B2npqZCRfo4AeF2QpVbASkkVPjy8HfJ1QDobb8X-2FjoBCbz-2FIIpNLc-2FaCIqM19JThAc-2Fo6LzT06YomS06rRVbUAv7jzlFPSwzV0tdg-3D-3D ) |
+Privacy Statement 
+( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldM928HSZwg0inMCjvrgBFx3Lw-2F4jKKC-2FOfx9jN4AH5iNxDeDR4YTOCk08OMVuZcyJo-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiLiTNsNP4Tdye-2FqROw3-2B6DHcBVZNeajkL-2FdHGAJ1712wp1h5Kutnj2bURP1ZM33I0Th0f1LJg3Vgumt8BoCyKj2zat5YN3nnLQR05VE89EVNrPIsU3rnx-2FJ88DbRBXAX8U1-2BlCrspST8LKnNk1nBq79V3wh-2FSJ4XK5Bxi4X69vAvPlum0vhVOGosbdTSColuWfsTn8e6edVHQNW0nUBN3b89d8en16fZMtjhnPtanoAPE54s9KKahAjs23c5LaMykQMFRoZnn8rXBlxiFge0Ca25g60lsDecMebp-2BDM03k0aYWuUMB37KwtlDjpmC2ba6zFjRph7WmNrGcytv1jHG8k-2Ffmx5Gy0bUPjTrRZ5a3Jq1IhNQoa4RFVpMMTM5Z-2FG1mblvBpOqaeJn3m59D6n-2BhZO8ZpN-2B31s4DmjZM2e1noEw-3D-3D )
+| Unsubscribe ( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HGb-2BFPWQd7B-2F6V33xs2rZHCoikVDuQJidzR-2BYY5uh6tS3IjHQR4EhKE4-2BxzAU07FweWbTBnwkGJVLKIYclDB2aM17NOREE-2FZ-2Bwoagehcpgi1cmzWX4P3PeBOJD43ymxeUtZXwW409FSyM9p2Z3JZMsCmGQyrb2Be6T4NFPmAiZYIDM0L9zkETz-2FRwQF7OwTFzciwwLibxlVGNTEILi8mHNxj2xcplFwxoZWQtSB5bDcG2hMaSSfUoL-2FxGFZu4bOMtpkLgOQ1mVKKRO7fpR-2FiYaTaCePOBfken8ObI8dApV5PF-2FDRvqlavB9NJd4BQjlMEf1f8KeIARh0euiohCZx9m6mL9hrx2I-2BHpYoIOhINYdNBZY95uNh1xP3Y9hu66V-2FjMcridTewh1H-2F-2BspaXE8sjv3gr7lcpGdo-2BHzDuDc-2BNUF4RHvL8f-2BECWqhW79eEPlQ-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiLiTNsNP4Tdye-2FqROw3-2B6DHcBVZNeajkL-2FdHGAJ1712wqobHSh7OGIAv-2FtFwG-2FNuqWbugKpcJ69-2B9C3U9VU-2BPHvCeGXI6YHWUeGBNYspnzLEZuFAoQP7hwFekDbd3CoN6NWtK5qJ555Jh1f4XvNW39VHLdH9gmLE8tT3uBGtcMSLIqTi5J2qJHKozI7mk9OD9vd4oiwgQEt4zQrYzgAWgHfot-2FFdvujXUwX4CZqpNysskq8-2Fm9CATh46WaYhdnf20Ci0KZH8NM9twLSPrjGhHUI3ijLrtWWredl80Swk5SYGjgZWYlVm0yEQI28q7aZZpv9V4XR5j5g-2FIeY5as7P3tsxJIHVyxjVJetuX4UOaoUBFPydAM-2BDkFk5cMq5I3SgRim18BTGRvAbBsJ52ZxnGrXSA0BRpXt5MjG1NU37p12aQ-3D-3D )

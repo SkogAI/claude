@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-04-22T17:53:41.176163+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T17:53:40.536Z",
+    "data": {
+      "id": "cf154b95-5195-4030-97d5-58e6f5c367b9",
+      "createdAt": "2026-04-22T17:49:40.313Z",
+      "updatedAt": "2026-04-22T17:53:40.535Z",
+      "number": 189,
+      "title": "chore: replace stale ~/.claude/skills and legacy path assumptions in shared skills",
+      "priority": 2,
+      "sortOrder": -2994,
+      "prioritySortOrder": -146843,
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-22T17:53:40.535Z",
+      "addedToTeamAt": "2026-04-22T17:49:40.374Z",
+      "labelIds": [
+        "fb26cb13-47ce-42af-a8e5-121331527dcd",
+        "bc676dcb-abeb-477a-a340-15c515855557"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "subIssueSortOrder": 907,
+      "reactionData": [],
+      "priorityLabel": "High",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-189",
+      "url": "https://linear.app/skogai/issue/SKO-189/chore-replace-stale-claudeskills-and-legacy-path-assumptions-in-shared",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "c38ac3b1-4e15-43bc-b86b-abd3af62bc75",
+      "assignee": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "project": {
+        "id": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+        "name": "SkogAI/.skogai",
+        "url": "https://linear.app/skogai/project/skogaiskogai-d4e8a7ec109a"
+      },
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "syncedWith": [
+        {
+          "id": "4310847785",
+          "service": "github",
+          "metadata": {
+            "repo": "claude",
+            "owner": "SkogAI",
+            "number": 57
+          }
+        }
+      ],
+      "labels": [
+        {
+          "id": "bc676dcb-abeb-477a-a340-15c515855557",
+          "color": "#0075ca",
+          "name": "documentation"
+        },
+        {
+          "id": "fb26cb13-47ce-42af-a8e5-121331527dcd",
+          "color": "#0E8A16",
+          "name": "area/agent-home"
+        }
+      ],
+      "description": "## Problem\n\nSeveral moved skills still instruct agents to read or write from legacy locations even though the review staging area is now repo-local `skills/`.\n\nConcrete examples:\n\n* workflows under `skills/skogai-routing/workflows/` still use `~/.claude/skills/...`\n* matching workflows under `skills/skogai-skills/workflows/` also use `~/.claude/skills/...`\n* `skills/skogai-docs/SKILL.md` still references `.claude/skills/skill-creator/scripts/init_skill.py`\n* some moved skills still mention unavailable or no-longer-canonical interaction primitives such as `AskUserQuestion`\n\n## Scope\n\n* replace stale path instructions with current repo-local paths or clearly documented compatibility shims\n* audit moved skills for legacy runtime assumptions and mark which are intentionally Claude-only vs portable\n* remove or rewrite interaction patterns that do not exist in the current harness\n* document the canonical relationship between repo-local `skills/`, any loaded plugin skills, and the longer-term registry direction\n\n## Done when\n\n* repo-local review workflows no longer point at `~/.claude/skills/` by default\n* stale `.claude/skills/...` references are removed or intentionally documented as compatibility paths\n* unavailable interaction primitives are not presented as normal workflow steps\n* a reviewer can follow the moved skills from this repo without silently leaving the repo context",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"c0f5f5a7-9b07-4cc8-a733-44d5109d763a\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Several moved skills still instruct agents to read or write from legacy locations even though the review staging area is now repo-local \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\".\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Concrete examples:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"workflows under \"},{\"type\":\"text\",\"text\":\"skills/skogai-routing/workflows/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" still use \"},{\"type\":\"text\",\"text\":\"~/.claude/skills/...\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"matching workflows under \"},{\"type\":\"text\",\"text\":\"skills/skogai-skills/workflows/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" also use \"},{\"type\":\"text\",\"text\":\"~/.claude/skills/...\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skills/skogai-docs/SKILL.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" still references \"},{\"type\":\"text\",\"text\":\".claude/skills/skill-creator/scripts/init_skill.py\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"some moved skills still mention unavailable or no-longer-canonical interaction primitives such as \"},{\"type\":\"text\",\"text\":\"AskUserQuestion\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"d3f033c4-e709-4474-b927-2e3f2019d2a8\"},\"content\":[{\"type\":\"text\",\"text\":\"Scope\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"replace stale path instructions with current repo-local paths or clearly documented compatibility shims\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"audit moved skills for legacy runtime assumptions and mark which are intentionally Claude-only vs portable\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"remove or rewrite interaction patterns that do not exist in the current harness\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"document the canonical relationship between repo-local \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", any loaded plugin skills, and the longer-term registry direction\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"8183650f-b6bd-4045-ac69-7cdb097e7575\"},\"content\":[{\"type\":\"text\",\"text\":\"Done when\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"repo-local review workflows no longer point at \"},{\"type\":\"text\",\"text\":\"~/.claude/skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" by default\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"stale \"},{\"type\":\"text\",\"text\":\".claude/skills/...\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" references are removed or intentionally documented as compatibility paths\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"unavailable interaction primitives are not presented as normal workflow steps\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"a reviewer can follow the moved skills from this repo without silently leaving the repo context\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "projectId": null,
+      "updatedAt": "2026-04-22T17:49:40.313Z",
+      "addedToProjectAt": null
+    },
+    "url": "https://linear.app/skogai/issue/SKO-189/chore-replace-stale-claudeskills-and-legacy-path-assumptions-in-shared",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776880421020,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

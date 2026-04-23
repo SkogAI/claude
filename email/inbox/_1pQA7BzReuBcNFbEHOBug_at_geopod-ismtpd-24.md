@@ -1,0 +1,34 @@
+MIME-Version: 1.0
+From: Sloth from Lazy AI <sloth@getlazy.ai>
+To: emil.skogsund@gmail.com
+Date: Sun, 16 Feb 2025 22:12:36 +0000
+Subject: Welcome to Lazy AI
+Message-ID: <_1pQA7BzReuBcNFbEHOBug@geopod-ismtpd-24>
+Content-Type: multipart/alternative; boundary="0c64bcc502c713406f469c1fa85b1367fb35923a88323bd5daa5614ab0fd"
+
+Hey! It's your fave Sloth,
+
+Welcome to Lazy AI! We're super stoked that you've joined
+our crew.
+
+If you haven't started using Lazy yet, now is a good time to
+log-in and start!
+
+Start building full stack apps
+with prompts! 
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzM5NzQzOTU2LCJuYmYiOjE3Mzk3NDM5NTYsImFjY291bnRfaWQiOiI1MzkxNDU3IiwiZGVsaXZlcnlfaWQiOiJ4NjdkOTJvbmZjZGRnOWswbW1veCIsInRva2VuIjoieDY3ZDkyb25mY2RkZzlrMG1tb3giLCJzZW5kX2F0IjoxNzM5NzQzOTU2LCJlbWFpbF9pZCI6ODU5ODU2NCwiZW1haWxhYmxlX3R5cGUiOiJBdXRvbWF0aW9uRW1haWwiLCJlbWFpbGFibGVfaWQiOjMwNDQ4MjEsInVybCI6Imh0dHBzOi8vYXBwLmdldGxhenkuYWkvP3V0bV9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj13ZWxjb21lRW1haWwmX19zPW15YXc3ZDZpcHlneGRlODQ5Y2ZwIn0.OBwyTgLfrRuq4uGw4_8kgoilidNKKoXOiuGZ0oLU1Yw )
+If you're interested in Lazy AI for Business, where we
+facilitate building your software solution for you with Lazy AI,
+please reply to this email so we can help!
+
+Alrighty then, that's the end of my slothful spiel for now and
+stay tuned for weekly tips!
+
+Happy Sleeping,
+
+Sloth
+Head of Procrastination
+Lazy AI
+
+https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzM5NzQzOTU2LCJuYmYiOjE3Mzk3NDM5NTYsImFjY291bnRfaWQiOiI1MzkxNDU3IiwiZGVsaXZlcnlfaWQiOiJ4NjdkOTJvbmZjZGRnOWswbW1veCIsInRva2VuIjoieDY3ZDkyb25mY2RkZzlrMG1tb3giLCJzZW5kX2F0IjoxNzM5NzQzOTU2LCJlbWFpbF9pZCI6ODU5ODU2NCwiZW1haWxhYmxlX3R5cGUiOiJBdXRvbWF0aW9uRW1haWwiLCJlbWFpbGFibGVfaWQiOjMwNDQ4MjEsInVybCI6Imh0dHBzOi8vd3d3LmdldGRyaXAuY29tL3N1YnNjcmliZXJzL215YXc3ZDZpcHlneGRlODQ5Y2ZwL3RvcGljcz9kPXg2N2Q5Mm9uZmNkZGc5azBtbW94JmV4Y2x1ZGVfY2xpY2s9MSZfX3M9bXlhdzdkNmlweWd4ZGU4NDljZnAifQ.-BZJcZsdqww6aYg8kP6o05xQOtyC8p7zoHsM0WA7YCY
+919 N Market St, Wilmington, DE 19801-3023

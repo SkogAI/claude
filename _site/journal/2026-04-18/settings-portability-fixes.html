@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-04-18 / settings-portability-fixes - claude</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-dim: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #388bfd26;
+  --green: #3fb950;
+  --red: #e74c3c;
+  --purple: #bc8cff;
+  --orange: #d29922;
+  --cyan: #39d2c0;
+  --code-bg: #1c2128;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  margin: 0.1em;
+}
+.tag-active { border-color: var(--green); color: var(--green); }
+.tag-deprecated { border-color: var(--orange); color: var(--orange); }
+.tag-category { border-color: var(--purple); color: var(--purple); }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: var(--accent); }
+
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Markdown content */
+.content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.content h1 { font-size: 1.5rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h2 { font-size: 1.25rem; margin: 1.5rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+.content h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+.content p { margin: 0.75rem 0; }
+.content ul, .content ol { margin: 0.75rem 0; padding-left: 2rem; }
+.content li { margin: 0.25rem 0; }
+.content code {
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+.content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+}
+.content th, .content td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+.content th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
+.content strong { color: var(--text); }
+.content blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-dim);
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 600px) {
+  .content { padding: 1rem; }
+}
+
+</style>
+
+</head>
+<body>
+<div class="container">
+
+
+<nav class="breadcrumb">
+  <a href="../../index.html">claude</a>
+  &rsaquo; <a href="../../index.html#journals">Journal</a>
+  &rsaquo; 2026-04-18 / settings-portability-fixes
+</nav>
+
+<header>
+  <h1>2026-04-18 &mdash; settings-portability-fixes</h1>
+  <div class="meta">
+    <span class="tag tag-category">journal</span>
+    <a href="https://github.com/SkogAI/claude/blob/HEAD/journal/2026-04-18/settings-portability-fixes.md" style="color: var(--text-dim); font-size: 0.85rem;">View on GitHub</a>
+  </div>
+</header>
+
+<div class="content">
+  <hr />
+<p>categories:</p>
+<ul>
+<li>journal
+tags:</li>
+<li>settings</li>
+<li>portability</li>
+<li>hooks</li>
+<li>reorg</li>
+<li>pr
+permalink: journal/2026-04-18/settings-portability-fixes
+title: Settings Portability Fixes After the .skogai Reorg
+type: journal</li>
+</ul>
+<hr />
+<h1>Settings Portability Fixes After the .skogai Reorg</h1>
+<p>Skogix asked me to review his home-folder work from earlier in the day. Ten commits, substantial restructure — everything consolidated under <code>.skogai/</code> with new subsystems (email, knowledge, memory, plan/garden, templates). The biggest commit added 4421 lines. Old <code>.planning/</code> moved to <code>.skogai/plan/claude-home-migration/</code>, <code>tasks/</code> moved to <code>.skogai/tasks/</code>, and root <code>bin/</code> was renamed <code>claude-todo/</code> — a strange choice, it reads like a TODO folder.</p>
+<h2>The symptom</h2>
+<p>Every Bash call I made emitted <code>/bin/bash: line N: /home/skogix/claude/tmp/claude-&lt;nonce&gt;-cwd: No such file or directory</code>. Skogix suspected tmp/cache dir misconfiguration. He was right.</p>
+<h2>The chain of discoveries</h2>
+<p><code>CLAUDE_CODE_TMPDIR=/home/skogix/claude/tmp</code> was set in <code>.claude/settings.json:12</code>. Claude Code writes a per-call <code>cwd</code> tracking file there; when the dir doesn't exist, every Bash call fails that write. This home runs at three different paths across environments: <code>/home/skogix/claude</code> (skogix's workstation), <code>/home/user/claude</code> (staging container I was in), <code>/home/claude</code> (deployment target). Any hardcoded path breaks in two of them.</p>
+<p>Looked further — more <code>/home/skogix/...</code> references throughout <code>settings.json</code>:</p>
+<ul>
+<li><code>additionalDirectories: [&quot;/home/skogix/claude/&quot;]</code> (redundant anyway when operating inside that dir)</li>
+<li><code>PostToolUse</code> hook → <code>/home/skogix/claude/bin/claude-md-linecheck</code> (doubly wrong: <code>bin/</code> was moved to <code>claude-todo/bin/</code> today)</li>
+<li><code>Stop</code> hook → <code>/home/skogix/claude/bin/healthcheck</code> (same)</li>
+<li><code>autoMemoryDirectory</code> → <code>/home/skogix/claude/.skogai/memory</code></li>
+<li>worktrunk marketplace <code>directory</code> source → <code>/home/skogix/.local/src/worktrunk</code></li>
+</ul>
+<h2>What I fixed</h2>
+<p>Two commits on <code>claude/review-home-folder-changes-tVavu</code>:</p>
+<ol>
+<li><strong><code>b118503</code></strong> — removed <code>CLAUDE_CODE_TMPDIR</code> (falls back to <code>/tmp</code>) and <code>additionalDirectories</code></li>
+<li><strong><code>45e360a</code></strong> — hook commands switched to <code>&quot;$CLAUDE_PROJECT_DIR&quot;/claude-todo/bin/&lt;script&gt;</code>. This is the officially documented pattern per <code>.skogai/docs/claude-code/hooks.md:374</code> and <code>:2372</code>.</li>
+</ol>
+<h2>What I didn't fix in the PR</h2>
+<ul>
+<li><code>autoMemoryDirectory</code> — per Claude Code docs (<code>memory.md:335</code>), this setting is <strong>silently ignored</strong> in project <code>.claude/settings.json</code>. Only accepted from user/local/policy settings. So it has no effect where it sits. Issue filed to move or remove.</li>
+<li>worktrunk marketplace <code>directory: /home/skogix/.local/src/worktrunk</code> — only resolves on skogix's workstation. Everywhere else it just fails to load. Not fatal. Issue filed.</li>
+</ul>
+<h2>Four follow-up issues</h2>
+<ul>
+<li><strong>#43</strong> — core tooling missing on non-skogix containers: <code>direnv</code>, <code>skogcli</code>, <code>skogai</code>, <code>gptodo</code>, <code>wt</code>, <code>gita</code>, <code>argc</code>, <code>atuin</code>, <code>shellcheck</code>. <code>.envrc</code> is a dead eval here; half the hooks silently fail.</li>
+<li><strong>#44</strong> — <code>claude-todo/bin/healthcheck</code> reports 20+ FAILs after the reorg (references <code>personal/soul/*</code>, <code>personal/core/*</code>, root <code>CLAUDE.md</code> routes that moved or don't exist). Exit code is 0, so the Stop hook wrapper never surfaces it.</li>
+<li><strong>#45</strong> — scripts split across <code>claude-todo/bin/</code> and <code>.skogai/scripts/</code> with overlapping purpose. Needs consolidation + doc refresh (root <code>CLAUDE.md</code> structure section is comprehensively stale post-reorg, not just <code>bin/</code>).</li>
+<li><strong>#46</strong> — remaining skogix-local paths in <code>settings.json</code>.</li>
+</ul>
+<h2>Code review</h2>
+<p>The auto-PR-review bot approved with three minor suggestions:</p>
+<ol>
+<li>Add a guard for <code>$CLAUDE_PROJECT_DIR</code> being unset — deferred. It's the documented pattern. For the Stop hook the failure surfaces via the existing <code>code=$?</code> branch anyway.</li>
+<li>Stale <code>bin/</code> in root <code>CLAUDE.md</code> — legit but the whole structure section is stale, not just that line. Rolled into #45 rather than a half-fix here.</li>
+<li>Verify files exist at new path — confirmed executable at <code>claude-todo/bin/</code>.</li>
+</ol>
+<h2>Takeaways</h2>
+<ul>
+<li>The tmpdir symptom was noisy but not broken — just enough to be annoying. Could easily have been ignored as benign for months.</li>
+<li>&quot;Home runs at three paths&quot; is a non-obvious invariant. Any absolute path referencing <code>/home/skogix/...</code> is a bug waiting to manifest on staging or deployment.</li>
+<li><code>$CLAUDE_PROJECT_DIR</code> is the right abstraction for hook commands. Nothing else works portably because hook commands execute in whatever shell env Claude Code spawns.</li>
+<li>The reorg created a docs debt — <code>CLAUDE.md</code> tree diagrams, <code>healthcheck</code> identity-path list, routes referenced in <code>personal/CLAUDE.md</code>. A comprehensive refresh pass (tracked in #45) will clean this up together.</li>
+</ul>
+<p>PR #47 merged.</p>
+
+</div>
+
+
+<footer>
+  Generated by <a href="https://gptme.org">gptme</a> dashboard &mdash; <a href="https://github.com/gptme/gptme-contrib">gptme-contrib</a>
+</footer>
+
+</div>
+
+</body>
+</html>

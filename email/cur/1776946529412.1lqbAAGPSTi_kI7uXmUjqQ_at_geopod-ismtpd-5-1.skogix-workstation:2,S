@@ -1,0 +1,9 @@
+MIME-Version: 1.0
+From: info@netwic.com
+To: Emil.Skogsund@gmail.com
+Date: Wed, 09 Jun 2021 12:40:27 +0000
+Subject: Jobba ombord i sommar?
+Message-ID: <1lqbAAGPSTi_kI7uXmUjqQ@geopod-ismtpd-5-1>
+Content-Type: text/html; charset="us-ascii"
+
+Hej p&aring; er allesammans!<br /><br />Solen skiner och sommaren &auml;r h&auml;r!&nbsp;<br /><br />&Auml;r du intresserad av att jobba ombord i sommar och inte &auml;nnu gjort dig tillg&auml;nglig i Netwic? G&aring; in och g&ouml;r dig tillg&auml;nglig! :)<br />Behovet av personal &auml;r fr&auml;mst&nbsp;juli och augusti.<br /><br /><strong>Information om Friskintyget/L&auml;karintyg f&ouml;r sj&ouml;folk:</strong><br />Giltighetstiden p&aring; l&auml;karintyg har f&ouml;rl&auml;ngts under pandemin:<br />L&auml;karintyg med utg&aring;ngsdatum 1/4-2020 och till 31/5-2021 f&ouml;rl&auml;ngs automatiskt med 15 m&aring;nader dock l&auml;ngst till 30/9-2021. F&ouml;r utg&aring;ngsdatum efter 31/5 g&auml;ller utg&aring;ngsdatum p&aring; intyget.<br /><br /><strong>F&ouml;r dig som beh&ouml;ver f&ouml;rnya ditt friskintyg/l&auml;karintyg f&ouml;r sj&ouml;folk g&auml;ller f&ouml;ljande:</strong><br />Du ansvarar sj&auml;lv f&ouml;r att f&ouml;rnya ditt friskintyg. Var du kan g&ouml;ra detta finns utf&ouml;rligt beskrivet under fliken &quot;Nyheter&quot; i Netwic.<br />&nbsp;<br />Om du inte l&auml;ngre &auml;r intresserad av att vara kvar i vikariebanken &ndash; skicka ett mail till oss s&aring; kan vi uppdatera!<br /><br />Givetvis &auml;r du alltid varmt v&auml;lkommen att h&ouml;ra av dig om stort och sm&aring;tt till oss p&aring; HR. Snabbaste s&auml;ttet att n&aring; oss &auml;r som vanligt via:&nbsp; HRsea.swe@tallinksilja.com<br /><br />P&aring; &aring;terh&ouml;rande!<br /><br />H&auml;lsningar Jessica och Charlotte p&aring; HR Stockholm<br />&nbsp;

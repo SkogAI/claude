@@ -1,0 +1,9 @@
+MIME-Version: 1.0
+From: Cloudflare <em@em1.cloudflare.com>
+To: emil@skogsund.se
+Date: Mon, 25 Aug 2025 09:59:42 +0000
+Subject: Make your site more secure and reliable with Advanced Certificate Manager
+Message-ID: <FD.C1.07705.E043CA86@i-01b0beb78083d1183.mta1vrest.sd.prd.sparkpost>
+Content-Type: multipart/alternative; boundary="_----j63igooCKdhWJnValZKfgQ===_8D/C1-07705-E043CA86"
+
+Make your site more secure and reliable with Advanced Certificate Manager Simplify the way you manage TLS certificates on Cloudflare. Easily Manage Certificates On Cloudflare Get Started Make your site more secure and reliable with Advanced Certificate Manager What is Advanced Certificate Manager? Advanced Certificate Manager provides a consolidated certificate management experience with enhanced configuration and options for users wanting to go beyond free Universal SSL. What are the benefits of Advanced Certificate Manager? Advanced Certificate Manager allows you to customize the hostnames on your certificate, choose validity periods to as low as 14 days and select the certificate authority of your choice to make your site more secure and reliable. Prioritizing certain ciphers over others offers a higher level of security and restricting which cipher suites are used strengthens your website against security vulnerabilities. "Advanced Certificate Manager has simplified the way we manage certificates across our many domains, while still allowing us to meet our strict security requirements. The ability to manage cipher suites, as well as auto-renewal within our parameters, creates for an available and secure environment. " Colin Henderson Head of Information Security, OneTrust Try Advanced Certificate Manager Today! Technical Documents Get Certificate Manager Upgrade Plan Login Visit Community Copyright © 2025 Cloudflare, Inc. 101 Townsend Street, San Francisco, CA 94107 cloudflare.com | Privacy Policy | Unsubscribe

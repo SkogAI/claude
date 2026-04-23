@@ -1,0 +1,200 @@
+MIME-Version: 1.0
+From: "Battle.net" <noreply@e.battle.net>
+To: emil.skogsund@gmail.com
+Date: Fri, 20 Sep 2024 09:31:00 +0000
+Subject: Skogix, Battle.net Game Deals are almost over!
+Message-ID: <EC.FF.37262.4D04DE66@ji.mta1vrest.cc.prd.sparkpost>
+Content-Type: multipart/alternative; boundary="_----RFf4UU8Qi6bCVdcnVehHmg===_AC/FF-37262-4D04DE66"
+
+Get
+discounts on a selection of games, bundles, and more with
+Battle.net Game
+Deals.
+Game
+Deals are ending
+Soon!
+(
+https://links.battle.net/f/a/_Lxwfs3ORcpeWLK_XZd6Gg~~/AAQRxQA~/RgRoz8XUP0S1aHR0cHM6Ly9ldS5zaG9wLmJhdHRsZS5uZXQvc2FsZS9nYW1lLWRlYWxzLTIwMjQ_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PWltYWdlLWxpbmstZ2FtZS1kZWFsc1cDc3BjQgpm69RA7WYZ1X_OUhdlbWlsLnNrb2dzdW5kQGdtYWlsLmNvbVgEAAABYQ~~
+)                 Game
+Deals are ending
+Soon!
+ For a
+limited time, save big on a selection of Battle.net® games,
+bundles, and more, Skogix! Shop now
+through 23 September. 
+
+
+Make the most of this sale and explore Azeroth in World of
+Warcraft®, defend Sanctuary in Diablo®, and bring the action in
+Call of Duty®! 
+Shop
+Now
+(
+https://links.battle.net/f/a/_2x9S7rIw43A8JwGJIPAUA~~/AAQRxQA~/RgRoz8XUP0S0aHR0cHM6Ly9ldS5zaG9wLmJhdHRsZS5uZXQvc2FsZS9nYW1lLWRlYWxzLTIwMjQ_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PWJ1dHRvbi1saW5rLXNob3Atbm93VwNzcGNCCmbr1EDtZhnVf85SF2VtaWwuc2tvZ3N1bmRAZ21haWwuY29tWAQAAAFh
+)   Shop
+Now
+(
+https://links.battle.net/f/a/_2x9S7rIw43A8JwGJIPAUA~~/AAQRxQA~/RgRoz8XUP0S0aHR0cHM6Ly9ldS5zaG9wLmJhdHRsZS5uZXQvc2FsZS9nYW1lLWRlYWxzLTIwMjQ_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PWJ1dHRvbi1saW5rLXNob3Atbm93VwNzcGNCCmbr1EDtZhnVf85SF2VtaWwuc2tvZ3N1bmRAZ21haWwuY29tWAQAAAFh
+)         
+Put
+your Battle.net Balance to
+work
+(
+https://links.battle.net/f/a/D1wwqHb0yEa62GvprTNFhA~~/AAQRxQA~/RgRoz8XUP0S3aHR0cHM6Ly9ldS5zaG9wLmJhdHRsZS5uZXQvc2FsZS9nYW1lLWRlYWxzLTIwMjQ_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PWltYWdlLWxpbmstYm5ldC1iYWxhbmNlVwNzcGNCCmbr1EDtZhnVf85SF2VtaWwuc2tvZ3N1bmRAZ21haWwuY29tWAQAAAFh
+)                 Put
+your Battle.net Balance to
+work
+10.00
+EUR
+10.00
+EUR
+Tap
+your Battle.net Balance and save!
+
+You've got 10.00
+EUR available to spend in the
+Battle.net
+Shop.
+Start
+Saving
+(
+https://links.battle.net/f/a/aYXbcIlyzCKf_7QIlAMSKQ~~/AAQRxQA~/RgRoz8XUP0S4aHR0cHM6Ly9ldS5zaG9wLmJhdHRsZS5uZXQvc2FsZS9nYW1lLWRlYWxzLTIwMjQ_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PWJ1dHRvbi1saW5rLXN0YXJ0LXNhdmluZ1cDc3BjQgpm69RA7WYZ1X_OUhdlbWlsLnNrb2dzdW5kQGdtYWlsLmNvbVgEAAABYQ~~
+)   Start
+Saving
+(
+https://links.battle.net/f/a/aYXbcIlyzCKf_7QIlAMSKQ~~/AAQRxQA~/RgRoz8XUP0S4aHR0cHM6Ly9ldS5zaG9wLmJhdHRsZS5uZXQvc2FsZS9nYW1lLWRlYWxzLTIwMjQ_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PWJ1dHRvbi1saW5rLXN0YXJ0LXNhdmluZ1cDc3BjQgpm69RA7WYZ1X_OUhdlbWlsLnNrb2dzdW5kQGdtYWlsLmNvbVgEAAABYQ~~
+)         
+
+
+Battle.net
+on the
+go
+Put
+the power of Battle.net in the palm of your hand. Shop,
+socialize, get the news, and stay safe with the built-in
+Authenticator.
+Download
+on the App
+Store
+(
+https://links.battle.net/f/a/bx3p06bbSs3o_iypwQWdcQ~~/AAQRxQA~/RgRoz8XUP0SmaHR0cHM6Ly9hcHBzLmFwcGxlLmNvbS9nYi9hcHAvYmF0dGxlLW5ldC9pZDEyNDEwNDAwMzA_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PVcDc3BjQgpm69RA7WYZ1X_OUhdlbWlsLnNrb2dzdW5kQGdtYWlsLmNvbVgEAAABYQ~~
+) GET
+IT ON Google
+Play
+(
+https://links.battle.net/f/a/NnjTIaJMVMuL4PvInFbu8w~~/AAQRxQA~/RgRoz8XUP0S-aHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBwcy9kZXRhaWxzP2lkPWNvbS5ibGl6emFyZC5tZXNzZW5nZXImaGw9ZW5fR0ImdXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PVcDc3BjQgpm69RA7WYZ1X_OUhdlbWlsLnNrb2dzdW5kQGdtYWlsLmNvbVgEAAABYQ~~
+)
+Stay
+Connected
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  X 
+( https://links.battle.net/f/a/OvsOUrJTrjQrnChdshtfPA~~/AAQRxQA~/RgRoz8XUP0SsaHR0cHM6Ly90d2l0dGVyLmNvbS9iYXR0bGVuZXQ_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PXNvY2lhbC1saW5rLXgmbGlkPTZucDZnY2Npa2Yxd1cDc3BjQgpm69RA7WYZ1X_OUhdlbWlsLnNrb2dzdW5kQGdtYWlsLmNvbVgEAAABYQ~~ )
+  Facebook 
+( https://links.battle.net/f/a/pKu6Dt1c21R4aSOElKEUfA~~/AAQRxQA~/RgRoz8XUP0S0aHR0cHM6Ly9mYWNlYm9vay5jb20vYmF0dGxlbmV0P3V0bV9zb3VyY2U9Ym5ldC1nYW1lLWRlYWxzLXNhbGUtbGFzdC1jaGFuY2UtMy0yMDI0MDkyMCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1tYXJrZXRpbmctZ2ItMyZ1dG1fY29udGVudD1zb2NpYWwtbGluay1mYWNlYm9vayZsaWQ9M24zaXpsaTJha282VwNzcGNCCmbr1EDtZhnVf85SF2VtaWwuc2tvZ3N1bmRAZ21haWwuY29tWAQAAAFh )
+  Instagram 
+( https://links.battle.net/f/a/xVyuKW0E8j3Jxbp5Ikv-Ew~~/AAQRxQA~/RgRoz8XUP0S2aHR0cHM6Ly9pbnN0YWdyYW0uY29tL2JhdHRsZW5ldD91dG1fc291cmNlPWJuZXQtZ2FtZS1kZWFscy1zYWxlLWxhc3QtY2hhbmNlLTMtMjAyNDA5MjAmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249bWFya2V0aW5nLWdiLTMmdXRtX2NvbnRlbnQ9c29jaWFsLWxpbmstaW5zdGFncmFtJmxpZD1nbDhraDc1a2VycWxXA3NwY0IKZuvUQO1mGdV_zlIXZW1pbC5za29nc3VuZEBnbWFpbC5jb21YBAAAAWE~ )
+  
+BATTLE.NET (
+https://links.battle.net/f/a/Oh3OLMeQV2ZJsBEvk3gVgA~~/AAQRxQA~/RgRoz8XUP0SqaHR0cHM6Ly9ldS5zaG9wLmJhdHRsZS5uZXQvZW4tZ2I_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PWltYWdlLWxpbmstYmF0dGxlbmV0LWxvZ29XA3NwY0IKZuvUQO1mGdV_zlIXZW1pbC5za29nc3VuZEBnbWFpbC5jb21YBAAAAWE~
+)                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Careers 
+( https://links.battle.net/f/a/qdC85R0emn36dnZEPj5m-Q~~/AAQRxQA~/RgRoz8XUP0S8aHR0cHM6Ly9jYXJlZXJzLmJsaXp6YXJkLmNvbS9nYi9lbj91dG1fc291cmNlPWJuZXQtZ2FtZS1kZWFscy1zYWxlLWxhc3QtY2hhbmNlLTMtMjAyNDA5MjAmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249bWFya2V0aW5nLWdiLTMmdXRtX2NvbnRlbnQ9dGV4dC1saW5rLWZvb3Rlci1jYXJlZXJzJmxpZD00dDVhejJoa3Yxd3pXA3NwY0IKZuvUQO1mGdV_zlIXZW1pbC5za29nc3VuZEBnbWFpbC5jb21YBAAAAWE~ )
+ |  About 
+( https://links.battle.net/f/a/95aBqo-3aDOn10m-fRT0XA~~/AAQRxQA~/RgRoz8XUP0TEaHR0cHM6Ly93d3cuYmxpenphcmQuY29tL2VuLWdiL2NvbXBhbnkvYWJvdXQ_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PXRleHQtbGluay1mb290ZXItYWJvdXQmbGlkPXIzZ3kxenFzMG1hc1cDc3BjQgpm69RA7WYZ1X_OUhdlbWlsLnNrb2dzdW5kQGdtYWlsLmNvbVgEAAABYQ~~ )
+ |  Privacy 
+( https://links.battle.net/f/a/GTL35pZezlZzoR-SRrwykQ~~/AAQRxQA~/RgRoz8XUP0TjaHR0cHM6Ly93d3cuYmxpenphcmQuY29tL2VuLWdiL2xlZ2FsLzhjNDFlN2U2LTBiNjEtNDJjNC1hNjc0LWM5MWQ4ZThkNjhkMz91dG1fc291cmNlPWJuZXQtZ2FtZS1kZWFscy1zYWxlLWxhc3QtY2hhbmNlLTMtMjAyNDA5MjAmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249bWFya2V0aW5nLWdiLTMmdXRtX2NvbnRlbnQ9dGV4dC1saW5rLWZvb3Rlci1wcml2YWN5JmxpZD0xemN6aGw0eXBmcXVXA3NwY0IKZuvUQO1mGdV_zlIXZW1pbC5za29nc3VuZEBnbWFpbC5jb21YBAAAAWE~ )
+ |  Terms 
+( https://links.battle.net/f/a/sye6pV_aZC_Bz9XyntBPvA~~/AAQRxQA~/RgRoz8XUP0S8aHR0cHM6Ly93d3cuYmxpenphcmQuY29tL2VuLWdiL2xlZ2FsP3V0bV9zb3VyY2U9Ym5ldC1nYW1lLWRlYWxzLXNhbGUtbGFzdC1jaGFuY2UtMy0yMDI0MDkyMCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1tYXJrZXRpbmctZ2ItMyZ1dG1fY29udGVudD10ZXh0LWxpbmstZm9vdGVyLXRlcm1zJmxpZD1nejN6eWVzdXBuM3hXA3NwY0IKZuvUQO1mGdV_zlIXZW1pbC5za29nc3VuZEBnbWFpbC5jb21YBAAAAWE~ )
+ |  Support 
+( https://links.battle.net/f/a/XREiPQrsa1LTAWQJGWGBrw~~/AAQRxQA~/RgRoz8XUP0S6aHR0cHM6Ly9ldS5iYXR0bGUubmV0L3N1cHBvcnQvZW4_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PXRleHQtbGluay1mb290ZXItc3VwcG9ydCZsaWQ9a2kycjh5dTlkbmtwVwNzcGNCCmbr1EDtZhnVf85SF2VtaWwuc2tvZ3N1bmRAZ21haWwuY29tWAQAAAFh )
+  
+If
+you are no longer interested in receiving emails regarding
+Battle.net news, offers, betas etc., you can choose to
+opt-out
+( https://links.battle.net/f/a/M82HrQmzDdq7Dhm4O9PnZw~~/AAQRxQA~/RgRoz8XUP4T_AWh0dHBzOi8vMDMuZW1haWxpbmJvdW5kcHJvY2Vzc2luZy5jb20vZW5jX3VzZXIvdW5zdWJzY3JpYmU_ZD0lMjQxJTI0OWVKc2tZckRDS2pwVzhTRXRLY1RQQSUzRCUzRCUyNGxCZSUyQmljcmhYRXglMkJGYmRFRWRjdWpCREFKSHVQM2JHOTYwNm95VXZDV2pYelNHc3BmV2hBdktuQkQybUMlMEFMbWhsYVklMkZ0ZjE2ellSNGZZeW5FYTQ4VWhHbXA5QmEyWG1zdEF1dDMlMkZ3TWJlRG1zeE4lMkJkQW1Jc2lhOXglMEE0RW95blU1bUtUOEpHRUc2bk84Z1NGM1U2cSUyQiUyRkhsTG1yeTJUaSUyRkZYTVBjRFNZUlNoa1lkQUUya3UyeWElMEFxRyUyRkl4bWYxbmtBJTJCbGJkdjBGRThJaHgwbnRycG1OQUtBc1JXNmVMQXFSRVgyTlJtbG90SkRYY1FWbWZTJTBBd2M3cTAzMUhWSzM5U2N2UVQ1dmpiTW5IJTJCeUx1M2dWJTJGVkRDWTZVdXdPWUQwN0lhWEZGNWpKYVp4Z2xzUCUwQW15NXEzZlRmVmtTTWJmd2N1VWlpclExbVFOWENJd2sxMUNFQmI4NVhaUmFkWDE5OUpVT3lwNWVpS1BFbCUwQXBvTSUzRCYxPTFXA3NwY0IKZuvUQO1mGdV_zlIXZW1pbC5za29nc3VuZEBnbWFpbC5jb21YBAAAAWE~
+).
+If you wish to unsubscribe from all emails, click unsubscribe (
+https://links.battle.net/f/a/fr3kguyfy0gNp8l9ij73ww~~/AAQRxQA~/RgRoz8XUP4SFAmh0dHBzOi8vMDMuZW1haWxpbmJvdW5kcHJvY2Vzc2luZy5jb20vZW5jX3VzZXIvdW5zdWJzY3JpYmU_ZD0lMjQxJTI0OWVKc2tZckRDS2pwVzhTRXRLY1RQQSUzRCUzRCUyNGxCZSUyQmljcmhYRXglMkJGYmRFRWRjdWpCREFKSHVQM2JHOTYwNm95VXZDV2pYelNHc3BmV2hBdktuQkQybUMlMEFMbWhsYVklMkZ0ZjE2ellSNGZZeW5FYTQ4VWhHbXA5QmEyWG1zdEF1dDMlMkZ3TWJlRG1zeE4lMkJkQW1Jc2lhOXglMEE0RW95blU1bUtUOEpHRUc2bk84Z1NGM1U2cSUyQiUyRkhsTG1yeTJUaSUyRkZYTVBjRFNZUlNoa1lkQUUya3UyeWElMEFxRyUyRkl4bWYxbmtBJTJCbGJkdjBGRThJaHgwbnRycG1OQUtBc1JXNmVMQXFSRVgyTlJtbG90SkRYY1FWbWZTJTBBd2M3cTAzMUhWSzM5U2N2UVQ1dmpiTW5IJTJCeUx1M2dWJTJGVkRDWTZVdXdPWUQwN0lhWEZGNWpKYVp4Z2xzUCUwQW15NXEzZlRmVmtTTWJmd2N1VWlpclExbVFOWENJd2sxMUNFQmI4NVhaUmFkWDE5OUpVT3lwNWVpS1BFbCUwQXBvTSUzRCYxPTE_dXRtX3NvdXJjZT1ibmV0LWdhbWUtZGVhbHMtc2FsZS1sYXN0LWNoYW5jZS0zLTIwMjQwOTIwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW1hcmtldGluZy1nYi0zJnV0bV9jb250ZW50PXRleHQtbGluay11bnN1YnNjcmliZVcDc3BjQgpm69RA7WYZ1X_OUhdlbWlsLnNrb2dzdW5kQGdtYWlsLmNvbVgEAAABYQ~~
+). If you would like to adjust your overall preferences, click
+here 
+( https://links.battle.net/f/a/164-d0xS9ne58t5A4CcIng~~/AAQRxQA~/RgRoz8XUP0ThaHR0cHM6Ly9hY2NvdW50LmJhdHRsZS5uZXQvcHJpdmFjeT91dG1fc291cmNlPWJuZXQtZ2FtZS1kZWFscy1zYWxlLWxhc3QtY2hhbmNlLTMtMjAyNDA5MjAmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249bWFya2V0aW5nLWdiLTMmdXRtX2NvbnRlbnQ9dGV4dC1saW5rLWNvbW11bmljYXRpb24tcHJlZmVyZW5jZXMmbGlkPTJnY3gyNGswajdjNiNjb21tdW5pY2F0aW9uLXByZWZlcmVuY2VzVwNzcGNCCmbr1EDtZhnVf85SF2VtaWwuc2tvZ3N1bmRAZ21haWwuY29tWAQAAAFh )
+.
+©
+2024
+Blizzard
+Entertainment, Inc. World of Warcraft, Diablo, WoW, Battle.net,
+and Blizzard Entertainment are trademarks or registered
+trademarks of Blizzard Entertainment, Inc. in the U.S. and/ or
+other countries. All other trademarks referenced herein are the
+properties of their respective owners
+
+© 2024 Activision Publishing, Inc.
+Activision and Call of Duty are trademarks of Activision
+Publishing, Inc. All other trademarks and trade names are the
+property of their respective
+owners.
+
+Apple and the Apple logo are trademarks of Apple Inc.,
+registered in the U.S. and other countries. App Store is a
+service mark of Apple Inc.
+
+Google Play and the Google Play logo are trademarks of Google
+Inc.
+Activision
+Blizzard UK Ltd, The Ampersand Building
+178 Wardour Street, London W1F 8FY
+United
+Kingdom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             PEGI 18 
+( https://links.battle.net/f/a/yfNeCvvzfCaHQghkH4Kw7A~~/AAQRxQA~/RgRoz8XUP0S3aHR0cDovL3d3dy5wZWdpLmluZm8vP3V0bV9zb3VyY2U9Ym5ldC1nYW1lLWRlYWxzLXNhbGUtbGFzdC1jaGFuY2UtMy0yMDI0MDkyMCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1tYXJrZXRpbmctZ2ItMyZ1dG1fY29udGVudD1mb290ZXItaW1hZ2UtbGluay1wZWdpLXJhdGluZy0xOCZsaWQ9ejRmend1NnBiOHZ0VwNzcGNCCmbr1EDtZhnVf85SF2VtaWwuc2tvZ3N1bmRAZ21haWwuY29tWAQAAAFh )

@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-04-22T14:41:45.963917+00:00",
+  "payload": {
+    "action": "remove",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T13:37:26.170Z",
+    "data": {
+      "id": "abc02109-06b4-4ce7-8d26-a2f0b57773fe",
+      "createdAt": "2026-04-17T13:51:19.218Z",
+      "updatedAt": "2026-04-18T05:59:01.599Z",
+      "number": 176,
+      "title": "fix(gptodo): import writes unquoted YAML dates in created field",
+      "priority": 2,
+      "sortOrder": -12,
+      "prioritySortOrder": -20078,
+      "canceledAt": "2026-04-18T05:59:01.587Z",
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-17T13:51:19.247Z",
+      "addedToTeamAt": "2026-04-17T13:51:19.247Z",
+      "labelIds": [],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "604d0805-43ec-4e33-93ee-48994510987c",
+      "reactionData": [],
+      "priorityLabel": "High",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-176",
+      "url": "https://linear.app/skogai/issue/SKO-176/fixgptodo-import-writes-unquoted-yaml-dates-in-created-field",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "project": {
+        "id": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+        "name": "SkogAI",
+        "url": "https://linear.app/skogai/project/skogai-08eb8e1f4091"
+      },
+      "state": {
+        "id": "604d0805-43ec-4e33-93ee-48994510987c",
+        "color": "#95a2b3",
+        "name": "Duplicate",
+        "type": "canceled"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [],
+      "description": "`gptodo import` writes `created: 2026-03-06` in task frontmatter. YAML parses this as a date object, not a string. `gptodo check` then fails with:\n\n```\nField created must be str or datetime\n```\n\n## Expected\n\n```yaml\ncreated: \"2026-03-06\"\n```\n\n## Actual\n\n```yaml\ncreated: 2026-03-06\n```\n\n## Workaround\n\n```bash\nsed -i 's/^created: \\([0-9]\\{4\\}-[0-9]\\{2\\}-[0-9]\\{2\\}\\)$/created: \"\\1\"/' tasks/*.md\n```\n\n## Fix\n\nQuote the date string when writing frontmatter in the import command.",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"gptodo import\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" writes \"},{\"type\":\"text\",\"text\":\"created: 2026-03-06\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" in task frontmatter. YAML parses this as a date object, not a string. \"},{\"type\":\"text\",\"text\":\"gptodo check\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" then fails with:\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"ff7b4ec6-d5c2-4e89-a40b-7ef351f2d0ad\"},\"content\":[{\"type\":\"text\",\"text\":\"Field created must be str or datetime\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"34ce0127-af79-44bc-bc1d-8458cf50a2a4\"},\"content\":[{\"type\":\"text\",\"text\":\"Expected\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"yaml\",\"id\":\"12d1fcae-b4b5-4d1d-90ce-d8dc69e2d0f9\"},\"content\":[{\"type\":\"text\",\"text\":\"created: \\\"2026-03-06\\\"\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"aced9f81-eb32-44f9-8f29-5ab9195c7dda\"},\"content\":[{\"type\":\"text\",\"text\":\"Actual\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"yaml\",\"id\":\"d734923e-615c-4536-b69e-b16c5d8dfaa9\"},\"content\":[{\"type\":\"text\",\"text\":\"created: 2026-03-06\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"441e26a7-e988-4388-b8fa-f7c59cc637ff\"},\"content\":[{\"type\":\"text\",\"text\":\"Workaround\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"bash\",\"id\":\"78902085-94fb-432c-9a40-84ea53318ac6\"},\"content\":[{\"type\":\"text\",\"text\":\"sed -i 's/^created: \\\\([0-9]\\\\{4\\\\}-[0-9]\\\\{2\\\\}-[0-9]\\\\{2\\\\}\\\\)$/created: \\\"\\\\1\\\"/' tasks/*.md\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"f1f4b587-7acc-4486-a5aa-33ad4263da37\"},\"content\":[{\"type\":\"text\",\"text\":\"Fix\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Quote the date string when writing frontmatter in the import command.\"}]}]}"
+    },
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776868905860,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

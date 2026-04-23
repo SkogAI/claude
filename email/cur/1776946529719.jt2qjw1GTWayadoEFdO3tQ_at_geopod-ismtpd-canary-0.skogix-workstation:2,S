@@ -1,0 +1,36 @@
+MIME-Version: 1.0
+From: Termius <team@learn.termius.com>
+To: emil.skogsund@gmail.com
+Date: Fri, 24 May 2024 17:54:50 +0000
+Subject: Learn to manage hundreds of servers easily (1/13)
+Message-ID: <jt2qjw1GTWayadoEFdO3tQ@geopod-ismtpd-canary-0>
+Content-Type: multipart/alternative; boundary="ee261fabf90d93b9e67af94cdfe139130b75547222085588e4328cbbb643"
+
+Welcome to Termius!
+
+When you connect to many servers daily, you know the pain of remembering and entering connection details again and again. It's a lot of copy-pasting. But there's a way to *connect with just one click* , even with hundreds of servers.
+
+💾 Save your connection details as a *host* – IP address, port, and credentials. Set proxy, agent forwarding, and jump hosts if needed. Add all your hosts to Termius and connect with one click.
+
+📁 Organize your hosts into *groups*. By region, customers, environments, you name it. Make Termius represent the structure you are familiar with. Browse through your hosts without getting overwhelmed.
+
+📦 *Import* your hosts from PuTTY, SecureCRT, MobaXTerm, CSV file, or ~/.ssh/config. Or integrate Termius with AWS, DigitalOcean, or Azure to add and keep your cloud servers in Termius up-to-date.
+
+Steps to import:
+
+* Open Termius on the Dekstop. ( Mac ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCXBeeCGDZzwS9hdgGAanKviw5-2B8T7g-2FquVVxmrgfYTIG4rEo_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwrIjUE6PUEY1siSHo8xL2KA5CbSB8iTcNS8YpqH3HcpNTnxP7ZD8fZ1IwUaReoFE3lrzMoc6cqIG62MQMb0b2djLXZ-2Bikb7dLDEzWXSZSrCuA-2BIAblIcs46kptN43oVHWXaj6NQB9pay1T1T5g-2FJeZzODWNMBdOkxuR4XRBaBQizIzIl0HDasVJ1-2FHXTEVibcng3578Xsxi04zLPaEeNzFnkwFMdh86Iwbg2sjAhN84TU6Ofepsz3i60jyGKBpRV1GnpqTcUa5cUIzRKFo2ynFBN2JgBKf80-2BiPrvvtFFUn6fn7QM5NvD-2F8-2BF8UaMrwfuzrXoA7vSLhJ-2B83O5ZjnWhJpUEUls2OelWul0yuM0IPheZn-2F81e2yFr94slQLQytqOXhUf11-2B-2BLGCP7ZLs-2FfCA3oclp62fnEtkPL6YsB0m4ZHBJplNp-2BnYkKF8WQf8vf3XHUfzMnDMsP1-2BSJOVTxC9Wkd8yywePTJNcwM6Zw4UczRx-2FYnpoOj3m8CLXvll1LARc4eM-2BVYFsT2bpR44OH9PYSvHMdDJIvaaSo9MBvv71-2FsIpAl1Nky-2FdhT2q6pgvrYTefd60IJoLeaPqw8UhoT9lizc26I5w-2BT0qsIoQ0GVTU-3D ) , Win ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCXBeeCGDZzwS9hdgGAanKvhzZGg8-2FD6M2TeArGyWkhYZ42Gd_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwrIjUE6PUEY1siSHo8xL2KA5CbSB8iTcNS8YpqH3HcpNTnxP7ZD8fZ1IwUaReoFE3lrzMoc6cqIG62MQMb0b2djLXZ-2Bikb7dLDEzWXSZSrCuA-2BIAblIcs46kptN43oVHWXaj6NQB9pay1T1T5g-2FJeZzODWNMBdOkxuR4XRBaBQizIzIl0HDasVJ1-2FHXTEVibcng3578Xsxi04zLPaEeNzFnkwFMdh86Iwbg2sjAhN84TU6Ofepsz3i60jyGKBpRV1GnpqTcUa5cUIzRKFo2ynFBN2JgBKf80-2BiPrvvtFFUn6fn7QM5NvD-2F8-2BF8UaMrwfuzrXoA7vSLhJ-2B83O5ZjnWhJpUEUls2OelWul0yuM0IPheZn-2F81e2yFr94slQLQytqOXhUf11-2B-2BLGCP7ZLs-2FfCA3oclp62fnEtkPL6YsB0m4ZHBJplNp-2BnYkKF8WQf8vf3vXN5hirWXB-2BB6cu74D9f6ycS0xrM-2BJ237AF9oXuK2V3A7bT7q3mI-2Bk2-2FrCUpkseXnXCsSnjkhYQloepZnhKRnHQNqYK6TZ1DUheXO0UMLKXlGHgm3zdD-2F-2FfirjQk7KGz2BUIBai6CblW6SwwnPHnIpXNCcLrxiyzV0NYCAdxNW8-3D ) , Linux ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCXBeeCGDZzwS9hdgGAanKvhts3CW6cyDBRCpcfIGORotBGpO_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwrIjUE6PUEY1siSHo8xL2KA5CbSB8iTcNS8YpqH3HcpNTnxP7ZD8fZ1IwUaReoFE3lrzMoc6cqIG62MQMb0b2djLXZ-2Bikb7dLDEzWXSZSrCuA-2BIAblIcs46kptN43oVHWXaj6NQB9pay1T1T5g-2FJeZzODWNMBdOkxuR4XRBaBQizIzIl0HDasVJ1-2FHXTEVibcng3578Xsxi04zLPaEeNzFnkwFMdh86Iwbg2sjAhN84TU6Ofepsz3i60jyGKBpRV1GnpqTcUa5cUIzRKFo2ynFBN2JgBKf80-2BiPrvvtFFUn6fn7QM5NvD-2F8-2BF8UaMrwfuzrXoA7vSLhJ-2B83O5ZjnWhJpUEUls2OelWul0yuM0IPheZn-2F81e2yFr94slQLQytqOXhUf11-2B-2BLGCP7ZLs-2FfCA3oclp62fnEtkPL6YsB0m4ZHBJplNp-2BnYkKF8WQf8vf36kJ3lrApflAZkMhNo2dsSql02R9Epsohu4sGq8G29R-2BLvUyPR9F6RJdvgnbtddJ4vXq46YjDSSNRuuyhdDNpLv4VSfisGWo2tQa0CpR-2BXJQBbQL96eMdfrFkL-2FIXa4CP8oCybEBDqApq91dADy-2BHwOTnH-2BjngoUS-2B3-2BwCit4S5Y-3D ) )
+* Click the *Down Arrow* next to the *New Host.*
+* Select import source or choose a cloud integration.
+
+Once you add your hosts to the Termius vault, you can connect from any device without manually entering connection details.
+
+For more details, check our video below.
+
+( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCXRQjgxWxMu0cW0iDYDCPPuDF0BErJ8FtCr3XKYnuOyCUuHE_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwrIjUE6PUEY1siSHo8xL2KA5CbSB8iTcNS8YpqH3HcpNTnxP7ZD8fZ1IwUaReoFE3lrzMoc6cqIG62MQMb0b2djLXZ-2Bikb7dLDEzWXSZSrCuA-2BIAblIcs46kptN43oVHWXaj6NQB9pay1T1T5g-2FJeZzODWNMBdOkxuR4XRBaBQizIzIl0HDasVJ1-2FHXTEVibcng3578Xsxi04zLPaEeNzFnkwFMdh86Iwbg2sjAhN84TU6Ofepsz3i60jyGKBpRV1GnpqTcUa5cUIzRKFo2ynFBN2JgBKf80-2BiPrvvtFFUn6fn7QM5NvD-2F8-2BF8UaMrwfuzrXoA7vSLhJ-2B83O5ZjnWhJpUEUls2OelWul0yuM0IPheZn-2F81e2yFr94slQLQytqOXhUf11-2B-2BLGCP7ZLs-2FfCA3oclp62fnEtkPL6YsB0m4ZHBJplNp-2BnYkKF8WQf8vf3d5cbeVum3eCvbr9w0nY8oZP90yf0ZQswDEek2GxTGpAFwP1EeORSoAalZPVe85y2tjF-2F1c0WSLvRzYZv7LF7bTfFrV2EWBmMK-2B1cz6OUfqUHRlYHkIG71FkrWWP-2BrPfkxqLb1-2BA0L9xB3T-2Bkat0wJsAWL6tDwWpDqWXFfFSmE-2BE-3D )
+
+Tomorrow, we'll discuss the security of sync and sharing in Termius.
+
+P.S. You are getting these emails as part of the Termius Academy series. You can turn off a Termius course by clicking here ( https://u27205612.ct.sendgrid.net/asm/unsubscribe/?user_id=27205612&data=TmrK207sawiPw66ECsW-ubO5tUMLk3M8-N4bjk9sxD9oMDAwdTAwMM76SGdV5ob8bRjxzWTq0_JPqP7VE4UJeX61OKwmZQ5oW2VNA0LvkgIGBdegJBJq_GuRYB4z7goy-IxaucJi9PYGfYoT3mXaK6yogxqI7V0Qmkf9Wl6adKHlAh3wlHITtcSpzDABm1HbG1pZc1cDQEoS7khyG2xrb9Tlx2x2yORqXBiaaI7PzsAAsm0YYxi_vZqLsCPQzn5mJC3ojk9D-5epStx960awN_mw22WolrSlyk5JQT4oLAPOjkM9nlm1KgM7Y89cyt_ynZNa5fETttzch_gTj5jRowtwHNg5o_5HuOvgUmL1-Q7eNpNdUDnYaFfu1IGhTQV8i1okWc7V1LWbkeG-nz74IUxITCgNCVtbsq_1bVvlqTuSmPyF6aG_JwignSIv2R_uHnWlWugLuw091h0i8hmJnv9n02nGndz_nun7SRnM-53hQsAgVY9d5rLLcL8YungeUobBWfNmA4RGTCB2ZlwJCNw3TmnCYQD1eQgKd4k2FqArp5ljyXZorSimScpYDFTj9NlX7LOUCEoPZ5liMEDbE1chD9y_7gz8-KdopOhkb5XqhkH93eq7c934o9LzhqBerCRmUDhKrGtFpRJZWI6DqWWvyFex3NYAlR0YdytcrVkWPeoVTl-9J97ft_Fj4EFvsVfeI3i8PpV_PY6YPI_85K9iCeOgteFXXgMCDVlasOOlcNTTYQz4dx2Rzzzt3HUGVtpOg9wrvPZFwBTDBfo43Sn7zQuwkOqvO1nf-Nx80xBq9hwjGWYUN3taFm3InoLAhpaZ1rg38vZwrytEoZ3i9tkmX046MSyM ).
+
+Regards,
+The Termius Team

@@ -1,0 +1,58 @@
+MIME-Version: 1.0
+From: MTG Arena <MTGArena@magic.wizards.com>
+To: emil.skogsund@gmail.com
+Date: Thu, 27 Sep 2018 20:01:53 +0000
+Subject: It's Here! Play Open Beta Now!
+Message-ID: <jh2Ko2pQTKWKVWsr-m4uVw@ismtpd0012p1iad2.sendgrid.net>
+Content-Type: multipart/alternative; boundary="aafb9911a2fe5a08b2ec2783a0ba291cf7fb80857ef2735eab428e053822"
+
+Your Closed Beta Thank You Reward Inside                image 1
+
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9AylwfxB4SFs-2Bjv8LKGxx-2F5OuPETMkrEdVfb-2BLy96HfSyqSNR9SlVBueaxa5gPjhRANbn2lc5by099IMo1P-2BLbw-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mcY8oikYGbR7bOZhZZVku0QdRWvwSiO39vqw5Vu3g-2FH-2Bn-2FBKWus85Y1CbhLiq5wvuUEfAdEl-2FjmQnqg9oIm2vakChMA-2FW29KPU2c4P3CwoFrMjlEHT2zwiEQD9e-2F8tpIHCO1wKpec5aRcJzy5aKd-2BY9y15F92k1gbY3nsy09I1T-2BNQT3o2spdYDU96M6JbkSwtHV5Zqdig9gu-2BOhNKpH4tJ83igfsPbfLVQ9QGdsGkUXgX9c710hz0dcEEeq6hLgN5yZUauMdYN8mouzLlnOtPKdvKnptMYrCqORnvFg24shoZUXQCcdGeC8vpj-2FwjOtZkmnCbbim8sntE-2FzXQXpwOa6YmqPAxSReP4uTE5NxpiEH35bJbzaO77iDgWg34HNNgKLPBb3At9T2l4mnW3soEHAa0-2Bji7nuurU5kJQxYiOh4SJyWeXBC9gbDkMr3Hpopyy1JbxZk-2BoREgWmpxd6Hk0-3D )
+image 1 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9AylwfxB4SFs-2Bjv8LKGxx-2F5OuPETMkrEdVfb-2BLy96HfSyqSNR9SlVBueaxa5gPjhRANbn2lc5by099IMo1P-2BLbw-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mcY8oikYGbR7bOZhZZVku0QdRWvwSiO39vqw5Vu3g-2FH-2Bn-2FBKWus85Y1CbhLiq5wvuUEfAdEl-2FjmQnqg9oIm2valgQUUSGo7KwqntNi0xfyZ7rgVessAcVJuoMF0JSgaJQ33nLBgxJO40PQGWvLmXPIXjJgacgWva1m5KVV8z-2BFwDVfPeihXAnNk3XONftoT4L0CyRgkOt15ew141NSMoQM2Sv3vWRapCaak14w3BMITcGr0pCLadIvohooaDoJPRLd9Zargjz18DRVpidjkWbJTjy-2FdsrEEDhyhrz-2B-2FwNg-2BzKTotUNF-2BT4LGqE-2FePDnr1yRSGz1ZhLSSO3fX1ROHJp5gcU6zz6Vwwq4T4nOO2ppleNCXJ2SGZLI20Rkz5CN9g6MfFtPq-2BwvhIfMEdMsLt2i7avGAGrBG45JEHNUztqJfJSKb0jHim-2FWcZ9bGKHqlqhYJUyg4IzM7SnZngQA5DyI-3D )
+           To celebrate Open Beta, we are hosting a Singleton
+event with no entry-fee from now until Monday, October 1 8AM PDT!
+Also, exclusively for Closed Beta participants (you!), we are
+kick starting your new collection with 3 different Masterpiece
+Planeswalker cards inside the game as a thank you!
+
+Redeem* the below code in the "Store" section of MTG Arena to
+get a digital copy of these three cards:
+
+Ral, Izzet Viceroy - Teferi, Hero of Dominaria
+- Vraska, Golgari Queen 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HJYzEDWGL9N-2B9TzX7NKhX9mU2dkb4mAEy-2Bne0VxVONXa8F6sJwystK-2B0Z6ofZiXqQ-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mcY8oikYGbR7bOZhZZVku0QdRWvwSiO39vqw5Vu3g-2FH-2Bn-2FBKWus85Y1CbhLiq5wvuUEfAdEl-2FjmQnqg9oIm2vakYrigiTbpXTNW66Z05MUK9GtJHCoCfCtzdDEGPj97ytmoq46UqGzuDJna3jgXY1ExjWURcB-2FEch0V96ngzCGHIM9ngDQPB-2BWBp4eZLXKqlYE5dGg0w-2BGh9QJ5Uz7nWmsAySJr-2Bd-2F7fHlVt2uySBwTEoGcRwyBJYiyrIzHZ5KK0Q0WZlNrSapmUoGIxby1zRM9gDNu0egYTugPc64VDZn3MkT2JoP9CCXdu098vt0bD8NpS-2B062oHSEAouAyd6PUz3BF1J-2FBFjT5pwjZ3UU3nNfOFWalD4qzkMzC31J42Wa2S1WC8fbnNZmUzLpHMHe-2Fp2vZIS9IqtzUq5n-2FtAJSPPBNb7SrxfaCiZKLmcJBlrb9euxzq51Z1EZ0Uiv8VFQnnQ-3D )
+Your Unique, Single-Use Reward Code:
+yaY-WHpZ-qkL
+
+The time is now! To jump in:
+
+* Update your existing game client or download the client here 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9AylwfxB4SFs-2Bjv8LKGxx-2F5OuPETMkrEdVfb-2BLy96HfSyqSNR9SlVBueaxa5gPjhRANbn2lc5by099IMo1P-2BLbw-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mcY8oikYGbR7bOZhZZVku0QdRWvwSiO39vqw5Vu3g-2FH-2Bn-2FBKWus85Y1CbhLiq5wvuUEfAdEl-2FjmQnqg9oIm2valo5YkDeLn6-2F0PQIjuObDRtjr2e08jZ1Pns5Jc-2FLISxm-2FdltgEIo7htHEVyghOru1wn-2FruZFT3YnJuaQQYtI0JTPIFcBqkg7b85RCZb-2F8Nl4tjz177onvJgvz58jOcoT1Ligr5-2BPSSIl-2F41b2l77Zwl6DxGVRMzDvQm-2B8VjFyrKHGNor1qAlPvB0HcU3nLCTQgEsbCHJAkTQHHiCYl7tjKv5i1NiRFd-2Bc9vNcQyk07QbIjVm2hZ-2FljzD-2B4tZI4NtijE1a7kt5SirEcxqfc-2FYq1LqbCkrXdyBFp13LllqHi-2Fse7mxSAeBZvnGlHtLngfR-2BWO57LfMYQzHneE-2BZgQ6WbWfKcQWa211Dvgmuu0fLGG80neFD9XcFRdjacqbzC5DXc-3D )
+.
+* Log-in with your current email address and password.
+* You will have a chance to update your username and password if
+you would like. Once you are in, you will have a brand new
+account with all previously purchased gems waiting for you.
+Thank you for playing, submitting bug reports, and your general
+passion for MTG Arena. This is still just the beginning!
+
+* This code can only be redeemed in regions that the MTG Arena
+client currently supports. Mythic Edition in-game artwork is not
+final and will be updated October 4.
+
+This is a service-related email. Wizards
+will occasionally send you service-related emails to confirm
+changes to your account as well as to inform you about updates
+and revisions to Wizards' services and polices. Services and
+policies are subject to Wizards' terms of use and may be revised
+from time to time.
+
+©1995-2018 Wizards of the Coast LLC, a subsidiary of Hasbro, Inc.
+All Rights Reserved.
+1600 Lind Ave SW #400, Renton, WA 98057
+Terms of Use ( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldNDLg3uyjCpayQYh4zvIoJNapkJWHuSItSWHdVLUd4j7w-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mcY8oikYGbR7bOZhZZVku0QdRWvwSiO39vqw5Vu3g-2FH-2Bn-2FBKWus85Y1CbhLiq5wvuUEfAdEl-2FjmQnqg9oIm2vakCSt9kPQzLZjLSK5Y2a5FtWGnmkkP-2B5dt0vuoiOslv9bx89z9j8TLq7yeG-2B8TvH7uRhiWy7LPsPtFEJ0W-2Fl5Gp1Q-2BLqLY4pbw79Z6TxMpOPBdlFL9N40RXwtML23BgqiDa4Hx1wCzOjVETFqPFiBgH-2BwCeBgvLQeL5ybnCvNNwrNTps2mYEXlk8Nx9-2FSZaReVjFBVunEp7Xeqyjy8x9jlHVUJR-2BxJc9D0uTWr7miG63A9RA-2FAgVt4-2FFMOZoZ67J41mhG0xZpmBlosBQORH2goaEvY5RkCBy17HxDsTUYS3rZOmIqPTkD1nKUnPfnjsSgPg1WUewhSzXHxcghK0QBd0FJESGR6BVdw1MYIQImg6hvNfGj34WzQbDLTGOfo-2FLes-3D ) |
+Privacy Statement 
+( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldM928HSZwg0inMCjvrgBFx3Lw-2F4jKKC-2FOfx9jN4AH5iNxDeDR4YTOCk08OMVuZcyJo-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mcY8oikYGbR7bOZhZZVku0QdRWvwSiO39vqw5Vu3g-2FH-2Bn-2FBKWus85Y1CbhLiq5wvuUEfAdEl-2FjmQnqg9oIm2valGEyut0EagLEw7oEMeXCw99zsTXLcU2TUqZ3vF-2B-2BB-2FP-2FXo67MGzqEtaU5AM0bcIBJmXe0rJoO-2FVmAxx81ye3-2BFZBihIv3kEyuZQQCAOxURDMp66E-2BfeZ06Qjd0ceFFn6v09CcQXEkXsa1f7pv1H-2BbAL0cDVizLzU-2BrbiO1f8sNtYXljOHfTn3QGDYhViONMYamBU9msVyXLFdPq6X2ujVem8a9y9J72-2BDVWpfICK7y-2B8M67ckdiMffSwn3qOKea3VKhv5OG2NnfFYIbYW-2FWPTVgtYTaj64CI1NWEU43884fGjsqkVS-2Boe4NlGtFHYHOeXSt3uLBYalV4N-2FDxbApr-2BO67x-2B84Kz2bY3yDDsEuY8OvRPmnRjr-2FWA2x7Ayhvc5m0-3D )
+| Unsubscribe ( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HGb-2BFPWQd7B-2F6V33xs2rZHCoikVDuQJidzR-2BYY5uh6tjo5tUYPZ-2F9-2B8EqPaiLD63h39vbbU0cD3E73-2BjWxoSrCFajlJC34mO-2FJkch65ML-2Fy40XOquDU6vvHRKtvOslefGTEG3jh66i77W0WTGQs0TQIrLS12ujWDvC-2FzsdKFV-2F2z52WVCbbm94FGx8335HzGcORaace-2FaQoe-2BvzoK8gy0-2B2Qho1vRWCGb3rvigwnaXFJBMELZUJqPGaBMIzoBufVAn1pKcQMYKHqKq-2FKa-2FrRSsY8yTjNdvDPtN7IqZUL9sV9ZywClCaf6yx8L-2BM93a550CL7R3ShlizQeSyX1WNMxcCSbKHDvHSx5EeYnw-2BWIRn9LBFNj3N8uEylFlzYzXycws17T-2BsOKwrvz1iLdzEaHqKUY9ZcDRb-2FRwQeOsL-2BJLeaQ2mMxITL90GXGdUPSU3cQ-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mcY8oikYGbR7bOZhZZVku0QdRWvwSiO39vqw5Vu3g-2FH-2Bn-2FBKWus85Y1CbhLiq5wvuUEfAdEl-2FjmQnqg9oIm2vanhUQHlDd1p2seZP3P6Bsu3mFB9GXcDMfbKlzOU5UGBjC3ghNbDdabQrpSvrX2EbEmkHT4nFog6Ssso3WGK6Z5chOjzOaP7Q6Q7pefSGEVQtOaIns-2BFRQpEF-2FYE0zUuyhDE85J-2BucnX62uXrwIVoFKxaf3wvQAUr0LAnwUvY4hsZH6trBBcrimt3bhzdGVxoYJB90OHiEwa3agTmzTpfAIR4xGenx-2BASm8QxkUjIRgp0Lu3w0gdsN0H2lwkc8gP1vEKuunjybt3KN8uaEQT2PnH9cKvbLnQMkuK-2Fp-2F7z-2B6024N51iUOYpzOcAyL2M4rypYO-2FG6VRVoccrMhQcHY1YrAeSAhO65O-2BllWB11qTrstCgf2MWAflCBixNd11sEy-2FRU-3D )

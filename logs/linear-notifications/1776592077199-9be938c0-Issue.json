@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-19T09:47:57.199155+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:47:44.945Z",
+    "data": {
+      "id": "9af07002-530e-4376-96c3-9ec68bba3aa0",
+      "createdAt": "2026-03-06T18:07:28.000Z",
+      "updatedAt": "2026-04-19T09:47:44.945Z",
+      "number": 69,
+      "title": "Epic: Automated knowledge extraction pipeline",
+      "priority": 0,
+      "sortOrder": -54530.88,
+      "prioritySortOrder": 0,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:14.774Z",
+      "labelIds": [
+        "6f0e5457-47a2-4812-a4af-7ee6561b5772",
+        "ab4090cf-1a40-47f5-a483-7454cc519ba9",
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-69",
+      "url": "https://linear.app/skogai/issue/SKO-69/epic-automated-knowledge-extraction-pipeline",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        },
+        {
+          "id": "6f0e5457-47a2-4812-a4af-7ee6561b5772",
+          "color": "#a2eeef",
+          "name": "enhancement"
+        },
+        {
+          "id": "ab4090cf-1a40-47f5-a483-7454cc519ba9",
+          "color": "#3E4B9E",
+          "name": "epic"
+        }
+      ],
+      "description": "## Vision\n\nTurn claude-memory from a conversation search tool into an automated knowledge extraction pipeline. Every conversation generates structured artifacts \u2014 decisions, learnings, patterns, TODOs \u2014 processed async by local LLMs via the existing queue system.\n\n## The Problem\n\nToday, knowledge capture is manual:\n\n* `decisions.md` is hand-written per session\n* Learnings and patterns are lost unless someone writes them down\n* Context dies when sessions end\n* 1.5 years of conversation history sits unprocessed\n\n## The Solution\n\nSame architecture that already works for summaries, applied to multiple extraction types:\n\n```\nconversation ends\n  \u2192 archive (already working)\n  \u2192 queue extraction jobs (already working for summaries)\n  \u2192 local LLM processes with type-specific prompts (new)\n  \u2192 structured output lands as drafts for review (new)\n```\n\n## Key Principles\n\n1. **Queue-driven** \u2014 all extraction is async, non-blocking\n2. **Model-agnostic** \u2014 ollama, claude -p, whatever fits the budget\n3. **Review, don't create** \u2014 humans approve/edit extracted artifacts, not write from scratch\n4. **Prompt-swappable** \u2014 different extraction types = different prompt templates\n5. **Output-flexible** \u2014 [decisions.md](<http://decisions.md>) append, GitHub issues, knowledge/ files, whatever\n\n## Issues\n\n| \\# | Issue | Depends on |\n| -- | -- | -- |\n| #2 | Extraction prompt templates (decisions, learnings, patterns, TODOs) | \u2014 |\n| #7 | Queue improvements (CLAUDECODE=, concurrency, progress) | \u2014 |\n| #3 | Multi-pass extraction: queue multiple jobs per conversation | #2 |\n| #4 | Output routing: deliver artifacts to destinations | #3 |\n| #5 | Backfill: process historical conversation archive | #3 |\n| #6 | Search over extracted artifacts | #3 |\n\n## Success Criteria\n\n- [ ] Conversations automatically generate decision/learning/pattern drafts\n- [ ] Drafts surface for review (GitHub issues, files, or both)\n- [ ] Backfill works against historical conversations\n- [ ] Multiple extraction types use the same pipeline\n- [ ] No manual writing required \u2014 only review and approve",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"d0a13fce-82fc-426f-95d7-55b4584829af\"},\"content\":[{\"type\":\"text\",\"text\":\"Vision\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Turn claude-memory from a conversation search tool into an automated knowledge extraction pipeline. Every conversation generates structured artifacts \u2014 decisions, learnings, patterns, TODOs \u2014 processed async by local LLMs via the existing queue system.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"90f00202-db73-480d-b333-990d6b7a14c9\"},\"content\":[{\"type\":\"text\",\"text\":\"The Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Today, knowledge capture is manual:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"decisions.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is hand-written per session\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Learnings and patterns are lost unless someone writes them down\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Context dies when sessions end\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"1.5 years of conversation history sits unprocessed\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"b4f3317b-b25f-45d4-8420-e75e693e4e0e\"},\"content\":[{\"type\":\"text\",\"text\":\"The Solution\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Same architecture that already works for summaries, applied to multiple extraction types:\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"5b047a7a-6261-425f-9382-3bc692eadc1c\"},\"content\":[{\"type\":\"text\",\"text\":\"conversation ends\\n  \u2192 archive (already working)\\n  \u2192 queue extraction jobs (already working for summaries)\\n  \u2192 local LLM processes with type-specific prompts (new)\\n  \u2192 structured output lands as drafts for review (new)\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"fd024d8b-0f6a-41c0-a9ae-45b4158972b3\"},\"content\":[{\"type\":\"text\",\"text\":\"Key Principles\"}]},{\"type\":\"ordered_list\",\"attrs\":{\"order\":1},\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Queue-driven\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 all extraction is async, non-blocking\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Model-agnostic\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 ollama, claude -p, whatever fits the budget\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Review, don't create\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 humans approve/edit extracted artifacts, not write from scratch\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Prompt-swappable\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 different extraction types = different prompt templates\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Output-flexible\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 \"},{\"type\":\"text\",\"text\":\"decisions.md\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://decisions.md\"}}]},{\"type\":\"text\",\"text\":\" append, GitHub issues, knowledge/ files, whatever\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"c40669e0-7e18-4492-9bf6-f5a77e7a239a\"},\"content\":[{\"type\":\"text\",\"text\":\"Issues\"}]},{\"type\":\"table\",\"content\":[{\"type\":\"table_row\",\"content\":[{\"type\":\"table_header\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#\"}]}]},{\"type\":\"table_header\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Issue\"}]}]},{\"type\":\"table_header\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Depends on\"}]}]}]},{\"type\":\"table_row\",\"content\":[{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#2\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Extraction prompt templates (decisions, learnings, patterns, TODOs)\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u2014\"}]}]}]},{\"type\":\"table_row\",\"content\":[{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#7\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Queue improvements (CLAUDECODE=, concurrency, progress)\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u2014\"}]}]}]},{\"type\":\"table_row\",\"content\":[{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#3\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Multi-pass extraction: queue multiple jobs per conversation\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#2\"}]}]}]},{\"type\":\"table_row\",\"content\":[{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#4\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Output routing: deliver artifacts to destinations\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#3\"}]}]}]},{\"type\":\"table_row\",\"content\":[{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#5\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Backfill: process historical conversation archive\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#3\"}]}]}]},{\"type\":\"table_row\",\"content\":[{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#6\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Search over extracted artifacts\"}]}]},{\"type\":\"table_cell\",\"attrs\":{\"colspan\":1,\"rowspan\":1,\"colwidth\":[266]},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"#3\"}]}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"5048b713-a85a-405c-b04f-a08d0c893fb8\"},\"content\":[{\"type\":\"text\",\"text\":\"Success Criteria\"}]},{\"type\":\"todo_list\",\"content\":[{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Conversations automatically generate decision/learning/pattern drafts\"}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Drafts surface for review (GitHub issues, files, or both)\"}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Backfill works against historical conversations\"}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Multiple extraction types use the same pipeline\"}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"No manual writing required \u2014 only review and approve\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "sortOrder": 0,
+      "updatedAt": "2026-03-06T18:10:15.000Z"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-69/epic-automated-knowledge-extraction-pipeline",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592077077,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

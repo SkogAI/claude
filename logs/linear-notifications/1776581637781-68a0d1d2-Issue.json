@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-04-19T06:53:57.780961+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T06:53:57.451Z",
+    "data": {
+      "id": "eb61ddf9-0070-4fab-af61-f5aba1e07d0e",
+      "createdAt": "2026-04-17T13:51:01.981Z",
+      "updatedAt": "2026-04-19T06:53:57.451Z",
+      "number": 172,
+      "title": "feat: skills/ \u2014 shared agent skills registry",
+      "priority": 3,
+      "sortOrder": -5976,
+      "prioritySortOrder": -16028,
+      "startedAt": "2026-04-19T04:27:19.117Z",
+      "completedAt": "2026-04-19T06:53:57.429Z",
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-17T13:51:02.033Z",
+      "addedToTeamAt": "2026-04-17T13:51:02.033Z",
+      "labelIds": [],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "065a2424-81d9-479d-84b8-ea8b1f20cf67",
+      "subIssueSortOrder": 11084,
+      "reactionData": [],
+      "priorityLabel": "Medium",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-172",
+      "url": "https://linear.app/skogai/issue/SKO-172/feat-skills-shared-agent-skills-registry",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "7cc703ad-906d-4cca-8418-f5e01c9e5c0e",
+        "42af35e6-2f67-4902-8ceb-b29654e7f29a",
+        "5bb4a96a-17a4-4037-bd34-4f1d538d2801"
+      ],
+      "parentId": "94dc5a97-10ae-43de-95af-cc99f98741bd",
+      "assignee": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "project": {
+        "id": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+        "name": "SkogAI",
+        "url": "https://linear.app/skogai/project/skogai-08eb8e1f4091"
+      },
+      "state": {
+        "id": "065a2424-81d9-479d-84b8-ea8b1f20cf67",
+        "color": "#5e6ad2",
+        "name": "Done",
+        "type": "completed"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "syncedWith": [
+        {
+          "id": "4283096553",
+          "service": "github",
+          "metadata": {
+            "repo": "claude",
+            "owner": "SkogAI",
+            "number": 37
+          }
+        }
+      ],
+      "labels": [],
+      "description": "Project-level skills that any Claude Code agent can load \u2014 with a registry for discovery.\n\n## Structure\n\n```\n.skogai/skills/\n\u251c\u2500\u2500 skill-registry.json         # index of all available skills\n\u251c\u2500\u2500 skill-registry-schema.json  # schema for registry entries\n\u251c\u2500\u2500 manifest-schema.json        # schema for individual skill manifests\n\u2514\u2500\u2500 <skill-name>/\n    \u251c\u2500\u2500 manifest.json\n    \u251c\u2500\u2500 SKILL.md\n    \u2514\u2500\u2500 README.md\n```\n\n## Notes\n\n* Existing skills to migrate: `api-design`, `java-best-practices`, `typescript`, `worktrunk`, `gptodo`, `skogai-git`\n* Registry enables discovery without loading every skill",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Project-level skills that any Claude Code agent can load \u2014 with a registry for discovery.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"ec8d0ee3-5920-4686-8721-5beda3a8ff23\"},\"content\":[{\"type\":\"text\",\"text\":\"Structure\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"2ec074c7-5487-4676-a3d6-28d4777803a5\"},\"content\":[{\"type\":\"text\",\"text\":\".skogai/skills/\\n\u251c\u2500\u2500 skill-registry.json         # index of all available skills\\n\u251c\u2500\u2500 skill-registry-schema.json  # schema for registry entries\\n\u251c\u2500\u2500 manifest-schema.json        # schema for individual skill manifests\\n\u2514\u2500\u2500 <skill-name>/\\n    \u251c\u2500\u2500 manifest.json\\n    \u251c\u2500\u2500 SKILL.md\\n    \u2514\u2500\u2500 README.md\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"c661c89a-26f6-4514-9d15-d03d40e8665c\"},\"content\":[{\"type\":\"text\",\"text\":\"Notes\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Existing skills to migrate: \"},{\"type\":\"text\",\"text\":\"api-design\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", \"},{\"type\":\"text\",\"text\":\"java-best-practices\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", \"},{\"type\":\"text\",\"text\":\"typescript\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", \"},{\"type\":\"text\",\"text\":\"worktrunk\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", \"},{\"type\":\"text\",\"text\":\"gptodo\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", \"},{\"type\":\"text\",\"text\":\"skogai-git\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Registry enables discovery without loading every skill\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "stateId": "7fc69ea2-a40a-4b22-8972-9c83883baa4e",
+      "sortOrder": -969.46,
+      "updatedAt": "2026-04-19T05:12:35.845Z",
+      "completedAt": null
+    },
+    "url": "https://linear.app/skogai/issue/SKO-172/feat-skills-shared-agent-skills-registry",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776581637717,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

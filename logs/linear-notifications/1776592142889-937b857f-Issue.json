@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-04-19T09:49:02.889317+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:47:48.687Z",
+    "data": {
+      "id": "01333dea-f2a7-4a67-880b-7c83830821fc",
+      "createdAt": "2026-01-04T08:14:43.000Z",
+      "updatedAt": "2026-04-19T09:47:48.687Z",
+      "number": 104,
+      "title": "Fix TOCTOU Race Condition in Counter Updates",
+      "priority": 0,
+      "sortOrder": -123524.2,
+      "prioritySortOrder": 0,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:19.362Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-104",
+      "url": "https://linear.app/skogai/issue/SKO-104/fix-toctou-race-condition-in-counter-updates",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "# Fix TOCTOU Race Condition in Counter Updates\n\nCRITICAL: Time-of-check-time-of-use vulnerability in [user-prompt-submit.sh](<http://user-prompt-submit.sh>) can cause lost updates when multiple sessions run concurrently.\n\n## Problem Statement\n\nThe [user-prompt-submit.sh](<http://user-prompt-submit.sh>) script uses a read-modify-write pattern without atomic locking. When multiple Claude sessions are active simultaneously, counter increments can be lost because the last writer wins.\n\n**Impact:** Inaccurate trial tracking, lost message counts, unfair trial expirations\n\n## Findings\n\n**Vulnerable code in** `plugins/garden/scripts/user-prompt-submit.sh:13`:\n\n```bash\njq '.trials |= map_values(.message_count += 1)' \"$GARDEN_STATE\" > \"${GARDEN_STATE}.tmp\" && mv \"${GARDEN_STATE}.tmp\" \"$GARDEN_STATE\"\n```\n\n**Race condition sequence:**\n\n1. Session A reads garden-state.json (count=10)\n2. Session B reads garden-state.json (count=10)\n3. Session A increments to 11, writes temp file\n4. Session B increments to 11, writes temp file\n5. Session A: mv temp \u2192 state (count=11)\n6. Session B: mv temp \u2192 state (count=11) \u2190 OVERWRITES A's update\n7. **Result**: Only 1 increment applied instead of 2\n\n**Additional vulnerability:**\n\n* Attacker could create `.tmp` symlink pointing to `/etc/passwd`\n* Script would write JSON to linked file (if permissions allow)\n\n**CWE-367**: Time-of-check Time-of-use (TOCTOU)\n\n## Proposed Solutions\n\n### Option 1: File Locking with flock\n\n**Approach:** Use flock to serialize access to garden-state.json\n\n```bash\n#!/usr/bin/env bash\n\nGARDEN_STATE=\"$HOME/.claude/garden-state.json\"\nLOCK_FILE=\"${GARDEN_STATE}.lock\"\n\n# consume stdin per hook spec\ncat > /dev/null\n\n[[ ! -f \"$GARDEN_STATE\" ]] && exit 0\n\n# atomic update with exclusive lock\n{\n  flock -x 200  # exclusive lock on fd 200\n\n  jq '.trials |= map_values(.message_count += 1)' \"$GARDEN_STATE\" > \"${GARDEN_STATE}.tmp.$$\" && \\\n    mv \"${GARDEN_STATE}.tmp.$$\" \"$GARDEN_STATE\"\n\n} 200>\"$LOCK_FILE\"\n\nexit 0\n```\n\n**Pros:**\n\n* Standard POSIX solution\n* Atomic across processes\n* Prevents both races and symlink attacks\n* Low overhead\n\n**Cons:**\n\n* Adds lock file to filesystem\n* Potential deadlock if script crashes while holding lock\n* flock not available on all systems (rare)\n\n**Effort:** 30 minutes\n\n**Risk:** Low",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":1,\"id\":\"f8662168-6ac1-41be-af6d-88211a6b02a4\"},\"content\":[{\"type\":\"text\",\"text\":\"Fix TOCTOU Race Condition in Counter Updates\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CRITICAL: Time-of-check-time-of-use vulnerability in \"},{\"type\":\"text\",\"text\":\"user-prompt-submit.sh\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://user-prompt-submit.sh\"}}]},{\"type\":\"text\",\"text\":\" can cause lost updates when multiple sessions run concurrently.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"f7cf3c89-7ccf-443e-bf28-044bbca56afe\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem Statement\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The \"},{\"type\":\"text\",\"text\":\"user-prompt-submit.sh\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://user-prompt-submit.sh\"}}]},{\"type\":\"text\",\"text\":\" script uses a read-modify-write pattern without atomic locking. When multiple Claude sessions are active simultaneously, counter increments can be lost because the last writer wins.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Impact:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" Inaccurate trial tracking, lost message counts, unfair trial expirations\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"8fd20640-8f60-4005-b76b-2508c0c644f5\"},\"content\":[{\"type\":\"text\",\"text\":\"Findings\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Vulnerable code in \",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\"plugins/garden/scripts/user-prompt-submit.sh:13\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\":\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"bash\",\"id\":\"bae3dd15-0b7e-445e-8d05-739721df9e09\"},\"content\":[{\"type\":\"text\",\"text\":\"jq '.trials |= map_values(.message_count += 1)' \\\"$GARDEN_STATE\\\" > \\\"${GARDEN_STATE}.tmp\\\" && mv \\\"${GARDEN_STATE}.tmp\\\" \\\"$GARDEN_STATE\\\"\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Race condition sequence:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]}]},{\"type\":\"ordered_list\",\"attrs\":{\"order\":1},\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Session A reads garden-state.json (count=10)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Session B reads garden-state.json (count=10)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Session A increments to 11, writes temp file\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Session B increments to 11, writes temp file\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Session A: mv temp \u2192 state (count=11)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Session B: mv temp \u2192 state (count=11) \u2190 OVERWRITES A's update\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Result\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\": Only 1 increment applied instead of 2\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Additional vulnerability:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Attacker could create \"},{\"type\":\"text\",\"text\":\".tmp\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" symlink pointing to \"},{\"type\":\"text\",\"text\":\"/etc/passwd\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Script would write JSON to linked file (if permissions allow)\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CWE-367\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\": Time-of-check Time-of-use (TOCTOU)\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"1313dd5f-e776-4791-b837-eecbd8c721a4\"},\"content\":[{\"type\":\"text\",\"text\":\"Proposed Solutions\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":3,\"id\":\"97a5b282-b45a-4a30-a1da-9ee3ff9bee58\"},\"content\":[{\"type\":\"text\",\"text\":\"Option 1: File Locking with flock\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Approach:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" Use flock to serialize access to garden-state.json\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"bash\",\"id\":\"17907f47-f9b6-41ec-a96f-19bc530a0527\"},\"content\":[{\"type\":\"text\",\"text\":\"#!/usr/bin/env bash\\n\\nGARDEN_STATE=\\\"$HOME/.claude/garden-state.json\\\"\\nLOCK_FILE=\\\"${GARDEN_STATE}.lock\\\"\\n\\n# consume stdin per hook spec\\ncat > /dev/null\\n\\n[[ ! -f \\\"$GARDEN_STATE\\\" ]] && exit 0\\n\\n# atomic update with exclusive lock\\n{\\n  flock -x 200  # exclusive lock on fd 200\\n\\n  jq '.trials |= map_values(.message_count += 1)' \\\"$GARDEN_STATE\\\" > \\\"${GARDEN_STATE}.tmp.$$\\\" && \\\\\\n    mv \\\"${GARDEN_STATE}.tmp.$$\\\" \\\"$GARDEN_STATE\\\"\\n\\n} 200>\\\"$LOCK_FILE\\\"\\n\\nexit 0\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Pros:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Standard POSIX solution\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Atomic across processes\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Prevents both races and symlink attacks\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Low overhead\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Cons:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Adds lock file to filesystem\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Potential deadlock if script crashes while holding lock\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"flock not available on all systems (rare)\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Effort:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" 30 minutes\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Risk:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" Low\"}]}]}"
+    },
+    "updatedFrom": {
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "sortOrder": 0,
+      "updatedAt": "2026-01-04T08:14:43.000Z"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-104/fix-toctou-race-condition-in-counter-updates",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592142815,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

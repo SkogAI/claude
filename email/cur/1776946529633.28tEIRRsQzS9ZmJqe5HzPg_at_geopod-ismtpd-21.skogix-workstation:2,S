@@ -1,0 +1,26 @@
+MIME-Version: 1.0
+From: Termius <team@learn.termius.com>
+To: emil.skogsund@gmail.com
+Date: Tue, 04 Jun 2024 19:12:09 +0000
+Subject: Integrate AWS, DigitalOcean, and Azure (12/13)
+Message-ID: <28tEIRRsQzS9ZmJqe5HzPg@geopod-ismtpd-21>
+Content-Type: multipart/alternative; boundary="05ba45d0d5e92f66dda6e68125b779e8b34ad35ae31258c4a0ca85d5bdcd"
+
+Hello,
+
+The problem with clouds - they are ephemeral. Instances get started and killed, making it harder to keep IPs up-to-date. Built-in integrations keep cloud instances up-to-date in your Termius app.
+
+Here's how you can easily set up an integration:
+
+☁️ Enable *AWS* , *DigitalOcean* , or *Azure integration*. Start with entering your cloud-specific tokens. You'll get a group with all the servers fetched automatically.
+
+📂 *Set up identity.* Credentials won't be fetched, so you need to set it. Instead of manual setup, set an identity on a group level to make all your servers use the same credentials.
+
+🏰 If your cloud is in the private network, *set up a bastion* as a jump host on a group level to apply to all hosts at once.
+
+For detailed instructions on setting up your cloud for integration with Termius, check the documentation: AWS ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCSHsbsk5epjz7T5dLjvJfnvSWnFTFWULtmVhQztb-2Bh8-2Fd9-2FIY5UQblZnxnACmr-2BnL7T9aLkIvUo2aPqVivegTEHNsXlXdX5vfxFL02UMeEuquCF1_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwFP-2FXQRUN9nkmngYL94tkm-2BpaT8fzgfHB-2F86J9rd-2B8G-2B-2FBUSRX77qJOxR-2BYVOqFPbZfPo-2FXK0HeB5UTwxFpx8pangAYAkvaZ2GgPJ7-2F3hwLuQX5BQGxBIrANf8J0TxHGijUo6tqQ1FlfDxP97rqRf1JmSOa4Ajna6DThLSWRLQUDXeA-2FKbzCgtig6l6tCfnHUm-2BUD6RBfQVGgk-2FZtdCM1QDTionX5QXB2lNw108orkryyUBBOU6KLt09CY7PVan9-2BUjAvN7MfI-2FhX0HlOPMTIAHzqi9Vas3exTAcIRcSYazdgN-2BDGI035G8q1IdxPmp2ymQynLtFatS-2BEotoCKNUgtkF-2BptzGvboFyCYIiBhs4RSDiLu9Jl0jS3AiGjHQB3iLS30RViPF-2FpeXlbd3H6e5P3hjHfwQ-2BA-2BnyOJXJwXQvZT7MHOEYWP6P5DE6zlx4Ck8nGvlz79DRbdhvFIpBpR5HRBLmFI9CB34ThDw2NhtzrGJ3IG7tNZL08tFfM6gkmBQ-2BrGMZBuf8vbUFepZiKb1XsE4GHaavgvHDXEBeIDi3Xolc8WG-2FV6dFpAXThHlgR-2F4lzXfa5Re-2BrUZWHAOCMpX7Zrpz5DeLLLBJ80s4ekbw0c-3D ) , DigitalOcean ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCSHsbsk5epjz7T5dLjvJfnvSWnFTFWULtmVhQztb-2Bh8-2F7Gwc23hG494p3u9drI13aJS3GEE-2FoThy5yu-2F6gOK1S9vemlrRyXQHLLBo6XC0Fa11ZeA8pfdcW4FCNhDmzoTCQ-3D-3DhEgF_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwFP-2FXQRUN9nkmngYL94tkm-2BpaT8fzgfHB-2F86J9rd-2B8G-2B-2FBUSRX77qJOxR-2BYVOqFPbZfPo-2FXK0HeB5UTwxFpx8pangAYAkvaZ2GgPJ7-2F3hwLuQX5BQGxBIrANf8J0TxHGijUo6tqQ1FlfDxP97rqRf1JmSOa4Ajna6DThLSWRLQUDXeA-2FKbzCgtig6l6tCfnHUm-2BUD6RBfQVGgk-2FZtdCM1QDTionX5QXB2lNw108orkryyUBBOU6KLt09CY7PVan9-2BUjAvN7MfI-2FhX0HlOPMTIAHzqi9Vas3exTAcIRcSYazdgN-2BDGI035G8q1IdxPmp2ymQynLtFatS-2BEotoCKNUgtkF-2BptzGvboFyCYIiBhs4RSDiLu9Jl0jS3AiGjHQB3iLS30RViPF-2FpeXlbd3H6e5P3hjHfwQ-2BA-2BnyOJXJwXQvZT4FWLmhCzZMmnmZ98CaPA8KghjUIFJM-2Fqm8M2wJQA-2Fcis-2Fa-2Bv3IrSETZjFpjrBmjhpHiI6DWe-2Bv2tvvBZnbgPxjHWzXqTlMU1bqlQPxfZ-2BwZMwmqmOM0Ii07e7Yc0quu5KYeb295atzHzJY3ONsGEUGEVoVwpPlDpNTo9rGOIban5YYG9y464wMNqc2wBA6l8-3D ) , Azure ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCSHsbsk5epjz7T5dLjvJfnvSWnFTFWULtmVhQztb-2Bh8-2FHt3LcpMF6uxk-2FCyJtF6BGzGFj-2Fq4c11NySokipoD3A-2BSO6-2FhlEaerPnsPT4Anf0nIdGeGtB-2BlIh2rspTGzuqTg-3D-3D2vGN_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwFP-2FXQRUN9nkmngYL94tkm-2BpaT8fzgfHB-2F86J9rd-2B8G-2B-2FBUSRX77qJOxR-2BYVOqFPbZfPo-2FXK0HeB5UTwxFpx8pangAYAkvaZ2GgPJ7-2F3hwLuQX5BQGxBIrANf8J0TxHGijUo6tqQ1FlfDxP97rqRf1JmSOa4Ajna6DThLSWRLQUDXeA-2FKbzCgtig6l6tCfnHUm-2BUD6RBfQVGgk-2FZtdCM1QDTionX5QXB2lNw108orkryyUBBOU6KLt09CY7PVan9-2BUjAvN7MfI-2FhX0HlOPMTIAHzqi9Vas3exTAcIRcSYazdgN-2BDGI035G8q1IdxPmp2ymQynLtFatS-2BEotoCKNUgtkF-2BptzGvboFyCYIiBhs4RSDiLu9Jl0jS3AiGjHQB3iLS30RViPF-2FpeXlbd3H6e5P3hjHfwQ-2BA-2BnyOJXJwXQvZQif3-2FDhd8XRYuGd0hOlGby-2BFfULEufr0Zd-2B3PuxbK6Hlo-2FSkgkw5qn-2FuCaA-2By8pDJFlPfNZKaF-2FSVyebMnpIUWt5aMqOhLLdAsjg3ww2Y2CkBOQE7JXvR0ZQ5-2FvWvcx3CMrwQ3AWE9nGcYrJWMS-2BBnvib3hc-2BMWRKGUIkoNWgCCug4Q65jwZn1pDrjBi0Y8Fo-3D ).
+
+P.S. You are getting these emails as part of the Termius Academy series. You can turn off the course by clicking here ( https://u27205612.ct.sendgrid.net/asm/unsubscribe/?user_id=27205612&data=XKr9Q0tOu6Z1eXLsOeFI3itDRL0-OBjBrLaZoh_06sZoMDAwdTAwMOVhrmqD57ZhkDKxxCVBYBbL_pCaCzGOH0nvm5lPIW3Vu3tXbsWUGnhCvZ93oBcf36qnJsL8e2wFAUOTskr5-YazY0rSAz7tR7LJXAuhe-5Av0eToEli4a6ZmLKuYnfR-vOGSs3s6YUwNMtCMfgGMjnxvxPG4qEwKtWriUsVJ_WEQjbmG4prFJLkvnhS2Sr1JyhEOXoCR5f7ATcCKEz2_tozMUtK0iGJyhtbB6etiwk8TQ9QPXgu2VdSooDUOkS5uAM77hyg_8akVK2IlGvy3IJ-g7E_-YWvE1aP6kt0r1sN9TZ--C34rDG5G1r-I0XsY4WhLZQxwxL5TEQzJeCrnGklcpFMlOB7mP9lPGBd-zLMH2f8EoLcVvxpV5OUGBQgbFm3uHIQhwrow9LnIpTK43aouhUhsRx0dL6FKhNxyxkrjE9gkoTaFK-N2rq59nomS4-07b6O0wMWBZcI7KG07HhlJ01yfCkx-0L_Bj0tfdwkPMB0FDetnRD8SiRqfu2o1s8DArik0IIDTIsstcwTIhzc2YuJTURh7Pg425tnz-MVVvPOt3-Wj0A_GOqqRRqhvbLBkZyhy-ziB02eAHr5ALTxfvapJzdx1auqwA1hK_1sAFedIQflTijrOWuVMzllQtW1-U42ltyFSdn9lYdUwJDNEZhtCnh0KM9Fo0RzkWk23nGp2EKFMlmcRF70XLvFJ_8lRZRMC4jP0ayQyUaUfkp6IpgzStWwHd6x-Maj20RoixTlF2OB-sNgM12LOZfA4NzNlCvzYEoadt7_7azR4OA= ).
+
+Regards,
+The Termius Team

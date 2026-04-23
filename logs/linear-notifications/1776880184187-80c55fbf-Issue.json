@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-04-22T17:49:44.187794+00:00",
+  "payload": {
+    "action": "create",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T17:49:43.327Z",
+    "data": {
+      "id": "6132a961-dad2-4921-a18d-68bbbf3dbd9a",
+      "createdAt": "2026-04-22T17:49:43.327Z",
+      "updatedAt": "2026-04-22T17:49:43.327Z",
+      "number": 191,
+      "title": "test: add automated validation for repo-local skills/",
+      "priority": 2,
+      "sortOrder": -4917,
+      "prioritySortOrder": -146967,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-22T17:49:43.377Z",
+      "labelIds": [
+        "fb26cb13-47ce-42af-a8e5-121331527dcd",
+        "bc676dcb-abeb-477a-a340-15c515855557",
+        "87f3ac19-82ab-45f4-978f-498f1ca3a259"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "subIssueSortOrder": 2838,
+      "reactionData": [],
+      "priorityLabel": "High",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-191",
+      "url": "https://linear.app/skogai/issue/SKO-191/test-add-automated-validation-for-repo-local-skills",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "c38ac3b1-4e15-43bc-b86b-abd3af62bc75",
+      "assignee": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "87f3ac19-82ab-45f4-978f-498f1ca3a259",
+          "color": "#FBCA04",
+          "name": "testing"
+        },
+        {
+          "id": "bc676dcb-abeb-477a-a340-15c515855557",
+          "color": "#0075ca",
+          "name": "documentation"
+        },
+        {
+          "id": "fb26cb13-47ce-42af-a8e5-121331527dcd",
+          "color": "#0E8A16",
+          "name": "area/agent-home"
+        }
+      ],
+      "description": "## Problem\n\nThe shared `skills/` tree currently has no automated guardrails for the conventions it teaches. That makes it easy to reintroduce the same migration and structure bugs during future skill imports.\n\nExamples of regressions worth catching automatically:\n\n* frontmatter `name:` does not match directory name\n* descriptions are missing or too weak to explain trigger conditions\n* workflow/reference files are referenced but missing\n* legacy `~/.claude/skills/` references remain in repo-local skills\n* [SKILL.md](<http://SKILL.md>) files silently grow beyond the intended complexity threshold\n\n## Scope\n\n* design a lightweight validation pass for repo-local skills\n* check frontmatter basics (`name`, `description`, optional permalink consistency)\n* check local references and workflow links resolve\n* flag legacy path assumptions and known invalid interaction primitives\n* decide whether size/structure checks should be warnings or hard failures\n* wire validation into an existing repo verification path where it is easy to run repeatedly\n\n## Done when\n\n* a single command or test target can validate the repo-local `skills/` tree\n* common regressions are caught before or during review\n* the checks reflect the conventions this repo actually wants to enforce\n* adding another imported skill does not require remembering all validation rules manually",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"a440c27c-142e-46ef-aa2b-f793d3933316\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The shared \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" tree currently has no automated guardrails for the conventions it teaches. That makes it easy to reintroduce the same migration and structure bugs during future skill imports.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Examples of regressions worth catching automatically:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"frontmatter \"},{\"type\":\"text\",\"text\":\"name:\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" does not match directory name\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"descriptions are missing or too weak to explain trigger conditions\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"workflow/reference files are referenced but missing\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"legacy \"},{\"type\":\"text\",\"text\":\"~/.claude/skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" references remain in repo-local skills\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"SKILL.md\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://SKILL.md\"}}]},{\"type\":\"text\",\"text\":\" files silently grow beyond the intended complexity threshold\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"59e7acda-744f-4485-884c-d29cefdc295b\"},\"content\":[{\"type\":\"text\",\"text\":\"Scope\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"design a lightweight validation pass for repo-local skills\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"check frontmatter basics (\"},{\"type\":\"text\",\"text\":\"name\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", \"},{\"type\":\"text\",\"text\":\"description\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", optional permalink consistency)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"check local references and workflow links resolve\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"flag legacy path assumptions and known invalid interaction primitives\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"decide whether size/structure checks should be warnings or hard failures\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"wire validation into an existing repo verification path where it is easy to run repeatedly\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"48c0a138-d9cd-4c82-bc71-58e0a93a7686\"},\"content\":[{\"type\":\"text\",\"text\":\"Done when\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"a single command or test target can validate the repo-local \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" tree\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"common regressions are caught before or during review\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"the checks reflect the conventions this repo actually wants to enforce\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"adding another imported skill does not require remembering all validation rules manually\"}]}]}]}]}"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-191/test-add-automated-validation-for-repo-local-skills",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776880184074,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

@@ -1,0 +1,199 @@
+MIME-Version: 1.0
+From: OpenAI Developer Community <notifications@openai1.discoursemail.com>
+To: emil.skogsund@gmail.com
+Date: Sat, 28 Feb 2026 00:19:10 +0000
+Subject: [OpenAI Developer Community] Summary
+Message-ID: <e8480015-965c-4559-9ea4-9a7540b9c6df@community.openai.com>
+Content-Type: multipart/alternative; boundary="--==_mimepart_69a2347de766d_2a82196016954d2"; charset="UTF-8"
+
+A brief summary of [OpenAI Developer Community][1] since 2026-02-20 23:51:38 UTC
+
+27 New Topics
+3100 New Users
+
+
+  
+  ### Popular Topics
+
+    [🚀 gpt-realtime-1.5 is live in Realtime API][2]
+
+      Hey everyone, 
+Big step forward for voice today: gpt-realtime-1.5 just dropped in the Realtime API. 
+Quick highlights from the team: 
+
++5% on Big Bench Audio reasoning
++10.23% alphanumeric transcription accuracy
++7% instruction following
+More reliable tool calling and multilingual handling overall
+
+Pricing remains steady with the original gpt-realtime: 
+
+Text: $4 / 1M input | $0.40 cached | $16 / 1M output
+Audio: $32 / 1M input | $0.40 cached | $64 / 1M output
+
+Early adopters are already feeling the upgrade: 
+
+Genspark reports connection rates nearly doubled (up to 66% ) and phone call errors cut in half.
+Sendbird highlights exceptional improvements in handling interruptions.
+
+Check out the latest docs here: Realtime API | OpenAI API 
+Curious about your experience: 
+
+Are you noticing reduced latency in your setups?
+Any standout improvements or quirks in tool calling and multilingual tasks?
+How does it stack up side-by-side with previous realtime models?
+
+Drop your insights, benchmarks,...
+
+    
+    [GPT 5.3 Spark is addictive][3]
+
+      This is incredible. 
+Cerebras chips are the future of inference and possibly for training, this is literally a miracle, i cant put into words the flow state i get with this model. 
+Incredible work, shows how staying in the loop makes your output be better, also the tool asks speed from you, a pace that once integrated i see massive upside for the human 
+What a time to be alive.
+
+    
+    [Websockets for Responses API][4]
+
+      Looks like openai v2.22.0 lib now has websockets implementation for the Responses API, which should significantly improve the time-to-first-token, Release v2.22.0 · openai/openai-python · GitHub. On Codex-Spark it was 50% improvement so let’s see.
+
+    
+    [Moderation cannot be appealed, is this an OpenAI trick? Is it even legal?][5]
+
+      I want to share this because I think it is very unrespectful towards paying users… 
+i have tried to generate an artistic image, gpt-image-1-mini, via this prompt: 
+
+Create an artistic image, here are the properties: 
+
+Scene: Woman with platinum blonde hair lying on a white studio floor, wrapped in transparent plastic film that shapes and reveals her form.
+References: Knight, Blumenfeld.
+Details: High-key 6500K lighting emphasizes graphic texture and minimalism, blending sculpture-like body form with pure white and transparent material for a modern fine art aesthetic.
+
+
+I get the request blocked with this feedback: 
+{ 
+“error”: { 
+“message”: “Your request was rejected by the safety system. If you believe this is an error, contact us at ``help.openai.com`` and include the request ID req_85638c5fefe241c6bd47254b6c668d33. safety_violations=[sexual].”, 
+“type”: “image_generation_user_error”, 
+“param”: null, 
+“code”: “moderation_blocked” 
+} 
+} 
+Now, since there was no nudity request of any k...
+
+    
+    [Responses API now has expanded file input types: docx, pptx, csv, xlsx][6]
+
+      In addition to the new file types, there’s specific file types augmentation for data (xlsx, csv, etc): 
+
+Instead of passing entire sheets to the model, the API parses up to the first 1,000 rows per sheet and adds model-generated summary and header metadata so the model can work from a smaller, structured view of the data. 
+
+
+
+
+
+Category
+Common extensions
+
+
+
+
+PDF files
+.pdf
+
+
+Text and code
+.txt, .md, .json, .html, .xml, code files
+
+
+Rich documents
+.doc, .docx, .rtf, .odt
+
+
+Presentations
+.ppt, .pptx
+
+
+Spreadsheets
+.csv, .xls, .xlsx
+
+
+
+Read more:
+
+    
+
+  
+
+
+  ### Popular Posts
+
+    sps - [🚀 gpt-realtime-1.5 is live in Realtime API][7]
+
+    Also, don’t miss the cool demo from Charlie:
+    aprendendo.next - [Websockets for Responses API][8]
+
+    Seems to be good for tool calling.
+    OpenAI_Support - [Re rendering of widget (unintentionally)][9]
+
+    Hey everyone, Yes, our team was able to take a look and deploy a fix. This issue should not be observed now. Thanks a million @gusdeoliveira for all the help.
+    _j - [2025 in Review: Your Wins, Our Future, and Community Awards!][10]
+
+    Shout out to the Discourse “bot” (not @discobot fortune telling of whats to come), able to persist with its 5-return forum content searches to then answer plausibly (where AI answer plausibility that convinces someone of its value and the value of a billion dollar industry, yet convinces someone of their own nutty ideas having value, will get shut off.) 
+Shout out to the optimism in trying to solicit engagement in a place where content scrolls out of attention in a day. 
+
+1) The Output Log (Wins) :floppy_disk:
+function ship_it()
+
+Shipped: a clean migration path from “random prompt spaghetti” → Responses API + tool calling + structured outputs (JSON schema) + evals gating. The win wasn’t one feature—it was finally getting reproducible behavior (and catching regressions before prod).
+Shipped: an agent toolchain that treats “tools” like a product surface (versioned schemas, retries/backoff, idempotency, tracing), instead of “LLM magic”.
+
+The “Aha” Moment (threads that rewired my brain)
+
+T...
+    vladyslav.fliahin - [Accessing to different projects finetuned models][11]
+
+    Raise this issue, please. 
+I have revisited the service account applicability. It can resolve the issue of accessing it (similar to just using the API key from my R&D environment in PROD), but in a more secure way. 
+However, people use different projects not only to separate permissions, but also to separate costs. From what I’ve just seen in the playground, I can’t separate spending between different users/API keys within a single project. 
+For my use case, it would be helpful either to have organization-level access to the models I train inside Dev/R&D/etc. projects, or to have clear usage separation between users/API keys so that the executive staff can analyze spending and understand how much each service is using.
+
+
+**New for you**
+
+* [What are the new GPT Realtime voices?][12] - 3 - [API]
+* [Feature Request for VPS Communications][13] - 2 - [Codex]
+* [Chatkit Container ID - Attach to existing Container in Session Creation][14] - 2 - [API]
+* [New space toggle for voice?][15] - 3 - [Codex]
+* [Does Dashboard Chat currently support Skills?][16] - 5 - [API]
+
+
+
+[1]: https://community.openai.com/
+[2]: https://community.openai.com/t/gpt-realtime-1-5-is-live-in-realtime-api/1374919
+[3]: https://community.openai.com/t/gpt-5-3-spark-is-addictive/1374750
+[4]: https://community.openai.com/t/websockets-for-responses-api/1374906
+[5]: https://community.openai.com/t/moderation-cannot-be-appealed-is-this-an-openai-trick-is-it-even-legal/1374813
+[6]: https://community.openai.com/t/responses-api-now-has-expanded-file-input-types-docx-pptx-csv-xlsx/1375013
+[7]: https://community.openai.com/t/gpt-realtime-1-5-is-live-in-realtime-api/1374919
+[8]: https://community.openai.com/t/websockets-for-responses-api/1374906
+[9]: https://community.openai.com/t/re-rendering-of-widget-unintentionally/1367406
+[10]: https://community.openai.com/t/2025-in-review-your-wins-our-future-and-community-awards/1370613
+[11]: https://community.openai.com/t/accessing-to-different-projects-finetuned-models/943886
+[12]: https://community.openai.com/t/what-are-the-new-gpt-realtime-voices/1375080
+[13]: https://community.openai.com/t/feature-request-for-vps-communications/1374783
+[14]: https://community.openai.com/t/chatkit-container-id-attach-to-existing-container-in-session-creation/1374995
+[15]: https://community.openai.com/t/new-space-toggle-for-voice/1375202
+[16]: https://community.openai.com/t/does-dashboard-chat-currently-support-skills/1374792
+[17]: https://community.openai.com/
+
+
+
+This summary is sent from [OpenAI Developer Community][17] when we haven't seen you in a while. Change [your email settings][18], or [click here][19] to unsubscribe.
+
+[18]: https://community.openai.com/my/preferences/emails
+[19]: https://community.openai.com/email/unsubscribe/d37a8b489b6d55726f362ea6b1f50fadc589f10e2fbed5596c8a55f27839f6f7
+
+
+

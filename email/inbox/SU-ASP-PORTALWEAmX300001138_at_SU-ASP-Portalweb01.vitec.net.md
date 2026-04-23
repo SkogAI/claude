@@ -1,0 +1,90 @@
+MIME-Version: 1.0
+From: info@bostadvasteras.se
+To: emil.skogsund@gmail.com
+Date: Mon, 15 Oct 2018 06:19:26 +0200
+Subject: Lediga lägenheter hos Bostad Västerås
+Message-ID: <SU-ASP-PORTALWEAmX300001138@SU-ASP-Portalweb01.vitec.net>
+Content-Type: text/plain; charset="iso-8859-1"
+
+Prenumeration av lediga hyreslägenheter.
+		
+Följande hyreslägenheter matchar dina angivna önskemål och finns nu publicerade på vår hemsida. För att anmäla intresse måste du själv logga in på din personliga sida via www.bostadvasteras.se och markera de lägenheter du är intresserad av.
+
+
+Du kan själv ändra och förfina dina önskemål om bostad genom att logga in på din personliga sida.
+
+
+Följande hyreslägenheter finns tillgängliga just nu som matchar din profil.
+
+Om antalet är för stort kan du förfina urvalskriterierna på din intresseanmälan.
+
+
+Område:       Vallby
+Adress:       Enkelstuguvägen 1
+Antal rum:    1
+Boyta:        35
+Hyra:         3137
+Tillträde:    2019-02-01
+URL:          http://www.bostadvasteras.se/HSS/Object/ObjectDetailsTemplateB.aspx?cmguid=f85a83f8-db44-43cc-b053-4c8dd1a25b57&id=973-1122
+
+-----------------------------------------
+
+Område:       Malmaberg
+Adress:       Släggargatan 3 A
+Antal rum:    2
+Boyta:        45
+Hyra:         5603
+Tillträde:    2018-12-01
+URL:          http://www.bostadvasteras.se/HSS/Object/ObjectDetailsTemplateB.aspx?cmguid=f85a83f8-db44-43cc-b053-4c8dd1a25b57&id=37-1204
+
+-----------------------------------------
+
+Område:       Gideonsberg
+Adress:       Violstigen 11 C
+Antal rum:    2
+Boyta:        52
+Hyra:         5010
+Tillträde:    2019-01-01
+URL:          http://www.bostadvasteras.se/HSS/Object/ObjectDetailsTemplateB.aspx?cmguid=f85a83f8-db44-43cc-b053-4c8dd1a25b57&id=970-1045
+
+-----------------------------------------
+
+Område:       Gideonsberg
+Adress:       Generatorgatan 13 B
+Antal rum:    2
+Boyta:        54
+Hyra:         5113
+Tillträde:    2019-02-01
+URL:          http://www.bostadvasteras.se/HSS/Object/ObjectDetailsTemplateB.aspx?cmguid=f85a83f8-db44-43cc-b053-4c8dd1a25b57&id=950-1519
+
+-----------------------------------------
+
+Område:       Gideonsberg
+Adress:       Vitmåragatan 4
+Antal rum:    2
+Boyta:        57
+Hyra:         5784
+Tillträde:    2018-10-01
+URL:          http://www.bostadvasteras.se/HSS/Object/ObjectDetailsTemplateB.aspx?cmguid=f85a83f8-db44-43cc-b053-4c8dd1a25b57&id=953-2124
+
+-----------------------------------------
+
+Område:       Hammarby
+Adress:       Bygatan 24
+Antal rum:    2
+Boyta:        44
+Hyra:         6463
+Tillträde:    2019-01-01
+URL:          http://www.bostadvasteras.se/HSS/Object/ObjectDetailsTemplateB.aspx?cmguid=f85a83f8-db44-43cc-b053-4c8dd1a25b57&id=969-1604
+
+-----------------------------------------
+
+
+Om du vill avsluta prenumerationen, logga in på din personliga sida och ändra på inställningarna för prenumeration under "Mina sidor" -> "Registrering lägenhet".
+
+
+Vänliga hälsningar
+
+Bostad Västerås AB
+www.bostadvasteras.se
+

@@ -1,0 +1,84 @@
+{
+  "timestamp": "2026-04-19T09:52:20.665912+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:52:19.093Z",
+    "data": {
+      "id": "46e8cfb5-d912-4683-b8ca-47bbabd80a11",
+      "createdAt": "2026-03-06T18:08:51.000Z",
+      "updatedAt": "2026-04-19T09:52:19.092Z",
+      "number": 73,
+      "title": "Backfill: process historical conversation archive",
+      "priority": 0,
+      "sortOrder": -88297.98,
+      "prioritySortOrder": 0.4987680269167955,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:15.000Z",
+      "labelIds": [
+        "6f0e5457-47a2-4812-a4af-7ee6561b5772",
+        "9153a2e5-43e7-4b04-9e82-9d79b74ff296",
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-73",
+      "url": "https://linear.app/skogai/issue/SKO-73/backfill-process-historical-conversation-archive",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        },
+        {
+          "id": "6f0e5457-47a2-4812-a4af-7ee6561b5772",
+          "color": "#a2eeef",
+          "name": "enhancement"
+        },
+        {
+          "id": "9153a2e5-43e7-4b04-9e82-9d79b74ff296",
+          "color": "#F9D0C4",
+          "name": "pipeline"
+        }
+      ],
+      "description": "## Parent: #1\n\n## Depends on: #3\n\n## Summary\n\nRun the extraction pipeline against 1.5 years of historical conversations. This is the bulk processing job that turns dead JSONL files into searchable, structured knowledge.\n\n## Scale\n\n* \\~900k lines of conversation history\n* Unknown number of conversations (need to scan)\n* Only viable with local LLM (ollama) \u2014 API costs would be prohibitive\n\n## CLI\n\n```bash\nclaude-memory backfill --types all           # everything\nclaude-memory backfill --types decisions     # just decisions\nclaude-memory backfill --after 2025-01-01    # date range\nclaude-memory backfill --project <name>      # specific project\nclaude-memory backfill --dry-run             # count what would be processed\n```\n\n## Implementation\n\n1. Scan archive for conversations without extraction output files\n2. Queue jobs via existing queue system\n3. Process in batches (queue already handles this)\n4. Track progress \u2014 resumable if interrupted\n\n## Considerations\n\n* This will generate thousands of queue jobs \u2014 queue needs to handle gracefully\n* Progress reporting: `backfill --status` to show completion %\n* Rate limiting for ollama (don't saturate local GPU for hours)\n* Priority: newer conversations first, oldest last\n* Historical conversations may reference obsolete projects/patterns \u2014 extraction should still capture them",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"0ac74bfb-793e-4530-b775-6ec7d2d0a85d\"},\"content\":[{\"type\":\"text\",\"text\":\"Parent: #1\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"21d14bef-3ca7-4680-9453-ac800b44184f\"},\"content\":[{\"type\":\"text\",\"text\":\"Depends on: #3\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"adb383b1-b4ac-4b60-a02c-a76bd4b32ecf\"},\"content\":[{\"type\":\"text\",\"text\":\"Summary\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Run the extraction pipeline against 1.5 years of historical conversations. This is the bulk processing job that turns dead JSONL files into searchable, structured knowledge.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"96939d62-edfb-4296-93ad-9038c8c0101d\"},\"content\":[{\"type\":\"text\",\"text\":\"Scale\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"~900k lines of conversation history\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Unknown number of conversations (need to scan)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Only viable with local LLM (ollama) \u2014 API costs would be prohibitive\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"bbd8f7fc-bd3d-4155-a0f0-e64694c15915\"},\"content\":[{\"type\":\"text\",\"text\":\"CLI\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"bash\",\"id\":\"4316848f-0329-4ff3-b54e-b5e919568b07\"},\"content\":[{\"type\":\"text\",\"text\":\"claude-memory backfill --types all           # everything\\nclaude-memory backfill --types decisions     # just decisions\\nclaude-memory backfill --after 2025-01-01    # date range\\nclaude-memory backfill --project <name>      # specific project\\nclaude-memory backfill --dry-run             # count what would be processed\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"48077cd4-4602-4853-bbba-c0970b352049\"},\"content\":[{\"type\":\"text\",\"text\":\"Implementation\"}]},{\"type\":\"ordered_list\",\"attrs\":{\"order\":1},\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Scan archive for conversations without extraction output files\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Queue jobs via existing queue system\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Process in batches (queue already handles this)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Track progress \u2014 resumable if interrupted\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"46066d75-2a78-4f18-9814-4be326981264\"},\"content\":[{\"type\":\"text\",\"text\":\"Considerations\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"This will generate thousands of queue jobs \u2014 queue needs to handle gracefully\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Progress reporting: \"},{\"type\":\"text\",\"text\":\"backfill --status\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" to show completion %\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Rate limiting for ollama (don't saturate local GPU for hours)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Priority: newer conversations first, oldest last\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Historical conversations may reference obsolete projects/patterns \u2014 extraction should still capture them\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-04-19T09:47:46.896Z",
+      "prioritySortOrder": 0
+    },
+    "url": "https://linear.app/skogai/issue/SKO-73/backfill-process-historical-conversation-archive",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592340585,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

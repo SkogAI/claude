@@ -1,0 +1,21 @@
+MIME-Version: 1.0
+From: Authy <noreply@authy.com>
+To: emil.skogsund@gmail.com
+Date: Wed, 01 May 2024 01:48:07 +0000
+Subject: Confirmation of Authy Account modification
+Message-ID: <wXOAh2cHQlyujCjmSIcQdw@geopod-ismtpd-27>
+Content-Type: multipart/alternative; boundary="3e2a39c17540420581f06d2e5875dfca6e8a9e37806843d77fdc0dd48ce3"
+
+( https://u2726373.ct.sendgrid.net/ls/click?upn=u001.0zLTpaQBoMBBLqfd1mFIQG7CTipU2tZ6cLtviOEodjw-3DoCmk_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmDSg80ni9Y6kWWR8WuR9LTJ38N4b-2BA1-2FT8OprPNDOOrVJFlfX49mP6VE-2BAz5wp29D-2F-2By-2FCSEIoGahmvGKU6brJ3eTpIwE3jruVS331iD3kTcOSTQvpnZfP3YaR3Q8UQHhoJVSGqmVBzLCiWif7cCJBUFh6HAiYNbz9Gjo276AK-2F1Og1T-2F-2BVD5Sv9-2FXgxCCdQiH2rZgkW1tr6IWkwCWKaxfVhjnlhkdfLj5bq5MvJC4Vsv0C5ySPCMZqLf00HxfeQOLr1m0zGDhHvvr8uDEPHowwJN4TEhmmxTwwTY-2FSscO0oiD1A-2FoX1nmPfzSxbuV42cxQuBZuqkmdUVSylu75dr9lxVeCnrlTXV87wtsdQieS0Mjma3naz-2B5lVPHK9-2BMookjJxpEwV0MoSLHE-2BypIvjTCJyd4IrJ0EkJz3W9weJQNQeiezU66rFTcgFLMHpcoTpY-3D )
+
+Hello,
+Your email address, emil.skogsund@gmail.com, associated with your Authy Account was successfully verified. We will use this email address moving forward to communicate with you about any important changes or updates related to your account.
+
+If you have any questions, please visit support.authy.com ( https://u2726373.ct.sendgrid.net/ls/click?upn=u001.0zLTpaQBoMBBLqfd1mFIQJWjAh20vMq7BY7m47RoR5Z8MQ3-2Fgg4XpewtED7rH6pSnHiV_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmDSg80ni9Y6kWWR8WuR9LTJ38N4b-2BA1-2FT8OprPNDOOrVJFlfX49mP6VE-2BAz5wp29D-2F-2By-2FCSEIoGahmvGKU6brJ3eTpIwE3jruVS331iD3kTcOSTQvpnZfP3YaR3Q8UQHhoJVSGqmVBzLCiWif7cCJBUFh6HAiYNbz9Gjo276AK-2F1Og1T-2F-2BVD5Sv9-2FXgxCCdQiH2rZgkW1tr6IWkwCWKaxfVsPKqJHjXWQvEpmwijY92ZZOzoL1hiopl-2FYtpRxZVAzxkpkcEJZSZNMSetOUW98Ue4lUA3PMucBhp7aytHYwLHVwMSz33hO5bfNFp71iWcTxW9OM7Vi-2BIDBSqS8G8v-2BDmiP7T1U0840gtdyDaCVzQhbKpRnbYvZ9Hq6SXab-2B6inuUxAV-2FyX7-2FzM61eauOU4TGjW232cRQIygammr9VkDZ1ttM-2BtWyLP5pTSpXJK0szeQ-3D ).
+
+Thank you for using Twilio Authy.
+
+( https://u2726373.ct.sendgrid.net/ls/click?upn=u001.0zLTpaQBoMBBLqfd1mFIQG7CTipU2tZ6cLtviOEodjw-3DZaZ9_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmDSg80ni9Y6kWWR8WuR9LTJ38N4b-2BA1-2FT8OprPNDOOrVJFlfX49mP6VE-2BAz5wp29D-2F-2By-2FCSEIoGahmvGKU6brJ3eTpIwE3jruVS331iD3kTcOSTQvpnZfP3YaR3Q8UQHhoJVSGqmVBzLCiWif7cCJBUFh6HAiYNbz9Gjo276AK-2F1Og1T-2F-2BVD5Sv9-2FXgxCCdQiH2rZgkW1tr6IWkwCWKaxfVvSjzO19SH-2Fi1Kc2Ne1EK3He2ZIZmgxtYtEG-2FOF7Y2I6WQbI2e9QV78Ckt6gihFb3gD0OIp3-2FhCb10nMW1RmUrOnEGOaC7u6D1xbeqrVib14IhzY8UQcLLuV317ArfCKF8bORtzlAyIbdUryXt7PwBRb5Bx6ag5tHYWycri6DCDvOQ8HppgMFKW-2FVFNe4Ch8ftCqY1mLqrl8xhf10ZLZEmc8nG33SwbTsAdUMi08T4KA-3D )
+
+Authy - a Twilio company, 375 Beale St, Suite 300, San Francisco, CA 94105
+Authy - a Twilio company, 375 Beale St, Suite 300, San Francisco, CA 94105

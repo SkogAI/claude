@@ -1,0 +1,48 @@
+MIME-Version: 1.0
+From: MTG Arena <MTGArena@magic.wizards.com>
+To: emil.skogsund@gmail.com
+Date: Fri, 21 Sep 2018 20:36:36 +0000
+Subject: Account Wipe on September 24
+Message-ID: <A9T7_d5DQTmA9nNe978NAA@ismtpd0049p1mdw1.sendgrid.net>
+Content-Type: multipart/alternative; boundary="10e020971897a63925706b4f62a0f34885f7f0eeb66d2d89e112ea5a0ef6"
+
+Open Beta Coming Soon!                image 1
+
+*****************************
+OPEN BETA STARTS SEPTEMBER 27
+*****************************
+
+This is your final reminder to export any beloved
+deck lists you would like to save from your MTG Arena account
+before we take the Closed Beta offline in preparation for Open
+Beta later this week!
+
+Your account will be wiped and we are taking servers offline on
+Monday, September 24th at 8AM PDT so export your lists before
+then.
+
+Open Beta begins on Thursday, September 27th at 1PM PDT and you
+will be refunded any gems you purchased during the course of the
+Closed Beta. We are excited to share the next evolution of MTG
+Arena with you!
+
+For more information on what is coming with Open Beta, click
+HERE 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9AzUXs1FPvcEyPBQL-2FsSvx7mTfeFocXNQ2DagF7iRrU5NFlMC-2F3W4Qb8cfRkLlsdV-2BLfGBHqrnBOEwC3nUzeTcW1S0FT6rcUOGU3LVxONmsWcUTz-2FoLOjFpfqtSGN3765LwC-2FDBQZtyyZ3YxU8PIQXI-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mRMLafDCPTJZkbA0532aqL4CB5OoA-2ForXX1ruUFf961C0pJlxO-2Fjv0ljPZaatjV0V4N4O0yqRSLn163BvOhjOqVRk9bulaQ7mnNyidTK9LHeGvAxZlWqXkvtoHrwObbq-2FBwGaFkdqu0dw9N8pINHpqieKPnpdrpXdxhFUbGhREX0wgKuRedZZ4mWlkypYWDrZi5p2io1YvqMU4UtHK4u7HV0w2-2FfwzDkEJ3fwMoF5-2BB5LYYeneio3s7QrvWX2tGdJF-2BfEHZJWh5ETdP6VnpjcsRs8iEUO1fh8p4oOdtn1YQixE23-2F6YB9liSFT-2FadX66xdQfcv32jVzp-2BvW-2Ft1RrFVSFsRHNSK1TKKTl8pA6qNMJyImgYMnrvBu3HUgihllOi0SI1Y5SEmZ1clwW-2Bvaqy1T1qSia-2FQNZav94UHHkCOIJ-2Ft07MbWFnTwWN1gnt3i0ThIjv5sFWiK6-2FHwovY3vaY0-3D )
+.
+
+image 1 ( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HgBdBO-2BGJSgrzBRsxTjieNdlQJQGyE7eP-2BQ3me2dGh4_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mRMLafDCPTJZkbA0532aqL4CB5OoA-2ForXX1ruUFf961C0pJlxO-2Fjv0ljPZaatjV0V4N4O0yqRSLn163BvOhjOqXAw0lQSfuK6pJ1GOPCutLCXjxwx2Cp-2BfnUWTvldnzsxPf0m9KducI5N8NNtDrvjG2J8zqPgaF11Uoy5Jq72iFXo3OjIqAqXNS1mGG2kskIqouGVm8E0y8IPGmZv2c33CYb-2BLjTKcMSZimHAkRmbdqrGoTGd5hRIG2evQSVTbZQEVimdoLAsov4U3x7YVbKqRAr61UEYy3eNX0l4VsPRo9B85mWgjaNCNE981e7Du0IdMLolSHD2W8mgTtHcsR5KtARTzNSCWG2fWivTxHW3-2Fvwv3IpUGcY9FW0lwl9GzzesOeutMrESnpcpeKWEuczItP4XyEdai4lctqgpErMbFqEB7WzYjxA2lTYjcpTUn7jqdCK4-2BgEMaxNhLXUEMgoTSc-3D )
+This is a service-related email. Wizards will
+occasionally send you service-related emails to confirm changes
+to your account as well as to inform you about updates and
+revisions to Wizards' services and polices. Services and policies
+are subject to Wizards' terms of use and may be revised from time
+to time.
+
+©1995-2018 Wizards of the Coast LLC, a subsidiary of Hasbro, Inc.
+All Rights Reserved.
+1600 Lind Ave SW #400, Renton, WA 98057
+Terms of Use ( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldNDLg3uyjCpayQYh4zvIoJNapkJWHuSItSWHdVLUd4j7w-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mRMLafDCPTJZkbA0532aqL4CB5OoA-2ForXX1ruUFf961C0pJlxO-2Fjv0ljPZaatjV0V4N4O0yqRSLn163BvOhjOqXLbz1IdlhqbzdCYuLOvUvLpJ2SeqP-2FXUNDG2KwI7QXRT9LJRuZW8LCO5I6u14vpkExrmKa3d-2BFMZoDuGnqEXITaScG7hn0r2XqEvLxP72NWIttDh7GJA3vuKw8eyMy24yJ9ZnAA1ATT0ke77T1U8LctE-2BokD-2Fy-2Bg76GaDTAdvCZsXhX2nJY4yAdpISnDBHv1hEK2b-2FYp2HEai0IyXRwtKa9YajBGXk-2F2xvwB-2B8icUFqEqHeQ4pu59z17Lu3GQlGg8gVTnKyRBbhaELyN4IxEYRZCi-2FQbeac4JoG4W4GBsmPLbc7UAwnuUS5Au5gA4he7jwlCmFjuAuzB6S1N1vS7PsLI3GIxn7gmNQu1uesuHT5Wn9ELNu2QrHRr-2BwNV-2BrXYM-3D ) |
+Privacy Statement 
+( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldM928HSZwg0inMCjvrgBFx3Lw-2F4jKKC-2FOfx9jN4AH5iNxDeDR4YTOCk08OMVuZcyJo-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mRMLafDCPTJZkbA0532aqL4CB5OoA-2ForXX1ruUFf961C0pJlxO-2Fjv0ljPZaatjV0V4N4O0yqRSLn163BvOhjOqX3gvVtcaa7tR3TQWog8IH-2FBH7Yr76DM4kZuDwozjYtSQ9fHH1hxpJzvMvKLy8h7UivJRvY0mrrwRgwHsTvZkzTTlxNNyKqBjTCa7ibQ4YeejmtruoEp7tZVuK3lFvA8yqTrtGGMQrMSCvXDohkFFJRRmYrYXKHHmCWASAwHajNrVcQX3G-2ByAWL23xDCRt04w97sQqwbvpBVAEaJBV4OjcMXHOyBROg7pGZKqffkO56WgeWs0L-2F6AR0OV16VnQQQwZFU6xeJkxUlqh8R0-2BkFAVKFFVcCSC3dA4DV4sFwf34kE1CwT7KaDnvUfA5FQ-2BW09HtwjQDEw1E5VGSmWtE5OovFQhMHxrRpwrvCIhkwxdlhAF9RWU-2FRQwN13VXuBeZy5s-3D )
+| Unsubscribe ( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HGb-2BFPWQd7B-2F6V33xs2rZHCoikVDuQJidzR-2BYY5uh6t7WuSPUFEtQOsaCoKCsEiG3H3NWYZzQKqXUMAPmmVjSHyeDPjS1yUdkGvVXDJMO8EYFtLNf4FNRrZjepCfAgSQqM7ah5ZbOl8VW7XIOc2jTul2MKI6Whla-2FFcO7dpH-2Fw2aLCqmlZziDkwtcGYHIqmm3TWcOsIZoXx-2FmOHOYzgNQK37OYpQL7aHgKdLQjOxlKaSzo14XSv-2BpgBTRtPk22jPok9ypuuWZmgg05AAS0cdt3ndDasuIbJysrGOmBMHWnUlgNd-2BxkT1iuK3eUKpITsf0I7nHWnCrm63s4F0onpOD0SoHt7UEePCka-2FqUQ4kR8jxqZLPBGpA-2Fo2uMnVR0mG1pSMFMwsRGXkDfUI0A86hrVwS5SNqQinE7Zb7gDzQ5d156FcmWvGbG7iRZdUhofe-2Fg-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKDNsCd1txeLyqMwY8KmBFzgjWd57YHbTLnHmhVjqa5mRMLafDCPTJZkbA0532aqL4CB5OoA-2ForXX1ruUFf961C0pJlxO-2Fjv0ljPZaatjV0V4N4O0yqRSLn163BvOhjOqWcVKH5Y1SINsaCabDr8uiFBviZIEyPhlTMzNiZ-2BGy98XZ9AMjm5nZHU5G00I3yG75AAcr61C32qgXogtO3ojDGzrl3gcqSy8GBOmqkpMVAgbHRQsfIdTxTLPI8YhY0l2VBnrzSuAb08ZfNZ3-2Fr4y1w-2FnDeW-2FbGbPESwjodGPdwqw5SOhruhK8h-2FYj8ROfdYF7v1Dhl-2BOGr6Hbp4gX6rfbkznw4YnA4m4X3wP-2BGp6EdYbMADKRRLaTDYX-2BP8NcNQtua2JHg1LdmL8Ke-2BKmmFzaaLIemyCmhSPK5O3-2F0RZPjxjMsEPfCgEJybppoqiF93OAR0RAn6kFLyrmFMi-2FNpy7z5PcgpqOO1ZA-2F2zMStA7pYFrDHjD83fOrYpFd7JdQE6M-3D )

@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-04-22T13:35:09.815308+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T13:35:08.637Z",
+    "data": {
+      "id": "e4f3ab34-ed80-4c91-8196-4097e6c966bd",
+      "createdAt": "2026-02-25T23:40:34.000Z",
+      "updatedAt": "2026-04-22T13:35:08.636Z",
+      "number": 113,
+      "title": "Remove extracted-todo/ansible-roles directory",
+      "priority": 0,
+      "sortOrder": 0,
+      "prioritySortOrder": 0,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:19.919Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-113",
+      "url": "https://linear.app/skogai/issue/SKO-113/remove-extracted-todoansible-roles-directory",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "## Problem\n\n`dot_config/zsh/extracted-todo/ansible-roles/` contains a full Ansible role tree that was apparently extracted/archived but never cleaned up:\n\n```\nextracted-todo/ansible-roles/roles/\n  01_host_info/\n  02_basics/\n  04_desktop/\n  05_packages/\n  07_users/\n  dotfiles/\n  git/\n  packages/\n  ssh/\n  system/\n  tmux/\n```\n\nThese are Ansible task files, handlers, and defaults \u2014 not dotfile config. They have no place in a standalone chezmoi repo.\n\n## Changes needed\n\n* Delete the entire `dot_config/zsh/extracted-todo/ansible-roles/` directory tree\n\n## Acceptance criteria\n\n* No ansible role YAML files remain in the repo\n* `extracted-todo/` only contains items relevant to chezmoi/zsh",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"949b51d9-d7cf-4c4d-9828-ebe894909dbb\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"dot_config/zsh/extracted-todo/ansible-roles/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" contains a full Ansible role tree that was apparently extracted/archived but never cleaned up:\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"1abd7351-f2fe-4367-9f70-1e29d5ce1a6c\"},\"content\":[{\"type\":\"text\",\"text\":\"extracted-todo/ansible-roles/roles/\\n  01_host_info/\\n  02_basics/\\n  04_desktop/\\n  05_packages/\\n  07_users/\\n  dotfiles/\\n  git/\\n  packages/\\n  ssh/\\n  system/\\n  tmux/\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"These are Ansible task files, handlers, and defaults \u2014 not dotfile config. They have no place in a standalone chezmoi repo.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"4be36434-dd60-4781-a632-20a8b3418db2\"},\"content\":[{\"type\":\"text\",\"text\":\"Changes needed\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Delete the entire \"},{\"type\":\"text\",\"text\":\"dot_config/zsh/extracted-todo/ansible-roles/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" directory tree\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"1cabe7d2-dca4-4db3-8c7f-8fbeec590ca2\"},\"content\":[{\"type\":\"text\",\"text\":\"Acceptance criteria\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"No ansible role YAML files remain in the repo\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"extracted-todo/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" only contains items relevant to chezmoi/zsh\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-02-26T05:47:53.000Z",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-113/remove-extracted-todoansible-roles-directory",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776864909688,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

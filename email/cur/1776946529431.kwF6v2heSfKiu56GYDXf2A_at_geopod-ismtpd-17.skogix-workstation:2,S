@@ -1,0 +1,29 @@
+MIME-Version: 1.0
+From: OpenAI <noreply@email.openai.com>
+To: emil.skogsund@gmail.com
+Date: Tue, 13 Aug 2024 21:10:16 +0000
+Subject: Deprecation Reminder: gpt-3.5-turbo-0301, gpt-3.5-turbo-0613, and ​​gpt-3.5-turbo-16k-0613
+Message-ID: <kwF6v2heSfKiu56GYDXf2A@geopod-ismtpd-17>
+Content-Type: multipart/alternative; boundary="abc9aafab75947636a3a8a32ea648f10c5a82050c220e64f0c4ba30f6026"
+
+Shutting down access to gpt-3.5-turbo-0301, gpt-3.5-turbo-0613, and ​​gpt-3.5-turbo-16k-0613 on September 13, 2024.
+
+OpenAI Logo ( https://openai.com/ )
+
+In June 2023 ( https://platform.openai.com/docs/deprecations/2023-06-13-updated-chat-models ) and November 2023 ( https://platform.openai.com/docs/deprecations/2023-11-06-chat-model-updates ) , we announced the deprecation of the following models, with a planned shutdown date of September 13th, 2024:
+
+* gpt-3.5-turbo-0301
+* gpt-3.5-turbo-0613
+* gpt-3.5-turbo-16k-0613
+
+We have noticed that your organization has recently used at least one of these models. As soon as possible, we encourage you to migrate to gpt-4o-mini ( https://platform.openai.com/docs/models/gpt-4o-mini ) , our new small model that will give you higher performance at lower cost.
+
+Thanks for building with OpenAI. If you have any questions about model migration, feel free to reach out on the OpenAI Developer Forum ( https://community.openai.com/ ).
+
+—The OpenAI Team
+
+OpenAI
+
+1960 Bryant Street , San Francisco , CA 94110
+
+Unsubscribe ( http://url3243.email.openai.com/asm/unsubscribe/?user_id=20216706&data=6vAQB6G36T2Pwl3iq44BiBjoQ9t6ikZJ5awQNDXIQpNoMDAwdTAwMOGUJbS-wEUWHFK5ODuvtBUEF1pmSa-l9XNCyJ3LHkcinCDLCTwLBA2l5XlWJLJ0VaFiVntHN-79mbVgTm0c6SSsvMm5Un_QwaohQ43fJOiGbJ6HJOnZQnujYx5bvfbC7_w4P_4gGY19kLhsxdDKR1p61Ml3LA_rYqReF7ArrgSZ6dVmgofB5a59bj8FCakOK4iH4EmxUmDhkJoQbC1zu-EefC9AYK-jEt4fx7SnqhEno_8VMZzk3Q8S63yJmSdd1UrnGLroo-U2LRvh3IGnA17xCNejp-3CFBAOIssyzfycMBNZqqdaqH3i5zIDkCokjQa86Vl2rpgeU6dw_srU9AaC2Jqu1PbPWjSepTISWSIR7Y9LOhPKleHTX06wihK-tBUU3CcY77SRlE0cpPUf6mqZXEoH1Uof34-094LnzrLT-U8So9R7BjqsgAV35i7-jpLAJ_KxQ0tm_1IOrR0xLUhPbJWhWRenqTPghgah-fD-0WZds6aTweKmwgyhuQDfbKxNd1P2yxGrkrUaeYH0UmGMbYLdov6EJuTLkyw6vTpOfMImU98nQxPB-p3g0eInm1hO7rKW6zLQ9x5djA46nXvP-bljv8spfi6XoH0HPATeHC4mHWBrbnsHvthuyjZWkv1K6teb66m8Skun9LzeeYhsxBKj0nxZ8dxjtTnV-olNSlCbKX89Y2lqQchrXNVUuYCMdZxTqQAOqXW-DqQWxrWblXaziSzwB4AeFZX8SfCqVYoSvURhHacdWzkDZ3JOES98X3G-jXplsxCdAmLjNFg36BTJXR-RMOzJIuHCj3ekEbC5rhZ9mhYevMuyuBZOdRYKiHcJyR6ZmgZPxmd18ng5CPzzpKLU2PCv54S4QXJM5K34O_4sBDkL3aqxkNiTQhYOKrBZOQEP0gO3gaVi2mRbQDBZeSRp30pPLW6xoHR_ng-Aj7oLN8vf0GMXqTfgkG5JNxc2Ruz_yH-H3FbW5BE-SwwXFOuEt1pnTBawAvEFvSDyxGv6OxaUDPypGK5XmeE8hfBKmobozdc1OMrw8AzT1osdBa8EeciZ9lwI2B6KZHQERNdVm33JgCx3Z_UZyrCb-WqwmVq6_xSuFcZk3cPQewZJmZh4pN7HcyzuTjbnSJMXrMuaQjljDLjMmFDamTiPX9iSQVV2KncvJXSZWizYoLg75u37nu7_7BNOvXQwJgXTkocMtCtQHmUXTKXpFJsiujwRq5-mTOSxQ1H8woA= ) - Unsubscribe Preferences ( http://url3243.email.openai.com/asm/?user_id=20216706&data=4_BKqOx6gUzKRZOXiXwQKH6AjBA3lFgNpkd5ObgCQQZoMDAwdTAwMGw74HTSS3p7I84RZPo1HcdoVDenlcpbfr43TCm8TrqN_JjETIry2wCi7aFleN3oY5HQJ4n84Q_y4mlfPp2iAFioUVpRk1wo4vJSV5PyHSBp-6rA37VrOH1vQPqqs_UqdeK1ul2CegR4kK8XosowP_wubC-Kn9-ya34Do-zdRX45cYI3N4pvlsTHNnFCI_DrLrivE7PMh6_GgQ2MKTYlN2HD1n4hxgIxJ9kJCQN8L6g7FI6DOsuKRjNWq7PjDgKVZvKhCqb6AY7VRJfstKEKB56ceO1eyLXsRGT3Jzej4jFNQvJoVibKwYRFMChgEoB9r3wgfzAIODhl5CwGpxZ0KXMnFGJyCWm4NWTwM1aFu0mgSFz3pKSod78mq5kt9xWdvp3vuBvOrTSAmMB1dPIvtrlHHK32-aQ1UhnlCyEMiyow4U4KPKuFFt6qXOdb577uH5CnTkqPU8ORjEec0mnh9EdQcCDY4nRFzPwscyu8lvaAqySXIs6tKGiVGB4GiJQqQmZ9iUfjIS846_9_1jjvDR8qGPA4D8LQlEqowy9VQSHT8ePhT09qIHsh1NJKFcfR44q7eqaoWOMXmgzyFtUJNw_cbYsUTgr2j05o1iudOhvzT71cokcV4mz-02Lmzm0zmz1GnEnSUqnGdri24w0rKItEWn_4oRmaGADHd4G42C2Ml03GdaULl9HDg4h7JZXX1gxN0JY_9D_06gxnDdtiAs37nK6b2QJOQ_eAGrw6CH0rItupcLC1BhEV1ml2EG74W4H4I1PcGAchR5fVmq9gt-ablP4jURf4w7vdQmn0Yk8TlhG_5yxHoo3UI5WYICkNH_66QgAhc1HMzMHkpWXGPS7LVYNm24uzN1BfOL9n78iQOgwUeyaLTPvj4qDGyeIKT_HfTF4cZrQXkDndKneIQNBi_5-YN-_VklDMg_YO03ImXUKgNOFZKsyvZUduiRPI2T4DdmvF0zKPzmoszKy2UvRZdjjOh8tkucHhJTXLLa_-TZh3hQGuPPi-AywRJ1_5oKkteVfae0VFRxXJB_h4tL7UrWJcNHwQKANtiWeFNstoYVA_YepZCiEXyYp6H7Lp8Y_-rnx_Kzqm7dj_NKa3KdMngg37jTvEfLWzRKd-845EA3-zn7jORScJJpuDM_DOVb8EqE-lziIWtGhj7Ebiai98NS9VDmRh9yND9utSnxcdjl1KIwe9IaAqd75ALqNPFQ== )

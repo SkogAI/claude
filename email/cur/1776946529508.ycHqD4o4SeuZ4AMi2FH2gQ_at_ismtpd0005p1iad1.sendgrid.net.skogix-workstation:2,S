@@ -1,0 +1,49 @@
+MIME-Version: 1.0
+From: Todoist <news@todoist.com>
+To: emil.skogsund@gmail.com
+Date: Fri, 20 Jan 2017 10:41:24 -0000
+Subject: Your 2016 Personal Productivity Report
+Message-ID: <ycHqD4o4SeuZ4AMi2FH2gQ@ismtpd0005p1iad1.sendgrid.net>
+Content-Type: multipart/alternative; boundary="===============6752113355327977377=="
+
+[ ](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2FeygOdHKjLmxIwy1tAq4Uylm6oDpQeyszoyvaGR4qvp3L-2FWisNGzjNe1JOE5ImBCfPZ8nn8fP3Ybf21LmFSi7C1C3gnVmHqMkfKUUTcG4biopH_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnMZDDTQrDPdYNVCnF5ijlGZHO4RlwuQwc4jezJFEG3HbMdnVYcStWAj8NJ8TNOcB7OlhQisEPNi1ASD0LPteBEc-2Ft9LfEn4ToGUo20Me464Haq03TJ6-2BLTihPNeG4rEjhdG1bgQYMuIFklzhcMrKub80spwXs3EL9m75KrEQmYcYyWtaOUOfyxYKhSEBzOqWlA-3D-3D
+edium=email&utm_campaign=newsletter_2017_01_year_in_review)
+
+[Display it in your browser.](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2Feyl1geysmdPPGjoZcShv7te-2FHQPzLr5FMViuNzDMc-2BwHQs39Qn0gcUmX9YwdPup10XA-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnDL2qJOKllL7R9TklVh-2FOSneOmz8f1qej1YyOEVeeKPfpbGP1M5WEfvNMCn5DbYD7frvF8vUbsmijORyokSOolnK2rbjGUEddrKQosu0pIWIHB1-2FiTGtt998knMGmstSy-2FwDaU-2F0PYEV8i6t5HL5cu-2FAGG0yoC0WsLirre6D2ubSFi9XE0SZk5eh1v034zDcmw-3D-3D
+dab6b16112cc4ce09ead71.html)
+
+[ ](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2Feyn-2FBcCmAwbHdcERfndkXnWXkhteTaKqJpxpTYh-2F-2BAmv5OPs4HvIlnsAGnoYz8l9bHckDChueLN-2BBSWWfdTMoOi4-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnG3YbKQvxGfStohHjhGI2x3W1fv6lndxXa0HNqa3x-2FO-2FIVo9wR3jZg5fJmMFl0w5-2FyyCoLot54xnaBgTgv18Srn0nXYYhK00Gv6kg1-2B9JNvZRJP5XaYheXO-2Bc4NSMsswsXMtw7oBAD0ME4FDPCzVpo4MNSt0TkdUsgyfzMYfqYnCv0S6v0qw3qR8vTPfzY5LMA-3D-3D
+
+Your Year with Todoist
+
+To celebrate everything you accomplished last year, we put together your 2016
+Year in Review. See how much you achieved, when you were most productive, and
+how you stacked up against the rest of the Todoist community:
+
+[Get Your Productivity Report](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2Feyn-2FBcCmAwbHdcERfndkXnWXkhteTaKqJpxpTYh-2F-2BAmv5YkUgflJEFdlAoK5H3JjrjA-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnPrPUjC1znoyitQp12i9Hpq92UXP5vtF-2FjiOWbI40k1h8MiVim8Qi8-2Fv-2F8XdAqVO8w8VyzbTjIh85Ubn8DcLr3ybsvj6X2BFnFN1Q4elRa9-2BVeY5qIrHwJbwRu6RSegNQmoO9v-2BcBpM8L00a2hZ5dbtsxeNnOapgMqzrwMJPcN0QXU32g50ATeaUFS7ZI4P6bw-3D-3D
+year-in-review-2016/)
+
+Thanks for trusting us to help you stay organized and on top of it all last
+year. We can't wait to see what you'll accomplish in 2017!
+
+Our Best,  
+The Todoist Team
+
+[ ](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2FeytjY6GfNGHDEQVykiaJJlRtkqLoIK-2BcSNm6fuTdvYeDU_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnK6alDaRK53-2Bf9juXpDX2JkhV7YzYWlg6pUDQ1GXyjQEJRMgLKJ0ymUNR8EMF5HPp-2BCNKs1p-2FqBPDFMnZO-2BFz4vaQw4Vxlxhf-2FgLeHKOyFolCINYMBV5Gt8A2pxP40-2FglFN11qa-2FTyd3do5KyceNbYHQjGz-2FIqVIGr7Pc4M1FuqHuHGB227Y-2FkhTHmssRykoJg-3D-3D
+
+[ ](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2FeyhSFrM-2F3ksU0a9eH9oJM-2BgZyeBwyRpr4hfOE3cLwFxKD_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnJ0FXUa6Gp0WLSE6Zus0LVAlXooNhvKyUzu9vZIIeA3etn1gcJD1JOLkLRjE-2BemdQ-2FtWOu3QDiwDzBuC8tqO5oNI614boS-2Fi2nDd6hy-2BDBjKmvTWFD1BgjQYEvLtHx-2BpQQ9i68B-2FfGQ-2B7GzmAWdIOo4MiRbe46JxTHduD6m-2BkfSkiHK5Mx5Dqj1kolbv0BBMww-3D-3D
+
+[ ](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2FeyjQAyp-2FgAoRKIU3ZDuI6Gv-2F9MsRKOOtzHdrZmr18GoDq_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnN7-2BImucgVOy2IO2H2VK4yGHzp3XFokHW90bgNCgCn59-2FOLUTeOAUWPi5DE5SmmHEsc3JDQNoUiLrwbtqaX9hTZS8azIAXo6Xo5O5KNQUJvAK4mY2kJ7jhM5gQAPfkfVks6gRJbuUXQpsW-2FglxX9BsK8mQqEHg5NXTeqMft7x-2FpnxRiN0Ij2srJzsMetmjJgMw-3D-3D
+
+[ ](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2FeyqVmxqFPWcsooXVJujBbfjLPJCKW6Rw1l0jXn01yu-2BEY_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnDBS1QNQ27un-2BVmLmm-2FnI5ZW9qWSjZGq614MQME8981lHcK9-2FhkKiSKjOmI-2F1zcabSBPwOezoo5FC008szsnM04cowsKwujA5kA3nHTHSEMj-2FpypLqdmDu0Q79DAZnHT1d6ahIeDnwPtab-2B1ZnJsxkcs1LaeB8dC7SlxubukUyZwqaaBJLfzBaynZcM2zAtxHA-3D-3D
+
+
+
+Om du inte längre önskar få mail från Todoist[klicka här för att avsluta prenu
+meration](http://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2Feyl-2Fz1bZwLd0vhLWBY4biHUG-2F3-2Byg4ja5PW1JLP9cC6OEzYPnFa2Tx9b2KVPvu4rkhyhM3On3VnYr0pm9X8GOB-2Bs-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIJeKOv6bXiVOTOYOyA9u2HH-2F2wzym-2FXK8VwbgcgYFlnIxKmDgLB1x7I9MmQ5iJl2jkwAuYueNUcXXL-2FKEgoFKc6MD-2FbZ1UuDlixPjSmUZOzUe1WHtN32AdzehS0YrJfHSeB-2BAIwZaqqng8SE0-2BSEsnQX9RCropi4lHiHoX-2FGE4v0aBThoQ6VjkX6-2BiwXkWOQS650xL35TsG-2FvYCOhehkQcvGnikkQPI-2FvCT6elX8UZhA-3D-3D
+token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODU1MTM2ODQsImp0aSI6InV
+jZE9vWGVMIiwidWlkIjo2ODE4NDY0LCJjc3JmIjoxfQ.7II8S1xkMcgBMD-rZF5vAmaN_GZkaKssdL
+LaFtlG_Tw#utm_source=unsubscribe&utm_medium=email&utm_campaign=newsletter).
+
+
+

@@ -23,20 +23,78 @@
       "Bash(skogcli *)",
       "Skill(skogai-routing:*)",
       "Skill(skogai-bats-testing:*)",
-      "Bash(wt *)"
+      "Bash(wt *)",
+      "Bash(rtk ls *)",
+      "Bash(rtk git *)",
+      "Bash(rtk read *)",
+      "Skill(codex:rescue)",
+      "Skill(codex:rescue:*)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(rtk find *)",
+      "Bash(rtk curl *)"
     ],
     "defaultMode": "default"
   },
   "model": "sonnet",
-  "enableAllProjectMcpServers": true,
+  "enableAllProjectMcpServers": false,
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/protect-files.py"
+          },
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/security-check.py"
+          },
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-commit-check.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v atuin >/dev/null 2>&1 && atuin hook claude-code || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".skogai/hooks/rtk-rewrite.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PROJECT_DIR}/.claude/hooks/log-commands.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PROJECT_DIR}/.claude/hooks/branch-protection.sh"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Write|Edit",
         "hooks": [
           {
             "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/claude-todo/bin/claude-md-linecheck",
+            "command": "bash ${CLAUDE_PROJECT_DIR}/.skogai/tools/claude-md-linecheck",
             "timeout": 10
           },
           {
@@ -48,6 +106,14 @@
             "type": "command",
             "command": "f=$(jq -r '.tool_input.file_path // empty'); [ -z \"$f\" ] && exit 0; [[ \"$f\" == *.sh || \"$f\" == */bin/* ]] || exit 0; command -v shellcheck >/dev/null 2>&1 || exit 0; shellcheck \"$f\" || true",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/format-on-edit.py"
+          },
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/typescript-check.py"
           }
         ]
       },
@@ -72,33 +138,58 @@
         ]
       }
     ],
-    "PreToolUse": [
+    "Notification": [
       {
-        "matcher": "Bash",
+        "matcher": ".*",
         "hooks": [
           {
             "type": "command",
-            "command": "command -v atuin >/dev/null 2>&1 && atuin hook claude-code || true"
-          }
-        ]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": ".skogai/hooks/rtk-rewrite.sh"
+            "command": "bash ${CLAUDE_PROJECT_DIR}/.claude/hooks/notify-input.sh"
           }
         ]
       }
     ],
     "Stop": [
       {
+        "matcher": ".*",
         "hooks": [
           {
             "type": "command",
-            "command": "out=$(\"$CLAUDE_PROJECT_DIR\"/claude-todo/bin/healthcheck 2>&1); code=$?; if [ \"$code\" -ne 0 ]; then jq -nc --arg m \"$out\" '{\"systemMessage\":\"\u26a0 healthcheck failed\\n\\($m)\"}'; fi",
-            "timeout": 30
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/verify-on-complete.py"
+          },
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/suggest-doc-updates.py"
+          },
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PROJECT_DIR}/.claude/hooks/notify-complete.sh"
+          },
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/track-metrics.py"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/validate-environment.py"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/validate-prompt.py"
           }
         ]
       }
@@ -112,9 +203,10 @@
   "enabledPlugins": {
     "core@skogai-marketplace": false,
     "dreamers@skogai-marketplace": false,
-    "frontend-design@claude-plugins-official": false,
+    "frontend-design@claude-plugins-official": true,
     "worktrunk@worktrunk": true,
-    "codex@openai-codex": true
+    "codex@openai-codex": true,
+    "skogai-starter@skogai-marketplace": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -141,6 +233,7 @@
   "alwaysThinkingEnabled": true,
   "advisorModel": "opus",
   "autoMemoryEnabled": true,
+  "autoMemoryDirectory": "~/claude/.skogai/memory",
   "autoDreamEnabled": true,
   "showThinkingSummaries": true,
   "skipDangerousModePermissionPrompt": true,

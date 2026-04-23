@@ -1,0 +1,34 @@
+MIME-Version: 1.0
+From: Daniel på uScore <support@uscore.se>
+To: Emil Skogsund <emil.skogsund@gmail.com>
+Date: Sun, 08 Feb 2026 10:57:19 +0000
+Subject: Detta valde flest i uScore 2025
+Message-ID: <reU3otwfRlmZl9dzTUYGDg@geopod-ismtpd-17>
+Content-Type: multipart/alternative; boundary="bc3cc5fc43c3b168c399f3135c6e5a600231126a627223982bca26a91325"
+
+Hej Emil!
+
+Varje vecka använder tusentals medlemmar uScore för att ta smartare ekonomiska beslut. Här är produkterna som *flest faktiskt valde under 2025* – baserat på verklig användning i tjänsten.
+
+*Mest populära i uScore 2025:*
+
+* Samlingslån: ** Axo finans ( https://ortto-tracking.uscore.se/r?t=absee7z7zbpqy55phmcta2minqh55jyjkqnh27anagnbvplu3erlydnexz5ezmxxzmnrojfsmr5ypwbt3fl63ibxr42ffk3lgaxdtbzyjsaadc65ncpvks34qvl3jc72i35vgpn3ndi4wq56padq5cnapzuv3mgsvqhnik2mfjv6dqsazcjwjcukjyh35whlag4euw6q6c5p6wdne7ozs4vxqxnsez5ptlumro32lvak2roun753v7zvzdt3jcpdr2relpgqutcpkpydspgdug4q5emc3ccyyrtg6lnai2rvzoilrq25om4yp7v3uzwwknvpf3et7z742kgnq7ztqwql4537au3tpa4sn27bn3neqd7iosoxk5tzoo5anj6dwrxl7i3yodbja )
+* Bolån: Danske Bank ( https://ortto-tracking.uscore.se/r?t=absee7z7zbpqy55phmcta2minqh55jyjkqnh27anaknbvplu3erlydnexz5ezmxxzmnrojfsmr5ypwbt3fl63ibxr42ffk3lgaxdtbzyjsaadc65ncpvks34qvl3jc72i35vgpn3ndi4wq56padq5cnapzuv3mgsvqhnik2mfjv6dqsazcjwjcukjyh35whlag4euw6q6c5oautzhlkjs65rzgdagzxpucr4tm3biajp2r4of352p4zur6vlxu4jugawnh74xx2pmjbms3hswhfd7amb3hc7zb3gs2fbihuhnoiduewi6d5zdxejsswpmnu6tq4w7vxmug64q7bsyxih65y3ka3uejjr5sgcjx3fcp7ln6zha5lioserpj7tubu3hm36 )
+* Kreditkort: re:member ( https://ortto-tracking.uscore.se/r?t=absee7z7zbpqy55phmcta2minqh55jyjkqnh27anaonbvplu3erlydnexz5ezmxxzmnrojfsmr5ypwbt3fl63ibxr42ffk3lgaxdtbzyjsaadc65ncpvks34qvl3jc72i35vgpn3ndi4wq56padq5cnapzuv3mgsvqhnik2mfjv6dqsazcjwjcukjyh35whlag4euw6q6c5o4t3oflniymnxrxdscz5ptlumro32lvak2roun753v7zvzdt3jcpdr2relpgqutcpkpydspgdug4q5emc3ccyyrtg6lnai2rvzoilrq25om4yp7v3uzwwknvpf3et7z742kgnq7ztqwql4537au3tpa4sn27bn3neqd7iosoxk5tzoo5anj6dwrxl7i3yodbja )
+* Privatlån: Zmarta ( https://ortto-tracking.uscore.se/r?t=absee7z7zbpqy55phmcta2minqh55jyjkqnh27anasnbvplu3erlydnexz5ezmxxzmnrojfsmr5ypwbt3fl63ibxr42ffk3lgaxdtbzyjsaadc65ncpvks34qvl3jc72i35vgpn3ndi4wq56padq5cnapzuv3mgsvqhnik2mfjv6dqsazcjwjcukjyh35whlag4euw6q6c5o4utfhxdjk6ngyhmsui7s7h773y3gknn2wxugesyof5zeztr3trvlzp5grdgbqx2owjbps76duamm7udbhctv3nyhkkvbk3yvv2ytu4wo2nmqgdemw57xmn2otqexzz75ongzthgtu5yu6fw7outdfjxhjm63l3fwsp7wn6yxcrtzngtbfop5wzb2bnlco7bybelx )
+
+*Vad betyder det för dig?*
+
+Valen speglar hur personer med olika ekonomi och kreditprofil agerar i praktiken - och kan ge dig en bra utgångspunkt när du jämför dina egna möjligheter.
+
+Logga in och jämför själv ( https://ortto-tracking.uscore.se/r?t=absee7z7zbpqy55phmcta2minqh55jyjkqnh27anawnbvplu3erlydnexz5ezmxxzmnrojfsmr5ypwbt3fl63ibxr42ffk3lgaxdtbzyjsaadc65ncpvks34qvl3jc72i35vgpn3ndi4wq56padq5cnapzuv3mgsvqhnik2mfjv6dqsazcjwjcukjyh35whla2yucw4hwdj2sttxehayy2f3zkisqpxzwgw5fkztbnl2kzf6ct52t2jm637lpx5sqg7xtl77xpcoepr7s7igyg4i4u2qnhkyyy7viaulldvfvojzumxmenezepl2ssojkn67huex4iuzymgqxpqboril6b3myv3pfzud55w5px2vod77owqxc2q )
+
+Copyright © 2026 Defero AS, All rights reserved.
+Adress: Norra Stationsgatan 69, 113 64 Stockholm
+
+*Har du frågor? Hör av dig till oss på:*
+support@uscore.se
+
+Vill du inte ha fler mejl från oss?
+
+Avregistrera dig från våra mejlutskick ( https://ortto-tracking.uscore.se/-/m/s/unsubscribe?k=DW1pbmtyZWRpdGtvbGwAZEJ_P8hfDHevOwUwaYhsD96nCVQafXw8wE52aJsttdbE7etLEUEC&rg=eu )

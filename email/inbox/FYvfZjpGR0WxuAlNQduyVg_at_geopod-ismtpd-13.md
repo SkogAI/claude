@@ -1,0 +1,31 @@
+MIME-Version: 1.0
+From: Boots <boots@boot.dev>
+To: Skogix <emil.skogsund@gmail.com>
+Date: Mon, 01 Sep 2025 14:01:18 +0000
+Subject: Our labor day sale is almost over!
+Message-ID: <FYvfZjpGR0WxuAlNQduyVg@geopod-ismtpd-13>
+Content-Type: multipart/alternative; boundary="f425b27bbbad1eb51a8ac0b0b82aad2652903d41ec21afb629320ceeee79"
+
+It's time to get in before prices go up
+
+Just who I was looking for, Skogix!
+
+This is a friendly reminder that the training grounds are live, and we will be *raising our prices* next week! ( this challenge generation stuff ain't cheap... )
+
+Luckily, our *labor day sale* (which happens to coincide with the launch of the training grounds) IS STILL ACTIVE. So, if you want to lock in our legacy (lower) pricing and snag a massive discount, use this code for *40% off your next year* of Boot.dev:
+
+Use code GROUNDBREAKERS at checkout
+Deal expires in 2 days
+
+Lock in your 40% Discount ( https://www.boot.dev/pricing?promo=GROUNDBREAKERS&utm_campaign=website&utm_medium=email&utm_source=sendgrid.com )
+
+We never raise our prices on existing students - so get in now to be grandfathered onto our current pricing for as long as your membership remains active.
+
+Magnanimously,
+Boots
+
+Boots
+
+3520 N UNIVERSITY AVE , Provo ,  84604
+
+Unsubscribe ( https://u24871717.ct.sendgrid.net/asm/unsubscribe/?user_id=24871717&data=TNXO_6VRFQFSYkHbCYignVZDSarm_S_7nrsO5GEVGOdoMDAwdTAwMJDKEeZWpl54vtaLhEosmUFDe1oQwEphPjeoIy_YyMLCWxfA1uMMgd2bCf-s9Php86C7m6nFI7z9FMWddxiRau2esvQmMh8fU60FXHuopjbKoYPgJqdNzLbGqbtSIIzYD9m8udmr9cJwHz1T4Ya6-2rc-oFaatTacXDMHuMa_k1QD9t_rQD4iieGnLkRjwDak-vwRVTfgy-wWnylx31KImg6cM7d0uq7Ix1JLvWLsxA8sI_NM7eEMyk9vYek-pvCIAkcJmkP59RNP-4ddx6Knji8LeWt4mx0eTaisZVfT3Ae44J9BajJoOWswxO1L5Xg2w9sFiLIY2SoLVRVduc-t_LfGnvdpjWxb0ZqvRx1_UcG1aKiLMentBguhZO56ggID2B2WBHEJ0sSORa_aRTYUVLdO-710MPZbgK5a7r8Lrvb1fjpbNBoXc8PUD_RVRoH5Rc5BbUlZjnrT0rsZHjvNHbBn5Cmol367_N8zkV_GwwK6wgfrczAq23BAmEXNiRP0U3PSRQjszh2LU9tcqhdhkuwbrOS5pXbUKd0uYRFsglEnFuiekNVOB36xfs6IvH3M3zjcn6zTN1z_Ldu22gIoKH3GxNToVc0uyjrDIgoMD0s1TRCk8myEx2ri05uIjsOZtUOkfV8NZSiCjo3asxXWWHtkk28g-LkrAjRoqPTtrCoLMZ7TAA-qCRdYheIA58Sg_gK5UrS69P-xeOj-MtxUNYhgippkqB365ArwZkOxZPKkPA3Jux_GY34PclmKYjVuvk8klSiNLII2-AfK0UcVAOFfK53sqxGAFuxsGsuIZ7WkgMjrvd3VjmR8Sjb7XJwUCK0yc3zCABjyF2rn8elfVxwmXdMqcN8Vq6eFLxwnCiWRsBkemKe3UmPZcJfDrYeXvW1nzgKxeUi_0E_mDw5PtBiGgznH_JWZbIOL9rsgE9kU9PFpewKnyYX8BwT1pTnfQOjZy2utq9p1ehf-XpLO5SURCe0Dc8ShS0MZgyzFeo4cZMHEo8o_Jx6i_-g2wJm10KUDQsuYPi9ui1iB0p6Ql9kT0BRn8QryGY_FfzGTCA9vhBNvDgqqlis5jPOYmTJOTqx-zy9T-0wXfZtJ9VUjQtHlccUkTjiRe0NOQCnjGir ) - Unsubscribe Preferences ( https://u24871717.ct.sendgrid.net/asm/?user_id=24871717&data=YKYd5MnDBeNQVN0o2TlN6KmaC8mufTt3Ss12UgiZLFZoMDAwdTAwMBubCRAG7LYu3TsAl6e7FUhg6Zv0p5kHVEbibD5YXytFHUvS43Ezvit8a5HceN9084UXqyJ0jfzt31YnwttX33UgV0oa8M9gYYZL7ei5mRT9FkapRBESuO1Bw-wIvL3VjUM-GEPweuXrEOUPuHq8JUtgfTNB8GYdMm12YgxRAOqsv-Og4KbOmXlGQ_-EgOx2q22sxMVpN0_EDWPFcCMwCml-QI4VxcnUcPQq4GujFKkEawz7R6VdUJWKpig8OfwZw1YrCLqCk-myCmjSBpurh7CS5jX7GSUrJyeixyoICmxUxFPLoNaDf_1vsIF5MOorwpEC6P1DLAuJLydxJrC3Yg8F06z_RXTYQsXkEny0LYwmzNoM9YT93qhkZAurqzFRnyUuQa8rZGanUAYdHaXqUQyDgtZdIudlcYlJV1vwNefZ5NW1sahGckJrB1UUsxtFv0yuZ1XW-CJVVlzysUlxS1zKEUYfS-GuklkuSie2PIcB0lLzeOHXXsqgQ2XW3wWgyWCJ-sWx1A_PmwXBN-z7B_OWP6_t3n-7vDsuGofLBXUn-UoZc5xKkP2cj0Ta_xos2tHe7BTmIYdV59MpiH_MpxlBBldGWd-GaFKwmlGgQWzkx2rDqU_iJ-Zz4ZV8wLH9n-IZlFp_Te-0jVNx75Of2Uc-XTIXiC_4990gzw264OYH-m9KGJlIOvKjpap7aROs6gheSKKNzphTNUPWvckzGeoO2YlG9m4nIxuhVRvycrMz-8xx6Cbr_8Ur5f6JWuhOsj3xqTKQWOdyGvCovR3iKhzZRZoxXuoSceF1hQVUU0r0fBj9G5EgwOeKIgnoQ17VkAGBX2d1Lc2MSszyGMVkWEKbY6RlX4zDV7BRxT_wji0mg5ejSgeEnH6iLUDwjLYNhqp0bQsC9ZEO2G32gXXL5Cc4UBioxQJhzoMf_dh9gOV4HnLBakAYac3UXzKmfArsHJg5k_p3kMKqVZon7_uev-Yv_ssPwLxVbDxVPQfTUr130A6Op27iK_vXu5mlBSZSrJYplsD9iOzTV0yWz5MPHkvUavdZx_ZIctdqxyQveTgqvJf46YznYP99UigpDN0-epN6z0LvLIoOKCpFz0LyQo8= )

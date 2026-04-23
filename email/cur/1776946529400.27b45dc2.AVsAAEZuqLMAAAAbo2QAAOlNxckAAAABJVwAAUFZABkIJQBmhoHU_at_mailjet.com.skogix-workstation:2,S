@@ -1,0 +1,96 @@
+MIME-Version: 1.0
+From: Max from ZITADEL <mpa@zitadel.com>
+To: emil.skogsund@gmail.com
+Date: Thu, 04 Jul 2024 11:04:52 +0000
+Subject: ZITADEL Update June 2024 - Password expiry, Test Mails, and ISO27001
+Message-ID: <27b45dc2.AVsAAEZuqLMAAAAbo2QAAOlNxckAAAABJVwAAUFZABkIJQBmhoHU@mailjet.com>
+Content-Type: multipart/alternative; boundary="=-4mmP89bx5sE5OLirtGvr"
+
+ZITADEL Product Update - June 2024
+
+View online version http://0wkkr.mjt.lu/nl3/nrCSKVn2WZw_oZMj-rnYBg?m=AVsAAEZuqLMAAAAbo2QAAOlNxckAAAABJVwAAUFZABkIJQBmhoHUCnniamzzSKyTAGICwPeiRgAYXxc&b=27b45dc2&e=10620959&x=xcSoY2dt1FF07ggVCD2msupDyEQ4qQdSHKW_8QbPtUQ
+
+
+
+<<ZITADEL - Identity infrastructure, simplified for you>> [https://zitadel.com]
+
+
+
+June 2024 - Password expiry, Test Mails, and ISO27001
+Hi Emil
+
+This is Max from ZITADEL. In this newsletter, I want to share updates about our platform, and provide some tips on how you can simplify your identity infrastructure.
+
+
+
+Feature highlights
+In June, we shipped over 60 bug fixes, improvements, and new features. Most of those changes were released with ZITADEL v2.55.0 [https://github.com/zitadel/zitadel/releases/tag/v2.55.0], so make sure you are running the latest version.
+New password expiry feature
+
+ZITADEL has introduced a new password age policy feature, enabling organizations to require users to change their passwords regularly. This feature can be easily managed through the Console UI at both instance and organization levels. Users will be prompted to change their password in the Login UI if their current password exceeds the defined age limit. This enhancement strengthens ZITADEL's password management capabilities and provides organizations with greater control over their password lifecycle.
+<<ZITADEL Console UI password expiry settings>> [http://0wkkr.mjt.lu/img2/0wkkr/6070c26e-2dbf-4ce7-a80b-95e0595e542c/content]
+Limit requested roles with new scope
+
+A new scope was introduced to address the issue of excessive roles being returned in tokens (and as such increasing their size) for users belonging to multiple organizations. This new scope allows administrators and applications to specify which organizations' roles should be included in the token, thus streamlining access control for specific use cases. By using the new scope, either once or multiple times, only the roles of the specified organizations will be included in the token.  It's important to note that this feature is not compatible with legacy mode for Introspection or Userinfo endpoints.
+<<Reserved Scopes>> [https://zitadel.com/docs/apis/openidoauth/scopes#reserved-scopes]
+
+More performance improvements
+
+ZITADEL's performance continues to improve as the team works to identify and eliminate bottlenecks. Notably, import operations for large quantities of project grants will witness a substantial enhancement. Furthermore, a significant improvement has been made to OpenID Connect / OAuth 2.0 session checks, effectively addressing recent observations identified during load testing.
+Sending test emails
+
+The newly introduced feature has enhanced ZITADEL’s SMTP functionality by introducing a new testing step within the SMTP provider wizard. This allows administrators to verify their SMTP configuration before saving or updating it, preventing potential issues with email delivery. Additionally, the existing table of SMTP providers now includes a test option for existing configurations. This streamlined testing process ensures that email settings are correct from the outset, saving time and effort. This feature was contributed by the community - thank you for your efforts!
+<<ZITADEL Console UI sending test email during configuration of SMTP>> [http://0wkkr.mjt.lu/img2/0wkkr/72566f31-d3d1-42c2-9d71-391a084b3142/content]
+<<Changelog>> [https://zitadel.com/changelog]
+
+ZITADEL achieves ISO 27001 certification, reinforcing commitment to security
+
+
+
+[http://0wkkr.mjt.lu/img2/0wkkr/6c879f4f-bef0-4282-89a2-b0c6aa1e3b62/content]
+
+In a significant milestone for ZITADEL's commitment to security and data protection, we have achieved ISO 27001 certification for our information security management system (ISMS). This internationally recognized standard validates our dedication to maintaining the highest levels of security for our customers' data. 
+
+To provide further transparency and information about our security practices, we have also updated our Trust Center [https://trust.zitadel.com]. This resource offers comprehensive details on our security posture, policies, and certifications.
+
+
+
+<<Blog: ZITADEL Achieves ISO 27001 Certification>> [https://zitadel.com/blog/zitadel-iso-27001-certified]
+
+
+
+
+21 more reasons to celebrate: Community contributions in June
+ * Many Console UI improvements were contributed by doncicuto [https://github.com/doncicuto] improving the user experience for administrators and users. Moreover doncicuto [https://github.com/doncicuto] made it possible to send test mails for SMTP configurations and further improvements to mail providers.
+ * JesperWe [https://github.com/JesperWe] made it possible for Swedish speakers to use their beautiful native language
+ * Schettn [https://github.com/schettn] created a guide to integrate with the Pylon [https://github.com/getcronit/pylon] framework
+
+Many thanks to the contributors this month for their efforts, helping to improve documentation, tests, and fixing bugs in our code: dkaminer [https://github.com/dkaminer], panapol-p [https://github.com/panapol-p], jvanderneutstulen [https://github.com/jvanderneutstulen], danielmoisa [https://github.com/danielmoisa], Loddan [https://github.com/Loddan], Yxnt [https://github.com/Yxnt], Cubox [https://github.com/Cubox], danielloader [https://github.com/danielloader], jfschubert [https://github.com/jfschubert]
+
+Thinking of contributing? Grab a ‘good first issue’ or start a discussion. 
+<<Contributing guide>> [https://github.com/zitadel/zitadel/blob/main/CONTRIBUTING.md]
+
+
+
+
+Additional resources
+ * ZITADEL Bi-Weekly Office Hours [https://github.com/zitadel/zitadel/blob/main/MEETING_SCHEDULE.md]
+ * Forza Italia: Retreat the third edition in Bologna [https://zitadel.com/blog/team-retreat-bologna]
+ * First time contribution (Japanese only): OSS コントリビュートの実績を解除した [https://zenn.dev/otakakot/articles/dc58ff849e43e4]
+ * Integrate .NET (Polish only):  Integracja Aplikacji .NET z Zitadel | bd90 [https://bd90.pl/integracja-aplikacji-net-z-zitadel/]
+
+
+
+Thanks for reading,
+
+Max 
+ 
+
+PS: Any thoughts on how we can improve our Newsletter? Please let me know.
+
+
+
+[]
+This e-mail has been sent to emil.skogsund@gmail.com, click here http://0wkkr.mjt.lu/unsub2?hl=en&m=AVsAAEZuqLMAAAAbo2QAAOlNxckAAAABJVwAAUFZABkIJQBmhoHUCnniamzzSKyTAGICwPeiRgAYXxc&b=27b45dc2&e=10620959&x=xcSoY2dt1FF07ggVCD2msupDyEQ4qQdSHKW_8QbPtUQ to unsubscribe.
+ZITADEL by 
+CAOS AG, Lerchenfeldstrasse 3, 9014 St. Gallen, Switzerland

@@ -1,0 +1,9 @@
+MIME-Version: 1.0
+From: info@netwic.com
+To: Emil.Skogsund@gmail.com
+Date: Fri, 11 Jun 2021 08:17:06 +0000
+Subject: Stämmer er tillgänglighet i Netwic?
+Message-ID: <U85fvjUwR9qojY3Px5QYXg@geopod-ismtpd-6-1>
+Content-Type: text/html; charset="us-ascii"
+
+Hej igen allesammans,<br /><br />M&aring;nga mail nu fr&aring;n oss p&aring; HR. :)<br /><br />Vi &auml;r s&aring; glada att det snart drar ig&aring;ng och att vi kan v&auml;lkomna er tillbaka ombord f&ouml;r jobb. Vi kan se att m&aring;nga gjort sig tillg&auml;ngliga vilket s&aring;klart &auml;r fantastiskt!&nbsp;<br /><strong>Dock vill vi p&aring;minna om att ni g&aring;r in och dubbelkollar att ni verkligen kan jobba de perioderna ni gjort er tillg&auml;ngliga.</strong>&nbsp;<br /><br />Samma regler som f&ouml;rut g&auml;ller, ni skall endast vara tillg&auml;ngliga d&aring; ni kan jobba och vi f&ouml;rv&auml;ntar oss att vid bokning f&ouml;r ett arbetspass att ni kan jobba p&aring; &ouml;verenskommen tid. Back to basic helt enkelt.<br />Vi f&ouml;rst&aring;r att ni kanske inte aktivt anv&auml;nt Netwic senaste &aring;ret och vill d&auml;rf&ouml;r uppmuntra er att l&auml;sa manualerna f&ouml;r Netwic och v&aring;ra f&ouml;rh&aring;llningsregler vilka ligger under fliken &quot;Nyheter&quot; i Netwic (lite ny design i Netwic men i det stora hela det samma).&nbsp;<br />F&ouml;r&ouml;vrigt &auml;r fliken &quot;Nyheter&quot; bra att kontinuerligt l&auml;sa f&ouml;r det &auml;r d&auml;r vi l&auml;gger upp aktuell/praktisk information.<br /><br />Ni &auml;r ju &auml;ven sj&auml;lvklart v&auml;lkomna att maila oss p&aring; HRsea.swe@tallinksilja.com om ni har fr&aring;gor s&aring; besvarar vi dem s&aring; snabbt vi kan. :)<br /><br />Allt gott!<br /><br />Mvh<br />Mistu Degerlund, Tallink Silja<br />E-post: hrsea.swe@tallinksilja.com

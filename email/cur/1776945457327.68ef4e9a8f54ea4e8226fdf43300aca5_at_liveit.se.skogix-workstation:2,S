@@ -1,0 +1,47 @@
+MIME-Version: 1.0
+From: Live it <kontakt@liveit.se>
+To: Emil Skogsund <emil.skogsund@gmail.com>
+Date: Fri, 06 Apr 2018 08:30:02 +0200
+Subject: Ditt värdebevis är på väg att gå ut
+Message-ID: <68ef4e9a8f54ea4e8226fdf43300aca5@liveit.se>
+Content-Type: multipart/mixed; boundary="------03000201804060830021"
+
+
+
+Hej Emil Skogsund,
+
+Du har väl inte glömt bort din Live Room Escape som väntar 
+på dig?
+
+
+Giltighetstiden går ut om en månad och vi rekommenderar att du 
+loggar in på Mitt live it och bokar ett datum. Visste du att du bara 
+behöver ha bokat ett datum innan giltighetstiden går ut? Om du 
+hittar ett datum som är efter att giltighetstiden gått ut 
+går det utmärkt att boka in dig redan nu. Om du redan är 
+inbokad direkt hos arrangören kan du bortse från den här 
+påminnelsen.
+
+
+Hinner du inte uppleva inom giltighetstiden, eller passar inte något 
+av de datum som finns, kan du alltid förlänga ditt 
+värdebevis. Logga in på Mitt live it för att se vilka 
+förlängningsalternativ som finns.
+
+
+Vi hoppas att du snart får uppleva med oss på Live it!
+
+
+Ha det fint.
+
+
+
+LIVE IT
+Box 17176, 104 62 Stockholm
+08-120 182 00
+kontakt@liveit.se
+http://www.liveit.se&nbsp;
+
+
+
+

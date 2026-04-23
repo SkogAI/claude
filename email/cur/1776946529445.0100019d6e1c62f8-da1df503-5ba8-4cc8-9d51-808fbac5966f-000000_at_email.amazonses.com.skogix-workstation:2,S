@@ -1,0 +1,173 @@
+MIME-Version: 1.0
+From: Marc Klingen <marc@updates.langfuse.com>
+To: emil.skogsund@gmail.com
+Date: Wed, 08 Apr 2026 17:20:47 +0000
+Subject: Product Update: Langfuse for Coding Agents - Agent Skill, CLI and more
+Message-ID: <0100019d6e1c62f8-da1df503-5ba8-4cc8-9d51-808fbac5966f-000000@email.amazonses.com>
+Content-Type: multipart/alternative; boundary="zbu0z6je3i"
+
+Hi Emil Skogsund,
+The past months we have been shipping a lot to make Langfuse much easier to use for your coding agents. This makes your life a lot
+easier, too. If you are not using Langfuse through your coding agent yet, we strongly recommend giving it a spin!
+ 
+Here are the highlights:
+ 
+
+
+Agent Skill
+
+
+
+ 
+The Langfuse Agent Skill [https://langfuse.com/docs/api-and-data-platform/features/agent-skill] helps coding agents to use
+Langfuse effectively. It follows the open Agent Skills [https://github.com/anthropics/skills] standard and works with Claude Code,
+Cursor, Codex, and others.
+ 
+Install it in one line: npx skills add langfuse/skills --skill "langfuse"
+Or just ask your coding agent to install it from github.com/langfuse/skills.
+ 
+Once installed, your agent can query traces, create datasets, update prompts, migrate hardcoded prompts to Langfuse Prompt
+Management, and set up observability, all without leaving your editor. Even if you are already successfully using Langfuse the
+Skill can help you improve your workflows and instrumentation.
+ 
+
+
+Langfuse CLI
+
+
+
+ 
+The skill uses the Langfuse CLI [https://langfuse.com/docs/api-and-data-platform/features/cli] under the hood. It wraps the entire
+Langfuse API, auto-generated from our OpenAPI spec so it's always in sync. Every endpoint becomes a CLI command: traces, prompts,
+datasets, scores, sessions, metrics, and more.
+ 
+Built for agents, but useful for humans too. Script your workflows, automate batch-scoring, or sync prompts across environments in
+CI/CD.
+ 
+→ npm [https://www.npmjs.com/package/langfuse-cli]
+ 
+
+
+Further Reading
+
+Here are some pointers for what to do with the Skill/CLI but we are curious to hear from you what you are doing with both! (simply
+reply)
+ 
+ * Getting started with all Langfuse features. Using the skill it is incredibly easy to get started using more of the Language
+   platform. Just ask your agent that you would like to test a certain feature and it can propose useful first use cases and will
+   start implementing them.
+
+ * Automatic prompt improvement. Annotate a few traces in Langfuse, then let an agent fetch your feedback, analyze patterns, and
+   propose prompt changes. A fast loop from rough to robust. → Read the guide
+   [https://langfuse.com/blog/2026-02-16-prompt-improvement-claude-skills]
+
+ 
+Also, we have learned a lot about building efficient Skills:
+ 
+ * Evaluating skill quality. We used Langfuse datasets, tracing, and the Claude Agent SDK to systematically test and improve the
+   skill itself. Small details matter: a single comment saying "optional" instead of "mandatory" caused consistent agent failures.
+   → Blog post [https://langfuse.com/blog/2026-02-26-evaluate-ai-agent-skills]
+
+ * Optimizing skills with Autoresearch. We ran Karpathy's autoresearch on our prompt migration skill. Score went from 0.35 to
+   0.82. Not all changes were keepers, but the process surfaced failure modes we'd never have found manually. → Blog post
+   [https://langfuse.com/blog/2026-03-24-optimizing-ai-skill-with-autoresearch]
+
+ 
+
+
+Fixes & Improvements
+
+ * Feat: Boolean Scores in LLM-as-a-Judge [https://langfuse.com/changelog/2026-04-08-boolean-llm-as-a-judge-scores]
+
+ * Feat: Categorical Scores in LLM-as-a-Judge [https://langfuse.com/changelog/2026-03-20-categorical-llm-as-a-judge-scores]
+
+ * Feat: Delete entire prompt folders [https://github.com/langfuse/langfuse/pull/11920]
+
+ * Feat: Add to dataset batch action from events table [https://github.com/langfuse/langfuse/pull/12144]
+
+ * Feat: Show evaluation prompt on hover in evals [https://github.com/langfuse/langfuse/pull/12208]
+
+ * Feat: Support Japanese characters in prompt variables [https://github.com/langfuse/langfuse/pull/11509]
+
+ * Feat: Position in trace filter [https://github.com/langfuse/langfuse/pull/12058]
+
+ * UI: Chart loading and failure hints [https://github.com/langfuse/langfuse/pull/12180]
+
+ * UI: Tooltip support for filter facets [https://github.com/langfuse/langfuse/pull/12168]
+
+ * UX: Prevent focus loss when typing unit name in price editor [https://github.com/langfuse/langfuse/pull/12344]
+
+ * UX: Mutual exclusion between temperature and top_p for Anthropic models [https://github.com/langfuse/langfuse/pull/12020]
+
+ * UX: Data shown in JSON beta viewer for sessions [https://github.com/langfuse/langfuse/pull/12343]
+
+ * API: Performance controls for GET /api/public/traces [https://github.com/langfuse/langfuse/pull/12062]
+
+ * API: Typed ObservationsV2Response data field [https://github.com/langfuse/langfuse/pull/12287]
+
+ * Fix: Usage/details summing now computes correctly [https://github.com/langfuse/langfuse/pull/12130]
+
+ * Integration: Kiro [https://langfuse.com/integrations/other/kiro] - AI-powered IDE by AWS
+
+ * and many more!
+
+ 
+
+
+Upcoming Events:
+
+Here are a few upcoming events / conferences where we can meet:
+ 
+ * AI Engineer Europe [https://www.ai.engineer/europe], London this week!
+
+ * AI Demo Night in SF [https://luma.com/jyzlu78v], tomorrow April 9th, 2026
+
+ * Co-hosting a Hackathon with OpenAI in Berlin [https://luma.com/m7263aao] - April 15th, 2026
+
+ * Google Cloud Next in Vegas [https://www.googlecloudevents.com/next-vegas] - April 22-24, 2026
+
+ * Clickhouse Openhouse in SF [https://clickhouse.com/openhouse/san-francisco] - May 26-28, 2026, registrations open
+
+ 
+Reach out if you are interested in meeting us!
+ 
+
+
+Contribute full-time
+
+Our team is growing in Europe and San Francisco (we now hire remote in EU!). If you're passionate about building open source AI
+dev tools, we'd love to hear from you.
+
+
+ * Product Designer [https://jobs.ashbyhq.com/langfuse/53b7f80f-1af7-48ec-830e-d55cd9d42164]
+
+ * Frontend Engineer [https://jobs.ashbyhq.com/langfuse/70495b02-82dd-4495-9e60-c5537a9602c8]
+
+ * Software Engineer (SDKs) [https://jobs.ashbyhq.com/langfuse/891eda0a-a9f6-45e6-8750-71874db8cc11]
+
+ * Product Engineer [https://jobs.ashbyhq.com/langfuse/a2c4e24c-21d1-4a9f-8d46-422d0592efd6]
+
+ * Product Engineer (Growth) [https://jobs.ashbyhq.com/langfuse/71a67633-5770-481b-9fb3-22e4f27cbca1]
+
+ * Backend Engineer [https://jobs.ashbyhq.com/langfuse/1225fa3d-d590-41d2-b798-ef927320fb2e]
+
+ * Forward Deployed Engineer [https://jobs.ashbyhq.com/langfuse/0cd84fa2-e4ce-4395-bee5-0489e86e89f5]
+
+ 
+→ See all open roles [https://jobs.ashbyhq.com/langfuse] ($5,000 for successful referrals!)
+ 
+Any feedback, questions, or ideas? Just hit reply; I read and respond to every message.
+ 
+Best,
+Marc
+ 
+ 
+—
+Co-founder & CEO, langfuse.com [https://langfuse.com]
+🐧 @marcklingen [https://x.com/marcklingen]
+⭐️ github.com/langfuse/langfuse [https://github.com/langfuse/langfuse/]
+🖼️ Receive Langfuse Stickers [https://langfuse.com/stickers]
+ 
+You are receiving this email because you opted-in to receive email from the list Product Updates from Langfuse
+Langfuse, Langfuse GmbH, Gethsemanestr 4, 10437 Berlin, Germany
+Unsubscribe [https://app.loops.so/unsubscribe/cmnqbdvce0d2q015qds3wh2ay/2bb32e9d55daa51914ed1b6b6c0db62c3d41b593ca6d4827461d72617488b50212fa174755bca9ef175e2cfc26eaeb931a9258044f6ea3276d278b08]

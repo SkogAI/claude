@@ -1,0 +1,64 @@
+MIME-Version: 1.0
+From: Todoist <news@todoist.com>
+To: emil.skogsund@gmail.com
+Date: Thu, 11 Jan 2018 18:07:39 +0000
+Subject: Your 2017 Todoist Year in Review 🚀
+Message-ID: <U9dCFSimQf2QuqH5I4XBwQ@ismtpd0003p1iad1.sendgrid.net>
+Content-Type: multipart/alternative; boundary="===============7379134335296887858=="
+
+[ ](https://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2Feytb4V3OqgPRzl1lxh527iSW4jt4bpnA8oDL5bTmCuuCcjU9axURgZh9z7N6EkiMLr7lWQLAUeGMiAIF9ptr9I0QrANyskxRZVb00QWZnmLkd_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1evza0ljIih0sSQctBfpn8yEEL1GpWXLPEO1Dmk7B8H8bB8T1dlADcGOMrOLEWjjJtynBw6Rm3v-2FEBzparjw5jt7JJ3dbV4vxvj2wxSJ0Gf8EPeKB0Q-2FfEDyLI1ZMelUBfxXxiOIRRf977pM7CTlT7vnMkiX02Ak6Mug-2ByHmGwVfePoaA0dP6r-2FS9FnD4JyaqFog-3D-3D
+ist_newsletter_2018_01_year_in_review)
+
+[Display it in your browser.](https://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2Feyl1geysmdPPGjoZcShv7te-2FYlaGL8KKvzN-2BaqfivEgxom89rR4kAPPTahzu-2FXH8pHw-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev9FXhQM1eIiaT3QqpObnZ5hvadtr9sJYKx0XZ00C-2FKpsDhrRygYhMZsY0-2F6tW7OFx-2BkJdZzhLMuUnn9axb7H1pZ68lpGU5XIWm-2FTEMej3J7c93Eyho1MZe4vfTaiNcfHf6a7OuL97zpiRjWovDf9yIYAEGqzYCUgAV8ASudP-2FgY5O7zMEtVRD0A2i680qk-2BWWw-3D-3D
+a9d6a39ba88eb93e0ca018.html)
+
+Your Year in Productivity
+
+How did your productivity fare this trip around the sun? Did you rank in the
+top stratosphere of Todoist users, or did you fall off the shuttle? See how
+you did in 2017 and prepare to embark on a new mission in 2018.
+
+[ See Your Productivity Report → ](https://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2FeynuvoMgERc1vUj0Sl5UQm5a0ho1iC0IAGsG-2BdeLuw-2BCG_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev1-2FSheFwI2qbuuyevbu2nmgj3-2FyLz7hBtU8mN1fVFjbD4w0y349axKFhhu4ujjyHpB6GuptCaGwnifBrlTZWbnDpPuceqLxoTkS2vq5pxKRI4-2Bt9NBn1HAuH-2Bjj6P-2B4C-2FyGXd0PjOb76xFLeO-2FBPmmcfX2Q-2Bg6Ic0LFxz-2BQOArBz1DrRBfdO9DaZJTnTjQCCFQ-3D-3D
+
+Focus & Prioritize in 2018
+
+There’s no better way to welcome a new year than by prioritizing your most
+important goals. Todoist and Skillshare have joined forces again to bring you
+a free online class that will teach you strategies for focusing on what’s
+important, especially when you’re drowning in to-dos.
+
+[ Enroll in the Free Class → ](https://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2FeyqICz2v9BDwbtTp-2FZpjRHFxgb8gxO5DkvdsihP1bouUQ_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev8IfNB-2BXZIE8VLWWzqeIItRSLmAjuax9LoG2bu0-2BNb34TkGXUIIdFyZgzfy-2FrCxnYXyYtMrfkg30VNlgoJsVKfAQPwUyZWq6LWElq9Fe17L2sj2KGvQGQcT2496qfggEOFk0yABY194lXFB7t6RkaTbiaYBranmARCnkJc0I3TLlmQafzPD2uJcHjgok1D-2Bxrw-3D-3D
+
+Announcing Education & Nonprofit Discounts ❤️
+
+Start 2018 off on the right foot whether you’re learning, teaching, or
+otherwise trying to make the world a better place. We’re proud to now offer
+discounts for eligible students, education professionals, and nonprofit teams.
+You do the hard work – we just want to help out in our small way.
+
+[ Todoist for Education → ](https://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2FeyrMzwWCNa26PzV076TDNFjFQXaNMV9agnt6OpH23jRhx9phvmvfhvaK3hOMKFDqYZA-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev6dXGxxuljPSBrP-2Bm4BQPhrklYAKKkvKnoM29wqazVtHAecagiNGFcL0b0d0nuZvkTjIp1kJ9jKUej3IuhbRz8J4qRBCsEMHdZcVuB4-2BiEsslKDpUNJfjiIdusQhg1Wyew2tYW5XKcYIomEiw1-2F5xOO-2FnidnDLcgE05nWgea2DS8lBOxogjh-2BReHxCI2tqk9-2Bw-3D-3D
+utm_source=sendgrid&utm_campaign=todoist_newsletter_2018_01_year_in_review)  
+[ Todoist for Nonprofits → ](https://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2Feypbnj4YQOqM9UTRl4dy0zmANzLiiJLOWEKCFPy-2FvlqWk10JGBKiTbHSEzAaUABFPDg-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev8B9EeObyfoYKuYio6GoI7HpY-2BzbXURaqLOsYJ5IOubj3iUJgNox1EqC1ikow4F8ljooCot0fgXbzEwQhhphPvD3Up2wHDKjp0piCV0qqAcxAvzdIs6mNjUC6wxtmtHZm0I4tx5NZBa5NKe9ovcvVQZ6fVOncx-2BCI8Ai57fEbn2HN3FZmcuvOjNPA6plMvzndQ-3D-3D
+l&utm_source=sendgrid&utm_campaign=todoist_newsletter_2018_01_year_in_review)
+
+Wishing you all the best in the coming year!  
+The Todoist Team
+
+[Blog](https://em.todoist.net/wf/click?upn=IRYTM6P1BSUNaZ6aIm2M0vMqv5pQNzl-2BtddsQCSSXGeXZPIiqwiTFQfr2Te8evO1PaELE74gQCpqDfTAbS-2Fzx6PCmU1tWXNLVknxMSWf7lM-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev9StdCXcHzHBuPC3mrG2zAxtLbgxNWVezJl-2BniBMyW55ET3gZJLtIN5lN1WOjDzwR1-2BxDoIcwFR-2BkwoNNTzPITIltLYjIEnj5LkoyA7XzznhOHMxU3aRZK-2BIGptuQmFT0yax5B4R5RBR6HWkhy5eg1-2FfWF-2B-2Buje1SOw2nuk2avz2eBhvq-2BGmhft-2BnA-2FnyiBcvw-3D-3D
+=todoist_newsletter_2018_01_year_in_review)
+[Twitter](https://em.todoist.net/wf/click?upn=E8kr2kCeKK2XszPIZx3f60MD446gQR1EsmtGeN1UQF9Q-2BlkbCOph9kRr1SHel4X8_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev-2FSYoGZ8hs-2Fw5PTEvlc8f0PaMopr0PyKNQWF63VnjXZ1I8PNSQzE8EA9oMRkNzL8A-2F3z5-2BJKIO-2By6Aj2OYClisGZBwEasgujESj-2Fo52B8nZQnAWaos4SFlZeWfAxmrHfkScJtLgMnRT21gXZsRl5oqCkG6nI6dkW-2FF-2BuSxgKP7g4Y-2FZGN-2Bu2dL4AWMseGwJfnQ-3D-3D [Help
+Center](https://em.todoist.net/wf/click?upn=cb0sIUzu0po4GftT3l-2FvZbUCsyvMM6dtBoTzlChlFChgjdp-2Bo-2BQPRTkSEphkEMrB_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1evzT6NaKF37YrakSgRLWnfDc-2BH3g01gpUmW4U2sIffMKL1CefF9wFQzIVvHTyWPDOjKu7fqT07fqzmflpylK1-2F1-2BEa20XllTmRFHcxeqX3bJyrji73jPqPPbSAT7E8CJUAN9Adt-2F-2B0kYYpcpa0U9JwuSn-2F0kPCQeU7QxFMyQNqquh-2B1Fheo9yRhYEher9YBVNhQ-3D-3D
+
+[ We're hiring! ](https://em.todoist.net/wf/click?upn=Hr9j5b30aWvSv19TjIBwAsTGlUhn2fxtJUJWPCgjCuKTTYzNTKM-2Bx-2F7QKrj0fanjPs-2BGAQydkXguXQZanM6rVsyW-2BI4w-2B0Ij7iYip6kw1DE-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev-2FLgHg6R8TXZ23QCL9vfbchFspVLk5Q8q6FUuAugOCb4JosZAxgzOqMzVK574W2TuFQU63dZJUMYNII47o7di3WDU6wxEOTZz4CuaaM-2BmLrlq3HYkjTaOwbvA6Krd5dFFfxkvUBAwAWYXSz2Hv-2FwDH50uzqqXzH8RwCLos4I1uIF2hx8PEVIcR4ktVtk-2FN0SEw-3D-3D
+tm_campaign=todoist_newsletter_2018_01_year_in_review#we-are-hiring)
+
+
+
+Om du inte längre önskar få mail från Todoist[klicka här för att avsluta prenu
+meration](https://em.todoist.net/wf/click?upn=JHyU0Z-2FPAExRNoFJ-2Fp-2Feyl-2Fz1bZwLd0vhLWBY4biHUG-2F3-2Byg4ja5PW1JLP9cC6OEzYPnFa2Tx9b2KVPvu4rkhyhM3On3VnYr0pm9X8GOB-2Bs-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiIbShjwXllcLMKj0dTjdr9AAE4joq50gdJd9e5E-2Bc1ev3zxgmckn5C-2Fm6WGRBbKNi46DCmLG2l8RF2PFoCFeEAQZcQFD62yLWSaYAwqJ7-2BTWMGy5x8HRjdU8E6W8dPPlvsBAOUZlICwe-2Fu8IF6ReJRudbuo-2B8FFnyPZ-2FeZDCX2OyMRC0nq-2FDlbQwQ7eQRRHa9Dy7o9HKXl72t9UeQ8sTnzO43ggwHIz3Ea6VIhXcf2VYA-3D-3D
+token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MTYyOTg4NTksImp0aSI6Iml
+yY093QmNMIiwidWlkIjo2ODE4NDY0LCJjc3JmIjoxfQ.RtOdWD7XpAjIBc4QDUrOMBkMmJu2qGu9oy
+AOMxJD4uk#utm_source=unsubscribe&utm_medium=email&utm_campaign=newsletter).
+
+
+

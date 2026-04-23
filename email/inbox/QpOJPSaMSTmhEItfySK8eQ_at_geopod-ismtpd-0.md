@@ -1,0 +1,30 @@
+MIME-Version: 1.0
+From: "Lane from Boot.dev" <hello@boot.dev>
+To: Skogix <emil.skogsund@gmail.com>
+Date: Sun, 09 Feb 2025 13:42:39 +0000
+Subject: Your discount is expiring soon
+Message-ID: <QpOJPSaMSTmhEItfySK8eQ@geopod-ismtpd-0>
+Content-Type: multipart/alternative; boundary="dbb53f50d1c63be2ea79e43aa6e8ac96279dda7c133828c45dd57dbe1b8a"
+
+Hi Skogix,
+
+This is a quick note to remind you that your introductory coupon code for Boot.dev is expiring soon.
+
+If learning to code isn’t right for you right now, that’s ok. But if you’re debating the idea, consider this your friendly push. If you upgrade right now you can *take 25% off* your first month or *even your first year* if you choose the annual plan.
+
+Use code JOURNEYBEGINS at checkout
+Deal expires in 5 days
+
+Become a Member Now ( https://www.boot.dev/pricing?promo=JOURNEYBEGINS&utm_campaign=website&utm_medium=email&utm_source=sendgrid.com )
+
+Learning to code *can be fun*. That’s why we lean into it and incorporate modern game design to teach coding the smart way - by making it enjoyably addictive.
+
+PS: I don't like unwanted emails. I unsub from like 4 newsletters daily I swear. Anyhow, the unsub link is below if you don't want to hear from me about new content and discounts anymore
+
+Lane
+
+Lane from Boot.dev
+
+3520 N University Ave Suite 300 , Provo , UT 84604
+
+Unsubscribe ( https://u24871717.ct.sendgrid.net/asm/unsubscribe/?user_id=24871717&data=ZAY99A7AfleBF2pmoImSoxVekUiwO3i2woCgNaLzpmFoMDAwdTAwMGudXkYNx5ufdbMTNAS5fwjH1lhLnk0UfHXOHIvX-Jr7lb_Y01z9fr9zcdj_zfZuuo9S3hyJoertn7zqBzjz37Q-RxSK6DBGi5iXVVRbrEakKf2lUIfOCdmC75GntI98mR7RXndLLYMWcJ9H0a0BuJfrpufBmoCOb-KL2_z_PE7RAVpbinT_ev_KkWqAMoLor8Ik_pdtcazWfuD8eT4p95-8lrKG0nqAiON9QPEwgKxb2FsiS4deXcMGyzj9sxZftxNesP61NEXbLkWT3M31kHiFEj2313nhVQrji8WE3QKwTk_y9SPVJXewXkUH9rLCEDP-duL4bmDW71mjbOhhEi-AvE96kkYpyfr5RGlzFqXtHFilXwpFScG4zBGOcQnRzzoxQusBHLCpY7Aa-7PVkn1KUra-AWnXNQxhWP_Wj44K91KkOjed_cBylY3EJ2ckPdzyGnK8O1-4MJi0w68XxCxPDJpnH0sSIlgGhUuU6FdPYuyo0MgP_q3NXqmsPqhXtaWSxb0UuxlhpLdNkbyGqCoyyy3iLnnwJxhzerw_uOre_Ez2AtGOBADFXPx6iIyf0haUR7e8Awid1gKaHkL1fmX4M1mAUlANmk5JZpaakTKf1CtiRVQPLMDWMYX85K86rmDkg0W5iuU7HKqB_knbf30JUYodUZbsktD2OSZ9T_VZZUxw1FTFuuVgEow9lqOmJRgl9HsHAv9btOy_cYJ7rAc1lv3fVXWfDXfUtXvMDjmriU8Qd2ZuefbpRBYCzIXpbzPQGUz2QwwVagwwg0n6KoYMtsqKLIr1fGJ_Qu8LU8kQLA8v_5bzAmyuuBGfYhg3PnPJgP8ho9v1W9Pru9GV2qr-IW4-du2IQ-c0LYLKzGSRLxLxf1CYOkwhPY7wrTZfJ-qJRFTGLKMU6cVP66L-OqGkyhCkge2eeucRfbU05HIdGKNgPVaZWSQWqzv-siRZIK70Qcn_sgJkQbOxv9JVTjYeZeKEZ67KcJf0ditUSbNjWs66gf7jM1qccb3q4EEsGSbD0Ugb60UaUvQUm-VCcbUbcEhmnnBGWrTFhczLJD3hSkimUduP6XUdDxxgzk-1Dq0KouQRB8k7fJw6jYD5jGEdGvvhuSYurwzO3ffVx19b-IfMW-vZU-Abn3WciY-5CLd9p-GryW1UihbAa2fpfZbXU4leDY_answ4HAGre6DQkgmBOy6DRza_5iJPRpZNnw== ) - Unsubscribe Preferences ( https://u24871717.ct.sendgrid.net/asm/?user_id=24871717&data=uaL5Ibuu428oWZsv0b868gtCnTR-ep8QoE29fBNTsWNoMDAwdTAwMJal1dznJ46tYmdHDavndav_w_OVMWG21YObXoc_ei3TQPOKtDKtE2UG0ps8Nrx2rD-H40k-VCzwn2mBTvPXKcZ7BZ86RoKYRoreJ7Lj2OW5AmJeGB68Ywy0taZ1XxNTWLUSAYqZwEHL2Y4vvpYE0tkBYc46Qu0GBE6Qi5SLYf1Xnv0EE9jVotaGeOjGucteBvz_b4taPolID9Qgu0fWU4DPwucOPxROFDrgpoukT0vuZVl3X5IYJ0vvlNPbAJnk2zvC-RcmgBuNKThGp8slkTb2AUl7vBvu6mGeB89jfW9fuGgxtOb_K1V7rAQ0xVPMBywEHPUWPC234uit6pdSjZTZ1QC0VoiboVjDEkG9qLIhXYP2dz34ud_vIaGiMKqWHhYiTrzrlHBiTmJAriU_QDA9MabX4nCPzSeqbejmuJgoEYR0VU9_7bFOhhF9L3d3rk2jQ-V5PRHfrhJeetk-IzmvSzJtvFoNGb3-1WUfdmGdkUv0a9PHQlIBFFUvODhF4g9kCUD1Rq6fvwn8quGIgYYHgclf8mAu1VEJjiywDGGYh9KJZb2flPGj1iRNHCB4ca_hp6OorqHXft1y80ReZ8faK4tWVkBgkzIAXHaH_03FNvCvZGeTmws0SHXDMfOBymyXasud6EtvL8r9npfTjoIJIJ4iCRdUZ3cVQQdiVq2cBpXYITVVEEd93V-NW9EZa9Onaid4gKOMMmyN3AC1u82wOJOIfmR2z4KUKj-Lt8u-fF7jIgid88MQbggq4FAdesjkZyzuYkyVF1LIsB2NHx8qnTuh8-mwbdc956n86HPZmeBaxpq0ZFKp-TmEJyhgyYAtk5xkoDJm6R1WNclbpnXyJhziLCpnuceOm1rvjrhSvsnDNEiZHLVCz1jP3GnMkO3hGD73ROml8lYakHht6OTd1k5-5k_ydguUD5MP7bqws4cXbI9mEvXxCaRi8ht9U_ShWmomnDWgkCPwbGfZ-YCwrNn9nkn6U48sAgibg-CswBIOg_6NII7pyd22fd3WLIU4TxPZum0VirsWees8CmaHA8fjF_kjKxFT0qGbX7Y9JwRZJkYKAyKr_blapXbiMQplzEAr6hOJblQM5yxxnYhtMg4j1qsaTr70aaCQFc0owZCjlJLfdKywUH65KHZ1GSrtHAePrHyJ_jc7GM3rwN2xuBh_XSDOSSxzkS4MtRo4 )

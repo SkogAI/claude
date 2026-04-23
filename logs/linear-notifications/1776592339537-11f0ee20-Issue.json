@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-04-19T09:52:19.537239+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:52:17.662Z",
+    "data": {
+      "id": "abe245c8-7f1e-42f1-9894-62309dd7f21a",
+      "createdAt": "2026-03-06T18:09:14.000Z",
+      "updatedAt": "2026-04-19T09:52:17.661Z",
+      "number": 74,
+      "title": "Search over extracted artifacts (not just conversations)",
+      "priority": 0,
+      "sortOrder": -45429.46,
+      "prioritySortOrder": 0.2577902161592426,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:15.060Z",
+      "labelIds": [
+        "6f0e5457-47a2-4812-a4af-7ee6561b5772",
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-74",
+      "url": "https://linear.app/skogai/issue/SKO-74/search-over-extracted-artifacts-not-just-conversations",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        },
+        {
+          "id": "6f0e5457-47a2-4812-a4af-7ee6561b5772",
+          "color": "#a2eeef",
+          "name": "enhancement"
+        }
+      ],
+      "description": "## Parent: #1\n\n## Depends on: #3\n\n## Summary\n\nCurrently search only finds conversation exchanges. Once we have extracted decisions, learnings, and patterns, search should index and return those too.\n\n## Current Search\n\n```\nquery \u2192 vector search over conversation exchanges \u2192 raw snippets\n```\n\n## Target Search\n\n```\nquery \u2192 vector search over exchanges + extracted artifacts \u2192 rich results\n  - conversation matches (existing)\n  - decision matches (new)\n  - learning matches (new)\n  - pattern matches (new)\n```\n\n## Implementation\n\n* Embed extracted artifact text into the same vector DB (or a separate table)\n* Search results include artifact type in metadata\n* Filter by type: `claude-memory search \"queue pattern\" --type decisions`\n* MCP server returns typed results so Claude can distinguish\n\n## Benefits\n\n* Decisions become directly searchable (\"what did we decide about X?\")\n* Patterns surface when relevant (\"how did we handle Y before?\")\n* Learnings prevent repeating mistakes (\"what went wrong with Z?\")",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"761c37e1-28db-4616-be65-9d607ef3c1ac\"},\"content\":[{\"type\":\"text\",\"text\":\"Parent: #1\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"d21ea73e-acf6-4acc-92f7-19e8777f4f52\"},\"content\":[{\"type\":\"text\",\"text\":\"Depends on: #3\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"eb7443d3-0c4c-4a9c-916a-382814dcb43f\"},\"content\":[{\"type\":\"text\",\"text\":\"Summary\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Currently search only finds conversation exchanges. Once we have extracted decisions, learnings, and patterns, search should index and return those too.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"08411791-de10-401b-a501-6737969a2f75\"},\"content\":[{\"type\":\"text\",\"text\":\"Current Search\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"3d9c5d09-456b-435b-b690-b087286fd606\"},\"content\":[{\"type\":\"text\",\"text\":\"query \u2192 vector search over conversation exchanges \u2192 raw snippets\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"f348b71d-af78-4c82-85ba-fa101e3569fd\"},\"content\":[{\"type\":\"text\",\"text\":\"Target Search\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"4f23b537-1088-41c1-8334-6f77004c6ed8\"},\"content\":[{\"type\":\"text\",\"text\":\"query \u2192 vector search over exchanges + extracted artifacts \u2192 rich results\\n  - conversation matches (existing)\\n  - decision matches (new)\\n  - learning matches (new)\\n  - pattern matches (new)\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"f4204c35-ba46-4595-a45e-14dbc4092455\"},\"content\":[{\"type\":\"text\",\"text\":\"Implementation\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Embed extracted artifact text into the same vector DB (or a separate table)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Search results include artifact type in metadata\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Filter by type: \"},{\"type\":\"text\",\"text\":\"claude-memory search \\\"queue pattern\\\" --type decisions\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"MCP server returns typed results so Claude can distinguish\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"643f3298-50fd-4fd3-aaf8-00165221ae42\"},\"content\":[{\"type\":\"text\",\"text\":\"Benefits\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Decisions become directly searchable (\\\"what did we decide about X?\\\")\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Patterns surface when relevant (\\\"how did we handle Y before?\\\")\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Learnings prevent repeating mistakes (\\\"what went wrong with Z?\\\")\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-04-19T09:47:44.612Z",
+      "prioritySortOrder": 0
+    },
+    "url": "https://linear.app/skogai/issue/SKO-74/search-over-extracted-artifacts-not-just-conversations",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592339386,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

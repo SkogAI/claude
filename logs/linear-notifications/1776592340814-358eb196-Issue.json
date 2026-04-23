@@ -1,0 +1,84 @@
+{
+  "timestamp": "2026-04-19T09:52:20.813984+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:52:19.215Z",
+    "data": {
+      "id": "4102b746-b459-459f-9c7f-aaccedc68906",
+      "createdAt": "2026-03-06T18:07:47.000Z",
+      "updatedAt": "2026-04-19T09:52:19.215Z",
+      "number": 70,
+      "title": "Extraction prompt templates for decisions, learnings, patterns, TODOs",
+      "priority": 0,
+      "sortOrder": -94391.09,
+      "prioritySortOrder": 0.532392837720175,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:14.840Z",
+      "labelIds": [
+        "6f0e5457-47a2-4812-a4af-7ee6561b5772",
+        "9153a2e5-43e7-4b04-9e82-9d79b74ff296",
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-70",
+      "url": "https://linear.app/skogai/issue/SKO-70/extraction-prompt-templates-for-decisions-learnings-patterns-todos",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        },
+        {
+          "id": "6f0e5457-47a2-4812-a4af-7ee6561b5772",
+          "color": "#a2eeef",
+          "name": "enhancement"
+        },
+        {
+          "id": "9153a2e5-43e7-4b04-9e82-9d79b74ff296",
+          "color": "#F9D0C4",
+          "name": "pipeline"
+        }
+      ],
+      "description": "## Parent: #1\n\n## Summary\n\nCreate prompt templates for each extraction type. Same pattern as the summary prompt, but targeting specific knowledge artifacts.\n\n## Extraction Types\n\n### 1\\. Decisions\n\nExtract agreed-upon decisions with reasoning and context.\n\n```\n- what was decided\n- why (reasoning/tradeoffs)\n- alternatives considered\n- timestamp from conversation\n```\n\n### 2\\. Learnings / Gotchas\n\nExtract discoveries, debugging insights, \"TIL\" moments.\n\n```\n- what was learned\n- context (what triggered the discovery)\n- applicable projects/domains\n```\n\n### 3\\. Patterns\n\nExtract reusable patterns, conventions, or approaches that emerged.\n\n```\n- pattern name\n- when to use\n- example from conversation\n```\n\n### 4\\. TODOs / Follow-ups\n\nExtract explicit or implicit action items.\n\n```\n- what needs doing\n- priority signal (if mentioned)\n- related context\n```\n\n## Output Format\n\nStructured markdown or JSON that downstream consumers can route to the right destination ([decisions.md](<http://decisions.md>), GitHub issues, knowledge/ files).\n\n## Notes\n\n* Prompts should be few-shot with real examples\n* Keep prompts model-agnostic (work with ollama and claude -p)\n* Consider conversation length \u2014 long convos may need chunking or pre-summary",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"5eaf36bb-c3ad-4f63-a4a9-87bff8491211\"},\"content\":[{\"type\":\"text\",\"text\":\"Parent: #1\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"fb584f28-357c-485b-8448-ceb55ddda5fb\"},\"content\":[{\"type\":\"text\",\"text\":\"Summary\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Create prompt templates for each extraction type. Same pattern as the summary prompt, but targeting specific knowledge artifacts.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"82c75bec-d2a1-4b7a-baba-95064cbd8b6a\"},\"content\":[{\"type\":\"text\",\"text\":\"Extraction Types\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":3,\"id\":\"66c8a7e9-0131-4df4-ab5c-563d21adfd59\"},\"content\":[{\"type\":\"text\",\"text\":\"1. Decisions\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Extract agreed-upon decisions with reasoning and context.\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"402fb2e6-aa7d-49b2-a96c-a2051331b1c4\"},\"content\":[{\"type\":\"text\",\"text\":\"- what was decided\\n- why (reasoning/tradeoffs)\\n- alternatives considered\\n- timestamp from conversation\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":3,\"id\":\"e5b247dc-db48-4592-9b1e-9b7d19cdf234\"},\"content\":[{\"type\":\"text\",\"text\":\"2. Learnings / Gotchas\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Extract discoveries, debugging insights, \\\"TIL\\\" moments.\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"0e4807b4-2f6e-4c91-ae9e-9af62131902f\"},\"content\":[{\"type\":\"text\",\"text\":\"- what was learned\\n- context (what triggered the discovery)\\n- applicable projects/domains\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":3,\"id\":\"80c133c9-b28c-4960-96b9-d92210331045\"},\"content\":[{\"type\":\"text\",\"text\":\"3. Patterns\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Extract reusable patterns, conventions, or approaches that emerged.\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"e3dcc911-43b1-4198-8ac1-c60de998d6f9\"},\"content\":[{\"type\":\"text\",\"text\":\"- pattern name\\n- when to use\\n- example from conversation\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":3,\"id\":\"98565641-f16a-425d-8f67-94e797345a84\"},\"content\":[{\"type\":\"text\",\"text\":\"4. TODOs / Follow-ups\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Extract explicit or implicit action items.\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"a1cd52df-e2cc-4deb-a80a-ba379a98434f\"},\"content\":[{\"type\":\"text\",\"text\":\"- what needs doing\\n- priority signal (if mentioned)\\n- related context\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"2e7fd23f-f17e-4553-b002-9f6c08f995fc\"},\"content\":[{\"type\":\"text\",\"text\":\"Output Format\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Structured markdown or JSON that downstream consumers can route to the right destination (\"},{\"type\":\"text\",\"text\":\"decisions.md\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://decisions.md\"}}]},{\"type\":\"text\",\"text\":\", GitHub issues, knowledge/ files).\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"be5d29d0-368b-420c-bbaa-4afca1ba86b1\"},\"content\":[{\"type\":\"text\",\"text\":\"Notes\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Prompts should be few-shot with real examples\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Keep prompts model-agnostic (work with ollama and claude -p)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Consider conversation length \u2014 long convos may need chunking or pre-summary\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-04-19T09:47:47.083Z",
+      "prioritySortOrder": 0
+    },
+    "url": "https://linear.app/skogai/issue/SKO-70/extraction-prompt-templates-for-decisions-learnings-patterns-todos",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592340710,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

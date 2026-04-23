@@ -1,0 +1,49 @@
+MIME-Version: 1.0
+From: MTG Arena <MTGArena@magic.wizards.com>
+To: emil.skogsund@gmail.com
+Date: Mon, 11 Jun 2018 14:45:10 +0000
+Subject: Thank You for Signing Up for the Closed Beta!
+Message-ID: <-mk3ZO3RSTGkGmmhitHnhg@ismtpd0041p1mdw1.sendgrid.net>
+Content-Type: multipart/alternative; boundary="7e4cc30ac43f1e9fde206e64f1f3d1c8eed07d3c9c80bcdadfc6f67749f0"
+
+Magic: The Gathering Arena         CLICK TO EDIT HEADER TEXT -->
+image 1          You're all set to download and play the Magic:
+The Gathering Arena Closed Beta! Just follow the instructions
+below, and you'll be slinging spells in no time!
+
+DOWNLOAD THE GAME
+Click HERE to download the MTG Arena client 
+( http://links.magic.wizards.com/wf/click?upn=m3vYXyY2C4Ryuri-2Bzt3xB8B-2BY6HGPg-2BWpyRR2zmmG8WpycM2aEgGi6oImABvFK4U6Z3dFe6y2RF6LvIhJmnABaxjQ9ZdcBm-2FmzaUGYdtNBk-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKhwi9lP26ofUB-2BM0WvEfgAgZ3N6jMkW0pOS4n-2BRszsR4XfP3DTdyZAeu5yr0oeAoAOj-2FmjW5kC9E5K4eEtUordfvGCQJuT1OOqycrBndXblZf7VBRjX38dIWhvESTASqSxoRi1DumXr9l74k4hvzYTBGdefepauB-2BJo-2BhOkTQoHitU7SavB0Ak2rVf5Vtqow4lFYOADpjPHefXW1mJwqLbGukfky7FboBqF1dCtm3-2FLvs1UckWUo1OJBDrVIZxjABvWU5khE9kBw7TIIBSEuTkfcTlUOuoc0YOfPN6JHCopuXYM3xbXNQFww-2BzB0CWXdnAwCo76HAV7OIozZ85YFz6Dzo2ybQOz4CaCV7CeWgdbJR2-2BMg95-2B2N8SyR4-2FFaHf1t77SUXII6SFs-2Be9qhVRj-2FSyFB4H3lctFqSzxRO2RO6A-3D-3D )
+. Once you have installed, opening the client will prompt
+automatic updates as necessary.
+
+After you launch the game, enter your unique key below when
+prompted. This key is associated with your email address and will
+only be valid for your one account.
+
+Access Key: xxg-tdxz-6fy
+
+HERE ARE THREE IMPORTANT THINGS TO REMEMBER:
+1. The Beta Forums ( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9J7bnwOkchgrvqG8IJTGJFEFEV-2B3coCXNVvYmQz9NTUV_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKhwi9lP26ofUB-2BM0WvEfgAgZ3N6jMkW0pOS4n-2BRszsR1qKKnzafV9EFnZl9piSm9HU3PPfIt3W56zZEy3XvEC9dPtxoUmLfqQ5mGWq73oYvH3-2Bo0GcqWM3dakOh4JACvA-2Bg4KYy40fNiR5D0BRA1I9g6j6n0v16DKjFO1Rb4YwKNSr7lLmrOFeo-2BDrD8xiCYD-2BC-2B-2FkG8ydbXXLB96GMRiaY8TSEBNA1Qak1dhlpm5o-2F04QNG-2F-2Bekx-2BbHdA4Omo6dOaXC8m28PUKAExC5ZAuTiJKyCP1FbI56o08yej3RWBXnKBXmRc1m1NJRfJ9YhaD5EELXpcR94mHrssWMfq2CKTHP05yCPvjfh09LKhZPTif09VCdl6LaI-2Bi8gL0z3dCE873Z9Db2wl6u-2FrCY-2F-2FB4U2c-2BY9tBpDkPa3tJwhWpNQ0Q-3D-3D ) are
+your best resource. That is where we'll post news and players can
+share information. You'll be able to access these forums once you
+create a MTG Arena account.
+2. The Beta Forums ( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9J7bnwOkchgrvqG8IJTGJFEFEV-2B3coCXNVvYmQz9NTUV_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKhwi9lP26ofUB-2BM0WvEfgAgZ3N6jMkW0pOS4n-2BRszsR6wp1dvhrxbYWwZWY1aE1BZ1T9-2FU6MyZwo2CzcSkZTxiuytG0pNycJwlEiIt20OGx0kY4WIX-2BtnE8cin5Hl22CfhPfrnxIcfIjuidAlKrSk2Y4SkRwX7XrUeAdZ1NHqF-2FEuFDiQI0g3hlLN4JPHEcOonYBg5L6dzOIjCRyN0tEJexwRmWGs6bhb6PrEA0MMs1WKsmRSae0HjnYZJtyEj2HU-2FUtfOaA7gXLBA-2BmKX9Lhjg6iAhKv3Y12Bgi0c4cxBuOxG4FSMaq23LTx5BLMFWM04o0WDTrzNP2kgysoKAXOO2uJeNmqxIa4cuIav8tIcusnRMbr0dIRU-2Fr58ijJh5AY8xuKHaArCsoWJNmoVxuXApfaUqoGsC5va9pPSjsmMKg-3D-3D ) are
+our best resource too. The game only gets better with your
+feedback. Tell us what you like and what you don't. We'll be in
+the forums listening and responding.
+3. It won't be perfect. We're refining and testing a lot of
+things during the Closed Beta. Thank you for being here with us
+at the beginning.
+
+If you run into any issues during the download or login process
+please contact us at support.wizards.com 
+( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9AfL4PSPL0-2FdjyQf7167wpGEgo0Esum1kGYUdDriRfOj_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKhwi9lP26ofUB-2BM0WvEfgAgZ3N6jMkW0pOS4n-2BRszsR7SBDJNAi0-2BihCtMHcBs0UQZc6dfZQI-2FdHjU1a4XQQP5WEeeaiND-2FcWmCDDem1KfgRFApr6B6G5zOLLfESjBapWK3P81X6fvQX5-2BvVd1TUs0qqZU1T45YJDCHMvk4W5W-2BJyEFfPloRrgerOuASe13IIrSs4n58TFT6BWgwBlAIqofUkSiU4nCQrjNjZNfmMvmDMfZ-2BOYcMT6lbA62ZhDgglkWwnkAh9fZ9155xpCYetYFfh5vKj3UKYiRNbcA75-2Fjkks2Ovy6kBp7qodI6SceIGZjAX7g87PUENNblYPzGCxmCGeax03nkK3J43lViXmUypATozCU-2FxdjSbrHQEPpIuIDJs4FzJw5VsldDNCyd3W-2FsfehbnSueeAuQQPr-2B1nmg-3D-3D ).
+
+©1995-2018 Wizards of the Coast LLC, a subsidiary of
+Hasbro, Inc. All Rights Reserved.
+1600 Lind Ave SW #400, Renton, WA 98057
+Terms of Use ( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldNDLg3uyjCpayQYh4zvIoJNapkJWHuSItSWHdVLUd4j7w-3D-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKhwi9lP26ofUB-2BM0WvEfgAgZ3N6jMkW0pOS4n-2BRszsR-2FleetgJrgeI8yCGHRi4rDb8-2FSlGExm1YPSUHI5d35cSgVp1M75XKrWTYhPkFe3HE5FQpENmnHYwxKISBE3dhcGBnAejrTEHORjuk3EznmJMXn4stp0tWgGCjGVuZI-2BSVUMpvogxdJbSJnfDr8eCJ09ILnHYUMw83pECUhjMvfNum-2FUH60be99a76h5Clb5CM10oE8pBlh7UibLxAEj0BQ38GwP7sqE6yen2EtxqgkzNJ6KKxts23Yb8oKHYOnKR-2Bw6tphc1H9-2BMIyHX5X0EehOU235n4TZYnKvR2gNmZ03eBxq8yW8-2FWYFpjVa01vDRXOBexyKXgFae-2BkXdDreIWa3I3hmMCAGg6kySqQ8MpvqhYV7lWYCYr2bAL8uLWEw74A-3D-3D ) |
+Privacy Statement 
+( http://links.magic.wizards.com/wf/click?upn=3f-2FIPnF5UCgMCjTbQIeAn-2BlTvycqlChWLCfOkmxJldM928HSZwg0inMCjvrgBFx3Lw-2F4jKKC-2FOfx9jN4AH5iNxDeDR4YTOCk08OMVuZcyJo-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKhwi9lP26ofUB-2BM0WvEfgAgZ3N6jMkW0pOS4n-2BRszsR2JqYzWNK-2BPzV0uhUNKBGMokBIhCcwfNgv2vDKyB22uJDEoYyOUcuTnwX1OqDRvX5elr7ZkCi4d9dn9mPSUcxEvtNl-2B5PtUOIVn-2Fjhydqv1ws-2BCy3mPdzYDD8ZcGyeGsExbKENOEYZSs7vFB3y8HfyQcp7wC8WsdIjkGhIh9IVP6lr6IMHb2UmGAhc3lrK8NVkUSEtBBYjNUBEozjXRpvRCaSExPsqZWCLyr3-2BxNlTIQzcQiQVKBC9Cz-2BctDBXRzuLU2Nfc-2FUyfS6xeTvJZYIAtzh-2FkQMbLFtyek9lcyxDw5qIV8fjzcXofIXILPOeAorBp971ZbehBgppb-2BNQSWuARKhcG52Rt9CiUYDb0fZJsZYml-2BosEMptU-2Bv7ZDil4o1A-3D-3D )
+| Unsubscribe ( http://links.magic.wizards.com/wf/click?upn=YrhtjuKVrRGP6lnQAAqX9HGb-2BFPWQd7B-2F6V33xs2rZHCoikVDuQJidzR-2BYY5uh6trWaLegPqHbrHCtnPhaPFnv23v0JTmqDYpMoNWVgmFKJn8LcmeuImLIR4uIFwLeE8s-2BEnX-2BhrWuAc61G1FAUS2Bfb1ax9Ker4KAKBib6C7wyb4PT2YpHeReaoI5objRBMAgoAuPdKBM4-2F73in9LJOhUcalVFRwtHrHhywJPggN3SJFQU7YG417jvInp-2BKvh7NSHKMoBZyY-2BZiCr8IMbxm-2FSfgUZtDTewRKZrWsmclZrd1pNyTmdA7CYoBxOLiodLyXlGXsZQWzW5CwKyRq3AIHdyuXqSMFJN3W6uttU13uLs2tAU0QPeob4Phdl8ELd4SA2h6kwMl0fcldiul4n6qvVQOO17N0PKvDSiSjQsPQp1uLUm0xBIEx3VqILKlNwf-2BD6pXBmavXCI8tO8mhcadx4BZ4oJqJ9784Fq63NaQI6w-3D_DRqiD9tOYDZdU3lRAzprPGwuEipclW0P8WdG1e1iAiKhwi9lP26ofUB-2BM0WvEfgAgZ3N6jMkW0pOS4n-2BRszsR2pocU86EduMo4qJDbyVuwltLnFLxozQ5TUW9bCuvoO9y7GvHRvH0r2S13qnvBqbfsvjl9Ig13BVLU5Zh44s8UbQ3a-2BPqcbqWSFPPltWSSqkIfmg1WLKIsOokVQOiDQmAdqb-2Fwd7kQdN2T-2BbTwn3zT68-2FRgHTexkuix7tshCGGVpIdISv9hBBxceQJsCPB7mA632roMCPa5f6V0GJJkLsrqecwjip3zOmtj3lZ-2Fq49mK9f-2Frz-2BLz6MvecWVzyzChL13Zgk9QpJDwDPcZQd9lgtnD4rtEVrK-2F6z2CzNbnPvNHsuRLJe4bBM9z-2FN3gsRU1ka2Q5063l6zlvz6BfajDWlfocUku-2FD-2FxXESV2zNkOLvHHe2tmC1fdoS7KvRG7eeeHQ-3D-3D )

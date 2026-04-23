@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-04-19T09:52:20.719598+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:52:19.072Z",
+    "data": {
+      "id": "47c0e06a-64b7-42c9-a15d-3b5f1194d050",
+      "createdAt": "2025-12-18T11:32:43.000Z",
+      "updatedAt": "2026-04-19T09:52:19.071Z",
+      "number": 11,
+      "title": "argc parser warns on @describe tags inside heredoc template strings",
+      "priority": 0,
+      "sortOrder": -87271.37,
+      "prioritySortOrder": 0.4931638917828989,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:10.983Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-11",
+      "url": "https://linear.app/skogai/issue/SKO-11/argc-parser-warns-on-describe-tags-inside-heredoc-template-strings",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "## Description\n\nWhen using argc comment tags (like `@describe`, `@cmd`, etc.) inside heredoc template strings for code generation, the argc parser incorrectly interprets them as actual directives and emits warnings.\n\n## Steps to Reproduce\n\n1. Create a bash script with argc that generates templates using heredocs\n2. Include argc comment tags in the heredoc content (e.g., for generating template scripts)\n3. Run the build process\n\n## Example Code\n\n```bash\n#!/usr/bin/env bash\nset -e\n\n# @cmd Create a new argc script template\n# @option --name! Script name\ncreate_script() {\n  cat >\"$argc_name.sh\" <<'EOF'\n#!/usr/bin/env bash\nset -e\n\n# @describe DESCRIPTION_PLACEHOLDER\n# @option --input! Input file\n\nmain() {\n    echo \"Processing: $argc_input\"\n}\n\neval \"$(argc --argc-eval \"$0\" \"$@\")\"\nEOF\n}\n\neval \"$(argc --argc-eval \"$0\" \"$@\")\"\n```\n\n## Expected Behavior\n\nArgc parser should recognize that content within heredoc blocks (especially quoted heredocs like `<<'EOF'`) is literal string content and should not be parsed for argc directives.\n\n## Actual Behavior\n\nParser emits warnings:\n\n```\n@describe(line 162) shouldn't be here, @cmd is missing?\n```\n\n## Environment\n\n* argc version: (output of `argc --argc-version`)\n* Platform: Linux\n* Shell: bash\n\n## Workaround\n\nCurrently working around this by commenting out scripts that generate argc templates from the build process.\n\n## Suggested Fix\n\nThe argc parser should skip comment tag parsing when inside heredoc blocks, particularly:\n\n* Between `<<'EOF'` and `EOF` (quoted heredocs)\n* Between `<<EOF` and `EOF` (unquoted heredocs)\n* Between `<<\"EOF\"` and `EOF` (double-quoted heredocs)\n\nThis is a common pattern for code generation tools and template generators.\n\n## Real-world Impact\n\nThis affects the `argc-expert` agent in the SkogAI/tools repository, which provides argc script generation and best practices. See: [https://github.com/SkogAI/tools/blob/main/agents/argc-expert/tools.sh](<https://github.com/SkogAI/tools/blob/main/agents/argc-expert/tools.sh>)",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"0967ff6e-5925-4dd2-acc0-3948831ab004\"},\"content\":[{\"type\":\"text\",\"text\":\"Description\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"When using argc comment tags (like \"},{\"type\":\"text\",\"text\":\"@describe\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", \"},{\"type\":\"text\",\"text\":\"@cmd\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\", etc.) inside heredoc template strings for code generation, the argc parser incorrectly interprets them as actual directives and emits warnings.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"e1c76519-54e6-45df-980a-34ef77e5f9ee\"},\"content\":[{\"type\":\"text\",\"text\":\"Steps to Reproduce\"}]},{\"type\":\"ordered_list\",\"attrs\":{\"order\":1},\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Create a bash script with argc that generates templates using heredocs\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Include argc comment tags in the heredoc content (e.g., for generating template scripts)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Run the build process\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"cb297654-3b7a-4062-8c85-cb5ed3e5ec29\"},\"content\":[{\"type\":\"text\",\"text\":\"Example Code\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"bash\",\"id\":\"bc77cb9b-0fcb-4eb3-8db0-463d6a3de8ef\"},\"content\":[{\"type\":\"text\",\"text\":\"#!/usr/bin/env bash\\nset -e\\n\\n# @cmd Create a new argc script template\\n# @option --name! Script name\\ncreate_script() {\\n  cat >\\\"$argc_name.sh\\\" <<'EOF'\\n#!/usr/bin/env bash\\nset -e\\n\\n# @describe DESCRIPTION_PLACEHOLDER\\n# @option --input! Input file\\n\\nmain() {\\n    echo \\\"Processing: $argc_input\\\"\\n}\\n\\neval \\\"$(argc --argc-eval \\\"$0\\\" \\\"$@\\\")\\\"\\nEOF\\n}\\n\\neval \\\"$(argc --argc-eval \\\"$0\\\" \\\"$@\\\")\\\"\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"45d29995-6aad-472c-9259-fd8f8e6eb564\"},\"content\":[{\"type\":\"text\",\"text\":\"Expected Behavior\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Argc parser should recognize that content within heredoc blocks (especially quoted heredocs like \"},{\"type\":\"text\",\"text\":\"<<'EOF'\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\") is literal string content and should not be parsed for argc directives.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"bea5b894-4ac0-4e37-b764-02e99c925c4f\"},\"content\":[{\"type\":\"text\",\"text\":\"Actual Behavior\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Parser emits warnings:\"}]},{\"type\":\"code_block\",\"attrs\":{\"id\":\"69aaf27e-0937-4bca-ae9c-4bc626fe7cb8\"},\"content\":[{\"type\":\"text\",\"text\":\"@describe(line 162) shouldn't be here, @cmd is missing?\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"6a86868a-edc8-46d4-816b-b0434d4781b8\"},\"content\":[{\"type\":\"text\",\"text\":\"Environment\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"argc version: (output of \"},{\"type\":\"text\",\"text\":\"argc --argc-version\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\")\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Platform: Linux\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Shell: bash\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"b3cc2c9d-3a70-4ad5-9198-10c0c9ba175d\"},\"content\":[{\"type\":\"text\",\"text\":\"Workaround\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Currently working around this by commenting out scripts that generate argc templates from the build process.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"3eb6a212-254c-4867-a908-97fb152145f2\"},\"content\":[{\"type\":\"text\",\"text\":\"Suggested Fix\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The argc parser should skip comment tag parsing when inside heredoc blocks, particularly:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Between \"},{\"type\":\"text\",\"text\":\"<<'EOF'\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" and \"},{\"type\":\"text\",\"text\":\"EOF\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" (quoted heredocs)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Between \"},{\"type\":\"text\",\"text\":\"<<EOF\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" and \"},{\"type\":\"text\",\"text\":\"EOF\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" (unquoted heredocs)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Between \"},{\"type\":\"text\",\"text\":\"<<\\\"EOF\\\"\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" and \"},{\"type\":\"text\",\"text\":\"EOF\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" (double-quoted heredocs)\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"This is a common pattern for code generation tools and template generators.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"c7c9e8ca-1761-47b2-bb75-4edb2e0918d5\"},\"content\":[{\"type\":\"text\",\"text\":\"Real-world Impact\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"This affects the \"},{\"type\":\"text\",\"text\":\"argc-expert\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" agent in the SkogAI/tools repository, which provides argc script generation and best practices. See: \"},{\"type\":\"text\",\"text\":\"https://github.com/SkogAI/tools/blob/main/agents/argc-expert/tools.sh\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"https://github.com/SkogAI/tools/blob/main/agents/argc-expert/tools.sh\"}}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-04-19T09:47:46.862Z",
+      "prioritySortOrder": 0
+    },
+    "url": "https://linear.app/skogai/issue/SKO-11/argc-parser-warns-on-describe-tags-inside-heredoc-template-strings",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592340585,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

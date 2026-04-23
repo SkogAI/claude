@@ -1,0 +1,26 @@
+MIME-Version: 1.0
+From: Cloudflare <noreply@notify.cloudflare.com>
+To: emil@skogsund.se
+Date: Thu, 30 Oct 2025 09:00:50 +0000
+Subject: [Alert] Certificate transparency monitoring for skogai.se
+Message-ID: <ED.C4.43310.24923096@i-0739f65dc94ac0490.mta1vrest.sd.prd.sparkpost>
+Content-Type: multipart/alternative; boundary="_----2+NnO5vae+CFSJa5k49b0A===_68/D6-15682-5EB92096"
+
+skogai.se or one of its subdomains has been issued a new SSL/TLS certificate
+
+Certificate details
+- Log date: 2025-10-30 08:42:52 UTC
+- Issuer: CN=WE1,O=Google Trust Services,C=US
+- Validity: 2025-10-30 07:42:51 UTC - 2026-01-28 08:42:49 UTC
+- DNS Names: skogai.se, llm-worker.skogai.se
+
+Why am I receiving this email?
+- This email was requested by one of your Cloudflare account administrators to be notified whenever Cloudflare notices a new SSL/TLS certificate issued for skogai.se. If you would rather not receive these alerts, please go to your Cloudflare dashboard and disable "Certificate Transparency Monitoring": https://dash.cloudflare.com/?to=/:account/:zone/ssl-tls/edge-certificates#ct-alerting-card?utm_source=cfps&utm_medium=email&utm_campaign=ct_alerter_issuance_notification
+ 
+Should I be concerned about this new certificate?
+- Most SSL/TLS certificates are trustworthy. If this is a certificate from Let's Encrypt, Google Trust Services, Sectigo, or SSL.com, this may be a backup certificate that Cloudflare issued for skogai.se. If the data above is surprising to you or incorrect, learn about the actions you can take.
+ 
+Additional resources
+- Edge certificates: https://developers.cloudflare.com/ssl/edge-certificates/
+- Universal SSL certificates: https://developers.cloudflare.com/ssl/edge-certificates/universal-ssl/
+- Backup certificates: https://developers.cloudflare.com/ssl/edge-certificates/backup-certificates/

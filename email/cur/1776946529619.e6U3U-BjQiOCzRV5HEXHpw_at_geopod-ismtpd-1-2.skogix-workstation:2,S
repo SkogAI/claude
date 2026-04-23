@@ -1,0 +1,9 @@
+MIME-Version: 1.0
+From: info@netwic.com
+To: Emil.Skogsund@gmail.com
+Date: Wed, 17 Nov 2021 14:11:38 +0000
+Subject: Hälsningar från HR
+Message-ID: <e6U3U-BjQiOCzRV5HEXHpw@geopod-ismtpd-1-2>
+Content-Type: text/html; charset="us-ascii"
+
+Hej alla,<br />&nbsp;<br />H&auml;r kommer en h&auml;lsning fr&aring;n oss p&aring; HR.<br />Efter dialoger med fartygen har vi f&ouml;rst&aring;tt att det kan beh&ouml;vas n&aring;gra p&aring;minnelser om hur vi anv&auml;nder Netwic &ndash; f&ouml;r att undvika missf&ouml;rst&aring;nd och f&ouml;r att det ska bli smidigare f&ouml;r alla.<br />&nbsp;<br />1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T&auml;nk p&aring; att de dagar du markerat dig tillg&auml;nglig betyder att du kommer att jobba om du blir bokad. S&aring; h&aring;ll kalendern uppdaterad! Du har s&auml;kert m&auml;rkt att vi har ett stort vikariebehov p&aring; vissa avdelningar, framf&ouml;rallt p&aring; helgerna!<br />2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Endast de avdelningar som du &auml;r inskolad p&aring; ska ligga aktiva i systemet. Syftet &auml;r att du ska kunna g&aring; in och jobba utan inskolning om du blir bokad<br />3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vill du arbeta p&aring; fler avdelningar beh&ouml;vs en dialog med avdelningschef innan, f&ouml;r att eventuellt boka in en inskolning utifr&aring;n behov och m&ouml;jlighet.<br />4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Det &auml;r du sj&auml;lv som h&aring;ller Netwic aktuellt med t ex kontaktuppgifter och tillg&auml;ngliga dagar.<br />5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Om du har m&ouml;jlighet s&aring; uppskattas att du laddar upp en bild p&aring; din profilsida &ndash; det blir s&aring; mycket l&auml;ttare f&ouml;r fartygen.<br />Som alltid &ndash; tveka inte att h&ouml;ra av dig till oss om du har n&aring;gra funderingar kring det h&auml;r eller annat!<br /><br />&nbsp;<br />H&auml;lsningar fr&aring;n Jessica och Charlotte<br />HR Avdelningen, Tallink Silja<br />E-post: hrsea.swe@tallinksilja.com

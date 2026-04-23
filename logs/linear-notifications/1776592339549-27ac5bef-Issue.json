@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-04-19T09:52:19.549922+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:52:17.765Z",
+    "data": {
+      "id": "a1380b3f-4942-4571-a529-cd6332028012",
+      "createdAt": "2026-01-04T08:14:42.000Z",
+      "updatedAt": "2026-04-19T09:52:17.765Z",
+      "number": 103,
+      "title": "Fix Shell Injection Vulnerability in Plugin Names",
+      "priority": 0,
+      "sortOrder": -50598.83,
+      "prioritySortOrder": 0.2858108918287255,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:19.304Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-103",
+      "url": "https://linear.app/skogai/issue/SKO-103/fix-shell-injection-vulnerability-in-plugin-names",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "# Fix Shell Injection Vulnerability in Plugin Names\n\nCRITICAL SECURITY ISSUE: Plugin names from JSON are used directly in shell without validation.\n\n## Problem Statement\n\nThe [session-start.sh](<http://session-start.sh>) script uses plugin names from garden-state.json in shell variable expansion and jq filter expressions without sanitization. This creates a critical shell injection vulnerability if malicious plugin names are inserted into the state file.\n\n**Impact:** Remote code execution if an attacker can modify garden-state.json\n\n## Findings\n\n**Vulnerable code in** `plugins/garden/scripts/session-start.sh:18-29`:\n\n```bash\nfor plugin in $expired; do\n  count=$(jq -r \".trials[\\\"$plugin\\\"].message_count\" \"$GARDEN_STATE\")\n  threshold=$(jq -r \".trials[\\\"$plugin\\\"].threshold\" \"$GARDEN_STATE\")\n  context+=\"\n\ud83c\udf31 trial complete: $plugin ($count/$threshold messages)\n```\n\n**Attack vector:**\n\n* Line 18: `for plugin in $expired` splits on whitespace (IFS)\n* Line 19-20: Plugin name interpolated into jq filter without escaping\n* Plugin names with spaces, quotes, or command substitution can inject code\n\n**Proof of concept:**\n\n```json\n{\n  \"trials\": {\n    \"evil\\\"; rm -rf / #\": {\n      \"message_count\": 50,\n      \"threshold\": 50\n    }\n  }\n}\n```\n\n**CWE-78**: OS Command Injection\n\n## Proposed Solutions\n\n### Option 1: Use jq --arg for Safe Variable Substitution\n\n**Approach:** Extract all data in single jq operation using proper argument passing\n\n```bash\n# Extract plugin data with safe jq filter\ndata=$(jq -r '.trials | to_entries[] |\n  select(.value.message_count >= .value.threshold) |\n  \"\\(.key)|\\(.value.message_count)|\\(.value.threshold)\"' \"$GARDEN_STATE\" 2>/dev/null)\n\n[[ -z \"$data\" ]] && exit 0\n\n# Build prompt from extracted data\ncontext=\"\"\nwhile IFS='|' read -r plugin count threshold; do\n  context+=\"\n\ud83c\udf31 trial complete: $plugin ($count/$threshold messages)\n\n   options:\n   - /garden:keep $plugin - add to permanent stack\n   - /garden:swap $plugin <new-plugin> - try something else\n   - /garden:reset $plugin - trial for another $threshold messages\n\n\"\ndone <<< \"$data\"\n```\n\n**Pros:**\n\n* Eliminates shell injection completely\n* Single jq operation (performance improvement)\n* No additional dependencies\n\n**Cons:**\n\n* Slightly more complex code\n\n**Effort:** 30 minutes\n\n**Risk:** Low - well-tested pattern",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":1,\"id\":\"a73470c3-a81b-4bcb-866d-290563ade94e\"},\"content\":[{\"type\":\"text\",\"text\":\"Fix Shell Injection Vulnerability in Plugin Names\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CRITICAL SECURITY ISSUE: Plugin names from JSON are used directly in shell without validation.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"b9f55cd4-2608-4142-9425-f0d8246d2d9f\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem Statement\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The \"},{\"type\":\"text\",\"text\":\"session-start.sh\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://session-start.sh\"}}]},{\"type\":\"text\",\"text\":\" script uses plugin names from garden-state.json in shell variable expansion and jq filter expressions without sanitization. This creates a critical shell injection vulnerability if malicious plugin names are inserted into the state file.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Impact:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" Remote code execution if an attacker can modify garden-state.json\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"f857b007-f338-40c5-9e2b-4b687839809f\"},\"content\":[{\"type\":\"text\",\"text\":\"Findings\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Vulnerable code in \",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\"plugins/garden/scripts/session-start.sh:18-29\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\":\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"bash\",\"id\":\"0b9bce90-9f65-4bf3-8502-41965c9354ca\"},\"content\":[{\"type\":\"text\",\"text\":\"for plugin in $expired; do\\n  count=$(jq -r \\\".trials[\\\\\\\"$plugin\\\\\\\"].message_count\\\" \\\"$GARDEN_STATE\\\")\\n  threshold=$(jq -r \\\".trials[\\\\\\\"$plugin\\\\\\\"].threshold\\\" \\\"$GARDEN_STATE\\\")\\n  context+=\\\"\\n\ud83c\udf31 trial complete: $plugin ($count/$threshold messages)\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Attack vector:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Line 18: \"},{\"type\":\"text\",\"text\":\"for plugin in $expired\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" splits on whitespace (IFS)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Line 19-20: Plugin name interpolated into jq filter without escaping\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Plugin names with spaces, quotes, or command substitution can inject code\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Proof of concept:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"json\",\"id\":\"a72bfd6b-c360-448e-8413-9aa8a2f009c9\"},\"content\":[{\"type\":\"text\",\"text\":\"{\\n  \\\"trials\\\": {\\n    \\\"evil\\\\\\\"; rm -rf / #\\\": {\\n      \\\"message_count\\\": 50,\\n      \\\"threshold\\\": 50\\n    }\\n  }\\n}\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"CWE-78\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\": OS Command Injection\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"6c5247a4-cfa3-46a2-8123-c94ece2b029a\"},\"content\":[{\"type\":\"text\",\"text\":\"Proposed Solutions\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":3,\"id\":\"5ea48541-1d66-42ff-819f-50a72320b72d\"},\"content\":[{\"type\":\"text\",\"text\":\"Option 1: Use jq --arg for Safe Variable Substitution\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Approach:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" Extract all data in single jq operation using proper argument passing\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"bash\",\"id\":\"1cba42d3-871f-4019-8a8f-9829b35863ee\"},\"content\":[{\"type\":\"text\",\"text\":\"# Extract plugin data with safe jq filter\\ndata=$(jq -r '.trials | to_entries[] |\\n  select(.value.message_count >= .value.threshold) |\\n  \\\"\\\\(.key)|\\\\(.value.message_count)|\\\\(.value.threshold)\\\"' \\\"$GARDEN_STATE\\\" 2>/dev/null)\\n\\n[[ -z \\\"$data\\\" ]] && exit 0\\n\\n# Build prompt from extracted data\\ncontext=\\\"\\\"\\nwhile IFS='|' read -r plugin count threshold; do\\n  context+=\\\"\\n\ud83c\udf31 trial complete: $plugin ($count/$threshold messages)\\n\\n   options:\\n   - /garden:keep $plugin - add to permanent stack\\n   - /garden:swap $plugin <new-plugin> - try something else\\n   - /garden:reset $plugin - trial for another $threshold messages\\n\\n\\\"\\ndone <<< \\\"$data\\\"\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Pros:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Eliminates shell injection completely\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Single jq operation (performance improvement)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"No additional dependencies\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Cons:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Slightly more complex code\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Effort:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" 30 minutes\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Risk:\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" Low - well-tested pattern\"}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-04-19T09:47:44.795Z",
+      "prioritySortOrder": 0
+    },
+    "url": "https://linear.app/skogai/issue/SKO-103/fix-shell-injection-vulnerability-in-plugin-names",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592339387,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

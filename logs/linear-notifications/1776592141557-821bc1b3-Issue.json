@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-04-19T09:49:01.557170+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:47:49.401Z",
+    "data": {
+      "id": "d6234acf-3aba-47cd-be44-66a1fc83483e",
+      "createdAt": "2026-04-17T13:51:14.052Z",
+      "updatedAt": "2026-04-19T09:47:49.400Z",
+      "number": 175,
+      "title": "feat: create skogai-git orchestrator skill",
+      "priority": 3,
+      "sortOrder": -143183.08,
+      "prioritySortOrder": -19053,
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-17T13:51:14.095Z",
+      "addedToTeamAt": "2026-04-17T13:51:14.095Z",
+      "labelIds": [],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "subIssueSortOrder": 1875,
+      "reactionData": [],
+      "priorityLabel": "Medium",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-175",
+      "url": "https://linear.app/skogai/issue/SKO-175/feat-create-skogai-git-orchestrator-skill",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "88741db4-d3dc-436e-8928-0cd0bc618809",
+      "project": {
+        "id": "7e941c1b-5b57-4c97-af87-8cc08fdea539",
+        "name": "SkogAI",
+        "url": "https://linear.app/skogai/project/skogai-08eb8e1f4091"
+      },
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "syncedWith": [
+        {
+          "id": "4283097681",
+          "service": "github",
+          "metadata": {
+            "repo": "claude",
+            "owner": "SkogAI",
+            "number": 40
+          }
+        }
+      ],
+      "labels": [],
+      "description": "Create `.skogai/skills/skogai-git/SKILL.md` that orchestrates gita, worktrunk, and gptodo into unified git workflows.\n\n## Scope\n\n* Routing table: intent \u2192 sub-skill (status \u2192 gita, worktree \u2192 worktrunk, tasks \u2192 gptodo)\n* Composite workflows:\n  * Morning check (fetch all, show dirty/behind)\n  * Start task (pick issue \u2192 create worktree \u2192 assign)\n  * Ship task (commit \u2192 push \u2192 PR \u2192 merge \u2192 clean up)\n  * End of day (status across all worktrees + repos)\n\n## Depends on\n\n* worktrunk specialist skill\n* gptodo specialist skill",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Create \"},{\"type\":\"text\",\"text\":\".skogai/skills/skogai-git/SKILL.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" that orchestrates gita, worktrunk, and gptodo into unified git workflows.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"fa2bd475-152b-4d78-853b-14578126bde1\"},\"content\":[{\"type\":\"text\",\"text\":\"Scope\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Routing table: intent \u2192 sub-skill (status \u2192 gita, worktree \u2192 worktrunk, tasks \u2192 gptodo)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Composite workflows:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Morning check (fetch all, show dirty/behind)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Start task (pick issue \u2192 create worktree \u2192 assign)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Ship task (commit \u2192 push \u2192 PR \u2192 merge \u2192 clean up)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"End of day (status across all worktrees + repos)\"}]}]}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"f79a8836-c28e-4a5a-81cd-60527d7c1c2f\"},\"content\":[{\"type\":\"text\",\"text\":\"Depends on\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"worktrunk specialist skill\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"gptodo specialist skill\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "sortOrder": -19060,
+      "updatedAt": "2026-04-17T13:51:14.052Z"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-175/feat-create-skogai-git-orchestrator-skill",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592141487,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

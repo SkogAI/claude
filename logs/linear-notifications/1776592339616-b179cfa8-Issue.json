@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-04-19T09:52:19.616887+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-19T09:52:18.012Z",
+    "data": {
+      "id": "86394187-407c-4db2-8ad7-058fbac72f5b",
+      "createdAt": "2025-10-29T17:46:07.000Z",
+      "updatedAt": "2026-04-19T09:52:18.011Z",
+      "number": 20,
+      "title": "[MEDIUM] Missing Migration for attribute_mapping Fix",
+      "priority": 0,
+      "sortOrder": -63472.65,
+      "prioritySortOrder": 0.358664648569381,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:11.605Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-20",
+      "url": "https://linear.app/skogai/issue/SKO-20/medium-missing-migration-for-attribute-mapping-fix",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "aabc7e7e-aeb7-4de6-9a43-92eaf5c1e263",
+        "color": "#e2e2e2",
+        "name": "Todo",
+        "type": "unstarted"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "## Problem\n\nThe attribute_mapping JSON structure fix was applied via direct database UPDATE in commit a34c1750, bypassing the migration framework:\n\n```sql\nUPDATE auth.saml_providers\nSET attribute_mapping = '{\"keys\": {...}}'\nWHERE id = '25cafa85-9f80-4186-b55e-0941767774c7';\n```\n\n## Impact\n\n* Fresh deployments will fail with JSON unmarshal error\n* Staging/production data divergence\n* Cannot cleanly rollback to previous state\n\n## Solution\n\n\u2705 **Retroactive migration already created** in this PR:\n\n* `migrations/20251029130000_fix_saml_attribute_mapping.up.sql`\n* `migrations/20251029130000_fix_saml_attribute_mapping.down.sql`\n\n**Next Steps**:\n\n1. Test migration on fresh database\n2. Verify staging environment\n3. Apply to production\n\n**Effort**: Small (4 hours for testing)\n**Blocking**: No - but recommended before next deployment\n\nSee PRODUCTION_READINESS.md Issue #4 and DATA_INTEGRITY_REPORT.md for full details.",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"84e199b7-9599-4144-b039-f87dc83c3590\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The attribute_mapping JSON structure fix was applied via direct database UPDATE in commit a34c1750, bypassing the migration framework:\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"sql\",\"id\":\"31fec68c-f396-45ea-a4ef-c21c5f86bd02\"},\"content\":[{\"type\":\"text\",\"text\":\"UPDATE auth.saml_providers\\nSET attribute_mapping = '{\\\"keys\\\": {...}}'\\nWHERE id = '25cafa85-9f80-4186-b55e-0941767774c7';\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"114d0e68-391a-4f2b-bdb6-3e945d0d604a\"},\"content\":[{\"type\":\"text\",\"text\":\"Impact\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Fresh deployments will fail with JSON unmarshal error\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Staging/production data divergence\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Cannot cleanly rollback to previous state\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"ddc39114-ecd0-47f9-a564-3c6de706171c\"},\"content\":[{\"type\":\"text\",\"text\":\"Solution\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u2705 \"},{\"type\":\"text\",\"text\":\"Retroactive migration already created\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" in this PR:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"migrations/20251029130000_fix_saml_attribute_mapping.up.sql\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"migrations/20251029130000_fix_saml_attribute_mapping.down.sql\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Next Steps\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\":\"}]},{\"type\":\"ordered_list\",\"attrs\":{\"order\":1},\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Test migration on fresh database\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Verify staging environment\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Apply to production\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Effort\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\": Small (4 hours for testing)\"},{\"type\":\"hard_break\"},{\"type\":\"text\",\"text\":\"Blocking\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\": No - but recommended before next deployment\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"See PRODUCTION_READINESS.md Issue #4 and DATA_INTEGRITY_REPORT.md for full details.\"}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-04-19T09:47:45.315Z",
+      "prioritySortOrder": 0
+    },
+    "url": "https://linear.app/skogai/issue/SKO-20/medium-missing-migration-for-attribute-mapping-fix",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776592339497,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}
