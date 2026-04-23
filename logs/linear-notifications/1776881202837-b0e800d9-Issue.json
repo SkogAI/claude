@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-04-22T18:06:42.837047+00:00",
+  "payload": {
+    "action": "create",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T18:06:40.139Z",
+    "data": {
+      "id": "39a9bbc8-c3d7-4853-9fe0-7e49499291c6",
+      "createdAt": "2026-04-22T18:06:40.139Z",
+      "updatedAt": "2026-04-22T18:06:40.139Z",
+      "number": 193,
+      "title": "design: make skogai-routing the canonical entrypoint for repo-local skills/",
+      "priority": 2,
+      "sortOrder": -6872,
+      "prioritySortOrder": -146918,
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-22T18:06:40.192Z",
+      "addedToTeamAt": "2026-04-22T18:06:40.192Z",
+      "labelIds": [
+        "fb26cb13-47ce-42af-a8e5-121331527dcd",
+        "bc676dcb-abeb-477a-a340-15c515855557"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "subIssueSortOrder": 4925,
+      "reactionData": [],
+      "priorityLabel": "High",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-193",
+      "url": "https://linear.app/skogai/issue/SKO-193/design-make-skogai-routing-the-canonical-entrypoint-for-repo-local",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "c38ac3b1-4e15-43bc-b86b-abd3af62bc75",
+      "assignee": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "project": {
+        "id": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+        "name": "SkogAI/.skogai",
+        "url": "https://linear.app/skogai/project/skogaiskogai-d4e8a7ec109a"
+      },
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "bc676dcb-abeb-477a-a340-15c515855557",
+          "color": "#0075ca",
+          "name": "documentation"
+        },
+        {
+          "id": "fb26cb13-47ce-42af-a8e5-121331527dcd",
+          "color": "#0E8A16",
+          "name": "area/agent-home"
+        }
+      ],
+      "description": "## Context\n\nPer current direction, `skogai-routing` is the first and most important skill in the moved `skills/` set. It should become the canonical router and guide for the rest of the skills, tools, and workflows.\n\nThis means the first pass should not try to perfect every moved skill equally. It should instead harden `skills/skogai-routing/` as the entrypoint that determines how the rest of the repo-local skill system is discovered and evolved.\n\n## Scope\n\n* treat `skills/skogai-routing/` as the canonical root for repo-local skill routing\n* decide which current capabilities belong directly in routing vs should stay in follow-on skills/workflows/references\n* tighten its [SKILL.md](<http://SKILL.md>) structure, routing table, and progressive-disclosure boundaries\n* preserve the parts that are genuinely routing-specific, especially [CLAUDE.md](<http://CLAUDE.md>) routing guidance\n* identify which overlapping creator/review workflows should remain in routing and which should move out or be retired\n* define what \u201cperfected enough to build on\u201d means for routing before broader skill cleanup continues\n\n## Done when\n\n* there is a clear canonical answer that `skogai-routing` is the first entrypoint for skill-related asks\n* the scope of `skogai-routing` is explicit: what it owns and what it delegates\n* the routing skill is internally coherent enough to serve as the basis for reviewing the remaining skills\n* follow-up cleanup of old creator skills can happen without ambiguity about the canonical router",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"02e13f79-f919-46fa-864a-7feeb7d23cb1\"},\"content\":[{\"type\":\"text\",\"text\":\"Context\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Per current direction, \"},{\"type\":\"text\",\"text\":\"skogai-routing\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is the first and most important skill in the moved \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" set. It should become the canonical router and guide for the rest of the skills, tools, and workflows.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"This means the first pass should not try to perfect every moved skill equally. It should instead harden \"},{\"type\":\"text\",\"text\":\"skills/skogai-routing/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" as the entrypoint that determines how the rest of the repo-local skill system is discovered and evolved.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"7406ab2d-b7cf-4795-9445-3cb119c49f80\"},\"content\":[{\"type\":\"text\",\"text\":\"Scope\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"treat \"},{\"type\":\"text\",\"text\":\"skills/skogai-routing/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" as the canonical root for repo-local skill routing\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"decide which current capabilities belong directly in routing vs should stay in follow-on skills/workflows/references\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"tighten its \"},{\"type\":\"text\",\"text\":\"SKILL.md\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://SKILL.md\"}}]},{\"type\":\"text\",\"text\":\" structure, routing table, and progressive-disclosure boundaries\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"preserve the parts that are genuinely routing-specific, especially \"},{\"type\":\"text\",\"text\":\"CLAUDE.md\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://CLAUDE.md\"}}]},{\"type\":\"text\",\"text\":\" routing guidance\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"identify which overlapping creator/review workflows should remain in routing and which should move out or be retired\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"define what \u201cperfected enough to build on\u201d means for routing before broader skill cleanup continues\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"7e35599b-3847-4a86-a8a3-39528d4b8e8b\"},\"content\":[{\"type\":\"text\",\"text\":\"Done when\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"there is a clear canonical answer that \"},{\"type\":\"text\",\"text\":\"skogai-routing\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is the first entrypoint for skill-related asks\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"the scope of \"},{\"type\":\"text\",\"text\":\"skogai-routing\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is explicit: what it owns and what it delegates\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"the routing skill is internally coherent enough to serve as the basis for reviewing the remaining skills\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"follow-up cleanup of old creator skills can happen without ambiguity about the canonical router\"}]}]}]}]}"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-193/design-make-skogai-routing-the-canonical-entrypoint-for-repo-local",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776881202728,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

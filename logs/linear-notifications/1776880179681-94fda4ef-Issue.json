@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-04-22T17:49:39.681512+00:00",
+  "payload": {
+    "action": "create",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T17:49:38.987Z",
+    "data": {
+      "id": "b06a71a4-2a0d-46ab-9b75-a3ea679257cc",
+      "createdAt": "2026-04-22T17:49:38.987Z",
+      "updatedAt": "2026-04-22T17:49:38.987Z",
+      "number": 188,
+      "title": "audit: normalize shared skills to current SKILL.md structure",
+      "priority": 3,
+      "sortOrder": -1939,
+      "prioritySortOrder": -146860,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-22T17:49:39.028Z",
+      "labelIds": [
+        "fb26cb13-47ce-42af-a8e5-121331527dcd",
+        "bc676dcb-abeb-477a-a340-15c515855557"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "subIssueSortOrder": -75,
+      "reactionData": [],
+      "priorityLabel": "Medium",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-188",
+      "url": "https://linear.app/skogai/issue/SKO-188/audit-normalize-shared-skills-to-current-skillmd-structure",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "c38ac3b1-4e15-43bc-b86b-abd3af62bc75",
+      "assignee": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "bc676dcb-abeb-477a-a340-15c515855557",
+          "color": "#0075ca",
+          "name": "documentation"
+        },
+        {
+          "id": "fb26cb13-47ce-42af-a8e5-121331527dcd",
+          "color": "#0E8A16",
+          "name": "area/agent-home"
+        }
+      ],
+      "description": "## Problem\n\nThe moved `skills/` set does not consistently match the structure taught by the repo's own skill-authoring guidance.\n\nConcrete examples from the current tree:\n\n* `skills/skogai-argc/SKILL.md` is about 677 lines\n* `skills/skogai-bats-testing/SKILL.md` is about 677 lines\n* `skills/skogai-docs/SKILL.md` is about 523 lines\n* `skills/skogai-wrapup/SKILL.md` uses `name: wrapup` while the directory is `skogai-wrapup`\n* many moved skills still use markdown-heading bodies even where `skogai-skills`/`skogai-routing` teach XML- and router-oriented structure\n\n## Scope\n\n* audit repo-local skills for frontmatter, naming, description quality, and body structure\n* decide where a skill should remain simple vs be split into workflows/references/templates\n* split oversized single-file skills only where that actually improves loading and reviewability\n* fix directory/name mismatches and weak or incomplete trigger descriptions\n* explicitly review risky auto-actions while normalizing semantics, especially `skogai-wrapup`\n\n## Done when\n\n* every moved skill has intentionally chosen structure rather than inherited drift\n* obvious frontmatter/name mismatches are fixed\n* oversized skills have either been split or explicitly justified as single-file\n* descriptions consistently explain both what the skill does and when it should trigger\n* review notes identify any remaining exceptions instead of leaving them implicit",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"1846bb85-b108-4850-8cc9-666efcfdb332\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The moved \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" set does not consistently match the structure taught by the repo's own skill-authoring guidance.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Concrete examples from the current tree:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skills/skogai-argc/SKILL.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is about 677 lines\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skills/skogai-bats-testing/SKILL.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is about 677 lines\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skills/skogai-docs/SKILL.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is about 523 lines\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skills/skogai-wrapup/SKILL.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" uses \"},{\"type\":\"text\",\"text\":\"name: wrapup\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" while the directory is \"},{\"type\":\"text\",\"text\":\"skogai-wrapup\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"many moved skills still use markdown-heading bodies even where \"},{\"type\":\"text\",\"text\":\"skogai-skills\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\"/\"},{\"type\":\"text\",\"text\":\"skogai-routing\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" teach XML- and router-oriented structure\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"3d564b62-5246-4031-8f1b-9762c5a4ff61\"},\"content\":[{\"type\":\"text\",\"text\":\"Scope\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"audit repo-local skills for frontmatter, naming, description quality, and body structure\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"decide where a skill should remain simple vs be split into workflows/references/templates\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"split oversized single-file skills only where that actually improves loading and reviewability\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"fix directory/name mismatches and weak or incomplete trigger descriptions\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"explicitly review risky auto-actions while normalizing semantics, especially \"},{\"type\":\"text\",\"text\":\"skogai-wrapup\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"2768e952-58e9-4472-ac90-205396bcb31c\"},\"content\":[{\"type\":\"text\",\"text\":\"Done when\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"every moved skill has intentionally chosen structure rather than inherited drift\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"obvious frontmatter/name mismatches are fixed\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"oversized skills have either been split or explicitly justified as single-file\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"descriptions consistently explain both what the skill does and when it should trigger\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"review notes identify any remaining exceptions instead of leaving them implicit\"}]}]}]}]}"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-188/audit-normalize-shared-skills-to-current-skillmd-structure",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776880179556,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

@@ -1,0 +1,112 @@
+{
+  "timestamp": "2026-04-22T17:53:41.128543+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T17:53:40.462Z",
+    "data": {
+      "id": "93a0647d-efcc-4e17-84f8-bb9325c4f9f4",
+      "createdAt": "2026-04-22T17:49:45.416Z",
+      "updatedAt": "2026-04-22T17:53:40.462Z",
+      "number": 192,
+      "title": "verify: revalidate tool- and API-facing skills after move into skills/",
+      "priority": 3,
+      "sortOrder": -5874,
+      "prioritySortOrder": -146842,
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-22T17:53:40.462Z",
+      "addedToTeamAt": "2026-04-22T17:49:45.460Z",
+      "labelIds": [
+        "fb26cb13-47ce-42af-a8e5-121331527dcd",
+        "dbd80443-71c5-4b12-a6ee-a81e581792d9",
+        "bc676dcb-abeb-477a-a340-15c515855557"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "subIssueSortOrder": 3884,
+      "reactionData": [],
+      "priorityLabel": "Medium",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-192",
+      "url": "https://linear.app/skogai/issue/SKO-192/verify-revalidate-tool-and-api-facing-skills-after-move-into-skills",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "c38ac3b1-4e15-43bc-b86b-abd3af62bc75",
+      "assignee": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "project": {
+        "id": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+        "name": "SkogAI/.skogai",
+        "url": "https://linear.app/skogai/project/skogaiskogai-d4e8a7ec109a"
+      },
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "syncedWith": [
+        {
+          "id": "4310848469",
+          "service": "github",
+          "metadata": {
+            "repo": "claude",
+            "owner": "SkogAI",
+            "number": 60
+          }
+        }
+      ],
+      "labels": [
+        {
+          "id": "bc676dcb-abeb-477a-a340-15c515855557",
+          "color": "#0075ca",
+          "name": "documentation"
+        },
+        {
+          "id": "dbd80443-71c5-4b12-a6ee-a81e581792d9",
+          "color": "#FBCA04",
+          "name": "triage/needs-revalidation"
+        },
+        {
+          "id": "fb26cb13-47ce-42af-a8e5-121331527dcd",
+          "color": "#0E8A16",
+          "name": "area/agent-home"
+        }
+      ],
+      "description": "## Problem\n\nSeveral moved skills make claims about current CLIs, APIs, hook behavior, or agent workflows. Before these become canonical shared skills, they should be re-verified against the current environment and source docs.\n\nInitial candidate set:\n\n* `skogai-argc`\n* `skogai-git`\n* `skogai-gita`\n* `skogai-hook-debugger`\n* `skogai-mcp-builder`\n* `skogai-gptme`\n* `skogai-prompting`\n* `skogai-planning-with-files`\n\n## Scope\n\n* classify each candidate by dependency type: CLI, framework, integration, API/service, or pure process\n* use the existing verify-skill workflow as a starting point, but run it against repo-local `skills/`\n* produce a freshness report per reviewed skill and either fix issues or spawn narrower follow-up tickets\n* separate structural cleanup from truth-verification so reviewers know whether a skill is wrong, stale, or just messy\n\n## Done when\n\n* each external-facing candidate has a freshness decision: current, needs update, or split out into follow-up work\n* obviously stale commands/flags/paths are corrected or documented\n* pure-process skills are explicitly identified so they are not over-audited as if they were API guides\n* the repo has a repeatable review path for future imported skills with external dependencies",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"f3e9da19-cf09-4523-b124-31a5ddf6eb56\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Several moved skills make claims about current CLIs, APIs, hook behavior, or agent workflows. Before these become canonical shared skills, they should be re-verified against the current environment and source docs.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Initial candidate set:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-argc\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-git\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-gita\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-hook-debugger\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-mcp-builder\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-gptme\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-prompting\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-planning-with-files\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"ea7ccc23-a858-412d-a575-358bc4a9f293\"},\"content\":[{\"type\":\"text\",\"text\":\"Scope\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"classify each candidate by dependency type: CLI, framework, integration, API/service, or pure process\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"use the existing verify-skill workflow as a starting point, but run it against repo-local \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"produce a freshness report per reviewed skill and either fix issues or spawn narrower follow-up tickets\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"separate structural cleanup from truth-verification so reviewers know whether a skill is wrong, stale, or just messy\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"dc0bb54d-5b14-4666-9616-b6012e151340\"},\"content\":[{\"type\":\"text\",\"text\":\"Done when\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"each external-facing candidate has a freshness decision: current, needs update, or split out into follow-up work\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"obviously stale commands/flags/paths are corrected or documented\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"pure-process skills are explicitly identified so they are not over-audited as if they were API guides\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"the repo has a repeatable review path for future imported skills with external dependencies\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "projectId": null,
+      "updatedAt": "2026-04-22T17:49:45.416Z",
+      "addedToProjectAt": null
+    },
+    "url": "https://linear.app/skogai/issue/SKO-192/verify-revalidate-tool-and-api-facing-skills-after-move-into-skills",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776880421012,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

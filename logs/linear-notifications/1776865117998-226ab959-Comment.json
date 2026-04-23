@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-22T13:38:37.998387+00:00",
+  "payload": {
+    "action": "remove",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T13:37:27.128Z",
+    "data": {
+      "id": "d83dbeb5-9233-47b5-9b47-90d02d925675",
+      "createdAt": "2026-04-19T09:54:45.187Z",
+      "updatedAt": "2026-04-19T09:54:45.153Z",
+      "body": "### Summary\n\n* Moved the executable scripts from `claude-todo/bin/` into a new canonical tooling location at `.skogai/tools/` (`healthcheck`, context scripts, `find-agent-root.sh`, `fetch-docs.sh`, and `claude-md-linecheck`).\n* Added `.skogai/tools/CLAUDE.md` documenting executable inventory with **purpose, usage, and arguments**, plus discoverability notes for larger environment tools (`gptodo`, `wt`, `gita`, `skogai`, `skogcli`, `argc`).\n* Converted `claude-todo/bin/*` script files into compatibility wrappers that `exec` the corresponding `.skogai/tools/*` binary, so existing hooks/config paths keep working while executables are now centralized.\n* Updated `claude-todo/bin/CLAUDE.md` to clarify this folder is now a compatibility wrapper router.\n* Updated root `CLAUDE.md` structure/routes to point to the new canonical tooling router at `@.skogai/tools/CLAUDE.md` and legacy wrappers at `@claude-todo/bin/CLAUDE.md`.\n* Committed all changes with: `feat: move home executables to .skogai/tools and document tooling`.\n* Created a PR record via the `make_pr` tool with title/body summarizing the migration and validation.\n\n**Testing**\n\n* \u2705 `git diff --check`\n* \u2705 `./.skogai/tools/healthcheck`\n* \u2705 `./claude-todo/bin/healthcheck`\n* \u2705 `./claude-todo/bin/find-agent-root.sh`\n\n[View task \u2192](<https://chatgpt.com/s/cd_69e4a58cea4c81919100331050b6e06d>)",
+      "issueId": "503b0a93-db1c-4dc0-a4e5-5894e5eab5de",
+      "parentId": "7b5d0117-bbd6-4cec-8b33-0bcd4e9f96e1",
+      "userId": "cd01fa9b-9f99-4e9c-b038-b78094abb9d4",
+      "reactionData": [],
+      "isArtificialAgentSessionRoot": false,
+      "botActor": null,
+      "user": {
+        "id": "cd01fa9b-9f99-4e9c-b038-b78094abb9d4",
+        "name": "Codex",
+        "email": "a4bc02c9-24f5-44c3-a1d1-03a2e3042a99@oauthapp.linear.app",
+        "avatarUrl": "https://public.linear.app/a7929e46-07ed-49ae-a46d-dd6c052e08e1/0f912afe-b125-4df1-a206-a3382ebb8d14/256x256/316e7aed-54d5-4841-abf5-fbae0e806bb9",
+        "url": "https://linear.app/skogai/profiles/codex"
+      },
+      "issue": {
+        "id": "503b0a93-db1c-4dc0-a4e5-5894e5eab5de",
+        "title": "feat: document all binaries/scripts into CLAUDE.md",
+        "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "team": {
+          "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+          "key": "SKO",
+          "name": "SkogAI"
+        },
+        "identifier": "SKO-160",
+        "url": "https://linear.app/skogai/issue/SKO-160/feat-document-all-binariesscripts-into-claudemd"
+      }
+    },
+    "type": "Comment",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776865117912,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

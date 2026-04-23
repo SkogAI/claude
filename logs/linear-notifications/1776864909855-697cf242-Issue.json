@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-04-22T13:35:09.855933+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T13:35:08.767Z",
+    "data": {
+      "id": "639f8994-a6fa-46a3-a507-17df740959ab",
+      "createdAt": "2025-11-27T04:16:47.000Z",
+      "updatedAt": "2026-04-22T13:35:08.766Z",
+      "number": 66,
+      "title": "Add .inputrc template for readline configuration",
+      "priority": 0,
+      "sortOrder": 0,
+      "prioritySortOrder": 0,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:14.557Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-66",
+      "url": "https://linear.app/skogai/issue/SKO-66/add-inputrc-template-for-readline-configuration",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "## Summary\n\nDeploy `.inputrc` template from `dotfiles-templates/` to configure readline behavior for all readline-enabled tools (bash, python REPL, mysql, etc.).\n\n## Context\n\nThe `dotfiles-templates/.inputrc` provides:\n\n* Case-insensitive tab completion\n* Colored completion output\n* Enhanced keyboard navigation (Ctrl+arrows for word movement)\n* UTF-8 support\n* Better history search with arrow keys\n\nThis benefits any tool using GNU readline library, not just bash.\n\n## Current State\n\n* \u2705 Source template exists: `dotfiles-templates/.inputrc`\n* \u274c Not deployed by system-setup ansible roles\n* \u274c Users rely on system defaults (less optimal)\n\n## Acceptance Criteria\n\n- [ ] Copy `dotfiles-templates/.inputrc` to `system-setup/roles/03-dotfiles/files/.inputrc`\n- [ ] Add deployment task in `roles/03-dotfiles/tasks/main.yml`:\n\n  ```yaml\n  - name: Symlink inputrc for users\n    ansible.builtin.file:\n      src: \"{{ role_path }}/files/.inputrc\"\n      dest: \"/home/{{ item.name }}/.inputrc\"\n      state: link\n      force: true\n      owner: \"{{ item.name }}\"\n      group: \"{{ item.name }}\"\n    loop: \"{{ users }}\"\n    become: true\n  ```\n- [ ] Test deployment with `./run.sh`\n- [ ] Verify readline behavior improves in bash/python REPL\n\n## Implementation Notes\n\n* File should be symlinked (not templated) as it requires no user-specific customization\n* Consider adding `.inputrc.local` override mechanism for user customization\n* Works for both bash and zsh users\n\n## Priority\n\n**High** - Universal improvement for all users with minimal effort\n\n## References\n\n* Source: `/home/skogix/skogix/dotfiles-templates/.inputrc`\n* Target role: `system-setup/roles/03-dotfiles/`\n* Related: Part of dotfiles-templates integration initiative",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"a2f99354-06c1-4455-9313-d5f6dc04a620\"},\"content\":[{\"type\":\"text\",\"text\":\"Summary\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Deploy \"},{\"type\":\"text\",\"text\":\".inputrc\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" template from \"},{\"type\":\"text\",\"text\":\"dotfiles-templates/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" to configure readline behavior for all readline-enabled tools (bash, python REPL, mysql, etc.).\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"06e166c4-c711-4ced-99eb-d3c0b19fa9c7\"},\"content\":[{\"type\":\"text\",\"text\":\"Context\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The \"},{\"type\":\"text\",\"text\":\"dotfiles-templates/.inputrc\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" provides:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Case-insensitive tab completion\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Colored completion output\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Enhanced keyboard navigation (Ctrl+arrows for word movement)\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"UTF-8 support\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Better history search with arrow keys\"}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"This benefits any tool using GNU readline library, not just bash.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"c230b146-76c4-4b35-b9dc-0947db312e38\"},\"content\":[{\"type\":\"text\",\"text\":\"Current State\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u2705 Source template exists: \"},{\"type\":\"text\",\"text\":\"dotfiles-templates/.inputrc\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u274c Not deployed by system-setup ansible roles\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u274c Users rely on system defaults (less optimal)\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"38df462e-0ca9-4d27-a3b8-c724e09efd8e\"},\"content\":[{\"type\":\"text\",\"text\":\"Acceptance Criteria\"}]},{\"type\":\"todo_list\",\"content\":[{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Copy \"},{\"type\":\"text\",\"text\":\"dotfiles-templates/.inputrc\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" to \"},{\"type\":\"text\",\"text\":\"system-setup/roles/03-dotfiles/files/.inputrc\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Add deployment task in \"},{\"type\":\"text\",\"text\":\"roles/03-dotfiles/tasks/main.yml\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\":\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"yaml\",\"id\":\"5010a43f-07ea-447d-8d48-9ed1a0b6d3ba\"},\"content\":[{\"type\":\"text\",\"text\":\"- name: Symlink inputrc for users\\n  ansible.builtin.file:\\n    src: \\\"{{ role_path }}/files/.inputrc\\\"\\n    dest: \\\"/home/{{ item.name }}/.inputrc\\\"\\n    state: link\\n    force: true\\n    owner: \\\"{{ item.name }}\\\"\\n    group: \\\"{{ item.name }}\\\"\\n  loop: \\\"{{ users }}\\\"\\n  become: true\"}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Test deployment with \"},{\"type\":\"text\",\"text\":\"./run.sh\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Verify readline behavior improves in bash/python REPL\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"a084d8f1-f690-44bd-8410-ef5e5bf2bc1c\"},\"content\":[{\"type\":\"text\",\"text\":\"Implementation Notes\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"File should be symlinked (not templated) as it requires no user-specific customization\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Consider adding \"},{\"type\":\"text\",\"text\":\".inputrc.local\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" override mechanism for user customization\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Works for both bash and zsh users\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"1be2c6bd-02c0-4a6d-9bc8-586e5c380cc3\"},\"content\":[{\"type\":\"text\",\"text\":\"Priority\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"High\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" - Universal improvement for all users with minimal effort\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"ee835121-c457-41ad-adec-fbb1b47af2a0\"},\"content\":[{\"type\":\"text\",\"text\":\"References\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Source: \"},{\"type\":\"text\",\"text\":\"/home/skogix/skogix/dotfiles-templates/.inputrc\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Target role: \"},{\"type\":\"text\",\"text\":\"system-setup/roles/03-dotfiles/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Related: Part of dotfiles-templates integration initiative\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2025-11-29T18:07:50.000Z",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-66/add-inputrc-template-for-readline-configuration",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776864909697,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

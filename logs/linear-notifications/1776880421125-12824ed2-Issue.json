@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-04-22T17:53:41.125173+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T17:53:40.510Z",
+    "data": {
+      "id": "5eff3507-8459-4700-a501-1f52e5e21774",
+      "createdAt": "2026-04-22T17:49:41.977Z",
+      "updatedAt": "2026-04-22T17:53:40.509Z",
+      "number": 190,
+      "title": "chore: consolidate overlapping skill-authoring and routing skills",
+      "priority": 3,
+      "sortOrder": -3916,
+      "prioritySortOrder": -146897,
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-22T17:53:40.509Z",
+      "addedToTeamAt": "2026-04-22T17:49:42.036Z",
+      "labelIds": [
+        "fb26cb13-47ce-42af-a8e5-121331527dcd",
+        "bc676dcb-abeb-477a-a340-15c515855557"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "projectId": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "subIssueSortOrder": 1899,
+      "reactionData": [],
+      "priorityLabel": "Medium",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-190",
+      "url": "https://linear.app/skogai/issue/SKO-190/chore-consolidate-overlapping-skill-authoring-and-routing-skills",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "c38ac3b1-4e15-43bc-b86b-abd3af62bc75",
+      "assignee": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "project": {
+        "id": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+        "name": "SkogAI/.skogai",
+        "url": "https://linear.app/skogai/project/skogaiskogai-d4e8a7ec109a"
+      },
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "syncedWith": [
+        {
+          "id": "4310847960",
+          "service": "github",
+          "metadata": {
+            "repo": "claude",
+            "owner": "SkogAI",
+            "number": 58
+          }
+        }
+      ],
+      "labels": [
+        {
+          "id": "bc676dcb-abeb-477a-a340-15c515855557",
+          "color": "#0075ca",
+          "name": "documentation"
+        },
+        {
+          "id": "fb26cb13-47ce-42af-a8e5-121331527dcd",
+          "color": "#0E8A16",
+          "name": "area/agent-home"
+        }
+      ],
+      "description": "## Problem\n\nThe current repo-local skill set contains overlapping authoring/router skills with no clear canonical boundary.\n\nMain overlap clusters:\n\n* `skill-creator`\n* `skogai-skill-creator`\n* `skogai-skills`\n* `skogai-routing`\n\nConcrete evidence:\n\n* `skills/skogai-routing/workflows/` and `skills/skogai-skills/workflows/` share the same workflow set except for `claude-md-routing.md`\n* `skills/skogai-routing/references/` and `skills/skogai-skills/references/` also substantially overlap\n* `skill-creator` and `skogai-skill-creator` both cover skill creation but come from different conventions and tool assumptions\n\n## Scope\n\n* choose the canonical skill(s) for skill creation, skill review, and routing guidance\n* merge or retire duplicate workflows/references where they do not carry distinct value\n* preserve specialized content intentionally, especially the [CLAUDE.md](<http://CLAUDE.md>) routing material, rather than keeping accidental forks\n* define how legacy or imported skill-creator content should be retained: canonical, compatibility alias, or archived reference\n\n## Done when\n\n* there is a clear answer to which skill to invoke for creating, auditing, and verifying skills\n* duplicate workflow/reference trees are reduced or intentionally separated\n* imported/legacy creator content is either integrated, aliased, or archived with rationale\n* future skill work does not have to guess between near-duplicate entry points",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"fb08f5e4-8af4-4881-a674-e140c2e3e124\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The current repo-local skill set contains overlapping authoring/router skills with no clear canonical boundary.\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Main overlap clusters:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skill-creator\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-skill-creator\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-skills\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai-routing\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Concrete evidence:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skills/skogai-routing/workflows/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" and \"},{\"type\":\"text\",\"text\":\"skills/skogai-skills/workflows/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" share the same workflow set except for \"},{\"type\":\"text\",\"text\":\"claude-md-routing.md\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skills/skogai-routing/references/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" and \"},{\"type\":\"text\",\"text\":\"skills/skogai-skills/references/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" also substantially overlap\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skill-creator\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" and \"},{\"type\":\"text\",\"text\":\"skogai-skill-creator\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" both cover skill creation but come from different conventions and tool assumptions\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"6983aadb-9209-4957-9b01-a6646b65fdcc\"},\"content\":[{\"type\":\"text\",\"text\":\"Scope\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"choose the canonical skill(s) for skill creation, skill review, and routing guidance\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"merge or retire duplicate workflows/references where they do not carry distinct value\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"preserve specialized content intentionally, especially the \"},{\"type\":\"text\",\"text\":\"CLAUDE.md\",\"marks\":[{\"type\":\"link\",\"attrs\":{\"href\":\"http://CLAUDE.md\"}}]},{\"type\":\"text\",\"text\":\" routing material, rather than keeping accidental forks\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"define how legacy or imported skill-creator content should be retained: canonical, compatibility alias, or archived reference\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"3fbe03eb-27ac-4371-a165-a46373903fc7\"},\"content\":[{\"type\":\"text\",\"text\":\"Done when\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"there is a clear answer to which skill to invoke for creating, auditing, and verifying skills\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"duplicate workflow/reference trees are reduced or intentionally separated\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"imported/legacy creator content is either integrated, aliased, or archived with rationale\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"future skill work does not have to guess between near-duplicate entry points\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "projectId": null,
+      "updatedAt": "2026-04-22T17:49:42.270Z",
+      "addedToProjectAt": null
+    },
+    "url": "https://linear.app/skogai/issue/SKO-190/chore-consolidate-overlapping-skill-authoring-and-routing-skills",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776880421000,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

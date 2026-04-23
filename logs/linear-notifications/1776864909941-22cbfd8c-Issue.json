@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-04-22T13:35:09.941228+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T13:35:08.712Z",
+    "data": {
+      "id": "75351485-176d-4533-8de9-0369c6093283",
+      "createdAt": "2025-11-27T04:17:55.000Z",
+      "updatedAt": "2026-04-22T13:35:08.711Z",
+      "number": 68,
+      "title": "Add .dircolors template for custom ls colors",
+      "priority": 0,
+      "sortOrder": 0,
+      "prioritySortOrder": 0,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-17T13:46:14.705Z",
+      "labelIds": [
+        "28b300cc-462c-4f2f-8fda-b92979fb9f29"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "reactionData": [],
+      "priorityLabel": "No priority",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-68",
+      "url": "https://linear.app/skogai/issue/SKO-68/add-dircolors-template-for-custom-ls-colors",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [
+        {
+          "id": "28b300cc-462c-4f2f-8fda-b92979fb9f29",
+          "color": "#4EA7FC",
+          "name": "Migrated"
+        }
+      ],
+      "description": "## Summary\n\nDeploy `.dircolors` template from `dotfiles-templates/` to provide custom color schemes for `ls` output based on file types.\n\n## Context\n\nThe `dotfiles-templates/.dircolors` provides:\n\n* Custom color codes for different file types\n* Archives (tar, zip, gz) in red\n* Images (png, jpg, gif) in magenta\n* Audio files (mp3, wav) in cyan\n* Documents (pdf, doc) in green\n* Code files (py, js, sh) in yellow\n* Better visual distinction in terminal file listings\n\n## Current State\n\n* \u2705 Source template exists: `dotfiles-templates/.dircolors` (also `.dir_colors`)\n* \u274c Not deployed by system-setup ansible roles\n* \u274c Users rely on system defaults\n* \u26a0\ufe0f zsh 50-aliases.zsh uses system dircolors: `eval \"$(dircolors -b)\"`\n\n## Acceptance Criteria\n\n- [ ] Choose canonical name: `.dircolors` (more common) or `.dir_colors` (legacy)\n- [ ] Copy chosen file to `system-setup/roles/03-dotfiles/files/.dircolors`\n- [ ] Add deployment task in `roles/03-dotfiles/tasks/main.yml`:\n\n  ```yaml\n  - name: Symlink dircolors for users\n    ansible.builtin.file:\n      src: \"{{ role_path }}/files/.dircolors\"\n      dest: \"/home/{{ item.name }}/.dircolors\"\n      state: link\n      force: true\n      owner: \"{{ item.name }}\"\n      group: \"{{ item.name }}\"\n    loop: \"{{ users }}\"\n    become: true\n  ```\n- [ ] Update zsh `50-aliases.zsh.j2` to reference custom dircolors:\n\n  ```bash\n  # Current: eval \"$(dircolors -b)\"\n  # New: test -r ~/.dircolors && eval \"$(dircolors -b ~/.dircolors)\" || eval \"$(dircolors -b)\"\n  ```\n- [ ] Test deployment with `./run.sh`\n- [ ] Verify colorized ls output in both bash and zsh\n\n## Implementation Notes\n\n* File should be symlinked (not templated) unless users need different color schemes\n* Add `.dircolors.local` override mechanism for user customization\n* Works with GNU ls (Arch default) - BSD ls uses different format\n* Both bash and zsh need to source dircolors in their rc files\n\n## Priority\n\n**Medium** - Nice UX improvement, not critical functionality\n\n## References\n\n* Source: `/home/skogix/skogix/dotfiles-templates/.dircolors`\n* Target role: `system-setup/roles/03-dotfiles/`\n* Current usage: `roles/03-dotfiles/templates/.config/zsh/50-aliases.zsh.j2`\n* Related: Part of dotfiles-templates integration initiative",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"22a80b83-f64d-43a2-8c0b-ab4135f3d1f5\"},\"content\":[{\"type\":\"text\",\"text\":\"Summary\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Deploy \"},{\"type\":\"text\",\"text\":\".dircolors\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" template from \"},{\"type\":\"text\",\"text\":\"dotfiles-templates/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" to provide custom color schemes for \"},{\"type\":\"text\",\"text\":\"ls\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" output based on file types.\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"7e0f05a6-e6a3-4ce0-beb3-d1da98b725dd\"},\"content\":[{\"type\":\"text\",\"text\":\"Context\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"The \"},{\"type\":\"text\",\"text\":\"dotfiles-templates/.dircolors\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" provides:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Custom color codes for different file types\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Archives (tar, zip, gz) in red\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Images (png, jpg, gif) in magenta\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Audio files (mp3, wav) in cyan\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Documents (pdf, doc) in green\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Code files (py, js, sh) in yellow\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Better visual distinction in terminal file listings\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"e5d60042-3701-45ea-98c0-9a5b110ff6a5\"},\"content\":[{\"type\":\"text\",\"text\":\"Current State\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u2705 Source template exists: \"},{\"type\":\"text\",\"text\":\"dotfiles-templates/.dircolors\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" (also \"},{\"type\":\"text\",\"text\":\".dir_colors\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\")\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u274c Not deployed by system-setup ansible roles\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u274c Users rely on system defaults\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"\u26a0\ufe0f zsh 50-aliases.zsh uses system dircolors: \"},{\"type\":\"text\",\"text\":\"eval \\\"$(dircolors -b)\\\"\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"34e9f385-5c71-4769-be8f-20b4c6422d89\"},\"content\":[{\"type\":\"text\",\"text\":\"Acceptance Criteria\"}]},{\"type\":\"todo_list\",\"content\":[{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Choose canonical name: \"},{\"type\":\"text\",\"text\":\".dircolors\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" (more common) or \"},{\"type\":\"text\",\"text\":\".dir_colors\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" (legacy)\"}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Copy chosen file to \"},{\"type\":\"text\",\"text\":\"system-setup/roles/03-dotfiles/files/.dircolors\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Add deployment task in \"},{\"type\":\"text\",\"text\":\"roles/03-dotfiles/tasks/main.yml\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\":\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"yaml\",\"id\":\"f93f65bf-6a5a-4ab8-b651-0591982c6368\"},\"content\":[{\"type\":\"text\",\"text\":\"- name: Symlink dircolors for users\\n  ansible.builtin.file:\\n    src: \\\"{{ role_path }}/files/.dircolors\\\"\\n    dest: \\\"/home/{{ item.name }}/.dircolors\\\"\\n    state: link\\n    force: true\\n    owner: \\\"{{ item.name }}\\\"\\n    group: \\\"{{ item.name }}\\\"\\n  loop: \\\"{{ users }}\\\"\\n  become: true\"}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Update zsh \"},{\"type\":\"text\",\"text\":\"50-aliases.zsh.j2\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" to reference custom dircolors:\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"bash\",\"id\":\"97bb9a1e-58f3-459a-b7da-7a36808117ce\"},\"content\":[{\"type\":\"text\",\"text\":\"# Current: eval \\\"$(dircolors -b)\\\"\\n# New: test -r ~/.dircolors && eval \\\"$(dircolors -b ~/.dircolors)\\\" || eval \\\"$(dircolors -b)\\\"\"}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Test deployment with \"},{\"type\":\"text\",\"text\":\"./run.sh\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"todo_item\",\"attrs\":{\"done\":false},\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Verify colorized ls output in both bash and zsh\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"6b1fbe7c-9c61-437e-a498-efe7caa11606\"},\"content\":[{\"type\":\"text\",\"text\":\"Implementation Notes\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"File should be symlinked (not templated) unless users need different color schemes\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Add \"},{\"type\":\"text\",\"text\":\".dircolors.local\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" override mechanism for user customization\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Works with GNU ls (Arch default) - BSD ls uses different format\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Both bash and zsh need to source dircolors in their rc files\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"c4b51e3d-fcc9-4ec6-95bb-982415587798\"},\"content\":[{\"type\":\"text\",\"text\":\"Priority\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Medium\",\"marks\":[{\"type\":\"strong\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" - Nice UX improvement, not critical functionality\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"35c43f1e-c5ba-43a4-89bd-f7d78bc3fe61\"},\"content\":[{\"type\":\"text\",\"text\":\"References\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Source: \"},{\"type\":\"text\",\"text\":\"/home/skogix/skogix/dotfiles-templates/.dircolors\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Target role: \"},{\"type\":\"text\",\"text\":\"system-setup/roles/03-dotfiles/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Current usage: \"},{\"type\":\"text\",\"text\":\"roles/03-dotfiles/templates/.config/zsh/50-aliases.zsh.j2\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Related: Part of dotfiles-templates integration initiative\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2025-11-29T18:07:51.000Z",
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-68/add-dircolors-template-for-custom-ls-colors",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776864909868,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

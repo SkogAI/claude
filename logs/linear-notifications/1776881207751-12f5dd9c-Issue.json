@@ -1,0 +1,131 @@
+{
+  "timestamp": "2026-04-22T18:06:47.751551+00:00",
+  "payload": {
+    "action": "update",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-22T18:06:46.873Z",
+    "data": {
+      "id": "5eff3507-8459-4700-a501-1f52e5e21774",
+      "createdAt": "2026-04-22T17:49:41.977Z",
+      "updatedAt": "2026-04-22T18:06:46.843Z",
+      "archivedAt": null,
+      "number": 190,
+      "title": "chore: retire deprecated creator skills after skogai-routing is canonical",
+      "priority": 3,
+      "estimate": null,
+      "sortOrder": -3916,
+      "prioritySortOrder": -146897,
+      "startedAt": null,
+      "completedAt": null,
+      "startedTriageAt": null,
+      "triagedAt": null,
+      "canceledAt": null,
+      "autoClosedAt": null,
+      "autoArchivedAt": null,
+      "dueDate": null,
+      "slaStartedAt": null,
+      "slaMediumRiskAt": null,
+      "slaHighRiskAt": null,
+      "slaBreachesAt": null,
+      "slaType": "all",
+      "addedToProjectAt": "2026-04-22T17:53:40.509Z",
+      "addedToCycleAt": null,
+      "addedToTeamAt": "2026-04-22T17:49:42.036Z",
+      "trashed": null,
+      "snoozedUntilAt": null,
+      "activitySummary": null,
+      "labelIds": [
+        "fb26cb13-47ce-42af-a8e5-121331527dcd",
+        "bc676dcb-abeb-477a-a340-15c515855557"
+      ],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "cycleId": null,
+      "projectId": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+      "projectMilestoneId": null,
+      "lastAppliedTemplateId": null,
+      "recurringIssueTemplateId": null,
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "externalUserCreatorId": null,
+      "assigneeId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "delegateId": null,
+      "snoozedById": null,
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "subIssueSortOrder": 1899,
+      "reactionData": [],
+      "priorityLabel": "Medium",
+      "sourceCommentId": null,
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-190",
+      "url": "https://linear.app/skogai/issue/SKO-190/chore-retire-deprecated-creator-skills-after-skogai-routing-is",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "parentId": "c38ac3b1-4e15-43bc-b86b-abd3af62bc75",
+      "assignee": {
+        "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+        "name": "Emil Skogsund",
+        "email": "emil.skogsund@gmail.com",
+        "url": "https://linear.app/skogai/profiles/skogix"
+      },
+      "project": {
+        "id": "84430f64-68f5-4dd8-903f-d71dbaeae8fd",
+        "name": "SkogAI/.skogai",
+        "url": "https://linear.app/skogai/project/skogaiskogai-d4e8a7ec109a"
+      },
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "syncedWith": [
+        {
+          "id": "4310847960",
+          "service": "github",
+          "metadata": {
+            "repo": "claude",
+            "owner": "SkogAI",
+            "number": 58
+          }
+        }
+      ],
+      "labels": [
+        {
+          "id": "bc676dcb-abeb-477a-a340-15c515855557",
+          "color": "#0075ca",
+          "name": "documentation"
+        },
+        {
+          "id": "fb26cb13-47ce-42af-a8e5-121331527dcd",
+          "color": "#0E8A16",
+          "name": "area/agent-home"
+        }
+      ],
+      "description": "## Problem\n\nThere are multiple overlapping skill-creation artifacts in the moved `skills/` tree, but current direction narrows their fate substantially:\n\n* `skill-creator` is the official Claude/Codex skill creator and can be removed from this repo-local set for now\n\n## Scope\n\n* remove or archive `skill-creator` from the repo-local `skills/` set as a non-canonical imported duplicate\n* remove or archive `skogai-skill-creator` as deprecated legacy setup\n* review `skogai-skills` only for material worth folding into `skogai-routing` or later follow-on skills\n* avoid preserving multiple competing entrypoints for skill creation once `skogai-routing` is established\n\n## Done when\n\n* deprecated creator variants are no longer presented as active repo-local entrypoints\n* any valuable content from `skogai-skills` is either absorbed into the canonical routing-led design or explicitly archived\n* the remaining skill-creation path follows from `skogai-routing` rather than parallel creator skills\n* reviewers no longer have to guess which creator/routing skill is authoritative",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"8f3a64ab-d429-4ba3-bbb4-fc33b79bfb92\"},\"content\":[{\"type\":\"text\",\"text\":\"Problem\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"There are multiple overlapping skill-creation artifacts in the moved \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" tree, but current direction narrows their fate substantially:\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skill-creator\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is the official Claude/Codex skill creator and can be removed from this repo-local set for now\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"3667ac62-8897-41e4-98c8-8caaa61de5af\"},\"content\":[{\"type\":\"text\",\"text\":\"Scope\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"remove or archive \"},{\"type\":\"text\",\"text\":\"skill-creator\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" from the repo-local \"},{\"type\":\"text\",\"text\":\"skills/\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" set as a non-canonical imported duplicate\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"remove or archive \"},{\"type\":\"text\",\"text\":\"skogai-skill-creator\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" as deprecated legacy setup\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"review \"},{\"type\":\"text\",\"text\":\"skogai-skills\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" only for material worth folding into \"},{\"type\":\"text\",\"text\":\"skogai-routing\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" or later follow-on skills\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"avoid preserving multiple competing entrypoints for skill creation once \"},{\"type\":\"text\",\"text\":\"skogai-routing\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is established\"}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"95ed6443-747a-495c-8a13-1db298abf8c7\"},\"content\":[{\"type\":\"text\",\"text\":\"Done when\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"deprecated creator variants are no longer presented as active repo-local entrypoints\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"any valuable content from \"},{\"type\":\"text\",\"text\":\"skogai-skills\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" is either absorbed into the canonical routing-led design or explicitly archived\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"the remaining skill-creation path follows from \"},{\"type\":\"text\",\"text\":\"skogai-routing\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" rather than parallel creator skills\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"reviewers no longer have to guess which creator/routing skill is authoritative\"}]}]}]}]}"
+    },
+    "updatedFrom": {
+      "updatedAt": "2026-04-22T18:06:46.843Z",
+      "description": null
+    },
+    "url": "https://linear.app/skogai/issue/SKO-190/chore-retire-deprecated-creator-skills-after-skogai-routing-is",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1776881207629,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}
