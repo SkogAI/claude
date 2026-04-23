@@ -1,0 +1,9 @@
+MIME-Version: 1.0
+From: Kent Skogsund <kent.skogsund@gmail.com>
+To: Linus Skogsund <l.skogsund@gmail.com>, Emil Skogsund <emil.skogsund@gmail.com>, "askogsund@gmail.com" <askogsund@gmail.com>
+Date: Sat, 08 Nov 2025 15:01:13 +0000
+Subject: .......
+Message-ID: <AM8PR06MB6978D326CF9C6D4BEFAF1B03FCC0A@AM8PR06MB6978.eurprd06.prod.outlook.com>
+Content-Type: multipart/mixed; boundary="_008_AM8PR06MB6978D326CF9C6D4BEFAF1B03FCC0AAM8PR06MB6978eurp_"
+
+

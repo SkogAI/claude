@@ -1,0 +1,9 @@
+MIME-Version: 1.0
+From: Staffan || Monday Bar  <info@mondaybar.com>
+To: emil.skogsund@gmail.com
+Date: Thu, 27 Nov 2025 15:12:00 +0000
+Subject: ⚡️Monday Bar Newsflash⚡️
+Message-ID: <fb94135b31a14cbdbc75f891876ca50c@mondaybar.com>
+Content-Type: multipart/alternative; boundary="----962C44CEE4E14630B8E6C85BD2FA6021"
+
+Tomorrow, Friday November 28, at 10.00 (local Swedish time) the cabins for Monday Bar: The 2026 Summer Cruise will be released. But this time, only standard 4-person cabins for minimum 3-4 people. Class A, B, E. When these cabins are fully booked, we will release all the other 2-person cabins. But no later than January 26. For prices, lineup, etc, go to our homepage. FACEBOOK EVENT  <https://www.facebook.com/events/1211146470859243> BOOKING  <https://www.tallinksilja.se/monday-bar> HOMEPAGE  <https://www.mondaybar.com?ss_source=sscampaigns&ss_campaign_id=692864a34b01e2046e0605a1&ss_email_id=692867cce756a242b51c3c1b&ss_campaign_name=%E2%9A%A1%EF%B8%8FMonday+Bar+Newsflash%E2%9A%A1%EF%B8%8F&ss_campaign_sent_date=2025-11-27T15%3A12%3A00Z>  <https://www.youtube.com/channel/UCBTe8_DMsFC3HYqEg4suMxg>  <http://facebook.com/mondaybar>  <http://instagram.com/mondaybar>  <http://twitter.com/mondaybar> © Monday Bar, 1992-2025 Högbergsgatan 18, SE-11620 Stockholm, Sweden Unsubscribe  <https://campaign-preferences.com/unsubscribe/y--GdUJvRfUfLHGN0oON9Oi5b_dRJOXyqd90J-s69aP9ivJrCEJnz4FiYHoQB0n5fLLKDyKPW8EIfjPEHsu374_j1YveRI6WM7m87d9h4-RkIABVYlNLFdB28hxPaXsID0DaYFLyAGsxQhc73mF6pEBCSE2pKpjkoCu5BgffKz7x9AWTUhoOYbAGqUlcUC8MJlUg55JX732XgxT_8MkLaCC8GwC6x8GQeXA56RBQJfdCYEI5Rveni2wy39TaaMYwdoXCs5lgQ30nGOwScMjDQH4uSWy1mygwWk6oQJ3CiNJu8uu4Umw8yn39IgBAZSuWegwqRnoApwhewJ5_VOutafCe_y-IWWkljr0iJtKnnNGhuALq0IqqoZU=>

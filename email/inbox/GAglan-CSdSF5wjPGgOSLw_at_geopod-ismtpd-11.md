@@ -1,0 +1,32 @@
+MIME-Version: 1.0
+From: Termius <team@learn.termius.com>
+To: emil.skogsund@gmail.com
+Date: Wed, 05 Jun 2024 19:11:46 +0000
+Subject: Secure access with lightweight SSH tunnels (13/13)
+Message-ID: <GAglan-CSdSF5wjPGgOSLw@geopod-ismtpd-11>
+Content-Type: multipart/alternative; boundary="79de3fe09379add32d1de3a32c5f78eeb179a123daeb39bfd535d1a582dc"
+
+Hello,
+
+A *VPN* tunnel is a heavy solution to the simple problem of accessing infrastructure behind a firewall. There's an easier way to give developers access to a production database or access RDP. *Port forwarding* can provide a tunnel to stream any TCP traffic, including SQL, to the developer machine's local port.
+
+In this email, we'll show you how to set up the Port Forwarding rule easily for you and the team.
+
+➕ *Start with adding a host* that is used to bypass the firewall.
+
+⏩ *Go to the Port Forwarding screen* and add Local, Remote, or Dynamic port forwarding, depending on your case. If you are unsure how to set up a rule - use the in-app step-by-step wizard.
+
+👥 *Move a new port forwarding rule to a team vault*. You can even share credentials if necessary. Your teammates can now use the port forwarding to access the database, RDP, or any other protocol required.
+
+And that was the final lesson from our Termius academy. Congratulations! Over the last two weeks, you've learned to manage hundreds of servers, streamline your workflow, and collaborate. Here are a few resources for you:
+
+📚 Need more guides and tutorials? Check our Documentation ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCSHsbsk5epjz7T5dLjvJfnvB5oQaeLz6GKie-2F-2FLQhLC4DgN-2FwAiFzuQkuncvbMf8WYas7HvuDAUhPS-2F0hGaLdoo-3DLp1w_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwoyE-2BaHAJSN1kxNx4owWQQIdkdKzEXPA1SWQOy-2B0abTyv4HZl966kwdqDGUdvWfSJJBIzU37-2FGggPwmwIFiOZqY2g-2FLM8dj3D8NMS8FR7UxuxrWy2o6rx1Q-2FNYoyshjSzhoRmIQIcDYcFsWwYifex6vlCqgo9dH3ILPK6j7F7ZynmZUnNJmOvsn1HxC0miV4pdkvz-2Fr25p7n4iioH22T0jrvH2mspous-2F-2FqYF8TUI2WI7nLhygim0R7CaKP5NZ1EGM9U15QKPeK-2F9Ur78PImfgEalLiF5pNwjI6irx8OLzcnhjkgmghPvwPWF-2FZ7fH4P2VuHLrUbYFgy4uu-2Ba5sTEPoNoRO4ymqzfUmbRujVAZYWl0nrITYqEpOTMwoQo2QB3OqBlVzNgy1TAQ8RbTzDTh-2BwEjoA6NsTQwwR5c8umJWYf6VgvrqQDVCH-2BFXsWWQsgQqUp-2BtDRYev9is5WdoyEuqJabw2UEFEnyRjDeKOnYqL3bZCxVOsU-2BXHDkgpxLlDy51ivfdi8K7gR4maVo6zTvMg3FFFrwqJ53yI9KWY8DDGkDrM4wPLdenQMTaS7-2Fe0nVOR0jj2xxMJQbej1V306zqQQgOnIQWfbJ2wSIiVF6t0-3D ).
+
+🎥 Prefer video? Check our YouTube ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCQ1-2B0CmB9Dhn0RVoQTIoWXLfw73goWPFkOZommuz7U5z0hb6AwuKrdt8l8AMnDUkzGjS5-2Fw3oBdF8uD5720lQSs-3DJFW__zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwoyE-2BaHAJSN1kxNx4owWQQIdkdKzEXPA1SWQOy-2B0abTyv4HZl966kwdqDGUdvWfSJJBIzU37-2FGggPwmwIFiOZqY2g-2FLM8dj3D8NMS8FR7UxuxrWy2o6rx1Q-2FNYoyshjSzhoRmIQIcDYcFsWwYifex6vlCqgo9dH3ILPK6j7F7ZynmZUnNJmOvsn1HxC0miV4pdkvz-2Fr25p7n4iioH22T0jrvH2mspous-2F-2FqYF8TUI2WI7nLhygim0R7CaKP5NZ1EGM9U15QKPeK-2F9Ur78PImfgEalLiF5pNwjI6irx8OLzcnhjkgmghPvwPWF-2FZ7fH4P2VuHLrUbYFgy4uu-2Ba5sTEPoNoRO4ymqzfUmbRujVAZYWl0nrITYqEpOTMwoQo2QB3OqBlVzNgy1TAQ8RbTzDTh-2BwEjoA6NsTQwwR5c8umJWYf6VgvrqQDVCH-2BFXsWWQsg-2Ftk5MwBW1Gfo0-2F0v7mnedsjkZYgG73zIDp2WRpkhVj0bhow4gMty4NVF46so867HGmTFVyQzbw8pNC8RjvjrIWsCDNjO7tx5dBHY1Eex-2F4ZN0prYpR4GXAW7wf2B57yExeXVBbjyv9Y3gJXNWS-2Fm81PBGk3CA8JzlEEeriFh1Ss-3D ).
+
+🤝 Need a hand? Our support team ( https://u27205612.ct.sendgrid.net/ls/click?upn=u001.Z1WpwJFyMlSfMqOJpHtmCSHsbsk5epjz7T5dLjvJfnvR1QMj-2BIyuIjuK9eHhZh0B1M2EhDx5x19AajHTX1z8Bw-3D-3DQFiH_zKD9qStml-2FkjU46ulTqeWVsrM3061nr98hteMD12SmBNwyq8nixrGxxRi1ikclnwoyE-2BaHAJSN1kxNx4owWQQIdkdKzEXPA1SWQOy-2B0abTyv4HZl966kwdqDGUdvWfSJJBIzU37-2FGggPwmwIFiOZqY2g-2FLM8dj3D8NMS8FR7UxuxrWy2o6rx1Q-2FNYoyshjSzhoRmIQIcDYcFsWwYifex6vlCqgo9dH3ILPK6j7F7ZynmZUnNJmOvsn1HxC0miV4pdkvz-2Fr25p7n4iioH22T0jrvH2mspous-2F-2FqYF8TUI2WI7nLhygim0R7CaKP5NZ1EGM9U15QKPeK-2F9Ur78PImfgEalLiF5pNwjI6irx8OLzcnhjkgmghPvwPWF-2FZ7fH4P2VuHLrUbYFgy4uu-2Ba5sTEPoNoRO4ymqzfUmbRujVAZYWl0nrITYqEpOTMwoQo2QB3OqBlVzNgy1TAQ8RbTzDTh-2BwEjoA6NsTQwwR5c8umJWYf6VgvrqQDVCH-2BFXsWWQsg-2BPKKylFXSsEEnkBikkFRzYuMmdB141VJNdQa5pZSiBQar449AKlsRwete-2FDWiKdkuGgbF3y5tjawoBcSD-2FKAMF5kGhOWK0-2FJL4expl5bcZhmDD19dVs9bhYA33MlsfSaqTw6xViUYC1bqN-2FTHcG8jYEAbOBbWeAP7-2Bx8ozm-2BDQ8-3D ) is ready to back you up.
+
+P.S. You are getting these emails as part of the Termius Academy series. You can turn off the course by clicking here ( https://u27205612.ct.sendgrid.net/asm/unsubscribe/?user_id=27205612&data=NIdteMuyH62ENp38NytynimOMJVZHa_gsbXKn7V_JjdoMDAwdTAwMFaL_4ZxVLpEF6IuN8zlXYjQgKhN61OHI7zAuSoScMX9V9rOVTUtRNFWBEBMnCZnyIWfGjOQf-KbQ_NMb7usvolyNSmnX8G4qkLMX1o62YJV4ZUQl_LxzEydapS29kOkW5HL29efTLaqO2ppz0dzWdR_6N-MG2UUP0xiN1ha--UG9G0G_36tOknEyQAjIn6PVbH-KGSsbo2wAD5nH7WQnjHdgFaMtLs-92WPtuBGVdP8mgY86bCVzbb6wuCqrRWuhdOgs3knDqDAW6POhDHFv6XtAmREecEPsdjqk4zYLUSsgVgJYeqCatb6AfmTSnDI-LmULUZNXkvQEQPZqtOK5aYY9saOHPLCjpSmBA8ZAHIeiZBpa2CbvYvMMXudy3WXKuJ8Q3OXDa4G28GPqk-hyh2kICYliZ5dNEaou_18gCn0WkD9HC-M8-mZBub-xY4YO7IrpNybO1J3OVSU_fmiAVy3CCCa9OA9w2LJ8sxlBOTG84iTCLd8P6YjlqdBzxCR6_cEZKPAPl_t94My_B8AnLmOqI50KvmRpIMbMEgPbj3fkKpTJloD-v76NM7g-M8Vc-crYm-FSF2WVJLtxATBjRWbfFL9MwmMqHRaknFMajxzM9Du278GGRC1ZbR8KleHs8sOEc2bqH1i-mdwdnVlmRyFuXDsvMtlqS721yE9ABlNZfuoXkm1VxZW4rogyb8scnzbaJnu2YqiEoZGKCKvS89q2y8C9AIIHg8kwPIUOGoePiWCyd_Q8EIRgdLGYDID1fS8OGjIs8TVEUReeS_hCfBMwkYF6hNc90YWhS2ng5Lo ).
+
+Regards,
+The Termius Team

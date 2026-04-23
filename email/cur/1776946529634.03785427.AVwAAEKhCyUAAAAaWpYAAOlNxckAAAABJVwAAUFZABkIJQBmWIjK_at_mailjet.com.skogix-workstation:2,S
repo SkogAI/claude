@@ -1,0 +1,121 @@
+MIME-Version: 1.0
+From: Max from ZITADEL <mpa@zitadel.com>
+To: emil.skogsund@gmail.com
+Date: Thu, 30 May 2024 14:10:18 +0000
+Subject: ZITADEL Update May 2024 - Scaling, Office hours, New success story
+Message-ID: <03785427.AVwAAEKhCyUAAAAaWpYAAOlNxckAAAABJVwAAUFZABkIJQBmWIjK@mailjet.com>
+Content-Type: multipart/alternative; boundary="=-+fpoUBmiphkgDA98LUgh"
+
+ZITADEL Product Update - May 2024
+
+View online version http://0wkkr.mjt.lu/nl3/AbPdmAPgjz75Wz1Xjj8KPg?m=AVwAAEKhCyUAAAAaWpYAAOlNxckAAAABJVwAAUFZABkIJQBmWIjKRR1IqwteRFGbON35K_tOAwAYXxc&b=03785427&e=673fa313&x=xcSoY2dt1FF07ggVCD2msupDyEQ4qQdSHKW_8QbPtUQ
+
+
+
+<<ZITADEL - Identity infrastructure, simplified for you>> [https://zitadel.com]
+
+
+
+ZITADEL Update May 2024 - Scaling, Office hours, New success story
+Hi Emil
+
+This is Max from ZITADEL. As in the previous months, in this update I want to highlight our product updates, and tips and tricks in making your identity infrastructure easier.
+
+
+
+Feature highlights
+Again in May, we kept the pace high with more than 76 improvements shipped to our self-hosting and cloud users.  Let’s go through the key improvements to ZITADEL this month.
+
+All changes in our changelog [https://zitadel.com/changelog].
+Improvements using external SAML IdPs
+
+We understand that many organizations, particularly enterprises, leverage SAML for user federation. In response to your needs, we've made significant steps  in enhancing ZITADEL's interoperability with various SAML providers this May.
+
+Previously, ZITADEL relied on a persistent nameID format, requiring external identity providers (IdPs) to consistently return this format for linking users. However, some IdPs utilize transient nameIDs, leading to mismatched user identities.
+
+This update allows you to define the preferred nameID format and configure how ZITADEL maps users based on attributes received from the external IdP. For instance, you can leverage email addresses from the IdP to link users with matching emails in ZITADEL.
+
+While ZITADEL offers pre-configured templates for external IdPs that utilize OpenID Connect, we're considering extending this functionality to SAML providers. We value your feedback – let us know your thoughts on this potential addition!
+<<Should we support SAML provider templates?>> [https://github.com/zitadel/zitadel/issues/7995]
+
+Making it easier to manage resources programmatically
+
+While you get all the functionality through a UI, we are api-first and you are able to manage everything through our APIs. Managing ZITADEL resources and configuration programmatically just got simpler with some recent updates. 
+
+When you start with a new ZITADEL system, you need a first admin user to login and configure your system. In the past it was only possible to either create a human user or a service user, but not both at the same time. With a recent update creating both a human and service user is not possible, giving you hopefully  a much simpler and easier access to configure ZITADEL from the start.
+
+Moreover our terraform provider [https://zitadel.com/docs/guides/manage/terraform/basics] got significantly updated and improved over the last weeks. Examples are managing organization and user metadata as well as managing SAML and OIDC generic external identity provider templates.
+Scaling to multi-million identities
+
+Over the past weeks we introduced feature flags into the core of ZITADEL. Feature flags allow administrators to opt-in or opt-out of experimental features that are not intended to be generally available. In April we finished the work by shipping the new feature settings into the Console. 
+
+Our intention with feature settings is to provide means to access and test early features for users to test and provide feedback. Among the currently available functionalities are several performance improvements, OpenID Connect Token Exchange,  a preview of User Schemas, and a preview of a more powerful Actions feature. Some settings allow you to roll-back some improvements that would result in issues to few users.
+<<Technical Advisories>> [https://zitadel.com/docs/support/technical_advisory]
+
+
+
+
+Office hours
+Gear up for deeper dives and live engagement! We are excited to announce bi-weekly office hours on our Discord server for our community. These hour-long sessions will offer in-depth explorations of upcoming features, followed by a live Q&A where the ZITADEL team tackles your burning questions. 
+
+The first session, held on May 29th, delved into the exciting new version of the Actions feature. 
+
+Don't miss out on this chance to connect with the ZITADEL team and stay ahead of the curve! Checkout our meeting schedule [https://github.com/zitadel/zitadel/blob/main/MEETING_SCHEDULE.md] for upcoming sessions.
+<<Office hours meeting schedule>> [https://github.com/zitadel/zitadel/blob/main/MEETING_SCHEDULE.md]
+
+
+
+
+You will become a Pro
+A new login UI in typescript for you to make your own
+
+ZITADEL Cloud subscription model is changing to a simpler daily active user (DAU) model on July 1st for easier cost allocation and full feature access across instances. This serves as a friendly reminder that accounts not already on our Pro plan will automatically update.
+
+All new subscription plans will include in the base fee 25’000 Daily Active Users in a month, one custom domain, and 3 external identity providers.
+<<Pricing plans>> [https://zitadel.com/pricing]
+
+
+
+
+Contributors for the win
+19 contributions came from our community in May. Thank you for your the continued support and the time you put in to make the project better for everyone.
+
+ * yordis [https://github.com/yordis] helped us bring the typescript repo for our next gen login UI significantly forwards
+ * Never forget to activate your email service provider with this change from doncicuto [https://github.com/doncicuto]
+ * Also by doncicuto [https://github.com/doncicuto] comes a solution to a  community request, adding customization options to console navigation buttons
+ * sujoysb [https://github.com/sujoysb] improved the error messages and user feedback for password complexity validations
+ * calRobert [https://github.com/CalRobert], jayPe69 [https://github.com/jayPe69], aurel004 [https://github.com/aurel004], burahimu [https://github.com/burahimu] all helped with our translations, and typos (is our French that bad? Apologies.)
+ * cr1cr1 [https://github.com/cr1cr1], exeteres [https://github.com/exeteres], kleberbaum [https://github.com/kleberbaum] contributed various improvement to our Charts
+ * Sign tokens FAPI-compliant with ES256 and PS256 thanks to nannany [https://github.com/nannany]
+ * ymarcus93 [https://github.com/ymarcus93] increased compatibility with certain identity providers and fixed some issues around the library
+
+Thinking of contributing? Grab a ‘good first issue’ or start a discussion and get started with our contribution guide.
+<<Contribution guide>> [https://github.com/zitadel/zitadel/blob/main/CONTRIBUTING.md]
+
+
+
+
+Additional resources
+ * Passkeys: A Shattered Dream [https://fy.blackhats.net.au/blog/2024-04-26-passkeys-a-shattered-dream/]
+ * The SaaS Trends Report | Q1 2024 | Vendr - Cybersecurity at the top [https://www.vendr.com/insights/saas-trends-report-q1-2024#top-categories-renewed]
+ * Navigating Session Logouts, Timeouts, and Token Expiry [https://zitadel.com/blog/session-timeouts-logouts]
+ * Google Online Security Blog: On Fire Drills and Phishing Tests [https://security.googleblog.com/2024/05/on-fire-drills-and-phishing-tests.html]
+
+New Success Story:
+Achieving 70% Faster B2B Integration in Document Automation at BLP Digital [https://zitadel.com/blog/success-story-blp]
+
+
+
+Thanks for reading,
+
+Max 
+ 
+
+PS: Any thoughts on how we can improve our Newsletter? Please let me know.
+
+
+
+[]
+This e-mail has been sent to emil.skogsund@gmail.com, click here http://0wkkr.mjt.lu/unsub2?hl=en&m=AVwAAEKhCyUAAAAaWpYAAOlNxckAAAABJVwAAUFZABkIJQBmWIjKRR1IqwteRFGbON35K_tOAwAYXxc&b=03785427&e=673fa313&x=xcSoY2dt1FF07ggVCD2msupDyEQ4qQdSHKW_8QbPtUQ to unsubscribe.
+ZITADEL by 
+CAOS AG, Lerchenfeldstrasse 3, 9014 St. Gallen, Switzerland

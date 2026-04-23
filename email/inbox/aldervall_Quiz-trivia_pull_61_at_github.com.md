@@ -1,0 +1,70 @@
+MIME-Version: 1.0
+From: Copilot <notifications@github.com>
+To: aldervall/Quiz-trivia <Quiz-trivia@noreply.github.com>
+Date: Fri, 27 Feb 2026 12:58:45 -0800
+Subject: [aldervall/Quiz-trivia] [WIP] Fix issue preventing joining games (PR #61)
+Message-ID: <aldervall/Quiz-trivia/pull/61@github.com>
+Content-Type: multipart/alternative; boundary="--==_mimepart_69a2058522af8_bc111033478f"; charset="UTF-8"
+
+Thanks for assigning this issue to me. I&#39;m starting to work on it and will keep this PR&#39;s description up to date as I form a plan and make progress.
+
+&lt;!-- START COPILOT ORIGINAL PROMPT --&gt;
+
+
+
+&lt;details&gt;
+
+&lt;summary&gt;Original prompt&lt;/summary&gt;
+
+&gt; 
+&gt; ----
+&gt; 
+&gt; *This section details on the original issue you should resolve*
+&gt; 
+&gt; &lt;issue_title&gt;New join issue, not able to join any game.&lt;/issue_title&gt;
+&gt; &lt;issue_description&gt;1. Issue joining Deck game, All the settings is carrying over to the other games e.g shithead, quiz. and and the start buttons does not work.
+&gt; 
+&gt; 2. And the Card game should be name Cards against Humanity&lt;/issue_description&gt;
+&gt; 
+&gt; ## Comments on the Issue (you are @copilot in this section)
+&gt; 
+&gt; &lt;comments&gt;
+&gt; &lt;/comments&gt;
+&gt; 
+
+
+&lt;/details&gt;
+
+
+
+&lt;!-- START COPILOT CODING AGENT SUFFIX --&gt;
+
+- Fixes aldervall/Quiz-trivia#60
+
+&lt;!-- START COPILOT CODING AGENT TIPS --&gt;
+---
+
+💬 We&#39;d love your input! Share your thoughts on Copilot coding agent in our [2 minute survey](https://gh.io/copilot-coding-agent-survey).
+
+You can view, comment on, or merge this pull request online at:
+
+  https://github.com/aldervall/Quiz-trivia/pull/61
+
+-- Commit Summary --
+
+  * Initial plan
+
+-- File Changes --
+
+
+-- Patch Links --
+
+https://github.com/aldervall/Quiz-trivia/pull/61.patch
+https://github.com/aldervall/Quiz-trivia/pull/61.diff
+
+-- 
+Reply to this email directly or view it on GitHub:
+https://github.com/aldervall/Quiz-trivia/pull/61
+You are receiving this because you were assigned.
+
+Message ID: &lt;aldervall/Quiz-trivia/pull/61@github.com&gt;

@@ -1,0 +1,96 @@
+MIME-Version: 1.0
+From: Riot Games <noreply@mail.accounts.riotgames.com>
+To: emil.skogsund@gmail.com
+Date: Sun, 07 May 2023 09:25:42 +0000
+Subject: Purchase Confirmation Receipt
+Message-ID: <wYW9fy2FRBSThJtAFBZGjQ@geopod-ismtpd-2>
+Content-Type: multipart/alternative; boundary="3175fbaaa0464824ec5d0c687b770a30ed94f34fed75da1d9f3f37d60b18"
+
+
+
+Invoice
+
+Riot Games Limited
+
+PO BOX 11989
+
+Dublin 2, IRELAND
+
+VAT-ID: IE9745692R
+Register: IE483483
+
+THANK YOU 
+
+
+ Thanks for your order Skogix
+
+ 
+
+Quantity 
+ Item(s)
+ Price 
+ VAT rate
+ Total VAT
+ Total
+
+1
+ 2150 Coins
+ SEK191.20
+ 25%
+ SEK47.80
+ SEK239
+
+Total:  
+ SEK239
+
+Issued For: 
+
+Summoner Name: Skogix 
+
+Email: e-----------d@gmail.com 
+
+Country: Sweden 
+
+
+
+You have agreed that the Coins and all acquired content is immediately available for your account after purchase and you acknowledge that you will not be able to exercise your legal right of withdrawal.
+
+If you need to contact player support regarding this transaction, please have the following information ready:
+
+Date: May 7, 2023 at 9:25:22 AM GMT
+
+Transaction ID: BE3ENA5ECAAQ
+
+Game: Legends of Runeterra
+
+Payment Instrument: Credit/Debit card-A
+
+Email: support@riotgames.com mailto:support@riotgames.com
+
+You can submit any dispute with us to a consumer mediator. Click here https://links.riotgames.com/ls/click?upn=frHghcUMWgUZ9OUHJJkDdRUr9NX8RhuEwsre4RtwzDSKXL4r7SqKi0pPaedfUkLG4YjdElBEgDk4pW2wqzw-2BPEJvW9GYCoGl6pfyzt6hdqxz7ltp80byzJsNzYvdtvxgrsAT_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1eceT0OjrgRJ0FSW1dHTMxHvhe1-2BzLPlzI6tep04TufrfBSjJen2PpiSq2rIA3vERvYQ6n2VR6vpw266RosO4QkhjV8p-2FVNAgQUsbJYTKbRZqSwjNm1cwcaWNpDnnp3EetphtL6kfMKDXJt89qdQRts-3D for more info.
+
+Thank You,
+
+Riot Games
+ 
+https://links.riotgames.com/ls/click?upn=yEHPesVDlXyehn-2F8LzxNWXlmkAJ2BEVdSk7IfdHGbcKyAtYFpI8ezHe64-2FTeRtnvJJoH_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1R0z23mXGaec7BWJ6CN8uOn0G77ysx1mbbdwxQdxLWoUgoTaU14GwcYQmLsGuN4t9WAwnhGq2jfY-2FsFzwBvG-2FJQzY-2BfSnDoIbG0oTGTUIZUdlLyiRpvpo6xajuKcyjTiMD6lIkDIPatb-2BuuuEBDESlI-3D
+
+https://links.riotgames.com/ls/click?upn=vv0pA-2FWxASzuOz3e-2Fz-2BpVH8yrmP1PzUWv6-2FMAw5C-2B4yvSvHJTd14wpHYQzdWT6GZF4Gt_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1XGigJTbe6R-2Bm4OidijafPCH4el44h-2FT-2F2Wt2qA8hIVgR-2BGJjqQFvW7fX77-2BmaQ6FcLpf0fP819MTKms22G76AZo7N2CoPIzbA3OT02OyU0Zvz3F54lmEt8gnTTb2ApoQ0zRoviifSfpIaXxb1bCidQ-3D
+
+ 
+ https://links.riotgames.com/ls/click?upn=vv0pA-2FWxASzuOz3e-2Fz-2BpVJFquzWt1cVPrVjCVLrEUsHLBWTB88C-2FWNCWOiy8071-2Fcs9HS5YylZhfdBREhHlwVlj4-2BzPy0YE0nEs5HMFLNTK3f2zJG-2BOnfNak-2BlllEl06DX_f_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1TFNryVqsKQ0b6zSvAx2vr7bVceuJ3oG9j5M2yBAf74X82bHZYwxjn-2FrA-2BZUtLrS1vEZBwAq1xJWe6pfGgRF19RrJ6-2BX3N-2BweuQuHuIWmelmQpw7znmGOugBe4y65Dz3-2FtsKjgENjwGb3vxbNQDrOq8-3D
+                 
+
+Privacy Policy https://links.riotgames.com/ls/click?upn=yEHPesVDlXyehn-2F8LzxNWXlmkAJ2BEVdSk7IfdHGbcLVT1aF-2Fcv11ZhssmqjuqGgpVTt-2FxaeRm0Y43Nd4UogPQ-3D-3DsjZ1_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1QTKG2YeeHPA9FsT8zsuTgHkG0Zj-2Bf5RQwGI8fDrxz0OzXcOcruu9zLSWKOf1rs-2BhbrNcdACFTUkhi9iJ-2F4yR8XVFhArjP7J7wPyKUb8kOmJaoNC-2BBL0bw-2FAdXeKQoqS7fVfyFf2mIR40leuT7d-2FWJM-3D      |      
+ Terms of Use https://links.riotgames.com/ls/click?upn=yEHPesVDlXyehn-2F8LzxNWXlmkAJ2BEVdSk7IfdHGbcIZkiX5zDCybuQ6UTeh9EiqnH6VeqDMM6yGf3umcPMY8Q-3D-3DSlHq_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1epMxwixTpjdiGXJHGT1YfatN1XZkkPp3IbWqnu-2FphOKaJoILOAMU59RTEC9FOqvxxigQgdJbAWCHdE0JRrRcVtajV1AwQHenr-2Bzl7lJzGNjk7W5JBlNZsAzD1JtsswQRyWhk1HyNkg-2BaoYnb-2FbltrM-3D       |      
+ Support https://links.riotgames.com/ls/click?upn=frHghcUMWgUZ9OUHJJkDdV7REMamLoc-2FhRJgb3oH2J-2BSyEvX9mRy-2FdzNqE-2Bkmy1pRJ-t_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1c7F0Aj0S7rGD6og5CDtOGkheNHC-2F6TTCprjM3fIwnWCVfs-2FpBCxvquLUPvOuswDVQPjICVRSi04Q6T9S7dVSkqeOxGnSW-2FynoipYSTk-2BQAFRAAet7UPE2fBdYgWzlc7igt-2BZwHjGF17M1hdkshEW6k-3D
+
+https://links.riotgames.com/ls/click?upn=frHghcUMWgUZ9OUHJJkDdWcKZDM57kpBql7-2Fw1LzrEq9dtNQF4FoTTh6S7-2FI8CcCSlfh_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1ZazwmxIRedwRmVlSFLN99GNxBqTT80fg4xIPlxeStqjrJdTaHyqGMZskZ5pF87YFbzd2ElEbjqiBGaHHycxlYmF-2F0mNfdBNuWeVR96F5yfskC3-2F3GsTzuaoxdX9YzPa-2FxpR0svGD0np0rb1JrE-2Ftv0-3D
+ https://links.riotgames.com/ls/click?upn=frHghcUMWgUZ9OUHJJkDdbqsMaQEffE515rbAEvTn6-2FzdHhPZTEoVRxDYQu4rE9SfCDr_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1fw7wlYuI68Jl9Q2lhK-2FmV4uj8xd5WhAjEdvOfgIDtrNV3dBqblhWUKt2xm7m84az5s9FJq0DgNIpokInmcDweUXx4k3hRdoYgx30NgoDxP-2BR2g1vRACecxxTipBrax1UVyw3nzJrX0YMKLJehg7kzw-3D
+ https://links.riotgames.com/ls/click?upn=frHghcUMWgUZ9OUHJJkDdT7aY3UCbhQ284qVxRtKDyEQD4lAZTERRD3c6XEu5TXJypii_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1QPyoCMRjCUIhOUceu0ej7cC1oy1gAuLbrbK4mIFnm16nc1f09hB2xc8lzCPUrmO1rU4sRlavgs-2FUSG0cxci0hdwctJvSBAIuPL92utPqd1Nsft4e7O9FCKJMhcNSGk-2BTEvfm95-2Bs0gJCQYCDfAhqcU-3D
+ https://links.riotgames.com/ls/click?upn=frHghcUMWgUZ9OUHJJkDdeW1wDDOuxHE5MPT4mYfE7LQgeoHdPW4raJsTvJ-2BirholGlzrNeODBkJCOou-2BUDx9hTChFApupqXGjq8Dt4dgEQ-3DDOPd_nJkiC3IbSDb8lL02sTi2tAvJsuzQyvYUOBBZcQTDWJwEN7kYL7QMSq58sFYS7ag3saeq0c8uoN26bZOQBhpz2WwcdeoEy3FFKRx6Dk96NcpvIQntxDzcu-2F2fJvSWR7xFKtCwo8X-2FKQv1f7W40zqb-2FVewXPOm-2B0FI3vnuIu6-2FntGVKnMgnHE1FpnmizlwWsmFTQIHvK8kXlMBb732orwY1az9T2dXMLQ-2F-2BaLFAp8jVimeYtYvyZMlblie104USQmd4W80OyyV0TCehkujmFnmLr7I-2BysOEBwQKO4PD1sD67SZ7HmTrs-2BFV7y7I5BSo9ejVS5Q-2BJybEAOrB336GuSPhC2fFB5TRyjfDfnVnyG0EEQ-3D
+
+This is a service notification mailing.
+© 2019 Riot Games. All rights reserved
+Riot Games, Inc. 12333 West Olympic Blvd. Los Angeles, CA 90064, United States
+

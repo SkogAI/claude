@@ -1,0 +1,29 @@
+MIME-Version: 1.0
+From: Boots <boots@boot.dev>
+To: Skogix <emil.skogsund@gmail.com>
+Date: Wed, 03 Sep 2025 14:32:11 +0000
+Subject: Your last chance to lock in our legacy pricing!
+Message-ID: <j7UiQC4TSCGu4AY9DI8Lkw@geopod-ismtpd-13>
+Content-Type: multipart/alternative; boundary="2c97258264db22ebd7a1d26506195d154a20eeacf6da086b8aeaa4670782"
+
+Prices are going up next week, there's no better time to lock in a cheaper membership
+
+Hello, hello Skogix!
+
+Today is the *last day of our labor day sale*... your *final chance* to lock in a membership before prices go up tomorrow! We NEVER raise prices on existing students, so if you become a member now, and keep your subscription active, you'll stay on your current price forever.
+
+Even more, you can use the code below to get *40% off your next year* of Boot.dev! That's on top of being on the lower (legacy) pricing!
+
+Use code GROUNDBREAKERS at checkout
+Deal Expires Today!
+
+Save 40% and Lock In ( https://www.boot.dev/pricing?promo=GROUNDBREAKERS&utm_campaign=website&utm_medium=email&utm_source=sendgrid.com )
+
+Graciously,
+Boots
+
+Boots
+
+3520 N UNIVERSITY AVE , Provo ,  84604
+
+Unsubscribe ( https://u24871717.ct.sendgrid.net/asm/unsubscribe/?user_id=24871717&data=hXra2fYCXkcCqYkeKqhE0I039sFT7mIjG4UKqnD8Qm9oMDAwdTAwMCbfKIuNl65URMPV-h-VBoyD11x4-u5MvMlHp5WlcZ93VnCnj1uVRPDagPuktwT9srZVR-jMGJiJVLRIV4EaXuAwsXz-m0yOE_ap3BrdTvT3dGDu9FUxblWQh9ZftXPNLiD-zmhtvjfVUJ9oZnMFAfBpGoc8Ogsjw7o2FvmQVUwVWIZrIKfw_VXTkC8WnFvqYSuY1MfWpP-VRouA_X425h-ogn22KO1FZN01mep2VIypguN30Yspcer38KN9cSyTBbM-vknjT_xzQ3VVyo-_m0Od9H_y6d_CfdRoD8gHtxtO3Stghd1gVsase79saLtxFhscTjpW1GBPup2NbBOnXpLHEjSIoOV9sqjebsTbKuAJSxuvJPGm8nArnmZwbW3P75AQx1w4O9N6ehHl2zvQMgs4dkr6cavszc3_LRbZoJGB4NFn6806RhN_EBctKkO6DXdkZeugVdbZP7J_9o7T1ywsaf_LLD-H3OWfxew_1_Q_rCd_NKeiIN3lCD2C_MynLAw96swQUXdHLi16wkcEGeE9qZXYqNXNTJ38R4qQRSysLht8DWkLW3FyBUCZtpvrDp1QGSzC71T2NCDj5puNtPjVpgU35gnMGhtKNa2IO3f201jE9x93l1vPQTSR0Bom2E8PU2lby6dACzp55gg20olqkjoFYKAPjBA-nc3TzmLyzJf1GoNqL-lrTZjKLKUBoHsoBydgrx8qYPV9_i32LscYZN9zQ9Nl52jopthcOLMuxM-bTjuaqkQ8Xnths5GDB4QhXl8ITvrMuJoHBUCsu_XKDjy7hHGFcXL4rtih2U7Jh4e8lzcs_5ZS3U-RS_kodNnnWPab-hvwVUrcu2pXqd4sFlh_zWYdmBHDCrGjKSjbV0bwPZKrCohjS_HKwZ4l5MIyuJ_ZqbIaDyWNUXeEJhm7ShBYQuntUr4eh7YlGDH69YZC5OiJ40HqKIPPa2K3z9aiFPWaT7DQoOrklxnZJlcmfE26X4IB1JeUdh1xUy_U20nepOA3ApmzHOFqSF7Aue-d-m9FijyVndNUmwTpOdhJ2N_In_mysWixYe1lX6RoTKjn-W9_oVb2BbK3_UAfWQ== ) - Unsubscribe Preferences ( https://u24871717.ct.sendgrid.net/asm/?user_id=24871717&data=qHl7zqrWbPEGvcjjfM38szVDyO_JyPmll7H421RsCOJoMDAwdTAwMOW6eiGcSLngyarQmGAlK8yWrEtQ4pecuhCanLGXlMxSCul2xyb4t5lo9KmNZ9nA5BPm5qTBvQtRyMRr8fHuXn6II6WwBBjA0eux-gLxMJIEX_BHcngEwne3QXeqjZu_8yMYZfwQLx2ZQ5qqC_tiY7Fa5lR_HI5pwndPCKa6sLNprEHQ__SXaU8l8DbXwWa5RJ4mEPFZvORaL0D9xdNCBlTeXPcNHwPIk3Hxv-UAvahKHisbtMYkBYI0Z0GdE6bk-BN5YJCCeefUqpAO4swuD97JidRTGUguoPZaljMReC4OfxtXF2FUBXuUnYjtDRXkno52GppgbRqNUu31zmbRZZNklvmAZ-zVkmRKWsPi5qPIRdHgf7xVXWmeGy06AvxVMNFoDjrmdldsAfMKSzJaDjBtD0ryz9pte9RcydbqL3O2P3PfN_az9m-E8loI0N9jiKzhcyWQP00H5QKdI0YKy7Tc4Gr2m_puPSThzcnaF9P-Yd19zDkKHhqjiA5htPLjR2tBVob5rFpfYDWUhqsoF965nIHCDTPBbpZaPBqIgBqrT2hlVyUzWRLKggMqCVrDgpnMxwMHT3MkV8xvzX1An-vi6LtI7VECdKXtT101cS3df3mn12OaHYZ3f-E3_sOGNyJbElW1-PSf_QLhAP0UgGD7ZANX_kCDfYOgQU1At16LaeD0uE3gLbUExidGtyTzj2xesiZbXMiEJspRkJ482wp9-ulss-Ma4UKARoR6SQ1gUdq0X4tzT7A05205gPSXCPioGfGDA90c0jDZX_jK4p3Sd6XO2Qh7ghn8eFkffDRj_zi0Dj7Gi3bDobuaqUq0nygqbyWIfo0fS7_uN30dIhu2pyqxH9I2ojFpQKwUcb6KKA8lF7OK7hAj3Ko9DpQW9ecOqWbMRKhZsoaVRzFeMTrwK45YPWmYGQljqUu30NZCEv24pUIqVym3UpDrlSUq4RewZl5p9SDWhA8auz4zvNilz9co52Fm22COv9-Qei1k9-mKtdrl30HCtdW6yHtXiNheQ37JlajgeA8KWkRze8oVvWgVlntQSNTQ3t_Qu1-L )

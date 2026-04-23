@@ -1,0 +1,13 @@
+MIME-Version: 1.0
+From: OpenRouter <notifications@openrouter.ai>
+To: emil@skogsund.se
+Date: Tue, 05 Aug 2025 23:22:36 +0000
+Subject: Verify your email address
+Message-ID: <QgiNrk08RamWbnDfNMsk1g@geopod-ismtpd-1>
+Content-Type: multipart/alternative; boundary="b007655954cd0541bc29e1c240cdcaf08ec6fa13a3a7e92f36c42fdad488"
+
+Use the following link to verify your email address to OpenRouter: https://clerk.openrouter.ai/v1/verify?_clerk_js_version=5.79.0&amp;token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTQ0MzY3NTUsImlpZCI6Imluc18yUGlRcWt2UlFlZXB3R3ZrVjFZRDhBb3Q1elIiLCJydXJsIjoiaHR0cHM6Ly9hY2NvdW50cy5vcGVucm91dGVyLmFpL3VzZXIjL3ZlcmlmeSIsInNpZCI6Imlkbl8zMHQ5bGp3RUZldmlUUmduQlFQQWJjRkNCa2giLCJzdCI6InVzZXIiLCJ2aWQiOiJ2ZXJfMzB0OWxwZHVROVNaNzV1RXp2UEcxZEd2MG44In0.ZqIujkEfQsls8qIMIrdFwoxwo5Lot8kT13DHK1YuvEFig4QD1b7INML3fMPCZ3hBAblkLZ_xzI9FLLmazPGWEr7d1KnX__IIylOYii8SnLyZlpUe6H2I_1TYZzNGniyE22wkiEVPDxaTENAb-Sr5qk7O0CCC4lgm4y60HBAJKJmmiRddk9kwc_J8kGWnoFEbXA0wgAHn11FOg-RiPNqHNgS6BYqY1Xt6S-PwGYtFNVB3dVd0lbQUd9hdgc7BLAXCgOfe6EnefJcF763i0r8sw7MnaBYWT1nsqjQ8cZz9yUs55rYLiZH0657-wtC2RW7ekbMoNnsY7fdGo3_CjrFObg
+
+This link will expire in 10 minutes.
+
+It was requested at 05 August 2025, 23:22 UTC. If you did not request this, please ignore this email.

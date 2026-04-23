@@ -1,0 +1,20 @@
+MIME-Version: 1.0
+From: GitHub <noreply@github.com>
+To: Skogix <emil.skogsund@gmail.com>
+Date: Mon, 23 Dec 2024 20:45:12 -0800
+Subject: [GitHub] A third-party OAuth application has been added to your account
+Message-ID: <676a3c58f2596_c421fc7265@lowworker-5c8d759b68-trskd.mail>
+Content-Type: text/plain; charset="UTF-8"
+
+Hey Skogix!
+
+A third-party OAuth application (DigitalOcean) with user:email scopes was recently authorized to access your account.
+Visit https://github.com/settings/connections/applications/65a64eb173ab3f18b27b for more information.
+
+To see this and other security events for your account, visit https://github.com/settings/security-log
+
+If you run into problems, please contact support by visiting https://github.com/contact
+
+Thanks,
+The GitHub Team
+

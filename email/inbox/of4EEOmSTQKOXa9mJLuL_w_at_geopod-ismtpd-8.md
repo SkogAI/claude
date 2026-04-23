@@ -1,0 +1,25 @@
+MIME-Version: 1.0
+From: uScore <support@uscore.se>
+To: Emil Skogsund <emil.skogsund@gmail.com>
+Date: Thu, 23 Apr 2026 10:46:45 +0000
+Subject: Din kreditkoll har uppdateras för april Emil
+Message-ID: <of4EEOmSTQKOXa9mJLuL_w@geopod-ismtpd-8>
+Content-Type: multipart/alternative; boundary="e8b84f7e7cbe39bafe29ceb6fa639907b67ac28ef1c82a9d462568c678cf"
+
+Din kreditkoll har *uppdaterats*
+
+Logga in för att se om *ditt kreditscore har ändrats.* ( https://ortto-tracking.uscore.se/r?t=absee7z7zbpqy55phmcta2pj7ck2sf3vjsff6xqnagnbuwcmdwle5wz2bilo4zqvsreurd2343srtsgia5tgcfkdyv6q3cwbdkyhetfhxeknnwgpe6qkvxyabqqczfdmiwluw5nptrnhxfz25hfp5xtjm5hfdretz2skg5kgnm2jyctbwe2ci5tp4fmbsavskacmhis6b3gp3j4es5qfv6bf63u6eanc6oxvxcbeuzbpvzyodqfkbe6gskzg3oq2ezrv4orwjdofeo33leog5ww63adisvkmkevtcv2biikcmic4of757tmoelwaq753te5a4af553auoh4paqeazhneuce5ruf5jsemxai7jzggwcdx5ht2cv4uordrrkz3ocpfgui )
+
+Se ditt kreditscore ( https://ortto-tracking.uscore.se/r?t=absee7z7zbpqy55phmcta2pj7ck2sf3vjsff6xqnaknbuwcmdwle5wz2bilo4zqvsreurd2343srtsgia5tgcfkdyv6q3cwbdkyhetfhxeknnwgpe6qkvxyabqqczfdmiwluw5nptrnhxfz25hfp5xtjm5hfdretz2skg5kgnm2jyctbwe2ci5tp4fmbsavskacmhis6b3gp3j4es5qfv6bf63u6eanc6oxvxcbeuzbpvzyodqfkbe6gskzg3oq2ezrv4orwjdofeo33leog5ww63adisvkmkevtcv2biikcmic4of757tmoelwaq753te5a4af553auoh4paqeazhneuce5ruf5jsemxai7jzggwcdx5ht2cv4uordrrkz3ocpfgui )
+
+Nya uScore 2026 ( https://ortto-tracking.uscore.se/r?t=absee7z7zbpqy55phmcta2pj7ck2sf3vjsff6xqnaonbuwcmdwle5wz2bilo4zqvsreurd2343srtsgia5tgcfkdyv6q3cwbdkyhetfhxeknnwgpe6qkvxyabqqczfdmiwluw5nptrnhxfz25hfp5xtjm5hfdretz2skg5kgnm2jyctbwe2ci5tp4fmbsavskacmhis6b3gp3j4es5qfv6bf63u6eanc6oxvxcbeuzbpvzyodqfkbe6gskzg3oq2ezhu6or4jssvkkt3n4dg7tobym63cz3aiyqtcxyrnuyrkddsp575tsgjn72cwuehwqqacluq7heuwh4nh4qb7spdxq )
+
+Copyright © 2026 Defero AS, All rights reserved.
+Adress: Norra Stationsgatan 69, 113 64 Stockholm
+
+*Har du frågor? Hör av dig till oss på:*
+support@uscore.se
+
+Vill du inte ha fler mejl från oss?
+
+Avregistrera dig från våra mejlutskick ( https://ortto-tracking.uscore.se/-/m/s/unsubscribe?k=DW1pbmtyZWRpdGtvbGwAZEJ_P8hfDHevOwUwaen4lakXdUyKX1765tHq&rg=eu )

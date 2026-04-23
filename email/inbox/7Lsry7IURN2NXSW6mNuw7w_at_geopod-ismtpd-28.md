@@ -1,0 +1,29 @@
+MIME-Version: 1.0
+From: Sintra <help@trysintra.com>
+To: emil@skogsund.se
+Date: Fri, 13 Jun 2025 13:10:47 +0000
+Subject: Guess who 60K+ businesses love?
+Message-ID: <7Lsry7IURN2NXSW6mNuw7w@geopod-ismtpd-28>
+Content-Type: multipart/alternative; boundary="f4deaa9bacc75b90113904d1c761a6a71814278f03c16c2bcf5418ef457d"
+
+[What has 12 brains, never sleeps, and has helped 60K+ businesses grow?  Meet the bots that make business feel easy.]
+
+[⭐⭐⭐⭐⭐ Very impressed by my Al buddies! The more I work with these handy Al employees the more impressed I get! Soochie has put some real social media content with pictures and explanations. Very to easy to use as a resource for market research and coming up with fantastic ideas! I'm loving my little helpers! Amazing Al Tool with a lot of options Amazing Al Tool with a lot of options. I was expecting big limitations or slow, but it's not and it is very easy to use. The workers get to know you better each day, so it's like real workers at your office! Would def. recommend!  ⭐⭐⭐⭐⭐ Great team of assistants! I came in skeptical but wanted to give it a try. Some of the ideas that came up were beyond great, and the more I interact with the virtual assistants, the greater the ideas they share get. It also got me excited about things again, best money I've ever spent. ⭐⭐⭐⭐⭐ Saved me hours already In the first 15 minutes of using Sintra, it saved me easily 10 hours of work and I've barely scratched the surface of what's possible.]
+
+[>> HAND OFF THE BUSYWORK <<](https://sintra.ai/)
+
+[World's #1 AI Employees]
+
+[Sintra: AI Brain; Power-ups; Available 24/7;Smarter  than experts; Work in  100+ languages; Simple  to use](https://trysintra.com/)
+
+[Sintra: AI Brain; Power-ups; Available 24/7;Smarter than experts; Work in 100+ languages; Simple to use](https://trysintra.com/)
+
+[Facebook](https://www.facebook.com/trysintra/)
+[Instagram](https://www.instagram.com/sintra.ai/)
+[Twitter](https://www.youtube.com/channel/UCA7LgUmrUSicQmsAPw495qg)
+[Custom](https://www.tiktok.com/@sintra.ai)
+
+No longer want to receive these emails? [Unsubscribe](https://manage.kmail-lists.com/subscriptions/unsubscribe?a=WD6mn5&c=01JWXA0R97R15AN08N5FY20AR4&k=f6cd4cdac357fb19a7f7c478addff9dd&m=01JX9M4P5FAJ71W7G38QQ5HAFB&r=01JXMPJXX2WYF3T937MQKSSARZ).
+Sintra Girulių g. 10-201 Vilnius, 12121
+
+Important Privacy Information Especially for Plain Text Readers Hi [Recipient Name], This message is particularly important for those reading in plain text, often on older devices. We know that readers like you are typically more mindful about privacy and how companies handle personal data. Your Account is Secure Rest assured, your SINTRA account is 100% secure. There have been no breaches, and we are committed to proactively safeguarding your data. Why We're Contacting You At SINTRA, transparency is important to us. We want to keep you informed about how we protect your personal information. While we use the latest security technologies, we encourage you to stay informed, especially if you’re using an older device. What to Do if You Suspect an Issue In the unlikely event of a security issue, we’ll contact you immediately. We may ask you to change your password or take other protective steps. Common triggers for security alerts include Suspicious login attempts from an unrecognized device or location Unauthorized changes to your account settings Potential unauthorized access to your personal information Proactive Security Measures We take a proactive approach to keeping your data safe. This includes Robust encryption to protect your personal and payment information Strict access controls limiting who can access your data Regular security audits to detect and fix any vulnerabilities Comprehensive incident response plans to manage security threats quickly Your Orders Are Safe Your orders with SINTRA are completely secure. If there’s ever a delay or issue with your order, we may contact you to verify shipping details or confirm order information. Important Security Reminder We will never ask for sensitive information like your full credit card number, expiration date, or CVV via email. If anyone requests this, it’s a phishing attempt. Protect your data and never share this information by email. Protecting Your Data is Our Top Priority At SINTRA, we’ve implemented strict measures to protect your data, including Multi-Factor Authentication. Enable this for extra security on your account Strong Password Policies. Use a unique password with a mix of letters, numbers, and symbols. Change it regularly Regular Security Audits. We continually monitor and enhance our security systems Incident Response Plans. We’re ready to act swiftly if a security incident occurs If Action is Ever Required In case of suspicious activity, we may ask you to 1. Visit a secure page on our website (such as a generic FAQ or contact page) 2. Follow on-screen instructions to verify your account Sample Security Alert Example Recent Activity Summary Date [Date of suspicious activity] Time [Time of suspicious activity] Location [Location of suspicious activity] Device [Device used for suspicious activity] Action [Description of suspicious activity, for example login attempt, password reset request, etc.] If you don’t recognize this activity, reply to this email with the subject line Unauthorized Access. We’ll immediately secure your account. Your Cooperation is Crucial We understand this may seem inconvenient, but your security is our priority. By verifying your account, you help us keep SINTRA a safe space for all our customers. If you have any questions or concerns, contact our support team at info@trysintra.ai Sincerely The SINTRA Security Team

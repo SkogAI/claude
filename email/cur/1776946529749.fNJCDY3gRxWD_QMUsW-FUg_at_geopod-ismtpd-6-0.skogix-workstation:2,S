@@ -1,0 +1,9 @@
+MIME-Version: 1.0
+From: info@netwic.com
+To: Emil.Skogsund@gmail.com
+Date: Fri, 18 Mar 2022 14:56:09 +0000
+Subject: Info om läkarintyg samt tillgänglighet i Netwic
+Message-ID: <fNJCDY3gRxWD_QMUsW-FUg@geopod-ismtpd-6-0>
+Content-Type: multipart/mixed; boundary="d75132ad5b70d1941a5ac1ef9080d9100a2e79b56be51f2223638f026871"
+
+Hej alla!<br /><br />Nu skiner solen, alen blommar och snart &auml;r det &aring;ter sommar. P&aring; Tallink Silja har vi just nu full rulle med att planera och bemanna inf&ouml;r v&aring;r- och sommars&auml;songen.<br />P&aring; n&aring;gra avdelningar finns fortfarande en del behov. Fartygen bokar nu in arbetspass via Netwic b&aring;de f&ouml;r v&aring;r och sommar. Vi p&aring;minner dig att uppdatera din tillg&auml;nglighet i Netwic s&aring; snart som m&ouml;jligt, detta g&auml;ller hela perioden. &nbsp;&nbsp;<br /><br />Bifogat finner du ocks&aring; uppdaterad information g&auml;llande l&auml;karintyg och v&aring;ra godk&auml;nda mottagningar. Informationen finns &auml;ven upplagd i Netwic p&aring; sidan Nyheter &gt; Dokument &gt; Information om L&auml;karintyg f&ouml;r sj&ouml;folk<br /><br />Om du har gjort dig tillg&auml;nglig f&ouml;r arbetspass och <strong>inte </strong>har registrerat ditt l&auml;karintyg i Netwic, ber vi dig ocks&aring; att l&auml;gga in uppgiften. Du hittar instruktion f&ouml;r detta i bifogad information.&nbsp;<br /><br />V&aring;r nya funktion med bokningssp&auml;rr och p&aring;minnelse kommer att aktiveras i systemet den 1 april, s&aring; v&auml;nligen uppdatera uppgiften s&aring; snart som m&ouml;jligt.<br /><br />H&ouml;r g&auml;rna av dig till oss om du har n&aring;gra fr&aring;gor eller funderingar!<br /><br />V&auml;nliga h&auml;lsningar<br /><br />HR Avdelningen, Tallink Silja<br />E-post: hrsea.swe@tallinksilja.com<br />

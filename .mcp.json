@@ -1,8 +1,16 @@
 {
   "mcpServers": {
-    "skogai-memory": {
-      "type": "http",
-      "url": "https://mcp.skogix.se/mcp"
+    "skogai-ssh": {
+      "type": "stdio",
+      "command": "ssh-mcp",
+      "args": [
+        "--",
+        "--user=claude",
+        "--password=claude",
+        "--host=localhost",
+        "--sudopassword=skogsund1"
+      ],
+      "env": {}
     }
   }
 }

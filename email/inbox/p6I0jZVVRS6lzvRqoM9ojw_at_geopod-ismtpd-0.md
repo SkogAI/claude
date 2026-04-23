@@ -1,0 +1,27 @@
+MIME-Version: 1.0
+From: OpenAI <noreply@email.openai.com>
+To: emil.skogsund@gmail.com
+Date: Wed, 11 Sep 2024 21:30:21 +0000
+Subject: GPT-4o default model will be updated to latest version on October 2nd, 2024
+Message-ID: <p6I0jZVVRS6lzvRqoM9ojw@geopod-ismtpd-0>
+Content-Type: multipart/alternative; boundary="dc27b9a2d6414fc36875e6e5a2da2894286252cba3233cb38a7c2391c0d9"
+
+Specify a date-specific model version if you'd prefer to remain unaffected
+
+OpenAI Logo ( https://openai.com/ )
+
+On Wednesday, October 2nd, the default version of GPT-4o will be updated to the latest GPT-4o model, gpt-4o-2024-08-06.
+
+The latest GPT-4o model ( https://platform.openai.com/docs/models/gpt-4o ) is 50% cheaper for input tokens, 33% cheaper for output tokens and supports Structured Outputs ( https://openai.com/index/introducing-structured-outputs-in-the-api/ ). To explore the new version now, specify gpt-4o-2024-08-06 as the model parameter in the API.
+
+If you continue to use gpt-4o as your model parameter, it will automatically update on October 2nd. To keep using the older version, specify gpt-4o-2024-05-13 as your model parameter instead.
+
+Thank you for being a valued member of our developer community.
+
+—The OpenAI Team
+
+OpenAI
+
+1960 Bryant Street , San Francisco , CA 94110
+
+Unsubscribe ( http://url3243.email.openai.com/asm/unsubscribe/?user_id=20216706&data=E9lJgSQXaY0I2JJo6KB2eF1ois-u3WQLdutNelyo0E1oMDAwdTAwMBJ6WXEnGkDoj1647q3r9WEtJ37MdIHC5UGY9KRivtpv02BSHR-uRJeoH7pIm9IE4cTLjH7mC0-KGHHMwjR2YopPOyfSml5MxoDrKoTI17pWTL7K88uBjWybjlr5p3UzjaUHtCzmNYBlmFEBlm_dHqc0gs4DP7L6ogre-eX01LKRoNnjJXsq2IeOI5dLdRUuLbr5uMQOthOd36B9eBWQw2x-Kbm5ZNz7l0Zd6cDVpIdcKef7X6q9qWirFS-NWpNIPQiTUOxl_0Q9bamOyuv809rvj16uP-qBhySBbOr6l249EqMOujbwCsdZCFDR6yHCmLnnqQ5wMiJPmrOSfdz_m6RC1qIP2N4vRLUfpRUuiWXjOojoEntVRn5k6CGcckX1UdS3yqphPpMDkGFCNk1S8kkAFl0jD9xB9WC61j12w7oXMEmli6YLHfXb6JyVtpiaJrJVwnx5y6XSJV-JenblU2IdYDZ0r0LYvGnjGbxkK-L9cZZtzMxksYEqyYY7BjncK0DdrN19ZJgNSkDXUnZnKAq2OrYDoojJpQKSwSn0w_WSy8Bbo5NvoJiR-5eu_bKvnYFMWD4W-M0VNjpKwuwHiLqtQak1CUma4gCi2Bv3G4WKtNoiy3Fvq9wf23JKebFu9jHL207LkgZcq-h8S_qMPtUDN1fCp_FQG8TmZ4g9DSR_BeCWIPqrAIz_qT9MnA1pYrULxM87GDXTV6nt8TfNQRiZv0CL_01zPOA0YPNW5DMA_I3gfdbBwMNiM87flFAvKxQYCpS5e_Dk-5lpag6fNtwDJq-G7XV00v81xoACAp0QktWCXiHqQygOzq6I3gPEfVH7Ssm7M3NQV-FpVpuqT6wBuHz_gHAmAUGARjqo2I0lEDzbK1DSi9Zp3xkmYVNcc_CUCIamKNiig8jwLO7fJ5zE_tATTA61_aMSeLzM8QJLbQyX-D2JpwM5aW02oim36XNKvbgMHB4Nv1_2TQSyy7mhO-aKG500MO8HyFKv0MGbVEvEhA4lw5ZN7bHxtfMsFXhSzRGWTUHD1z911RsyJUcEMxLCo-YYwZ70msEe6BneVW0p_cGSrZiFkJQesJIp5F1jXHJj-0sGRE4Vvh9MdggtYarJEQnpGgdZMXbcGpgiDCpiBpp5eqIdn5nHRLfQE07byc-NlAPUQUaGoCKu4h2VIBkNyhSSGr6_rOO6ecAVHuB18WBf7kxJZFtZ6c6Uxw== ) - Unsubscribe Preferences ( http://url3243.email.openai.com/asm/?user_id=20216706&data=eu7XHHS6TvK4kCGXscxQHP4zR243NxRoHKJIeo-0rBxoMDAwdTAwMJug5LMWO_MvWhEnZ_5gnGDX6C3uu3sSneUsKmy5aQ_rBWc58hWMi3W4MzaxEZYQL5jaS1-q7uZX-LkP3Yc-XBgF0Ads8fR-1iMFrocTMEWxU2znM4jq-cW3y_8cRFGxq5BvYe5JuV1pB44z52ePehNNkUMNqViYi8UJvePCv3hWZC-BBQyyVSSC9BiJuqZgkiy6MYLW8jynTgZTOv64dZ_HZzFiklEk1VH3YAYZ8urFezr-FS1ZoI7TPGO1qTUb-TKML1Smsp96nmwjx5GudA9u9M6f0RE9MaTXqCjculfIxi9mrge6daK1MCCmN548hMJ7FHfMXkHAaAd5mP0hz4ZZ7DWxqtsoXDl3b6mhmq-WtOYAZ3eJF8dyN3ahA0-1lTGUYVQKKhX-H2kJqAlc-DBQTrNzJ8eBeopQLF_SwNb44PlXi3JvatnJIchY9dAOVt676KyvSU1ukz0Mn-Ejqwb-56x_GXU6PCPfj0fuxucLmSVVTCBPQYVmSggQm8HeE6RVm5epz4hCFSV--sPlB1vfVcnU4KGFR-HRFvy4COHeEta55MAzESKDspSjVw0I61XPZ6rI0_wzc41tbJLDvMKr_9dy3d0N8glbvAZV9LwA1iXtGDkpg9LDaLPzSffkp_DsH7CjVH2fPMg3wH4lrFmT6yZS2By-mQG_-TAMNNX2T_EVdoGAnfXho7ZNcL740oc_Du-uotzKBnGalWX2RkpmvoedfuH5gdkz65zQVK8qpmw8_BotpIEYd1GNY3BMUusq7r2_23sLYGGX0m7yO5D3XmpfJ2cj06mCGmA4YAEDIt19kWhmFxpkZhqbwailUJADTDdgAFuW0yV57WgEE0WQO-bLFObkI16EARpdx8zISVqCOsPOgdgUHmeBxuPI2lPqJO1fejEvRxop-rD3NjCDh-FpGn-bbfOIr60TkVxWaaS-f7MzYnGUmMIj2hMsouEtTU_7hB7IXVcwxhXM20KP-FjoDY_S_QdM1qA-EAxgvJ8-VmRqfRRF8ArFo10TEMZqrfzxjShpCjrj9-Uw7JItRdkwYtPZjroPxOROEFsIXc0JPv-4Yg6_xahaHWpN9paTlsb1XpqvyaxFoFlPcHYSPK6Ov6sJ-TUvF3FVsHFWKbFfbB5Qbf7f63wAbTTfo-GtbVO6sHg1_8oSiwGzH1QiOWsSFYLfTt0WVvyH305m )

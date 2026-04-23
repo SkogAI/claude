@@ -1,0 +1,41 @@
+MIME-Version: 1.0
+From: Susan via Blocket <samtale-6z4li7gqp@meddelande.blocket.se>
+To: emil_skogsund <emil.skogsund@gmail.com>
+Date: Sun, 12 Aug 2018 19:24:58 +0200
+Subject: Ang. Omöblerad 2:a uthyres i centrala Västerås
+Message-ID: <a2dfaf50-9e54-11e8-a171-06c24b1d776a@blocket>
+In-Reply-To: <6d162750-9e54-11e8-bff1-0a7448e3f546@blocket>
+References: <c487fcd0-9e0d-11e8-b395-0264e67e0ec2@blocket> <6d162750-9e54-11e8-bff1-0a7448e3f546@blocket>
+Content-Type: multipart/mixed; boundary="----=_Part_14360547_1330169097.1534094702043"
+
+Det gör mig inget att du har en kompis som använder lägenheten när du inte är där. Så länge han fortfarande är skötsam och inte stör andra grannar bör det inte vara något större problem.
+
+> On 12/8/2018 Susan via Blocket wrote:
+> 
+> Hej! Det låter väldigt lovande, jag söker nämligen någon/några som kan tänka sig bo där en längre period, så 3-4 år verkar ju perfekt!
+> 
+> 
+> 
+>> On 12/8/2018 emil_skogsund via Blocket wrote:
+>> 
+>> Vill fråga direkt också hur du ser på om jag vill "dela" lägenheten med en kompis. Situationen ser ut såhär att jag jobbar oftast tio dagar, sen är jag ledig lika länge. Har en barndomskompis i min ålder som bor i Sala men som jobbar som programmerare på Linslagargränd 1, och vi har pratat en del om att han skulle vilja använda lägenheten som övernattninglägenhet när jag är till sjöss. Ville vara öppen och ärlig med det direkt så du vet.
+>> 
+>> 
+>> 
+>>> On 12/8/2018 emil_skogsund via Blocket wrote:
+>>> 
+>>> Mitt mål är att börja studera på mälardalens högskola så i bakhuvudet ser jag mig själv vilja bo i västerås i minst tre-fyra år.
+>>> 
+>>> 
+>>> 
+>>>> On 12/8/2018 Susan via Blocket wrote:
+>>>> 
+>>>> Hej! Tack för visat intresse! Hur länge har du tänkt att hyra? Hälsningar, Susan
+>>>> 
+>>>> 
+>>>> 
+>>>>> On 11/8/2018 emil_skogsund via Blocket wrote:
+>>>>> 
+>>>>> Hejsan! Jag är en kille på 30 år som söker lägenhet i västerås på grund av att jag vill börja studera på halvtid. Jobbat på båt sista tre åren vilket innebär att jag oftast ligger till sjöss 13-15 dagar i månaden och vill spendera resterande av tiden att studera på mälardalens högskola. Har en stabil ekonomi och har deklarerat 320-350 tusen per år sista tre åren. Skriv gärna en rad om det verkar intressant! (ligger ute till sjöss just nu så kan inte garantera att jag svarar direkt) 
+>>>>> 
+>>>>> /Emil Skogsund, 0723503207

@@ -1,0 +1,29 @@
+MIME-Version: 1.0
+From: OpenAI <noreply@email.openai.com>
+To: emil.skogsund@gmail.com
+Date: Fri, 06 Sep 2024 18:15:41 +0000
+Subject: Final Deprecation Reminder: gpt-3.5-turbo-0301, gpt-3.5-turbo-0613, and ​​gpt-3.5-turbo-16k-0613
+Message-ID: <pLyZLwZpSpakIDDLwRmI8Q@geopod-ismtpd-0>
+Content-Type: multipart/alternative; boundary="a0659be832700ea953b05578dcf2c229757ca9cc4c5edc00467bd5812a52"
+
+Shutting down access to gpt-3.5-turbo-0301, gpt-3.5-turbo-0613, and ​​gpt-3.5-turbo-16k-0613 on September 13, 2024
+
+OpenAI Logo ( https://openai.com/ )
+
+This is a final reminder that the following models will no longer be available ( https://platform.openai.com/docs/deprecations/2023-11-06-chat-model-updates ) starting next Friday, September 13, 2024:
+
+* gpt-3.5-turbo-0301
+* gpt-3.5-turbo-0613
+* gpt-3.5-turbo-16k-0613
+
+We have noticed that your organization has recently used at least one of these models. To avoid any disruption, we encourage you to migrate to gpt-4o-mini ( https://platform.openai.com/docs/models/gpt-4o-mini ) , our new small model that will give you higher performance at lower cost.
+
+Thanks for building with OpenAI. If you have any questions about model migration, feel free to reach out on the OpenAI Developer Forum ( https://community.openai.com/ ).
+
+—The OpenAI Team
+
+OpenAI
+
+1960 Bryant Street , San Francisco , CA 94110
+
+Unsubscribe ( http://url3243.email.openai.com/asm/unsubscribe/?user_id=20216706&data=CvYNmGnam1eBMfztQiK4HYlw42KHcRv3GdhQJWczgeZoMDAwdTAwMJilAf_wq6frcz-svTD8hALy-__DWHoIGcS3KEApaOWKtfl_BRE7GC0x-FLEraJ51JpTHMI_Q_xPWUfS1Lx_lAJd3qA_gmaf6QHYPBpVXEudOBcxz0s8EdmaSt3DHLVeq46Yiu5yZB_tuJ380T0dlhrgJ-U4MNr3COWOPa_hI9sIELfbYeSJZRb5pF-WmkhMgW8s1B_9RwW1tKTNzzC6I2nxglIAbzjrqAc4wT_iRQkrWHgjRngDHGH07aM4GmBxbWOeGWVW3_No0RbjFPoQImxKdmUFOk18sVwVOQgoTubyep3iM_X7IbNMRXWboT7ovsDdfmCDdtAs9lHXHVcfGyGX7EqkyCG2whnTXyGIhPTOUrnFAY_a7GV4fgwe3ilGjEKBjb4JWeAkrwn2qBZuZ8illw5chuop13UQeCYh6yAFYVltkKNnKyqXcUmOSIidlT0rpeKSoLXKjmUVfyCsyEcjPJ8nVWdU-P4Z591dUmlulDVeNynCka_S48pRMRo6Xme7fZsWOwKO-IxMu1zkoX0wB9IA76tIQNIWK_Vw65OjxkUbArHo9S1l6SQysZVOyw330IP-8uHHmDADIHoGVnX5kkb8kalRD_spwwn1J9VBY3B8Kih0Pk31OIw65j5bAgQt88RFEehFFDG-J01F2TH6SkH5A07GRz2YxhWBzbbaDcCzHHk6byMt018VaP62q7FWtLJlHCjXofy_E-FIPMBbkVsanNbINm0KNUtNNpU3nGGb6h2L1AYbClTaQu_GxdQLCNWkjkCL3yzMLUisHKIYacScZsCrKYetz-jzRe5C5axeAeAubflzhIds3uKhlktdESIrVXrCywShxNnJgmaoE-jJ_oCixDrBoh5sITbMDOeFj3Qrb_K6pYMrQQqwPFKUjnX5PMm-sfmob38c_NLttwODwAKZFrXAZfqj10o1TGTewwXPEjtqi96BEEdgZywGnrBpT8KjUngrCwypd_vDYuQ4vofyCLzSKyshL9WxQ8EorhSkl5aBo_kOQpTo17VWJckDmc8FKwG6luUdkxG7a49XvRx3sUYqIO0viUZo5gqnjGIsE_XePlsw1rb9oNWiU18xOz4VQk65XGBTtsT7o9hVPgGjDuSn0M4zKgk6FH_NEgPMcsn1vJbcNjnsQEZSlVyDXhdIeY7TFxEMie6nNiyv-Y_f2t901bEMibgWPIPz9MtH41zjJnnaAnsREIbaYWEea33Okz0PC4wJNgMMaAcsXKxiF7FivbqydydT ) - Unsubscribe Preferences ( http://url3243.email.openai.com/asm/?user_id=20216706&data=Jfn1iY6-8Gk2HIZEJcO36tUaBFZcAZeBkZlKaMEf-BxoMDAwdTAwMGTXzY8B5SAq4SvFuO8w4-EBPHEKNFiRF1marEkm8I3YDJLvyM_Lg4yxAwQO5mrpor1hoRkQw-FVsyxSdPI8VTMF_GMQY5NFgkZJngAlfg3238J1M0ilGK8fWuEADn6wXvb6O1fNNkXKtGeeTocW6U2Vyb3JyMVKEVNVhIspDJCM9OWIxFEGSw9cubaud3JCO2D7hHbnBq2Ia3PFZUHiF6Wn_20KDq4Xlu5Q-jGiYOHuEFtWHNboarSmwJToTk2kIGNrFKY8Agg2RLYeoiezX0_0GL0JmPS_LkL7aMrureTGJe1nail0eAF7SmUgdHcNroJtd7GUPSi8_ALxS0-ZNQlVWEiU03440qKpR2EAt96ms4h-04l8N_9l2NT5p-KRllk2qW72_OfF-hyHKAyIPNldfGa0UYYC4mNknKNlLYmloW9UIub3aEMb1yT8RwhbMkkkTm8vgMJrP3LjWk6aK1ChPmMCxgwIlg1Dg1PoakdgHTLTYVlteutlMcI9wAM1Uh3lOyaZExmsWPw2xeASL1U8Wx-AmRXOuoxJiq6fSF4IXN8I3PtA_JSI8pnNtdwaA_fij18OsT5dLBaTLam6CsYpPN_MeDs6CoAgiqXqLpUFBaGGP77HfPakVDt1cwArMa06_7Xu4MFhnhwwDetv5orhgyr9a7-7o2QM-gqWUQ8A7RippycBsNyyE5qpQpVgg19RxEgF2R733sRafa2zoICesm_9-v7UnMf_SN6v7QmA48ElPPXDdVV1Oiqi0FtzzFLgPdmh74nTtuEQOooEwO0pDcMEX-xOXodH1tQbm_In8O5GT3XbS5mTJiMNgwFB7hhDRSU-zKqx7uaIkD3tyBV9ElAis9RjW6ZOegwIHFyK2xMfnM5UZGdlveHc93Vdi2RG4iHCywsderObMIDZAxiPCrl_u6bHkTWJeLzEoOXqIdkIsG8C8er7KGLHaWylCt4Lb2grTSv5u2b7t-KEIq66DIzSOIuNqNvA2UgJ5EZsJVYjJ2ThEFUKA2RYsyj04nATR8iRfQ9X-7LmQPUjyaHEG_J9m9y7cLVT269eH-z1zLu_6h4ZUDOCd0GONTbpas2kNK6hmhDI0TFWZtvB6pprzn6RK-ElZH8VbDVP5Qx_arCqboS3p_Fnvdz1SS_KWwOl9zvA_ECgn3lqlOOVwXRM6KTEIgQXLNTtuNWg3keBmFWDnIRkrAXVPTZZjJojiZ-n0zWFZBjO8zmiuidzYYc= )
