@@ -1,1 +1,0 @@
-/home/skogix/.local/src/marketplace/Argcfile.sh
