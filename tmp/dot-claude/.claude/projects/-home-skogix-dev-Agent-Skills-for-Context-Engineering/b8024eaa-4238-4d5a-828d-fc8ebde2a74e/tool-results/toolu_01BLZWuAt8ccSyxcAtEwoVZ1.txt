@@ -1,0 +1,450 @@
+     1→   400→Model performance tends to degrade beyond a certain context length, even if the window technically supports it.
+     2→   401→
+     3→   402→Long inputs are expensive, even with prefix caching. You're still paying to transmit and prefill every token.
+     4→   403→
+     5→   404→To deal with this, many agent systems implement context truncation or compression strategies. But overly aggressive compression inevitably leads to information loss. The problem is fundamental: an agent, by nature, must predict the next action based on all prior state—and you can't reliably predict which observation might become critical ten steps later. From a logical standpoint, any irreversible compression carries risk.
+     6→   405→
+     7→   406→That's why we treat the file system as the ultimate context in Manus: unlimited in size, persistent by nature, and directly operable by the agent itself. The model learns to write to and read from files on demand—using the file system not just as storage, but as structured, externalized memory.
+     8→   407→
+     9→   408→Our compression strategies are always designed to be restorable. For instance, the content of a web page can be dropped from the context as long as the URL is preserved, and a document's contents can be omitted if its path remains available in the sandbox. This allows Manus to shrink context length without permanently losing information.
+    10→   409→
+    11→   410→While developing this feature, I found myself imagining what it would take for a State Space Model (SSM) to work effectively in an agentic setting. Unlike Transformers, SSMs lack full attention and struggle with long-range backward dependencies. But if they could master file-based memory—externalizing long-term state instead of holding it in context—then their speed and efficiency might unlock a new class of agents. Agentic SSMs could be the real successors to .
+    12→   411→
+    13→   412→Manipulate Attention Through Recitation
+    14→   413→
+    15→   414→If you've worked with Manus, you've probably noticed something curious: when handling complex tasks, it tends to create a todo.md file—and update it step-by-step as the task progresses, checking off completed items.
+    16→   415→
+    17→   416→That's not just cute behavior—it's a deliberate mechanism to manipulate attention.
+    18→   417→
+    19→   418→A typical task in Manus requires around 50 tool calls on average. That's a long loop—and since Manus relies on LLMs for decision-making, it's vulnerable to drifting off-topic or forgetting earlier goals, especially in long contexts or complicated tasks.
+    20→   419→
+    21→   420→By constantly rewriting the todo list, Manus is reciting its objectives into the end of the context. This pushes the global plan into the model's recent attention span, avoiding "lost-in-the-middle" issues and reducing goal misalignment. In effect, it's using natural language to bias its own focus toward the task objective—without needing special architectural changes.
+    22→   421→
+    23→   422→Keep the Wrong Stuff In
+    24→   423→
+    25→   424→Agents make mistakes. That's not a bug—it's reality. Language models hallucinate, environments return errors, external tools misbehave, and unexpected edge cases show up all the time. In multi-step tasks, failure is not the exception; it's part of the loop.
+    26→   425→
+    27→   426→And yet, a common impulse is to hide these errors: clean up the trace, retry the action, or reset the model's state and leave it to the magical "". That feels safer, more controlled. But it comes at a cost: Erasing failure removes evidence. And without evidence, the model can't adapt.
+    28→   427→
+    29→   428→In our experience, one of the most effective ways to improve agent behavior is deceptively simple: leave the wrong turns in the context. When the model sees a failed action—and the resulting observation or stack trace—it implicitly updates its internal beliefs. This shifts its prior away from similar actions, reducing the chance of repeating the same mistake. In fact, we believe error recovery is one of the clearest indicators of true agentic behavior. Yet it's still underrepresented in most academic work and public benchmarks, which often focus on task success under ideal conditions.
+    30→   429→
+    31→   430→Don't Get Few-Shotted
+    32→   431→
+    33→   432→ is a common technique for improving LLM outputs. But in agent systems, it can backfire in subtle ways.
+    34→   433→
+    35→   434→Language models are excellent mimics; they imitate the pattern of behavior in the context. If your context is full of similar past action-observation pairs, the model will tend to follow that pattern, even when it's no longer optimal.
+    36→   435→
+    37→   436→This can be dangerous in tasks that involve repetitive decisions or actions. For example, when using Manus to help review a batch of 20 resumes, the agent often falls into a rhythm—repeating similar actions simply because that's what it sees in the context. This leads to drift, overgeneralization, or sometimes hallucination.
+    38→   437→
+    39→   438→The fix is to increase diversity. Manus introduces small amounts of structured variation in actions and observations—different serialization templates, alternate phrasing, minor noise in order or formatting. This controlled randomness helps break the pattern and tweaks the model's attention. In other words, don't few-shot yourself into a rut. The more uniform your context, the more brittle your agent becomes.
+    40→   439→
+    41→   440→Conclusion
+    42→   441→
+    43→   442→Context engineering is still an emerging science—but for agent systems, it's already essential. Models may be getting stronger, faster, and cheaper, but no amount of raw capability replaces the need for memory, environment, and feedback. How you shape the context ultimately defines how your agent behaves: how fast it runs, how well it recovers, and how far it scales.
+    44→   443→
+    45→   444→At Manus, we've learned these lessons through repeated rewrites, dead ends, and real-world testing across millions of users. None of what we've shared here is universal truth—but these are the patterns that worked for us. If they help you avoid even one painful iteration, then this post did its job.
+    46→   445→
+    47→   446→The agentic future will be built one context at a time. Engineer them well.
+    48→   447→
+    49→   448→------
+    50→   449→
+    51→   450→Wide Research: Beyond the Context Window
+    52→   451→
+    53→   452→The promise of AI-driven research has always been compelling: delegate the tedious work of information gathering and synthesis to an intelligent system, freeing up human cognition for higher-order analysis and decision-making. Yet, anyone who has pushed these systems on non-trivial use cases has run into a frustrating reality: by the eighth or ninth item in a multi-subject research task, the AI starts fabricating.
+    54→   453→
+    55→   454→Not just simplifying. Not just summarizing more concisely. Fabricating.
+    56→   455→
+    57→   456→This isn't a prompt engineering problem. It's not a model capability problem. It is an architectural constraint that has quietly limited the utility of AI research tools since their inception. And it's the constraint that Wide Research is designed to overcome.
+    58→   457→
+    59→   458→The Context Window: A Fundamental Bottleneck
+    60→   459→
+    61→   460→Every large language model operates within a context window, a finite memory buffer that limits the amount of information the model can actively process at any given moment. Modern models have pushed this boundary impressively: from 4K tokens to 32K, 128K, and even 1M tokens in recent versions.
+    62→   461→
+    63→   462→Yet the problem persists.
+    64→   463→
+    65→   464→When you ask an AI to research multiple entities-say, fifty companies, thirty research papers, or twenty competing products-the context window fills up rapidly. It's not just the raw information about each entity, but also:
+    66→   465→
+    67→   466→The original task specification and requirements
+    68→   467→
+    69→   468→The structural template for consistent output formatting
+    70→   469→
+    71→   470→Intermediate reasoning and analysis for each item
+    72→   471→
+    73→   472→Cross-referencing and comparative notes
+    74→   473→
+    75→   474→The cumulative context of all preceding items
+    76→   475→
+    77→   476→By the time the model reaches the eighth or ninth item, the context window is under immense strain. The model faces an impossible choice: fail explicitly, or start cutting corners.
+    78→   477→
+    79→   478→It always chooses the latter.
+    80→   479→
+    81→   480→The Fabrication Threshold
+    82→   481→
+    83→   482→Here's what happens in practice:
+    84→   483→
+    85→   484→Items 1-5: The model performs genuine research. It retrieves information, cross-references sources, and produces detailed, accurate analysis.
+    86→   485→
+    87→   486→Items 6-8: The quality begins to subtly degrade. Descriptions become slightly more generic. The model starts relying more on prior patterns than fresh research.
+    88→   487→
+    89→   488→Items 9+: The model enters fabrication mode. Unable to maintain the cognitive load of thorough research while managing an overflowing context, it begins generating plausible-sounding content based on statistical patterns, not actual investigation.
+    90→   489→
+    91→   490→These fabrications are sophisticated. They sound authoritative. They follow the established format perfectly. They are often grammatically flawless and stylistically consistent with the earlier, legitimate entries.
+    92→   491→
+    93→   492→They are also frequently wrong.
+    94→   493→
+    95→   494→A competitor analysis might attribute features to companies that don't offer them. A literature review might cite papers with fabricated findings. A product comparison might invent pricing tiers or specifications.
+    96→   495→
+    97→   496→The insidious part is that these fabrications are difficult to detect without manual verification—which defeats the entire purpose of automated research.
+    98→   497→
+    99→   498→Why Bigger Context Windows Can't Fix This
+   100→   499→
+   101→   500→The intuitive response is to simply expand the context window. If 32K tokens aren't enough, use 128K. If that's not enough, push to 200K or beyond.
+   102→   501→
+   103→   502→This approach misunderstands the problem.
+   104→   503→
+   105→   504→First, context decay is not binary. A model does not maintain perfect recall across its entire context window. Studies have shown that retrieval accuracy degrades with distance from the current position—the "lost in the middle" phenomenon. Information at the beginning and end of the context is recalled more reliably than information in the middle.
+   106→   505→
+   107→   506→Second, the processing cost grows disproportionately. The cost to process a 400K token context isn't just double the cost of 200K—it increases exponentially in both time and computing resources. This makes massive-context processing economically impractical for many use cases.
+   108→   507→
+   109→   508→Third, the problem is cognitive load. Even with an infinite context, asking a single model to maintain consistent quality across dozens of independent research tasks creates a cognitive bottleneck. The model must constantly switch context between items, maintain a comparative framework, and ensure stylistic consistency—all while performing the core research task.
+   110→   509→
+   111→   510→Fourth, context length pressure. The model’s “patience” is, to some extent, determined by the length distribution of samples in its training data. However, the post-training data mixture of current language models is still dominated by relatively short trajectories designed for chatbot-style interactions. As a result, when the length of an assistant message’s content exceeds a certain threshold, the model naturally experiences a kind of context length pressure, prompting it to hasten toward summarizing or to resort to incomplete expression forms such as bullet points.
+   112→   511→
+   113→   512→The context window is a constraint, yes. But it's a symptom of a deeper architectural limitation: the single-processor, sequential paradigm.
+   114→   513→
+   115→   514→The Architectural Shift: Parallel Processing
+   116→   515→
+   117→   516→Wide Research represents a fundamental rethinking of how an AI system should approach large-scale research tasks. Instead of asking one processor to handle n items sequentially, we deploy n parallel sub-agents to process n items simultaneously.
+   118→   517→
+   119→   518→The Wide Research Architecture
+   120→   519→
+   121→   520→When you launch a Wide Research task, the system operates as follows:
+   122→   521→
+   123→   522→1. Intelligent Decomposition
+   124→   523→
+   125→   524→The main controller analyzes your request and breaks it down into independent, parallelizable sub-tasks. This involves understanding the task structure, identifying dependencies, and creating coherent sub-specifications.
+   126→   525→
+   127→   526→2. Sub-agent Delegation
+   128→   527→
+   129→   528→For each sub-task, the system spins up a dedicated sub-agent. Crucially, these are not lightweight processes—they are full-featured Manus instances, each with:
+   130→   529→
+   131→   530→A complete virtual machine environment
+   132→   531→
+   133→   532→Access to the full tool library (search, browsing, code execution, file handling)
+   134→   533→
+   135→   534→An independent internet connection
+   136→   535→
+   137→   536→A fresh, empty context window
+   138→   537→
+   139→   538→3. Parallel Execution
+   140→   539→
+   141→   540→All sub-agents execute simultaneously. Each one focuses exclusively on its assigned item, performing the same depth of research and analysis it would for a single-item task.
+   142→   541→
+   143→   542→4. Centralized Coordination
+   144→   543→
+   145→   544→The main controller maintains oversight, collecting results as the sub-agents complete their jobs. Importantly, the sub-agents do not communicate with each other, all coordination flows through the main controller. This prevents context pollution and maintains independence.
+   146→   545→
+   147→   546→5. Synthesis and Integration
+   148→   547→
+   149→   548→Once all sub-agents have reported back, the main controller synthesizes the results into a single, coherent, and comprehensive report. This synthesis step leverages the full context capacity of the main controller, as it is not burdened with the original research effort.
+   150→   549→
+   151→   550→Why This Changes Everything
+   152→   551→
+   153→   552→Consistent Quality at Scale
+   154→   553→
+   155→   554→Every item gets the same treatment. The 50th item is researched just as thoroughly as the first. There is no degradation curve, no fabrication threshold, and no quality cliff.
+   156→   555→
+   157→   556→True Horizontal Scalability
+   158→   557→
+   159→   558→Need to analyze 10 items? The system deploys 10 sub-agents. Need to analyze 500? It deploys 500. The architecture scales linearly with the size of the task, not exponentially like context-based approaches.
+   160→   559→
+   161→   560→Significant Speed-Up
+   162→   561→
+   163→   562→Because the sub-agents operate in parallel, the real-world time required to analyze 50 items is roughly the same as the time to analyze 5. The bottleneck shifts from sequential processing time to synthesis time—a much smaller component of the overall task.
+   164→   563→
+   165→   564→Reduced Hallucination Rate
+   166→   565→
+   167→   566→Each sub-agent operates within its cognitive comfort zone. With a fresh context and a single, focused task, there is no pressure to fabricate. The sub-agent can perform genuine research, verify facts, and maintain accuracy.
+   168→   567→
+   169→   568→Independence and Reliability
+   170→   569→
+   171→   570→Because the sub-agents do not share context, an error or hallucination in one sub-agent's job does not propagate to the others. Each analysis stands on its own, reducing systemic risk.
+   172→   571→
+   173→   572→Beyond the Single-Processor Paradigm
+   174→   573→
+   175→   574→Wide Research is more than a feature—it represents a fundamental shift away from the single-processor paradigm and toward an orchestrated, parallel architecture. The future of AI systems lies not in ever-larger context windows, but in intelligent task decomposition and parallel execution.
+   176→   575→
+   177→   576→We are moving from the era of the "AI assistant" to the era of the "AI workforce."
+   178→   577→
+   179→   578→When to use Wide Research: Any task involving multiple, similar items that require consistent analysiscompetitive research, literature reviews, bulk processing, multi-asset generation.
+   180→   579→
+   181→   580→When not to use: Deeply sequential tasks where each step heavily depends on the prior result, or small tasks (fewer than 10 items) where single-processor handling is more cost-effective.
+   182→   581→
+   183→   582→--------
+   184→   583→
+   185→   584→How we built our multi-agent research system
+   186→   585→
+   187→   586→Published Jun 13, 2025
+   188→   587→
+   189→   588→Our Research feature uses multiple Claude agents to explore complex topics more effectively. We share the engineering challenges and the lessons we learned from building this system.
+   190→   589→
+   191→   590→Claude now has Research capabilities that allow it to search across the web, Google Workspace, and any integrations to accomplish complex tasks.
+   192→   591→
+   193→   592→The journey of this multi-agent system from prototype to production taught us critical lessons about system architecture, tool design, and prompt engineering. A multi-agent system consists of multiple agents (LLMs autonomously using tools in a loop) working together. Our Research feature involves an agent that plans a research process based on user queries, and then uses tools to create parallel agents that search for information simultaneously. Systems with multiple agents introduce new challenges in agent coordination, evaluation, and reliability.
+   194→   593→
+   195→   594→This post breaks down the principles that worked for us—we hope you'll find them useful to apply when building your own multi-agent systems.
+   196→   595→
+   197→   596→Benefits of a multi-agent system
+   198→   597→
+   199→   598→Research work involves open-ended problems where it’s very difficult to predict the required steps in advance. You can’t hardcode a fixed path for exploring complex topics, as the process is inherently dynamic and path-dependent. When people conduct research, they tend to continuously update their approach based on discoveries, following leads that emerge during investigation.
+   200→   599→
+   201→   600→This unpredictability makes AI agents particularly well-suited for research tasks. Research demands the flexibility to pivot or explore tangential connections as the investigation unfolds. The model must operate autonomously for many turns, making decisions about which directions to pursue based on intermediate findings. A linear, one-shot pipeline cannot handle these tasks.
+   202→   601→
+   203→   602→The essence of search is compression: distilling insights from a vast corpus. Subagents facilitate compression by operating in parallel with their own context windows, exploring different aspects of the question simultaneously before condensing the most important tokens for the lead research agent. Each subagent also provides separation of concerns—distinct tools, prompts, and exploration trajectories—which reduces path dependency and enables thorough, independent investigations.
+   204→   603→
+   205→   604→Once intelligence reaches a threshold, multi-agent systems become a vital way to scale performance. For instance, although individual humans have become more intelligent in the last 100,000 years, human societies have become exponentially more capable in the information age because of our collective intelligence and ability to coordinate. Even generally-intelligent agents face limits when operating as individuals; groups of agents can accomplish far more.
+   206→   605→
+   207→   606→Our internal evaluations show that multi-agent research systems excel especially for breadth-first queries that involve pursuing multiple independent directions simultaneously. We found that a multi-agent system with Claude Opus 4 as the lead agent and Claude Sonnet 4 subagents outperformed single-agent Claude Opus 4 by 90.2% on our internal research eval. For example, when asked to identify all the board members of the companies in the Information Technology S&P 500, the multi-agent system found the correct answers by decomposing this into tasks for subagents, while the single agent system failed to find the answer with slow, sequential searches.
+   208→   607→
+   209→   608→Multi-agent systems work mainly because they help spend enough tokens to solve the problem. In our analysis, three factors explained 95% of the performance variance in the BrowseComp evaluation (which tests the ability of browsing agents to locate hard-to-find information). We found that token usage by itself explains 80% of the variance, with the number of tool calls and the model choice as the two other explanatory factors. This finding validates our architecture that distributes work across agents with separate context windows to add more capacity for parallel reasoning. The latest Claude models act as large efficiency multipliers on token use, as upgrading to Claude Sonnet 4 is a larger performance gain than doubling the token budget on Claude Sonnet 3.7. Multi-agent architectures effectively scale token usage for tasks that exceed the limits of single agents.
+   210→   609→
+   211→   610→There is a downside: in practice, these architectures burn through tokens fast. In our data, agents typically use about 4× more tokens than chat interactions, and multi-agent systems use about 15× more tokens than chats. For economic viability, multi-agent systems require tasks where the value of the task is high enough to pay for the increased performance. Further, some domains that require all agents to share the same context or involve many dependencies between agents are not a good fit for multi-agent systems today. For instance, most coding tasks involve fewer truly parallelizable tasks than research, and LLM agents are not yet great at coordinating and delegating to other agents in real time. We’ve found that multi-agent systems excel at valuable tasks that involve heavy parallelization, information that exceeds single context windows, and interfacing with numerous complex tools.
+   212→   611→
+   213→   612→Architecture overview for Research
+   214→   613→
+   215→   614→Our Research system uses a multi-agent architecture with an orchestrator-worker pattern, where a lead agent coordinates the process while delegating to specialized subagents that operate in parallel.
+   216→   615→
+   217→   616→The multi-agent architecture in action: user queries flow through a lead agent that creates specialized subagents to search for different aspects in parallel.
+   218→   617→
+   219→   618→When a user submits a query, the lead agent analyzes it, develops a strategy, and spawns subagents to explore different aspects simultaneously. As shown in the diagram above, the subagents act as intelligent filters by iteratively using search tools to gather information, in this case on AI agent companies in 2025, and then returning a list of companies to the lead agent so it can compile a final answer.
+   220→   619→
+   221→   620→Traditional approaches using Retrieval Augmented Generation (RAG) use static retrieval. That is, they fetch some set of chunks that are most similar to an input query and use these chunks to generate a response. In contrast, our architecture uses a multi-step search that dynamically finds relevant information, adapts to new findings, and analyzes results to formulate high-quality answers.
+   222→   621→
+   223→   622→Process diagram showing the complete workflow of our multi-agent Research system. When a user submits a query, the system creates a LeadResearcher agent that enters an iterative research process. The LeadResearcher begins by thinking through the approach and saving its plan to Memory to persist the context, since if the context window exceeds 200,000 tokens it will be truncated and it is important to retain the plan. It then creates specialized Subagents (two are shown here, but it can be any number) with specific research tasks. Each Subagent independently performs web searches, evaluates tool results using interleaved thinking, and returns findings to the LeadResearcher. The LeadResearcher synthesizes these results and decides whether more research is needed—if so, it can create additional subagents or refine its strategy. Once sufficient information is gathered, the system exits the research loop and passes all findings to a CitationAgent, which processes the documents and research report to identify specific locations for citations. This ensures all claims are properly attributed to their sources. The final research results, complete with citations, are then returned to the user.
+   224→   623→
+   225→   624→Prompt engineering and evaluations for research agents
+   226→   625→
+   227→   626→Multi-agent systems have key differences from single-agent systems, including a rapid growth in coordination complexity. Early agents made errors like spawning 50 subagents for simple queries, scouring the web endlessly for nonexistent sources, and distracting each other with excessive updates. Since each agent is steered by a prompt, prompt engineering was our primary lever for improving these behaviors. Below are some principles we learned for prompting agents:
+   228→   627→
+   229→   628→Think like your agents. To iterate on prompts, you must understand their effects. To help us do this, we built simulations using our Console with the exact prompts and tools from our system, then watched agents work step-by-step. This immediately revealed failure modes: agents continuing when they already had sufficient results, using overly verbose search queries, or selecting incorrect tools. Effective prompting relies on developing an accurate mental model of the agent, which can make the most impactful changes obvious.
+   230→   629→
+   231→   630→Teach the orchestrator how to delegate. In our system, the lead agent decomposes queries into subtasks and describes them to subagents. Each subagent needs an objective, an output format, guidance on the tools and sources to use, and clear task boundaries. Without detailed task descriptions, agents duplicate work, leave gaps, or fail to find necessary information. We started by allowing the lead agent to give simple, short instructions like 'research the semiconductor shortage,' but found these instructions often were vague enough that subagents misinterpreted the task or performed the exact same searches as other agents. For instance, one subagent explored the 2021 automotive chip crisis while 2 others duplicated work investigating current 2025 supply chains, without an effective division of labor.
+   232→   631→
+   233→   632→Scale effort to query complexity. Agents struggle to judge appropriate effort for different tasks, so we embedded scaling rules in the prompts. Simple fact-finding requires just 1 agent with 3-10 tool calls, direct comparisons might need 2-4 subagents with 10-15 calls each, and complex research might use more than 10 subagents with clearly divided responsibilities. These explicit guidelines help the lead agent allocate resources efficiently and prevent overinvestment in simple queries, which was a common failure mode in our early versions.
+   234→   633→
+   235→   634→Tool design and selection are critical. Agent-tool interfaces are as critical as human-computer interfaces. Using the right tool is efficient—often, it’s strictly necessary. For instance, an agent searching the web for context that only exists in Slack is doomed from the start. With MCP servers that give the model access to external tools, this problem compounds, as agents encounter unseen tools with descriptions of wildly varying quality. We gave our agents explicit heuristics: for example, examine all available tools first, match tool usage to user intent, search the web for broad external exploration, or prefer specialized tools over generic ones. Bad tool descriptions can send agents down completely wrong paths, so each tool needs a distinct purpose and a clear description.
+   236→   635→
+   237→   636→Let agents improve themselves. We found that the Claude 4 models can be excellent prompt engineers. When given a prompt and a failure mode, they are able to diagnose why the agent is failing and suggest improvements. We even created a tool-testing agent—when given a flawed MCP tool, it attempts to use the tool and then rewrites the tool description to avoid failures. By testing the tool dozens of times, this agent found key nuances and bugs. This process for improving tool ergonomics resulted in a 40% decrease in task completion time for future agents using the new description, because they were able to avoid most mistakes.
+   238→   637→
+   239→   638→Start wide, then narrow down. Search strategy should mirror expert human research: explore the landscape before drilling into specifics. Agents often default to overly long, specific queries that return few results. We counteracted this tendency by prompting agents to start with short, broad queries, evaluate what’s available, then progressively narrow focus.
+   240→   639→
+   241→   640→Guide the thinking process. Extended thinking mode, which leads Claude to output additional tokens in a visible thinking process, can serve as a controllable scratchpad. The lead agent uses thinking to plan its approach, assessing which tools fit the task, determining query complexity and subagent count, and defining each subagent’s role. Our testing showed that extended thinking improved instruction-following, reasoning, and efficiency. Subagents also plan, then use interleaved thinking after tool results to evaluate quality, identify gaps, and refine their next query. This makes subagents more effective in adapting to any task.
+   242→   641→
+   243→   642→Parallel tool calling transforms speed and performance. Complex research tasks naturally involve exploring many sources. Our early agents executed sequential searches, which was painfully slow. For speed, we introduced two kinds of parallelization: (1) the lead agent spins up 3-5 subagents in parallel rather than serially; (2) the subagents use 3+ tools in parallel. These changes cut research time by up to 90% for complex queries, allowing Research to do more work in minutes instead of hours while covering more information than other systems.
+   244→   643→
+   245→   644→Our prompting strategy focuses on instilling good heuristics rather than rigid rules. We studied how skilled humans approach research tasks and encoded these strategies in our prompts—strategies like decomposing difficult questions into smaller tasks, carefully evaluating the quality of sources, adjusting search approaches based on new information, and recognizing when to focus on depth (investigating one topic in detail) vs. breadth (exploring many topics in parallel). We also proactively mitigated unintended side effects by setting explicit guardrails to prevent the agents from spiraling out of control. Finally, we focused on a fast iteration loop with observability and test cases.
+   246→   645→
+   247→   646→Effective evaluation of agents
+   248→   647→
+   249→   648→Good evaluations are essential for building reliable AI applications, and agents are no different. However, evaluating multi-agent systems presents unique challenges. Traditional evaluations often assume that the AI follows the same steps each time: given input X, the system should follow path Y to produce output Z. But multi-agent systems don't work this way. Even with identical starting points, agents might take completely different valid paths to reach their goal. One agent might search three sources while another searches ten, or they might use different tools to find the same answer. Because we don’t always know what the right steps are, we usually can't just check if agents followed the “correct” steps we prescribed in advance. Instead, we need flexible evaluation methods that judge whether agents achieved the right outcomes while also following a reasonable process.
+   250→   649→
+   251→   650→Start evaluating immediately with small samples. In early agent development, changes tend to have dramatic impacts because there is abundant low-hanging fruit. A prompt tweak might boost success rates from 30% to 80%. With effect sizes this large, you can spot changes with just a few test cases. We started with a set of about 20 queries representing real usage patterns. Testing these queries often allowed us to clearly see the impact of changes. We often hear that AI developer teams delay creating evals because they believe that only large evals with hundreds of test cases are useful. However, it’s best to start with small-scale testing right away with a few examples, rather than delaying until you can build more thorough evals.
+   252→   651→
+   253→   652→LLM-as-judge evaluation scales when done well. Research outputs are difficult to evaluate programmatically, since they are free-form text and rarely have a single correct answer. LLMs are a natural fit for grading outputs. We used an LLM judge that evaluated each output against criteria in a rubric: factual accuracy (do claims match sources?), citation accuracy (do the cited sources match the claims?), completeness (are all requested aspects covered?), source quality (did it use primary sources over lower-quality secondary sources?), and tool efficiency (did it use the right tools a reasonable number of times?). We experimented with multiple judges to evaluate each component, but found that a single LLM call with a single prompt outputting scores from 0.0-1.0 and a pass-fail grade was the most consistent and aligned with human judgements. This method was especially effective when the eval test cases did have a clear answer, and we could use the LLM judge to simply check if the answer was correct (i.e. did it accurately list the pharma companies with the top 3 largest R&D budgets?). Using an LLM as a judge allowed us to scalably evaluate hundreds of outputs.
+   254→   653→
+   255→   654→Human evaluation catches what automation misses. People testing agents find edge cases that evals miss. These include hallucinated answers on unusual queries, system failures, or subtle source selection biases. In our case, human testers noticed that our early agents consistently chose SEO-optimized content farms over authoritative but less highly-ranked sources like academic PDFs or personal blogs. Adding source quality heuristics to our prompts helped resolve this issue. Even in a world of automated evaluations, manual testing remains essential.
+   256→   655→
+   257→   656→Multi-agent systems have emergent behaviors, which arise without specific programming. For instance, small changes to the lead agent can unpredictably change how subagents behave. Success requires understanding interaction patterns, not just individual agent behavior. Therefore, the best prompts for these agents are not just strict instructions, but frameworks for collaboration that define the division of labor, problem-solving approaches, and effort budgets. Getting this right relies on careful prompting and tool design, solid heuristics, observability, and tight feedback loops. See the open-source prompts in our Cookbook for example prompts from our system.
+   258→   657→
+   259→   658→Production reliability and engineering challenges
+   260→   659→
+   261→   660→In traditional software, a bug might break a feature, degrade performance, or cause outages. In agentic systems, minor changes cascade into large behavioral changes, which makes it remarkably difficult to write code for complex agents that must maintain state in a long-running process.
+   262→   661→
+   263→   662→Agents are stateful and errors compound. Agents can run for long periods of time, maintaining state across many tool calls. This means we need to durably execute code and handle errors along the way. Without effective mitigations, minor system failures can be catastrophic for agents. When errors occur, we can't just restart from the beginning: restarts are expensive and frustrating for users. Instead, we built systems that can resume from where the agent was when the errors occurred. We also use the model’s intelligence to handle issues gracefully: for instance, letting the agent know when a tool is failing and letting it adapt works surprisingly well. We combine the adaptability of AI agents built on Claude with deterministic safeguards like retry logic and regular checkpoints.
+   264→   663→
+   265→   664→Debugging benefits from new approaches. Agents make dynamic decisions and are non-deterministic between runs, even with identical prompts. This makes debugging harder. For instance, users would report agents “not finding obvious information,” but we couldn't see why. Were the agents using bad search queries? Choosing poor sources? Hitting tool failures? Adding full production tracing let us diagnose why agents failed and fix issues systematically. Beyond standard observability, we monitor agent decision patterns and interaction structures—all without monitoring the contents of individual conversations, to maintain user privacy. This high-level observability helped us diagnose root causes, discover unexpected behaviors, and fix common failures.
+   266→   665→
+   267→   666→Deployment needs careful coordination. Agent systems are highly stateful webs of prompts, tools, and execution logic that run almost continuously. This means that whenever we deploy updates, agents might be anywhere in their process. We therefore need to prevent our well-meaning code changes from breaking existing agents. We can’t update every agent to the new version at the same time. Instead, we use rainbow deployments to avoid disrupting running agents, by gradually shifting traffic from old to new versions while keeping both running simultaneously.
+   268→   667→
+   269→   668→Synchronous execution creates bottlenecks. Currently, our lead agents execute subagents synchronously, waiting for each set of subagents to complete before proceeding. This simplifies coordination, but creates bottlenecks in the information flow between agents. For instance, the lead agent can’t steer subagents, subagents can’t coordinate, and the entire system can be blocked while waiting for a single subagent to finish searching. Asynchronous execution would enable additional parallelism: agents working concurrently and creating new subagents when needed. But this asynchronicity adds challenges in result coordination, state consistency, and error propagation across the subagents. As models can handle longer and more complex research tasks, we expect the performance gains will justify the complexity.
+   270→   669→
+   271→   670→Conclusion
+   272→   671→
+   273→   672→When building AI agents, the last mile often becomes most of the journey. Codebases that work on developer machines require significant engineering to become reliable production systems. The compound nature of errors in agentic systems means that minor issues for traditional software can derail agents entirely. One step failing can cause agents to explore entirely different trajectories, leading to unpredictable outcomes. For all the reasons described in this post, the gap between prototype and production is often wider than anticipated.
+   274→   673→
+   275→   674→Despite these challenges, multi-agent systems have proven valuable for open-ended research tasks. Users have said that Claude helped them find business opportunities they hadn’t considered, navigate complex healthcare options, resolve thorny technical bugs, and save up to days of work by uncovering research connections they wouldn't have found alone. Multi-agent research systems can operate reliably at scale with careful engineering, comprehensive testing, detail-oriented prompt and tool design, robust operational practices, and tight collaboration between research, product, and engineering teams who have a strong understanding of current agent capabilities. We're already seeing these systems transform how people solve complex problems.
+   276→   675→
+   277→   676→A Clio embedding plot showing the most common ways people are using the Research feature today. The top use case categories are developing software systems across specialized domains (10%), develop and optimize professional and technical content (8%), develop business growth and revenue generation strategies (8%), assist with academic research and educational material development (7%), and research and verify information about people, places, or organizations (5%).
+   278→   677→
+   279→   678→Acknowledgements
+   280→   679→
+   281→   680→Written by Jeremy Hadfield, Barry Zhang, Kenneth Lien, Florian Scholz, Jeremy Fox, and Daniel Ford. This work reflects the collective efforts of several teams across Anthropic who made the Research feature possible. Special thanks go to the Anthropic apps engineering team, whose dedication brought this complex multi-agent system to production. We're also grateful to our early users for their excellent feedback.
+   282→   681→
+   283→   682→Appendix
+   284→   683→
+   285→   684→Below are some additional miscellaneous tips for multi-agent systems.
+   286→   685→
+   287→   686→End-state evaluation of agents that mutate state over many turns. Evaluating agents that modify persistent state across multi-turn conversations presents unique challenges. Unlike read-only research tasks, each action can change the environment for subsequent steps, creating dependencies that traditional evaluation methods struggle to handle. We found success focusing on end-state evaluation rather than turn-by-turn analysis. Instead of judging whether the agent followed a specific process, evaluate whether it achieved the correct final state. This approach acknowledges that agents may find alternative paths to the same goal while still ensuring they deliver the intended outcome. For complex workflows, break evaluation into discrete checkpoints where specific state changes should have occurred, rather than attempting to validate every intermediate step.
+   288→   687→
+   289→   688→Long-horizon conversation management. Production agents often engage in conversations spanning hundreds of turns, requiring careful context management strategies. As conversations extend, standard context windows become insufficient, necessitating intelligent compression and memory mechanisms. We implemented patterns where agents summarize completed work phases and store essential information in external memory before proceeding to new tasks. When context limits approach, agents can spawn fresh subagents with clean contexts while maintaining continuity through careful handoffs. Further, they can retrieve stored context like the research plan from their memory rather than losing previous work when reaching the context limit. This distributed approach prevents context overflow while preserving conversation coherence across extended interactions.
+   290→   689→
+   291→   690→Subagent output to a filesystem to minimize the ‘game of telephone.’ Direct subagent outputs can bypass the main coordinator for certain types of results, improving both fidelity and performance. Rather than requiring subagents to communicate everything through the lead agent, implement artifact systems where specialized agents can create outputs that persist independently. Subagents call tools to store their work in external systems, then pass lightweight references back to the coordinator. This prevents information loss during multi-stage processing and reduces token overhead from copying large outputs through conversation history. The pattern works particularly well for structured outputs like code, reports, or data visualizations where the subagent's specialized prompt produces better results than filtering through a general coordinator.
+   292→   691→
+   293→   692→-------
+   294→   693→
+   295→   694→riting effective tools for agents — with agents
+   296→   695→
+   297→   696→Published Sep 11, 2025
+   298→   697→
+   299→   698→Agents are only as effective as the tools we give them. We share how to write high-quality tools and evaluations, and how you can boost performance by using Claude to optimize its tools for itself.
+   300→   699→
+   301→   700→The Model Context Protocol (MCP) can empower LLM agents with potentially hundreds of tools to solve real-world tasks. But how do we make those tools maximally effective?
+   302→   701→
+   303→   702→In this post, we describe our most effective techniques for improving performance in a variety of agentic AI systems1.
+   304→   703→
+   305→   704→We begin by covering how you can:
+   306→   705→
+   307→   706→Build and test prototypes of your tools
+   308→   707→
+   309→   708→Create and run comprehensive evaluations of your tools with agents
+   310→   709→
+   311→   710→Collaborate with agents like Claude Code to automatically increase the performance of your tools
+   312→   711→
+   313→   712→We conclude with key principles for writing high-quality tools we’ve identified along the way:
+   314→   713→
+   315→   714→Choosing the right tools to implement (and not to implement)
+   316→   715→
+   317→   716→Namespacing tools to define clear boundaries in functionality
+   318→   717→
+   319→   718→Returning meaningful context from tools back to agents
+   320→   719→
+   321→   720→Optimizing tool responses for token efficiency
+   322→   721→
+   323→   722→Prompt-engineering tool descriptions and specs
+   324→   723→
+   325→   724→This is an image depicting how an engineer might use Claude Code to evaluate the efficacy of agentic tools.
+   326→   725→
+   327→   726→Building an evaluation allows you to systematically measure the performance of your tools. You can use Claude Code to automatically optimize your tools against this evaluation.
+   328→   727→
+   329→   728→What is a tool?
+   330→   729→
+   331→   730→In computing, deterministic systems produce the same output every time given identical inputs, while non-deterministic systems—like agents—can generate varied responses even with the same starting conditions.
+   332→   731→
+   333→   732→When we traditionally write software, we’re establishing a contract between deterministic systems. For instance, a function call like getWeather(“NYC”) will always fetch the weather in New York City in the exact same manner every time it is called.
+   334→   733→
+   335→   734→Tools are a new kind of software which reflects a contract between deterministic systems and non-deterministic agents. When a user asks "Should I bring an umbrella today?,” an agent might call the weather tool, answer from general knowledge, or even ask a clarifying question about location first. Occasionally, an agent might hallucinate or even fail to grasp how to use a tool.
+   336→   735→
+   337→   736→This means fundamentally rethinking our approach when writing software for agents: instead of writing tools and MCP servers the way we’d write functions and APIs for other developers or systems, we need to design them for agents.
+   338→   737→
+   339→   738→Our goal is to increase the surface area over which agents can be effective in solving a wide range of tasks by using tools to pursue a variety of successful strategies. Fortunately, in our experience, the tools that are most “ergonomic” for agents also end up being surprisingly intuitive to grasp as humans.
+   340→   739→
+   341→   740→How to write tools
+   342→   741→
+   343→   742→In this section, we describe how you can collaborate with agents both to write and to improve the tools you give them. Start by standing up a quick prototype of your tools and testing them locally. Next, run a comprehensive evaluation to measure subsequent changes. Working alongside agents, you can repeat the process of evaluating and improving your tools until your agents achieve strong performance on real-world tasks.
+   344→   743→
+   345→   744→Building a prototype
+   346→   745→
+   347→   746→It can be difficult to anticipate which tools agents will find ergonomic and which tools they won’t without getting hands-on yourself. Start by standing up a quick prototype of your tools. If you’re using Claude Code to write your tools (potentially in one-shot), it helps to give Claude documentation for any software libraries, APIs, or SDKs (including potentially the MCP SDK) your tools will rely on. LLM-friendly documentation can commonly be found in flat llms.txt files on official documentation sites (here’s our API’s).
+   348→   747→
+   349→   748→Wrapping your tools in a local MCP server or Desktop extension (DXT) will allow you to connect and test your tools in Claude Code or the Claude Desktop app.
+   350→   749→
+   351→   750→To connect your local MCP server to Claude Code, run claude mcp add <name> <command> [args...].
+   352→   751→
+   353→   752→To connect your local MCP server or DXT to the Claude Desktop app, navigate to Settings > Developer or Settings > Extensions, respectively.
+   354→   753→
+   355→   754→Tools can also be passed directly into Anthropic API calls for programmatic testing.
+   356→   755→
+   357→   756→Test the tools yourself to identify any rough edges. Collect feedback from your users to build an intuition around the use-cases and prompts you expect your tools to enable.
+   358→   757→
+   359→   758→Running an evaluation
+   360→   759→
+   361→   760→Next, you need to measure how well Claude uses your tools by running an evaluation. Start by generating lots of evaluation tasks, grounded in real world uses. We recommend collaborating with an agent to help analyze your results and determine how to improve your tools. See this process end-to-end in our tool evaluation cookbook.
+   362→   761→
+   363→   762→This graph measures the test set accuracy of human-written vs. Claude-optimized Slack MCP servers.
+   364→   763→
+   365→   764→Held-out test set performance of our internal Slack tools
+   366→   765→
+   367→   766→Generating evaluation tasks
+   368→   767→
+   369→   768→With your early prototype, Claude Code can quickly explore your tools and create dozens of prompt and response pairs. Prompts should be inspired by real-world uses and be based on realistic data sources and services (for example, internal knowledge bases and microservices). We recommend you avoid overly simplistic or superficial “sandbox” environments that don’t stress-test your tools with sufficient complexity. Strong evaluation tasks might require multiple tool calls—potentially dozens.
+   370→   769→
+   371→   770→Here are some examples of strong tasks:
+   372→   771→
+   373→   772→Schedule a meeting with Jane next week to discuss our latest Acme Corp project. Attach the notes from our last project planning meeting and reserve a conference room.
+   374→   773→
+   375→   774→Customer ID 9182 reported that they were charged three times for a single purchase attempt. Find all relevant log entries and determine if any other customers were affected by the same issue.
+   376→   775→
+   377→   776→Customer Sarah Chen just submitted a cancellation request. Prepare a retention offer. Determine: (1) why they're leaving, (2) what retention offer would be most compelling, and (3) any risk factors we should be aware of before making an offer.
+   378→   777→
+   379→   778→And here are some weaker tasks:
+   380→   779→
+   381→   780→Schedule a meeting with jane@acme.corp next week.
+   382→   781→
+   383→   782→Search the payment logs for purchase_complete and customer_id=9182.
+   384→   783→
+   385→   784→Find the cancellation request by Customer ID 45892.
+   386→   785→
+   387→   786→Each evaluation prompt should be paired with a verifiable response or outcome. Your verifier can be as simple as an exact string comparison between ground truth and sampled responses, or as advanced as enlisting Claude to judge the response. Avoid overly strict verifiers that reject correct responses due to spurious differences like formatting, punctuation, or valid alternative phrasings.
+   388→   787→
+   389→   788→For each prompt-response pair, you can optionally also specify the tools you expect an agent to call in solving the task, to measure whether or not agents are successful in grasping each tool’s purpose during evaluation. However, because there might be multiple valid paths to solving tasks correctly, try to avoid overspecifying or overfitting to strategies.
+   390→   789→
+   391→   790→Running the evaluation
+   392→   791→
+   393→   792→We recommend running your evaluation programmatically with direct LLM API calls. Use simple agentic loops (while-loops wrapping alternating LLM API and tool calls): one loop for each evaluation task. Each evaluation agent should be given a single task prompt and your tools.
+   394→   793→
+   395→   794→In your evaluation agents’ system prompts, we recommend instructing agents to output not just structured response blocks (for verification), but also reasoning and feedback blocks. Instructing agents to output these before tool call and response blocks may increase LLMs’ effective intelligence by triggering chain-of-thought (CoT) behaviors.
+   396→   795→
+   397→   796→If you’re running your evaluation with Claude, you can turn on interleaved thinking for similar functionality “off-the-shelf”. This will help you probe why agents do or don’t call certain tools and highlight specific areas of improvement in tool descriptions and specs.
+   398→   797→
+   399→   798→As well as top-level accuracy, we recommend collecting other metrics like the total runtime of individual tool calls and tasks, the total number of tool calls, the total token consumption, and tool errors. Tracking tool calls can help reveal common workflows that agents pursue and offer some opportunities for tools to consolidate.
+   400→   799→
+   401→   800→This graph measures the test set accuracy of human-written vs. Claude-optimized Asana MCP servers.
+   402→   801→
+   403→   802→Held-out test set performance of our internal Asana tools
+   404→   803→
+   405→   804→Analyzing results
+   406→   805→
+   407→   806→Agents are your helpful partners in spotting issues and providing feedback on everything from contradictory tool descriptions to inefficient tool implementations and confusing tool schemas. However, keep in mind that what agents omit in their feedback and responses can often be more important than what they include. LLMs don’t always say what they mean.
+   408→   807→
+   409→   808→Observe where your agents get stumped or confused. Read through your evaluation agents’ reasoning and feedback (or CoT) to identify rough edges. Review the raw transcripts (including tool calls and tool responses) to catch any behavior not explicitly described in the agent’s CoT. Read between the lines; remember that your evaluation agents don’t necessarily know the correct answers and strategies.
+   410→   809→
+   411→   810→Analyze your tool calling metrics. Lots of redundant tool calls might suggest some rightsizing of pagination or token limit parameters is warranted; lots of tool errors for invalid parameters might suggest tools could use clearer descriptions or better examples. When we launched Claude’s web search tool, we identified that Claude was needlessly appending 2025 to the tool’s query parameter, biasing search results and degrading performance (we steered Claude in the right direction by improving the tool description).
+   412→   811→
+   413→   812→Collaborating with agents
+   414→   813→
+   415→   814→You can even let agents analyze your results and improve your tools for you. Simply concatenate the transcripts from your evaluation agents and paste them into Claude Code. Claude is an expert at analyzing transcripts and refactoring lots of tools all at once—for example, to ensure tool implementations and descriptions remain self-consistent when new changes are made.
+   416→   815→
+   417→   816→In fact, most of the advice in this post came from repeatedly optimizing our internal tool implementations with Claude Code. Our evaluations were created on top of our internal workspace, mirroring the complexity of our internal workflows, including real projects, documents, and messages.
+   418→   817→
+   419→   818→We relied on held-out test sets to ensure we did not overfit to our “training” evaluations. These test sets revealed that we could extract additional performance improvements even beyond what we achieved with "expert" tool implementations—whether those tools were manually written by our researchers or generated by Claude itself.
+   420→   819→
+   421→   820→In the next section, we’ll share some of what we learned from this process.
+   422→   821→
+   423→   822→Principles for writing effective tools
+   424→   823→
+   425→   824→In this section, we distill our learnings into a few guiding principles for writing effective tools.
+   426→   825→
+   427→   826→Choosing the right tools for agents
+   428→   827→
+   429→   828→More tools don’t always lead to better outcomes. A common error we’ve observed is tools that merely wrap existing software functionality or API endpoints—whether or not the tools are appropriate for agents. This is because agents have distinct “affordances” to traditional software—that is, they have different ways of perceiving the potential actions they can take with those tools
+   430→   829→
+   431→   830→LLM agents have limited "context" (that is, there are limits to how much information they can process at once), whereas computer memory is cheap and abundant. Consider the task of searching for a contact in an address book. Traditional software programs can efficiently store and process a list of contacts one at a time, checking each one before moving on.
+   432→   831→
+   433→   832→However, if an LLM agent uses a tool that returns ALL contacts and then has to read through each one token-by-token, it's wasting its limited context space on irrelevant information (imagine searching for a contact in your address book by reading each page from top-to-bottom—that is, via brute-force search). The better and more natural approach (for agents and humans alike) is to skip to the relevant page first (perhaps finding it alphabetically).
+   434→   833→
+   435→   834→We recommend building a few thoughtful tools targeting specific high-impact workflows, which match your evaluation tasks and scaling up from there. In the address book case, you might choose to implement a search_contacts or message_contact tool instead of a list_contacts tool.
+   436→   835→
+   437→   836→Tools can consolidate functionality, handling potentially multiple discrete operations (or API calls) under the hood. For example, tools can enrich tool responses with related metadata or handle frequently chained, multi-step tasks in a single tool call.
+   438→   837→
+   439→   838→Here are some examples:
+   440→   839→
+   441→   840→Instead of implementing a list_users, list_events, and create_event tools, consider implementing a schedule_event tool which finds availability and schedules an event.
+   442→   841→
+   443→   842→Instead of implementing a read_logs tool, consider implementing a search_logs tool which only returns relevant log lines and some surrounding context.
+   444→   843→
+   445→   844→Instead of implementing get_customer_by_id, list_transactions, and list_notes tools, implement a get_customer_context tool which compiles all of a customer’s recent & relevant information all at once.
+   446→   845→
+   447→   846→Make sure each tool you build has a clear, distinct purpose. Tools should enable agents to subdivide and solve tasks in much the same way that a human would, given access to the same underlying resources, and simultaneously reduce the context that would have otherwise been consumed by intermediate outputs.
+   448→   847→
+   449→   848→Too many tools or overlapping tools can also distract agents from pursuing efficient strategies. Careful, selective planning of the tools you build (or don’t build) can really pay off.
+   450→   849→

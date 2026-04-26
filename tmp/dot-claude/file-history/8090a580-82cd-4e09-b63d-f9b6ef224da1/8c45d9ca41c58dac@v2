@@ -1,0 +1,41 @@
+---
+- name: Clone secrets to ~/.ssh
+  ansible.builtin.git:
+    repo: "https://github.com/skogai/secrets.git"
+    dest: "{{ ansible_env.HOME }}/.ssh"
+    version: master
+    force: false
+  register: secrets_clone
+  failed_when:
+    - secrets_clone.failed
+    - "'already exists' not in (secrets_clone.msg | default(''))"
+
+- name: Set ~/.ssh directory permissions
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.ssh"
+    mode: "0700"
+
+- name: Find private keys
+  ansible.builtin.find:
+    paths: "{{ ansible_env.HOME }}/.ssh"
+    patterns: "id_*"
+    excludes: "*.pub"
+  register: private_keys
+
+- name: Set private key permissions
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    mode: "0600"
+  loop: "{{ private_keys.files }}"
+
+- name: Find public keys
+  ansible.builtin.find:
+    paths: "{{ ansible_env.HOME }}/.ssh"
+    patterns: "*.pub"
+  register: public_keys
+
+- name: Set public key permissions
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    mode: "0644"
+  loop: "{{ public_keys.files }}"

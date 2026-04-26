@@ -1,0 +1,46 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+One-liner bootstrap system for fresh Arch Linux installations. Automates setup from bare Arch to fully configured with SSH identity, Git config, and GitHub CLI auth via an Ansible Vault-encrypted secrets bundle.
+
+## Key Commands
+
+```bash
+make lint        # Run shellcheck on bootstrap.sh
+make encrypt     # Pack secrets/ → tar.gz → ansible-vault → secrets.vault
+make decrypt     # Decrypt secrets.vault → tar.gz → secrets/
+make edit        # Decrypt, open shell in secrets/, re-encrypt on exit
+make verify      # Test that vault can be decrypted
+make clean       # Shred all plaintext secret files
+```
+
+## Architecture
+
+**bootstrap.sh** is the single entry point, run via curl pipe. Three sequential phases:
+
+1. **Foundation** — `pacman -Syu`, install core packages (git, openssh, github-cli, ansible-core), build yay AUR helper
+2. **Secret Unlock** — Clone this repo via HTTPS, decrypt `secrets.vault` with ansible-vault, extract SSH keys + GitHub PAT + gitconfig
+3. **Identity** — Deploy SSH keys (`~/.ssh/`), configure git user, authenticate `gh` CLI, verify connectivity
+
+**Key design properties**: idempotent (safe to re-run), `set -euo pipefail` strict mode, cleanup trap that shreds temp files on exit/interrupt, Arch-only (`/etc/arch-release` check), refuses to run as root.
+
+## Environment Variables
+
+- `VAULT_PASSWORD` — Skip interactive vault password prompt (for CI/headless)
+- `DRY_RUN=true` — Preview commands without executing
+- `BOOTSTRAP_REPO` — Override the default repo URL
+
+## Secrets Layout (inside vault)
+
+```
+secrets/
+├── ssh/id_ed25519      # SSH private key
+├── ssh/id_ed25519.pub  # SSH public key
+├── gitconfig           # Git name/email
+└── github_pat          # GitHub PAT
+```
+
+Plaintext secrets are gitignored. `shred` is used for cleanup but is ineffective on CoW filesystems (Btrfs).

@@ -1,0 +1,13 @@
+---
+# Bootstrap playbook - basic setup
+- name: Bootstrap Arch Linux
+  hosts: all
+
+  vars_files:
+    - ../vars/main.yml
+    - ../vars/packages.yml
+
+  roles:
+    - role: packages
+      tags: [packages, install]
+

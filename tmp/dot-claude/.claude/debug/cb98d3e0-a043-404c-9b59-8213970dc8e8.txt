@@ -1,0 +1,1271 @@
+2026-02-27T12:14:13.787Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-27T12:14:13.787Z [DEBUG] MDM settings load completed in 0ms
+2026-02-27T12:14:13.799Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-27T12:14:13.799Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-27T12:14:13.799Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-27T12:14:13.799Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-27T12:14:13.806Z [DEBUG] Applying permission update: Adding 122 allow rule(s) to destination 'userSettings': ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-02-27T12:14:13.806Z [DEBUG] Applying permission update: Adding 122 allow rule(s) to destination 'projectSettings': ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-02-27T12:14:13.807Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-27T12:14:13.810Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-27T12:14:13.810Z [DEBUG] [STARTUP] Running setup()...
+2026-02-27T12:14:13.812Z [DEBUG] Loading skills from: managed=/etc/claude-code/.claude/skills, user=/home/skogix/.claude/skills, project=[]
+2026-02-27T12:14:13.813Z [DEBUG] Error log sink initialized
+2026-02-27T12:14:13.820Z [DEBUG] [STARTUP] setup() completed in 10ms
+2026-02-27T12:14:13.820Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-27T12:14:13.824Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default
+2026-02-27T12:14:13.826Z [DEBUG] Loaded 5 installed plugins from /home/skogix/.claude/plugins/installed_plugins.json
+2026-02-27T12:14:13.830Z [DEBUG] [Claude in Chrome] Extension fcoeoabgfenejglbffodgkkbkcdhcgfn found in chrome Default
+2026-02-27T12:14:13.838Z [DEBUG] Loading plugin agent-architecture from source: "./"
+2026-02-27T12:14:13.838Z [DEBUG] Loading plugin agent-development from source: "./"
+2026-02-27T12:14:13.838Z [DEBUG] Loading plugin cognitive-architecture from source: "./"
+2026-02-27T12:14:13.838Z [DEBUG] Loading plugin agent-evaluation from source: "./"
+2026-02-27T12:14:13.839Z [DEBUG] Loading plugin context-engineering-fundamentals from source: "./"
+2026-02-27T12:14:13.840Z [DEBUG] Git remote URL: https://github.com/SkogAI/claude-temp.git
+2026-02-27T12:14:13.840Z [DEBUG] Parsed repository: github.com/SkogAI/claude-temp from URL: https://github.com/SkogAI/claude-temp.git
+2026-02-27T12:14:13.842Z [DEBUG] Loaded 7 unique skills (7 unconditional, 0 conditional, managed: 0, user: 2, project: 0, additional: 0, legacy commands: 5)
+2026-02-27T12:14:13.860Z [DEBUG] Using git SHA for context-engineering-fundamentals@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Using git SHA for cognitive-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Using git SHA for agent-development@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Using git SHA for agent-evaluation@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Using git SHA for agent-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Plugin context-engineering-fundamentals@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Resolved local plugin context-engineering-fundamentals to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Plugin agent-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Resolved local plugin agent-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Plugin agent-evaluation@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Resolved local plugin agent-evaluation to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Plugin cognitive-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Resolved local plugin cognitive-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Plugin agent-development@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-27T12:14:13.860Z [DEBUG] Resolved local plugin agent-development to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-27T12:14:13.861Z [DEBUG] Processing 4 skill paths for plugin context-engineering-fundamentals
+2026-02-27T12:14:13.861Z [DEBUG] Processing 5 skill paths for plugin agent-architecture
+2026-02-27T12:14:13.861Z [DEBUG] Processing 2 skill paths for plugin agent-evaluation
+2026-02-27T12:14:13.861Z [DEBUG] Processing 1 skill paths for plugin cognitive-architecture
+2026-02-27T12:14:13.861Z [DEBUG] Processing 1 skill paths for plugin agent-development
+2026-02-27T12:14:13.861Z [DEBUG] Checking skill path: ./skills/context-fundamentals -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals (exists: true)
+2026-02-27T12:14:13.861Z [DEBUG] Checking skill path: ./skills/multi-agent-patterns -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns (exists: true)
+2026-02-27T12:14:13.861Z [DEBUG] Checking skill path: ./skills/evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation (exists: true)
+2026-02-27T12:14:13.861Z [DEBUG] Checking skill path: ./skills/bdi-mental-states -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states (exists: true)
+2026-02-27T12:14:13.861Z [DEBUG] Checking skill path: ./skills/project-development -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development (exists: true)
+2026-02-27T12:14:13.861Z [DEBUG] Found 1 valid skill paths for plugin cognitive-architecture, setting skillsPaths
+2026-02-27T12:14:13.861Z [DEBUG] Found 1 valid skill paths for plugin agent-development, setting skillsPaths
+2026-02-27T12:14:13.861Z [DEBUG] Checking skill path: ./skills/context-degradation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation (exists: true)
+2026-02-27T12:14:13.861Z [DEBUG] Checking skill path: ./skills/memory-systems -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems (exists: true)
+2026-02-27T12:14:13.861Z [DEBUG] Checking skill path: ./skills/advanced-evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation (exists: true)
+2026-02-27T12:14:13.862Z [DEBUG] Found 2 valid skill paths for plugin agent-evaluation, setting skillsPaths
+2026-02-27T12:14:13.862Z [DEBUG] Checking skill path: ./skills/context-compression -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression (exists: true)
+2026-02-27T12:14:13.862Z [DEBUG] Checking skill path: ./skills/tool-design -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design (exists: true)
+2026-02-27T12:14:13.862Z [DEBUG] Checking skill path: ./skills/context-optimization -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization (exists: true)
+2026-02-27T12:14:13.862Z [DEBUG] Checking skill path: ./skills/filesystem-context -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context (exists: true)
+2026-02-27T12:14:13.862Z [DEBUG] Found 4 valid skill paths for plugin context-engineering-fundamentals, setting skillsPaths
+2026-02-27T12:14:13.862Z [DEBUG] Checking skill path: ./skills/hosted-agents -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents (exists: true)
+2026-02-27T12:14:13.862Z [DEBUG] Found 5 valid skill paths for plugin agent-architecture, setting skillsPaths
+2026-02-27T12:14:13.862Z [DEBUG] Found 5 plugins (5 enabled, 0 disabled)
+2026-02-27T12:14:13.862Z [DEBUG] getPluginSkills: Processing 5 enabled plugins
+2026-02-27T12:14:13.862Z [DEBUG] Checking plugin agent-architecture: skillsPath=exists, skillsPaths=5 paths
+2026-02-27T12:14:13.862Z [DEBUG] Attempting to load skills from plugin agent-architecture default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills
+2026-02-27T12:14:13.863Z [DEBUG] Total plugin commands loaded: 0
+2026-02-27T12:14:13.863Z [DEBUG] Registered 0 hooks from 5 plugins
+2026-02-27T12:14:13.863Z [DEBUG] Total plugin agents loaded: 0
+2026-02-27T12:14:13.863Z [DEBUG] Loaded 13 skills from plugin agent-architecture default directory
+2026-02-27T12:14:13.863Z [DEBUG] Attempting to load skills from plugin agent-architecture skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents
+2026-02-27T12:14:13.863Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns for plugin agent-architecture
+2026-02-27T12:14:13.867Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns
+2026-02-27T12:14:13.867Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems for plugin agent-architecture
+2026-02-27T12:14:13.867Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems
+2026-02-27T12:14:13.867Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design for plugin agent-architecture
+2026-02-27T12:14:13.867Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design
+2026-02-27T12:14:13.867Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context for plugin agent-architecture
+2026-02-27T12:14:13.867Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context
+2026-02-27T12:14:13.867Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents for plugin agent-architecture
+2026-02-27T12:14:13.868Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents
+2026-02-27T12:14:13.868Z [DEBUG] Checking plugin agent-development: skillsPath=exists, skillsPaths=1 paths
+2026-02-27T12:14:13.868Z [DEBUG] Attempting to load skills from plugin agent-development default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills
+2026-02-27T12:14:13.868Z [DEBUG] Loaded 13 skills from plugin agent-development default directory
+2026-02-27T12:14:13.868Z [DEBUG] Attempting to load skills from plugin agent-development skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development
+2026-02-27T12:14:13.868Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development for plugin agent-development
+2026-02-27T12:14:13.868Z [DEBUG] Loaded 0 skills from plugin agent-development custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development
+2026-02-27T12:14:13.868Z [DEBUG] Checking plugin agent-evaluation: skillsPath=exists, skillsPaths=2 paths
+2026-02-27T12:14:13.868Z [DEBUG] Attempting to load skills from plugin agent-evaluation default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills
+2026-02-27T12:14:13.869Z [DEBUG] Loaded 13 skills from plugin agent-evaluation default directory
+2026-02-27T12:14:13.869Z [DEBUG] Attempting to load skills from plugin agent-evaluation skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation
+2026-02-27T12:14:13.869Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation for plugin agent-evaluation
+2026-02-27T12:14:13.869Z [DEBUG] Loaded 0 skills from plugin agent-evaluation custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation
+2026-02-27T12:14:13.869Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation for plugin agent-evaluation
+2026-02-27T12:14:13.869Z [DEBUG] Loaded 0 skills from plugin agent-evaluation custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation
+2026-02-27T12:14:13.869Z [DEBUG] Checking plugin cognitive-architecture: skillsPath=exists, skillsPaths=1 paths
+2026-02-27T12:14:13.869Z [DEBUG] Attempting to load skills from plugin cognitive-architecture default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills
+2026-02-27T12:14:13.870Z [DEBUG] Loaded 13 skills from plugin cognitive-architecture default directory
+2026-02-27T12:14:13.870Z [DEBUG] Attempting to load skills from plugin cognitive-architecture skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states
+2026-02-27T12:14:13.870Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states for plugin cognitive-architecture
+2026-02-27T12:14:13.870Z [DEBUG] Loaded 0 skills from plugin cognitive-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states
+2026-02-27T12:14:13.870Z [DEBUG] Checking plugin context-engineering-fundamentals: skillsPath=exists, skillsPaths=4 paths
+2026-02-27T12:14:13.870Z [DEBUG] Attempting to load skills from plugin context-engineering-fundamentals default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills
+2026-02-27T12:14:13.871Z [DEBUG] Loaded 13 skills from plugin context-engineering-fundamentals default directory
+2026-02-27T12:14:13.871Z [DEBUG] Attempting to load skills from plugin context-engineering-fundamentals skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization
+2026-02-27T12:14:13.871Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals for plugin context-engineering-fundamentals
+2026-02-27T12:14:13.871Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals
+2026-02-27T12:14:13.871Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation for plugin context-engineering-fundamentals
+2026-02-27T12:14:13.871Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation
+2026-02-27T12:14:13.871Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression for plugin context-engineering-fundamentals
+2026-02-27T12:14:13.871Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression
+2026-02-27T12:14:13.871Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization for plugin context-engineering-fundamentals
+2026-02-27T12:14:13.871Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization
+2026-02-27T12:14:13.871Z [DEBUG] Total plugin skills loaded: 65
+2026-02-27T12:14:13.871Z [DEBUG] getSkills returning: 7 skill dir commands, 65 plugin skills, 3 bundled skills
+2026-02-27T12:14:13.872Z [DEBUG] [STARTUP] Commands and agents loaded in 52ms
+2026-02-27T12:14:13.874Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-02-27T12:14:13.901Z [DEBUG] Grove: Using fresh cached config
+2026-02-27T12:14:13.913Z [DEBUG] Path /home/skogix/gt/claude_temp/refinery/rig already tracked for repo skogai/claude-temp
+2026-02-27T12:14:13.914Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-02-27T12:14:13.914Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-02-27T12:14:13.917Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-27T12:14:13.923Z [DEBUG] [keybindings] Watching for changes to /home/skogix/.claude/keybindings.json
+2026-02-27T12:14:14.360Z [DEBUG] [STARTUP] showSetupScreens() completed in 486ms
+2026-02-27T12:14:14.361Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-27T12:14:14.361Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-27T12:14:14.361Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-27T12:14:14.363Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:14.363Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:14.364Z [DEBUG] Passes: Using fresh cached eligibility data
+2026-02-27T12:14:14.370Z [DEBUG] [STARTUP] MCP configs loaded in 563ms
+2026-02-27T12:14:14.377Z [DEBUG] MCP server "skogai-arch-linux": Starting connection with timeout of 30000ms
+2026-02-27T12:14:14.379Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:14.382Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-02-27T12:14:14.382Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T12:14:14.383Z [DEBUG] Matched 1 unique hooks for query "startup" (1 before deduplication)
+2026-02-27T12:14:14.412Z [DEBUG] Total LSP servers loaded: 0
+2026-02-27T12:14:14.412Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-27T12:14:14.412Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-27T12:14:14.412Z [DEBUG] LSP server manager initialized successfully
+2026-02-27T12:14:14.412Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-27T12:14:14.443Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:14.445Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.ea2; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:14.446Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:14.446Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:14.447Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:14.471Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T12:14:14.471Z [DEBUG] Hook SessionStart:startup (SessionStart) success:
+# Gas Town Worker Context
+
+> **Context Recovery**: Run `gt prime` for full context after compaction or new session.
+
+## The Propulsion Principle (GUPP)
+
+**If you find work on your hook, YOU RUN IT.**
+
+No confirmation. No waiting. No announcements. The hook having work IS the assignment.
+This is physics, not politeness. Gas Town is a steam engine - you are a piston.
+
+**Failure mode we're preventing:**
+- Agent starts with work on hook
+- Agent announces itself and waits for human to say "ok go"
+- Human is AFK / trusting the engine to run
+- Work sits idle. The whole system stalls.
+
+## Startup Protocol
+
+1. Check your hook: `gt mol status`
+2. If work is hooked → EXECUTE (no announcement, no waiting)
+3. If hook empty → Check mail: `gt mail inbox`
+4. Still nothing? Wait for user instructions
+
+## Key Commands
+
+- `gt prime` - Get full role context (run after compaction)
+- `gt mol status` - Check your hooked work
+- `gt mail inbox` - Check for messages
+- `bd ready` - Find available work (no blockers)
+
+## Session Close Protocol
+
+Before signaling completion:
+1. git status (check what changed)
+2. git add <files> (stage code changes)
+3. git commit -m "..." (commit code)
+4. git push (push to remote)
+5. `gt done` (submit to merge queue and exit)
+
+**Polecats MUST call `gt done` - this submits work and exits the session.**
+2026-02-27T12:14:14.562Z [DEBUG] Org fast mode: enabled
+2026-02-27T12:14:15.007Z [ERROR] MCP server "skogai-arch-linux" Server stderr: 2026-02-27 13:14:14,657 - arch_ops_server.utils - INFO - Detected Arch Linux via /etc/arch-release
+2026-02-27 13:14:14,999 - arch_ops_server - INFO - Starting Arch Linux MCP Server (STDIO)
+2026-02-27 13:14:14,999 - arch_ops_server - INFO - Running on Arch Linux: True
+2026-02-27T12:14:15.008Z [DEBUG] MCP server "skogai-arch-linux": Successfully connected to undefined server in 637ms
+2026-02-27T12:14:15.008Z [DEBUG] MCP server "skogai-arch-linux": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"arch-ops-server","version":"1.26.0"}}
+2026-02-27T12:14:15.008Z [DEBUG] [MCP] Server "skogai-arch-linux" connected with subscribe=false
+2026-02-27T12:14:15.028Z [DEBUG] All plugins already exist, skipping migration
+2026-02-27T12:14:15.028Z [DEBUG] Initialized versioned plugins system with 5 plugins
+2026-02-27T12:14:15.030Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-02-27T12:14:15.032Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1436852.1772194455032
+2026-02-27T12:14:15.032Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T12:14:15.039Z [DEBUG] Temp file written successfully, size: 29653 bytes
+2026-02-27T12:14:15.039Z [DEBUG] Applied original permissions to temp file
+2026-02-27T12:14:15.039Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1436852.1772194455032 to /home/skogix/.claude.json
+2026-02-27T12:14:15.040Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T12:14:15.162Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-27T12:14:15.194Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-02-27T12:14:15.195Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-02-27T12:14:15.195Z [DEBUG] performStartupChecks called
+2026-02-27T12:14:15.195Z [DEBUG] Starting background plugin installations
+2026-02-27T12:14:15.195Z [DEBUG] performBackgroundPluginInstallations called
+2026-02-27T12:14:15.196Z [DEBUG] FileHistory: Added snapshot for 1cc56a38-b1c6-4196-a5a5-c84265855af9, tracking 0 files
+2026-02-27T12:14:15.197Z [DEBUG] Loaded 4 CLAUDE.md/rules files:
+  [Project] /home/skogix/gt/CLAUDE.md (329 chars)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md (8286 chars)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/.todo/skills/rtk-optimizer/SKILL.md (3161 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/SKILL.md (1945 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+2026-02-27T12:14:15.209Z [DEBUG] Plugin autoupdate: skipped (auto-updater disabled)
+2026-02-27T12:14:15.210Z [DEBUG] Watching for changes in setting files /home/skogix/.claude/settings.json, /home/skogix/gt/claude_temp/refinery/rig/.claude/settings.json, /home/skogix/gt/claude_temp/refinery/rig/.claude/settings.local.json...
+2026-02-27T12:14:15.218Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T12:14:15.218Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T12:14:15.219Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T12:14:15.219Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T12:14:15.219Z [DEBUG] Sending 74 skills via attachment (initial, 72 total sent)
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:context-compression" (userFacingName="context-compression")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:context-degradation" (userFacingName="context-degradation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:context-optimization" (userFacingName="context-optimization")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:evaluation" (userFacingName="evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:memory-systems" (userFacingName="memory-systems")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:project-development" (userFacingName="project-development")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-architecture:tool-design" (userFacingName="tool-design")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:context-compression" (userFacingName="context-compression")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:context-degradation" (userFacingName="context-degradation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:context-optimization" (userFacingName="context-optimization")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:evaluation" (userFacingName="evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:memory-systems" (userFacingName="memory-systems")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:project-development" (userFacingName="project-development")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-development:tool-design" (userFacingName="tool-design")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:context-compression" (userFacingName="context-compression")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:context-degradation" (userFacingName="context-degradation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:context-optimization" (userFacingName="context-optimization")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:evaluation" (userFacingName="evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:memory-systems" (userFacingName="memory-systems")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:project-development" (userFacingName="project-development")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "agent-evaluation:tool-design" (userFacingName="tool-design")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-compression" (userFacingName="context-compression")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-degradation" (userFacingName="context-degradation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-optimization" (userFacingName="context-optimization")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:evaluation" (userFacingName="evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:memory-systems" (userFacingName="memory-systems")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:project-development" (userFacingName="project-development")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "cognitive-architecture:tool-design" (userFacingName="tool-design")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-compression" (userFacingName="context-compression")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-degradation" (userFacingName="context-degradation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-optimization" (userFacingName="context-optimization")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:evaluation" (userFacingName="evaluation")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:memory-systems" (userFacingName="memory-systems")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:project-development" (userFacingName="project-development")
+2026-02-27T12:14:15.219Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:tool-design" (userFacingName="tool-design")
+2026-02-27T12:14:15.220Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-27T12:14:15.220Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-02-27T12:14:15.220Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-02-27T12:14:15.223Z [DEBUG] Found 5 enabled plugins
+2026-02-27T12:14:15.223Z [DEBUG] All plugins already exist, skipping migration
+2026-02-27T12:14:15.223Z [DEBUG] Found 5 installed plugins
+2026-02-27T12:14:15.223Z [DEBUG] Found 0 missing plugins (not installed):
+2026-02-27T12:14:15.223Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-02-27T12:14:15.227Z [DEBUG] Security messages are fresh (<1h old), skipping fetch
+2026-02-27T12:14:15.228Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-02-27T12:14:15.229Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-27T12:14:15.229Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:15.229Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-27T12:14:15.230Z [DEBUG] FileHistory: Making snapshot for message e37d410c-70a6-485f-87e0-9972497cace0
+2026-02-27T12:14:15.230Z [DEBUG] FileHistory: Added snapshot for e37d410c-70a6-485f-87e0-9972497cace0, tracking 0 files
+2026-02-27T12:14:15.232Z [DEBUG] Watching for changes in skill/command directories: /home/skogix/.claude/skills, /home/skogix/.claude/commands, /home/skogix/gt/claude_temp/refinery/rig/.claude/commands...
+2026-02-27T12:14:15.246Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T12:14:15.277Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/opt/claude-code/bin/claude)
+2026-02-27T12:14:15.278Z [DEBUG] Detected pacman installation: /opt/claude-code/bin/claude is owned by claude-code 2.1.62-1
+2026-02-27T12:14:15.278Z [DEBUG] AutoUpdaterWrapper: Installation type: package-manager
+2026-02-27T12:14:15.283Z [DEBUG] Loaded plugins - Enabled: 5, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-02-27T12:14:15.286Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T12:14:15.320Z [DEBUG] Total plugin output styles loaded: 0
+2026-02-27T12:14:15.326Z [DEBUG] autocompact: tokens=4361 threshold=167000 effectiveWindow=180000
+2026-02-27T12:14:15.327Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:15.327Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:15.327Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:15.332Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T12:14:15.337Z [DEBUG] High write ratio: blit=320, write=843 (72.5% writes), screen=20x80
+2026-02-27T12:14:15.378Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:15.428Z [DEBUG] [claudeai-mcp] Fetched 16 servers
+2026-02-27T12:14:15.428Z [DEBUG] MCP server "claude.ai skogix-se": Initializing claude.ai proxy transport for server mcpsrv_01GxZDuDj3JdyCbMPTGgPEBk
+2026-02-27T12:14:15.428Z [DEBUG] MCP server "claude.ai skogix-se": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01GxZDuDj3JdyCbMPTGgPEBk
+2026-02-27T12:14:15.429Z [DEBUG] MCP server "claude.ai skogix-se": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.429Z [DEBUG] MCP server "claude.ai skogix-se": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.430Z [DEBUG] MCP server "claude.ai cloudflare search": Initializing claude.ai proxy transport for server mcpsrv_01JDkfSygDCXWafMTwnf99yw
+2026-02-27T12:14:15.430Z [DEBUG] MCP server "claude.ai cloudflare search": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01JDkfSygDCXWafMTwnf99yw
+2026-02-27T12:14:15.430Z [DEBUG] MCP server "claude.ai cloudflare search": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.430Z [DEBUG] MCP server "claude.ai cloudflare search": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.430Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": Initializing claude.ai proxy transport for server mcpsrv_01N4r7JbHPrHFMjQSbzxL4XC
+2026-02-27T12:14:15.430Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01N4r7JbHPrHFMjQSbzxL4XC
+2026-02-27T12:14:15.430Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.431Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.431Z [DEBUG] MCP server "claude.ai cloudflare dex": Initializing claude.ai proxy transport for server mcpsrv_01VbMJ3iQyNERU7hsT88HfxX
+2026-02-27T12:14:15.431Z [DEBUG] MCP server "claude.ai cloudflare dex": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01VbMJ3iQyNERU7hsT88HfxX
+2026-02-27T12:14:15.431Z [DEBUG] MCP server "claude.ai cloudflare dex": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.432Z [DEBUG] MCP server "claude.ai cloudflare dex": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.432Z [DEBUG] MCP server "claude.ai cloudflare casb": Initializing claude.ai proxy transport for server mcpsrv_01SSM6A4r7WLaEXMT6u6VNgU
+2026-02-27T12:14:15.432Z [DEBUG] MCP server "claude.ai cloudflare casb": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01SSM6A4r7WLaEXMT6u6VNgU
+2026-02-27T12:14:15.432Z [DEBUG] MCP server "claude.ai cloudflare casb": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.432Z [DEBUG] MCP server "claude.ai cloudflare casb": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.433Z [DEBUG] MCP server "claude.ai cloudfalre graphql": Initializing claude.ai proxy transport for server mcpsrv_01S49fEZA1TxANKsb7bXF1Rx
+2026-02-27T12:14:15.433Z [DEBUG] MCP server "claude.ai cloudfalre graphql": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01S49fEZA1TxANKsb7bXF1Rx
+2026-02-27T12:14:15.433Z [DEBUG] MCP server "claude.ai cloudfalre graphql": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.433Z [DEBUG] MCP server "claude.ai cloudfalre graphql": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.433Z [DEBUG] MCP server "claude.ai cloudflare browser": Initializing claude.ai proxy transport for server mcpsrv_015FfqujJEQcAToTVpZ9cnUT
+2026-02-27T12:14:15.433Z [DEBUG] MCP server "claude.ai cloudflare browser": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_015FfqujJEQcAToTVpZ9cnUT
+2026-02-27T12:14:15.433Z [DEBUG] MCP server "claude.ai cloudflare browser": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.433Z [DEBUG] MCP server "claude.ai cloudflare browser": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.434Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": Initializing claude.ai proxy transport for server mcpsrv_015wS5zcp4ffpRiFoCGqQK7N
+2026-02-27T12:14:15.434Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_015wS5zcp4ffpRiFoCGqQK7N
+2026-02-27T12:14:15.434Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.434Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.434Z [DEBUG] MCP server "claude.ai Google Calendar": Initializing claude.ai proxy transport for server mcpsrv_01Hj3mvSDfJNFjDSRNxiMFiK
+2026-02-27T12:14:15.434Z [DEBUG] MCP server "claude.ai Google Calendar": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01Hj3mvSDfJNFjDSRNxiMFiK
+2026-02-27T12:14:15.434Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.435Z [DEBUG] MCP server "claude.ai Google Calendar": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.435Z [DEBUG] MCP server "claude.ai cloudflare containers": Initializing claude.ai proxy transport for server mcpsrv_01UV38kUtGyitm2GJqQPq4U2
+2026-02-27T12:14:15.435Z [DEBUG] MCP server "claude.ai cloudflare containers": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01UV38kUtGyitm2GJqQPq4U2
+2026-02-27T12:14:15.435Z [DEBUG] MCP server "claude.ai cloudflare containers": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.435Z [DEBUG] MCP server "claude.ai cloudflare containers": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.435Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": Initializing claude.ai proxy transport for server mcpsrv_017GyzxLAESqr26ZR1JygRL5
+2026-02-27T12:14:15.435Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_017GyzxLAESqr26ZR1JygRL5
+2026-02-27T12:14:15.435Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai cloudflare docs": Initializing claude.ai proxy transport for server mcpsrv_01S5kBkT4aEqH8PG88xQvG93
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai cloudflare docs": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01S5kBkT4aEqH8PG88xQvG93
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai cloudflare docs": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai cloudflare docs": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai Hugging Face": Initializing claude.ai proxy transport for server mcpsrv_01VNYX8iQ3RktLAUN78jwJgn
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai Hugging Face": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01VNYX8iQ3RktLAUN78jwJgn
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai Hugging Face": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.436Z [DEBUG] MCP server "claude.ai Hugging Face": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01QuStmYJmpHArKsHy5pWAXV
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01QuStmYJmpHArKsHy5pWAXV
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai cloudflare autorag": Initializing claude.ai proxy transport for server mcpsrv_01HYYUy5hJtqPFEkX4txwNLo
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai cloudflare autorag": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01HYYUy5hJtqPFEkX4txwNLo
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai cloudflare autorag": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai cloudflare autorag": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai Linear": Initializing claude.ai proxy transport for server mcpsrv_018iFdh3PH5djF4PY5TGjsbN
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai Linear": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_018iFdh3PH5djF4PY5TGjsbN
+2026-02-27T12:14:15.437Z [DEBUG] MCP server "claude.ai Linear": claude.ai proxy transport created successfully
+2026-02-27T12:14:15.438Z [DEBUG] MCP server "claude.ai Linear": Starting connection with timeout of 30000ms
+2026-02-27T12:14:15.596Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T12:14:15.601Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:15.602Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:15.602Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:15.602Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:15.852Z [DEBUG] MCP server "claude.ai Linear": claude.ai proxy connection failed after 415ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sP2yLZen9fscMKfd"}
+2026-02-27T12:14:15.852Z [ERROR] MCP server "claude.ai Linear" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sP2yLZen9fscMKfd"}
+2026-02-27T12:14:15.852Z [DEBUG] MCP server "claude.ai Linear": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.881Z [DEBUG] MCP server "claude.ai cloudflare dex": claude.ai proxy connection failed after 450ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sMoCEDB6TKMyBhhR"}
+2026-02-27T12:14:15.881Z [ERROR] MCP server "claude.ai cloudflare dex" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sMoCEDB6TKMyBhhR"}
+2026-02-27T12:14:15.882Z [DEBUG] MCP server "claude.ai cloudflare dex": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.882Z [DEBUG] MCP server "claude.ai cloudfalre graphql": claude.ai proxy connection failed after 449ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sM3yWFcv8JwDR2n7"}
+2026-02-27T12:14:15.888Z [ERROR] MCP server "claude.ai cloudfalre graphql" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sM3yWFcv8JwDR2n7"}
+2026-02-27T12:14:15.888Z [DEBUG] MCP server "claude.ai cloudfalre graphql": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.888Z [DEBUG] MCP server "claude.ai skogix-se": claude.ai proxy connection failed after 460ms: Streamable HTTP error: Error POSTing to endpoint: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+
+<title>mcp-proxy.anthropic.com | 502: Bad gateway</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+
+
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+              <span class="inline-block">Bad gateway</span>
+              <span class="code-label">Error code 502</span>
+            </h1>
+            <div>
+               Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2026-02-27 12:14:15 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                  
+<div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Browser
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">Stockholm</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+    </a>
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">mcp-proxy.anthropic.com</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Host
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>The web server reported a bad gateway error.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                    <p class="mb-6">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+  <p class="text-13">
+    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">9d4799d339e9b7a8</strong></span>
+    <span class="cf-footer-separator sm:hidden">&bull;</span>
+    <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+      Your IP:
+      <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+      <span class="hidden" id="cf-footer-ip">2a02:1406:12f:b1d:a875:eef9:22b1:7882</span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+    </span>
+    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+  <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+</div><!-- /.error-footer -->
+
+
+    </div>
+</div>
+</body>
+</html>
+2026-02-27T12:14:15.888Z [ERROR] MCP server "claude.ai skogix-se" Error: Streamable HTTP error: Error POSTing to endpoint: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+
+<title>mcp-proxy.anthropic.com | 502: Bad gateway</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+
+
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+              <span class="inline-block">Bad gateway</span>
+              <span class="code-label">Error code 502</span>
+            </h1>
+            <div>
+               Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2026-02-27 12:14:15 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                  
+<div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Browser
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">Stockholm</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+    </a>
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">mcp-proxy.anthropic.com</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Host
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>The web server reported a bad gateway error.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                    <p class="mb-6">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+  <p class="text-13">
+    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">9d4799d339e9b7a8</strong></span>
+    <span class="cf-footer-separator sm:hidden">&bull;</span>
+    <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+      Your IP:
+      <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+      <span class="hidden" id="cf-footer-ip">2a02:1406:12f:b1d:a875:eef9:22b1:7882</span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+    </span>
+    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+  <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+</div><!-- /.error-footer -->
+
+
+    </div>
+</div>
+</body>
+</html>
+2026-02-27T12:14:15.888Z [DEBUG] MCP server "claude.ai skogix-se": Connection failed after 460ms: Streamable HTTP error: Error POSTing to endpoint: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+
+<title>mcp-proxy.anthropic.com | 502: Bad gateway</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+
+
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+              <span class="inline-block">Bad gateway</span>
+              <span class="code-label">Error code 502</span>
+            </h1>
+            <div>
+               Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2026-02-27 12:14:15 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                  
+<div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Browser
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">Stockholm</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+    </a>
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">mcp-proxy.anthropic.com</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Host
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>The web server reported a bad gateway error.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                    <p class="mb-6">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+  <p class="text-13">
+    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">9d4799d339e9b7a8</strong></span>
+    <span class="cf-footer-separator sm:hidden">&bull;</span>
+    <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+      Your IP:
+      <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+      <span class="hidden" id="cf-footer-ip">2a02:1406:12f:b1d:a875:eef9:22b1:7882</span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+    </span>
+    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+  <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+</div><!-- /.error-footer -->
+
+
+    </div>
+</div>
+</body>
+</html>
+2026-02-27T12:14:15.888Z [ERROR] MCP server "claude.ai skogix-se" Connection failed: Streamable HTTP error: Error POSTing to endpoint: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+
+<title>mcp-proxy.anthropic.com | 502: Bad gateway</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/main.css" />
+
+
+</head>
+<body>
+<div id="cf-wrapper">
+    <div id="cf-error-details" class="p-0">
+        <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">
+            <h1 class="inline-block sm:block sm:mb-2 font-light text-60 lg:text-4xl text-black-dark leading-tight mr-2">
+              <span class="inline-block">Bad gateway</span>
+              <span class="code-label">Error code 502</span>
+            </h1>
+            <div>
+               Visit <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">cloudflare.com</a> for more information.
+            </div>
+            <div class="mt-3">2026-02-27 12:14:15 UTC</div>
+        </header>
+        <div class="my-8 bg-gradient-gray">
+            <div class="w-240 lg:w-full mx-auto">
+                <div class="clearfix md:px-8">
+                  
+<div id="cf-browser-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-browser block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">You</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Browser
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class=" relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">
+    <span class="cf-icon-cloud block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-ok w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    </a>
+  </div>
+  <span class="md:block w-full truncate">Stockholm</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" target="_blank" rel="noopener noreferrer">
+    Cloudflare
+    </a>
+  </h3>
+  <span class="leading-1.3 text-2xl text-green-success">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-error-source relative w-1/3 md:w-full py-15 md:p-0 md:py-8 md:text-left md:border-solid md:border-0 md:border-b md:border-gray-400 overflow-hidden float-left md:float-none text-center">
+  <div class="relative mb-10 md:m-0">
+    
+    <span class="cf-icon-server block md:hidden h-20 bg-center bg-no-repeat"></span>
+    <span class="cf-icon-error w-12 h-12 absolute left-1/2 md:left-auto md:right-0 md:top-0 -ml-6 -bottom-4"></span>
+    
+  </div>
+  <span class="md:block w-full truncate">mcp-proxy.anthropic.com</span>
+  <h3 class="md:inline-block mt-3 md:mt-0 text-2xl text-gray-600 font-light leading-1.3">
+    
+    Host
+    
+  </h3>
+  <span class="leading-1.3 text-2xl text-red-error">Error</span>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="w-240 lg:w-full mx-auto mb-8 lg:px-8">
+            <div class="clearfix">
+                <div class="w-1/2 md:w-full float-left pr-6 md:pb-10 md:pr-0 leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What happened?</h2>
+                    <p>The web server reported a bad gateway error.</p>
+                </div>
+                <div class="w-1/2 md:w-full float-left leading-relaxed">
+                    <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
+                    <p class="mb-6">Please try again in a few minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
+  <p class="text-13">
+    <span class="cf-footer-item sm:block sm:mb-1">Cloudflare Ray ID: <strong class="font-semibold">9d4799d339e9b7a8</strong></span>
+    <span class="cf-footer-separator sm:hidden">&bull;</span>
+    <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
+      Your IP:
+      <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
+      <span class="hidden" id="cf-footer-ip">2a02:1406:12f:b1d:a875:eef9:22b1:7882</span>
+      <span class="cf-footer-separator sm:hidden">&bull;</span>
+    </span>
+    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing?utm_source=errorcode_502&utm_campaign=mcp-proxy.anthropic.com" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+  <script>(function(){function d(){var b=a.getElementById("cf-footer-item-ip"),c=a.getElementById("cf-footer-ip-reveal");b&&"classList"in b&&(b.classList.remove("hidden"),c.addEventListener("click",function(){c.classList.add("hidden");a.getElementById("cf-footer-ip").classList.remove("hidden")}))}var a=document;document.addEventListener&&a.addEventListener("DOMContentLoaded",d)})();</script>
+</div><!-- /.error-footer -->
+
+
+    </div>
+</div>
+</body>
+</html>
+2026-02-27T12:14:15.889Z [DEBUG] MCP server "claude.ai cloudflare containers": claude.ai proxy connection failed after 454ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sQX3fHVMopk4Rb7b"}
+2026-02-27T12:14:15.889Z [ERROR] MCP server "claude.ai cloudflare containers" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sQX3fHVMopk4Rb7b"}
+2026-02-27T12:14:15.889Z [DEBUG] MCP server "claude.ai cloudflare containers": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.889Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": claude.ai proxy connection failed after 455ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sP2uj3QPe8yMySsW"}
+2026-02-27T12:14:15.889Z [ERROR] MCP server "claude.ai cloudflare ai-gateway" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sP2uj3QPe8yMySsW"}
+2026-02-27T12:14:15.889Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.896Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": claude.ai proxy connection failed after 466ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sMnuJSUhyqvnTfS5"}
+2026-02-27T12:14:15.896Z [ERROR] MCP server "claude.ai cloudflare dns analytics" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sMnuJSUhyqvnTfS5"}
+2026-02-27T12:14:15.896Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.903Z [DEBUG] MCP server "claude.ai cloudflare autorag": claude.ai proxy connection failed after 466ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sPHYzgq8Fom4oRTM"}
+2026-02-27T12:14:15.903Z [ERROR] MCP server "claude.ai cloudflare autorag" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sPHYzgq8Fom4oRTM"}
+2026-02-27T12:14:15.903Z [DEBUG] MCP server "claude.ai cloudflare autorag": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.923Z [DEBUG] MCP server "claude.ai cloudflare browser": claude.ai proxy connection failed after 490ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sSFzYFgQBgrYFNDu"}
+2026-02-27T12:14:15.923Z [ERROR] MCP server "claude.ai cloudflare browser" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sSFzYFgQBgrYFNDu"}
+2026-02-27T12:14:15.923Z [DEBUG] MCP server "claude.ai cloudflare browser": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.923Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy connection failed after 486ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sQ2Vpi26QQBHMpiN"}
+2026-02-27T12:14:15.923Z [ERROR] MCP server "claude.ai Gmail" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sQ2Vpi26QQBHMpiN"}
+2026-02-27T12:14:15.923Z [DEBUG] MCP server "claude.ai Gmail": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.924Z [DEBUG] MCP server "claude.ai cloudflare casb": claude.ai proxy connection failed after 492ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sNnS7dBvAg1QZuR2"}
+2026-02-27T12:14:15.924Z [ERROR] MCP server "claude.ai cloudflare casb" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sNnS7dBvAg1QZuR2"}
+2026-02-27T12:14:15.924Z [DEBUG] MCP server "claude.ai cloudflare casb": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.924Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": claude.ai proxy connection failed after 489ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sN3W3GgPQUzoFpaq"}
+2026-02-27T12:14:15.924Z [ERROR] MCP server "claude.ai Cloudflare Developer Platform" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sN3W3GgPQUzoFpaq"}
+2026-02-27T12:14:15.924Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": Authentication required for claude.ai proxy server
+2026-02-27T12:14:15.993Z [DEBUG] MCP server "claude.ai cloudflare search": claude.ai proxy connection failed after 563ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sP3716xZTXxwBs8F"}
+2026-02-27T12:14:15.994Z [ERROR] MCP server "claude.ai cloudflare search" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sP3716xZTXxwBs8F"}
+2026-02-27T12:14:15.994Z [DEBUG] MCP server "claude.ai cloudflare search": Authentication required for claude.ai proxy server
+2026-02-27T12:14:16.055Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy connection failed after 621ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sMo9mhH6hf1tEgJG"}
+2026-02-27T12:14:16.055Z [ERROR] MCP server "claude.ai Google Calendar" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYYZ9sMo9mhH6hf1tEgJG"}
+2026-02-27T12:14:16.055Z [DEBUG] MCP server "claude.ai Google Calendar": Authentication required for claude.ai proxy server
+2026-02-27T12:14:16.371Z [DEBUG] MCP server "claude.ai cloudflare docs": Successfully connected to claudeai-proxy server in 935ms
+2026-02-27T12:14:16.371Z [DEBUG] MCP server "claude.ai cloudflare docs": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"docs-ai-search","version":"0.4.4"}}
+2026-02-27T12:14:16.371Z [DEBUG] [MCP] Server "claude.ai cloudflare docs" connected with subscribe=false
+2026-02-27T12:14:16.799Z [DEBUG] MCP server "claude.ai Hugging Face": Successfully connected to claudeai-proxy server in 1363ms
+2026-02-27T12:14:16.799Z [DEBUG] MCP server "claude.ai Hugging Face": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"@huggingface/mcp-services","title":"Hugging Face","icons":[{"src":"https://huggingface.co/favicon.ico"}],"version":"0.3.5","websiteUrl":"https://huggingface.co/mcp"}}
+2026-02-27T12:14:16.799Z [DEBUG] [MCP] Server "claude.ai Hugging Face" connected with subscribe=false
+2026-02-27T12:14:17.796Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:18.482Z [DEBUG] [useDeferredValue] Messages deferred by 1 (4→5)
+2026-02-27T12:14:19.576Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:19.577Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:19.577Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:19.577Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:19.585Z [DEBUG] [useDeferredValue] Messages deferred by 1 (5→6)
+2026-02-27T12:14:19.616Z [DEBUG] High write ratio: blit=0, write=1048 (100.0% writes), screen=24x80
+2026-02-27T12:14:19.634Z [DEBUG] tree-sitter: loaded from embedded
+2026-02-27T12:14:19.658Z [DEBUG] Creating shell snapshot for zsh (/usr/bin/zsh)
+2026-02-27T12:14:19.658Z [DEBUG] Looking for shell config file: /home/skogix/.zshrc
+2026-02-27T12:14:19.659Z [DEBUG] Snapshots directory: /home/skogix/.claude/shell-snapshots
+2026-02-27T12:14:19.668Z [DEBUG] Creating snapshot at: /home/skogix/.claude/shell-snapshots/snapshot-zsh-1772194459658-meof4e.sh
+2026-02-27T12:14:19.668Z [DEBUG] Execution timeout: 10000ms
+2026-02-27T12:14:20.087Z [DEBUG] [useDeferredValue] Messages deferred by 1 (6→7)
+2026-02-27T12:14:20.106Z [DEBUG] High write ratio: blit=0, write=1131 (100.0% writes), screen=27x80
+2026-02-27T12:14:20.129Z [DEBUG] High write ratio: blit=0, write=1131 (100.0% writes), screen=27x80
+2026-02-27T12:14:20.305Z [DEBUG] Shell snapshot created successfully (204693 bytes)
+2026-02-27T12:14:20.306Z [DEBUG] No session environment scripts found
+2026-02-27T12:14:20.306Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:21.125Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:21.129Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.aa6; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:21.130Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:21.130Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:21.131Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:21.135Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:21.135Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:21.136Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:21.138Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:21.139Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:21.139Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:21.139Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:21.166Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:21.169Z [DEBUG] [useDeferredValue] Messages deferred by 1 (7→8)
+2026-02-27T12:14:21.200Z [DEBUG] High write ratio: blit=0, write=1131 (100.0% writes), screen=27x80
+2026-02-27T12:14:21.258Z [DEBUG] High write ratio: blit=0, write=1201 (100.0% writes), screen=29x80
+2026-02-27T12:14:21.484Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:21.485Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:21.485Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:21.485Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:21.485Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:21.486Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:21.486Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:21.486Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:21.487Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T12:14:21.487Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T12:14:21.487Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T12:14:21.487Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T12:14:21.488Z [DEBUG] autocompact: tokens=33539 threshold=167000 effectiveWindow=180000
+2026-02-27T12:14:21.488Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:21.488Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:21.488Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:21.490Z [DEBUG] [useDeferredValue] Messages deferred by 1 (8→9)
+2026-02-27T12:14:21.502Z [DEBUG] High write ratio: blit=0, write=1201 (100.0% writes), screen=29x80
+2026-02-27T12:14:21.546Z [DEBUG] High write ratio: blit=0, write=1309 (100.0% writes), screen=32x80
+2026-02-27T12:14:21.701Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:21.756Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T12:14:21.760Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:21.761Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:21.761Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:21.761Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:21.999Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:25.014Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:25.830Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-02-27T12:14:25.835Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-02-27T12:14:25.854Z [DEBUG] High write ratio: blit=0, write=1410 (100.0% writes), screen=35x80
+2026-02-27T12:14:26.406Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:26.407Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:26.407Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:26.407Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:26.415Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:26.417Z [DEBUG] [useDeferredValue] Messages deferred by 1 (10→11)
+2026-02-27T12:14:26.435Z [DEBUG] High write ratio: blit=0, write=1410 (100.0% writes), screen=35x80
+2026-02-27T12:14:26.467Z [DEBUG] High write ratio: blit=0, write=1444 (100.0% writes), screen=38x80
+2026-02-27T12:14:26.698Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:26.699Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.6db; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:26.699Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:26.699Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:26.699Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:26.700Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:26.700Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:26.700Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:26.950Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-02-27T12:14:26.961Z [DEBUG] High write ratio: blit=0, write=1444 (100.0% writes), screen=38x80
+2026-02-27T12:14:26.964Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-02-27T12:14:27.009Z [DEBUG] High write ratio: blit=0, write=1542 (100.0% writes), screen=41x80
+2026-02-27T12:14:27.207Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:27.257Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:27.258Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:27.258Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:27.258Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:27.265Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-02-27T12:14:27.280Z [DEBUG] High write ratio: blit=0, write=1542 (100.0% writes), screen=41x80
+2026-02-27T12:14:27.281Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:27.292Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-02-27T12:14:27.305Z [DEBUG] High write ratio: blit=0, write=1542 (100.0% writes), screen=41x80
+2026-02-27T12:14:27.340Z [DEBUG] High write ratio: blit=0, write=1640 (100.0% writes), screen=45x80
+2026-02-27T12:14:27.385Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:27.386Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.d67; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:27.386Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:27.386Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:27.386Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:27.387Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:27.387Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:27.387Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:27.388Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T12:14:27.388Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T12:14:27.388Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T12:14:27.388Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T12:14:27.389Z [DEBUG] autocompact: tokens=37812 threshold=167000 effectiveWindow=180000
+2026-02-27T12:14:27.389Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T12:14:27.393Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:27.393Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:27.393Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:27.393Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:27.396Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-02-27T12:14:27.408Z [DEBUG] High write ratio: blit=0, write=1640 (100.0% writes), screen=45x80
+2026-02-27T12:14:27.432Z [DEBUG] High write ratio: blit=0, write=1812 (100.0% writes), screen=48x80
+2026-02-27T12:14:27.854Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:30.723Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:30.735Z [DEBUG] High write ratio: blit=0, write=1812 (100.0% writes), screen=48x80
+2026-02-27T12:14:32.181Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:32.182Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:32.182Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:32.182Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:32.192Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:32.193Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-27T12:14:32.204Z [DEBUG] High write ratio: blit=0, write=1812 (100.0% writes), screen=48x80
+2026-02-27T12:14:32.229Z [DEBUG] High write ratio: blit=0, write=1917 (100.0% writes), screen=52x80
+2026-02-27T12:14:32.389Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:32.389Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.d67; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:32.389Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:32.389Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:32.390Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:32.391Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:32.391Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:32.391Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:32.392Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T12:14:32.392Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T12:14:32.392Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T12:14:32.392Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T12:14:32.392Z [DEBUG] autocompact: tokens=38316 threshold=167000 effectiveWindow=180000
+2026-02-27T12:14:32.393Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T12:14:32.396Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:32.397Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:32.397Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:32.397Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:32.399Z [DEBUG] [useDeferredValue] Messages deferred by 1 (15→16)
+2026-02-27T12:14:32.411Z [DEBUG] High write ratio: blit=0, write=1917 (100.0% writes), screen=52x80
+2026-02-27T12:14:32.433Z [DEBUG] High write ratio: blit=0, write=1992 (100.0% writes), screen=55x80
+2026-02-27T12:14:33.241Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:35.757Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:35.776Z [DEBUG] High write ratio: blit=0, write=1992 (100.0% writes), screen=55x80
+2026-02-27T12:14:36.073Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:36.074Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:36.074Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:36.074Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:36.079Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:36.080Z [DEBUG] [useDeferredValue] Messages deferred by 1 (16→17)
+2026-02-27T12:14:36.091Z [DEBUG] High write ratio: blit=0, write=1992 (100.0% writes), screen=55x80
+2026-02-27T12:14:36.112Z [DEBUG] High write ratio: blit=0, write=2053 (100.0% writes), screen=58x80
+2026-02-27T12:14:36.143Z [DEBUG] High write ratio: blit=0, write=2053 (100.0% writes), screen=58x80
+2026-02-27T12:14:36.172Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:36.173Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.f92; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:36.173Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:36.173Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:36.173Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:36.175Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:36.175Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:36.175Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:36.177Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T12:14:36.177Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T12:14:36.177Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T12:14:36.177Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T12:14:36.179Z [DEBUG] autocompact: tokens=38631 threshold=167000 effectiveWindow=180000
+2026-02-27T12:14:36.179Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T12:14:36.184Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:36.184Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:36.184Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:36.185Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:36.187Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-02-27T12:14:36.201Z [DEBUG] High write ratio: blit=0, write=2053 (100.0% writes), screen=58x80
+2026-02-27T12:14:36.226Z [DEBUG] High write ratio: blit=0, write=2137 (100.0% writes), screen=60x80
+2026-02-27T12:14:36.655Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:38.482Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:39.355Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-02-27T12:14:39.361Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-02-27T12:14:39.369Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-02-27T12:14:39.382Z [DEBUG] High write ratio: blit=0, write=2137 (100.0% writes), screen=60x80
+2026-02-27T12:14:39.398Z [DEBUG] High write ratio: blit=0, write=2251 (100.0% writes), screen=63x80
+2026-02-27T12:14:40.684Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:40.685Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:40.685Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:40.685Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:40.698Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:40.699Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-02-27T12:14:40.713Z [DEBUG] High write ratio: blit=0, write=2251 (100.0% writes), screen=63x80
+2026-02-27T12:14:40.748Z [DEBUG] High write ratio: blit=0, write=2372 (100.0% writes), screen=67x80
+2026-02-27T12:14:40.960Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:40.961Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:40.961Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:40.961Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:40.961Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:40.963Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:40.963Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:40.963Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:41.330Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-02-27T12:14:41.344Z [DEBUG] High write ratio: blit=0, write=2372 (100.0% writes), screen=67x80
+2026-02-27T12:14:41.347Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-02-27T12:14:41.379Z [DEBUG] High write ratio: blit=0, write=2392 (100.0% writes), screen=67x80
+2026-02-27T12:14:41.449Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:41.577Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:41.577Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:41.577Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:41.577Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:41.586Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:41.587Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-02-27T12:14:41.599Z [DEBUG] High write ratio: blit=0, write=2392 (100.0% writes), screen=67x80
+2026-02-27T12:14:41.633Z [DEBUG] High write ratio: blit=0, write=2498 (100.0% writes), screen=71x80
+2026-02-27T12:14:41.641Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:41.642Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.1a1; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:41.642Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:41.642Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:41.642Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:41.644Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:41.644Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:41.644Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:42.183Z [DEBUG] [useDeferredValue] Messages deferred by 1 (22→23)
+2026-02-27T12:14:42.201Z [DEBUG] High write ratio: blit=0, write=2498 (100.0% writes), screen=71x80
+2026-02-27T12:14:42.203Z [DEBUG] [useDeferredValue] Messages deferred by 1 (22→23)
+2026-02-27T12:14:42.219Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:42.240Z [DEBUG] High write ratio: blit=0, write=2515 (100.0% writes), screen=71x80
+2026-02-27T12:14:42.380Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T12:14:42.381Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T12:14:42.381Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:42.381Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:42.389Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T12:14:42.390Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-02-27T12:14:42.403Z [DEBUG] High write ratio: blit=0, write=2515 (100.0% writes), screen=71x80
+2026-02-27T12:14:42.412Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-02-27T12:14:42.428Z [DEBUG] High write ratio: blit=0, write=2515 (100.0% writes), screen=71x80
+2026-02-27T12:14:42.448Z [DEBUG] High write ratio: blit=0, write=2590 (100.0% writes), screen=74x80
+2026-02-27T12:14:42.473Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T12:14:42.474Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.39c; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:42.474Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:42.474Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:42.474Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:42.476Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T12:14:42.476Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T12:14:42.476Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T12:14:42.478Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T12:14:42.478Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T12:14:42.478Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T12:14:42.478Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T12:14:42.480Z [DEBUG] autocompact: tokens=39112 threshold=167000 effectiveWindow=180000
+2026-02-27T12:14:42.480Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T12:14:42.498Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:42.498Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:42.498Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:42.498Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:42.502Z [DEBUG] [useDeferredValue] Messages deferred by 2 (24→26)
+2026-02-27T12:14:42.518Z [DEBUG] High write ratio: blit=0, write=2590 (100.0% writes), screen=74x80
+2026-02-27T12:14:42.543Z [DEBUG] High write ratio: blit=0, write=2602 (100.0% writes), screen=74x80
+2026-02-27T12:14:43.623Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:45.228Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:47.638Z [DEBUG] [useDeferredValue] Messages deferred by 1 (26→27)
+2026-02-27T12:14:47.664Z [DEBUG] High write ratio: blit=0, write=2979 (100.0% writes), screen=86x80
+2026-02-27T12:14:47.673Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-27T12:14:47.673Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:47.673Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-27T12:14:47.673Z [DEBUG] autocompact: tokens=39563 threshold=167000 effectiveWindow=180000
+2026-02-27T12:14:47.674Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T12:14:47.678Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T12:14:47.678Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T12:14:47.678Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T12:14:47.678Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T12:14:47.682Z [DEBUG] [useDeferredValue] Messages deferred by 1 (27→28)
+2026-02-27T12:14:47.697Z [DEBUG] High write ratio: blit=0, write=2943 (100.0% writes), screen=86x80
+2026-02-27T12:14:50.363Z [DEBUG] Stream started - received first chunk
+2026-02-27T12:14:50.511Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-02-27T12:14:50.542Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-02-27T12:14:50.542Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:14:50.542Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-27T12:14:50.543Z [DEBUG] Forked agent [prompt_suggestion] finished: 1 messages, types=[assistant], totalUsage: input=295 output=5 cacheRead=39178 cacheCreate=107
+2026-02-27T12:14:50.543Z [DEBUG] [Speculation] enabled=false
+2026-02-27T12:15:47.705Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-27T12:15:47.705Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:15:47.705Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2026-02-27T12:42:52.407Z [DEBUG] Detected change to /home/skogix/.claude/settings.json
+2026-02-27T12:42:52.409Z [DEBUG] Getting matching hook commands for ConfigChange with query: user_settings
+2026-02-27T12:42:52.409Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:42:52.409Z [DEBUG] Matched 0 unique hooks for query "user_settings" (0 before deduplication)
+2026-02-27T12:42:52.452Z [DEBUG] Settings changed from userSettings, updating app state
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all allow rules for destination 'userSettings' with 0 rule(s): []
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all deny rules for destination 'userSettings' with 0 rule(s): []
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all ask rules for destination 'userSettings' with 0 rule(s): []
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 0 rule(s): []
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all deny rules for destination 'projectSettings' with 0 rule(s): []
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all ask rules for destination 'projectSettings' with 0 rule(s): []
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 0 rule(s): []
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all deny rules for destination 'localSettings' with 0 rule(s): []
+2026-02-27T12:42:52.462Z [DEBUG] Replacing all ask rules for destination 'localSettings' with 0 rule(s): []
+2026-02-27T12:42:52.465Z [DEBUG] Replacing all allow rules for destination 'userSettings' with 122 rule(s): ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-02-27T12:42:52.465Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 122 rule(s): ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-02-27T12:42:52.498Z [ERROR] Error: Error: getTeammateModeFromSnapshot called before capture - this indicates an initialization bug
+    at _cH (/$bunfs/root/claude:2593:9718)
+    at XF9 (/$bunfs/root/claude:2610:190)
+    at gk (/$bunfs/root/claude:2610:308)
+    at Pp9 (/$bunfs/root/claude:11646:12717)
+    at t0 (/$bunfs/root/claude:227:20917)
+    at tU (/$bunfs/root/claude:227:39437)
+    at EAH (/$bunfs/root/claude:227:50123)
+    at ku (/$bunfs/root/claude:227:86692)
+    at Ji (/$bunfs/root/claude:227:85661)
+    at SO (/$bunfs/root/claude:227:85485)
+2026-02-27T12:42:52.498Z [DEBUG] [TeammateModeSnapshot] Captured from config: auto
+2026-02-27T12:42:52.498Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=auto, insideTmux=true)
+2026-02-27T12:42:52.520Z [DEBUG] High write ratio: blit=0, write=2949 (100.0% writes), screen=86x80
+2026-02-27T12:42:52.579Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1436852.1772196172579
+2026-02-27T12:42:52.579Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T12:42:52.589Z [DEBUG] Temp file written successfully, size: 29658 bytes
+2026-02-27T12:42:52.589Z [DEBUG] Applied original permissions to temp file
+2026-02-27T12:42:52.589Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1436852.1772196172579 to /home/skogix/.claude.json
+2026-02-27T12:42:52.589Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T12:43:35.302Z [DEBUG] MCP server "claude.ai cloudflare docs": SSE transport closed/disconnected, attempting automatic reconnection
+2026-02-27T12:43:35.302Z [DEBUG] MCP server "claude.ai Hugging Face": SSE transport closed/disconnected, attempting automatic reconnection
+2026-02-27T12:43:35.303Z [DEBUG] LSP server manager shut down successfully
+2026-02-27T12:43:35.303Z [DEBUG] MCP server "claude.ai cloudflare docs": Initializing claude.ai proxy transport for server mcpsrv_01S5kBkT4aEqH8PG88xQvG93
+2026-02-27T12:43:35.303Z [DEBUG] MCP server "claude.ai cloudflare docs": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01S5kBkT4aEqH8PG88xQvG93
+2026-02-27T12:43:35.304Z [DEBUG] MCP server "claude.ai cloudflare docs": claude.ai proxy transport created successfully
+2026-02-27T12:43:35.305Z [DEBUG] MCP server "claude.ai cloudflare docs": Starting connection with timeout of 30000ms
+2026-02-27T12:43:35.305Z [DEBUG] MCP server "claude.ai Hugging Face": Initializing claude.ai proxy transport for server mcpsrv_01VNYX8iQ3RktLAUN78jwJgn
+2026-02-27T12:43:35.305Z [DEBUG] MCP server "claude.ai Hugging Face": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01VNYX8iQ3RktLAUN78jwJgn
+2026-02-27T12:43:35.306Z [DEBUG] MCP server "claude.ai Hugging Face": claude.ai proxy transport created successfully
+2026-02-27T12:43:35.306Z [DEBUG] MCP server "claude.ai Hugging Face": Starting connection with timeout of 30000ms
+2026-02-27T12:43:35.307Z [DEBUG] Cleaned up session snapshot: /home/skogix/.claude/shell-snapshots/snapshot-zsh-1772194459658-meof4e.sh
+2026-02-27T12:43:35.327Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=auto, insideTmux=true)
+2026-02-27T12:43:35.522Z [DEBUG] Getting matching hook commands for SessionEnd with query: other
+2026-02-27T12:43:35.522Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T12:43:35.522Z [DEBUG] Matched 0 unique hooks for query "other" (0 before deduplication)
+2026-02-27T12:43:35.550Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=auto, insideTmux=true)
+2026-02-27T12:43:35.564Z [DEBUG] High write ratio: blit=0, write=2949 (100.0% writes), screen=86x80
+2026-02-27T12:43:35.564Z [DEBUG] Full reset (scrollback changes): scrollbackRows=63, firstChangeY=1
+  prev: "                                                                                "
+  next: " ▐▛███▜▌   Claude Code v2.1.62                                                  "
+2026-02-27T12:43:35.837Z [DEBUG] MCP server "claude.ai cloudflare docs": Successfully connected to claudeai-proxy server in 534ms
+2026-02-27T12:43:35.837Z [DEBUG] MCP server "claude.ai cloudflare docs": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"docs-ai-search","version":"0.4.4"}}
+2026-02-27T12:43:35.837Z [DEBUG] [MCP] Server "claude.ai cloudflare docs" connected with subscribe=false
+2026-02-27T12:43:36.024Z [DEBUG] MCP server "claude.ai Hugging Face": Successfully connected to claudeai-proxy server in 719ms
+2026-02-27T12:43:36.024Z [DEBUG] MCP server "claude.ai Hugging Face": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"@huggingface/mcp-services","title":"Hugging Face","icons":[{"src":"https://huggingface.co/favicon.ico"}],"version":"0.3.5","websiteUrl":"https://huggingface.co/mcp"}}
+2026-02-27T12:43:36.024Z [DEBUG] [MCP] Server "claude.ai Hugging Face" connected with subscribe=false

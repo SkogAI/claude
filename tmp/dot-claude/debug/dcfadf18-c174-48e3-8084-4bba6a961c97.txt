@@ -1,0 +1,2119 @@
+2026-02-28T07:58:42.026Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-28T07:58:42.026Z [DEBUG] MDM settings load completed in 1ms
+2026-02-28T07:58:42.043Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-28T07:58:42.043Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-28T07:58:42.043Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-28T07:58:42.044Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-28T07:58:42.045Z [ERROR] Failed to save config with lock: Error: Lock file is already being held
+2026-02-28T07:58:42.051Z [DEBUG] Applying permission update: Adding 123 allow rule(s) to destination 'userSettings': ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)","Bash(python3:*)"]
+2026-02-28T07:58:42.052Z [DEBUG] Applying permission update: Adding 1 directory with destination 'cliArg': ["/home/skogix/claude"]
+2026-02-28T07:58:42.053Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-28T07:58:42.057Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-28T07:58:42.058Z [DEBUG] [STARTUP] Running setup()...
+2026-02-28T07:58:42.061Z [DEBUG] [TeammateModeSnapshot] Captured from config: tmux
+2026-02-28T07:58:42.063Z [DEBUG] Loading skills from: managed=/etc/claude-code/.claude/skills, user=/home/skogix/.claude/skills, project=[/home/skogix/gt/mayor/.claude/skills, /home/skogix/gt/.claude/skills]
+2026-02-28T07:58:42.064Z [DEBUG] Error log sink initialized
+2026-02-28T07:58:42.078Z [DEBUG] [STARTUP] setup() completed in 20ms
+2026-02-28T07:58:42.078Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-28T07:58:42.085Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default
+2026-02-28T07:58:42.090Z [DEBUG] Loaded 21 installed plugins from /home/skogix/.claude/plugins/installed_plugins.json
+2026-02-28T07:58:42.099Z [DEBUG] [Claude in Chrome] Extension fcoeoabgfenejglbffodgkkbkcdhcgfn found in chrome Default
+2026-02-28T07:58:42.102Z [DEBUG] Git remote URL: https://github.com/SkogAI/gt.git
+2026-02-28T07:58:42.102Z [DEBUG] Parsed repository: github.com/SkogAI/gt from URL: https://github.com/SkogAI/gt.git
+2026-02-28T07:58:42.113Z [DEBUG] Loading plugin agent-architecture from source: "./"
+2026-02-28T07:58:42.114Z [DEBUG] Loading plugin agent-development from source: "./"
+2026-02-28T07:58:42.114Z [DEBUG] Loading plugin agent-evaluation from source: "./"
+2026-02-28T07:58:42.124Z [DEBUG] Loading plugin slack from source: {"source":"url","url":"https://github.com/slackapi/slack-mcp-plugin.git"}
+2026-02-28T07:58:42.124Z [DEBUG] Using provided version for slack@claude-plugins-official: 1.0.0
+2026-02-28T07:58:42.129Z [DEBUG] Loading plugin hookify from source: "./plugins/hookify"
+2026-02-28T07:58:42.132Z [DEBUG] Loading plugin greptile from source: "./external_plugins/greptile"
+2026-02-28T07:58:42.137Z [DEBUG] Loading plugin pyright-lsp from source: "./plugins/pyright-lsp"
+2026-02-28T07:58:42.140Z [DEBUG] Loading plugin claude-md-management from source: "./plugins/claude-md-management"
+2026-02-28T07:58:42.156Z [DEBUG] Loading plugin serena from source: "./external_plugins/serena"
+2026-02-28T07:58:42.160Z [DEBUG] Loading plugin supabase from source: "./external_plugins/supabase"
+2026-02-28T07:58:42.163Z [DEBUG] Loading plugin code-simplifier from source: "./plugins/code-simplifier"
+2026-02-28T07:58:42.163Z [DEBUG] Loading plugin context-engineering-fundamentals from source: "./"
+2026-02-28T07:58:42.164Z [DEBUG] Loading plugin claude-code-setup from source: "./plugins/claude-code-setup"
+2026-02-28T07:58:42.165Z [DEBUG] Loading plugin cognitive-architecture from source: "./"
+2026-02-28T07:58:42.165Z [DEBUG] Loading plugin core from source: "./plugins/core"
+2026-02-28T07:58:42.168Z [DEBUG] Loading plugin context7 from source: "./external_plugins/context7"
+2026-02-28T07:58:42.169Z [DEBUG] Loading plugin skill-creator from source: "./plugins/skill-creator"
+2026-02-28T07:58:42.170Z [DEBUG] Loading plugin code-review from source: "./plugins/code-review"
+2026-02-28T07:58:42.171Z [DEBUG] Loading plugin playground from source: "./plugins/playground"
+2026-02-28T07:58:42.175Z [DEBUG] Loading plugin github from source: "./external_plugins/github"
+2026-02-28T07:58:42.176Z [DEBUG] Loading plugin feature-dev from source: "./plugins/feature-dev"
+2026-02-28T07:58:42.177Z [WARN] Failed to parse YAML frontmatter in /home/skogix/.claude/agents/doc-writer.md: YAML Parse error: Unexpected token
+2026-02-28T07:58:42.177Z [DEBUG] Using versioned cached plugin slack from /home/skogix/.claude/plugins/cache/claude-plugins-official/slack/1.0.0
+2026-02-28T07:58:42.179Z [DEBUG] Skipping duplicate skill 'convoy' from projectSettings (same file already loaded from projectSettings)
+2026-02-28T07:58:42.179Z [DEBUG] Deduplicated 1 skills (same file)
+2026-02-28T07:58:42.179Z [DEBUG] Loaded 11 unique skills (11 unconditional, 0 conditional, managed: 0, user: 4, project: 2, additional: 0, legacy commands: 6)
+2026-02-28T07:58:42.180Z [DEBUG] Using provided version for pyright-lsp@claude-plugins-official: 1.0.0
+2026-02-28T07:58:42.180Z [DEBUG] Using provided version for core@skogai-marketplace: 0.0.5
+2026-02-28T07:58:42.182Z [DEBUG] Using manifest version for claude-md-management@claude-plugins-official: 1.0.0
+2026-02-28T07:58:42.182Z [DEBUG] Using manifest version for code-simplifier@claude-plugins-official: 1.0.0
+2026-02-28T07:58:42.182Z [DEBUG] Using manifest version for claude-code-setup@claude-plugins-official: 1.0.0
+2026-02-28T07:58:42.182Z [DEBUG] Plugin pyright-lsp@claude-plugins-official version 1.0.0 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0
+2026-02-28T07:58:42.182Z [DEBUG] Resolved local plugin pyright-lsp to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0
+2026-02-28T07:58:42.182Z [DEBUG] Plugin core@skogai-marketplace version 0.0.5 already cached at /home/skogix/.claude/plugins/cache/skogai-marketplace/core/0.0.5
+2026-02-28T07:58:42.182Z [DEBUG] Resolved local plugin core to versioned cache: /home/skogix/.claude/plugins/cache/skogai-marketplace/core/0.0.5
+2026-02-28T07:58:42.183Z [DEBUG] Plugin claude-md-management@claude-plugins-official version 1.0.0 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0
+2026-02-28T07:58:42.183Z [DEBUG] Resolved local plugin claude-md-management to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0
+2026-02-28T07:58:42.183Z [DEBUG] Plugin code-simplifier@claude-plugins-official version 1.0.0 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0
+2026-02-28T07:58:42.183Z [DEBUG] Resolved local plugin code-simplifier to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for agent-development@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for cognitive-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for agent-evaluation@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for agent-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T07:58:42.183Z [DEBUG] Plugin claude-code-setup@claude-plugins-official version 1.0.0 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0
+2026-02-28T07:58:42.183Z [DEBUG] Resolved local plugin claude-code-setup to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for serena@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for context-engineering-fundamentals@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for feature-dev@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for github@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for supabase@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for greptile@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for playground@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for code-review@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for context7@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for skill-creator@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.183Z [DEBUG] Using git SHA for hookify@claude-plugins-official: 55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin agent-development@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin agent-development to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Plugin agent-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin agent-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Plugin agent-evaluation@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin agent-evaluation to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Plugin cognitive-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin cognitive-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Plugin supabase@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/supabase/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin supabase to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/supabase/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin github@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/github/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin github to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/github/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin feature-dev@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/feature-dev/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin feature-dev to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/feature-dev/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin context-engineering-fundamentals@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin context-engineering-fundamentals to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-28T07:58:42.184Z [DEBUG] Plugin serena@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/serena/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin serena to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/serena/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin hookify@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin hookify to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin skill-creator@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/skill-creator/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin skill-creator to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/skill-creator/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin context7@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/context7/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin context7 to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/context7/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin code-review@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/code-review/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin code-review to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/code-review/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin playground@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/playground/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin playground to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/playground/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Plugin greptile@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/greptile/55b58ec6e564
+2026-02-28T07:58:42.184Z [DEBUG] Resolved local plugin greptile to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/greptile/55b58ec6e564
+2026-02-28T07:58:42.185Z [DEBUG] Plugin pyright-lsp has no entry.skills defined
+2026-02-28T07:58:42.209Z [DEBUG] Plugin core has no entry.skills defined
+2026-02-28T07:58:42.210Z [DEBUG] Processing 1 skill paths for plugin agent-development
+2026-02-28T07:58:42.210Z [DEBUG] Processing 5 skill paths for plugin agent-architecture
+2026-02-28T07:58:42.211Z [DEBUG] Processing 1 skill paths for plugin cognitive-architecture
+2026-02-28T07:58:42.211Z [DEBUG] Checking skill path: ./skills/project-development -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development (exists: true)
+2026-02-28T07:58:42.211Z [DEBUG] Processing 2 skill paths for plugin agent-evaluation
+2026-02-28T07:58:42.211Z [DEBUG] Checking skill path: ./skills/multi-agent-patterns -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns (exists: true)
+2026-02-28T07:58:42.211Z [DEBUG] Processing 4 skill paths for plugin context-engineering-fundamentals
+2026-02-28T07:58:42.211Z [DEBUG] Checking skill path: ./skills/bdi-mental-states -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states (exists: true)
+2026-02-28T07:58:42.211Z [DEBUG] Found 1 valid skill paths for plugin agent-development, setting skillsPaths
+2026-02-28T07:58:42.211Z [DEBUG] Checking skill path: ./skills/evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation (exists: true)
+2026-02-28T07:58:42.211Z [DEBUG] Checking skill path: ./skills/context-fundamentals -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Found 1 valid skill paths for plugin cognitive-architecture, setting skillsPaths
+2026-02-28T07:58:42.212Z [DEBUG] Checking skill path: ./skills/memory-systems -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Loaded hooks from standard location for plugin hookify: /home/skogix/.claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564/hooks/hooks.json
+2026-02-28T07:58:42.212Z [DEBUG] Checking skill path: ./skills/advanced-evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Checking skill path: ./skills/context-degradation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Found 2 valid skill paths for plugin agent-evaluation, setting skillsPaths
+2026-02-28T07:58:42.212Z [DEBUG] Checking skill path: ./skills/tool-design -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Checking skill path: ./skills/context-compression -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Checking skill path: ./skills/filesystem-context -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Checking skill path: ./skills/context-optimization -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Checking skill path: ./skills/hosted-agents -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents (exists: true)
+2026-02-28T07:58:42.212Z [DEBUG] Found 4 valid skill paths for plugin context-engineering-fundamentals, setting skillsPaths
+2026-02-28T07:58:42.212Z [DEBUG] Found 5 valid skill paths for plugin agent-architecture, setting skillsPaths
+2026-02-28T07:58:42.212Z [DEBUG] Found 21 plugins (16 enabled, 5 disabled)
+2026-02-28T07:58:42.212Z [DEBUG] Plugin not available for MCP: beads@beads-marketplace - error type: plugin-not-found
+2026-02-28T07:58:42.212Z [DEBUG] Plugin loading errors: Plugin beads not found in marketplace beads-marketplace
+2026-02-28T07:58:42.212Z [DEBUG] getPluginSkills: Processing 16 enabled plugins
+2026-02-28T07:58:42.212Z [DEBUG] Checking plugin context7: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.212Z [DEBUG] Checking plugin code-review: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.212Z [DEBUG] Checking plugin github: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.212Z [DEBUG] Checking plugin feature-dev: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.212Z [DEBUG] Checking plugin code-simplifier: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.212Z [DEBUG] Checking plugin serena: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.212Z [DEBUG] Checking plugin claude-md-management: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T07:58:42.212Z [DEBUG] Attempting to load skills from plugin claude-md-management default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0/skills
+2026-02-28T07:58:42.213Z [DEBUG] Plugin loading errors: Plugin beads not found in marketplace beads-marketplace
+2026-02-28T07:58:42.214Z [DEBUG] Loading hooks from plugin: hookify
+2026-02-28T07:58:42.214Z [DEBUG] Loading hooks from plugin: core
+2026-02-28T07:58:42.214Z [DEBUG] Registered 13 hooks from 16 plugins
+2026-02-28T07:58:42.214Z [DEBUG] Plugin loading errors: Plugin beads not found in marketplace beads-marketplace
+2026-02-28T07:58:42.216Z [DEBUG] Loaded 3 agents from plugin feature-dev default directory
+2026-02-28T07:58:42.217Z [DEBUG] Loaded 1 agents from plugin code-simplifier default directory
+2026-02-28T07:58:42.217Z [DEBUG] Loaded 1 agents from plugin hookify default directory
+2026-02-28T07:58:42.218Z [DEBUG] Loaded 11 agents from plugin core default directory
+2026-02-28T07:58:42.218Z [DEBUG] Total plugin agents loaded: 16
+2026-02-28T07:58:42.218Z [DEBUG] Loaded 1 skills from plugin claude-md-management default directory
+2026-02-28T07:58:42.218Z [DEBUG] Checking plugin pyright-lsp: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.218Z [DEBUG] Checking plugin supabase: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.218Z [DEBUG] Checking plugin claude-code-setup: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T07:58:42.218Z [DEBUG] Attempting to load skills from plugin claude-code-setup default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0/skills
+2026-02-28T07:58:42.218Z [DEBUG] Loaded 1 commands from plugin code-review default directory
+2026-02-28T07:58:42.220Z [DEBUG] Loaded 1 skills from plugin claude-code-setup default directory
+2026-02-28T07:58:42.220Z [DEBUG] Checking plugin greptile: skillsPath=none, skillsPaths=0 paths
+2026-02-28T07:58:42.220Z [DEBUG] Checking plugin hookify: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T07:58:42.220Z [DEBUG] Attempting to load skills from plugin hookify default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564/skills
+2026-02-28T07:58:42.220Z [DEBUG] Loaded 1 commands from plugin feature-dev default directory
+2026-02-28T07:58:42.220Z [DEBUG] Loaded 1 skills from plugin hookify default directory
+2026-02-28T07:58:42.220Z [DEBUG] Checking plugin slack: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T07:58:42.220Z [DEBUG] Attempting to load skills from plugin slack default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/slack/1.0.0/skills
+2026-02-28T07:58:42.220Z [DEBUG] Loaded 1 commands from plugin claude-md-management default directory
+2026-02-28T07:58:42.222Z [DEBUG] Loaded 2 skills from plugin slack default directory
+2026-02-28T07:58:42.222Z [DEBUG] Checking plugin playground: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T07:58:42.222Z [DEBUG] Attempting to load skills from plugin playground default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/playground/55b58ec6e564/skills
+2026-02-28T07:58:42.222Z [DEBUG] Loaded 4 commands from plugin hookify default directory
+2026-02-28T07:58:42.222Z [WARN] Missing environment variables in plugin MCP config: GITHUB_PERSONAL_ACCESS_TOKEN
+2026-02-28T07:58:42.222Z [DEBUG] Loaded 1 skills from plugin playground default directory
+2026-02-28T07:58:42.222Z [DEBUG] Checking plugin skill-creator: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T07:58:42.222Z [DEBUG] Attempting to load skills from plugin skill-creator default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/skill-creator/55b58ec6e564/skills
+2026-02-28T07:58:42.223Z [DEBUG] Loaded 5 commands from plugin slack default directory
+2026-02-28T07:58:42.223Z [DEBUG] Loaded 1 skills from plugin skill-creator default directory
+2026-02-28T07:58:42.223Z [DEBUG] Checking plugin core: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T07:58:42.223Z [DEBUG] Attempting to load skills from plugin core default skillsPath: /home/skogix/.claude/plugins/cache/skogai-marketplace/core/0.0.5/skills
+2026-02-28T07:58:42.223Z [DEBUG] Loaded 3 commands from plugin core default directory
+2026-02-28T07:58:42.223Z [DEBUG] Total plugin commands loaded: 15
+2026-02-28T07:58:42.223Z [DEBUG] Loaded 1 skills from plugin core default directory
+2026-02-28T07:58:42.223Z [DEBUG] Total plugin skills loaded: 8
+2026-02-28T07:58:42.223Z [DEBUG] getSkills returning: 11 skill dir commands, 8 plugin skills, 3 bundled skills
+2026-02-28T07:58:42.224Z [DEBUG] [STARTUP] Commands and agents loaded in 146ms
+2026-02-28T07:58:42.227Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-02-28T07:58:42.242Z [WARN] Missing environment variables in plugin MCP config: GREPTILE_API_KEY
+2026-02-28T07:58:42.243Z [DEBUG] Grove: Using fresh cached config
+2026-02-28T07:58:42.256Z [DEBUG] Path /home/skogix/gt already tracked for repo skogai/gt
+2026-02-28T07:58:42.256Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-02-28T07:58:42.256Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-02-28T07:58:42.260Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-28T07:58:42.264Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server github invalid: Missing environment variables: GITHUB_PERSONAL_ACCESS_TOKEN
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:42.264Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server greptile invalid: Missing environment variables: GREPTILE_API_KEY
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:42.268Z [DEBUG] [keybindings] Watching for changes to /home/skogix/.claude/keybindings.json
+2026-02-28T07:58:42.711Z [DEBUG] [STARTUP] showSetupScreens() completed in 484ms
+2026-02-28T07:58:42.711Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-28T07:58:42.711Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-28T07:58:42.711Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-28T07:58:42.713Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:58:42.713Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:58:42.713Z [DEBUG] Passes: Using fresh cached eligibility data
+2026-02-28T07:58:42.715Z [DEBUG] [STARTUP] MCP configs loaded in 662ms
+2026-02-28T07:58:42.717Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:58:42.718Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-02-28T07:58:42.718Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T07:58:42.718Z [DEBUG] Matched 3 unique hooks for query "startup" (3 before deduplication)
+2026-02-28T07:58:42.742Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T07:58:42.742Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.ea2; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:58:42.743Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:58:42.743Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:58:42.744Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:58:42.746Z [DEBUG] Loaded 1 LSP server(s) from plugin: pyright-lsp
+2026-02-28T07:58:42.747Z [DEBUG] Total LSP servers loaded: 1
+2026-02-28T07:58:42.747Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 1 server(s)
+2026-02-28T07:58:42.747Z [DEBUG] Queued request handler for plugin:pyright-lsp:pyright.workspace/configuration (connection not ready)
+2026-02-28T07:58:42.747Z [DEBUG] Starting LSP server instance: plugin:pyright-lsp:pyright
+2026-02-28T07:58:42.748Z [DEBUG] LSP manager initialized with 1 servers
+2026-02-28T07:58:42.748Z [DEBUG] LSP server manager initialized successfully
+2026-02-28T07:58:42.748Z [DEBUG] Queued notification handler for plugin:pyright-lsp:pyright.textDocument/publishDiagnostics (connection not ready)
+2026-02-28T07:58:42.748Z [DEBUG] Registered diagnostics handler for plugin:pyright-lsp:pyright
+2026-02-28T07:58:42.748Z [DEBUG] LSP notification handlers registered successfully for all 1 server(s)
+2026-02-28T07:58:42.749Z [ERROR] Error: Error: LSP server plugin:pyright-lsp:pyright failed to start: Executable not found in $PATH: "pyright-langserver"
+    at start (/$bunfs/root/claude:2677:22318)
+    at async f (/$bunfs/root/claude:2677:24630)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:42.749Z [DEBUG] LSP client stopped for plugin:pyright-lsp:pyright
+2026-02-28T07:58:42.749Z [ERROR] Error: Error: Executable not found in $PATH: "pyright-langserver"
+    at spawn (unknown)
+    at spawn (node:child_process:667:35)
+    at spawn (node:child_process:14:39)
+    at start (/$bunfs/root/claude:2677:20844)
+    at f (/$bunfs/root/claude:2677:24630)
+    at L (/$bunfs/root/claude:2677:32739)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:42.749Z [ERROR] Error: Error: Failed to start LSP server plugin:pyright-lsp:pyright: Executable not found in $PATH: "pyright-langserver"
+    at <anonymous> (/$bunfs/root/claude:2677:32761)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:42.780Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:42.780Z [DEBUG] Hook SessionStart:startup (SessionStart) success:
+# Beads Workflow Context
+
+> **Context Recovery**: Run `bd prime` after compaction, clear, or new session
+> Hooks auto-call this in Claude Code when .beads/ detected
+
+# 🚨 SESSION CLOSE PROTOCOL 🚨
+
+**CRITICAL**: Before saying "done" or "complete", you MUST run this checklist:
+
+```
+[ ] bd export                  (export beads to JSONL)
+```
+
+**Note:** No git remote configured. Issues are saved locally only.
+
+## Core Rules
+- **Default**: Use beads for ALL task tracking (`bd create`, `bd ready`, `bd close`)
+- **Prohibited**: Do NOT use TodoWrite, TaskCreate, or markdown files for task tracking
+- **Workflow**: Create beads issue BEFORE writing code, mark in_progress when starting
+- Persistence you don't need beats lost context
+- Git workflow: local-only (no git remote)
+- Session management: check `bd ready` for available work
+
+## Essential Commands
+
+### Finding Work
+- `bd ready` - Show issues ready to work (no blockers)
+- `bd list --status=open` - All open issues
+- `bd list --status=in_progress` - Your active work
+- `bd show <id>` - Detailed issue view with dependencies
+
+### Creating & Updating
+- `bd create --title="Summary of this issue" --description="Why this issue exists and what needs to be done" --type=task|bug|feature --priority=2` - New issue
+  - Priority: 0-4 or P0-P4 (0=critical, 2=medium, 4=backlog). NOT "high"/"medium"/"low"
+- `bd update <id> --status=in_progress` - Claim work
+- `bd update <id> --assignee=username` - Assign to someone
+- `bd update <id> --title/--description/--notes/--design` - Update fields inline
+- `bd close <id>` - Mark complete
+- `bd close <id1> <id2> ...` - Close multiple issues at once (more efficient)
+- `bd close <id> --reason="explanation"` - Close with reason
+- **Tip**: When creating multiple issues/tasks/epics, use parallel subagents for efficiency
+- **WARNING**: Do NOT use `bd edit` - it opens $EDITOR (vim/nano) which blocks agents
+
+### Dependencies & Blocking
+- `bd dep add <issue> <depends-on>` - Add dependency (issue depends on depends-on)
+- `bd blocked` - Show all blocked issues
+- `bd show <id>` - See what's blocking/blocked by this issue
+
+### Sync & Collaboration
+- `bd export` - Export beads to JSONL
+
+### Project Health
+- `bd stats` - Project statistics (open/closed/blocked counts)
+- `bd doctor` - Check for issues (sync problems, missing hooks)
+
+## Common Workflows
+
+**Starting work:**
+```bash
+bd ready           # Find available work
+bd show <id>       # Review issue details
+bd update <id> --status=in_progress  # Claim it
+```
+
+**Completing work:**
+```bash
+bd close <id1> <id2> ...    # Close all completed issues at once
+bd export                   # Export to JSONL
+```
+
+**Creating dependent work:**
+```bash
+# Run bd create commands in parallel (use subagents for many items)
+bd create --title="Implement feature X" --description="Why this issue exists and what needs to be done" --type=feature
+bd create --title="Write tests for X" --description="Why this issue exists and what needs to be done" --type=task
+bd dep add beads-yyy beads-xxx  # Tests depend on Feature (Feature blocks tests)
+```
+2026-02-28T07:58:42.844Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:42.920Z [DEBUG] Org fast mode: enabled
+2026-02-28T07:58:43.266Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:43.266Z [DEBUG] Hook SessionStart:startup (SessionStart) success:
+[session:dcfadf18-c174-48e3-8084-4bba6a961c97]
+[source:startup]
+[GAS TOWN] role:mayor pid:3281035 session:dcfadf18-c174-48e3-8084-4bba6a961c97
+# Mayor Context
+
+> **Recovery**: Run `gt prime` after compaction, clear, or new session
+
+## ⚡ Theory of Operation: The Propulsion Principle
+
+Gas Town is a steam engine. You are the main drive shaft.
+
+System throughput depends on ONE thing: when an agent finds work on their hook,
+they EXECUTE. No confirmation. No questions. No waiting. The hook IS your
+assignment — Witnesses, Refineries, and Polecats may be blocked waiting on YOUR decisions.
+
+**Your startup behavior:**
+1. Check hook (`gt hook`)
+2. If work is hooked → EXECUTE (no announcement beyond one line, no waiting)
+3. If hook empty → Check mail, then wait for user instructions
+
+**The failure mode:** Mayor restarts → announces itself → waits for "ok go" →
+human is AFK → Witnesses wait → Polecats idle → Gas Town stops.
+
+**Note:** "Hooked" means work assigned to you. Don't confuse with "pinned"
+(permanent reference beads).
+
+---
+
+## 📜 The Capability Ledger
+
+Every completion is recorded. Every handoff is logged. Every bead you close
+becomes part of a permanent ledger of demonstrated capability.
+
+- **Visible**: Beads tracks what you did, not what you claimed. Your history is your reputation.
+- **Redemption**: A bad completion doesn't define you. The ledger shows trajectory, not snapshots.
+- **Evidence**: Each autonomous completion proves agent execution works at scale.
+- **CV**: Your work history is a growing portfolio. The ledger is your professional record.
+
+---
+
+## Work Philosophy: Sling Liberally, Fix When Fast
+
+The Mayor is a coordinator first — but you CAN and SHOULD edit code when it's the fastest path.
+
+### Prefer slinging to polecats
+
+```bash
+bd create "Fix the auth timeout bug" -t task --json   # file it
+gt sling <bead-id> <rig>                        # fire off a polecat
+```
+
+**Why this is the default:**
+- Every polecat completion is a ledger entry — transparent, auditable work
+- Polecats preserve YOUR context for coordination and strategic decisions
+- No backlog accumulates — the living prototype stays up to date
+
+**Anti-pattern**: Filing beads "for later" while doing everything yourself.
+
+### Fix directly when it makes sense
+
+Don't be dogmatic. Fix things yourself when:
+- It's a quick fix (< 5 minutes, won't eat context)
+- You're already reading the code and see the issue
+- Slinging would take longer than fixing
+
+Work directly in `<rig>/mayor/rig/` — that's your clone. Push to main when done.
+
+### Fix-Merging Community PRs
+
+When you fix-merge a community PR (fix it up and commit directly to main), **always
+attribute the original contributor** with a `Co-Authored-By` trailer alongside Claude's:
+
+```
+Co-Authored-By: contributor-name <their-email>
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+```
+
+Get their name/email from the PR. This ensures they appear in `git log`, GitHub's
+contributor graph, and `git shortlog`. Without it, their contribution is invisible
+in git history — only a closed PR comment links them to the work.
+
+### Directory Guidelines
+
+**For ANY rig's git operations, use `~/gt/<rig>/mayor/rig/`.**
+
+| Location | Use for |
+|----------|---------|
+| `~/gt` (town root) | `gt mail`, coordination, `bd` with `hq-` prefix |
+| `~/gt/<rig>/mayor/rig/` | **ALL git/code operations** for that rig |
+| `~/gt/<rig>/crew/*` | Other agents' workspaces — don't use these |
+| `~/gt/<rig>/polecats/*` | Polecat sandboxes — don't use these |
+
+---
+
+## Your Role: MAYOR (Global Coordinator)
+
+You are the **Mayor** — the global coordinator of Gas Town. You sit above all rigs,
+coordinating work across the entire workspace.
+
+## Gas Town Architecture
+
+Gas Town is a multi-agent workspace manager:
+
+```
+Town (/home/skogix/gt)
+├── mayor/          ← You are here (global coordinator)
+├── <rig>/          ← Project containers (not git clones)
+│   ├── .beads/     ← Issue tracking
+│   ├── polecats/   ← Worker worktrees
+│   ├── refinery/   ← Merge queue processor
+│   └── witness/    ← Worker lifecycle manager
+```
+
+## Two-Level Beads Architecture
+
+| Level | Location | Prefix | Purpose |
+|-------|----------|--------|---------|
+| Town | `~/gt/.beads/` | `hq-*` | Your mail, HQ coordination |
+| Rig | `<rig>/crew/*/.beads/` | project prefix | Project issues |
+
+**Key points:**
+- **Town beads**: Your mail lives here (Dolt backend, persists automatically)
+- **Rig beads**: Project work lives in git worktrees (crew/*, polecats/*)
+- The rig-level `<rig>/.beads/` is **gitignored** (local runtime state)
+- **GitHub URLs**: Use `git remote -v` to verify repo URLs — never assume orgs like `anthropics/`
+
+## Prefix-Based Routing
+
+`bd` commands automatically route to the correct rig based on issue ID prefix:
+
+```
+bd show -xyz   # Routes to  beads (from anywhere in town)
+bd show hq-abc      # Routes to town beads
+```
+
+Routes defined in `~/gt/.beads/routes.jsonl`. `gt rig add` auto-registers new prefixes.
+**Debug:** `BD_DEBUG_ROUTING=1 bd show <id>`. **Conflicts:** `bd rename-prefix <new>`.
+
+## Where to File Beads (CRITICAL)
+
+**File in the rig that OWNS the code, not where you're standing.**
+
+| Issue is about... | File in | Command |
+|-------------------|---------|---------|
+| `bd` CLI (beads tool) | **beads** | `bd create --rig beads "..."` |
+| `gt` CLI (gas town tool) | **gastown** | `bd create --rig gastown "..."` |
+| Polecat/witness/refinery/convoy code | **gastown** | `bd create --rig gastown "..."` |
+| Wyvern game features | **wyvern** | `bd create --rig wyvern "..."` |
+| Cross-rig coordination, convoys, mail | **HQ** | `bd create "..."` (default) |
+
+**IMPORTANT:** Issues are created with `bd create`, not `gt` commands.
+
+**The test**: "Which repo would the fix be committed to?"
+- Fix in `anthropics/beads` → file in beads rig
+- Fix in `anthropics/gas-town` → file in gastown rig
+- Pure coordination (no code) → file in HQ
+
+## Gotchas when Filing Beads
+
+**Temporal language inverts dependencies.** "Phase 1 blocks Phase 2" is backwards.
+- WRONG: `bd dep add phase1 phase2` (temporal: "1 before 2")
+- RIGHT: `bd dep add phase2 phase1` (requirement: "2 needs 1")
+
+**Rule**: Think "X needs Y", not "X comes before Y". Verify with `bd blocked`.
+
+## Responsibilities
+
+- **Work dispatch**: Spawn workers for issues, coordinate batch work on epics
+- **Cross-rig coordination**: Route work between rigs when needed
+- **Escalation handling**: Resolve issues Witnesses can't handle
+- **Strategic decisions**: Architecture, priorities, integration planning
+
+**NOT your job**: Per-worker cleanup, session killing, routine nudging (Witness handles that)
+**Exception**: If refinery/witness is stuck, use `gt nudge refinery "Process MQ"`
+
+## Key Commands
+
+### Communication
+- `gt mail inbox` — Check your messages
+- `gt mail read <id>` — Read a specific message
+- `gt mail send <addr> -s "Subject" -m "Message"` — Send mail
+- `gt mail mark-read <id>` — Mark message as read
+- `gt nudge <target> "message"` — Send message to agent session
+  **ALWAYS use gt nudge, NEVER tmux send-keys**
+
+### Status & Coordination
+- `gt status` — Overall town status
+- `gt rig list` — List all rigs
+- `gt polecat list [rig]` — List polecats in a rig
+- `gt convoy list` — Dashboard of active work (primary view)
+- `gt convoy status <id>` — Detailed convoy progress
+- `gt convoy create "name" <issues>` — Create convoy for batch work
+
+### Work Dispatch
+
+```bash
+gt sling <bead-id> <rig>        # Spawns polecat, hooks work, starts session
+```
+
+This is THE command for dispatching work. **There is NO `gt polecat spawn` command.**
+
+**Other polecat commands:**
+- `gt polecat list` — List polecats
+- `gt polecat nuke <rig>/<name> --force` — Kill session + remove worktree
+- `gt polecat status <rig>/<name>` — Show polecat status
+
+### Beads
+- `gt sling <bead> <rig>` — Spawn polecat with work
+- `bd ready` — Issues ready to work (no blockers)
+- `bd list --status=open` — All open issues
+
+## Startup Protocol: Propulsion
+
+> **The Universal Gas Town Propulsion Principle: If you find something on your hook, YOU RUN IT.**
+
+```bash
+gt hook                          # Step 1: Check your hook
+# Work hooked? → RUN IT. Hook empty? ↓
+gt mail inbox                    # Step 2: Check mail
+gt mol attach-from-mail <mail-id> # Hook attached work
+# Still nothing? → Wait for user instructions
+```
+
+Your hooked work persists across sessions. Handoff mail (🤝 HANDOFF subject) provides context notes.
+
+## Hookable Mail
+
+Mail beads can be hooked for ad-hoc instruction handoff:
+- `gt mail hook <mail-id>` — Hook existing mail as your assignment
+- `gt handoff -m "..."` — Create and hook new instructions for next session
+
+If you find mail on your hook (not a molecule), GUPP applies: read the mail
+content, interpret the prose instructions, and execute them.
+
+## Session End Checklist
+
+```
+[ ] git status              (check what changed)
+[ ] git add <files>         (stage code changes)
+[ ] git commit -m "..."     (commit code)
+[ ] git push                (push to remote)
+[ ] HANDOFF (if incomplete work):
+    gt mail send mayor/ -s "🤝 HANDOFF: <brief>" -m "<context>"
+```
+
+Note: Beads changes are persisted immediately to Dolt — no sync step needed.
+
+## Pull Requests
+
+When creating PRs, default to `--repo` with the origin remote:
+
+```bash
+gh pr create --repo $(git remote get-url origin | sed 's/.*github.com[:/]\(.*\)\.git/\1/')
+```
+
+## ⚡ Command Quick-Reference
+
+**Commonly confused — use the right command:**
+
+| Want to... | Correct command | Common mistake |
+|------------|----------------|----------------|
+| Dispatch work to polecat | `gt sling <bead> <rig>` | ~~gt polecat spawn~~ (not a command) |
+| Message another agent | `gt nudge <target> "msg"` | ~~tmux send-keys~~ (unreliable) |
+| Kill stuck polecat | `gt polecat nuke <rig>/<name> --force` | ~~gt polecat kill~~ (not a command) |
+| Pause rig (daemon won't restart) | `gt rig park <rig>` | ~~gt rig stop~~ (daemon will restart it) |
+| Permanently disable rig | `gt rig dock <rig>` | ~~gt rig park~~ (temporary only) |
+| Create issues | `bd create "title"` | ~~gt issue create~~ (not a command) |
+
+**Rig lifecycle commands (park vs dock vs stop):**
+- `park/unpark` — Temporary pause. Daemon skips parked rigs.
+- `dock/undock` — Persistent disable. Survives daemon restarts.
+- `stop/start` — Immediate stop/start of rig patrol agents (witness + refinery).
+- `restart/reboot` — Stop then start rig agents.
+
+Town root: /home/skogix/gt
+
+# Beads Workflow Context
+
+> **Context Recovery**: Run `bd prime` after compaction, clear, or new session
+> Hooks auto-call this in Claude Code when .beads/ detected
+
+# 🚨 SESSION CLOSE PROTOCOL 🚨
+
+**CRITICAL**: Before saying "done" or "complete", you MUST run this checklist:
+
+```
+[ ] bd export                  (export beads to JSONL)
+```
+
+**Note:** No git remote configured. Issues are saved locally only.
+
+## Core Rules
+- **Default**: Use beads for ALL task tracking (`bd create`, `bd ready`, `bd close`)
+- **Prohibited**: Do NOT use TodoWrite, TaskCreate, or markdown files for task tracking
+- **Workflow**: Create beads issue BEFORE writing code, mark in_progress when starting
+- Persistence you don't need beats lost context
+- Git workflow: local-only (no git remote)
+- Session management: check `bd ready` for available work
+
+## Essential Commands
+
+### Finding Work
+- `bd ready` - Show issues ready to work (no blockers)
+- `bd list --status=open` - All open issues
+- `bd list --status=in_progress` - Your active work
+- `bd show <id>` - Detailed issue view with dependencies
+
+### Creating & Updating
+- `bd create --title="Summary of this issue" --description="Why this issue exists and what needs to be done" --type=task|bug|feature --priority=2` - New issue
+  - Priority: 0-4 or P0-P4 (0=critical, 2=medium, 4=backlog). NOT "high"/"medium"/"low"
+- `bd update <id> --status=in_progress` - Claim work
+- `bd update <id> --assignee=username` - Assign to someone
+- `bd update <id> --title/--description/--notes/--design` - Update fields inline
+- `bd close <id>` - Mark complete
+- `bd close <id1> <id2> ...` - Close multiple issues at once (more efficient)
+- `bd close <id> --reason="explanation"` - Close with reason
+- **Tip**: When creating multiple issues/tasks/epics, use parallel subagents for efficiency
+- **WARNING**: Do NOT use `bd edit` - it opens $EDITOR (vim/nano) which blocks agents
+
+### Dependencies & Blocking
+- `bd dep add <issue> <depends-on>` - Add dependency (issue depends on depends-on)
+- `bd blocked` - Show all blocked issues
+- `bd show <id>` - See what's blocking/blocked by this issue
+
+### Sync & Collaboration
+- `bd export` - Export beads to JSONL
+
+### Project Health
+- `bd stats` - Project statistics (open/closed/blocked counts)
+- `bd doctor` - Check for issues (sync problems, missing hooks)
+
+## Common Workflows
+
+**Starting work:**
+```bash
+bd ready           # Find available work
+bd show <id>       # Review issue details
+bd update <id> --status=in_progress  # Claim it
+```
+
+**Completing work:**
+```bash
+bd close <id1> <id2> ...    # Close all completed issues at once
+bd export                   # Export to JSONL
+```
+
+**Creating dependent work:**
+```bash
+# Run bd create commands in parallel (use subagents for many items)
+bd create --title="Implement feature X" --description="Why this issue exists and what needs to be done" --type=feature
+bd create --title="Write tests for X" --description="Why this issue exists and what needs to be done" --type=task
+bd dep add beads-yyy beads-xxx  # Tests depend on Feature (Feature blocks tests)
+```
+
+---
+
+**STARTUP PROTOCOL**: You are the Mayor. Please:
+1. Run `gt prime` (loads full context, mail, and pending work)
+2. Announce: "Mayor, checking in."
+3. Check mail: `gt mail inbox` - look for 🤝 HANDOFF messages
+4. Check for attached work: `gt hook`
+   - If mol attached → **RUN IT** (no human input needed)
+   - If no mol → await user instruction
+2026-02-28T07:58:43.272Z [DEBUG] Syncing installed_plugins.json with enabledPlugins from all settings.json files
+2026-02-28T07:58:43.273Z [DEBUG] Looking up plugin beads@beads-marketplace in marketplace beads-marketplace
+2026-02-28T07:58:43.278Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-02-28T07:58:43.280Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.3280460.1772265523280
+2026-02-28T07:58:43.280Z [DEBUG] Preserving file permissions: 100600
+2026-02-28T07:58:43.287Z [DEBUG] Temp file written successfully, size: 37424 bytes
+2026-02-28T07:58:43.287Z [DEBUG] Applied original permissions to temp file
+2026-02-28T07:58:43.287Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.3280460.1772265523280 to /home/skogix/.claude.json
+2026-02-28T07:58:43.287Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-28T07:58:43.492Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-28T07:58:43.506Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:43.513Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:43.549Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-02-28T07:58:43.550Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-02-28T07:58:43.550Z [DEBUG] performStartupChecks called
+2026-02-28T07:58:43.550Z [DEBUG] Starting background plugin installations
+2026-02-28T07:58:43.550Z [DEBUG] performBackgroundPluginInstallations called
+2026-02-28T07:58:43.552Z [DEBUG] Loaded 3 CLAUDE.md/rules files:
+  [User] /home/skogix/.claude/CLAUDE.md (8 chars)
+  [User] /home/skogix/.claude/RTK.md (958 chars) (included by /home/skogix/.claude/CLAUDE.md)
+  [Project] /home/skogix/gt/CLAUDE.md (329 chars)
+2026-02-28T07:58:43.561Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:43.568Z [DEBUG] Plugin autoupdate: skipped (auto-updater disabled)
+2026-02-28T07:58:43.571Z [DEBUG] Watching for changes in setting files /home/skogix/.claude/settings.json, /home/skogix/gt/mayor/.claude/settings.json, /home/skogix/gt/mayor/.claude/settings.local.json...
+2026-02-28T07:58:43.572Z [DEBUG] Plugin not available for MCP: beads@beads-marketplace - error type: plugin-not-found
+2026-02-28T07:58:43.572Z [DEBUG] Plugin not available for MCP: beads@beads-marketplace - error type: plugin-not-found
+2026-02-28T07:58:43.582Z [WARN] Missing environment variables in plugin MCP config: GITHUB_PERSONAL_ACCESS_TOKEN
+2026-02-28T07:58:43.582Z [WARN] Missing environment variables in plugin MCP config: GITHUB_PERSONAL_ACCESS_TOKEN
+2026-02-28T07:58:43.583Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T07:58:43.584Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T07:58:43.584Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T07:58:43.584Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T07:58:43.585Z [DEBUG] Sending 36 skills via attachment (initial, 35 total sent)
+2026-02-28T07:58:43.585Z [DEBUG] Skill prompt: showing "core:save-prompt" (userFacingName="savePrompt")
+2026-02-28T07:58:43.585Z [DEBUG] Skill prompt: showing "claude-md-management:claude-md-improver" (userFacingName="claude-md-improver")
+2026-02-28T07:58:43.585Z [DEBUG] Skill prompt: showing "claude-code-setup:claude-automation-recommender" (userFacingName="claude-automation-recommender")
+2026-02-28T07:58:43.585Z [DEBUG] Skill prompt: showing "hookify:writing-rules" (userFacingName="writing-hookify-rules")
+2026-02-28T07:58:43.585Z [DEBUG] Skill prompt: showing "playground:playground" (userFacingName="playground")
+2026-02-28T07:58:43.585Z [DEBUG] Skill prompt: showing "skill-creator:skill-creator" (userFacingName="skill-creator")
+2026-02-28T07:58:43.585Z [DEBUG] Skill prompt: showing "core:skogai-workflow" (userFacingName="skogai-workflow")
+2026-02-28T07:58:43.587Z [WARN] Missing environment variables in plugin MCP config: GREPTILE_API_KEY
+2026-02-28T07:58:43.587Z [WARN] Missing environment variables in plugin MCP config: GREPTILE_API_KEY
+2026-02-28T07:58:43.587Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server github invalid: Missing environment variables: GITHUB_PERSONAL_ACCESS_TOKEN
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at async K (/$bunfs/root/claude:4110:15587)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:43.587Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server greptile invalid: Missing environment variables: GREPTILE_API_KEY
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at async K (/$bunfs/root/claude:4110:15587)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:43.587Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server github invalid: Missing environment variables: GITHUB_PERSONAL_ACCESS_TOKEN
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at async W (/$bunfs/root/claude:4110:16120)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:43.587Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server greptile invalid: Missing environment variables: GREPTILE_API_KEY
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at async W (/$bunfs/root/claude:4110:16120)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:58:43.588Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-28T07:58:43.588Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-02-28T07:58:43.588Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-02-28T07:58:43.593Z [DEBUG] Found 16 enabled plugins
+2026-02-28T07:58:43.594Z [DEBUG] Syncing installed_plugins.json with enabledPlugins from all settings.json files
+2026-02-28T07:58:43.596Z [DEBUG] Looking up plugin beads@beads-marketplace in marketplace beads-marketplace
+2026-02-28T07:58:43.596Z [DEBUG] Found 21 installed plugins
+2026-02-28T07:58:43.596Z [DEBUG] Found 0 missing plugins (not installed):
+2026-02-28T07:58:43.596Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-02-28T07:58:43.603Z [DEBUG] Plugin beads@beads-marketplace not found in any marketplace, skipping
+2026-02-28T07:58:43.603Z [DEBUG] Initialized versioned plugins system with 21 plugins
+2026-02-28T07:58:43.608Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-02-28T07:58:43.609Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-28T07:58:43.609Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T07:58:43.609Z [DEBUG] Matched 3 unique hooks for query "no match query" (3 before deduplication)
+2026-02-28T07:58:43.619Z [DEBUG] Security messages are fresh (<1h old), skipping fetch
+2026-02-28T07:58:43.626Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:58:43.631Z [DEBUG] Plugin beads@beads-marketplace not found in any marketplace, skipping
+2026-02-28T07:58:43.690Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:43.740Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/opt/claude-code/bin/claude)
+2026-02-28T07:58:43.756Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:58:43.756Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:58:43.756Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:58:43.756Z [DEBUG] Detected pacman installation: /opt/claude-code/bin/claude is owned by claude-code 2.1.62-1
+2026-02-28T07:58:43.756Z [DEBUG] AutoUpdaterWrapper: Installation type: package-manager
+2026-02-28T07:58:43.757Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:58:43.757Z [DEBUG] Hook UserPromptSubmit (UserPromptSubmit) success:
+{}
+2026-02-28T07:58:43.764Z [DEBUG] Watching for changes in skill/command directories: /home/skogix/.claude/skills, /home/skogix/.claude/commands, /home/skogix/gt/mayor/.claude/skills, /home/skogix/gt/mayor/.claude/commands...
+2026-02-28T07:58:43.875Z [DEBUG] Loaded plugins - Enabled: 16, Disabled: 5, Commands: 15, Agents: 16, Errors: 1
+2026-02-28T07:58:43.883Z [DEBUG] [claudeai-mcp] Fetched 18 servers
+2026-02-28T07:58:43.888Z [DEBUG] MCP server "claude.ai Slack": Initializing claude.ai proxy transport for server mcpsrv_015pdAhKMPhdZ8SeXv9xmXhs
+2026-02-28T07:58:43.888Z [DEBUG] MCP server "claude.ai Slack": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_015pdAhKMPhdZ8SeXv9xmXhs
+2026-02-28T07:58:43.889Z [DEBUG] MCP server "claude.ai Slack": claude.ai proxy transport created successfully
+2026-02-28T07:58:43.892Z [DEBUG] MCP server "claude.ai Slack": Starting connection with timeout of 30000ms
+2026-02-28T07:58:43.926Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:43.937Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:44.088Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:44.093Z [DEBUG] [useDeferredValue] Messages deferred by 3 (6→9)
+2026-02-28T07:58:44.096Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:44.102Z [DEBUG] High write ratio: blit=320, write=805 (71.6% writes), screen=20x80
+2026-02-28T07:58:44.114Z [DEBUG] Plugin loading errors: Plugin beads not found in marketplace beads-marketplace
+2026-02-28T07:58:44.114Z [DEBUG] Total plugin output styles loaded: 0
+2026-02-28T07:58:44.118Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-28T07:58:44.124Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:58:44.125Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:58:44.125Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:58:44.125Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:58:44.128Z [DEBUG] [useDeferredValue] Messages deferred by 3 (6→9)
+2026-02-28T07:58:44.132Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:44.138Z [DEBUG] High write ratio: blit=320, write=805 (71.6% writes), screen=20x80
+2026-02-28T07:58:44.662Z [DEBUG] MCP server "claude.ai Slack": Successfully connected to claudeai-proxy server in 774ms
+2026-02-28T07:58:44.662Z [DEBUG] MCP server "claude.ai Slack": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Slack MCP","version":"1.0.0"}}
+2026-02-28T07:58:44.662Z [DEBUG] [MCP] Server "claude.ai Slack" connected with subscribe=false
+2026-02-28T07:58:45.346Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:46.390Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:58:46.721Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-02-28T07:58:46.731Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:47.456Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T07:58:47.456Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T07:58:47.456Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T07:58:47.456Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T07:58:47.462Z [DEBUG] [useDeferredValue] Messages deferred by 4 (10→14)
+2026-02-28T07:58:47.469Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:47.530Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:58:47.530Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:58:47.530Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:58:47.531Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:58:47.531Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T07:58:47.623Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:47.636Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:47.646Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:47.682Z [DEBUG] tree-sitter: loaded from embedded
+2026-02-28T07:58:47.711Z [DEBUG] Creating shell snapshot for zsh (/usr/bin/zsh)
+2026-02-28T07:58:47.711Z [DEBUG] Looking for shell config file: /home/skogix/.zshrc
+2026-02-28T07:58:47.712Z [DEBUG] Snapshots directory: /home/skogix/.claude/shell-snapshots
+2026-02-28T07:58:47.715Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:47.724Z [DEBUG] Creating snapshot at: /home/skogix/.claude/shell-snapshots/snapshot-zsh-1772265527712-c3w4ui.sh
+2026-02-28T07:58:47.724Z [DEBUG] Execution timeout: 10000ms
+2026-02-28T07:58:48.008Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-28T07:58:48.011Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:48.032Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-28T07:58:48.038Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:48.081Z [DEBUG] High write ratio: blit=0, write=1030 (100.0% writes), screen=28x80
+2026-02-28T07:58:48.585Z [DEBUG] Shell snapshot created successfully (204654 bytes)
+2026-02-28T07:58:48.585Z [DEBUG] No session environment scripts found
+2026-02-28T07:58:48.585Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T07:58:49.055Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T07:58:49.055Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:58:49.056Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:58:49.056Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:58:49.056Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:58:49.057Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T07:58:49.057Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T07:58:49.057Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T07:58:49.063Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:49.082Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:49.112Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:58:49.112Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:58:49.112Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:58:49.120Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:58:49.120Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T07:58:49.121Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T07:58:49.122Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T07:58:49.122Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T07:58:49.122Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T07:58:49.127Z [DEBUG] [useDeferredValue] Messages deferred by 11 (15→26)
+2026-02-28T07:58:49.135Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:49.141Z [DEBUG] High write ratio: blit=0, write=1030 (100.0% writes), screen=28x80
+2026-02-28T07:58:49.185Z [DEBUG] High write ratio: blit=0, write=1187 (100.0% writes), screen=34x80
+2026-02-28T07:58:49.190Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:58:49.190Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:58:49.190Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:58:49.200Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:58:49.200Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T07:58:49.280Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:49.301Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:49.308Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T07:58:49.311Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:49.611Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:58:49.748Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T07:58:49.748Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:58:49.748Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:58:49.748Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:58:49.748Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:58:49.750Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T07:58:49.750Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T07:58:49.750Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T07:58:49.761Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:49.777Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:49.802Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:58:49.802Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:58:49.802Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:58:49.811Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:58:49.811Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T07:58:49.813Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T07:58:49.813Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T07:58:49.813Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T07:58:49.813Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T07:58:49.816Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:58:49.816Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:58:49.816Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:58:49.818Z [DEBUG] [useDeferredValue] Messages deferred by 8 (26→34)
+2026-02-28T07:58:49.825Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:49.830Z [DEBUG] High write ratio: blit=0, write=1187 (100.0% writes), screen=34x80
+2026-02-28T07:58:49.851Z [DEBUG] High write ratio: blit=0, write=1281 (100.0% writes), screen=37x80
+2026-02-28T07:58:50.101Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T07:58:50.105Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:58:50.105Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:58:50.105Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:58:50.105Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:58:50.110Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:50.196Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:58:52.375Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:58:53.089Z [DEBUG] [useDeferredValue] Messages deferred by 1 (34→35)
+2026-02-28T07:58:53.091Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:53.119Z [DEBUG] High write ratio: blit=0, write=1366 (100.0% writes), screen=41x80
+2026-02-28T07:58:53.232Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-28T07:58:53.232Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T07:58:53.232Z [DEBUG] Matched 3 unique hooks for query "no match query" (3 before deduplication)
+2026-02-28T07:58:53.233Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T07:58:53.236Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:58:53.237Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:58:53.237Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:58:53.237Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:58:53.244Z [DEBUG] [useDeferredValue] Messages deferred by 3 (35→38)
+2026-02-28T07:58:53.246Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:53.276Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:53.306Z [DEBUG] High write ratio: blit=0, write=1392 (100.0% writes), screen=41x80
+2026-02-28T07:58:53.323Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:58:53.323Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:58:53.323Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:58:53.326Z [DEBUG] [useDeferredValue] Messages deferred by 1 (38→39)
+2026-02-28T07:58:53.334Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:53.340Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:58:53.340Z [DEBUG] Hook Stop (Stop) success:
+{}
+2026-02-28T07:58:53.357Z [DEBUG] [useDeferredValue] Messages deferred by 2 (38→40)
+2026-02-28T07:58:53.360Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:53.373Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:53.373Z [DEBUG] Hook Stop (Stop) success:
+✓ Recorded $0.16 for hq-mayor
+2026-02-28T07:58:53.374Z [DEBUG] [useDeferredValue] Messages deferred by 4 (38→42)
+2026-02-28T07:58:53.383Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:53.389Z [DEBUG] High write ratio: blit=0, write=1332 (100.0% writes), screen=39x80
+2026-02-28T07:58:53.405Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.3280460.1772265533405
+2026-02-28T07:58:53.405Z [DEBUG] Preserving file permissions: 100600
+2026-02-28T07:58:53.420Z [DEBUG] Temp file written successfully, size: 37424 bytes
+2026-02-28T07:58:53.420Z [DEBUG] Applied original permissions to temp file
+2026-02-28T07:58:53.420Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.3280460.1772265533405 to /home/skogix/.claude.json
+2026-02-28T07:58:53.421Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-28T07:58:53.423Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.3280460.1772265533423
+2026-02-28T07:58:53.423Z [DEBUG] Preserving file permissions: 100600
+2026-02-28T07:58:53.437Z [DEBUG] Temp file written successfully, size: 37424 bytes
+2026-02-28T07:58:53.437Z [DEBUG] Applied original permissions to temp file
+2026-02-28T07:58:53.437Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.3280460.1772265533423 to /home/skogix/.claude.json
+2026-02-28T07:58:53.437Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-28T07:58:53.439Z [DEBUG] [useDeferredValue] Messages deferred by 4 (38→42)
+2026-02-28T07:58:55.004Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:58:55.191Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-02-28T07:58:55.304Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-02-28T07:58:55.304Z [DEBUG] Found 1 hook matchers in settings
+2026-02-28T07:58:55.304Z [DEBUG] Matched 1 unique hooks for query "no match query" (1 before deduplication)
+2026-02-28T07:58:55.304Z [DEBUG] Forked agent [prompt_suggestion] received message: type=progress
+2026-02-28T07:58:55.308Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:55.321Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:58:55.321Z [DEBUG] Forked agent [prompt_suggestion] received message: type=attachment
+2026-02-28T07:58:55.321Z [DEBUG] Forked agent [prompt_suggestion] received message: type=system
+2026-02-28T07:58:55.322Z [DEBUG] Forked agent [prompt_suggestion] finished: 4 messages, types=[assistant, progress, attachment, system], totalUsage: input=295 output=6 cacheRead=51981 cacheCreate=22
+2026-02-28T07:58:55.322Z [DEBUG] [Speculation] enabled=false
+2026-02-28T07:58:58.974Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:58:58.981Z [DEBUG] High write ratio: blit=0, write=2159 (100.0% writes), screen=39x171
+2026-02-28T07:59:00.011Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:00.359Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:06.953Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:16.959Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T07:59:16.959Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T07:59:16.959Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T07:59:16.959Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T07:59:16.962Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-28T07:59:16.962Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T07:59:16.962Z [DEBUG] Matched 3 unique hooks for query "no match query" (3 before deduplication)
+2026-02-28T07:59:16.983Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:16.990Z [DEBUG] High write ratio: blit=0, write=2256 (100.0% writes), screen=44x171
+2026-02-28T07:59:17.035Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:17.035Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:17.035Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:17.057Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:17.057Z [DEBUG] Hook UserPromptSubmit (UserPromptSubmit) success:
+{}
+2026-02-28T07:59:17.120Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:17.241Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:17.242Z [DEBUG] [useDeferredValue] Messages deferred by 2 (42→44)
+2026-02-28T07:59:17.244Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:17.249Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T07:59:17.256Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:59:17.257Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:59:17.257Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:59:17.257Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:59:17.269Z [DEBUG] [useDeferredValue] Messages deferred by 2 (42→44)
+2026-02-28T07:59:17.272Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:17.295Z [DEBUG] High write ratio: blit=0, write=2256 (100.0% writes), screen=44x171
+2026-02-28T07:59:19.219Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:59:20.175Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-02-28T07:59:20.178Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:20.183Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-02-28T07:59:20.206Z [DEBUG] High write ratio: blit=0, write=2280 (100.0% writes), screen=44x171
+2026-02-28T07:59:20.228Z [DEBUG] High write ratio: blit=0, write=2403 (100.0% writes), screen=48x171
+2026-02-28T07:59:20.912Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T07:59:20.913Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T07:59:20.913Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T07:59:20.913Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T07:59:20.917Z [DEBUG] [useDeferredValue] Messages deferred by 4 (45→49)
+2026-02-28T07:59:20.924Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:20.932Z [DEBUG] High write ratio: blit=0, write=2403 (100.0% writes), screen=48x171
+2026-02-28T07:59:20.959Z [DEBUG] High write ratio: blit=0, write=2452 (100.0% writes), screen=51x171
+2026-02-28T07:59:20.970Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:20.970Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:20.970Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:20.985Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:20.985Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T07:59:21.034Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:21.060Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:21.066Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T07:59:21.068Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:21.151Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T07:59:21.151Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:59:21.151Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:59:21.151Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:59:21.152Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:59:21.154Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T07:59:21.154Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T07:59:21.154Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T07:59:21.160Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:21.181Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:21.204Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:21.204Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:21.204Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:21.218Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:21.218Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T07:59:21.317Z [DEBUG] [useDeferredValue] Messages deferred by 8 (49→57)
+2026-02-28T07:59:21.324Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:21.333Z [DEBUG] High write ratio: blit=0, write=2458 (100.0% writes), screen=51x171
+2026-02-28T07:59:21.342Z [DEBUG] [useDeferredValue] Messages deferred by 8 (49→57)
+2026-02-28T07:59:21.376Z [DEBUG] High write ratio: blit=0, write=3651 (100.0% writes), screen=63x171
+2026-02-28T07:59:21.730Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T07:59:21.731Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T07:59:21.731Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T07:59:21.731Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T07:59:21.734Z [DEBUG] [useDeferredValue] Messages deferred by 1 (57→58)
+2026-02-28T07:59:21.742Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:21.756Z [DEBUG] High write ratio: blit=0, write=3651 (100.0% writes), screen=63x171
+2026-02-28T07:59:21.769Z [DEBUG] [useDeferredValue] Messages deferred by 4 (57→61)
+2026-02-28T07:59:21.776Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:21.787Z [DEBUG] High write ratio: blit=0, write=3651 (100.0% writes), screen=63x171
+2026-02-28T07:59:21.788Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:21.788Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:21.788Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:21.798Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:21.798Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T07:59:21.816Z [DEBUG] High write ratio: blit=0, write=3704 (100.0% writes), screen=66x171
+2026-02-28T07:59:21.854Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:21.860Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:21.866Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T07:59:21.868Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:21.993Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T07:59:21.993Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:59:21.993Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:59:21.993Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:59:21.993Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:59:21.994Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T07:59:21.994Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T07:59:21.994Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T07:59:21.999Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:22.011Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:22.040Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:22.040Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:22.040Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:22.046Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:22.046Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T07:59:22.047Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T07:59:22.047Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T07:59:22.047Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T07:59:22.047Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T07:59:22.048Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T07:59:22.051Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:59:22.051Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:59:22.051Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:59:22.051Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:59:22.053Z [DEBUG] [useDeferredValue] Messages deferred by 8 (61→69)
+2026-02-28T07:59:22.058Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:22.067Z [DEBUG] High write ratio: blit=0, write=3704 (100.0% writes), screen=66x171
+2026-02-28T07:59:22.093Z [DEBUG] High write ratio: blit=0, write=3847 (100.0% writes), screen=71x171
+2026-02-28T07:59:22.433Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:59:23.292Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:59:24.078Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:59:24.093Z [DEBUG] High write ratio: blit=0, write=3847 (100.0% writes), screen=71x171
+2026-02-28T07:59:25.740Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T07:59:25.741Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T07:59:25.741Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T07:59:25.741Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T07:59:25.745Z [DEBUG] [useDeferredValue] Messages deferred by 4 (69→73)
+2026-02-28T07:59:25.753Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:25.765Z [DEBUG] High write ratio: blit=0, write=3848 (100.0% writes), screen=71x171
+2026-02-28T07:59:25.812Z [DEBUG] High write ratio: blit=0, write=4035 (100.0% writes), screen=75x171
+2026-02-28T07:59:25.814Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:25.815Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:25.815Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:25.815Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:25.815Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T07:59:25.879Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:25.897Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:25.906Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T07:59:25.909Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:26.193Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T07:59:26.194Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:59:26.194Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:59:26.194Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:59:26.194Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:59:26.196Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T07:59:26.196Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T07:59:26.196Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T07:59:26.202Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:26.214Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:26.243Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:26.243Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:26.243Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:26.252Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:26.252Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T07:59:26.319Z [DEBUG] [useDeferredValue] Messages deferred by 8 (73→81)
+2026-02-28T07:59:26.326Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:26.338Z [DEBUG] High write ratio: blit=0, write=4035 (100.0% writes), screen=75x171
+2026-02-28T07:59:26.347Z [DEBUG] [useDeferredValue] Messages deferred by 8 (73→81)
+2026-02-28T07:59:26.354Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T07:59:26.354Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T07:59:26.354Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T07:59:26.354Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T07:59:26.359Z [DEBUG] [useDeferredValue] Messages deferred by 9 (73→82)
+2026-02-28T07:59:26.365Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:26.378Z [DEBUG] High write ratio: blit=0, write=4035 (100.0% writes), screen=75x171
+2026-02-28T07:59:26.395Z [DEBUG] [useDeferredValue] Messages deferred by 12 (73→85)
+2026-02-28T07:59:26.402Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:26.413Z [DEBUG] High write ratio: blit=0, write=4035 (100.0% writes), screen=75x171
+2026-02-28T07:59:26.414Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:26.414Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:26.414Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:26.414Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:26.415Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T07:59:26.470Z [DEBUG] High write ratio: blit=0, write=16847 (100.0% writes), screen=194x171
+2026-02-28T07:59:26.500Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:26.509Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:26.513Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T07:59:26.515Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:26.573Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T07:59:26.573Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:59:26.573Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:59:26.573Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:59:26.574Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:59:26.575Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T07:59:26.575Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T07:59:26.575Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T07:59:26.579Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:26.593Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:26.629Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:26.629Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:26.629Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:26.636Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:26.636Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T07:59:26.637Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T07:59:26.637Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T07:59:26.637Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T07:59:26.637Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T07:59:26.638Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T07:59:26.640Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:59:26.640Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:59:26.640Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:59:26.640Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:59:26.643Z [DEBUG] [useDeferredValue] Messages deferred by 8 (85→93)
+2026-02-28T07:59:26.648Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:26.664Z [DEBUG] High write ratio: blit=0, write=16847 (100.0% writes), screen=194x171
+2026-02-28T07:59:26.707Z [DEBUG] High write ratio: blit=0, write=17336 (100.0% writes), screen=213x171
+2026-02-28T07:59:26.807Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:59:27.010Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:59:28.560Z [DEBUG] Stream started - received first chunk
+2026-02-28T07:59:34.746Z [DEBUG] High write ratio: blit=2394, write=16066 (87.0% writes), screen=213x171
+2026-02-28T07:59:40.007Z [DEBUG] [useDeferredValue] Messages deferred by 1 (93→94)
+2026-02-28T07:59:40.009Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:40.062Z [DEBUG] High write ratio: blit=0, write=18419 (100.0% writes), screen=233x171
+2026-02-28T07:59:48.815Z [DEBUG] [useDeferredValue] Messages deferred by 1 (94→95)
+2026-02-28T07:59:48.817Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:48.867Z [DEBUG] High write ratio: blit=0, write=20326 (100.0% writes), screen=271x171
+2026-02-28T07:59:48.918Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:48.931Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-28T07:59:48.931Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T07:59:48.931Z [DEBUG] Matched 3 unique hooks for query "no match query" (3 before deduplication)
+2026-02-28T07:59:48.933Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T07:59:48.951Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T07:59:48.951Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T07:59:48.951Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T07:59:48.952Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T07:59:48.961Z [DEBUG] [useDeferredValue] Messages deferred by 3 (95→98)
+2026-02-28T07:59:48.963Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:48.980Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:48.980Z [DEBUG] [useDeferredValue] Messages deferred by 4 (95→99)
+2026-02-28T07:59:48.983Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:49.026Z [DEBUG] High write ratio: blit=0, write=20353 (100.0% writes), screen=271x171
+2026-02-28T07:59:49.027Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T07:59:49.027Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T07:59:49.027Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T07:59:49.027Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T07:59:49.027Z [DEBUG] Hook Stop (Stop) success:
+{}
+2026-02-28T07:59:49.028Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T07:59:49.028Z [DEBUG] Hook Stop (Stop) success:
+✓ Recorded $0.35 for hq-mayor
+2026-02-28T07:59:49.035Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.3280460.1772265589035
+2026-02-28T07:59:49.035Z [DEBUG] Preserving file permissions: 100600
+2026-02-28T07:59:49.043Z [DEBUG] Temp file written successfully, size: 37424 bytes
+2026-02-28T07:59:49.043Z [DEBUG] Applied original permissions to temp file
+2026-02-28T07:59:49.043Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.3280460.1772265589035 to /home/skogix/.claude.json
+2026-02-28T07:59:49.043Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-28T07:59:49.044Z [DEBUG] [useDeferredValue] Messages deferred by 4 (99→103)
+2026-02-28T07:59:49.050Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:49.074Z [DEBUG] High write ratio: blit=0, write=20266 (100.0% writes), screen=270x171
+2026-02-28T07:59:49.645Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T07:59:49.654Z [ERROR] API error (attempt 1/11): undefined Request was aborted.
+2026-02-28T07:59:49.656Z [ERROR] Error in API request: Request was aborted.
+2026-02-28T07:59:49.657Z [ERROR] Error: Error: Request was aborted.
+    at makeRequest (/$bunfs/root/claude:307:3940)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T07:59:49.658Z [DEBUG] Forked agent [prompt_suggestion] received message: type=user
+2026-02-28T07:59:49.658Z [DEBUG] Forked agent [prompt_suggestion] finished: 1 messages, types=[user], totalUsage: input=0 output=0 cacheRead=0 cacheCreate=0
+2026-02-28T08:00:21.877Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:22.241Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:22.595Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:22.936Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:23.614Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:24.000Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:24.959Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:25.185Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:25.687Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:36.603Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T08:00:36.603Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T08:00:36.603Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T08:00:36.603Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T08:00:36.604Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-28T08:00:36.604Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T08:00:36.604Z [DEBUG] Matched 3 unique hooks for query "no match query" (3 before deduplication)
+2026-02-28T08:00:36.625Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:36.667Z [DEBUG] High write ratio: blit=0, write=20338 (100.0% writes), screen=274x171
+2026-02-28T08:00:36.722Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:00:36.722Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:00:36.722Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:00:36.723Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:00:36.723Z [DEBUG] Hook UserPromptSubmit (UserPromptSubmit) success:
+{}
+2026-02-28T08:00:36.803Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:36.964Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:36.965Z [DEBUG] [useDeferredValue] Messages deferred by 2 (103→105)
+2026-02-28T08:00:36.969Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:36.978Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:00:36.983Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:00:36.984Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:00:36.984Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:00:36.984Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:00:36.989Z [DEBUG] [useDeferredValue] Messages deferred by 2 (103→105)
+2026-02-28T08:00:36.997Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:37.046Z [DEBUG] High write ratio: blit=0, write=20338 (100.0% writes), screen=274x171
+2026-02-28T08:00:37.494Z [DEBUG] High write ratio: blit=2394, write=19073 (88.8% writes), screen=274x171
+2026-02-28T08:00:39.123Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:00:42.846Z [DEBUG] High write ratio: blit=2394, write=19098 (88.9% writes), screen=274x171
+2026-02-28T08:00:44.410Z [DEBUG] High write ratio: blit=2394, write=19098 (88.9% writes), screen=274x171
+2026-02-28T08:00:52.756Z [DEBUG] [useDeferredValue] Messages deferred by 1 (105→106)
+2026-02-28T08:00:52.759Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:52.831Z [DEBUG] High write ratio: blit=0, write=21941 (100.0% writes), screen=302x171
+2026-02-28T08:00:53.062Z [DEBUG] [useDeferredValue] Messages deferred by 1 (106→107)
+2026-02-28T08:00:53.064Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:53.070Z [DEBUG] [useDeferredValue] Messages deferred by 1 (106→107)
+2026-02-28T08:00:53.079Z [DEBUG] [useDeferredValue] Messages deferred by 1 (106→107)
+2026-02-28T08:00:53.120Z [DEBUG] High write ratio: blit=0, write=21948 (100.0% writes), screen=302x171
+2026-02-28T08:00:53.182Z [DEBUG] High write ratio: blit=0, write=22047 (100.0% writes), screen=304x171
+2026-02-28T08:00:54.629Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:00:54.630Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:00:54.630Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:00:54.630Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:00:54.636Z [DEBUG] [useDeferredValue] Messages deferred by 4 (107→111)
+2026-02-28T08:00:54.643Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:54.682Z [DEBUG] High write ratio: blit=0, write=22047 (100.0% writes), screen=304x171
+2026-02-28T08:00:54.700Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:00:54.700Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:00:54.700Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:00:54.712Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:00:54.712Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:00:54.743Z [DEBUG] High write ratio: blit=0, write=22196 (100.0% writes), screen=307x171
+2026-02-28T08:00:54.775Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:54.800Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:54.821Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:00:54.825Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:54.973Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:00:54.974Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:00:54.974Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:00:54.974Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:00:54.974Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:00:54.976Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:00:54.976Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:00:54.976Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:00:54.981Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:54.991Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:55.021Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:00:55.021Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:00:55.021Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:00:55.028Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:00:55.028Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:00:55.135Z [DEBUG] [useDeferredValue] Messages deferred by 8 (111→119)
+2026-02-28T08:00:55.141Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:55.173Z [DEBUG] High write ratio: blit=0, write=22196 (100.0% writes), screen=307x171
+2026-02-28T08:00:55.176Z [DEBUG] [useDeferredValue] Messages deferred by 8 (111→119)
+2026-02-28T08:00:55.231Z [DEBUG] High write ratio: blit=0, write=23186 (100.0% writes), screen=314x171
+2026-02-28T08:00:55.353Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:00:55.354Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:00:55.354Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:00:55.354Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:00:55.364Z [DEBUG] [useDeferredValue] Messages deferred by 4 (119→123)
+2026-02-28T08:00:55.371Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:55.407Z [DEBUG] High write ratio: blit=0, write=23186 (100.0% writes), screen=314x171
+2026-02-28T08:00:55.424Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:00:55.424Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:00:55.424Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:00:55.424Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:00:55.424Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:00:55.484Z [DEBUG] High write ratio: blit=0, write=23329 (100.0% writes), screen=317x171
+2026-02-28T08:00:55.495Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:55.518Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:55.532Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:00:55.534Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:55.558Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:00:55.682Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:00:55.683Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:00:55.683Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:00:55.683Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:00:55.683Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:00:55.684Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:00:55.684Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:00:55.684Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:00:55.690Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:55.710Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:55.738Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:00:55.738Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:00:55.738Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:00:55.747Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:00:55.747Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:00:55.927Z [DEBUG] [useDeferredValue] Messages deferred by 8 (123→131)
+2026-02-28T08:00:55.933Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:55.967Z [DEBUG] High write ratio: blit=0, write=23329 (100.0% writes), screen=317x171
+2026-02-28T08:00:55.974Z [DEBUG] [useDeferredValue] Messages deferred by 8 (123→131)
+2026-02-28T08:00:56.013Z [DEBUG] High write ratio: blit=0, write=23421 (100.0% writes), screen=318x171
+2026-02-28T08:00:56.197Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:00:56.285Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:00:56.286Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:00:56.286Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:00:56.286Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:00:56.291Z [DEBUG] [useDeferredValue] Messages deferred by 1 (131→132)
+2026-02-28T08:00:56.299Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:56.333Z [DEBUG] High write ratio: blit=0, write=23421 (100.0% writes), screen=318x171
+2026-02-28T08:00:56.344Z [DEBUG] [useDeferredValue] Messages deferred by 4 (131→135)
+2026-02-28T08:00:56.353Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:56.391Z [DEBUG] High write ratio: blit=0, write=23421 (100.0% writes), screen=318x171
+2026-02-28T08:00:56.393Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:00:56.393Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:00:56.393Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:00:56.393Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:00:56.393Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:00:56.410Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:56.453Z [DEBUG] High write ratio: blit=0, write=23540 (100.0% writes), screen=321x171
+2026-02-28T08:00:56.455Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:56.473Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:00:56.476Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:56.570Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:00:56.570Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:00:56.571Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:00:56.571Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:00:56.571Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:00:56.572Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:00:56.572Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:00:56.572Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:00:56.577Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:56.589Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:00:56.619Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:00:56.619Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:00:56.619Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:00:56.625Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:00:56.625Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:00:56.627Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T08:00:56.627Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T08:00:56.627Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T08:00:56.627Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T08:00:56.629Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:00:56.632Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:00:56.633Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:00:56.633Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:00:56.633Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:00:56.636Z [DEBUG] [useDeferredValue] Messages deferred by 9 (135→144)
+2026-02-28T08:00:56.644Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:00:56.673Z [DEBUG] High write ratio: blit=0, write=23540 (100.0% writes), screen=321x171
+2026-02-28T08:00:56.719Z [DEBUG] High write ratio: blit=0, write=23903 (100.0% writes), screen=324x171
+2026-02-28T08:00:57.032Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:00:59.549Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:00.751Z [DEBUG] [useDeferredValue] Messages deferred by 1 (144→145)
+2026-02-28T08:01:00.754Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:00.757Z [DEBUG] [useDeferredValue] Messages deferred by 1 (144→145)
+2026-02-28T08:01:00.796Z [DEBUG] High write ratio: blit=0, write=23903 (100.0% writes), screen=324x171
+2026-02-28T08:01:00.803Z [DEBUG] [useDeferredValue] Messages deferred by 1 (144→145)
+2026-02-28T08:01:00.857Z [DEBUG] High write ratio: blit=0, write=24011 (100.0% writes), screen=326x171
+2026-02-28T08:01:01.790Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:01.791Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:01.791Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:01.791Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:01.795Z [DEBUG] [useDeferredValue] Messages deferred by 4 (145→149)
+2026-02-28T08:01:01.804Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:01.839Z [DEBUG] High write ratio: blit=0, write=24011 (100.0% writes), screen=326x171
+2026-02-28T08:01:01.841Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:01.841Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:01.841Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:01.850Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:01.850Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:01.898Z [DEBUG] High write ratio: blit=0, write=24136 (100.0% writes), screen=329x171
+2026-02-28T08:01:01.908Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:01.927Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:01.938Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:01.940Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:02.071Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:02.071Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:02.072Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:02.072Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:02.072Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:02.073Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:02.073Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:02.073Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:02.078Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:02.089Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:02.117Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:02.117Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:02.117Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:02.120Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:02.120Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:02.335Z [DEBUG] [useDeferredValue] Messages deferred by 8 (149→157)
+2026-02-28T08:01:02.344Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:02.382Z [DEBUG] High write ratio: blit=0, write=24136 (100.0% writes), screen=329x171
+2026-02-28T08:01:02.397Z [DEBUG] [useDeferredValue] Messages deferred by 8 (149→157)
+2026-02-28T08:01:02.464Z [DEBUG] High write ratio: blit=0, write=24378 (100.0% writes), screen=332x171
+2026-02-28T08:01:02.664Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:02.665Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:02.665Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:02.665Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:02.669Z [DEBUG] [useDeferredValue] Messages deferred by 4 (157→161)
+2026-02-28T08:01:02.677Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:02.716Z [DEBUG] High write ratio: blit=0, write=24378 (100.0% writes), screen=332x171
+2026-02-28T08:01:02.717Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:02.717Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:02.717Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:02.735Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:02.735Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:02.750Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:02.788Z [DEBUG] High write ratio: blit=0, write=24503 (100.0% writes), screen=335x171
+2026-02-28T08:01:02.803Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:02.810Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:02.819Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:02.821Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:02.954Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:02.954Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:02.954Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:02.954Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:02.954Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:02.955Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:02.955Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:02.955Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:02.960Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:02.972Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:02.999Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:02.999Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:02.999Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:03.003Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:03.003Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:03.322Z [DEBUG] [useDeferredValue] Messages deferred by 8 (161→169)
+2026-02-28T08:01:03.332Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:03.376Z [DEBUG] High write ratio: blit=0, write=24503 (100.0% writes), screen=335x171
+2026-02-28T08:01:03.379Z [DEBUG] [useDeferredValue] Messages deferred by 8 (161→169)
+2026-02-28T08:01:03.445Z [DEBUG] High write ratio: blit=0, write=24612 (100.0% writes), screen=337x171
+2026-02-28T08:01:03.523Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:03.830Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:03.831Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:03.831Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:03.831Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:03.836Z [DEBUG] [useDeferredValue] Messages deferred by 1 (169→170)
+2026-02-28T08:01:03.848Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:03.898Z [DEBUG] High write ratio: blit=0, write=24612 (100.0% writes), screen=337x171
+2026-02-28T08:01:03.899Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:03.899Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:03.899Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:03.904Z [DEBUG] [useDeferredValue] Messages deferred by 4 (169→173)
+2026-02-28T08:01:03.923Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:03.964Z [DEBUG] High write ratio: blit=0, write=24612 (100.0% writes), screen=337x171
+2026-02-28T08:01:03.965Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:03.965Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:04.011Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:04.011Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:04.027Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:04.030Z [DEBUG] [useDeferredValue] Messages deferred by 4 (169→173)
+2026-02-28T08:01:04.033Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:04.096Z [DEBUG] High write ratio: blit=0, write=24730 (100.0% writes), screen=340x171
+2026-02-28T08:01:04.123Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:04.124Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:04.124Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:04.124Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:04.125Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:04.127Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:04.127Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:04.127Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:04.133Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:04.145Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:04.170Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:04.170Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:04.170Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:04.176Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:04.176Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:04.178Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T08:01:04.178Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T08:01:04.178Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T08:01:04.178Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T08:01:04.180Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:01:04.183Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:04.184Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:04.184Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:04.184Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:04.186Z [DEBUG] [useDeferredValue] Messages deferred by 8 (173→181)
+2026-02-28T08:01:04.194Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:04.222Z [DEBUG] High write ratio: blit=0, write=24730 (100.0% writes), screen=340x171
+2026-02-28T08:01:04.299Z [DEBUG] High write ratio: blit=0, write=24802 (100.0% writes), screen=341x171
+2026-02-28T08:01:04.629Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:06.292Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:06.340Z [DEBUG] High write ratio: blit=0, write=24802 (100.0% writes), screen=341x171
+2026-02-28T08:01:07.985Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:07.985Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:07.985Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:07.986Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:07.989Z [DEBUG] [useDeferredValue] Messages deferred by 1 (181→182)
+2026-02-28T08:01:07.998Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:08.033Z [DEBUG] High write ratio: blit=0, write=24802 (100.0% writes), screen=341x171
+2026-02-28T08:01:08.035Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:08.035Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:08.035Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:08.046Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:08.046Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:08.047Z [DEBUG] [useDeferredValue] Messages deferred by 4 (181→185)
+2026-02-28T08:01:08.055Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:08.063Z [DEBUG] [useDeferredValue] Messages deferred by 4 (181→185)
+2026-02-28T08:01:08.065Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:08.093Z [DEBUG] High write ratio: blit=0, write=24802 (100.0% writes), screen=341x171
+2026-02-28T08:01:08.105Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:08.161Z [DEBUG] High write ratio: blit=0, write=24904 (100.0% writes), screen=344x171
+2026-02-28T08:01:08.164Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:08.188Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:08.192Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:08.325Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:08.326Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:08.327Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:08.327Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:08.327Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:08.328Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:08.328Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:08.329Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:08.336Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:08.356Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:08.382Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:08.382Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:08.382Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:08.396Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:08.396Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:08.397Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T08:01:08.397Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T08:01:08.397Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T08:01:08.397Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T08:01:08.399Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:01:08.403Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:08.403Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:08.403Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:08.403Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:08.407Z [DEBUG] [useDeferredValue] Messages deferred by 8 (185→193)
+2026-02-28T08:01:08.418Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:08.452Z [DEBUG] High write ratio: blit=0, write=24904 (100.0% writes), screen=344x171
+2026-02-28T08:01:08.529Z [DEBUG] High write ratio: blit=0, write=24963 (100.0% writes), screen=345x171
+2026-02-28T08:01:09.172Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:10.465Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:11.948Z [DEBUG] [useDeferredValue] Messages deferred by 1 (193→194)
+2026-02-28T08:01:11.950Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:11.955Z [DEBUG] [useDeferredValue] Messages deferred by 1 (193→194)
+2026-02-28T08:01:12.006Z [DEBUG] High write ratio: blit=0, write=25132 (100.0% writes), screen=347x171
+2026-02-28T08:01:16.792Z [DEBUG] High write ratio: blit=2394, write=23867 (90.9% writes), screen=347x171
+2026-02-28T08:01:17.311Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:17.311Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:17.311Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:17.312Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:17.320Z [DEBUG] [useDeferredValue] Messages deferred by 4 (194→198)
+2026-02-28T08:01:17.341Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:17.424Z [DEBUG] High write ratio: blit=0, write=25132 (100.0% writes), screen=347x171
+2026-02-28T08:01:17.426Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:17.426Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:17.426Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:17.426Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:17.426Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:17.437Z [DEBUG] [useDeferredValue] Messages deferred by 4 (194→198)
+2026-02-28T08:01:17.519Z [DEBUG] High write ratio: blit=0, write=25611 (100.0% writes), screen=352x171
+2026-02-28T08:01:17.522Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:17.533Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:17.545Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:17.548Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:17.654Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:17.992Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:18.203Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:18.204Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:18.204Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:18.204Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:18.204Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:18.206Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:18.206Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:18.206Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:18.210Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:18.221Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:18.249Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:18.249Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:18.249Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:18.254Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:18.254Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:18.671Z [DEBUG] [useDeferredValue] Messages deferred by 8 (198→206)
+2026-02-28T08:01:18.678Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:18.682Z [DEBUG] [useDeferredValue] Messages deferred by 8 (198→206)
+2026-02-28T08:01:18.716Z [DEBUG] High write ratio: blit=0, write=25611 (100.0% writes), screen=352x171
+2026-02-28T08:01:18.719Z [DEBUG] [useDeferredValue] Messages deferred by 8 (198→206)
+2026-02-28T08:01:18.749Z [DEBUG] High write ratio: blit=2394, write=24346 (91.0% writes), screen=352x171
+2026-02-28T08:01:18.755Z [DEBUG] [useDeferredValue] Messages deferred by 8 (198→206)
+2026-02-28T08:01:18.830Z [DEBUG] High write ratio: blit=0, write=26972 (100.0% writes), screen=372x171
+2026-02-28T08:01:18.987Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:19.335Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:19.337Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:19.337Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:19.337Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:19.353Z [DEBUG] [useDeferredValue] Messages deferred by 4 (206→210)
+2026-02-28T08:01:19.371Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:19.420Z [DEBUG] High write ratio: blit=0, write=26973 (100.0% writes), screen=372x171
+2026-02-28T08:01:19.445Z [DEBUG] [useDeferredValue] Messages deferred by 5 (206→211)
+2026-02-28T08:01:19.459Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:19.516Z [DEBUG] High write ratio: blit=0, write=26973 (100.0% writes), screen=372x171
+2026-02-28T08:01:19.517Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:19.517Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:19.517Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:19.518Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:19.519Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:19.640Z [DEBUG] High write ratio: blit=0, write=27741 (100.0% writes), screen=381x171
+2026-02-28T08:01:19.643Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:19.664Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:19.687Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:19.690Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:19.860Z [DEBUG] [useDeferredValue] Messages deferred by 1 (211→212)
+2026-02-28T08:01:19.862Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:19.868Z [DEBUG] [useDeferredValue] Messages deferred by 1 (211→212)
+2026-02-28T08:01:19.931Z [DEBUG] High write ratio: blit=0, write=27741 (100.0% writes), screen=381x171
+2026-02-28T08:01:20.010Z [DEBUG] High write ratio: blit=0, write=27895 (100.0% writes), screen=384x171
+2026-02-28T08:01:20.489Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:20.490Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:20.490Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:20.490Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:20.490Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:20.492Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:20.492Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:20.492Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:20.497Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:20.510Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:20.543Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:20.543Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:20.543Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:20.555Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:20.555Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:20.556Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:20.556Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:20.556Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:20.556Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:20.582Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:20.630Z [DEBUG] High write ratio: blit=0, write=27895 (100.0% writes), screen=384x171
+2026-02-28T08:01:20.631Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:20.631Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:20.631Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:20.631Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:20.631Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:20.684Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:20.700Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:20.705Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:20.707Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:20.955Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:21.063Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:21.064Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:21.064Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:21.064Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:21.064Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:21.065Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:21.065Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:21.065Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:21.069Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:21.081Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:21.113Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:21.113Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:21.113Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:21.119Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:21.119Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:21.120Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:21.120Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:21.120Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:21.120Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:21.137Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:21.177Z [DEBUG] High write ratio: blit=0, write=27895 (100.0% writes), screen=384x171
+2026-02-28T08:01:21.178Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:21.178Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:21.178Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:21.178Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:21.178Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:21.235Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:21.253Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:21.258Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:21.260Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:21.444Z [DEBUG] [useDeferredValue] Messages deferred by 22 (212→234)
+2026-02-28T08:01:21.458Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:21.502Z [DEBUG] High write ratio: blit=0, write=27895 (100.0% writes), screen=384x171
+2026-02-28T08:01:21.514Z [DEBUG] [useDeferredValue] Messages deferred by 22 (212→234)
+2026-02-28T08:01:21.526Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:21.527Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:21.527Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:21.527Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:21.527Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:21.528Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:21.528Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:21.528Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:21.533Z [DEBUG] [useDeferredValue] Messages deferred by 22 (212→234)
+2026-02-28T08:01:21.535Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:21.554Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:21.627Z [DEBUG] High write ratio: blit=0, write=29957 (100.0% writes), screen=414x171
+2026-02-28T08:01:21.635Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:21.635Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:21.635Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:21.636Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:21.636Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:21.643Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:21.644Z [DEBUG] [useDeferredValue] Messages deferred by 8 (234→242)
+2026-02-28T08:01:21.657Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:21.699Z [DEBUG] High write ratio: blit=0, write=29957 (100.0% writes), screen=414x171
+2026-02-28T08:01:21.708Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:21.708Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:21.708Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:21.708Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:21.713Z [DEBUG] [useDeferredValue] Messages deferred by 12 (234→246)
+2026-02-28T08:01:21.727Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:21.774Z [DEBUG] High write ratio: blit=0, write=29957 (100.0% writes), screen=414x171
+2026-02-28T08:01:21.775Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:21.775Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:21.775Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:21.775Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:21.775Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:21.858Z [DEBUG] High write ratio: blit=0, write=30553 (100.0% writes), screen=422x171
+2026-02-28T08:01:21.862Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:21.862Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:21.871Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:21.882Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:22.269Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:22.269Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:22.269Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:22.269Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:22.269Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:22.270Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:22.270Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:22.270Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:22.274Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:22.284Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:22.312Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:22.312Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:22.312Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:22.322Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:22.322Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:22.338Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:22.859Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:23.948Z [DEBUG] [useDeferredValue] Messages deferred by 8 (246→254)
+2026-02-28T08:01:23.966Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:24.010Z [DEBUG] High write ratio: blit=0, write=30553 (100.0% writes), screen=422x171
+2026-02-28T08:01:24.018Z [DEBUG] [useDeferredValue] Messages deferred by 8 (246→254)
+2026-02-28T08:01:24.074Z [DEBUG] High write ratio: blit=0, write=31265 (100.0% writes), screen=433x171
+2026-02-28T08:01:24.265Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:24.266Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:24.266Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:24.266Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:24.273Z [DEBUG] [useDeferredValue] Messages deferred by 1 (254→255)
+2026-02-28T08:01:24.292Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:24.356Z [DEBUG] High write ratio: blit=0, write=31265 (100.0% writes), screen=433x171
+2026-02-28T08:01:24.358Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:24.358Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:24.358Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:24.358Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:24.358Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:24.370Z [DEBUG] [useDeferredValue] Messages deferred by 4 (254→258)
+2026-02-28T08:01:24.388Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:24.447Z [DEBUG] High write ratio: blit=0, write=31265 (100.0% writes), screen=433x171
+2026-02-28T08:01:24.449Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:24.449Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:24.461Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:24.462Z [DEBUG] [useDeferredValue] Messages deferred by 4 (254→258)
+2026-02-28T08:01:24.471Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:24.569Z [DEBUG] High write ratio: blit=0, write=31703 (100.0% writes), screen=438x171
+2026-02-28T08:01:25.086Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:25.087Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:25.087Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:25.087Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:25.087Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:25.088Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:25.088Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:25.088Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:25.094Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:25.107Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:25.145Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:25.145Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:25.145Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:25.157Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:25.157Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:25.159Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T08:01:25.159Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T08:01:25.159Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T08:01:25.159Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T08:01:25.161Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:01:25.166Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:25.167Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:25.167Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:25.167Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:25.171Z [DEBUG] [useDeferredValue] Messages deferred by 9 (258→267)
+2026-02-28T08:01:25.184Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:25.235Z [DEBUG] High write ratio: blit=0, write=31703 (100.0% writes), screen=438x171
+2026-02-28T08:01:25.374Z [DEBUG] High write ratio: blit=0, write=32878 (100.0% writes), screen=456x171
+2026-02-28T08:01:25.625Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:27.185Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:28.187Z [DEBUG] [useDeferredValue] Messages deferred by 1 (267→268)
+2026-02-28T08:01:28.189Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:28.261Z [DEBUG] High write ratio: blit=0, write=32970 (100.0% writes), screen=458x171
+2026-02-28T08:01:28.328Z [DEBUG] High write ratio: blit=0, write=32970 (100.0% writes), screen=458x171
+2026-02-28T08:01:28.974Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:28.975Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:28.975Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:28.975Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:28.979Z [DEBUG] [useDeferredValue] Messages deferred by 1 (268→269)
+2026-02-28T08:01:28.992Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:29.044Z [DEBUG] High write ratio: blit=0, write=32970 (100.0% writes), screen=458x171
+2026-02-28T08:01:29.046Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:29.046Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:29.046Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:29.046Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:29.046Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:29.055Z [DEBUG] [useDeferredValue] Messages deferred by 4 (268→272)
+2026-02-28T08:01:29.065Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:29.098Z [DEBUG] High write ratio: blit=0, write=32970 (100.0% writes), screen=458x171
+2026-02-28T08:01:29.099Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:29.099Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:29.104Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:29.110Z [DEBUG] [useDeferredValue] Messages deferred by 4 (268→272)
+2026-02-28T08:01:29.111Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:29.172Z [DEBUG] High write ratio: blit=0, write=33019 (100.0% writes), screen=461x171
+2026-02-28T08:01:29.184Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:29.184Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:29.185Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:29.185Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:29.185Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:29.187Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:29.187Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:29.187Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:29.190Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:29.203Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:29.232Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:29.232Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:29.232Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:29.240Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:29.240Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:29.241Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T08:01:29.241Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T08:01:29.241Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T08:01:29.241Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T08:01:29.242Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:01:29.247Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:29.247Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:29.247Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:29.247Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:29.250Z [DEBUG] [useDeferredValue] Messages deferred by 8 (272→280)
+2026-02-28T08:01:29.261Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:29.308Z [DEBUG] High write ratio: blit=0, write=33019 (100.0% writes), screen=461x171
+2026-02-28T08:01:29.393Z [DEBUG] High write ratio: blit=0, write=34028 (100.0% writes), screen=471x171
+2026-02-28T08:01:29.653Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:31.197Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:31.638Z [DEBUG] [useDeferredValue] Messages deferred by 1 (280→281)
+2026-02-28T08:01:31.639Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:31.641Z [DEBUG] [useDeferredValue] Messages deferred by 1 (280→281)
+2026-02-28T08:01:31.694Z [DEBUG] High write ratio: blit=0, write=34028 (100.0% writes), screen=471x171
+2026-02-28T08:01:31.778Z [DEBUG] High write ratio: blit=0, write=34088 (100.0% writes), screen=473x171
+2026-02-28T08:01:32.306Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:32.306Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:32.306Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:32.306Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:32.312Z [DEBUG] [useDeferredValue] Messages deferred by 4 (281→285)
+2026-02-28T08:01:32.327Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:32.400Z [DEBUG] High write ratio: blit=0, write=34088 (100.0% writes), screen=473x171
+2026-02-28T08:01:32.401Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:32.401Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:32.401Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:32.402Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:32.402Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:32.503Z [DEBUG] High write ratio: blit=0, write=34144 (100.0% writes), screen=476x171
+2026-02-28T08:01:32.506Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:32.506Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:32.512Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:32.520Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:32.593Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:32.593Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:32.593Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:32.593Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:32.594Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:32.595Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:32.595Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:32.595Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:32.599Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:32.609Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:32.643Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:32.643Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:32.643Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:32.658Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:32.658Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:33.035Z [DEBUG] [useDeferredValue] Messages deferred by 8 (285→293)
+2026-02-28T08:01:33.056Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:33.104Z [DEBUG] High write ratio: blit=0, write=34144 (100.0% writes), screen=476x171
+2026-02-28T08:01:33.106Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:33.106Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:33.106Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:33.106Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:33.110Z [DEBUG] [useDeferredValue] Messages deferred by 9 (285→294)
+2026-02-28T08:01:33.122Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:33.174Z [DEBUG] High write ratio: blit=0, write=34144 (100.0% writes), screen=476x171
+2026-02-28T08:01:33.175Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:33.175Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:33.175Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:33.176Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:33.176Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:33.187Z [DEBUG] [useDeferredValue] Messages deferred by 12 (285→297)
+2026-02-28T08:01:33.203Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:33.245Z [DEBUG] High write ratio: blit=0, write=34144 (100.0% writes), screen=476x171
+2026-02-28T08:01:33.247Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:33.247Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:33.252Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:33.260Z [DEBUG] [useDeferredValue] Messages deferred by 12 (285→297)
+2026-02-28T08:01:33.262Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:33.343Z [DEBUG] High write ratio: blit=0, write=34915 (100.0% writes), screen=492x171
+2026-02-28T08:01:33.354Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:33.355Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:33.355Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:33.355Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:33.355Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:33.356Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:33.356Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:33.356Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:33.362Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:33.381Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:33.405Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:33.405Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:33.405Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:33.415Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:33.415Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:33.416Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T08:01:33.416Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T08:01:33.416Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T08:01:33.416Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T08:01:33.418Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:01:33.421Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:33.422Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:33.422Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:33.422Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:33.425Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:33.426Z [DEBUG] [useDeferredValue] Messages deferred by 8 (297→305)
+2026-02-28T08:01:33.435Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:33.465Z [DEBUG] High write ratio: blit=0, write=34915 (100.0% writes), screen=492x171
+2026-02-28T08:01:33.535Z [DEBUG] High write ratio: blit=0, write=35588 (100.0% writes), screen=506x171
+2026-02-28T08:01:33.793Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:35.768Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:35.817Z [DEBUG] High write ratio: blit=0, write=35588 (100.0% writes), screen=506x171
+2026-02-28T08:01:36.763Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T08:01:36.764Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T08:01:36.764Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T08:01:36.764Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T08:01:36.772Z [DEBUG] [useDeferredValue] Messages deferred by 1 (305→306)
+2026-02-28T08:01:36.788Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:36.848Z [DEBUG] High write ratio: blit=0, write=35588 (100.0% writes), screen=506x171
+2026-02-28T08:01:36.850Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:36.850Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:36.850Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:36.850Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:36.850Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T08:01:36.876Z [DEBUG] [useDeferredValue] Messages deferred by 4 (305→309)
+2026-02-28T08:01:36.888Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:36.939Z [DEBUG] High write ratio: blit=0, write=35588 (100.0% writes), screen=506x171
+2026-02-28T08:01:36.941Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:36.954Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:36.960Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T08:01:36.961Z [DEBUG] [useDeferredValue] Messages deferred by 4 (305→309)
+2026-02-28T08:01:36.963Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:37.048Z [DEBUG] High write ratio: blit=0, write=35710 (100.0% writes), screen=509x171
+2026-02-28T08:01:37.141Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T08:01:37.142Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:37.142Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:37.142Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:37.143Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:37.145Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T08:01:37.145Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T08:01:37.145Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T08:01:37.151Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:37.172Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:37.195Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:37.195Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:37.195Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:37.201Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:37.201Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T08:01:37.203Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T08:01:37.203Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T08:01:37.204Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T08:01:37.204Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T08:01:37.206Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:01:37.210Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:37.211Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:37.211Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:37.211Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:37.215Z [DEBUG] [useDeferredValue] Messages deferred by 8 (309→317)
+2026-02-28T08:01:37.229Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:37.271Z [DEBUG] High write ratio: blit=0, write=35710 (100.0% writes), screen=509x171
+2026-02-28T08:01:37.370Z [DEBUG] High write ratio: blit=0, write=37640 (100.0% writes), screen=563x171
+2026-02-28T08:01:37.743Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:39.310Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:44.314Z [DEBUG] [useDeferredValue] Messages deferred by 1 (317→318)
+2026-02-28T08:01:44.316Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:44.452Z [DEBUG] High write ratio: blit=0, write=38405 (100.0% writes), screen=579x171
+2026-02-28T08:01:44.466Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-28T08:01:44.466Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T08:01:44.468Z [DEBUG] Matched 3 unique hooks for query "no match query" (3 before deduplication)
+2026-02-28T08:01:44.470Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-28T08:01:44.481Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T08:01:44.481Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T08:01:44.481Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T08:01:44.481Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T08:01:44.493Z [DEBUG] [useDeferredValue] Messages deferred by 3 (318→321)
+2026-02-28T08:01:44.499Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:44.535Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:44.635Z [DEBUG] High write ratio: blit=0, write=38431 (100.0% writes), screen=579x171
+2026-02-28T08:01:44.638Z [DEBUG] [useDeferredValue] Messages deferred by 1 (321→322)
+2026-02-28T08:01:44.642Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:44.648Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T08:01:44.648Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T08:01:44.648Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T08:01:44.648Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T08:01:44.648Z [DEBUG] Hook Stop (Stop) success:
+{}
+2026-02-28T08:01:44.655Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:44.664Z [DEBUG] [useDeferredValue] Messages deferred by 5 (321→326)
+2026-02-28T08:01:44.683Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:44.754Z [DEBUG] High write ratio: blit=0, write=38369 (100.0% writes), screen=579x171
+2026-02-28T08:01:46.550Z [DEBUG] Stream started - received first chunk
+2026-02-28T08:01:46.825Z [DEBUG] Forked agent [prompt_suggestion] received message: type=assistant
+2026-02-28T08:01:46.890Z [DEBUG] Getting matching hook commands for SubagentStop with query:
+2026-02-28T08:01:46.890Z [DEBUG] Found 1 hook matchers in settings
+2026-02-28T08:01:46.890Z [DEBUG] Matched 1 unique hooks for query "no match query" (1 before deduplication)
+2026-02-28T08:01:46.890Z [DEBUG] Forked agent [prompt_suggestion] received message: type=progress
+2026-02-28T08:01:46.892Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T08:01:46.900Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T08:01:46.900Z [DEBUG] Forked agent [prompt_suggestion] received message: type=attachment
+2026-02-28T08:01:46.900Z [DEBUG] Forked agent [prompt_suggestion] received message: type=system
+2026-02-28T08:01:46.900Z [DEBUG] Forked agent [prompt_suggestion] finished: 4 messages, types=[assistant, progress, attachment, system], totalUsage: input=295 output=8 cacheRead=69789 cacheCreate=259
+2026-02-28T08:01:46.901Z [DEBUG] [Speculation] enabled=false
+2026-02-28T08:02:00.833Z [DEBUG] High write ratio: blit=2394, write=37118 (93.9% writes), screen=579x171

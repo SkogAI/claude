@@ -1,0 +1,77 @@
+/* ============================================================
+   FOG OF WAR — Visual overlay for the enemy grid
+   ============================================================ */
+
+/* -- Fog noise texture animation -- */
+@keyframes fogNoise {
+  0%   { background-position: 0% 0%; }
+  25%  { background-position: 50% 30%; }
+  50%  { background-position: 100% 60%; }
+  75%  { background-position: 30% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* -- Fog lift animation -- */
+@keyframes fogReveal {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0.4;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* -- Fogged cell overlay -- */
+.cell.fogged {
+  cursor: crosshair;
+}
+
+.cell.fogged::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background:
+    rgba(6, 14, 24, 0.92);
+  background-image:
+    repeating-conic-gradient(
+      rgba(255, 255, 255, 0.012) 0%,
+      transparent 0.8%,
+      transparent 1.6%,
+      rgba(119, 141, 169, 0.015) 2.4%
+    );
+  background-size: 60px 60px;
+  animation: fogNoise 6s linear infinite;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Show the cell is clickable on hover */
+.cell.fogged:hover::before {
+  background-color: rgba(6, 14, 24, 0.82);
+}
+
+/* -- Fog revealing animation -- */
+.cell.fog-revealing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: rgba(6, 14, 24, 0.92);
+  pointer-events: none;
+  animation: fogReveal 0.5s ease-out forwards;
+}
+
+/* Reduced motion support */
+.reduced-motion .cell.fogged::before {
+    animation: none;
+}
+.reduced-motion .cell.fog-revealing::before {
+    animation: none;
+}

@@ -1,0 +1,809 @@
+2026-02-28T05:40:03.980Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-28T05:40:03.981Z [DEBUG] MDM settings load completed in 1ms
+2026-02-28T05:40:03.998Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-28T05:40:03.999Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-28T05:40:03.999Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-28T05:40:03.999Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-28T05:40:04.007Z [DEBUG] Applying permission update: Adding 123 allow rule(s) to destination 'userSettings': ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)","Bash(python3:*)"]
+2026-02-28T05:40:04.008Z [DEBUG] Applying permission update: Adding 1 directory with destination 'cliArg': ["/home/skogix/claude"]
+2026-02-28T05:40:04.009Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-28T05:40:04.013Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-28T05:40:04.014Z [DEBUG] [STARTUP] Running setup()...
+2026-02-28T05:40:04.016Z [DEBUG] [TeammateModeSnapshot] Captured from config: tmux
+2026-02-28T05:40:04.018Z [DEBUG] Loading skills from: managed=/etc/claude-code/.claude/skills, user=/home/skogix/.claude/skills, project=[]
+2026-02-28T05:40:04.019Z [DEBUG] Error log sink initialized
+2026-02-28T05:40:04.030Z [DEBUG] [STARTUP] setup() completed in 16ms
+2026-02-28T05:40:04.030Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-28T05:40:04.034Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default
+2026-02-28T05:40:04.038Z [DEBUG] Loaded 21 installed plugins from /home/skogix/.claude/plugins/installed_plugins.json
+2026-02-28T05:40:04.040Z [DEBUG] [Claude in Chrome] Extension fcoeoabgfenejglbffodgkkbkcdhcgfn found in chrome Default
+2026-02-28T05:40:04.046Z [DEBUG] Git remote URL: https://github.com/SkogAI/gt.git
+2026-02-28T05:40:04.046Z [DEBUG] Parsed repository: github.com/SkogAI/gt from URL: https://github.com/SkogAI/gt.git
+2026-02-28T05:40:04.058Z [DEBUG] Loading plugin agent-architecture from source: "./"
+2026-02-28T05:40:04.067Z [DEBUG] Loading plugin feature-dev from source: "./plugins/feature-dev"
+2026-02-28T05:40:04.072Z [DEBUG] Loading plugin github from source: "./external_plugins/github"
+2026-02-28T05:40:04.073Z [DEBUG] Loading plugin context-engineering-fundamentals from source: "./"
+2026-02-28T05:40:04.073Z [DEBUG] Loading plugin cognitive-architecture from source: "./"
+2026-02-28T05:40:04.078Z [DEBUG] Loading plugin context7 from source: "./external_plugins/context7"
+2026-02-28T05:40:04.081Z [DEBUG] Loading plugin code-review from source: "./plugins/code-review"
+2026-02-28T05:40:04.084Z [DEBUG] Loading plugin claude-md-management from source: "./plugins/claude-md-management"
+2026-02-28T05:40:04.084Z [DEBUG] Loading plugin agent-development from source: "./"
+2026-02-28T05:40:04.087Z [DEBUG] Loading plugin serena from source: "./external_plugins/serena"
+2026-02-28T05:40:04.087Z [DEBUG] Loading plugin agent-evaluation from source: "./"
+2026-02-28T05:40:04.089Z [DEBUG] Loading plugin hookify from source: "./plugins/hookify"
+2026-02-28T05:40:04.113Z [DEBUG] Loading plugin claude-code-setup from source: "./plugins/claude-code-setup"
+2026-02-28T05:40:04.115Z [DEBUG] Loading plugin pyright-lsp from source: "./plugins/pyright-lsp"
+2026-02-28T05:40:04.116Z [DEBUG] Loading plugin greptile from source: "./external_plugins/greptile"
+2026-02-28T05:40:04.117Z [DEBUG] Loading plugin supabase from source: "./external_plugins/supabase"
+2026-02-28T05:40:04.119Z [DEBUG] Loading plugin code-simplifier from source: "./plugins/code-simplifier"
+2026-02-28T05:40:04.120Z [DEBUG] Loading plugin slack from source: {"source":"url","url":"https://github.com/slackapi/slack-mcp-plugin.git"}
+2026-02-28T05:40:04.120Z [DEBUG] Using provided version for slack@claude-plugins-official: 1.0.0
+2026-02-28T05:40:04.122Z [DEBUG] Loading plugin playground from source: "./plugins/playground"
+2026-02-28T05:40:04.123Z [DEBUG] Loading plugin skill-creator from source: "./plugins/skill-creator"
+2026-02-28T05:40:04.124Z [DEBUG] Loading plugin core from source: "./plugins/core"
+2026-02-28T05:40:04.124Z [WARN] Failed to parse YAML frontmatter in /home/skogix/.claude/agents/doc-writer.md: YAML Parse error: Unexpected token
+2026-02-28T05:40:04.125Z [DEBUG] Using versioned cached plugin slack from /home/skogix/.claude/plugins/cache/claude-plugins-official/slack/1.0.0
+2026-02-28T05:40:04.126Z [DEBUG] Loaded 11 unique skills (11 unconditional, 0 conditional, managed: 0, user: 4, project: 0, additional: 0, legacy commands: 7)
+2026-02-28T05:40:04.128Z [DEBUG] Using provided version for core@skogai-marketplace: 0.0.5
+2026-02-28T05:40:04.128Z [DEBUG] Using provided version for pyright-lsp@claude-plugins-official: 1.0.0
+2026-02-28T05:40:04.130Z [DEBUG] Using manifest version for claude-md-management@claude-plugins-official: 1.0.0
+2026-02-28T05:40:04.130Z [DEBUG] Using manifest version for claude-code-setup@claude-plugins-official: 1.0.0
+2026-02-28T05:40:04.131Z [DEBUG] Using manifest version for code-simplifier@claude-plugins-official: 1.0.0
+2026-02-28T05:40:04.131Z [DEBUG] Plugin pyright-lsp@claude-plugins-official version 1.0.0 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0
+2026-02-28T05:40:04.131Z [DEBUG] Resolved local plugin pyright-lsp to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0
+2026-02-28T05:40:04.131Z [DEBUG] Plugin core@skogai-marketplace version 0.0.5 already cached at /home/skogix/.claude/plugins/cache/skogai-marketplace/core/0.0.5
+2026-02-28T05:40:04.131Z [DEBUG] Resolved local plugin core to versioned cache: /home/skogix/.claude/plugins/cache/skogai-marketplace/core/0.0.5
+2026-02-28T05:40:04.131Z [DEBUG] Using git SHA for agent-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T05:40:04.131Z [DEBUG] Using git SHA for agent-development@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T05:40:04.131Z [DEBUG] Using git SHA for cognitive-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T05:40:04.131Z [DEBUG] Using git SHA for context-engineering-fundamentals@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T05:40:04.131Z [DEBUG] Plugin claude-md-management@claude-plugins-official version 1.0.0 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0
+2026-02-28T05:40:04.131Z [DEBUG] Resolved local plugin claude-md-management to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0
+2026-02-28T05:40:04.132Z [DEBUG] Plugin code-simplifier@claude-plugins-official version 1.0.0 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0
+2026-02-28T05:40:04.132Z [DEBUG] Resolved local plugin code-simplifier to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/code-simplifier/1.0.0
+2026-02-28T05:40:04.132Z [DEBUG] Plugin claude-code-setup@claude-plugins-official version 1.0.0 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0
+2026-02-28T05:40:04.132Z [DEBUG] Resolved local plugin claude-code-setup to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0
+2026-02-28T05:40:04.132Z [DEBUG] Using git SHA for agent-evaluation@context-engineering-marketplace: 8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for hookify@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for playground@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for skill-creator@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for supabase@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for greptile@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for feature-dev@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for context7@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for serena@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for code-review@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Using git SHA for github@claude-plugins-official: 55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Plugin agent-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin agent-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Plugin agent-evaluation@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin agent-evaluation to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Plugin context-engineering-fundamentals@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin context-engineering-fundamentals to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Plugin agent-development@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin agent-development to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Plugin cognitive-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin cognitive-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-28T05:40:04.169Z [DEBUG] Plugin supabase@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/supabase/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin supabase to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/supabase/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Plugin github@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/github/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin github to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/github/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Plugin hookify@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin hookify to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Plugin code-review@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/code-review/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin code-review to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/code-review/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Plugin playground@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/playground/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin playground to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/playground/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Plugin skill-creator@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/skill-creator/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin skill-creator to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/skill-creator/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Plugin serena@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/serena/55b58ec6e564
+2026-02-28T05:40:04.169Z [DEBUG] Resolved local plugin serena to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/serena/55b58ec6e564
+2026-02-28T05:40:04.170Z [DEBUG] Plugin greptile@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/greptile/55b58ec6e564
+2026-02-28T05:40:04.170Z [DEBUG] Resolved local plugin greptile to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/greptile/55b58ec6e564
+2026-02-28T05:40:04.170Z [DEBUG] Plugin feature-dev@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/feature-dev/55b58ec6e564
+2026-02-28T05:40:04.170Z [DEBUG] Resolved local plugin feature-dev to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/feature-dev/55b58ec6e564
+2026-02-28T05:40:04.170Z [DEBUG] Plugin context7@claude-plugins-official version 55b58ec6e564 already cached at /home/skogix/.claude/plugins/cache/claude-plugins-official/context7/55b58ec6e564
+2026-02-28T05:40:04.170Z [DEBUG] Resolved local plugin context7 to versioned cache: /home/skogix/.claude/plugins/cache/claude-plugins-official/context7/55b58ec6e564
+2026-02-28T05:40:04.171Z [DEBUG] Plugin pyright-lsp has no entry.skills defined
+2026-02-28T05:40:04.171Z [DEBUG] Plugin core has no entry.skills defined
+2026-02-28T05:40:04.172Z [DEBUG] Processing 5 skill paths for plugin agent-architecture
+2026-02-28T05:40:04.172Z [DEBUG] Checking skill path: ./skills/multi-agent-patterns -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns (exists: true)
+2026-02-28T05:40:04.172Z [DEBUG] Processing 4 skill paths for plugin context-engineering-fundamentals
+2026-02-28T05:40:04.172Z [DEBUG] Processing 1 skill paths for plugin cognitive-architecture
+2026-02-28T05:40:04.172Z [DEBUG] Processing 1 skill paths for plugin agent-development
+2026-02-28T05:40:04.172Z [DEBUG] Processing 2 skill paths for plugin agent-evaluation
+2026-02-28T05:40:04.172Z [DEBUG] Checking skill path: ./skills/context-fundamentals -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals (exists: true)
+2026-02-28T05:40:04.172Z [DEBUG] Checking skill path: ./skills/bdi-mental-states -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states (exists: true)
+2026-02-28T05:40:04.172Z [DEBUG] Checking skill path: ./skills/project-development -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development (exists: true)
+2026-02-28T05:40:04.172Z [DEBUG] Checking skill path: ./skills/evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation (exists: true)
+2026-02-28T05:40:04.173Z [DEBUG] Checking skill path: ./skills/memory-systems -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems (exists: true)
+2026-02-28T05:40:04.173Z [DEBUG] Found 1 valid skill paths for plugin cognitive-architecture, setting skillsPaths
+2026-02-28T05:40:04.173Z [DEBUG] Found 1 valid skill paths for plugin agent-development, setting skillsPaths
+2026-02-28T05:40:04.173Z [DEBUG] Checking skill path: ./skills/context-degradation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation (exists: true)
+2026-02-28T05:40:04.174Z [DEBUG] Checking skill path: ./skills/advanced-evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation (exists: true)
+2026-02-28T05:40:04.174Z [DEBUG] Checking skill path: ./skills/tool-design -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design (exists: true)
+2026-02-28T05:40:04.174Z [DEBUG] Loaded hooks from standard location for plugin hookify: /home/skogix/.claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564/hooks/hooks.json
+2026-02-28T05:40:04.174Z [DEBUG] Found 2 valid skill paths for plugin agent-evaluation, setting skillsPaths
+2026-02-28T05:40:04.174Z [DEBUG] Checking skill path: ./skills/context-compression -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression (exists: true)
+2026-02-28T05:40:04.174Z [DEBUG] Checking skill path: ./skills/filesystem-context -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context (exists: true)
+2026-02-28T05:40:04.174Z [DEBUG] Checking skill path: ./skills/context-optimization -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization (exists: true)
+2026-02-28T05:40:04.174Z [DEBUG] Checking skill path: ./skills/hosted-agents -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents (exists: true)
+2026-02-28T05:40:04.174Z [DEBUG] Found 4 valid skill paths for plugin context-engineering-fundamentals, setting skillsPaths
+2026-02-28T05:40:04.174Z [DEBUG] Found 5 valid skill paths for plugin agent-architecture, setting skillsPaths
+2026-02-28T05:40:04.174Z [DEBUG] Found 21 plugins (16 enabled, 5 disabled)
+2026-02-28T05:40:04.174Z [DEBUG] Plugin not available for MCP: beads@beads-marketplace - error type: plugin-not-found
+2026-02-28T05:40:04.175Z [DEBUG] Plugin loading errors: Plugin beads not found in marketplace beads-marketplace
+2026-02-28T05:40:04.175Z [DEBUG] getPluginSkills: Processing 16 enabled plugins
+2026-02-28T05:40:04.175Z [DEBUG] Checking plugin context7: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.175Z [DEBUG] Checking plugin code-review: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.175Z [DEBUG] Checking plugin github: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.175Z [DEBUG] Checking plugin feature-dev: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.175Z [DEBUG] Checking plugin code-simplifier: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.175Z [DEBUG] Checking plugin serena: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.175Z [DEBUG] Checking plugin claude-md-management: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T05:40:04.175Z [DEBUG] Attempting to load skills from plugin claude-md-management default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-md-management/1.0.0/skills
+2026-02-28T05:40:04.175Z [DEBUG] Plugin loading errors: Plugin beads not found in marketplace beads-marketplace
+2026-02-28T05:40:04.176Z [DEBUG] Loading hooks from plugin: hookify
+2026-02-28T05:40:04.176Z [DEBUG] Loading hooks from plugin: core
+2026-02-28T05:40:04.176Z [DEBUG] Registered 13 hooks from 16 plugins
+2026-02-28T05:40:04.176Z [DEBUG] Plugin loading errors: Plugin beads not found in marketplace beads-marketplace
+2026-02-28T05:40:04.178Z [DEBUG] Loaded 3 agents from plugin feature-dev default directory
+2026-02-28T05:40:04.178Z [DEBUG] Loaded 1 agents from plugin code-simplifier default directory
+2026-02-28T05:40:04.179Z [DEBUG] Loaded 1 agents from plugin hookify default directory
+2026-02-28T05:40:04.179Z [DEBUG] Loaded 11 agents from plugin core default directory
+2026-02-28T05:40:04.180Z [DEBUG] Total plugin agents loaded: 16
+2026-02-28T05:40:04.180Z [DEBUG] Loaded 1 skills from plugin claude-md-management default directory
+2026-02-28T05:40:04.180Z [DEBUG] Checking plugin pyright-lsp: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.180Z [DEBUG] Checking plugin supabase: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.180Z [DEBUG] Checking plugin claude-code-setup: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T05:40:04.180Z [DEBUG] Attempting to load skills from plugin claude-code-setup default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/claude-code-setup/1.0.0/skills
+2026-02-28T05:40:04.180Z [DEBUG] Loaded 1 commands from plugin code-review default directory
+2026-02-28T05:40:04.181Z [DEBUG] Loaded 1 skills from plugin claude-code-setup default directory
+2026-02-28T05:40:04.181Z [DEBUG] Checking plugin greptile: skillsPath=none, skillsPaths=0 paths
+2026-02-28T05:40:04.181Z [DEBUG] Checking plugin hookify: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T05:40:04.181Z [DEBUG] Attempting to load skills from plugin hookify default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564/skills
+2026-02-28T05:40:04.181Z [DEBUG] Loaded 1 commands from plugin feature-dev default directory
+2026-02-28T05:40:04.182Z [DEBUG] Loaded 1 skills from plugin hookify default directory
+2026-02-28T05:40:04.182Z [DEBUG] Checking plugin slack: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T05:40:04.182Z [DEBUG] Attempting to load skills from plugin slack default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/slack/1.0.0/skills
+2026-02-28T05:40:04.182Z [DEBUG] Loaded 1 commands from plugin claude-md-management default directory
+2026-02-28T05:40:04.183Z [DEBUG] Loaded 2 skills from plugin slack default directory
+2026-02-28T05:40:04.183Z [DEBUG] Checking plugin playground: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T05:40:04.183Z [DEBUG] Attempting to load skills from plugin playground default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/playground/55b58ec6e564/skills
+2026-02-28T05:40:04.184Z [DEBUG] Loaded 4 commands from plugin hookify default directory
+2026-02-28T05:40:04.184Z [WARN] Missing environment variables in plugin MCP config: GITHUB_PERSONAL_ACCESS_TOKEN
+2026-02-28T05:40:04.184Z [DEBUG] Loaded 1 skills from plugin playground default directory
+2026-02-28T05:40:04.184Z [DEBUG] Checking plugin skill-creator: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T05:40:04.184Z [DEBUG] Attempting to load skills from plugin skill-creator default skillsPath: /home/skogix/.claude/plugins/cache/claude-plugins-official/skill-creator/55b58ec6e564/skills
+2026-02-28T05:40:04.184Z [DEBUG] Loaded 5 commands from plugin slack default directory
+2026-02-28T05:40:04.184Z [DEBUG] Loaded 1 skills from plugin skill-creator default directory
+2026-02-28T05:40:04.184Z [DEBUG] Checking plugin core: skillsPath=exists, skillsPaths=0 paths
+2026-02-28T05:40:04.184Z [DEBUG] Attempting to load skills from plugin core default skillsPath: /home/skogix/.claude/plugins/cache/skogai-marketplace/core/0.0.5/skills
+2026-02-28T05:40:04.184Z [DEBUG] Loaded 3 commands from plugin core default directory
+2026-02-28T05:40:04.184Z [DEBUG] Total plugin commands loaded: 15
+2026-02-28T05:40:04.184Z [DEBUG] Loaded 1 skills from plugin core default directory
+2026-02-28T05:40:04.184Z [DEBUG] Total plugin skills loaded: 8
+2026-02-28T05:40:04.184Z [DEBUG] getSkills returning: 11 skill dir commands, 8 plugin skills, 3 bundled skills
+2026-02-28T05:40:04.185Z [DEBUG] [STARTUP] Commands and agents loaded in 155ms
+2026-02-28T05:40:04.189Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-02-28T05:40:04.218Z [WARN] Missing environment variables in plugin MCP config: GREPTILE_API_KEY
+2026-02-28T05:40:04.218Z [DEBUG] Grove: Using fresh cached config
+2026-02-28T05:40:04.238Z [DEBUG] Path /home/skogix/gt already tracked for repo skogai/gt
+2026-02-28T05:40:04.239Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-02-28T05:40:04.239Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-02-28T05:40:04.244Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-28T05:40:04.253Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server github invalid: Missing environment variables: GITHUB_PERSONAL_ACCESS_TOKEN
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:04.253Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server greptile invalid: Missing environment variables: GREPTILE_API_KEY
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:04.263Z [DEBUG] [keybindings] Watching for changes to /home/skogix/.claude/keybindings.json
+2026-02-28T05:40:04.531Z [DEBUG] [STARTUP] showSetupScreens() completed in 342ms
+2026-02-28T05:40:04.531Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-28T05:40:04.531Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-28T05:40:04.531Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-28T05:40:04.532Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T05:40:04.532Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T05:40:04.533Z [DEBUG] Passes: Using fresh cached eligibility data
+2026-02-28T05:40:04.536Z [DEBUG] [STARTUP] MCP configs loaded in 527ms
+2026-02-28T05:40:04.536Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T05:40:04.538Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-02-28T05:40:04.538Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T05:40:04.539Z [DEBUG] Matched 3 unique hooks for query "startup" (3 before deduplication)
+2026-02-28T05:40:04.570Z [DEBUG] Loaded 1 LSP server(s) from plugin: pyright-lsp
+2026-02-28T05:40:04.571Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T05:40:04.573Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.ea2; cc_entrypoint=cli; cch=00000;
+2026-02-28T05:40:04.574Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T05:40:04.574Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T05:40:04.575Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T05:40:04.577Z [DEBUG] Total LSP servers loaded: 1
+2026-02-28T05:40:04.577Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 1 server(s)
+2026-02-28T05:40:04.578Z [DEBUG] Queued request handler for plugin:pyright-lsp:pyright.workspace/configuration (connection not ready)
+2026-02-28T05:40:04.578Z [DEBUG] Starting LSP server instance: plugin:pyright-lsp:pyright
+2026-02-28T05:40:04.579Z [DEBUG] LSP manager initialized with 1 servers
+2026-02-28T05:40:04.579Z [DEBUG] LSP server manager initialized successfully
+2026-02-28T05:40:04.579Z [DEBUG] Queued notification handler for plugin:pyright-lsp:pyright.textDocument/publishDiagnostics (connection not ready)
+2026-02-28T05:40:04.579Z [DEBUG] Registered diagnostics handler for plugin:pyright-lsp:pyright
+2026-02-28T05:40:04.579Z [DEBUG] LSP notification handlers registered successfully for all 1 server(s)
+2026-02-28T05:40:04.580Z [ERROR] Error: Error: LSP server plugin:pyright-lsp:pyright failed to start: Executable not found in $PATH: "pyright-langserver"
+    at start (/$bunfs/root/claude:2677:22318)
+    at async f (/$bunfs/root/claude:2677:24630)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:04.580Z [DEBUG] LSP client stopped for plugin:pyright-lsp:pyright
+2026-02-28T05:40:04.580Z [ERROR] Error: Error: Executable not found in $PATH: "pyright-langserver"
+    at spawn (unknown)
+    at spawn (node:child_process:667:35)
+    at spawn (node:child_process:14:39)
+    at start (/$bunfs/root/claude:2677:20844)
+    at f (/$bunfs/root/claude:2677:24630)
+    at L (/$bunfs/root/claude:2677:32739)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:04.580Z [ERROR] Error: Error: Failed to start LSP server plugin:pyright-lsp:pyright: Executable not found in $PATH: "pyright-langserver"
+    at <anonymous> (/$bunfs/root/claude:2677:32761)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:04.620Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:04.620Z [DEBUG] Hook SessionStart:startup (SessionStart) success:
+# Beads Workflow Context
+
+> **Context Recovery**: Run `bd prime` after compaction, clear, or new session
+> Hooks auto-call this in Claude Code when .beads/ detected
+
+# 🚨 SESSION CLOSE PROTOCOL 🚨
+
+**CRITICAL**: Before saying "done" or "complete", you MUST run this checklist:
+
+```
+[ ] bd export                  (export beads to JSONL)
+```
+
+**Note:** No git remote configured. Issues are saved locally only.
+
+## Core Rules
+- **Default**: Use beads for ALL task tracking (`bd create`, `bd ready`, `bd close`)
+- **Prohibited**: Do NOT use TodoWrite, TaskCreate, or markdown files for task tracking
+- **Workflow**: Create beads issue BEFORE writing code, mark in_progress when starting
+- Persistence you don't need beats lost context
+- Git workflow: local-only (no git remote)
+- Session management: check `bd ready` for available work
+
+## Essential Commands
+
+### Finding Work
+- `bd ready` - Show issues ready to work (no blockers)
+- `bd list --status=open` - All open issues
+- `bd list --status=in_progress` - Your active work
+- `bd show <id>` - Detailed issue view with dependencies
+
+### Creating & Updating
+- `bd create --title="Summary of this issue" --description="Why this issue exists and what needs to be done" --type=task|bug|feature --priority=2` - New issue
+  - Priority: 0-4 or P0-P4 (0=critical, 2=medium, 4=backlog). NOT "high"/"medium"/"low"
+- `bd update <id> --status=in_progress` - Claim work
+- `bd update <id> --assignee=username` - Assign to someone
+- `bd update <id> --title/--description/--notes/--design` - Update fields inline
+- `bd close <id>` - Mark complete
+- `bd close <id1> <id2> ...` - Close multiple issues at once (more efficient)
+- `bd close <id> --reason="explanation"` - Close with reason
+- **Tip**: When creating multiple issues/tasks/epics, use parallel subagents for efficiency
+- **WARNING**: Do NOT use `bd edit` - it opens $EDITOR (vim/nano) which blocks agents
+
+### Dependencies & Blocking
+- `bd dep add <issue> <depends-on>` - Add dependency (issue depends on depends-on)
+- `bd blocked` - Show all blocked issues
+- `bd show <id>` - See what's blocking/blocked by this issue
+
+### Sync & Collaboration
+- `bd export` - Export beads to JSONL
+
+### Project Health
+- `bd stats` - Project statistics (open/closed/blocked counts)
+- `bd doctor` - Check for issues (sync problems, missing hooks)
+
+## Common Workflows
+
+**Starting work:**
+```bash
+bd ready           # Find available work
+bd show <id>       # Review issue details
+bd update <id> --status=in_progress  # Claim it
+```
+
+**Completing work:**
+```bash
+bd close <id1> <id2> ...    # Close all completed issues at once
+bd export                   # Export to JSONL
+```
+
+**Creating dependent work:**
+```bash
+# Run bd create commands in parallel (use subagents for many items)
+bd create --title="Implement feature X" --description="Why this issue exists and what needs to be done" --type=feature
+bd create --title="Write tests for X" --description="Why this issue exists and what needs to be done" --type=task
+bd dep add beads-yyy beads-xxx  # Tests depend on Feature (Feature blocks tests)
+```
+2026-02-28T05:40:04.713Z [DEBUG] Org fast mode: enabled
+2026-02-28T05:40:04.722Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:05.405Z [DEBUG] Stream started - received first chunk
+2026-02-28T05:40:05.505Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:05.505Z [DEBUG] Hook SessionStart:startup (SessionStart) success:
+[session:017dea88-b9d4-4ec5-b4aa-96dc50e9770e]
+[source:startup]
+[GAS TOWN] role:boot pid:1794702 session:017dea88-b9d4-4ec5-b4aa-96dc50e9770e
+# Boot Context
+
+> **Recovery**: Run `gt prime` after compaction, clear, or new session
+
+## Your Role: BOOT (Deacon Watchdog)
+
+You are **Boot** - the daemon's watchdog for Deacon triage. You are spawned fresh
+on each daemon tick to observe the system and decide what action to take.
+
+## Theory of Operation
+
+The daemon is dumb transport (ZFC principle). It can't decide:
+- Is the Deacon stuck or just thinking?
+- Should we interrupt or let it continue?
+- Is the system in a state where nudging would help?
+
+You are an agent that CAN observe and decide. The daemon pokes you instead of
+the Deacon directly, centralizing the "when to wake" decision in reasoning.
+
+## Your Lifecycle
+
+```
+Daemon tick
+    │
+    ├── Check: Is Boot already running? (marker file)
+    │   └── Yes + recent: Skip this tick
+    │
+    └── Spawn Boot (fresh session each time)
+        │
+        └── Boot runs triage
+            ├── Observe (wisps, mail, git state, tmux panes)
+            ├── Decide (start/wake/nudge/interrupt/nothing)
+            ├── Act
+            ├── Clean inbox (discard stale handoffs)
+            └── Exit (or handoff in non-degraded mode)
+```
+
+## You Are Always Fresh
+
+Boot restarts on each daemon tick. This is intentional:
+- Narrow scope makes restarts cheap
+- Fresh context avoids accumulated confusion
+- Handoff mail provides continuity without session persistence
+- No keepalive needed
+
+## Working Directory
+
+**IMPORTANT**: Always work from `/home/skogix/gt/deacon/` directory.
+
+You share context with the Deacon - both operate on the same state.
+
+## Triage Steps
+
+### Step 1: Observe
+
+Check the current system state:
+
+```bash
+# Is Deacon session alive?
+tmux has-session -t hq-deacon 2>/dev/null && echo "alive" || echo "dead"
+
+# If alive, what's the pane showing?
+gt peek deacon --lines 20
+
+# Agent bead state
+bd show hq-deacon 2>/dev/null
+
+# Recent activity
+gt feed --since 10m --plain | head -20
+```
+
+### Step 2: Decide
+
+Analyze observations using this decision matrix:
+
+| Deacon State | Pane Activity | Action |
+|--------------|---------------|--------|
+| Dead session | N/A | START (daemon will restart) |
+| Alive, active output | N/A | NOTHING |
+| Alive, idle < 5 min | N/A | NOTHING |
+| Alive, idle 5-15 min | No mail | NOTHING |
+| Alive, idle 5-15 min | Has mail | NUDGE |
+| Alive, idle > 15 min | Any | WAKE |
+| Alive, stuck (errors) | Any | INTERRUPT |
+
+**Judgment Guidance**: Agents may take several minutes on legitimate work.
+Don't be too aggressive - false positives are disruptive.
+
+### Step 3: Act
+
+Execute the decided action:
+
+- **NOTHING**: Log and exit
+- **NUDGE**: `gt nudge deacon "Boot check-in: you have pending work"`
+- **WAKE**: Escape + `gt nudge deacon "Boot wake: check your inbox"`
+- **INTERRUPT**: Mail the Deacon requesting restart consideration
+- **START**: Log detection (daemon handles restart)
+
+### Step 4: Clean
+
+Archive stale handoff messages (> 1 hour old) from Deacon's inbox.
+
+### Step 5: Exit
+
+In degraded mode: Exit directly.
+In normal mode: Optional brief handoff mail for next Boot instance.
+
+## Degraded Mode (GT_DEGRADED=true)
+
+When tmux is unavailable:
+- Cannot observe tmux panes
+- Cannot interactively interrupt
+- Focus on beads/git state observation only
+- Report anomalies but can't fix interactively
+- Run to completion and exit (no handoff)
+
+## Hookable Mail
+
+Mail beads can be hooked for ad-hoc instruction handoff:
+- `gt mail hook <mail-id>` - Hook existing mail as your assignment
+- `gt handoff -m "..."` - Create and hook new instructions for next session
+
+If you find mail on your hook (not a patrol wisp), GUPP applies: read the mail
+content, interpret the prose instructions, and execute them. This enables ad-hoc
+tasks without creating formal beads.
+
+**Boot-specific note**: Since Boot is spawned fresh each daemon tick, hookable
+mail is less common. However, the mechanism exists if debugging or special
+instructions need to be passed to a Boot instance.
+
+## Commands
+
+```bash
+# Your status
+gt boot status
+
+# Manual spawn (for debugging)
+gt boot spawn
+
+# Run triage directly (degraded mode)
+gt boot triage --degraded
+```
+
+## Important Notes
+
+- You are ephemeral - no persistent state between invocations
+- Each tick is a fresh observation
+- Be conservative - false positives disrupt legitimate work
+- When in doubt, choose NOTHING over NUDGE
+- Trust the Deacon unless there's clear evidence of stuck state
+
+# Beads Workflow Context
+
+> **Context Recovery**: Run `bd prime` after compaction, clear, or new session
+> Hooks auto-call this in Claude Code when .beads/ detected
+
+# 🚨 SESSION CLOSE PROTOCOL 🚨
+
+**CRITICAL**: Before saying "done" or "complete", you MUST run this checklist:
+
+```
+[ ] bd export                  (export beads to JSONL)
+```
+
+**Note:** No git remote configured. Issues are saved locally only.
+
+## Core Rules
+- **Default**: Use beads for ALL task tracking (`bd create`, `bd ready`, `bd close`)
+- **Prohibited**: Do NOT use TodoWrite, TaskCreate, or markdown files for task tracking
+- **Workflow**: Create beads issue BEFORE writing code, mark in_progress when starting
+- Persistence you don't need beats lost context
+- Git workflow: local-only (no git remote)
+- Session management: check `bd ready` for available work
+
+## Essential Commands
+
+### Finding Work
+- `bd ready` - Show issues ready to work (no blockers)
+- `bd list --status=open` - All open issues
+- `bd list --status=in_progress` - Your active work
+- `bd show <id>` - Detailed issue view with dependencies
+
+### Creating & Updating
+- `bd create --title="Summary of this issue" --description="Why this issue exists and what needs to be done" --type=task|bug|feature --priority=2` - New issue
+  - Priority: 0-4 or P0-P4 (0=critical, 2=medium, 4=backlog). NOT "high"/"medium"/"low"
+- `bd update <id> --status=in_progress` - Claim work
+- `bd update <id> --assignee=username` - Assign to someone
+- `bd update <id> --title/--description/--notes/--design` - Update fields inline
+- `bd close <id>` - Mark complete
+- `bd close <id1> <id2> ...` - Close multiple issues at once (more efficient)
+- `bd close <id> --reason="explanation"` - Close with reason
+- **Tip**: When creating multiple issues/tasks/epics, use parallel subagents for efficiency
+- **WARNING**: Do NOT use `bd edit` - it opens $EDITOR (vim/nano) which blocks agents
+
+### Dependencies & Blocking
+- `bd dep add <issue> <depends-on>` - Add dependency (issue depends on depends-on)
+- `bd blocked` - Show all blocked issues
+- `bd show <id>` - See what's blocking/blocked by this issue
+
+### Sync & Collaboration
+- `bd export` - Export beads to JSONL
+
+### Project Health
+- `bd stats` - Project statistics (open/closed/blocked counts)
+- `bd doctor` - Check for issues (sync problems, missing hooks)
+
+## Common Workflows
+
+**Starting work:**
+```bash
+bd ready           # Find available work
+bd show <id>       # Review issue details
+bd update <id> --status=in_progress  # Claim it
+```
+
+**Completing work:**
+```bash
+bd close <id1> <id2> ...    # Close all completed issues at once
+bd export                   # Export to JSONL
+```
+
+**Creating dependent work:**
+```bash
+# Run bd create commands in parallel (use subagents for many items)
+bd create --title="Implement feature X" --description="Why this issue exists and what needs to be done" --type=feature
+bd create --title="Write tests for X" --description="Why this issue exists and what needs to be done" --type=task
+bd dep add beads-yyy beads-xxx  # Tests depend on Feature (Feature blocks tests)
+```
+
+---
+
+**STARTUP PROTOCOL**: You are Boot. Please:
+1. Run `gt prime` (loads full context)
+2. Run `gt boot triage` immediately
+3. When triage completes, exit cleanly
+2026-02-28T05:40:05.513Z [DEBUG] Syncing installed_plugins.json with enabledPlugins from all settings.json files
+2026-02-28T05:40:05.515Z [DEBUG] Looking up plugin beads@beads-marketplace in marketplace beads-marketplace
+2026-02-28T05:40:05.520Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-02-28T05:40:05.523Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1794319.1772257205523
+2026-02-28T05:40:05.523Z [DEBUG] Preserving file permissions: 100600
+2026-02-28T05:40:05.532Z [DEBUG] Temp file written successfully, size: 35161 bytes
+2026-02-28T05:40:05.532Z [DEBUG] Applied original permissions to temp file
+2026-02-28T05:40:05.532Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1794319.1772257205523 to /home/skogix/.claude.json
+2026-02-28T05:40:05.532Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-28T05:40:05.720Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-28T05:40:05.746Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:05.754Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:05.787Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-02-28T05:40:05.788Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-02-28T05:40:05.789Z [DEBUG] performStartupChecks called
+2026-02-28T05:40:05.789Z [DEBUG] Starting background plugin installations
+2026-02-28T05:40:05.789Z [DEBUG] performBackgroundPluginInstallations called
+2026-02-28T05:40:05.794Z [DEBUG] Loaded 3 CLAUDE.md/rules files:
+  [User] /home/skogix/.claude/CLAUDE.md (8 chars)
+  [User] /home/skogix/.claude/RTK.md (958 chars) (included by /home/skogix/.claude/CLAUDE.md)
+  [Project] /home/skogix/gt/CLAUDE.md (329 chars)
+2026-02-28T05:40:05.804Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:05.823Z [DEBUG] Plugin autoupdate: skipped (auto-updater disabled)
+2026-02-28T05:40:05.824Z [DEBUG] Watching for changes in setting files /home/skogix/.claude/settings.json, /home/skogix/gt/deacon/dogs/boot/.claude/settings.json, /home/skogix/gt/deacon/dogs/boot/.claude/settings.local.json...
+2026-02-28T05:40:05.825Z [DEBUG] Plugin not available for MCP: beads@beads-marketplace - error type: plugin-not-found
+2026-02-28T05:40:05.825Z [DEBUG] Plugin not available for MCP: beads@beads-marketplace - error type: plugin-not-found
+2026-02-28T05:40:05.837Z [WARN] Missing environment variables in plugin MCP config: GITHUB_PERSONAL_ACCESS_TOKEN
+2026-02-28T05:40:05.837Z [WARN] Missing environment variables in plugin MCP config: GITHUB_PERSONAL_ACCESS_TOKEN
+2026-02-28T05:40:05.838Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T05:40:05.838Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T05:40:05.838Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T05:40:05.838Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T05:40:05.838Z [DEBUG] Sending 36 skills via attachment (initial, 34 total sent)
+2026-02-28T05:40:05.839Z [DEBUG] Skill prompt: showing "core:save-prompt" (userFacingName="savePrompt")
+2026-02-28T05:40:05.839Z [DEBUG] Skill prompt: showing "claude-md-management:claude-md-improver" (userFacingName="claude-md-improver")
+2026-02-28T05:40:05.839Z [DEBUG] Skill prompt: showing "claude-code-setup:claude-automation-recommender" (userFacingName="claude-automation-recommender")
+2026-02-28T05:40:05.839Z [DEBUG] Skill prompt: showing "hookify:writing-rules" (userFacingName="writing-hookify-rules")
+2026-02-28T05:40:05.839Z [DEBUG] Skill prompt: showing "playground:playground" (userFacingName="playground")
+2026-02-28T05:40:05.839Z [DEBUG] Skill prompt: showing "skill-creator:skill-creator" (userFacingName="skill-creator")
+2026-02-28T05:40:05.839Z [DEBUG] Skill prompt: showing "core:skogai-workflow" (userFacingName="skogai-workflow")
+2026-02-28T05:40:05.840Z [WARN] Missing environment variables in plugin MCP config: GREPTILE_API_KEY
+2026-02-28T05:40:05.840Z [WARN] Missing environment variables in plugin MCP config: GREPTILE_API_KEY
+2026-02-28T05:40:05.840Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server github invalid: Missing environment variables: GITHUB_PERSONAL_ACCESS_TOKEN
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at async K (/$bunfs/root/claude:4110:15587)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:05.840Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server greptile invalid: Missing environment variables: GREPTILE_API_KEY
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at async K (/$bunfs/root/claude:4110:15587)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:05.840Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server github invalid: Missing environment variables: GITHUB_PERSONAL_ACCESS_TOKEN
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at async W (/$bunfs/root/claude:4110:16120)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:05.840Z [ERROR] Error: Error: Plugin MCP server error - mcp-config-invalid: MCP server greptile invalid: Missing environment variables: GREPTILE_API_KEY
+    at p6H (/$bunfs/root/claude:1813:15492)
+    at async W (/$bunfs/root/claude:4110:16120)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T05:40:05.840Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-28T05:40:05.840Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-02-28T05:40:05.840Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-02-28T05:40:05.844Z [DEBUG] Found 16 enabled plugins
+2026-02-28T05:40:05.845Z [DEBUG] Syncing installed_plugins.json with enabledPlugins from all settings.json files
+2026-02-28T05:40:05.846Z [DEBUG] Looking up plugin beads@beads-marketplace in marketplace beads-marketplace
+2026-02-28T05:40:05.846Z [DEBUG] Found 21 installed plugins
+2026-02-28T05:40:05.846Z [DEBUG] Found 0 missing plugins (not installed):
+2026-02-28T05:40:05.846Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-02-28T05:40:05.851Z [DEBUG] Plugin beads@beads-marketplace not found in any marketplace, skipping
+2026-02-28T05:40:05.851Z [DEBUG] Initialized versioned plugins system with 21 plugins
+2026-02-28T05:40:05.853Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-02-28T05:40:05.854Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-28T05:40:05.854Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T05:40:05.854Z [DEBUG] Matched 3 unique hooks for query "no match query" (3 before deduplication)
+2026-02-28T05:40:05.901Z [DEBUG] Security messages are fresh (<1h old), skipping fetch
+2026-02-28T05:40:05.902Z [DEBUG] Plugin beads@beads-marketplace not found in any marketplace, skipping
+2026-02-28T05:40:05.925Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:05.952Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/opt/claude-code/bin/claude)
+2026-02-28T05:40:05.968Z [DEBUG] Detected pacman installation: /opt/claude-code/bin/claude is owned by claude-code 2.1.62-1
+2026-02-28T05:40:05.968Z [DEBUG] AutoUpdaterWrapper: Installation type: package-manager
+2026-02-28T05:40:05.992Z [DEBUG] Watching for changes in skill/command directories: /home/skogix/.claude/skills, /home/skogix/.claude/commands, /home/skogix/gt/deacon/dogs/boot/.claude/commands...
+2026-02-28T05:40:06.007Z [DEBUG] Loaded plugins - Enabled: 16, Disabled: 5, Commands: 15, Agents: 16, Errors: 1
+2026-02-28T05:40:06.075Z [DEBUG] [claudeai-mcp] Fetched 17 servers
+2026-02-28T05:40:06.086Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:06.092Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T05:40:06.092Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T05:40:06.092Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T05:40:06.094Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T05:40:06.094Z [DEBUG] Hook UserPromptSubmit (UserPromptSubmit) success:
+{}
+2026-02-28T05:40:06.135Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:06.199Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:06.201Z [DEBUG] [useDeferredValue] Messages deferred by 3 (6→9)
+2026-02-28T05:40:06.205Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:06.219Z [DEBUG] Plugin loading errors: Plugin beads not found in marketplace beads-marketplace
+2026-02-28T05:40:06.219Z [DEBUG] Total plugin output styles loaded: 0
+2026-02-28T05:40:06.224Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-28T05:40:06.229Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T05:40:06.229Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T05:40:06.229Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T05:40:06.230Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T05:40:06.234Z [DEBUG] [useDeferredValue] Messages deferred by 3 (6→9)
+2026-02-28T05:40:06.237Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:08.434Z [DEBUG] Stream started - received first chunk
+2026-02-28T05:40:08.968Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-02-28T05:40:08.970Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:08.979Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-02-28T05:40:09.894Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T05:40:09.895Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T05:40:09.895Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T05:40:09.895Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T05:40:09.905Z [DEBUG] [useDeferredValue] Messages deferred by 4 (10→14)
+2026-02-28T05:40:09.918Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:09.982Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T05:40:09.982Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T05:40:09.982Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T05:40:09.985Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T05:40:09.985Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T05:40:10.051Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:10.057Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:10.065Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:10.083Z [DEBUG] tree-sitter: loaded from embedded
+2026-02-28T05:40:10.098Z [DEBUG] Creating shell snapshot for zsh (/usr/bin/zsh)
+2026-02-28T05:40:10.098Z [DEBUG] Looking for shell config file: /home/skogix/.zshrc
+2026-02-28T05:40:10.098Z [DEBUG] Snapshots directory: /home/skogix/.claude/shell-snapshots
+2026-02-28T05:40:10.100Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:10.104Z [DEBUG] Creating snapshot at: /home/skogix/.claude/shell-snapshots/snapshot-zsh-1772257210098-yn7chu.sh
+2026-02-28T05:40:10.104Z [DEBUG] Execution timeout: 10000ms
+2026-02-28T05:40:10.511Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-28T05:40:10.513Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:10.544Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:10.791Z [DEBUG] Shell snapshot created successfully (204654 bytes)
+2026-02-28T05:40:10.792Z [DEBUG] No session environment scripts found
+2026-02-28T05:40:10.792Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T05:40:11.271Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T05:40:11.273Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T05:40:11.274Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T05:40:11.274Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T05:40:11.274Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T05:40:11.277Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T05:40:11.277Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T05:40:11.277Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T05:40:11.295Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:11.307Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:11.355Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T05:40:11.355Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T05:40:11.355Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T05:40:11.374Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T05:40:11.374Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T05:40:11.376Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-28T05:40:11.377Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-28T05:40:11.377Z [DEBUG] Found 6 hook matchers in settings
+2026-02-28T05:40:11.377Z [DEBUG] Matched 3 unique hooks for query "Bash" (3 before deduplication)
+2026-02-28T05:40:11.384Z [DEBUG] [useDeferredValue] Messages deferred by 11 (15→26)
+2026-02-28T05:40:11.392Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:11.462Z [DEBUG] High write ratio: blit=0, write=1615 (100.0% writes), screen=49x80
+2026-02-28T05:40:11.500Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T05:40:11.500Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T05:40:11.500Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T05:40:11.513Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T05:40:11.514Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{}
+2026-02-28T05:40:11.650Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:11.670Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:11.677Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-28T05:40:11.680Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:11.732Z [DEBUG] Stream started - received first chunk
+2026-02-28T05:40:11.839Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-28T05:40:11.840Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-28T05:40:11.840Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T05:40:11.840Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T05:40:11.840Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T05:40:11.842Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-28T05:40:11.842Z [DEBUG] Found 7 hook matchers in settings
+2026-02-28T05:40:11.842Z [DEBUG] Matched 2 unique hooks for query "Bash" (2 before deduplication)
+2026-02-28T05:40:11.850Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:11.871Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:11.898Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T05:40:11.898Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T05:40:11.898Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T05:40:11.910Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T05:40:11.910Z [DEBUG] Hook PostToolUse:Bash (PostToolUse) success:
+{}
+2026-02-28T05:40:11.911Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-28T05:40:11.911Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-28T05:40:11.911Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-28T05:40:11.911Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-28T05:40:11.913Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-28T05:40:11.917Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-28T05:40:11.918Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-28T05:40:11.918Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-28T05:40:11.918Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-28T05:40:11.921Z [DEBUG] [useDeferredValue] Messages deferred by 8 (26→34)
+2026-02-28T05:40:11.929Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:11.937Z [DEBUG] High write ratio: blit=0, write=1615 (100.0% writes), screen=49x80
+2026-02-28T05:40:11.971Z [DEBUG] High write ratio: blit=0, write=1691 (100.0% writes), screen=50x80
+2026-02-28T05:40:12.341Z [DEBUG] Stream started - received first chunk
+2026-02-28T05:40:13.909Z [DEBUG] Stream started - received first chunk
+2026-02-28T05:40:14.407Z [DEBUG] [useDeferredValue] Messages deferred by 1 (34→35)
+2026-02-28T05:40:14.409Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:14.431Z [DEBUG] High write ratio: blit=0, write=1772 (100.0% writes), screen=53x80
+2026-02-28T05:40:14.506Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-28T05:40:14.506Z [DEBUG] Found 3 hook matchers in settings
+2026-02-28T05:40:14.506Z [DEBUG] Matched 3 unique hooks for query "no match query" (3 before deduplication)
+2026-02-28T05:40:14.510Z [DEBUG] [useDeferredValue] Messages deferred by 3 (35→38)
+2026-02-28T05:40:14.512Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:14.528Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:14.547Z [DEBUG] High write ratio: blit=0, write=1799 (100.0% writes), screen=53x80
+2026-02-28T05:40:14.548Z [DEBUG] [useDeferredValue] Messages deferred by 1 (38→39)
+2026-02-28T05:40:14.550Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:14.560Z [DEBUG] Hooks: Checking initial response for async: {}
+2026-02-28T05:40:14.560Z [DEBUG] Hooks: Parsed initial response: {}
+2026-02-28T05:40:14.560Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-28T05:40:14.570Z [DEBUG] High write ratio: blit=0, write=1799 (100.0% writes), screen=53x80
+2026-02-28T05:40:14.570Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-28T05:40:14.570Z [DEBUG] Hook Stop (Stop) success:
+{}
+2026-02-28T05:40:14.576Z [DEBUG] [useDeferredValue] Messages deferred by 1 (39→40)
+2026-02-28T05:40:14.578Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:14.580Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-28T05:40:14.580Z [DEBUG] Hook Stop (Stop) success:
+✓ Recorded $0.11 for hq-boot
+2026-02-28T05:40:14.583Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1794319.1772257214583
+2026-02-28T05:40:14.583Z [DEBUG] Preserving file permissions: 100600
+2026-02-28T05:40:14.592Z [DEBUG] Temp file written successfully, size: 35161 bytes
+2026-02-28T05:40:14.592Z [DEBUG] Applied original permissions to temp file
+2026-02-28T05:40:14.592Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1794319.1772257214583 to /home/skogix/.claude.json
+2026-02-28T05:40:14.592Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-28T05:40:14.594Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1794319.1772257214594
+2026-02-28T05:40:14.594Z [DEBUG] Preserving file permissions: 100600
+2026-02-28T05:40:14.597Z [DEBUG] Temp file written successfully, size: 35161 bytes
+2026-02-28T05:40:14.597Z [DEBUG] Applied original permissions to temp file
+2026-02-28T05:40:14.597Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1794319.1772257214594 to /home/skogix/.claude.json
+2026-02-28T05:40:14.597Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-28T05:40:14.599Z [DEBUG] [useDeferredValue] Messages deferred by 3 (39→42)
+2026-02-28T05:40:14.604Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-28T05:40:14.608Z [DEBUG] High write ratio: blit=0, write=1728 (100.0% writes), screen=51x80
+2026-02-28T05:41:14.613Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-28T05:41:14.613Z [DEBUG] Found 1 hook matchers in settings
+2026-02-28T05:41:14.613Z [DEBUG] Matched 1 unique hooks for query "idle_prompt" (1 before deduplication)
+2026-02-28T05:41:14.627Z [DEBUG] Notification:idle_prompt [${CLAUDE_PLUGIN_ROOT}/hooks/notification.sh] completed with status 0
+2026-02-28T05:41:14.627Z [DEBUG] Hook output does not start with {, treating as plain text

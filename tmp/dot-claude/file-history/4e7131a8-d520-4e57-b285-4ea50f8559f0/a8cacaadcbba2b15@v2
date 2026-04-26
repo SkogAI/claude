@@ -1,0 +1,5 @@
+---
+- name: Clone dotfiles via chezmoi
+  ansible.builtin.command:
+    cmd: chezmoi init skogai/dotfiles --apply
+    creates: "{{ ansible_env.HOME }}/.local/share/chezmoi"

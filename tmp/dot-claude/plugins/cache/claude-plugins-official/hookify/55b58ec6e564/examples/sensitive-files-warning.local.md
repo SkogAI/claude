@@ -1,0 +1,20 @@
+---
+name: warn-sensitive-files
+enabled: true
+event: file
+action: warn
+conditions:
+  - field: file_path
+    operator: regex_match
+    pattern: \.env$|\.env\.|credentials|secrets
+permalink: claude/tmp/dot-claude/plugins/cache/claude-plugins-official/hookify/55b58ec6e564/examples/sensitive-files-warning.local
+---
+
+🔐 **Sensitive file detected**
+
+You're editing a file that may contain sensitive data:
+
+- Ensure credentials are not hardcoded
+- Use environment variables for secrets
+- Verify this file is in .gitignore
+- Consider using a secrets manager

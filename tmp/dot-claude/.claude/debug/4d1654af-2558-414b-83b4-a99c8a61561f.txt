@@ -1,0 +1,62 @@
+2026-02-28T23:00:38.571Z [DEBUG] Error log sink initialized
+2026-02-28T23:00:38.588Z [DEBUG] [bridge:init] bridgeId=aad40023-77fa-4a2b-af0f-6ffcd6722a31 environmentId=a7dc15fd-a868-4238-8f15-7e3a035c55a8 dir=/home/skogix/claude branch=master gitRepoUrl=https://github.com/SkogAI/claude-temp.git machine=skogix-workstation
+2026-02-28T23:00:38.588Z [DEBUG] [bridge:init] apiBaseUrl=https://api.anthropic.com sessionIngressUrl=https://api.anthropic.com
+2026-02-28T23:00:38.588Z [DEBUG] [bridge:init] sandbox=false
+2026-02-28T23:00:38.588Z [DEBUG] [bridge:api] POST /v1/environments/bridge bridgeId=aad40023-77fa-4a2b-af0f-6ffcd6722a31
+2026-02-28T23:00:42.000Z [DEBUG] [bridge:api] POST /v1/environments/bridge -> 200 environment_id=env_019dc6W48m1fDFKzcMdPGMkE
+2026-02-28T23:00:42.000Z [DEBUG] [bridge:api] >>> {"machine_name":"skogix-workstation","directory":"/home/skogix/claude","branch":"master","git_repo_url":"https://github.com/SkogAI/claude-temp.git"}
+2026-02-28T23:00:42.000Z [DEBUG] [bridge:api] <<< {"environment_id":"env_019dc6W48m1fDFKzcMdPGMkE","organization_uuid":"63ee6e26-6ae5-45b3-9fba-87c4275d1a12","environment_secret":"sk-ant-o...lAAA"}
+2026-02-28T23:00:42.000Z [DEBUG] [bridge:init] Registered, server environmentId=env_019dc6W48m1fDFKzcMdPGMkE
+2026-02-28T23:00:42.360Z [DEBUG] [bridge:init] Created initial session session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:42.361Z [DEBUG] [bridge:work] Starting poll loop maxSessions=1 environmentId=env_019dc6W48m1fDFKzcMdPGMkE
+2026-02-28T23:00:43.038Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_0177gGGPshDCMacyczrFvgko type=session sessionId=session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:43.038Z [DEBUG] [bridge:api] <<< {"id":"work_0177gGGPshDCMacyczrFvgko","type":"work","environment_id":"env_019dc6W48m1fDFKzcMdPGMkE","state":"queued","data":{"type":"session","id":"session_0177gGGPshDCMacyczrFvgko"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...In19","created_at":"2026-02-28T23:00:42.197848Z","acknowledged_at":null,"started_at":"2026-02-28T23:00:42.298146Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-02-28T23:00:43.039Z [DEBUG] [bridge:session] Spawning sessionId=session_0177gGGPshDCMacyczrFvgko sdkUrl=wss://api.anthropic.com/v1/session_ingress/ws/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:43.040Z [DEBUG] [bridge:session] Spawning sessionId=session_0177gGGPshDCMacyczrFvgko sdkUrl=wss://api.anthropic.com/v1/session_ingress/ws/session_0177gGGPshDCMacyczrFvgko accessToken=present
+2026-02-28T23:00:43.040Z [DEBUG] [bridge:session] Child args: --print --sdk-url wss://api.anthropic.com/v1/session_ingress/ws/session_0177gGGPshDCMacyczrFvgko --session-id session_0177gGGPshDCMacyczrFvgko --input-format stream-json --output-format stream-json --replay-user-messages
+2026-02-28T23:00:43.051Z [DEBUG] [bridge:session] sessionId=session_0177gGGPshDCMacyczrFvgko pid=130703
+2026-02-28T23:00:43.061Z [DEBUG] [bridge:token] Scheduled token refresh for sessionId=session_0177gGGPshDCMacyczrFvgko in 3h 54m 59s (expires=2026-03-01T03:00:42.000Z, buffer=300s)
+2026-02-28T23:00:43.322Z [DEBUG] [bridge:api] GET .../work/poll -> 200 (no work, 1 consecutive empty polls)
+2026-02-28T23:00:45.062Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:47.264Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:49.477Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:51.686Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:53.894Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:56.097Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:00:58.308Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:00.511Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:02.714Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:05.003Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:07.243Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:09.447Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:11.649Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:13.900Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:13.957Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_0177gGGPshDCMacyczrFvgko type=session sessionId=session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:13.957Z [DEBUG] [bridge:api] <<< {"id":"work_0177gGGPshDCMacyczrFvgko","type":"work","environment_id":"env_019dc6W48m1fDFKzcMdPGMkE","state":"queued","data":{"type":"session","id":"session_0177gGGPshDCMacyczrFvgko"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...In19","created_at":"2026-02-28T23:00:42.197848Z","acknowledged_at":null,"started_at":"2026-02-28T23:00:42.298146Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-02-28T23:01:13.957Z [DEBUG] [bridge:work] At capacity (1/1), skipping workId=work_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:16.203Z [DEBUG] [bridge:api] GET /v1/sessions/session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:45.526Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_0177gGGPshDCMacyczrFvgko type=session sessionId=session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:01:45.526Z [DEBUG] [bridge:api] <<< {"id":"work_0177gGGPshDCMacyczrFvgko","type":"work","environment_id":"env_019dc6W48m1fDFKzcMdPGMkE","state":"queued","data":{"type":"session","id":"session_0177gGGPshDCMacyczrFvgko"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...In19","created_at":"2026-02-28T23:00:42.197848Z","acknowledged_at":null,"started_at":"2026-02-28T23:00:42.298146Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-02-28T23:01:45.526Z [DEBUG] [bridge:work] At capacity (1/1), skipping workId=work_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:02:15.884Z [DEBUG] [bridge:api] GET .../work/poll -> 200 (no work, 1 consecutive empty polls)
+2026-02-28T23:04:47.786Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_015Ud7TGEbRXub3Goe7ATdKn type=session sessionId=session_015Ud7TGEbRXub3Goe7ATdKn
+2026-02-28T23:04:47.786Z [DEBUG] [bridge:api] <<< {"id":"work_015Ud7TGEbRXub3Goe7ATdKn","type":"work","environment_id":"env_019dc6W48m1fDFKzcMdPGMkE","state":"queued","data":{"type":"session","id":"session_015Ud7TGEbRXub3Goe7ATdKn"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...fX0=","created_at":"2026-02-28T23:04:40.881340Z","acknowledged_at":null,"started_at":"2026-02-28T23:04:40.976515Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-02-28T23:04:47.786Z [DEBUG] [bridge:work] At capacity (1/1), skipping workId=work_015Ud7TGEbRXub3Goe7ATdKn
+2026-02-28T23:05:18.807Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_015Ud7TGEbRXub3Goe7ATdKn type=session sessionId=session_015Ud7TGEbRXub3Goe7ATdKn
+2026-02-28T23:05:18.807Z [DEBUG] [bridge:api] <<< {"id":"work_015Ud7TGEbRXub3Goe7ATdKn","type":"work","environment_id":"env_019dc6W48m1fDFKzcMdPGMkE","state":"queued","data":{"type":"session","id":"session_015Ud7TGEbRXub3Goe7ATdKn"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...fX0=","created_at":"2026-02-28T23:04:40.881340Z","acknowledged_at":null,"started_at":"2026-02-28T23:04:40.976515Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-02-28T23:05:18.807Z [DEBUG] [bridge:work] At capacity (1/1), skipping workId=work_015Ud7TGEbRXub3Goe7ATdKn
+2026-02-28T23:05:50.129Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_015Ud7TGEbRXub3Goe7ATdKn type=session sessionId=session_015Ud7TGEbRXub3Goe7ATdKn
+2026-02-28T23:05:50.129Z [DEBUG] [bridge:api] <<< {"id":"work_015Ud7TGEbRXub3Goe7ATdKn","type":"work","environment_id":"env_019dc6W48m1fDFKzcMdPGMkE","state":"queued","data":{"type":"session","id":"session_015Ud7TGEbRXub3Goe7ATdKn"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...fX0=","created_at":"2026-02-28T23:04:40.881340Z","acknowledged_at":null,"started_at":"2026-02-28T23:04:40.976515Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-02-28T23:05:50.129Z [DEBUG] [bridge:work] At capacity (1/1), skipping workId=work_015Ud7TGEbRXub3Goe7ATdKn
+2026-02-28T23:06:20.383Z [DEBUG] [bridge:api] GET .../work/poll -> 200 (no work, 1 consecutive empty polls)
+2026-02-28T23:07:38.292Z [DEBUG] [bridge:shutdown] SIGINT received, shutting down
+2026-02-28T23:07:38.293Z [DEBUG] [bridge:shutdown] Shutting down 1 active session(s)
+2026-02-28T23:07:38.312Z [DEBUG] [bridge:shutdown] Sending SIGTERM to sessionId=session_0177gGGPshDCMacyczrFvgko
+2026-02-28T23:07:38.312Z [DEBUG] [bridge:session] Sending SIGTERM to sessionId=session_0177gGGPshDCMacyczrFvgko pid=130703
+2026-02-28T23:07:38.344Z [DEBUG] [bridge:session] sessionId=session_0177gGGPshDCMacyczrFvgko interrupted signal=SIGTERM pid=130703
+2026-02-28T23:07:38.344Z [DEBUG] [bridge:session] sessionId=session_0177gGGPshDCMacyczrFvgko workId=work_0177gGGPshDCMacyczrFvgko exited status=interrupted duration=6m 55s
+2026-02-28T23:07:38.345Z [DEBUG] [bridge:api] POST .../work/work_0177gGGPshDCMacyczrFvgko/stop force=true
+2026-02-28T23:07:38.726Z [DEBUG] [bridge:api] POST .../work/work_0177gGGPshDCMacyczrFvgko/stop -> 200
+2026-02-28T23:07:38.726Z [DEBUG] [bridge:shutdown] Archiving 1 session(s)
+2026-02-28T23:07:38.726Z [DEBUG] [bridge:api] POST /v1/sessions/session_0177gGGPshDCMacyczrFvgko/archive
+2026-02-28T23:07:38.935Z [DEBUG] [bridge:api] DELETE /v1/environments/bridge/env_019dc6W48m1fDFKzcMdPGMkE

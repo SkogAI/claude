@@ -1,0 +1,36 @@
+2026-02-28T22:00:14.225Z [DEBUG] Error log sink initialized
+2026-02-28T22:00:14.240Z [DEBUG] [bridge:init] bridgeId=98b58ebd-4422-4812-b93c-d5f72d182419 environmentId=809386c8-19e8-4087-af6e-831ec0beeb0f dir=/home/skogix/claude branch=master gitRepoUrl=https://github.com/SkogAI/claude-temp.git machine=skogix-workstation
+2026-02-28T22:00:14.240Z [DEBUG] [bridge:init] apiBaseUrl=https://api.anthropic.com sessionIngressUrl=https://api.anthropic.com
+2026-02-28T22:00:14.240Z [DEBUG] [bridge:init] sandbox=false
+2026-02-28T22:00:14.240Z [DEBUG] [bridge:api] POST /v1/environments/bridge bridgeId=98b58ebd-4422-4812-b93c-d5f72d182419
+2026-02-28T22:00:14.915Z [DEBUG] [bridge:api] POST /v1/environments/bridge -> 200 environment_id=env_014gw43rdZZoAFisqTfMLroU
+2026-02-28T22:00:14.915Z [DEBUG] [bridge:api] >>> {"machine_name":"skogix-workstation","directory":"/home/skogix/claude","branch":"master","git_repo_url":"https://github.com/SkogAI/claude-temp.git"}
+2026-02-28T22:00:14.915Z [DEBUG] [bridge:api] <<< {"environment_id":"env_014gw43rdZZoAFisqTfMLroU","organization_uuid":"63ee6e26-6ae5-45b3-9fba-87c4275d1a12","environment_secret":"sk-ant-o...HQAA"}
+2026-02-28T22:00:14.915Z [DEBUG] [bridge:init] Registered, server environmentId=env_014gw43rdZZoAFisqTfMLroU
+2026-02-28T22:00:15.252Z [DEBUG] [bridge:init] Created initial session session_01HSyXvqr7JANttxRZw6bxTc
+2026-02-28T22:00:15.253Z [DEBUG] [bridge:work] Starting poll loop maxSessions=1 environmentId=env_014gw43rdZZoAFisqTfMLroU
+2026-02-28T22:00:15.731Z [DEBUG] [bridge:api] GET .../work/poll -> 200 (no work, 1 consecutive empty polls)
+2026-02-28T22:00:19.384Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_01HSyXvqr7JANttxRZw6bxTc type=session sessionId=session_01HSyXvqr7JANttxRZw6bxTc
+2026-02-28T22:00:19.384Z [DEBUG] [bridge:api] <<< {"id":"work_01HSyXvqr7JANttxRZw6bxTc","type":"work","environment_id":"env_014gw43rdZZoAFisqTfMLroU","state":"queued","data":{"type":"session","id":"session_01HSyXvqr7JANttxRZw6bxTc"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...In19","created_at":"2026-02-28T22:00:15.265098Z","acknowledged_at":null,"started_at":"2026-02-28T22:00:15.813739Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-02-28T22:00:19.384Z [DEBUG] [bridge:session] Spawning sessionId=session_01HSyXvqr7JANttxRZw6bxTc sdkUrl=wss://api.anthropic.com/v1/session_ingress/ws/session_01HSyXvqr7JANttxRZw6bxTc
+2026-02-28T22:00:19.384Z [DEBUG] [bridge:session] Spawning sessionId=session_01HSyXvqr7JANttxRZw6bxTc sdkUrl=wss://api.anthropic.com/v1/session_ingress/ws/session_01HSyXvqr7JANttxRZw6bxTc accessToken=present
+2026-02-28T22:00:19.384Z [DEBUG] [bridge:session] Child args: --print --sdk-url wss://api.anthropic.com/v1/session_ingress/ws/session_01HSyXvqr7JANttxRZw6bxTc --session-id session_01HSyXvqr7JANttxRZw6bxTc --input-format stream-json --output-format stream-json --replay-user-messages
+2026-02-28T22:00:19.386Z [DEBUG] [bridge:session] sessionId=session_01HSyXvqr7JANttxRZw6bxTc pid=3000
+2026-02-28T22:00:19.389Z [DEBUG] [bridge:token] Scheduled token refresh for sessionId=session_01HSyXvqr7JANttxRZw6bxTc in 3h 54m 59s (expires=2026-03-01T02:00:18.000Z, buffer=300s)
+2026-02-28T22:00:19.854Z [DEBUG] [bridge:api] GET .../work/poll -> 200 (no work, 1 consecutive empty polls)
+2026-02-28T22:00:19.927Z [DEBUG] [bridge:shutdown] SIGINT received, shutting down
+2026-02-28T22:00:19.928Z [DEBUG] [bridge:shutdown] Shutting down 1 active session(s)
+2026-02-28T22:00:19.963Z [DEBUG] [bridge:shutdown] Sending SIGTERM to sessionId=session_01HSyXvqr7JANttxRZw6bxTc
+2026-02-28T22:00:19.963Z [DEBUG] [bridge:session] Sending SIGTERM to sessionId=session_01HSyXvqr7JANttxRZw6bxTc pid=3000
+2026-02-28T22:00:20.442Z [DEBUG] [bridge:session] sessionId=session_01HSyXvqr7JANttxRZw6bxTc failed exit_code=143 pid=3000
+2026-02-28T22:00:20.443Z [DEBUG] [bridge:session] sessionId=session_01HSyXvqr7JANttxRZw6bxTc workId=work_01HSyXvqr7JANttxRZw6bxTc exited status=failed duration=1s
+2026-02-28T22:00:20.443Z [ERROR] Error: Error: Bridge session failed: Process exited with error
+    at <anonymous> (/$bunfs/root/claude:6304:254)
+    at processTicksAndRejections (native:7:39)
+2026-02-28T22:00:20.443Z [DEBUG] [bridge:api] POST .../work/work_01HSyXvqr7JANttxRZw6bxTc/stop force=false
+2026-02-28T22:00:20.444Z [DEBUG] [bridge:api] POST .../work/work_01HSyXvqr7JANttxRZw6bxTc/stop force=true
+2026-02-28T22:00:21.213Z [DEBUG] [bridge:api] POST .../work/work_01HSyXvqr7JANttxRZw6bxTc/stop -> 200
+2026-02-28T22:00:21.213Z [DEBUG] [bridge:work] stopWork succeeded for workId=work_01HSyXvqr7JANttxRZw6bxTc on attempt 1/3
+2026-02-28T22:00:21.296Z [DEBUG] [bridge:shutdown] SIGINT received, shutting down
+2026-02-28T22:00:21.469Z [DEBUG] [bridge:shutdown] SIGINT received, shutting down
+2026-02-28T22:00:21.615Z [DEBUG] [bridge:shutdown] SIGINT received, shutting down

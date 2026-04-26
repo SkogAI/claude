@@ -1,0 +1,53 @@
+2026-03-01T20:00:44.767Z [DEBUG] Error log sink initialized
+2026-03-01T20:00:44.783Z [DEBUG] [bridge:init] bridgeId=b284f22a-05c1-4357-85bb-da9ea6c44008 environmentId=f981c1f0-e94f-4a58-b0a8-12e2e77ea3f5 dir=/home/skogix/claude branch=master gitRepoUrl=https://github.com/SkogAI/claude-temp.git machine=skogix-workstation
+2026-03-01T20:00:44.783Z [DEBUG] [bridge:init] apiBaseUrl=https://api.anthropic.com sessionIngressUrl=https://api.anthropic.com
+2026-03-01T20:00:44.783Z [DEBUG] [bridge:init] sandbox=false
+2026-03-01T20:00:44.783Z [DEBUG] [bridge:api] POST /v1/environments/bridge bridgeId=b284f22a-05c1-4357-85bb-da9ea6c44008
+2026-03-01T20:00:46.788Z [DEBUG] [bridge:api] POST /v1/environments/bridge -> 200 environment_id=env_01EzdpBn3281oRpLEY4suxPm
+2026-03-01T20:00:46.788Z [DEBUG] [bridge:api] >>> {"machine_name":"skogix-workstation","directory":"/home/skogix/claude","branch":"master","git_repo_url":"https://github.com/SkogAI/claude-temp.git"}
+2026-03-01T20:00:46.788Z [DEBUG] [bridge:api] <<< {"environment_id":"env_01EzdpBn3281oRpLEY4suxPm","organization_uuid":"63ee6e26-6ae5-45b3-9fba-87c4275d1a12","environment_secret":"sk-ant-o...UQAA"}
+2026-03-01T20:00:46.788Z [DEBUG] [bridge:init] Registered, server environmentId=env_01EzdpBn3281oRpLEY4suxPm
+2026-03-01T20:00:47.140Z [DEBUG] [bridge:init] Created initial session session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:00:47.141Z [DEBUG] [bridge:work] Starting poll loop maxSessions=1 environmentId=env_01EzdpBn3281oRpLEY4suxPm
+2026-03-01T20:00:51.511Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_01VUmcsMviXnZVTiy8gjzr6Z type=session sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:00:51.511Z [DEBUG] [bridge:api] <<< {"id":"work_01VUmcsMviXnZVTiy8gjzr6Z","type":"work","environment_id":"env_01EzdpBn3281oRpLEY4suxPm","state":"queued","data":{"type":"session","id":"session_01VUmcsMviXnZVTiy8gjzr6Z"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...In19","created_at":"2026-03-01T20:00:47.060474Z","acknowledged_at":null,"started_at":"2026-03-01T20:00:47.568836Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-03-01T20:00:51.511Z [DEBUG] [bridge:session] Spawning sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z sdkUrl=wss://api.anthropic.com/v1/session_ingress/ws/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:00:51.512Z [DEBUG] [bridge:session] Spawning sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z sdkUrl=wss://api.anthropic.com/v1/session_ingress/ws/session_01VUmcsMviXnZVTiy8gjzr6Z accessToken=present
+2026-03-01T20:00:51.512Z [DEBUG] [bridge:session] Child args: --print --sdk-url wss://api.anthropic.com/v1/session_ingress/ws/session_01VUmcsMviXnZVTiy8gjzr6Z --session-id session_01VUmcsMviXnZVTiy8gjzr6Z --input-format stream-json --output-format stream-json --replay-user-messages --verbose --debug-file /tmp/claude/bridge-session-session_01VUmcsMviXnZVTiy8gjzr6Z.log
+2026-03-01T20:00:51.512Z [DEBUG] [bridge:session] Debug log: /tmp/claude/bridge-session-session_01VUmcsMviXnZVTiy8gjzr6Z.log
+2026-03-01T20:00:51.524Z [DEBUG] [bridge:session] sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z pid=788635
+2026-03-01T20:00:51.541Z [DEBUG] [bridge:token] Scheduled token refresh for sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z in 3h 54m 57s (expires=2026-03-02T00:00:49.000Z, buffer=300s)
+2026-03-01T20:00:52.064Z [DEBUG] [bridge:api] GET .../work/poll -> 200 (no work, 1 consecutive empty polls)
+2026-03-01T20:00:53.542Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:00:55.755Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:00:57.972Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:00.179Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:02.421Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:04.653Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:06.862Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:09.064Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:11.283Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:13.495Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:15.779Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:18.023Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:20.259Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:22.498Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:22.811Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_01VUmcsMviXnZVTiy8gjzr6Z type=session sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:22.811Z [DEBUG] [bridge:api] <<< {"id":"work_01VUmcsMviXnZVTiy8gjzr6Z","type":"work","environment_id":"env_01EzdpBn3281oRpLEY4suxPm","state":"queued","data":{"type":"session","id":"session_01VUmcsMviXnZVTiy8gjzr6Z"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...In19","created_at":"2026-03-01T20:00:47.060474Z","acknowledged_at":null,"started_at":"2026-03-01T20:00:47.568836Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-03-01T20:01:22.811Z [DEBUG] [bridge:work] At capacity (1/1), skipping workId=work_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:24.813Z [DEBUG] [bridge:api] GET /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:55.457Z [DEBUG] [bridge:api] GET .../work/poll -> 200 workId=work_01VUmcsMviXnZVTiy8gjzr6Z type=session sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:01:55.457Z [DEBUG] [bridge:api] <<< {"id":"work_01VUmcsMviXnZVTiy8gjzr6Z","type":"work","environment_id":"env_01EzdpBn3281oRpLEY4suxPm","state":"queued","data":{"type":"session","id":"session_01VUmcsMviXnZVTiy8gjzr6Z"},"metadata":{},"actor":{"ip_address":"0.0.0.0","user_agent":"account-lookup-fallback","type":"user_actor","email_address":"emil.skogsund@gmail.com","user_id":"user_01HTGk34W7cAuZEnu2SDGHnu"},"secret":"eyJ2ZXJz...In19","created_at":"2026-03-01T20:00:47.060474Z","acknowledged_at":null,"started_at":"2026-03-01T20:00:47.568836Z","stop_requested_at":null,"stopped_at":null,"latest_heartbeat_at":null}
+2026-03-01T20:01:55.457Z [DEBUG] [bridge:work] At capacity (1/1), skipping workId=work_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:02:25.899Z [DEBUG] [bridge:api] GET .../work/poll -> 200 (no work, 1 consecutive empty polls)
+2026-03-01T20:03:59.606Z [DEBUG] [bridge:shutdown] SIGINT received, shutting down
+2026-03-01T20:03:59.610Z [DEBUG] [bridge:shutdown] Shutting down 1 active session(s)
+2026-03-01T20:03:59.610Z [DEBUG] [bridge:shutdown] Sending SIGTERM to sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z
+2026-03-01T20:03:59.610Z [DEBUG] [bridge:session] Sending SIGTERM to sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z pid=788635
+2026-03-01T20:03:59.650Z [DEBUG] [bridge:session] sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z interrupted signal=SIGTERM pid=788635
+2026-03-01T20:03:59.650Z [DEBUG] [bridge:session] sessionId=session_01VUmcsMviXnZVTiy8gjzr6Z workId=work_01VUmcsMviXnZVTiy8gjzr6Z exited status=interrupted duration=3m 8s
+2026-03-01T20:03:59.650Z [DEBUG] [bridge:api] POST .../work/work_01VUmcsMviXnZVTiy8gjzr6Z/stop force=true
+2026-03-01T20:04:00.220Z [DEBUG] [bridge:api] POST .../work/work_01VUmcsMviXnZVTiy8gjzr6Z/stop -> 200
+2026-03-01T20:04:00.220Z [DEBUG] [bridge:shutdown] Archiving 1 session(s)
+2026-03-01T20:04:00.221Z [DEBUG] [bridge:api] POST /v1/sessions/session_01VUmcsMviXnZVTiy8gjzr6Z/archive
+2026-03-01T20:04:00.467Z [DEBUG] [bridge:api] DELETE /v1/environments/bridge/env_01EzdpBn3281oRpLEY4suxPm

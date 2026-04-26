@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-04-26T06:36:03.797326+00:00",
+  "payload": {
+    "action": "create",
+    "actor": {
+      "id": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "name": "Emil Skogsund",
+      "email": "emil.skogsund@gmail.com",
+      "url": "https://linear.app/skogai/profiles/skogix",
+      "type": "user"
+    },
+    "createdAt": "2026-04-26T06:36:03.409Z",
+    "data": {
+      "id": "e1b86468-8605-4ea2-be63-ea268d8b6c24",
+      "createdAt": "2026-04-26T06:36:03.409Z",
+      "updatedAt": "2026-04-26T06:36:03.409Z",
+      "number": 213,
+      "title": "demo: Agents \u2014 hello world stateful AI agent",
+      "priority": 2,
+      "sortOrder": -26490,
+      "prioritySortOrder": -146953,
+      "slaType": "all",
+      "addedToTeamAt": "2026-04-26T06:36:03.433Z",
+      "labelIds": [],
+      "teamId": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+      "previousIdentifiers": [],
+      "creatorId": "bd8e4951-8b83-4952-8fc5-09e9e6a61987",
+      "stateId": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+      "reactionData": [],
+      "priorityLabel": "High",
+      "inheritsSharedAccess": false,
+      "botActor": null,
+      "identifier": "SKO-213",
+      "url": "https://linear.app/skogai/issue/SKO-213/demo-agents-hello-world-stateful-ai-agent",
+      "subscriberIds": [
+        "bd8e4951-8b83-4952-8fc5-09e9e6a61987"
+      ],
+      "state": {
+        "id": "e73b7eb6-5437-4323-ae2a-0c32926c5da8",
+        "color": "#bec2c8",
+        "name": "Backlog",
+        "type": "backlog"
+      },
+      "team": {
+        "id": "ac4c7f2d-98ae-438f-b85a-33374856fd1b",
+        "key": "SKO",
+        "name": "SkogAI"
+      },
+      "labels": [],
+      "description": "## Goal\n\nEducational hello-world demo for Cloudflare Agents (Durable Object-backed AI agent with state + scheduling).\n\n## What to implement\n\n* `HelloAgent` extending `Agent<Env>`\n* `onRequest` handler that responds with current state\n* `this.setState` to persist a visit counter\n* A scheduled task via `this.schedule` that logs every minute\n* `wrangler.jsonc` with DO binding and `new_sqlite_classes`\n\n## Verify\n\n```sh\ncurl https://<worker>.workers.dev/agents/hello-agent/instance-1\n# Counter should increment on each request\n```\n\n## Repo\n\n`skogai/cloudflare` \u2014 folder: `demos/agents-hello`\n\n## Notes\n\nMost relevant to Nelson/Polecat architecture \u2014 start here when thinking about multi-agent coordination patterns on Cloudflare.",
+      "descriptionData": "{\"type\":\"doc\",\"content\":[{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"70e58b9a-f762-4fa9-a63d-9b054efd33e6\"},\"content\":[{\"type\":\"text\",\"text\":\"Goal\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Educational hello-world demo for Cloudflare Agents (Durable Object-backed AI agent with state + scheduling).\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"39f805b5-0c40-47b5-892a-9a518e183b9b\"},\"content\":[{\"type\":\"text\",\"text\":\"What to implement\"}]},{\"type\":\"bullet_list\",\"content\":[{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"HelloAgent\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" extending \"},{\"type\":\"text\",\"text\":\"Agent<Env>\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"onRequest\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" handler that responds with current state\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"this.setState\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" to persist a visit counter\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"A scheduled task via \"},{\"type\":\"text\",\"text\":\"this.schedule\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" that logs every minute\"}]}]},{\"type\":\"list_item\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"wrangler.jsonc\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" with DO binding and \"},{\"type\":\"text\",\"text\":\"new_sqlite_classes\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"930df770-1500-404d-a2b3-0d728915b7c1\"},\"content\":[{\"type\":\"text\",\"text\":\"Verify\"}]},{\"type\":\"code_block\",\"attrs\":{\"language\":\"sh\",\"id\":\"16577c2e-654e-4b69-accf-ac527169874f\"},\"content\":[{\"type\":\"text\",\"text\":\"curl https://<worker>.workers.dev/agents/hello-agent/instance-1\\n# Counter should increment on each request\"}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"e2c01a48-1c50-4f14-988e-5c8b3bd0368c\"},\"content\":[{\"type\":\"text\",\"text\":\"Repo\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"skogai/cloudflare\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]},{\"type\":\"text\",\"text\":\" \u2014 folder: \"},{\"type\":\"text\",\"text\":\"demos/agents-hello\",\"marks\":[{\"type\":\"code\",\"attrs\":{}}]}]},{\"type\":\"heading\",\"attrs\":{\"level\":2,\"id\":\"9ea2c8b7-dd85-4de3-8424-7c72c7fee587\"},\"content\":[{\"type\":\"text\",\"text\":\"Notes\"}]},{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Most relevant to Nelson/Polecat architecture \u2014 start here when thinking about multi-agent coordination patterns on Cloudflare.\"}]}]}"
+    },
+    "url": "https://linear.app/skogai/issue/SKO-213/demo-agents-hello-world-stateful-ai-agent",
+    "type": "Issue",
+    "organizationId": "b655a777-5904-4c64-a817-81f1a9779b8c",
+    "webhookTimestamp": 1777185363740,
+    "webhookId": "2a07b94c-07cb-4bfe-bf3b-7db3eafd830c"
+  },
+  "processed": false
+}

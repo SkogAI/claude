@@ -1,0 +1,953 @@
+2026-03-01T16:37:19.038Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T16:37:19.038Z [DEBUG] MDM settings load completed in 1ms
+2026-03-01T16:37:19.064Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-01T16:37:19.064Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-01T16:37:19.064Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-01T16:37:19.064Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-01T16:37:19.073Z [DEBUG] Applying permission update: Adding 128 allow rule(s) to destination 'userSettings': ["Bash(git *)","Bash(br *)","Bash(skog *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)","Bash(rtk *)","Bash(/home/skogix/.claude/hooks/rtk-rewrite.sh *)","Bash(command *)","Bash(dolt *)","Bash(mysql *)"]
+2026-03-01T16:37:19.075Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-01T16:37:19.078Z [DEBUG] [STARTUP] Running setup()...
+2026-03-01T16:37:19.080Z [DEBUG] [TeammateModeSnapshot] Captured from config: tmux
+2026-03-01T16:37:19.081Z [DEBUG] Loading skills from: managed=/etc/claude-code/.claude/skills, user=/home/skogix/.claude/skills, project=[/home/skogix/gt/.claude/skills]
+2026-03-01T16:37:19.081Z [DEBUG] Error log sink initialized
+2026-03-01T16:37:19.088Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default
+2026-03-01T16:37:19.092Z [DEBUG] Loaded 23 installed plugins from /home/skogix/.claude/plugins/installed_plugins.json
+2026-03-01T16:37:19.092Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-03-01T16:37:19.092Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-01T16:37:19.092Z [DEBUG] Total plugin skills loaded: 0
+2026-03-01T16:37:19.092Z [DEBUG] Total plugin commands loaded: 0
+2026-03-01T16:37:19.093Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-03-01T16:37:19.101Z [DEBUG] Cannot acquire lock for 2.1.63 - held by PID 1448996
+2026-03-01T16:37:19.104Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/skogix/.local/share/claude/versions/2.1.63 (expected in multi-process scenarios)
+    at oN$ (/$bunfs/root/claude:2435:2100)
+    at URA (/$bunfs/root/claude:2435:1211)
+    at processTicksAndRejections (native:7:39)
+2026-03-01T16:37:19.107Z [DEBUG] [STARTUP] setup() completed in 29ms
+2026-03-01T16:37:19.107Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-01T16:37:19.112Z [DEBUG] [Claude in Chrome] Extension fcoeoabgfenejglbffodgkkbkcdhcgfn found in chrome Default
+2026-03-01T16:37:19.115Z [DEBUG] Git remote URL: https://github.com/SkogAI/gt.git
+2026-03-01T16:37:19.115Z [DEBUG] Parsed repository: github.com/SkogAI/gt from URL: https://github.com/SkogAI/gt.git
+2026-03-01T16:37:19.143Z [DEBUG] Loaded 12 unique skills (12 unconditional, 0 conditional, managed: 0, user: 5, project: 1, additional: 0, legacy commands: 6)
+2026-03-01T16:37:19.143Z [DEBUG] getSkills returning: 12 skill dir commands, 0 plugin skills, 0 bundled skills
+2026-03-01T16:37:19.144Z [DEBUG] [STARTUP] Commands and agents loaded in 37ms
+2026-03-01T16:37:19.149Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-03-01T16:37:19.189Z [DEBUG] Path /home/skogix/gt already tracked for repo skogai/gt
+2026-03-01T16:37:19.199Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-03-01T16:37:19.199Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-03-01T16:37:19.200Z [DEBUG] [STARTUP] showSetupScreens() completed in 51ms
+2026-03-01T16:37:19.200Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-03-01T16:37:19.201Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-03-01T16:37:19.201Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-03-01T16:37:19.201Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:19.201Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:19.208Z [DEBUG] Total LSP servers loaded: 0
+2026-03-01T16:37:19.210Z [DEBUG] [STARTUP] MCP configs loaded in 135ms
+2026-03-01T16:37:19.210Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-03-01T16:37:19.210Z [DEBUG] LSP manager initialized with 0 servers
+2026-03-01T16:37:19.210Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:19.211Z [DEBUG] LSP server manager initialized successfully
+2026-03-01T16:37:19.211Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-03-01T16:37:19.218Z [DEBUG] Initialized versioned plugins system with 23 plugins
+2026-03-01T16:37:19.219Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-03-01T16:37:19.221Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1457683.1772383039221
+2026-03-01T16:37:19.221Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T16:37:19.225Z [DEBUG] Temp file written successfully, size: 66638 bytes
+2026-03-01T16:37:19.225Z [DEBUG] Applied original permissions to temp file
+2026-03-01T16:37:19.225Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1457683.1772383039221 to /home/skogix/.claude.json
+2026-03-01T16:37:19.225Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-03-01T16:37:19.363Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-01T16:37:19.386Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:19.394Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:19.420Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-03-01T16:37:19.420Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-03-01T16:37:19.420Z [DEBUG] performStartupChecks called
+2026-03-01T16:37:19.421Z [DEBUG] Starting background plugin installations
+2026-03-01T16:37:19.423Z [DEBUG] Loaded 5 CLAUDE.md/rules files:
+  [User] /home/skogix/.claude/CLAUDE.md (405 chars)
+  [User] /home/skogix/skogai/CLAUDE.md (9250 chars) (included by /home/skogix/.claude/CLAUDE.md)
+  [User] /home/skogix/skogai/docs/skogix/user.md (3112 chars) (included by /home/skogix/skogai/CLAUDE.md)
+  [User] /home/skogix/skogai/docs/skogix/definitions.md (1223 chars) (included by /home/skogix/skogai/CLAUDE.md)
+  [Project] /home/skogix/gt/CLAUDE.md (329 chars)
+2026-03-01T16:37:19.446Z [DEBUG] performBackgroundPluginInstallations called
+2026-03-01T16:37:19.451Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-01T16:37:19.451Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-03-01T16:37:19.451Z [DEBUG] [claudeai-mcp] Disabled via env var
+2026-03-01T16:37:19.453Z [DEBUG] [bridge:repl] initReplBridge #1 starting (initialMessages=0)
+2026-03-01T16:37:19.456Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-03-01T16:37:19.471Z [DEBUG] [keybindings] Watching for changes to /home/skogix/.claude/keybindings.json
+2026-03-01T16:37:19.476Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-03-01T16:37:19.479Z [DEBUG] [bridge:repl] Skipping: bridge not enabled
+2026-03-01T16:37:19.479Z [DEBUG] [bridge:repl] Init returned null (precondition or session creation failed)
+2026-03-01T16:37:19.530Z [DEBUG] Security messages are fresh (<1h old), skipping fetch
+2026-03-01T16:37:19.542Z [ERROR] Failed to fetch org fast mode status, defaulting to disabled: AxiosError: Request failed with status code 403
+2026-03-01T16:37:19.544Z [DEBUG] [useDeferredValue] Messages deferred by 1 (0→1)
+2026-03-01T16:37:19.599Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:19.631Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:19.632Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-03-01T16:37:19.633Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.189; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:19.633Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:19.633Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:19.634Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:19.641Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:19.645Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:19.647Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:19.647Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:19.648Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:19.654Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2026-03-01T16:37:19.670Z [DEBUG] Watching for changes in setting files /home/skogix/.claude/settings.json...
+2026-03-01T16:37:19.692Z [DEBUG] [useDeferredValue] Messages deferred by 1 (0→1)
+2026-03-01T16:37:19.697Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:19.736Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:19.753Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/home/skogix/.local/share/claude/versions/2.1.63)
+2026-03-01T16:37:19.754Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:19.754Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.307; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:19.755Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:19.755Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:19.755Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:19.845Z [DEBUG] Total plugin agents loaded: 0
+2026-03-01T16:37:19.845Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-03-01T16:37:19.847Z [DEBUG] [useDeferredValue] Messages deferred by 1 (0→1)
+2026-03-01T16:37:20.204Z [DEBUG] Checking for native installer update to version 2.1.63
+2026-03-01T16:37:20.211Z [DEBUG] Found 2.1.63 at /home/skogix/.local/bin/claude, skipping install
+2026-03-01T16:37:20.215Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:20.329Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:20.339Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:20.561Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:20.736Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:20.783Z [DEBUG] SSH config check: code=1 configured=true
+2026-03-01T16:37:20.786Z [DEBUG] git pull: cwd=/home/skogix/.claude/plugins/marketplaces/claude-plugins-official ref=default
+2026-03-01T16:37:20.825Z [DEBUG] [useDeferredValue] Messages deferred by 1 (1→2)
+2026-03-01T16:37:20.830Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:20.863Z [DEBUG] High write ratio: blit=0, write=1450 (100.0% writes), screen=36x80
+2026-03-01T16:37:20.883Z [DEBUG] SSH config check: code=1 configured=true
+2026-03-01T16:37:20.894Z [DEBUG] git pull: cwd=/home/skogix/.claude/plugins/marketplaces/claude-code-plugins ref=default
+2026-03-01T16:37:21.031Z [DEBUG] [useDeferredValue] Messages deferred by 1 (2→3)
+2026-03-01T16:37:21.036Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:21.052Z [DEBUG] [useDeferredValue] Messages deferred by 1 (2→3)
+2026-03-01T16:37:21.286Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:21.299Z [DEBUG] [useDeferredValue] Messages deferred by 1 (3→4)
+2026-03-01T16:37:21.305Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:21.313Z [DEBUG] High write ratio: blit=0, write=1517 (100.0% writes), screen=38x80
+2026-03-01T16:37:21.347Z [DEBUG] [useDeferredValue] Messages deferred by 1 (3→4)
+2026-03-01T16:37:21.350Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:21.369Z [DEBUG] tree-sitter: loaded from embedded
+2026-03-01T16:37:21.434Z [DEBUG] Creating shell snapshot for zsh (/usr/bin/zsh)
+2026-03-01T16:37:21.435Z [DEBUG] Looking for shell config file: /home/skogix/.zshrc
+2026-03-01T16:37:21.435Z [DEBUG] Snapshots directory: /home/skogix/.claude/shell-snapshots
+2026-03-01T16:37:21.436Z [DEBUG] [useDeferredValue] Messages deferred by 1 (3→4)
+2026-03-01T16:37:21.444Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:21.454Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1457683.1772383041454
+2026-03-01T16:37:21.454Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T16:37:21.458Z [DEBUG] Temp file written successfully, size: 66638 bytes
+2026-03-01T16:37:21.458Z [DEBUG] Applied original permissions to temp file
+2026-03-01T16:37:21.458Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1457683.1772383041454 to /home/skogix/.claude.json
+2026-03-01T16:37:21.458Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-03-01T16:37:21.460Z [DEBUG] Creating snapshot at: /home/skogix/.claude/shell-snapshots/snapshot-zsh-1772383041435-m072i8.sh
+2026-03-01T16:37:21.460Z [DEBUG] Execution timeout: 10000ms
+2026-03-01T16:37:21.488Z [DEBUG] Successfully refreshed marketplace: claude-plugins-official
+2026-03-01T16:37:22.431Z [DEBUG] Shell snapshot created successfully (203245 bytes)
+2026-03-01T16:37:22.432Z [DEBUG] No session environment scripts found
+2026-03-01T16:37:22.432Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:22.601Z [DEBUG] Successfully refreshed marketplace: claude-code-plugins
+2026-03-01T16:37:22.601Z [DEBUG] Plugin autoupdate: checking installed plugins
+2026-03-01T16:37:22.650Z [DEBUG] Caching plugin from source: {"source":"url","url":"https://github.com/slackapi/slack-mcp-plugin.git"} to temporary path /home/skogix/.claude/plugins/cache/temp_git_1772383042650_z7md46
+2026-03-01T16:37:22.652Z [DEBUG] Using provided version for pyright-lsp@claude-plugins-official: 1.0.0
+2026-03-01T16:37:22.654Z [DEBUG] Using manifest version for claude-code-setup@claude-plugins-official: 1.0.0
+2026-03-01T16:37:22.655Z [DEBUG] Using manifest version for code-simplifier@claude-plugins-official: 1.0.0
+2026-03-01T16:37:22.655Z [DEBUG] Using manifest version for claude-md-management@claude-plugins-official: 1.0.0
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for hookify@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for playground@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for github@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for frontend-design@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for context7@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for serena@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for feature-dev@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for code-review@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.656Z [DEBUG] Using git SHA for skill-creator@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.657Z [DEBUG] Using git SHA for playwright@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.657Z [DEBUG] Using git SHA for supabase@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.657Z [DEBUG] Using git SHA for greptile@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:37:22.778Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:22.779Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:22.780Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:22.780Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:22.780Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:22.782Z [DEBUG] [useDeferredValue] Messages deferred by 1 (4→5)
+2026-03-01T16:37:22.787Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:22.814Z [DEBUG] High write ratio: blit=2160, write=4051 (65.2% writes), screen=155x80
+2026-03-01T16:37:23.288Z [DEBUG] Cloned repository from https://github.com/slackapi/slack-mcp-plugin.git to /home/skogix/.claude/plugins/cache/temp_git_1772383042650_z7md46
+2026-03-01T16:37:23.288Z [DEBUG] Successfully cached plugin slack to /home/skogix/.claude/plugins/cache/slack
+2026-03-01T16:37:23.288Z [DEBUG] Using manifest version for slack@claude-plugins-official: 1.0.0
+2026-03-01T16:37:23.415Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:25.001Z [DEBUG] [useDeferredValue] Messages deferred by 1 (5→6)
+2026-03-01T16:37:25.008Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:25.364Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:25.387Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:25.388Z [DEBUG] [useDeferredValue] Messages deferred by 1 (6→7)
+2026-03-01T16:37:25.396Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:25.419Z [DEBUG] High write ratio: blit=0, write=5555 (100.0% writes), screen=165x80
+2026-03-01T16:37:25.456Z [DEBUG] [useDeferredValue] Messages deferred by 1 (6→7)
+2026-03-01T16:37:25.466Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:25.841Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:25.843Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:25.843Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:25.843Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:25.843Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:25.848Z [DEBUG] [useDeferredValue] Messages deferred by 1 (7→8)
+2026-03-01T16:37:25.855Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:26.553Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:27.063Z [DEBUG] [useDeferredValue] Messages deferred by 1 (8→9)
+2026-03-01T16:37:27.065Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:27.090Z [DEBUG] [useDeferredValue] Messages deferred by 1 (8→9)
+2026-03-01T16:37:27.259Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:27.265Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:27.267Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-03-01T16:37:27.273Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:27.287Z [DEBUG] High write ratio: blit=0, write=5811 (100.0% writes), screen=176x80
+2026-03-01T16:37:27.396Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:27.397Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:27.397Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:27.397Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:27.398Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:27.400Z [DEBUG] [useDeferredValue] Messages deferred by 1 (10→11)
+2026-03-01T16:37:27.408Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:28.023Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:28.430Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-01T16:37:28.439Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:28.847Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:28.851Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:28.852Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-01T16:37:28.857Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:28.872Z [DEBUG] High write ratio: blit=0, write=6248 (100.0% writes), screen=190x80
+2026-03-01T16:37:28.986Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:29.108Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:29.112Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:29.112Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:29.112Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:29.113Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:29.115Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-03-01T16:37:29.122Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:29.922Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:31.248Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-03-01T16:37:31.254Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:31.268Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-03-01T16:37:31.791Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:31.796Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:31.797Z [DEBUG] [useDeferredValue] Messages deferred by 1 (15→16)
+2026-03-01T16:37:31.803Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:31.836Z [DEBUG] High write ratio: blit=0, write=13610 (100.0% writes), screen=318x80
+2026-03-01T16:37:31.849Z [DEBUG] [useDeferredValue] Messages deferred by 1 (15→16)
+2026-03-01T16:37:31.855Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:31.926Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:31.927Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:31.928Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:31.928Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:31.928Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:31.931Z [DEBUG] [useDeferredValue] Messages deferred by 1 (16→17)
+2026-03-01T16:37:31.939Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:32.645Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:33.661Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-03-01T16:37:33.664Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:33.679Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-03-01T16:37:34.133Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:34.146Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:34.146Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-03-01T16:37:34.151Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:34.178Z [DEBUG] High write ratio: blit=0, write=14240 (100.0% writes), screen=340x80
+2026-03-01T16:37:34.196Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-03-01T16:37:34.205Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:34.394Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:34.396Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:34.397Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:34.397Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:34.397Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:34.401Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-03-01T16:37:34.408Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:35.295Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:35.735Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-03-01T16:37:35.742Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:36.134Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:36.140Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-03-01T16:37:36.145Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:36.173Z [DEBUG] High write ratio: blit=0, write=14534 (100.0% writes), screen=348x80
+2026-03-01T16:37:36.175Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:36.208Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-03-01T16:37:36.217Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:36.351Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:36.352Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:36.352Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:36.352Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:36.352Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:36.354Z [DEBUG] [useDeferredValue] Messages deferred by 1 (22→23)
+2026-03-01T16:37:36.363Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:38.081Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:39.475Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-03-01T16:37:39.487Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:40.041Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:40.048Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:40.049Z [DEBUG] [useDeferredValue] Messages deferred by 1 (24→25)
+2026-03-01T16:37:40.055Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:40.088Z [DEBUG] High write ratio: blit=0, write=16669 (100.0% writes), screen=416x80
+2026-03-01T16:37:40.105Z [DEBUG] [useDeferredValue] Messages deferred by 1 (24→25)
+2026-03-01T16:37:40.113Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:40.448Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:40.449Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:40.450Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:40.450Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:40.450Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:40.452Z [DEBUG] [useDeferredValue] Messages deferred by 1 (25→26)
+2026-03-01T16:37:40.459Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:41.766Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:43.116Z [DEBUG] [useDeferredValue] Messages deferred by 1 (26→27)
+2026-03-01T16:37:43.119Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:43.135Z [DEBUG] [useDeferredValue] Messages deferred by 1 (26→27)
+2026-03-01T16:37:43.616Z [DEBUG] [useDeferredValue] Messages deferred by 1 (27→28)
+2026-03-01T16:37:43.624Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:43.874Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:43.881Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:43.882Z [DEBUG] [useDeferredValue] Messages deferred by 1 (28→29)
+2026-03-01T16:37:43.888Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:43.934Z [DEBUG] High write ratio: blit=0, write=22792 (100.0% writes), screen=705x80
+2026-03-01T16:37:44.144Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:44.145Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:44.145Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:44.145Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:44.145Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:44.149Z [DEBUG] [useDeferredValue] Messages deferred by 1 (29→30)
+2026-03-01T16:37:44.155Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:44.818Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:46.102Z [DEBUG] [useDeferredValue] Messages deferred by 1 (30→31)
+2026-03-01T16:37:46.111Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:46.896Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:46.910Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:46.915Z [DEBUG] [useDeferredValue] Messages deferred by 1 (31→32)
+2026-03-01T16:37:46.922Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:46.981Z [DEBUG] High write ratio: blit=0, write=23541 (100.0% writes), screen=726x80
+2026-03-01T16:37:47.079Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:47.081Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:47.081Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:47.081Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:47.082Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:47.085Z [DEBUG] [useDeferredValue] Messages deferred by 1 (32→33)
+2026-03-01T16:37:47.094Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:47.729Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:48.977Z [DEBUG] [useDeferredValue] Messages deferred by 1 (33→34)
+2026-03-01T16:37:48.983Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:49.740Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:49.760Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:49.761Z [DEBUG] [useDeferredValue] Messages deferred by 1 (34→35)
+2026-03-01T16:37:49.769Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:49.826Z [DEBUG] High write ratio: blit=0, write=28523 (100.0% writes), screen=809x80
+2026-03-01T16:37:50.023Z [DEBUG] Bash tool error (267ms): Shell command failed
+2026-03-01T16:37:50.025Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:50.026Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:50.026Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:50.026Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:50.027Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:50.029Z [DEBUG] [useDeferredValue] Messages deferred by 1 (35→36)
+2026-03-01T16:37:50.036Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:50.641Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:50.912Z [DEBUG] [useDeferredValue] Messages deferred by 1 (36→37)
+2026-03-01T16:37:50.920Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:51.398Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:51.407Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:51.408Z [DEBUG] [useDeferredValue] Messages deferred by 1 (37→38)
+2026-03-01T16:37:51.413Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:51.458Z [DEBUG] High write ratio: blit=0, write=28803 (100.0% writes), screen=819x80
+2026-03-01T16:37:51.471Z [DEBUG] [useDeferredValue] Messages deferred by 1 (37→38)
+2026-03-01T16:37:51.477Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:51.610Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:51.611Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:51.612Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:51.612Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:51.612Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:51.614Z [DEBUG] [useDeferredValue] Messages deferred by 1 (38→39)
+2026-03-01T16:37:51.621Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:52.599Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:56.101Z [DEBUG] [useDeferredValue] Messages deferred by 1 (39→40)
+2026-03-01T16:37:56.104Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:56.119Z [DEBUG] [useDeferredValue] Messages deferred by 1 (39→40)
+2026-03-01T16:37:56.353Z [DEBUG] [useDeferredValue] Messages deferred by 1 (40→41)
+2026-03-01T16:37:56.361Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:56.934Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:56.942Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:56.943Z [DEBUG] [useDeferredValue] Messages deferred by 1 (41→42)
+2026-03-01T16:37:56.957Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:57.041Z [DEBUG] High write ratio: blit=0, write=30322 (100.0% writes), screen=854x80
+2026-03-01T16:37:57.060Z [DEBUG] [useDeferredValue] Messages deferred by 1 (41→42)
+2026-03-01T16:37:57.070Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:57.204Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:37:57.206Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:37:57.206Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:37:57.206Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:37:57.207Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:37:57.210Z [DEBUG] [useDeferredValue] Messages deferred by 1 (42→43)
+2026-03-01T16:37:57.219Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:57.227Z [DEBUG] [useDeferredValue] Messages deferred by 1 (42→43)
+2026-03-01T16:37:58.238Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:37:58.940Z [DEBUG] [useDeferredValue] Messages deferred by 1 (43→44)
+2026-03-01T16:37:58.945Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:58.956Z [DEBUG] [useDeferredValue] Messages deferred by 1 (43→44)
+2026-03-01T16:37:59.464Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:37:59.477Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:37:59.478Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-03-01T16:37:59.485Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:37:59.544Z [DEBUG] High write ratio: blit=0, write=30718 (100.0% writes), screen=864x80
+2026-03-01T16:37:59.557Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-03-01T16:37:59.565Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:02.581Z [DEBUG] [useDeferredValue] Messages deferred by 1 (45→46)
+2026-03-01T16:38:02.589Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:03.562Z [DEBUG] [useDeferredValue] Messages deferred by 1 (46→47)
+2026-03-01T16:38:03.567Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:04.573Z [DEBUG] [useDeferredValue] Messages deferred by 1 (47→48)
+2026-03-01T16:38:04.582Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:05.593Z [DEBUG] [useDeferredValue] Messages deferred by 1 (48→49)
+2026-03-01T16:38:05.601Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:06.584Z [DEBUG] [useDeferredValue] Messages deferred by 1 (49→50)
+2026-03-01T16:38:06.591Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:07.586Z [DEBUG] [useDeferredValue] Messages deferred by 1 (50→51)
+2026-03-01T16:38:07.592Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:08.600Z [DEBUG] [useDeferredValue] Messages deferred by 1 (51→52)
+2026-03-01T16:38:08.607Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:09.592Z [DEBUG] [useDeferredValue] Messages deferred by 1 (52→53)
+2026-03-01T16:38:09.599Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:10.605Z [DEBUG] [useDeferredValue] Messages deferred by 1 (53→54)
+2026-03-01T16:38:10.611Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:11.019Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:38:11.020Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:38:11.021Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:38:11.021Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:38:11.021Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:38:11.025Z [DEBUG] [useDeferredValue] Messages deferred by 1 (54→55)
+2026-03-01T16:38:11.034Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:11.110Z [DEBUG] High write ratio: blit=0, write=30766 (100.0% writes), screen=867x80
+2026-03-01T16:38:12.044Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:38:14.284Z [DEBUG] [useDeferredValue] Messages deferred by 1 (55→56)
+2026-03-01T16:38:14.286Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:14.650Z [DEBUG] [useDeferredValue] Messages deferred by 1 (56→57)
+2026-03-01T16:38:14.658Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:15.170Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:38:15.176Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:38:15.181Z [DEBUG] [useDeferredValue] Messages deferred by 1 (57→58)
+2026-03-01T16:38:15.186Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:15.275Z [DEBUG] High write ratio: blit=0, write=35740 (100.0% writes), screen=998x80
+2026-03-01T16:38:15.350Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:38:15.351Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:38:15.352Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:38:15.352Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:38:15.352Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:38:15.355Z [DEBUG] [useDeferredValue] Messages deferred by 1 (58→59)
+2026-03-01T16:38:15.363Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:16.086Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:38:16.528Z [DEBUG] [useDeferredValue] Messages deferred by 1 (59→60)
+2026-03-01T16:38:16.535Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:16.907Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:38:16.913Z [DEBUG] [useDeferredValue] Messages deferred by 1 (60→61)
+2026-03-01T16:38:16.920Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:16.985Z [DEBUG] High write ratio: blit=0, write=35900 (100.0% writes), screen=1006x80
+2026-03-01T16:38:16.987Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:38:17.002Z [DEBUG] [useDeferredValue] Messages deferred by 1 (60→61)
+2026-03-01T16:38:17.009Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:17.164Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:38:17.166Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:38:17.166Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:38:17.166Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:38:17.167Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:38:17.170Z [DEBUG] [useDeferredValue] Messages deferred by 1 (61→62)
+2026-03-01T16:38:17.179Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:17.810Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:38:18.537Z [DEBUG] [useDeferredValue] Messages deferred by 1 (62→63)
+2026-03-01T16:38:18.544Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:19.114Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:38:19.121Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:38:19.122Z [DEBUG] [useDeferredValue] Messages deferred by 1 (63→64)
+2026-03-01T16:38:19.129Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:19.194Z [DEBUG] High write ratio: blit=0, write=36276 (100.0% writes), screen=1016x80
+2026-03-01T16:38:19.210Z [DEBUG] [useDeferredValue] Messages deferred by 1 (63→64)
+2026-03-01T16:38:19.217Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:22.220Z [DEBUG] [useDeferredValue] Messages deferred by 1 (64→65)
+2026-03-01T16:38:22.225Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:23.220Z [DEBUG] [useDeferredValue] Messages deferred by 1 (65→66)
+2026-03-01T16:38:23.235Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:23.243Z [DEBUG] [useDeferredValue] Messages deferred by 1 (65→66)
+2026-03-01T16:38:24.220Z [DEBUG] [useDeferredValue] Messages deferred by 1 (66→67)
+2026-03-01T16:38:24.229Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:25.221Z [DEBUG] [useDeferredValue] Messages deferred by 1 (67→68)
+2026-03-01T16:38:25.227Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:26.227Z [DEBUG] [useDeferredValue] Messages deferred by 1 (68→69)
+2026-03-01T16:38:26.233Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:27.226Z [DEBUG] [useDeferredValue] Messages deferred by 1 (69→70)
+2026-03-01T16:38:27.234Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:28.228Z [DEBUG] [useDeferredValue] Messages deferred by 1 (70→71)
+2026-03-01T16:38:28.234Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:29.229Z [DEBUG] [useDeferredValue] Messages deferred by 1 (71→72)
+2026-03-01T16:38:29.235Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:30.231Z [DEBUG] [useDeferredValue] Messages deferred by 1 (72→73)
+2026-03-01T16:38:30.238Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:31.231Z [DEBUG] [useDeferredValue] Messages deferred by 1 (73→74)
+2026-03-01T16:38:31.238Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:31.566Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:38:31.567Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:38:31.567Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:38:31.567Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:38:31.568Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:38:31.571Z [DEBUG] [useDeferredValue] Messages deferred by 1 (74→75)
+2026-03-01T16:38:31.579Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:31.647Z [DEBUG] High write ratio: blit=0, write=36373 (100.0% writes), screen=1020x80
+2026-03-01T16:38:32.370Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:38:35.985Z [DEBUG] [useDeferredValue] Messages deferred by 1 (75→76)
+2026-03-01T16:38:35.988Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:35.994Z [DEBUG] [useDeferredValue] Messages deferred by 1 (75→76)
+2026-03-01T16:38:37.167Z [DEBUG] [useDeferredValue] Messages deferred by 1 (76→77)
+2026-03-01T16:38:37.176Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:37.190Z [DEBUG] [useDeferredValue] Messages deferred by 1 (76→77)
+2026-03-01T16:38:37.696Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:38:37.703Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:38:37.705Z [DEBUG] [useDeferredValue] Messages deferred by 1 (77→78)
+2026-03-01T16:38:37.712Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:37.781Z [DEBUG] High write ratio: blit=0, write=45932 (100.0% writes), screen=1267x80
+2026-03-01T16:38:37.801Z [DEBUG] [useDeferredValue] Messages deferred by 1 (77→78)
+2026-03-01T16:38:37.808Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:37.904Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:38:37.906Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:38:37.907Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:38:37.907Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:38:37.908Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:38:37.911Z [DEBUG] [useDeferredValue] Messages deferred by 1 (78→79)
+2026-03-01T16:38:37.919Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:38.919Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:38:39.356Z [DEBUG] [useDeferredValue] Messages deferred by 1 (79→80)
+2026-03-01T16:38:39.357Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:39.360Z [DEBUG] [useDeferredValue] Messages deferred by 1 (79→80)
+2026-03-01T16:38:40.041Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:38:40.046Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:38:40.047Z [DEBUG] [useDeferredValue] Messages deferred by 1 (80→81)
+2026-03-01T16:38:40.052Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:40.127Z [DEBUG] High write ratio: blit=0, write=46107 (100.0% writes), screen=1275x80
+2026-03-01T16:38:40.139Z [DEBUG] [useDeferredValue] Messages deferred by 1 (80→81)
+2026-03-01T16:38:40.146Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:40.245Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:38:40.247Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:38:40.247Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:38:40.247Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:38:40.247Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:38:40.250Z [DEBUG] [useDeferredValue] Messages deferred by 1 (81→82)
+2026-03-01T16:38:40.256Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:40.951Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:38:41.254Z [DEBUG] [useDeferredValue] Messages deferred by 1 (82→83)
+2026-03-01T16:38:41.256Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:41.263Z [DEBUG] [useDeferredValue] Messages deferred by 1 (82→83)
+2026-03-01T16:38:41.782Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:38:41.795Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:38:41.796Z [DEBUG] [useDeferredValue] Messages deferred by 1 (83→84)
+2026-03-01T16:38:41.803Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:41.872Z [DEBUG] High write ratio: blit=0, write=46344 (100.0% writes), screen=1283x80
+2026-03-01T16:38:41.884Z [DEBUG] [useDeferredValue] Messages deferred by 1 (83→84)
+2026-03-01T16:38:41.906Z [DEBUG] [useDeferredValue] Messages deferred by 1 (83→84)
+2026-03-01T16:38:41.908Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:44.899Z [DEBUG] [useDeferredValue] Messages deferred by 1 (84→85)
+2026-03-01T16:38:44.905Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:45.897Z [DEBUG] [useDeferredValue] Messages deferred by 1 (85→86)
+2026-03-01T16:38:45.903Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:46.211Z [DEBUG] Full reset (scrollback changes): scrollbackRows=1363, firstChangeY=1276
+  prev: "  Bash(gt doctor --fix 2>&1 | head -100)                                        "
+  next: "● Bash(gt doctor --fix 2>&1 | head -100)                                        "
+2026-03-01T16:38:46.888Z [DEBUG] [useDeferredValue] Messages deferred by 1 (86→87)
+2026-03-01T16:38:46.894Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:47.890Z [DEBUG] [useDeferredValue] Messages deferred by 1 (87→88)
+2026-03-01T16:38:47.896Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:48.891Z [DEBUG] [useDeferredValue] Messages deferred by 1 (88→89)
+2026-03-01T16:38:48.898Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:49.894Z [DEBUG] [useDeferredValue] Messages deferred by 1 (89→90)
+2026-03-01T16:38:49.899Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:50.920Z [DEBUG] [useDeferredValue] Messages deferred by 1 (90→91)
+2026-03-01T16:38:50.926Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:51.928Z [DEBUG] [useDeferredValue] Messages deferred by 1 (91→92)
+2026-03-01T16:38:51.934Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:52.914Z [DEBUG] [useDeferredValue] Messages deferred by 1 (92→93)
+2026-03-01T16:38:52.937Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:53.930Z [DEBUG] [useDeferredValue] Messages deferred by 1 (93→94)
+2026-03-01T16:38:53.942Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:54.924Z [DEBUG] [useDeferredValue] Messages deferred by 1 (94→95)
+2026-03-01T16:38:54.931Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:55.929Z [DEBUG] [useDeferredValue] Messages deferred by 1 (95→96)
+2026-03-01T16:38:55.939Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:56.928Z [DEBUG] [useDeferredValue] Messages deferred by 1 (96→97)
+2026-03-01T16:38:56.941Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:57.928Z [DEBUG] [useDeferredValue] Messages deferred by 1 (97→98)
+2026-03-01T16:38:57.934Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:57.956Z [DEBUG] [useDeferredValue] Messages deferred by 1 (97→98)
+2026-03-01T16:38:58.930Z [DEBUG] [useDeferredValue] Messages deferred by 1 (98→99)
+2026-03-01T16:38:58.935Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:38:59.930Z [DEBUG] [useDeferredValue] Messages deferred by 1 (99→100)
+2026-03-01T16:38:59.937Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:00.932Z [DEBUG] [useDeferredValue] Messages deferred by 1 (100→101)
+2026-03-01T16:39:00.938Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:01.946Z [DEBUG] [useDeferredValue] Messages deferred by 1 (101→102)
+2026-03-01T16:39:01.951Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:02.938Z [DEBUG] [useDeferredValue] Messages deferred by 1 (102→103)
+2026-03-01T16:39:02.944Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:03.941Z [DEBUG] [useDeferredValue] Messages deferred by 1 (103→104)
+2026-03-01T16:39:03.947Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:04.946Z [DEBUG] [useDeferredValue] Messages deferred by 1 (104→105)
+2026-03-01T16:39:04.956Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:05.642Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:05.644Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:05.645Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:05.645Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:05.646Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:05.649Z [DEBUG] [useDeferredValue] Messages deferred by 1 (105→106)
+2026-03-01T16:39:05.659Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:05.742Z [DEBUG] High write ratio: blit=0, write=46396 (100.0% writes), screen=1286x80
+2026-03-01T16:39:05.743Z [DEBUG] Full reset (scrollback changes): scrollbackRows=1363, firstChangeY=1277
+  prev: "  ⎿  ○  town-config-exists...                                                   "
+  next: "  ⎿  Waiting…                                                                   "
+2026-03-01T16:39:05.779Z [DEBUG] [useDeferredValue] Messages deferred by 1 (105→106)
+2026-03-01T16:39:06.946Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:07.816Z [DEBUG] [useDeferredValue] Messages deferred by 1 (106→107)
+2026-03-01T16:39:07.818Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:07.823Z [DEBUG] [useDeferredValue] Messages deferred by 1 (106→107)
+2026-03-01T16:39:08.559Z [DEBUG] [useDeferredValue] Messages deferred by 1 (107→108)
+2026-03-01T16:39:08.575Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:08.585Z [DEBUG] [useDeferredValue] Messages deferred by 1 (107→108)
+2026-03-01T16:39:09.111Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:09.122Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:09.125Z [DEBUG] [useDeferredValue] Messages deferred by 1 (108→109)
+2026-03-01T16:39:09.133Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:09.213Z [DEBUG] High write ratio: blit=0, write=54294 (100.0% writes), screen=1494x80
+2026-03-01T16:39:09.288Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:09.290Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:09.291Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:09.291Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:09.291Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:09.295Z [DEBUG] [useDeferredValue] Messages deferred by 1 (109→110)
+2026-03-01T16:39:09.304Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:09.990Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:10.258Z [DEBUG] [useDeferredValue] Messages deferred by 1 (110→111)
+2026-03-01T16:39:10.268Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:10.893Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:10.898Z [DEBUG] [useDeferredValue] Messages deferred by 1 (111→112)
+2026-03-01T16:39:10.905Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:10.984Z [DEBUG] High write ratio: blit=0, write=54430 (100.0% writes), screen=1501x80
+2026-03-01T16:39:10.994Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:10.998Z [DEBUG] [useDeferredValue] Messages deferred by 1 (111→112)
+2026-03-01T16:39:11.005Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:11.105Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:11.106Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:11.106Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:11.106Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:11.107Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:11.109Z [DEBUG] [useDeferredValue] Messages deferred by 1 (112→113)
+2026-03-01T16:39:11.117Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:12.505Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:12.813Z [DEBUG] [useDeferredValue] Messages deferred by 1 (113→114)
+2026-03-01T16:39:12.821Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:13.400Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:13.418Z [DEBUG] [useDeferredValue] Messages deferred by 1 (114→115)
+2026-03-01T16:39:13.428Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:13.521Z [DEBUG] High write ratio: blit=0, write=54658 (100.0% writes), screen=1509x80
+2026-03-01T16:39:13.525Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:13.525Z [DEBUG] [useDeferredValue] Messages deferred by 1 (114→115)
+2026-03-01T16:39:16.563Z [DEBUG] [useDeferredValue] Messages deferred by 1 (115→116)
+2026-03-01T16:39:16.581Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:17.565Z [DEBUG] [useDeferredValue] Messages deferred by 1 (116→117)
+2026-03-01T16:39:17.576Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:18.575Z [DEBUG] [useDeferredValue] Messages deferred by 1 (117→118)
+2026-03-01T16:39:18.583Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:19.576Z [DEBUG] [useDeferredValue] Messages deferred by 1 (118→119)
+2026-03-01T16:39:19.589Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:20.587Z [DEBUG] [useDeferredValue] Messages deferred by 1 (119→120)
+2026-03-01T16:39:20.592Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:21.583Z [DEBUG] [useDeferredValue] Messages deferred by 1 (120→121)
+2026-03-01T16:39:21.587Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:22.583Z [DEBUG] [useDeferredValue] Messages deferred by 1 (121→122)
+2026-03-01T16:39:22.588Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:23.584Z [DEBUG] [useDeferredValue] Messages deferred by 1 (122→123)
+2026-03-01T16:39:23.590Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:24.591Z [DEBUG] [useDeferredValue] Messages deferred by 1 (123→124)
+2026-03-01T16:39:24.597Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:25.461Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:25.462Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:25.462Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:25.462Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:25.463Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:25.466Z [DEBUG] [useDeferredValue] Messages deferred by 1 (124→125)
+2026-03-01T16:39:25.474Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:25.559Z [DEBUG] High write ratio: blit=0, write=54740 (100.0% writes), screen=1512x80
+2026-03-01T16:39:26.217Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:27.383Z [DEBUG] [useDeferredValue] Messages deferred by 1 (125→126)
+2026-03-01T16:39:27.385Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:28.237Z [DEBUG] [useDeferredValue] Messages deferred by 1 (126→127)
+2026-03-01T16:39:28.239Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:28.246Z [DEBUG] [useDeferredValue] Messages deferred by 1 (126→127)
+2026-03-01T16:39:28.482Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:28.486Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:28.488Z [DEBUG] [useDeferredValue] Messages deferred by 1 (127→128)
+2026-03-01T16:39:28.494Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:28.576Z [DEBUG] High write ratio: blit=0, write=56095 (100.0% writes), screen=1550x80
+2026-03-01T16:39:28.594Z [DEBUG] [useDeferredValue] Messages deferred by 1 (127→128)
+2026-03-01T16:39:28.601Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:28.711Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:28.712Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:28.712Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:28.712Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:28.712Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:28.715Z [DEBUG] [useDeferredValue] Messages deferred by 1 (128→129)
+2026-03-01T16:39:28.723Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:29.447Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:29.732Z [DEBUG] [useDeferredValue] Messages deferred by 1 (129→130)
+2026-03-01T16:39:29.743Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:30.364Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:30.370Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:30.371Z [DEBUG] [useDeferredValue] Messages deferred by 1 (130→131)
+2026-03-01T16:39:30.381Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:30.475Z [DEBUG] High write ratio: blit=0, write=56234 (100.0% writes), screen=1557x80
+2026-03-01T16:39:30.489Z [DEBUG] [useDeferredValue] Messages deferred by 1 (130→131)
+2026-03-01T16:39:30.518Z [DEBUG] [useDeferredValue] Messages deferred by 1 (130→131)
+2026-03-01T16:39:30.520Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:30.594Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:30.595Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:30.595Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:30.595Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:30.596Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:30.599Z [DEBUG] [useDeferredValue] Messages deferred by 1 (131→132)
+2026-03-01T16:39:30.608Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:31.350Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:32.082Z [DEBUG] [useDeferredValue] Messages deferred by 1 (132→133)
+2026-03-01T16:39:32.090Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:35.100Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:35.123Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:35.124Z [DEBUG] [useDeferredValue] Messages deferred by 1 (133→134)
+2026-03-01T16:39:35.134Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:35.225Z [DEBUG] High write ratio: blit=0, write=56616 (100.0% writes), screen=1571x80
+2026-03-01T16:39:35.249Z [DEBUG] [useDeferredValue] Messages deferred by 1 (133→134)
+2026-03-01T16:39:35.257Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:35.299Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:35.302Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:35.303Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:35.303Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:35.303Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:35.307Z [DEBUG] [useDeferredValue] Messages deferred by 1 (134→135)
+2026-03-01T16:39:35.315Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:36.013Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:36.504Z [DEBUG] [useDeferredValue] Messages deferred by 1 (135→136)
+2026-03-01T16:39:36.513Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:37.055Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:37.060Z [DEBUG] [useDeferredValue] Messages deferred by 1 (136→137)
+2026-03-01T16:39:37.071Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:37.145Z [DEBUG] High write ratio: blit=0, write=56930 (100.0% writes), screen=1583x80
+2026-03-01T16:39:37.148Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:37.157Z [DEBUG] [useDeferredValue] Messages deferred by 1 (136→137)
+2026-03-01T16:39:37.167Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:39.779Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:39.781Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:39.781Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:39.781Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:39.782Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:39.786Z [DEBUG] [useDeferredValue] Messages deferred by 1 (137→138)
+2026-03-01T16:39:39.800Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:40.578Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:41.115Z [DEBUG] [useDeferredValue] Messages deferred by 1 (138→139)
+2026-03-01T16:39:41.117Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:41.299Z [DEBUG] [useDeferredValue] Messages deferred by 1 (139→140)
+2026-03-01T16:39:41.302Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:41.314Z [DEBUG] [useDeferredValue] Messages deferred by 1 (139→140)
+2026-03-01T16:39:41.955Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:41.959Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:41.960Z [DEBUG] [useDeferredValue] Messages deferred by 1 (140→141)
+2026-03-01T16:39:41.971Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:42.061Z [DEBUG] High write ratio: blit=0, write=57326 (100.0% writes), screen=1596x80
+2026-03-01T16:39:42.074Z [DEBUG] [useDeferredValue] Messages deferred by 1 (140→141)
+2026-03-01T16:39:42.100Z [DEBUG] [useDeferredValue] Messages deferred by 1 (140→141)
+2026-03-01T16:39:42.103Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:42.191Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:42.192Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:42.193Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:42.193Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:42.193Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:42.195Z [DEBUG] [useDeferredValue] Messages deferred by 1 (141→142)
+2026-03-01T16:39:42.205Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:43.078Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:43.390Z [DEBUG] [useDeferredValue] Messages deferred by 1 (142→143)
+2026-03-01T16:39:43.402Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:43.419Z [DEBUG] [useDeferredValue] Messages deferred by 1 (142→143)
+2026-03-01T16:39:44.029Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:44.034Z [DEBUG] [useDeferredValue] Messages deferred by 1 (143→144)
+2026-03-01T16:39:44.043Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:44.113Z [DEBUG] High write ratio: blit=0, write=57496 (100.0% writes), screen=1604x80
+2026-03-01T16:39:44.125Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:44.203Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:44.239Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:44.241Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:44.242Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:44.242Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:44.242Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:44.245Z [DEBUG] [useDeferredValue] Messages deferred by 1 (144→145)
+2026-03-01T16:39:44.256Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:45.379Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:46.290Z [DEBUG] [useDeferredValue] Messages deferred by 1 (145→146)
+2026-03-01T16:39:46.292Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:46.298Z [DEBUG] [useDeferredValue] Messages deferred by 1 (145→146)
+2026-03-01T16:39:46.754Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:46.761Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:46.762Z [DEBUG] [useDeferredValue] Messages deferred by 1 (146→147)
+2026-03-01T16:39:46.773Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:46.868Z [DEBUG] High write ratio: blit=0, write=57877 (100.0% writes), screen=1620x80
+2026-03-01T16:39:49.507Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:49.508Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:49.509Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:49.509Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:49.509Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:49.513Z [DEBUG] [useDeferredValue] Messages deferred by 1 (147→148)
+2026-03-01T16:39:49.524Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:50.218Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:50.989Z [DEBUG] [useDeferredValue] Messages deferred by 1 (148→149)
+2026-03-01T16:39:50.993Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:51.152Z [DEBUG] [useDeferredValue] Messages deferred by 1 (149→150)
+2026-03-01T16:39:51.173Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:51.467Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:51.476Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:51.478Z [DEBUG] [useDeferredValue] Messages deferred by 1 (150→151)
+2026-03-01T16:39:51.489Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:51.584Z [DEBUG] High write ratio: blit=0, write=58474 (100.0% writes), screen=1640x80
+2026-03-01T16:39:51.606Z [DEBUG] [useDeferredValue] Messages deferred by 1 (150→151)
+2026-03-01T16:39:51.619Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:51.725Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:51.728Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:51.729Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:51.729Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:51.729Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:51.732Z [DEBUG] [useDeferredValue] Messages deferred by 1 (151→152)
+2026-03-01T16:39:51.743Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:53.206Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:53.521Z [DEBUG] [useDeferredValue] Messages deferred by 1 (152→153)
+2026-03-01T16:39:53.523Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:53.527Z [DEBUG] [useDeferredValue] Messages deferred by 1 (152→153)
+2026-03-01T16:39:53.894Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:53.902Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:53.903Z [DEBUG] [useDeferredValue] Messages deferred by 1 (153→154)
+2026-03-01T16:39:53.918Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:54.033Z [DEBUG] High write ratio: blit=0, write=58655 (100.0% writes), screen=1648x80
+2026-03-01T16:39:54.047Z [DEBUG] [useDeferredValue] Messages deferred by 1 (153→154)
+2026-03-01T16:39:54.230Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:54.232Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:54.232Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:54.232Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:54.233Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:54.241Z [DEBUG] [useDeferredValue] Messages deferred by 1 (154→155)
+2026-03-01T16:39:54.255Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:55.144Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:55.998Z [DEBUG] [useDeferredValue] Messages deferred by 1 (155→156)
+2026-03-01T16:39:56.001Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:56.012Z [DEBUG] [useDeferredValue] Messages deferred by 1 (155→156)
+2026-03-01T16:39:56.439Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:56.443Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:56.443Z [DEBUG] [useDeferredValue] Messages deferred by 1 (156→157)
+2026-03-01T16:39:56.453Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:56.545Z [DEBUG] High write ratio: blit=0, write=58989 (100.0% writes), screen=1658x80
+2026-03-01T16:39:56.557Z [DEBUG] [useDeferredValue] Messages deferred by 1 (156→157)
+2026-03-01T16:39:56.581Z [DEBUG] [useDeferredValue] Messages deferred by 1 (156→157)
+2026-03-01T16:39:56.590Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:56.655Z [DEBUG] Bash tool error (213ms): Shell command failed
+2026-03-01T16:39:56.674Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:56.676Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:56.677Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:56.677Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:56.677Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:56.680Z [DEBUG] [useDeferredValue] Messages deferred by 1 (157→158)
+2026-03-01T16:39:56.690Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:57.628Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:58.356Z [DEBUG] [useDeferredValue] Messages deferred by 1 (158→159)
+2026-03-01T16:39:58.360Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:58.375Z [DEBUG] [useDeferredValue] Messages deferred by 1 (158→159)
+2026-03-01T16:39:58.406Z [DEBUG] [useDeferredValue] Messages deferred by 1 (158→159)
+2026-03-01T16:39:58.677Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:39:58.688Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:39:58.690Z [DEBUG] [useDeferredValue] Messages deferred by 1 (159→160)
+2026-03-01T16:39:58.703Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:58.798Z [DEBUG] High write ratio: blit=0, write=59412 (100.0% writes), screen=1673x80
+2026-03-01T16:39:58.818Z [DEBUG] [useDeferredValue] Messages deferred by 1 (159→160)
+2026-03-01T16:39:58.828Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:58.854Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:39:58.855Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:39:58.856Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:39:58.856Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:39:58.856Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:39:58.859Z [DEBUG] [useDeferredValue] Messages deferred by 2 (159→161)
+2026-03-01T16:39:58.868Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:59.583Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:39:59.859Z [DEBUG] [useDeferredValue] Messages deferred by 1 (161→162)
+2026-03-01T16:39:59.862Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:39:59.868Z [DEBUG] [useDeferredValue] Messages deferred by 1 (161→162)
+2026-03-01T16:40:00.174Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:40:00.179Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:40:00.180Z [DEBUG] [useDeferredValue] Messages deferred by 1 (162→163)
+2026-03-01T16:40:00.190Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:00.285Z [DEBUG] High write ratio: blit=0, write=59562 (100.0% writes), screen=1681x80
+2026-03-01T16:40:00.308Z [DEBUG] [useDeferredValue] Messages deferred by 1 (162→163)
+2026-03-01T16:40:00.321Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:00.390Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:40:00.392Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:40:00.392Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:40:00.392Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:40:00.392Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:40:00.395Z [DEBUG] [useDeferredValue] Messages deferred by 1 (163→164)
+2026-03-01T16:40:00.404Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:01.573Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:40:02.623Z [DEBUG] [useDeferredValue] Messages deferred by 1 (164→165)
+2026-03-01T16:40:02.625Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:02.829Z [DEBUG] [useDeferredValue] Messages deferred by 1 (165→166)
+2026-03-01T16:40:02.832Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:02.840Z [DEBUG] [useDeferredValue] Messages deferred by 1 (165→166)
+2026-03-01T16:40:03.197Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:40:03.203Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:40:03.204Z [DEBUG] [useDeferredValue] Messages deferred by 1 (166→167)
+2026-03-01T16:40:03.216Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:03.313Z [DEBUG] High write ratio: blit=0, write=66286 (100.0% writes), screen=1844x80
+2026-03-01T16:40:03.331Z [DEBUG] [useDeferredValue] Messages deferred by 1 (166→167)
+2026-03-01T16:40:03.341Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:03.430Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:40:03.431Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:40:03.431Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:40:03.431Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:40:03.431Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:40:03.433Z [DEBUG] [useDeferredValue] Messages deferred by 1 (167→168)
+2026-03-01T16:40:03.444Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:04.114Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:40:06.178Z [DEBUG] [useDeferredValue] Messages deferred by 1 (168→169)
+2026-03-01T16:40:06.180Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:07.960Z [DEBUG] [useDeferredValue] Messages deferred by 1 (169→170)
+2026-03-01T16:40:07.967Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:07.987Z [DEBUG] [useDeferredValue] Messages deferred by 1 (169→170)
+2026-03-01T16:40:08.021Z [DEBUG] [useDeferredValue] Messages deferred by 1 (169→170)
+2026-03-01T16:40:08.159Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:40:08.166Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:40:08.167Z [DEBUG] [useDeferredValue] Messages deferred by 1 (170→171)
+2026-03-01T16:40:08.178Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:08.273Z [DEBUG] High write ratio: blit=0, write=67503 (100.0% writes), screen=1882x80
+2026-03-01T16:40:08.301Z [DEBUG] [useDeferredValue] Messages deferred by 1 (170→171)
+2026-03-01T16:40:08.313Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:08.364Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:40:08.368Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:40:08.368Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:40:08.368Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:40:08.369Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:40:08.373Z [DEBUG] [useDeferredValue] Messages deferred by 2 (170→172)
+2026-03-01T16:40:08.384Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:09.152Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:40:09.632Z [DEBUG] [useDeferredValue] Messages deferred by 1 (172→173)
+2026-03-01T16:40:09.634Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:40:09.790Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1457683.1772383209790
+2026-03-01T16:40:09.790Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T16:40:09.799Z [DEBUG] Temp file written successfully, size: 66828 bytes
+2026-03-01T16:40:09.799Z [DEBUG] Applied original permissions to temp file
+2026-03-01T16:40:09.799Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1457683.1772383209790 to /home/skogix/.claude.json
+2026-03-01T16:40:09.799Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-03-01T16:40:09.803Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1457683.1772383209803
+2026-03-01T16:40:09.803Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T16:40:09.810Z [DEBUG] Temp file written successfully, size: 66828 bytes
+2026-03-01T16:40:09.810Z [DEBUG] Applied original permissions to temp file
+2026-03-01T16:40:09.810Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1457683.1772383209803 to /home/skogix/.claude.json
+2026-03-01T16:40:09.810Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-03-01T16:40:09.812Z [DEBUG] [useDeferredValue] Messages deferred by 1 (173→174)
+2026-03-01T16:40:09.826Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)

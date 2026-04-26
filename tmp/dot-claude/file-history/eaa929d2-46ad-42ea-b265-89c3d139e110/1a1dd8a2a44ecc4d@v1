@@ -1,0 +1,117 @@
+{
+  "editorMode": "normal",
+  "enabledPlugins": {
+    "beads@beads-marketplace": false
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash(gh pr create*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export PATH=\"$HOME/go/bin:$HOME/.local/bin:$PATH\" \u0026\u0026 gt tap guard pr-workflow"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git checkout -b*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export PATH=\"$HOME/go/bin:$HOME/.local/bin:$PATH\" \u0026\u0026 gt tap guard pr-workflow"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git switch -c*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export PATH=\"$HOME/go/bin:$HOME/.local/bin:$PATH\" \u0026\u0026 gt tap guard pr-workflow"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(*bd mol pour*patrol*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '❌ BLOCKED: Patrol formulas must use wisps, not persistent molecules.' \u0026\u0026 echo 'Use: bd mol wisp mol-*-patrol' \u0026\u0026 echo 'Not:  bd mol pour mol-*-patrol' \u0026\u0026 exit 2"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(*bd mol pour *mol-witness*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '❌ BLOCKED: Patrol formulas must use wisps, not persistent molecules.' \u0026\u0026 echo 'Use: bd mol wisp mol-*-patrol' \u0026\u0026 echo 'Not:  bd mol pour mol-*-patrol' \u0026\u0026 exit 2"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(*bd mol pour *mol-deacon*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '❌ BLOCKED: Patrol formulas must use wisps, not persistent molecules.' \u0026\u0026 echo 'Use: bd mol wisp mol-*-patrol' \u0026\u0026 echo 'Not:  bd mol pour mol-*-patrol' \u0026\u0026 exit 2"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(*bd mol pour *mol-refinery*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '❌ BLOCKED: Patrol formulas must use wisps, not persistent molecules.' \u0026\u0026 echo 'Use: bd mol wisp mol-*-patrol' \u0026\u0026 echo 'Not:  bd mol pour mol-*-patrol' \u0026\u0026 exit 2"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export PATH=\"$HOME/go/bin:$HOME/.local/bin:$PATH\" \u0026\u0026 gt prime --hook"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export PATH=\"$HOME/go/bin:$HOME/.local/bin:$PATH\" \u0026\u0026 gt costs record"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export PATH=\"$HOME/go/bin:$HOME/.local/bin:$PATH\" \u0026\u0026 gt prime --hook"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "export PATH=\"$HOME/go/bin:$HOME/.local/bin:$PATH\" \u0026\u0026 gt mail check --inject"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+# SkogAI Context Engineering Philosophy
+
+## The Inversion
+
+Standard approach: accumulate knowledge, optimize retrieval.
+SkogAI approach: delete everything inferrable, keep only the delta.
+
+## Key Corrections to Standard Skill Material
+
+### On "Lost-in-Middle"
+- The U-curve effect is real in practice but the BOS attention-sink explanation is post-hoc rationalization
+- Better mental model: related context in proximity (+/-8k from focus), sliding window misses everything outside this range
+- "Keep related context together" beats "put important stuff at edges"
+
+### On Context Distraction
+- "Don't think of a pink elephant" — you CANNOT tell an LLM to ignore what's in context
+- LLMs are additive and by definition cannot actively forget
+- The only solution is to not put it there in the first place
+
+### On Thresholds
+- 25k tokens is the practical limit for real implementation work
+- 70% of a 200k window (140k) as a "warning threshold" is absurd
+- The skill thresholds only make sense if your effective limit is ~30k (80% of 30k = 24k)
+
+### On Observation Masking
+- Always keep a unique callable reference in place when masking
+- The reference itself is the memory; the content is retrievable on demand
+
+### On KV-Cache
+- Deliberately busting cache (e.g., datetime in system prompt) is useful when you WANT fresh context loading
+- Cache optimization is now real even for basic tool calls
+
+### On Multi-Agent
+- Partitioning should be the default case, not the "nuclear option"
+- Telephone game between layers is a FEATURE for maintaining strategic altitude — intentional lossy compression
+- Swarm is effective for "find solutions to move forward" but not for producing end results
+
+### On Tool Design
+- Goal: remove explicit tool calls entirely; plain text intents like the user
+- "When to use it" is 70% of the design work done
+- No error messages should exist — one tool per step, one workflow per context
+- Architectural reduction (17 tools → 2) validates the prompt-native approach
+
+### On Memory
+- Active forgetting via pruning is the core strategy
+- The Pruning Test: full context output - starved context output = delta (actual IP)
+- Filesystem memory + git temporal layer covers most needs
+- Memory frameworks (Mem0, Graphiti, etc.) are for when you genuinely outgrow files — most reach for them too early
+
+## The Dual System
+
+- `.skogai/skogix/` — explosive phase: additive, let it grow, fail fast
+- `.skogai/claude/` — production phase: subtractive, prune the inferrable, keep the delta
+- Flow: explosive → test/validate → prune → polish → production

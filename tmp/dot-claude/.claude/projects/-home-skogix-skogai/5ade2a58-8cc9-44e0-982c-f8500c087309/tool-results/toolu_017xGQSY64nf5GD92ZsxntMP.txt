@@ -1,0 +1,989 @@
+     1→> ## Documentation Index
+     2→> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
+     3→> Use this file to discover all available pages before exploring further.
+     4→
+     5→# Claude Code settings
+     6→
+     7→> Configure Claude Code with global and project-level settings, and environment variables.
+     8→
+     9→Claude Code offers a variety of settings to configure its behavior to meet your needs. You can configure Claude Code by running the `/config` command when using the interactive REPL, which opens a tabbed Settings interface where you can view status information and modify configuration options.
+    10→
+    11→## Configuration scopes
+    12→
+    13→Claude Code uses a **scope system** to determine where configurations apply and who they're shared with. Understanding scopes helps you decide how to configure Claude Code for personal use, team collaboration, or enterprise deployment.
+    14→
+    15→### Available scopes
+    16→
+    17→| Scope       | Location                                                                           | Who it affects                       | Shared with team?      |
+    18→| :---------- | :--------------------------------------------------------------------------------- | :----------------------------------- | :--------------------- |
+    19→| **Managed** | Server-managed settings, plist / registry, or system-level `managed-settings.json` | All users on the machine             | Yes (deployed by IT)   |
+    20→| **User**    | `~/.claude/` directory                                                             | You, across all projects             | No                     |
+    21→| **Project** | `.claude/` in repository                                                           | All collaborators on this repository | Yes (committed to git) |
+    22→| **Local**   | `.claude/*.local.*` files                                                          | You, in this repository only         | No (gitignored)        |
+    23→
+    24→### When to use each scope
+    25→
+    26→**Managed scope** is for:
+    27→
+    28→* Security policies that must be enforced organization-wide
+    29→* Compliance requirements that can't be overridden
+    30→* Standardized configurations deployed by IT/DevOps
+    31→
+    32→**User scope** is best for:
+    33→
+    34→* Personal preferences you want everywhere (themes, editor settings)
+    35→* Tools and plugins you use across all projects
+    36→* API keys and authentication (stored securely)
+    37→
+    38→**Project scope** is best for:
+    39→
+    40→* Team-shared settings (permissions, hooks, MCP servers)
+    41→* Plugins the whole team should have
+    42→* Standardizing tooling across collaborators
+    43→
+    44→**Local scope** is best for:
+    45→
+    46→* Personal overrides for a specific project
+    47→* Testing configurations before sharing with the team
+    48→* Machine-specific settings that won't work for others
+    49→
+    50→### How scopes interact
+    51→
+    52→When the same setting is configured in multiple scopes, more specific scopes take precedence:
+    53→
+    54→1. **Managed** (highest) - can't be overridden by anything
+    55→2. **Command line arguments** - temporary session overrides
+    56→3. **Local** - overrides project and user settings
+    57→4. **Project** - overrides user settings
+    58→5. **User** (lowest) - applies when nothing else specifies the setting
+    59→
+    60→For example, if a permission is allowed in user settings but denied in project settings, the project setting takes precedence and the permission is blocked.
+    61→
+    62→### What uses scopes
+    63→
+    64→Scopes apply to many Claude Code features:
+    65→
+    66→| Feature         | User location             | Project location                   | Local location                 |
+    67→| :-------------- | :------------------------ | :--------------------------------- | :----------------------------- |
+    68→| **Settings**    | `~/.claude/settings.json` | `.claude/settings.json`            | `.claude/settings.local.json`  |
+    69→| **Subagents**   | `~/.claude/agents/`       | `.claude/agents/`                  | —                              |
+    70→| **MCP servers** | `~/.claude.json`          | `.mcp.json`                        | `~/.claude.json` (per-project) |
+    71→| **Plugins**     | `~/.claude/settings.json` | `.claude/settings.json`            | `.claude/settings.local.json`  |
+    72→| **CLAUDE.md**   | `~/.claude/CLAUDE.md`     | `CLAUDE.md` or `.claude/CLAUDE.md` | `CLAUDE.local.md`              |
+    73→
+    74→***
+    75→
+    76→## Settings files
+    77→
+    78→The `settings.json` file is our official mechanism for configuring Claude
+    79→Code through hierarchical settings:
+    80→
+    81→* **User settings** are defined in `~/.claude/settings.json` and apply to all
+    82→  projects.
+    83→* **Project settings** are saved in your project directory:
+    84→  * `.claude/settings.json` for settings that are checked into source control and shared with your team
+    85→  * `.claude/settings.local.json` for settings that are not checked in, useful for personal preferences and experimentation. Claude Code will configure git to ignore `.claude/settings.local.json` when it is created.
+    86→* **Managed settings**: For organizations that need centralized control, Claude Code supports multiple delivery mechanisms for managed settings. All use the same JSON format and cannot be overridden by user or project settings:
+    87→
+    88→  * **Server-managed settings**: delivered from Anthropic's servers via the Claude.ai admin console. See [server-managed settings](/en/server-managed-settings).
+    89→  * **MDM/OS-level policies**: delivered through native device management on macOS and Windows:
+    90→    * macOS: `com.anthropic.claudecode` managed preferences domain (deployed via configuration profiles in Jamf, Kandji, or other MDM tools)
+    91→    * Windows: `HKLM\SOFTWARE\Policies\ClaudeCode` registry key with a `Settings` value (REG\_SZ or REG\_EXPAND\_SZ) containing JSON (deployed via Group Policy or Intune)
+    92→    * Windows (user-level): `HKCU\SOFTWARE\Policies\ClaudeCode` (lowest policy priority, only used when no admin-level source exists)
+    93→  * **File-based**: `managed-settings.json` and `managed-mcp.json` deployed to system directories:
+    94→    * macOS: `/Library/Application Support/ClaudeCode/`
+    95→    * Linux and WSL: `/etc/claude-code/`
+    96→    * Windows: `C:\Program Files\ClaudeCode\`
+    97→
+    98→  See [managed settings](/en/permissions#managed-only-settings) and [Managed MCP configuration](/en/mcp#managed-mcp-configuration) for details.
+    99→
+   100→  <Note>
+   101→    Managed deployments can also restrict **plugin marketplace additions** using
+   102→    `strictKnownMarketplaces`. For more information, see [Managed marketplace restrictions](/en/plugin-marketplaces#managed-marketplace-restrictions).
+   103→  </Note>
+   104→* **Other configuration** is stored in `~/.claude.json`. This file contains your preferences (theme, notification settings, editor mode), OAuth session, [MCP server](/en/mcp) configurations for user and local scopes, per-project state (allowed tools, trust settings), and various caches. Project-scoped MCP servers are stored separately in `.mcp.json`.
+   105→
+   106→<Note>
+   107→  Claude Code automatically creates timestamped backups of configuration files and retains the five most recent backups to prevent data loss.
+   108→</Note>
+   109→
+   110→```JSON Example settings.json theme={null}
+   111→{
+   112→  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+   113→  "permissions": {
+   114→    "allow": [
+   115→      "Bash(npm run lint)",
+   116→      "Bash(npm run test *)",
+   117→      "Read(~/.zshrc)"
+   118→    ],
+   119→    "deny": [
+   120→      "Bash(curl *)",
+   121→      "Read(./.env)",
+   122→      "Read(./.env.*)",
+   123→      "Read(./secrets/**)"
+   124→    ]
+   125→  },
+   126→  "env": {
+   127→    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+   128→    "OTEL_METRICS_EXPORTER": "otlp"
+   129→  },
+   130→  "companyAnnouncements": [
+   131→    "Welcome to Acme Corp! Review our code guidelines at docs.acme.com",
+   132→    "Reminder: Code reviews required for all PRs",
+   133→    "New security policy in effect"
+   134→  ]
+   135→}
+   136→```
+   137→
+   138→The `$schema` line in the example above points to the [official JSON schema](https://json.schemastore.org/claude-code-settings.json) for Claude Code settings. Adding it to your `settings.json` enables autocomplete and inline validation in VS Code, Cursor, and any other editor that supports JSON schema validation.
+   139→
+   140→### Available settings
+   141→
+   142→`settings.json` supports a number of options:
+   143→
+   144→| Key                               | Description                                                                                                                                                                                                                                                                               | Example                                                                 |
+   145→| :-------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
+   146→| `apiKeyHelper`                    | Custom script, to be executed in `/bin/sh`, to generate an auth value. This value will be sent as `X-Api-Key` and `Authorization: Bearer` headers for model requests                                                                                                                      | `/bin/generate_temp_api_key.sh`                                         |
+   147→| `cleanupPeriodDays`               | Sessions inactive for longer than this period are deleted at startup. Setting to `0` immediately deletes all sessions. (default: 30 days)                                                                                                                                                 | `20`                                                                    |
+   148→| `companyAnnouncements`            | Announcement to display to users at startup. If multiple announcements are provided, they will be cycled through at random.                                                                                                                                                               | `["Welcome to Acme Corp! Review our code guidelines at docs.acme.com"]` |
+   149→| `env`                             | Environment variables that will be applied to every session                                                                                                                                                                                                                               | `{"FOO": "bar"}`                                                        |
+   150→| `attribution`                     | Customize attribution for git commits and pull requests. See [Attribution settings](#attribution-settings)                                                                                                                                                                                | `{"commit": "🤖 Generated with Claude Code", "pr": ""}`                 |
+   151→| `includeCoAuthoredBy`             | **Deprecated**: Use `attribution` instead. Whether to include the `co-authored-by Claude` byline in git commits and pull requests (default: `true`)                                                                                                                                       | `false`                                                                 |
+   152→| `permissions`                     | See table below for structure of permissions.                                                                                                                                                                                                                                             |                                                                         |
+   153→| `hooks`                           | Configure custom commands to run at lifecycle events. See [hooks documentation](/en/hooks) for format                                                                                                                                                                                     | See [hooks](/en/hooks)                                                  |
+   154→| `disableAllHooks`                 | Disable all [hooks](/en/hooks) and any custom [status line](/en/statusline)                                                                                                                                                                                                               | `true`                                                                  |
+   155→| `allowManagedHooksOnly`           | (Managed settings only) Prevent loading of user, project, and plugin hooks. Only allows managed hooks and SDK hooks. See [Hook configuration](#hook-configuration)                                                                                                                        | `true`                                                                  |
+   156→| `allowedHttpHookUrls`             | Allowlist of URL patterns that HTTP hooks may target. Supports `*` as a wildcard. When set, hooks with non-matching URLs are blocked. Undefined = no restriction, empty array = block all HTTP hooks. Arrays merge across settings sources. See [Hook configuration](#hook-configuration) | `["https://hooks.example.com/*"]`                                       |
+   157→| `httpHookAllowedEnvVars`          | Allowlist of environment variable names HTTP hooks may interpolate into headers. When set, each hook's effective `allowedEnvVars` is the intersection with this list. Undefined = no restriction. Arrays merge across settings sources. See [Hook configuration](#hook-configuration)     | `["MY_TOKEN", "HOOK_SECRET"]`                                           |
+   158→| `allowManagedPermissionRulesOnly` | (Managed settings only) Prevent user and project settings from defining `allow`, `ask`, or `deny` permission rules. Only rules in managed settings apply. See [Managed-only settings](/en/permissions#managed-only-settings)                                                              | `true`                                                                  |
+   159→| `allowManagedMcpServersOnly`      | (Managed settings only) Only `allowedMcpServers` from managed settings are respected. `deniedMcpServers` still merges from all sources. Users can still add MCP servers, but only the admin-defined allowlist applies. See [Managed MCP configuration](/en/mcp#managed-mcp-configuration) | `true`                                                                  |
+   160→| `model`                           | Override the default model to use for Claude Code                                                                                                                                                                                                                                         | `"claude-sonnet-4-6"`                                                   |
+   161→| `availableModels`                 | Restrict which models users can select via `/model`, `--model`, Config tool, or `ANTHROPIC_MODEL`. Does not affect the Default option. See [Restrict model selection](/en/model-config#restrict-model-selection)                                                                          | `["sonnet", "haiku"]`                                                   |
+   162→| `otelHeadersHelper`               | Script to generate dynamic OpenTelemetry headers. Runs at startup and periodically (see [Dynamic headers](/en/monitoring-usage#dynamic-headers))                                                                                                                                          | `/bin/generate_otel_headers.sh`                                         |
+   163→| `statusLine`                      | Configure a custom status line to display context. See [`statusLine` documentation](/en/statusline)                                                                                                                                                                                       | `{"type": "command", "command": "~/.claude/statusline.sh"}`             |
+   164→| `fileSuggestion`                  | Configure a custom script for `@` file autocomplete. See [File suggestion settings](#file-suggestion-settings)                                                                                                                                                                            | `{"type": "command", "command": "~/.claude/file-suggestion.sh"}`        |
+   165→| `respectGitignore`                | Control whether the `@` file picker respects `.gitignore` patterns. When `true` (default), files matching `.gitignore` patterns are excluded from suggestions                                                                                                                             | `false`                                                                 |
+   166→| `outputStyle`                     | Configure an output style to adjust the system prompt. See [output styles documentation](/en/output-styles)                                                                                                                                                                               | `"Explanatory"`                                                         |
+   167→| `forceLoginMethod`                | Use `claudeai` to restrict login to Claude.ai accounts, `console` to restrict login to Claude Console (API usage billing) accounts                                                                                                                                                        | `claudeai`                                                              |
+   168→| `forceLoginOrgUUID`               | Specify the UUID of an organization to automatically select it during login, bypassing the organization selection step. Requires `forceLoginMethod` to be set                                                                                                                             | `"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"`                                |
+   169→| `enableAllProjectMcpServers`      | Automatically approve all MCP servers defined in project `.mcp.json` files                                                                                                                                                                                                                | `true`                                                                  |
+   170→| `enabledMcpjsonServers`           | List of specific MCP servers from `.mcp.json` files to approve                                                                                                                                                                                                                            | `["memory", "github"]`                                                  |
+   171→| `disabledMcpjsonServers`          | List of specific MCP servers from `.mcp.json` files to reject                                                                                                                                                                                                                             | `["filesystem"]`                                                        |
+   172→| `allowedMcpServers`               | When set in managed-settings.json, allowlist of MCP servers users can configure. Undefined = no restrictions, empty array = lockdown. Applies to all scopes. Denylist takes precedence. See [Managed MCP configuration](/en/mcp#managed-mcp-configuration)                                | `[{ "serverName": "github" }]`                                          |
+   173→| `deniedMcpServers`                | When set in managed-settings.json, denylist of MCP servers that are explicitly blocked. Applies to all scopes including managed servers. Denylist takes precedence over allowlist. See [Managed MCP configuration](/en/mcp#managed-mcp-configuration)                                     | `[{ "serverName": "filesystem" }]`                                      |
+   174→| `strictKnownMarketplaces`         | When set in managed-settings.json, allowlist of plugin marketplaces users can add. Undefined = no restrictions, empty array = lockdown. Applies to marketplace additions only. See [Managed marketplace restrictions](/en/plugin-marketplaces#managed-marketplace-restrictions)           | `[{ "source": "github", "repo": "acme-corp/plugins" }]`                 |
+   175→| `blockedMarketplaces`             | (Managed settings only) Blocklist of marketplace sources. Blocked sources are checked before downloading, so they never touch the filesystem. See [Managed marketplace restrictions](/en/plugin-marketplaces#managed-marketplace-restrictions)                                            | `[{ "source": "github", "repo": "untrusted/plugins" }]`                 |
+   176→| `awsAuthRefresh`                  | Custom script that modifies the `.aws` directory (see [advanced credential configuration](/en/amazon-bedrock#advanced-credential-configuration))                                                                                                                                          | `aws sso login --profile myprofile`                                     |
+   177→| `awsCredentialExport`             | Custom script that outputs JSON with AWS credentials (see [advanced credential configuration](/en/amazon-bedrock#advanced-credential-configuration))                                                                                                                                      | `/bin/generate_aws_grant.sh`                                            |
+   178→| `alwaysThinkingEnabled`           | Enable [extended thinking](/en/common-workflows#use-extended-thinking-thinking-mode) by default for all sessions. Typically configured via the `/config` command rather than editing directly                                                                                             | `true`                                                                  |
+   179→| `plansDirectory`                  | Customize where plan files are stored. Path is relative to project root. Default: `~/.claude/plans`                                                                                                                                                                                       | `"./plans"`                                                             |
+   180→| `showTurnDuration`                | Show turn duration messages after responses (e.g., "Cooked for 1m 6s"). Set to `false` to hide these messages                                                                                                                                                                             | `true`                                                                  |
+   181→| `spinnerVerbs`                    | Customize the action verbs shown in the spinner and turn duration messages. Set `mode` to `"replace"` to use only your verbs, or `"append"` to add them to the defaults                                                                                                                   | `{"mode": "append", "verbs": ["Pondering", "Crafting"]}`                |
+   182→| `language`                        | Configure Claude's preferred response language (e.g., `"japanese"`, `"spanish"`, `"french"`). Claude will respond in this language by default                                                                                                                                             | `"japanese"`                                                            |
+   183→| `autoUpdatesChannel`              | Release channel to follow for updates. Use `"stable"` for a version that is typically about one week old and skips versions with major regressions, or `"latest"` (default) for the most recent release                                                                                   | `"stable"`                                                              |
+   184→| `spinnerTipsEnabled`              | Show tips in the spinner while Claude is working. Set to `false` to disable tips (default: `true`)                                                                                                                                                                                        | `false`                                                                 |
+   185→| `spinnerTipsOverride`             | Override spinner tips with custom strings. `tips`: array of tip strings. `excludeDefault`: if `true`, only show custom tips; if `false` or absent, custom tips are merged with built-in tips                                                                                              | `{ "excludeDefault": true, "tips": ["Use our internal tool X"] }`       |
+   186→| `terminalProgressBarEnabled`      | Enable the terminal progress bar that shows progress in supported terminals like Windows Terminal and iTerm2 (default: `true`)                                                                                                                                                            | `false`                                                                 |
+   187→| `prefersReducedMotion`            | Reduce or disable UI animations (spinners, shimmer, flash effects) for accessibility                                                                                                                                                                                                      | `true`                                                                  |
+   188→| `fastModePerSessionOptIn`         | When `true`, fast mode does not persist across sessions. Each session starts with fast mode off, requiring users to enable it with `/fast`. The user's fast mode preference is still saved. See [Require per-session opt-in](/en/fast-mode#require-per-session-opt-in)                    | `true`                                                                  |
+   189→| `teammateMode`                    | How [agent team](/en/agent-teams) teammates display: `auto` (picks split panes in tmux or iTerm2, in-process otherwise), `in-process`, or `tmux`. See [set up agent teams](/en/agent-teams#set-up-agent-teams)                                                                            | `"in-process"`                                                          |
+   190→
+   191→### Permission settings
+   192→
+   193→| Keys                           | Description                                                                                                                                                                                                                                      | Example                                                                |
+   194→| :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------- |
+   195→| `allow`                        | Array of permission rules to allow tool use. See [Permission rule syntax](#permission-rule-syntax) below for pattern matching details                                                                                                            | `[ "Bash(git diff *)" ]`                                               |
+   196→| `ask`                          | Array of permission rules to ask for confirmation upon tool use. See [Permission rule syntax](#permission-rule-syntax) below                                                                                                                     | `[ "Bash(git push *)" ]`                                               |
+   197→| `deny`                         | Array of permission rules to deny tool use. Use this to exclude sensitive files from Claude Code access. See [Permission rule syntax](#permission-rule-syntax) and [Bash permission limitations](/en/permissions#tool-specific-permission-rules) | `[ "WebFetch", "Bash(curl *)", "Read(./.env)", "Read(./secrets/**)" ]` |
+   198→| `additionalDirectories`        | Additional [working directories](/en/permissions#working-directories) that Claude has access to                                                                                                                                                  | `[ "../docs/" ]`                                                       |
+   199→| `defaultMode`                  | Default [permission mode](/en/permissions#permission-modes) when opening Claude Code                                                                                                                                                             | `"acceptEdits"`                                                        |
+   200→| `disableBypassPermissionsMode` | Set to `"disable"` to prevent `bypassPermissions` mode from being activated. This disables the `--dangerously-skip-permissions` command-line flag. See [managed settings](/en/permissions#managed-only-settings)                                 | `"disable"`                                                            |
+   201→
+   202→### Permission rule syntax
+   203→
+   204→Permission rules follow the format `Tool` or `Tool(specifier)`. Rules are evaluated in order: deny rules first, then ask, then allow. The first matching rule wins.
+   205→
+   206→Quick examples:
+   207→
+   208→| Rule                           | Effect                                   |
+   209→| :----------------------------- | :--------------------------------------- |
+   210→| `Bash`                         | Matches all Bash commands                |
+   211→| `Bash(npm run *)`              | Matches commands starting with `npm run` |
+   212→| `Read(./.env)`                 | Matches reading the `.env` file          |
+   213→| `WebFetch(domain:example.com)` | Matches fetch requests to example.com    |
+   214→
+   215→For the complete rule syntax reference, including wildcard behavior, tool-specific patterns for Read, Edit, WebFetch, MCP, and Agent rules, and security limitations of Bash patterns, see [Permission rule syntax](/en/permissions#permission-rule-syntax).
+   216→
+   217→### Sandbox settings
+   218→
+   219→Configure advanced sandboxing behavior. Sandboxing isolates bash commands from your filesystem and network. See [Sandboxing](/en/sandboxing) for details.
+   220→
+   221→| Keys                              | Description                                                                                                                                                                                                                                                                                                                       | Example                         |
+   222→| :-------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------ |
+   223→| `enabled`                         | Enable bash sandboxing (macOS, Linux, and WSL2). Default: false                                                                                                                                                                                                                                                                   | `true`                          |
+   224→| `autoAllowBashIfSandboxed`        | Auto-approve bash commands when sandboxed. Default: true                                                                                                                                                                                                                                                                          | `true`                          |
+   225→| `excludedCommands`                | Commands that should run outside of the sandbox                                                                                                                                                                                                                                                                                   | `["git", "docker"]`             |
+   226→| `allowUnsandboxedCommands`        | Allow commands to run outside the sandbox via the `dangerouslyDisableSandbox` parameter. When set to `false`, the `dangerouslyDisableSandbox` escape hatch is completely disabled and all commands must run sandboxed (or be in `excludedCommands`). Useful for enterprise policies that require strict sandboxing. Default: true | `false`                         |
+   227→| `filesystem.allowWrite`           | Additional paths where sandboxed commands can write. Arrays are merged across all settings scopes: user, project, and managed paths are combined, not replaced. Also merged with paths from `Edit(...)` allow permission rules. See [path prefixes](#sandbox-path-prefixes) below.                                                | `["//tmp/build", "~/.kube"]`    |
+   228→| `filesystem.denyWrite`            | Paths where sandboxed commands cannot write. Arrays are merged across all settings scopes. Also merged with paths from `Edit(...)` deny permission rules.                                                                                                                                                                         | `["//etc", "//usr/local/bin"]`  |
+   229→| `filesystem.denyRead`             | Paths where sandboxed commands cannot read. Arrays are merged across all settings scopes. Also merged with paths from `Read(...)` deny permission rules.                                                                                                                                                                          | `["~/.aws/credentials"]`        |
+   230→| `network.allowUnixSockets`        | Unix socket paths accessible in sandbox (for SSH agents, etc.)                                                                                                                                                                                                                                                                    | `["~/.ssh/agent-socket"]`       |
+   231→| `network.allowAllUnixSockets`     | Allow all Unix socket connections in sandbox. Default: false                                                                                                                                                                                                                                                                      | `true`                          |
+   232→| `network.allowLocalBinding`       | Allow binding to localhost ports (macOS only). Default: false                                                                                                                                                                                                                                                                     | `true`                          |
+   233→| `network.allowedDomains`          | Array of domains to allow for outbound network traffic. Supports wildcards (e.g., `*.example.com`).                                                                                                                                                                                                                               | `["github.com", "*.npmjs.org"]` |
+   234→| `network.allowManagedDomainsOnly` | (Managed settings only) Only `allowedDomains` and `WebFetch(domain:...)` allow rules from managed settings are respected. Domains from user, project, and local settings are ignored. Denied domains are still respected from all sources. Default: false                                                                         | `true`                          |
+   235→| `network.httpProxyPort`           | HTTP proxy port used if you wish to bring your own proxy. If not specified, Claude will run its own proxy.                                                                                                                                                                                                                        | `8080`                          |
+   236→| `network.socksProxyPort`          | SOCKS5 proxy port used if you wish to bring your own proxy. If not specified, Claude will run its own proxy.                                                                                                                                                                                                                      | `8081`                          |
+   237→| `enableWeakerNestedSandbox`       | Enable weaker sandbox for unprivileged Docker environments (Linux and WSL2 only). **Reduces security.** Default: false                                                                                                                                                                                                            | `true`                          |
+   238→
+   239→#### Sandbox path prefixes
+   240→
+   241→Paths in `filesystem.allowWrite`, `filesystem.denyWrite`, and `filesystem.denyRead` support these prefixes:
+   242→
+   243→| Prefix            | Meaning                                     | Example                                |
+   244→| :---------------- | :------------------------------------------ | :------------------------------------- |
+   245→| `//`              | Absolute path from filesystem root          | `//tmp/build` becomes `/tmp/build`     |
+   246→| `~/`              | Relative to home directory                  | `~/.kube` becomes `$HOME/.kube`        |
+   247→| `/`               | Relative to the settings file's directory   | `/build` becomes `$SETTINGS_DIR/build` |
+   248→| `./` or no prefix | Relative path (resolved by sandbox runtime) | `./output`                             |
+   249→
+   250→**Configuration example:**
+   251→
+   252→```json  theme={null}
+   253→{
+   254→  "sandbox": {
+   255→    "enabled": true,
+   256→    "autoAllowBashIfSandboxed": true,
+   257→    "excludedCommands": ["docker"],
+   258→    "filesystem": {
+   259→      "allowWrite": ["//tmp/build", "~/.kube"],
+   260→      "denyRead": ["~/.aws/credentials"]
+   261→    },
+   262→    "network": {
+   263→      "allowedDomains": ["github.com", "*.npmjs.org", "registry.yarnpkg.com"],
+   264→      "allowUnixSockets": [
+   265→        "/var/run/docker.sock"
+   266→      ],
+   267→      "allowLocalBinding": true
+   268→    }
+   269→  }
+   270→}
+   271→```
+   272→
+   273→**Filesystem and network restrictions** can be configured in two ways that are merged together:
+   274→
+   275→* **`sandbox.filesystem` settings** (shown above): Control paths at the OS-level sandbox boundary. These restrictions apply to all subprocess commands (e.g., `kubectl`, `terraform`, `npm`), not just Claude's file tools.
+   276→* **Permission rules**: Use `Edit` allow/deny rules to control Claude's file tool access, `Read` deny rules to block reads, and `WebFetch` allow/deny rules to control network domains. Paths from these rules are also merged into the sandbox configuration.
+   277→
+   278→### Attribution settings
+   279→
+   280→Claude Code adds attribution to git commits and pull requests. These are configured separately:
+   281→
+   282→* Commits use [git trailers](https://git-scm.com/docs/git-interpret-trailers) (like `Co-Authored-By`) by default,  which can be customized or disabled
+   283→* Pull request descriptions are plain text
+   284→
+   285→| Keys     | Description                                                                                |
+   286→| :------- | :----------------------------------------------------------------------------------------- |
+   287→| `commit` | Attribution for git commits, including any trailers. Empty string hides commit attribution |
+   288→| `pr`     | Attribution for pull request descriptions. Empty string hides pull request attribution     |
+   289→
+   290→**Default commit attribution:**
+   291→
+   292→```text  theme={null}
+   293→🤖 Generated with [Claude Code](https://claude.com/claude-code)
+   294→
+   295→   Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+   296→```
+   297→
+   298→**Default pull request attribution:**
+   299→
+   300→```text  theme={null}
+   301→🤖 Generated with [Claude Code](https://claude.com/claude-code)
+   302→```
+   303→
+   304→**Example:**
+   305→
+   306→```json  theme={null}
+   307→{
+   308→  "attribution": {
+   309→    "commit": "Generated with AI\n\nCo-Authored-By: AI <ai@example.com>",
+   310→    "pr": ""
+   311→  }
+   312→}
+   313→```
+   314→
+   315→<Note>
+   316→  The `attribution` setting takes precedence over the deprecated `includeCoAuthoredBy` setting. To hide all attribution, set `commit` and `pr` to empty strings.
+   317→</Note>
+   318→
+   319→### File suggestion settings
+   320→
+   321→Configure a custom command for `@` file path autocomplete. The built-in file suggestion uses fast filesystem traversal, but large monorepos may benefit from project-specific indexing such as a pre-built file index or custom tooling.
+   322→
+   323→```json  theme={null}
+   324→{
+   325→  "fileSuggestion": {
+   326→    "type": "command",
+   327→    "command": "~/.claude/file-suggestion.sh"
+   328→  }
+   329→}
+   330→```
+   331→
+   332→The command runs with the same environment variables as [hooks](/en/hooks), including `CLAUDE_PROJECT_DIR`. It receives JSON via stdin with a `query` field:
+   333→
+   334→```json  theme={null}
+   335→{"query": "src/comp"}
+   336→```
+   337→
+   338→Output newline-separated file paths to stdout (currently limited to 15):
+   339→
+   340→```text  theme={null}
+   341→src/components/Button.tsx
+   342→src/components/Modal.tsx
+   343→src/components/Form.tsx
+   344→```
+   345→
+   346→**Example:**
+   347→
+   348→```bash  theme={null}
+   349→#!/bin/bash
+   350→query=$(cat | jq -r '.query')
+   351→your-repo-file-index --query "$query" | head -20
+   352→```
+   353→
+   354→### Hook configuration
+   355→
+   356→These settings control which hooks are allowed to run and what HTTP hooks can access. The `allowManagedHooksOnly` setting can only be configured in [managed settings](#settings-files). The URL and env var allowlists can be set at any settings level and merge across sources.
+   357→
+   358→**Behavior when `allowManagedHooksOnly` is `true`:**
+   359→
+   360→* Managed hooks and SDK hooks are loaded
+   361→* User hooks, project hooks, and plugin hooks are blocked
+   362→
+   363→**Restrict HTTP hook URLs:**
+   364→
+   365→Limit which URLs HTTP hooks can target. Supports `*` as a wildcard for matching. When the array is defined, HTTP hooks targeting non-matching URLs are silently blocked.
+   366→
+   367→```json  theme={null}
+   368→{
+   369→  "allowedHttpHookUrls": ["https://hooks.example.com/*", "http://localhost:*"]
+   370→}
+   371→```
+   372→
+   373→**Restrict HTTP hook environment variables:**
+   374→
+   375→Limit which environment variable names HTTP hooks can interpolate into header values. Each hook's effective `allowedEnvVars` is the intersection of its own list and this setting.
+   376→
+   377→```json  theme={null}
+   378→{
+   379→  "httpHookAllowedEnvVars": ["MY_TOKEN", "HOOK_SECRET"]
+   380→}
+   381→```
+   382→
+   383→### Settings precedence
+   384→
+   385→Settings apply in order of precedence. From highest to lowest:
+   386→
+   387→1. **Managed settings** ([server-managed](/en/server-managed-settings), [MDM/OS-level policies](#configuration-scopes), or [managed settings](/en/settings#settings-files))
+   388→   * Policies deployed by IT through server delivery, MDM configuration profiles, registry policies, or managed settings files
+   389→   * Cannot be overridden by user or project settings
+   390→   * Within the managed tier, precedence is: server-managed > MDM/OS-level policies > `managed-settings.json` > HKCU registry (Windows only). Only one managed source is used; sources do not merge.
+   391→
+   392→2. **Command line arguments**
+   393→   * Temporary overrides for a specific session
+   394→
+   395→3. **Local project settings** (`.claude/settings.local.json`)
+   396→   * Personal project-specific settings
+   397→
+   398→4. **Shared project settings** (`.claude/settings.json`)
+   399→   * Team-shared project settings in source control
+   400→
+   401→5. **User settings** (`~/.claude/settings.json`)
+   402→   * Personal global settings
+   403→
+   404→This hierarchy ensures that organizational policies are always enforced while still allowing teams and individuals to customize their experience.
+   405→
+   406→For example, if your user settings allow `Bash(npm run *)` but a project's shared settings deny it, the project setting takes precedence and the command is blocked.
+   407→
+   408→<Note>
+   409→  **Array settings merge across scopes.** When the same array-valued setting (such as `sandbox.filesystem.allowWrite` or `permissions.allow`) appears in multiple scopes, the arrays are **concatenated and deduplicated**, not replaced. This means lower-priority scopes can add entries without overriding those set by higher-priority scopes, and vice versa. For example, if managed settings set `allowWrite` to `["//opt/company-tools"]` and a user adds `["~/.kube"]`, both paths are included in the final configuration.
+   410→</Note>
+   411→
+   412→### Verify active settings
+   413→
+   414→Run `/status` inside Claude Code to see which settings sources are active and where they come from. The output shows each configuration layer (managed, user, project) along with its origin, such as `Enterprise managed settings (remote)`, `Enterprise managed settings (plist)`, `Enterprise managed settings (HKLM)`, or `Enterprise managed settings (file)`. If a settings file contains errors, `/status` reports the issue so you can fix it.
+   415→
+   416→### Key points about the configuration system
+   417→
+   418→* **Memory files (`CLAUDE.md`)**: Contain instructions and context that Claude loads at startup
+   419→* **Settings files (JSON)**: Configure permissions, environment variables, and tool behavior
+   420→* **Skills**: Custom prompts that can be invoked with `/skill-name` or loaded by Claude automatically
+   421→* **MCP servers**: Extend Claude Code with additional tools and integrations
+   422→* **Precedence**: Higher-level configurations (Managed) override lower-level ones (User/Project)
+   423→* **Inheritance**: Settings are merged, with more specific settings adding to or overriding broader ones
+   424→
+   425→### System prompt
+   426→
+   427→Claude Code's internal system prompt is not published. To add custom instructions, use `CLAUDE.md` files or the `--append-system-prompt` flag.
+   428→
+   429→### Excluding sensitive files
+   430→
+   431→To prevent Claude Code from accessing files containing sensitive information like API keys, secrets, and environment files, use the `permissions.deny` setting in your `.claude/settings.json` file:
+   432→
+   433→```json  theme={null}
+   434→{
+   435→  "permissions": {
+   436→    "deny": [
+   437→      "Read(./.env)",
+   438→      "Read(./.env.*)",
+   439→      "Read(./secrets/**)",
+   440→      "Read(./config/credentials.json)",
+   441→      "Read(./build)"
+   442→    ]
+   443→  }
+   444→}
+   445→```
+   446→
+   447→This replaces the deprecated `ignorePatterns` configuration. Files matching these patterns are excluded from file discovery and search results, and read operations on these files are denied.
+   448→
+   449→## Subagent configuration
+   450→
+   451→Claude Code supports custom AI subagents that can be configured at both user and project levels. These subagents are stored as Markdown files with YAML frontmatter:
+   452→
+   453→* **User subagents**: `~/.claude/agents/` - Available across all your projects
+   454→* **Project subagents**: `.claude/agents/` - Specific to your project and can be shared with your team
+   455→
+   456→Subagent files define specialized AI assistants with custom prompts and tool permissions. Learn more about creating and using subagents in the [subagents documentation](/en/sub-agents).
+   457→
+   458→## Plugin configuration
+   459→
+   460→Claude Code supports a plugin system that lets you extend functionality with skills, agents, hooks, and MCP servers. Plugins are distributed through marketplaces and can be configured at both user and repository levels.
+   461→
+   462→### Plugin settings
+   463→
+   464→Plugin-related settings in `settings.json`:
+   465→
+   466→```json  theme={null}
+   467→{
+   468→  "enabledPlugins": {
+   469→    "formatter@acme-tools": true,
+   470→    "deployer@acme-tools": true,
+   471→    "analyzer@security-plugins": false
+   472→  },
+   473→  "extraKnownMarketplaces": {
+   474→    "acme-tools": {
+   475→      "source": "github",
+   476→      "repo": "acme-corp/claude-plugins"
+   477→    }
+   478→  }
+   479→}
+   480→```
+   481→
+   482→#### `enabledPlugins`
+   483→
+   484→Controls which plugins are enabled. Format: `"plugin-name@marketplace-name": true/false`
+   485→
+   486→**Scopes**:
+   487→
+   488→* **User settings** (`~/.claude/settings.json`): Personal plugin preferences
+   489→* **Project settings** (`.claude/settings.json`): Project-specific plugins shared with team
+   490→* **Local settings** (`.claude/settings.local.json`): Per-machine overrides (not committed)
+   491→
+   492→**Example**:
+   493→
+   494→```json  theme={null}
+   495→{
+   496→  "enabledPlugins": {
+   497→    "code-formatter@team-tools": true,
+   498→    "deployment-tools@team-tools": true,
+   499→    "experimental-features@personal": false
+   500→  }
+   501→}
+   502→```
+   503→
+   504→#### `extraKnownMarketplaces`
+   505→
+   506→Defines additional marketplaces that should be made available for the repository. Typically used in repository-level settings to ensure team members have access to required plugin sources.
+   507→
+   508→**When a repository includes `extraKnownMarketplaces`**:
+   509→
+   510→1. Team members are prompted to install the marketplace when they trust the folder
+   511→2. Team members are then prompted to install plugins from that marketplace
+   512→3. Users can skip unwanted marketplaces or plugins (stored in user settings)
+   513→4. Installation respects trust boundaries and requires explicit consent
+   514→
+   515→**Example**:
+   516→
+   517→```json  theme={null}
+   518→{
+   519→  "extraKnownMarketplaces": {
+   520→    "acme-tools": {
+   521→      "source": {
+   522→        "source": "github",
+   523→        "repo": "acme-corp/claude-plugins"
+   524→      }
+   525→    },
+   526→    "security-plugins": {
+   527→      "source": {
+   528→        "source": "git",
+   529→        "url": "https://git.example.com/security/plugins.git"
+   530→      }
+   531→    }
+   532→  }
+   533→}
+   534→```
+   535→
+   536→**Marketplace source types**:
+   537→
+   538→* `github`: GitHub repository (uses `repo`)
+   539→* `git`: Any git URL (uses `url`)
+   540→* `directory`: Local filesystem path (uses `path`, for development only)
+   541→* `hostPattern`: regex pattern to match marketplace hosts (uses `hostPattern`)
+   542→
+   543→#### `strictKnownMarketplaces`
+   544→
+   545→**Managed settings only**: Controls which plugin marketplaces users are allowed to add. This setting can only be configured in [managed settings](/en/settings#settings-files) and provides administrators with strict control over marketplace sources.
+   546→
+   547→**Managed settings file locations**:
+   548→
+   549→* **macOS**: `/Library/Application Support/ClaudeCode/managed-settings.json`
+   550→* **Linux and WSL**: `/etc/claude-code/managed-settings.json`
+   551→* **Windows**: `C:\Program Files\ClaudeCode\managed-settings.json`
+   552→
+   553→**Key characteristics**:
+   554→
+   555→* Only available in managed settings (`managed-settings.json`)
+   556→* Cannot be overridden by user or project settings (highest precedence)
+   557→* Enforced BEFORE network/filesystem operations (blocked sources never execute)
+   558→* Uses exact matching for source specifications (including `ref`, `path` for git sources), except `hostPattern`, which uses regex matching
+   559→
+   560→**Allowlist behavior**:
+   561→
+   562→* `undefined` (default): No restrictions - users can add any marketplace
+   563→* Empty array `[]`: Complete lockdown - users cannot add any new marketplaces
+   564→* List of sources: Users can only add marketplaces that match exactly
+   565→
+   566→**All supported source types**:
+   567→
+   568→The allowlist supports seven marketplace source types. Most sources use exact matching, while `hostPattern` uses regex matching against the marketplace host.
+   569→
+   570→1. **GitHub repositories**:
+   571→
+   572→```json  theme={null}
+   573→{ "source": "github", "repo": "acme-corp/approved-plugins" }
+   574→{ "source": "github", "repo": "acme-corp/security-tools", "ref": "v2.0" }
+   575→{ "source": "github", "repo": "acme-corp/plugins", "ref": "main", "path": "marketplace" }
+   576→```
+   577→
+   578→Fields: `repo` (required), `ref` (optional: branch/tag/SHA), `path` (optional: subdirectory)
+   579→
+   580→2. **Git repositories**:
+   581→
+   582→```json  theme={null}
+   583→{ "source": "git", "url": "https://gitlab.example.com/tools/plugins.git" }
+   584→{ "source": "git", "url": "https://bitbucket.org/acme-corp/plugins.git", "ref": "production" }
+   585→{ "source": "git", "url": "ssh://git@git.example.com/plugins.git", "ref": "v3.1", "path": "approved" }
+   586→```
+   587→
+   588→Fields: `url` (required), `ref` (optional: branch/tag/SHA), `path` (optional: subdirectory)
+   589→
+   590→3. **URL-based marketplaces**:
+   591→
+   592→```json  theme={null}
+   593→{ "source": "url", "url": "https://plugins.example.com/marketplace.json" }
+   594→{ "source": "url", "url": "https://cdn.example.com/marketplace.json", "headers": { "Authorization": "Bearer ${TOKEN}" } }
+   595→```
+   596→
+   597→Fields: `url` (required), `headers` (optional: HTTP headers for authenticated access)
+   598→
+   599→<Note>
+   600→  URL-based marketplaces only download the `marketplace.json` file. They do not download plugin files from the server. Plugins in URL-based marketplaces must use external sources (GitHub, npm, or git URLs) rather than relative paths. For plugins with relative paths, use a Git-based marketplace instead. See [Troubleshooting](/en/plugin-marketplaces#plugins-with-relative-paths-fail-in-url-based-marketplaces) for details.
+   601→</Note>
+   602→
+   603→4. **NPM packages**:
+   604→
+   605→```json  theme={null}
+   606→{ "source": "npm", "package": "@acme-corp/claude-plugins" }
+   607→{ "source": "npm", "package": "@acme-corp/approved-marketplace" }
+   608→```
+   609→
+   610→Fields: `package` (required, supports scoped packages)
+   611→
+   612→5. **File paths**:
+   613→
+   614→```json  theme={null}
+   615→{ "source": "file", "path": "/usr/local/share/claude/acme-marketplace.json" }
+   616→{ "source": "file", "path": "/opt/acme-corp/plugins/marketplace.json" }
+   617→```
+   618→
+   619→Fields: `path` (required: absolute path to marketplace.json file)
+   620→
+   621→6. **Directory paths**:
+   622→
+   623→```json  theme={null}
+   624→{ "source": "directory", "path": "/usr/local/share/claude/acme-plugins" }
+   625→{ "source": "directory", "path": "/opt/acme-corp/approved-marketplaces" }
+   626→```
+   627→
+   628→Fields: `path` (required: absolute path to directory containing `.claude-plugin/marketplace.json`)
+   629→
+   630→7. **Host pattern matching**:
+   631→
+   632→```json  theme={null}
+   633→{ "source": "hostPattern", "hostPattern": "^github\\.example\\.com$" }
+   634→{ "source": "hostPattern", "hostPattern": "^gitlab\\.internal\\.example\\.com$" }
+   635→```
+   636→
+   637→Fields: `hostPattern` (required: regex pattern to match against the marketplace host)
+   638→
+   639→Use host pattern matching when you want to allow all marketplaces from a specific host without enumerating each repository individually. This is useful for organizations with internal GitHub Enterprise or GitLab servers where developers create their own marketplaces.
+   640→
+   641→Host extraction by source type:
+   642→
+   643→* `github`: always matches against `github.com`
+   644→* `git`: extracts hostname from the URL (supports both HTTPS and SSH formats)
+   645→* `url`: extracts hostname from the URL
+   646→* `npm`, `file`, `directory`: not supported for host pattern matching
+   647→
+   648→**Configuration examples**:
+   649→
+   650→Example: allow specific marketplaces only:
+   651→
+   652→```json  theme={null}
+   653→{
+   654→  "strictKnownMarketplaces": [
+   655→    {
+   656→      "source": "github",
+   657→      "repo": "acme-corp/approved-plugins"
+   658→    },
+   659→    {
+   660→      "source": "github",
+   661→      "repo": "acme-corp/security-tools",
+   662→      "ref": "v2.0"
+   663→    },
+   664→    {
+   665→      "source": "url",
+   666→      "url": "https://plugins.example.com/marketplace.json"
+   667→    },
+   668→    {
+   669→      "source": "npm",
+   670→      "package": "@acme-corp/compliance-plugins"
+   671→    }
+   672→  ]
+   673→}
+   674→```
+   675→
+   676→Example - Disable all marketplace additions:
+   677→
+   678→```json  theme={null}
+   679→{
+   680→  "strictKnownMarketplaces": []
+   681→}
+   682→```
+   683→
+   684→Example: allow all marketplaces from an internal git server:
+   685→
+   686→```json  theme={null}
+   687→{
+   688→  "strictKnownMarketplaces": [
+   689→    {
+   690→      "source": "hostPattern",
+   691→      "hostPattern": "^github\\.example\\.com$"
+   692→    }
+   693→  ]
+   694→}
+   695→```
+   696→
+   697→**Exact matching requirements**:
+   698→
+   699→Marketplace sources must match **exactly** for a user's addition to be allowed. For git-based sources (`github` and `git`), this includes all optional fields:
+   700→
+   701→* The `repo` or `url` must match exactly
+   702→* The `ref` field must match exactly (or both be undefined)
+   703→* The `path` field must match exactly (or both be undefined)
+   704→
+   705→Examples of sources that **do NOT match**:
+   706→
+   707→```json  theme={null}
+   708→// These are DIFFERENT sources:
+   709→{ "source": "github", "repo": "acme-corp/plugins" }
+   710→{ "source": "github", "repo": "acme-corp/plugins", "ref": "main" }
+   711→
+   712→// These are also DIFFERENT:
+   713→{ "source": "github", "repo": "acme-corp/plugins", "path": "marketplace" }
+   714→{ "source": "github", "repo": "acme-corp/plugins" }
+   715→```
+   716→
+   717→**Comparison with `extraKnownMarketplaces`**:
+   718→
+   719→| Aspect                | `strictKnownMarketplaces`            | `extraKnownMarketplaces`             |
+   720→| --------------------- | ------------------------------------ | ------------------------------------ |
+   721→| **Purpose**           | Organizational policy enforcement    | Team convenience                     |
+   722→| **Settings file**     | `managed-settings.json` only         | Any settings file                    |
+   723→| **Behavior**          | Blocks non-allowlisted additions     | Auto-installs missing marketplaces   |
+   724→| **When enforced**     | Before network/filesystem operations | After user trust prompt              |
+   725→| **Can be overridden** | No (highest precedence)              | Yes (by higher precedence settings)  |
+   726→| **Source format**     | Direct source object                 | Named marketplace with nested source |
+   727→| **Use case**          | Compliance, security restrictions    | Onboarding, standardization          |
+   728→
+   729→**Format difference**:
+   730→
+   731→`strictKnownMarketplaces` uses direct source objects:
+   732→
+   733→```json  theme={null}
+   734→{
+   735→  "strictKnownMarketplaces": [
+   736→    { "source": "github", "repo": "acme-corp/plugins" }
+   737→  ]
+   738→}
+   739→```
+   740→
+   741→`extraKnownMarketplaces` requires named marketplaces:
+   742→
+   743→```json  theme={null}
+   744→{
+   745→  "extraKnownMarketplaces": {
+   746→    "acme-tools": {
+   747→      "source": { "source": "github", "repo": "acme-corp/plugins" }
+   748→    }
+   749→  }
+   750→}
+   751→```
+   752→
+   753→**Important notes**:
+   754→
+   755→* Restrictions are checked BEFORE any network requests or filesystem operations
+   756→* When blocked, users see clear error messages indicating the source is blocked by managed policy
+   757→* The restriction applies only to adding NEW marketplaces; previously installed marketplaces remain accessible
+   758→* Managed settings have the highest precedence and cannot be overridden
+   759→
+   760→See [Managed marketplace restrictions](/en/plugin-marketplaces#managed-marketplace-restrictions) for user-facing documentation.
+   761→
+   762→### Managing plugins
+   763→
+   764→Use the `/plugin` command to manage plugins interactively:
+   765→
+   766→* Browse available plugins from marketplaces
+   767→* Install/uninstall plugins
+   768→* Enable/disable plugins
+   769→* View plugin details (commands, agents, hooks provided)
+   770→* Add/remove marketplaces
+   771→
+   772→Learn more about the plugin system in the [plugins documentation](/en/plugins).
+   773→
+   774→## Environment variables
+   775→
+   776→Claude Code supports the following environment variables to control its behavior:
+   777→
+   778→<Note>
+   779→  All environment variables can also be configured in [`settings.json`](#available-settings). This is useful as a way to automatically set environment variables for each session, or to roll out a set of environment variables for your whole team or organization.
+   780→</Note>
+   781→
+   782→| Variable                                       | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |     |
+   783→| :--------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+   784→| `ANTHROPIC_API_KEY`                            | API key sent as `X-Api-Key` header, typically for the Claude SDK (for interactive usage, run `/login`)                                                                                                                                                                                                                                                                                                                                                                                                |     |
+   785→| `ANTHROPIC_AUTH_TOKEN`                         | Custom value for the `Authorization` header (the value you set here will be prefixed with `Bearer `)                                                                                                                                                                                                                                                                                                                                                                                                  |     |
+   786→| `ANTHROPIC_CUSTOM_HEADERS`                     | Custom headers to add to requests (`Name: Value` format, newline-separated for multiple headers)                                                                                                                                                                                                                                                                                                                                                                                                      |     |
+   787→| `ANTHROPIC_DEFAULT_HAIKU_MODEL`                | See [Model configuration](/en/model-config#environment-variables)                                                                                                                                                                                                                                                                                                                                                                                                                                     |     |
+   788→| `ANTHROPIC_DEFAULT_OPUS_MODEL`                 | See [Model configuration](/en/model-config#environment-variables)                                                                                                                                                                                                                                                                                                                                                                                                                                     |     |
+   789→| `ANTHROPIC_DEFAULT_SONNET_MODEL`               | See [Model configuration](/en/model-config#environment-variables)                                                                                                                                                                                                                                                                                                                                                                                                                                     |     |
+   790→| `ANTHROPIC_FOUNDRY_API_KEY`                    | API key for Microsoft Foundry authentication (see [Microsoft Foundry](/en/microsoft-foundry))                                                                                                                                                                                                                                                                                                                                                                                                         |     |
+   791→| `ANTHROPIC_FOUNDRY_BASE_URL`                   | Full base URL for the Foundry resource (for example, `https://my-resource.services.ai.azure.com/anthropic`). Alternative to `ANTHROPIC_FOUNDRY_RESOURCE` (see [Microsoft Foundry](/en/microsoft-foundry))                                                                                                                                                                                                                                                                                             |     |
+   792→| `ANTHROPIC_FOUNDRY_RESOURCE`                   | Foundry resource name (for example, `my-resource`). Required if `ANTHROPIC_FOUNDRY_BASE_URL` is not set (see [Microsoft Foundry](/en/microsoft-foundry))                                                                                                                                                                                                                                                                                                                                              |     |
+   793→| `ANTHROPIC_MODEL`                              | Name of the model setting to use (see [Model Configuration](/en/model-config#environment-variables))                                                                                                                                                                                                                                                                                                                                                                                                  |     |
+   794→| `ANTHROPIC_SMALL_FAST_MODEL`                   | \[DEPRECATED] Name of [Haiku-class model for background tasks](/en/costs)                                                                                                                                                                                                                                                                                                                                                                                                                             |     |
+   795→| `ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION`        | Override AWS region for the Haiku-class model when using Bedrock                                                                                                                                                                                                                                                                                                                                                                                                                                      |     |
+   796→| `AWS_BEARER_TOKEN_BEDROCK`                     | Bedrock API key for authentication (see [Bedrock API keys](https://aws.amazon.com/blogs/machine-learning/accelerate-ai-development-with-amazon-bedrock-api-keys/))                                                                                                                                                                                                                                                                                                                                    |     |
+   797→| `BASH_DEFAULT_TIMEOUT_MS`                      | Default timeout for long-running bash commands                                                                                                                                                                                                                                                                                                                                                                                                                                                        |     |
+   798→| `BASH_MAX_OUTPUT_LENGTH`                       | Maximum number of characters in bash outputs before they are middle-truncated                                                                                                                                                                                                                                                                                                                                                                                                                         |     |
+   799→| `BASH_MAX_TIMEOUT_MS`                          | Maximum timeout the model can set for long-running bash commands                                                                                                                                                                                                                                                                                                                                                                                                                                      |     |
+   800→| `CLAUDE_AUTOCOMPACT_PCT_OVERRIDE`              | Set the percentage of context capacity (1-100) at which auto-compaction triggers. By default, auto-compaction triggers at approximately 95% capacity. Use lower values like `50` to compact earlier. Values above the default threshold have no effect. Applies to both main conversations and subagents. This percentage aligns with the `context_window.used_percentage` field available in [status line](/en/statusline)                                                                           |     |
+   801→| `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR`     | Return to the original working directory after each Bash command                                                                                                                                                                                                                                                                                                                                                                                                                                      |     |
+   802→| `CLAUDE_CODE_ACCOUNT_UUID`                     | Account UUID for the authenticated user. Used by SDK callers to provide account information synchronously, avoiding a race condition where early telemetry events lack account metadata. Requires `CLAUDE_CODE_USER_EMAIL` and `CLAUDE_CODE_ORGANIZATION_UUID` to also be set                                                                                                                                                                                                                         |     |
+   803→| `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD` | Set to `1` to load CLAUDE.md files from directories specified with `--add-dir`. By default, additional directories do not load memory files                                                                                                                                                                                                                                                                                                                                                           | `1` |
+   804→| `CLAUDE_CODE_API_KEY_HELPER_TTL_MS`            | Interval in milliseconds at which credentials should be refreshed (when using `apiKeyHelper`)                                                                                                                                                                                                                                                                                                                                                                                                         |     |
+   805→| `CLAUDE_CODE_CLIENT_CERT`                      | Path to client certificate file for mTLS authentication                                                                                                                                                                                                                                                                                                                                                                                                                                               |     |
+   806→| `CLAUDE_CODE_CLIENT_KEY`                       | Path to client private key file for mTLS authentication                                                                                                                                                                                                                                                                                                                                                                                                                                               |     |
+   807→| `CLAUDE_CODE_CLIENT_KEY_PASSPHRASE`            | Passphrase for encrypted CLAUDE\_CODE\_CLIENT\_KEY (optional)                                                                                                                                                                                                                                                                                                                                                                                                                                         |     |
+   808→| `CLAUDE_CODE_DISABLE_1M_CONTEXT`               | Set to `1` to disable [1M context window](/en/model-config#extended-context) support. When set, 1M model variants are unavailable in the model picker. Useful for enterprise environments with compliance requirements                                                                                                                                                                                                                                                                                |     |
+   809→| `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING`        | Set to `1` to disable [adaptive reasoning](/en/model-config#adjust-effort-level) for Opus 4.6 and Sonnet 4.6. When disabled, these models fall back to the fixed thinking budget controlled by `MAX_THINKING_TOKENS`                                                                                                                                                                                                                                                                                  |     |
+   810→| `CLAUDE_CODE_DISABLE_AUTO_MEMORY`              | Set to `1` to disable [auto memory](/en/memory#auto-memory). Set to `0` to force auto memory on during the gradual rollout. When disabled, Claude does not create or load auto memory files                                                                                                                                                                                                                                                                                                           |     |
+   811→| `CLAUDE_CODE_DISABLE_BACKGROUND_TASKS`         | Set to `1` to disable all background task functionality, including the `run_in_background` parameter on Bash and subagent tools, auto-backgrounding, and the Ctrl+B shortcut                                                                                                                                                                                                                                                                                                                          |     |
+   812→| `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS`       | Set to `1` to disable Anthropic API-specific `anthropic-beta` headers. Use this if experiencing issues like "Unexpected value(s) for the `anthropic-beta` header" when using an LLM gateway with third-party providers                                                                                                                                                                                                                                                                                |     |
+   813→| `CLAUDE_CODE_DISABLE_FAST_MODE`                | Set to `1` to disable [fast mode](/en/fast-mode)                                                                                                                                                                                                                                                                                                                                                                                                                                                      |     |
+   814→| `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY`          | Set to `1` to disable the "How is Claude doing?" session quality surveys. Also disabled when using third-party providers or when telemetry is disabled. See [Session quality surveys](/en/data-usage#session-quality-surveys)                                                                                                                                                                                                                                                                         |     |
+   815→| `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`     | Equivalent of setting `DISABLE_AUTOUPDATER`, `DISABLE_BUG_COMMAND`, `DISABLE_ERROR_REPORTING`, and `DISABLE_TELEMETRY`                                                                                                                                                                                                                                                                                                                                                                                |     |
+   816→| `CLAUDE_CODE_DISABLE_TERMINAL_TITLE`           | Set to `1` to disable automatic terminal title updates based on conversation context                                                                                                                                                                                                                                                                                                                                                                                                                  |     |
+   817→| `CLAUDE_CODE_EFFORT_LEVEL`                     | Set the effort level for supported models. Values: `low`, `medium`, `high` (default). Lower effort is faster and cheaper, higher effort provides deeper reasoning. Currently supported with Opus 4.6 only. See [Adjust effort level](/en/model-config#adjust-effort-level)                                                                                                                                                                                                                            |     |
+   818→| `CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION`         | Set to `false` to disable prompt suggestions (the "Prompt suggestions" toggle in `/config`). These are the grayed-out predictions that appear in your prompt input after Claude responds. See [Prompt suggestions](/en/interactive-mode#prompt-suggestions)                                                                                                                                                                                                                                           |     |
+   819→| `CLAUDE_CODE_ENABLE_TASKS`                     | Set to `false` to temporarily revert to the previous TODO list instead of the task tracking system. Default: `true`. See [Task list](/en/interactive-mode#task-list)                                                                                                                                                                                                                                                                                                                                  |     |
+   820→| `CLAUDE_CODE_ENABLE_TELEMETRY`                 | Set to `1` to enable OpenTelemetry data collection for metrics and logging. Required before configuring OTel exporters. See [Monitoring](/en/monitoring-usage)                                                                                                                                                                                                                                                                                                                                        |     |
+   821→| `CLAUDE_CODE_EXIT_AFTER_STOP_DELAY`            | Time in milliseconds to wait after the query loop becomes idle before automatically exiting. Useful for automated workflows and scripts using SDK mode                                                                                                                                                                                                                                                                                                                                                |     |
+   822→| `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS`         | Set to `1` to enable [agent teams](/en/agent-teams). Agent teams are experimental and disabled by default                                                                                                                                                                                                                                                                                                                                                                                             |     |
+   823→| `CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS`      | Override the default token limit for file reads. Useful when you need to read larger files in full                                                                                                                                                                                                                                                                                                                                                                                                    |     |
+   824→| `CLAUDE_CODE_HIDE_ACCOUNT_INFO`                | Set to `1` to hide your email address and organization name from the Claude Code UI. Useful when streaming or recording                                                                                                                                                                                                                                                                                                                                                                               |     |
+   825→| `CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL`            | Skip auto-installation of IDE extensions                                                                                                                                                                                                                                                                                                                                                                                                                                                              |     |
+   826→| `CLAUDE_CODE_MAX_OUTPUT_TOKENS`                | Set the maximum number of output tokens for most requests. Default: 32,000. Maximum: 64,000. Increasing this value reduces the effective context window available before [auto-compaction](/en/costs#reduce-token-usage) triggers.                                                                                                                                                                                                                                                                    |     |
+   827→| `CLAUDE_CODE_ORGANIZATION_UUID`                | Organization UUID for the authenticated user. Used by SDK callers to provide account information synchronously. Requires `CLAUDE_CODE_ACCOUNT_UUID` and `CLAUDE_CODE_USER_EMAIL` to also be set                                                                                                                                                                                                                                                                                                       |     |
+   828→| `CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS`  | Interval for refreshing dynamic OpenTelemetry headers in milliseconds (default: 1740000 / 29 minutes). See [Dynamic headers](/en/monitoring-usage#dynamic-headers)                                                                                                                                                                                                                                                                                                                                    |     |
+   829→| `CLAUDE_CODE_PLAN_MODE_REQUIRED`               | Auto-set to `true` on [agent team](/en/agent-teams) teammates that require plan approval. Read-only: set by Claude Code when spawning teammates. See [require plan approval](/en/agent-teams#require-plan-approval-for-teammates)                                                                                                                                                                                                                                                                     |     |
+   830→| `CLAUDE_CODE_PLUGIN_GIT_TIMEOUT_MS`            | Timeout in milliseconds for git operations when installing or updating plugins (default: 120000). Increase this value for large repositories or slow network connections. See [Git operations time out](/en/plugin-marketplaces#git-operations-time-out)                                                                                                                                                                                                                                              |     |
+   831→| `CLAUDE_CODE_PROXY_RESOLVES_HOSTS`             | Set to `true` to allow the proxy to perform DNS resolution instead of the caller. Opt-in for environments where the proxy should handle hostname resolution                                                                                                                                                                                                                                                                                                                                           |     |
+   832→| `CLAUDE_CODE_SHELL`                            | Override automatic shell detection. Useful when your login shell differs from your preferred working shell (for example, `bash` vs `zsh`)                                                                                                                                                                                                                                                                                                                                                             |     |
+   833→| `CLAUDE_CODE_SHELL_PREFIX`                     | Command prefix to wrap all bash commands (for example, for logging or auditing). Example: `/path/to/logger.sh` will execute `/path/to/logger.sh <command>`                                                                                                                                                                                                                                                                                                                                            |     |
+   834→| `CLAUDE_CODE_SIMPLE`                           | Set to `1` to run with a minimal system prompt and only the Bash, file read, and file edit tools. Disables MCP tools, attachments, hooks, and CLAUDE.md files                                                                                                                                                                                                                                                                                                                                         |     |
+   835→| `CLAUDE_CODE_SKIP_BEDROCK_AUTH`                | Skip AWS authentication for Bedrock (for example, when using an LLM gateway)                                                                                                                                                                                                                                                                                                                                                                                                                          |     |
+   836→| `CLAUDE_CODE_SKIP_FOUNDRY_AUTH`                | Skip Azure authentication for Microsoft Foundry (for example, when using an LLM gateway)                                                                                                                                                                                                                                                                                                                                                                                                              |     |
+   837→| `CLAUDE_CODE_SKIP_VERTEX_AUTH`                 | Skip Google authentication for Vertex (for example, when using an LLM gateway)                                                                                                                                                                                                                                                                                                                                                                                                                        |     |
+   838→| `CLAUDE_CODE_SUBAGENT_MODEL`                   | See [Model configuration](/en/model-config)                                                                                                                                                                                                                                                                                                                                                                                                                                                           |     |
+   839→| `CLAUDE_CODE_TASK_LIST_ID`                     | Share a task list across sessions. Set the same ID in multiple Claude Code instances to coordinate on a shared task list. See [Task list](/en/interactive-mode#task-list)                                                                                                                                                                                                                                                                                                                             |     |
+   840→| `CLAUDE_CODE_TEAM_NAME`                        | Name of the agent team this teammate belongs to. Set automatically on [agent team](/en/agent-teams) members                                                                                                                                                                                                                                                                                                                                                                                           |     |
+   841→| `CLAUDE_CODE_TMPDIR`                           | Override the temp directory used for internal temp files. Claude Code appends `/claude/` to this path. Default: `/tmp` on Unix/macOS, `os.tmpdir()` on Windows                                                                                                                                                                                                                                                                                                                                        |     |
+   842→| `CLAUDE_CODE_USER_EMAIL`                       | Email address for the authenticated user. Used by SDK callers to provide account information synchronously. Requires `CLAUDE_CODE_ACCOUNT_UUID` and `CLAUDE_CODE_ORGANIZATION_UUID` to also be set                                                                                                                                                                                                                                                                                                    |     |
+   843→| `CLAUDE_CODE_USE_BEDROCK`                      | Use [Bedrock](/en/amazon-bedrock)                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |     |
+   844→| `CLAUDE_CODE_USE_FOUNDRY`                      | Use [Microsoft Foundry](/en/microsoft-foundry)                                                                                                                                                                                                                                                                                                                                                                                                                                                        |     |
+   845→| `CLAUDE_CODE_USE_VERTEX`                       | Use [Vertex](/en/google-vertex-ai)                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |     |
+   846→| `CLAUDE_CONFIG_DIR`                            | Customize where Claude Code stores its configuration and data files                                                                                                                                                                                                                                                                                                                                                                                                                                   |     |
+   847→| `DISABLE_AUTOUPDATER`                          | Set to `1` to disable automatic updates.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |     |
+   848→| `DISABLE_BUG_COMMAND`                          | Set to `1` to disable the `/bug` command                                                                                                                                                                                                                                                                                                                                                                                                                                                              |     |
+   849→| `DISABLE_COST_WARNINGS`                        | Set to `1` to disable cost warning messages                                                                                                                                                                                                                                                                                                                                                                                                                                                           |     |
+   850→| `DISABLE_ERROR_REPORTING`                      | Set to `1` to opt out of Sentry error reporting                                                                                                                                                                                                                                                                                                                                                                                                                                                       |     |
+   851→| `DISABLE_INSTALLATION_CHECKS`                  | Set to `1` to disable installation warnings. Use only when manually managing the installation location, as this can mask issues with standard installations                                                                                                                                                                                                                                                                                                                                           |     |
+   852→| `DISABLE_NON_ESSENTIAL_MODEL_CALLS`            | Set to `1` to disable model calls for non-critical paths like flavor text                                                                                                                                                                                                                                                                                                                                                                                                                             |     |
+   853→| `DISABLE_PROMPT_CACHING`                       | Set to `1` to disable prompt caching for all models (takes precedence over per-model settings)                                                                                                                                                                                                                                                                                                                                                                                                        |     |
+   854→| `DISABLE_PROMPT_CACHING_HAIKU`                 | Set to `1` to disable prompt caching for Haiku models                                                                                                                                                                                                                                                                                                                                                                                                                                                 |     |
+   855→| `DISABLE_PROMPT_CACHING_OPUS`                  | Set to `1` to disable prompt caching for Opus models                                                                                                                                                                                                                                                                                                                                                                                                                                                  |     |
+   856→| `DISABLE_PROMPT_CACHING_SONNET`                | Set to `1` to disable prompt caching for Sonnet models                                                                                                                                                                                                                                                                                                                                                                                                                                                |     |
+   857→| `DISABLE_TELEMETRY`                            | Set to `1` to opt out of Statsig telemetry (note that Statsig events do not include user data like code, file paths, or bash commands)                                                                                                                                                                                                                                                                                                                                                                |     |
+   858→| `ENABLE_CLAUDEAI_MCP_SERVERS`                  | Set to `false` to disable [claude.ai MCP servers](/en/mcp#use-mcp-servers-from-claudeai) in Claude Code. Enabled by default for logged-in users                                                                                                                                                                                                                                                                                                                                                       |     |
+   859→| `ENABLE_TOOL_SEARCH`                           | Controls [MCP tool search](/en/mcp#scale-with-mcp-tool-search). Values: `auto` (default, enables at 10% context), `auto:N` (custom threshold, e.g., `auto:5` for 5%), `true` (always on), `false` (disabled)                                                                                                                                                                                                                                                                                          |     |
+   860→| `FORCE_AUTOUPDATE_PLUGINS`                     | Set to `true` to force plugin auto-updates even when the main auto-updater is disabled via `DISABLE_AUTOUPDATER`                                                                                                                                                                                                                                                                                                                                                                                      |     |
+   861→| `HTTP_PROXY`                                   | Specify HTTP proxy server for network connections                                                                                                                                                                                                                                                                                                                                                                                                                                                     |     |
+   862→| `HTTPS_PROXY`                                  | Specify HTTPS proxy server for network connections                                                                                                                                                                                                                                                                                                                                                                                                                                                    |     |
+   863→| `IS_DEMO`                                      | Set to `true` to enable demo mode: hides email and organization from the UI, skips onboarding, and hides internal commands. Useful for streaming or recording sessions                                                                                                                                                                                                                                                                                                                                |     |
+   864→| `MAX_MCP_OUTPUT_TOKENS`                        | Maximum number of tokens allowed in MCP tool responses. Claude Code displays a warning when output exceeds 10,000 tokens (default: 25000)                                                                                                                                                                                                                                                                                                                                                             |     |
+   865→| `MAX_THINKING_TOKENS`                          | Override the [extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) token budget. Thinking is enabled at max budget (31,999 tokens) by default. Use this to limit the budget (for example, `MAX_THINKING_TOKENS=10000`) or disable thinking entirely (`MAX_THINKING_TOKENS=0`). For Opus 4.6, thinking depth is controlled by [effort level](/en/model-config#adjust-effort-level) instead, and this variable is ignored unless set to `0` to disable thinking. |     |
+   866→| `MCP_CLIENT_SECRET`                            | OAuth client secret for MCP servers that require [pre-configured credentials](/en/mcp#use-pre-configured-oauth-credentials). Avoids the interactive prompt when adding a server with `--client-secret`                                                                                                                                                                                                                                                                                                |     |
+   867→| `MCP_OAUTH_CALLBACK_PORT`                      | Fixed port for the OAuth redirect callback, as an alternative to `--callback-port` when adding an MCP server with [pre-configured credentials](/en/mcp#use-pre-configured-oauth-credentials)                                                                                                                                                                                                                                                                                                          |     |
+   868→| `MCP_TIMEOUT`                                  | Timeout in milliseconds for MCP server startup                                                                                                                                                                                                                                                                                                                                                                                                                                                        |     |
+   869→| `MCP_TOOL_TIMEOUT`                             | Timeout in milliseconds for MCP tool execution                                                                                                                                                                                                                                                                                                                                                                                                                                                        |     |
+   870→| `NO_PROXY`                                     | List of domains and IPs to which requests will be directly issued, bypassing proxy                                                                                                                                                                                                                                                                                                                                                                                                                    |     |
+   871→| `SLASH_COMMAND_TOOL_CHAR_BUDGET`               | Override the character budget for skill metadata shown to the [Skill tool](/en/skills#control-who-invokes-a-skill). The budget scales dynamically at 2% of the context window, with a fallback of 16,000 characters. Legacy name kept for backwards compatibility                                                                                                                                                                                                                                     |     |
+   872→| `USE_BUILTIN_RIPGREP`                          | Set to `0` to use system-installed `rg` instead of `rg` included with Claude Code                                                                                                                                                                                                                                                                                                                                                                                                                     |     |
+   873→| `VERTEX_REGION_CLAUDE_3_5_HAIKU`               | Override region for Claude 3.5 Haiku when using Vertex AI                                                                                                                                                                                                                                                                                                                                                                                                                                             |     |
+   874→| `VERTEX_REGION_CLAUDE_3_7_SONNET`              | Override region for Claude 3.7 Sonnet when using Vertex AI                                                                                                                                                                                                                                                                                                                                                                                                                                            |     |
+   875→| `VERTEX_REGION_CLAUDE_4_0_OPUS`                | Override region for Claude 4.0 Opus when using Vertex AI                                                                                                                                                                                                                                                                                                                                                                                                                                              |     |
+   876→| `VERTEX_REGION_CLAUDE_4_0_SONNET`              | Override region for Claude 4.0 Sonnet when using Vertex AI                                                                                                                                                                                                                                                                                                                                                                                                                                            |     |
+   877→| `VERTEX_REGION_CLAUDE_4_1_OPUS`                | Override region for Claude 4.1 Opus when using Vertex AI                                                                                                                                                                                                                                                                                                                                                                                                                                              |     |
+   878→
+   879→## Tools available to Claude
+   880→
+   881→Claude Code has access to a set of powerful tools that help it understand and modify your codebase:
+   882→
+   883→| Tool                | Description                                                                                                                                                                                                                                                                                                                                                                 | Permission Required |
+   884→| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ |
+   885→| **AskUserQuestion** | Asks multiple-choice questions to gather requirements or clarify ambiguity                                                                                                                                                                                                                                                                                                  | No                  |
+   886→| **Bash**            | Executes shell commands in your environment (see [Bash tool behavior](#bash-tool-behavior) below)                                                                                                                                                                                                                                                                           | Yes                 |
+   887→| **TaskOutput**      | Retrieves output from a background task (bash shell or subagent)                                                                                                                                                                                                                                                                                                            | No                  |
+   888→| **Edit**            | Makes targeted edits to specific files                                                                                                                                                                                                                                                                                                                                      | Yes                 |
+   889→| **ExitPlanMode**    | Prompts the user to exit plan mode and start coding                                                                                                                                                                                                                                                                                                                         | Yes                 |
+   890→| **Glob**            | Finds files based on pattern matching                                                                                                                                                                                                                                                                                                                                       | No                  |
+   891→| **Grep**            | Searches for patterns in file contents                                                                                                                                                                                                                                                                                                                                      | No                  |
+   892→| **KillShell**       | Kills a running background bash shell by its ID                                                                                                                                                                                                                                                                                                                             | No                  |
+   893→| **MCPSearch**       | Searches for and loads MCP tools when [tool search](/en/mcp#scale-with-mcp-tool-search) is enabled                                                                                                                                                                                                                                                                          | No                  |
+   894→| **NotebookEdit**    | Modifies Jupyter notebook cells                                                                                                                                                                                                                                                                                                                                             | Yes                 |
+   895→| **Read**            | Reads the contents of files                                                                                                                                                                                                                                                                                                                                                 | No                  |
+   896→| **Skill**           | Executes a [skill](/en/skills#control-who-invokes-a-skill) within the main conversation                                                                                                                                                                                                                                                                                     | Yes                 |
+   897→| **Agent**           | Runs a sub-agent to handle complex, multi-step tasks                                                                                                                                                                                                                                                                                                                        | No                  |
+   898→| **TaskCreate**      | Creates a new task in the task list                                                                                                                                                                                                                                                                                                                                         | No                  |
+   899→| **TaskGet**         | Retrieves full details for a specific task                                                                                                                                                                                                                                                                                                                                  | No                  |
+   900→| **TaskList**        | Lists all tasks with their current status                                                                                                                                                                                                                                                                                                                                   | No                  |
+   901→| **TaskUpdate**      | Updates task status, dependencies, details, or deletes tasks                                                                                                                                                                                                                                                                                                                | No                  |
+   902→| **WebFetch**        | Fetches content from a specified URL                                                                                                                                                                                                                                                                                                                                        | Yes                 |
+   903→| **WebSearch**       | Performs web searches with domain filtering                                                                                                                                                                                                                                                                                                                                 | Yes                 |
+   904→| **Write**           | Creates or overwrites files                                                                                                                                                                                                                                                                                                                                                 | Yes                 |
+   905→| **LSP**             | Code intelligence via language servers. Reports type errors and warnings automatically after file edits. Also supports navigation operations: jump to definitions, find references, get type info, list symbols, find implementations, trace call hierarchies. Requires a [code intelligence plugin](/en/discover-plugins#code-intelligence) and its language server binary | No                  |
+   906→
+   907→Permission rules can be configured using `/allowed-tools` or in [permission settings](/en/settings#available-settings). Also see [Tool-specific permission rules](/en/permissions#tool-specific-permission-rules).
+   908→
+   909→### Bash tool behavior
+   910→
+   911→The Bash tool executes shell commands with the following persistence behavior:
+   912→
+   913→* **Working directory persists**: When Claude changes the working directory (for example, `cd /path/to/dir`), subsequent Bash commands will execute in that directory. You can use `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR=1` to reset to the project directory after each command.
+   914→* **Environment variables do NOT persist**: Environment variables set in one Bash command (for example, `export MY_VAR=value`) are **not** available in subsequent Bash commands. Each Bash command runs in a fresh shell environment.
+   915→
+   916→To make environment variables available in Bash commands, you have **three options**:
+   917→
+   918→**Option 1: Activate environment before starting Claude Code** (simplest approach)
+   919→
+   920→Activate your virtual environment in your terminal before launching Claude Code:
+   921→
+   922→```bash  theme={null}
+   923→conda activate myenv
+   924→# or: source /path/to/venv/bin/activate
+   925→claude
+   926→```
+   927→
+   928→This works for shell environments but environment variables set within Claude's Bash commands will not persist between commands.
+   929→
+   930→**Option 2: Set CLAUDE\_ENV\_FILE before starting Claude Code** (persistent environment setup)
+   931→
+   932→Export the path to a shell script containing your environment setup:
+   933→
+   934→```bash  theme={null}
+   935→export CLAUDE_ENV_FILE=/path/to/env-setup.sh
+   936→claude
+   937→```
+   938→
+   939→Where `/path/to/env-setup.sh` contains:
+   940→
+   941→```bash  theme={null}
+   942→conda activate myenv
+   943→# or: source /path/to/venv/bin/activate
+   944→# or: export MY_VAR=value
+   945→```
+   946→
+   947→Claude Code will source this file before each Bash command, making the environment persistent across all commands.
+   948→
+   949→**Option 3: Use a SessionStart hook** (project-specific configuration)
+   950→
+   951→Configure in `.claude/settings.json`:
+   952→
+   953→```json  theme={null}
+   954→{
+   955→  "hooks": {
+   956→    "SessionStart": [{
+   957→      "matcher": "startup",
+   958→      "hooks": [{
+   959→        "type": "command",
+   960→        "command": "echo 'conda activate myenv' >> \"$CLAUDE_ENV_FILE\""
+   961→      }]
+   962→    }]
+   963→  }
+   964→}
+   965→```
+   966→
+   967→The hook writes to `$CLAUDE_ENV_FILE`, which is then sourced before each Bash command. This is ideal for team-shared project configurations.
+   968→
+   969→See [SessionStart hooks](/en/hooks#persist-environment-variables) for more details on Option 3.
+   970→
+   971→### Extending tools with hooks
+   972→
+   973→You can run custom commands before or after any tool executes using
+   974→[Claude Code hooks](/en/hooks-guide).
+   975→
+   976→For example, you could automatically run a Python formatter after Claude
+   977→modifies Python files, or prevent modifications to production configuration
+   978→files by blocking Write operations to certain paths.
+   979→
+   980→## See also
+   981→
+   982→* [Permissions](/en/permissions): permission system, rule syntax, tool-specific patterns, and managed policies
+   983→* [Authentication](/en/authentication): set up user access to Claude Code
+   984→* [Troubleshooting](/en/troubleshooting): solutions for common configuration issues
+   985→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

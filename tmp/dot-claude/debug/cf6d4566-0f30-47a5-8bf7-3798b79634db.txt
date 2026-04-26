@@ -1,0 +1,1116 @@
+2026-03-01T16:09:50.711Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-01T16:09:50.711Z [DEBUG] MDM settings load completed in 0ms
+2026-03-01T16:09:50.739Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-01T16:09:50.739Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-01T16:09:50.739Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-01T16:09:50.739Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-01T16:09:50.751Z [DEBUG] Applying permission update: Adding 128 allow rule(s) to destination 'userSettings': ["Bash(git *)","Bash(br *)","Bash(skog *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)","Bash(rtk *)","Bash(/home/skogix/.claude/hooks/rtk-rewrite.sh *)","Bash(command *)","Bash(dolt *)","Bash(mysql *)"]
+2026-03-01T16:09:50.751Z [DEBUG] Applying permission update: Adding 122 allow rule(s) to destination 'projectSettings': ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-03-01T16:09:50.751Z [DEBUG] Applying permission update: Adding 8 allow rule(s) to destination 'localSettings': ["Bash(rtk:*)","Bash(git:*)","Bash(mkdir:*)","Bash(/home/skogix/claude/.claude/hooks/rtk-auto-wrapper.sh:*)","Bash(/home/skogix/.claude/hooks/rtk-rewrite.sh:*)","Bash(command:*)","Bash(dolt version:*)","Bash(dolt push:*)"]
+2026-03-01T16:09:50.753Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-01T16:09:50.757Z [DEBUG] [STARTUP] Running setup()...
+2026-03-01T16:09:50.759Z [DEBUG] [TeammateModeSnapshot] Captured from config: tmux
+2026-03-01T16:09:50.759Z [DEBUG] Loading skills from: managed=/etc/claude-code/.claude/skills, user=/home/skogix/.claude/skills, project=[]
+2026-03-01T16:09:50.760Z [DEBUG] Error log sink initialized
+2026-03-01T16:09:50.773Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default
+2026-03-01T16:09:50.777Z [DEBUG] Loaded 23 installed plugins from /home/skogix/.claude/plugins/installed_plugins.json
+2026-03-01T16:09:50.777Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-03-01T16:09:50.781Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-01T16:09:50.781Z [DEBUG] Total plugin skills loaded: 0
+2026-03-01T16:09:50.781Z [DEBUG] Total plugin commands loaded: 0
+2026-03-01T16:09:50.781Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-03-01T16:09:50.792Z [DEBUG] Cannot acquire lock for 2.1.63 - held by PID 216806
+2026-03-01T16:09:50.793Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /home/skogix/.local/share/claude/versions/2.1.63 (expected in multi-process scenarios)
+    at oN$ (/$bunfs/root/claude:2435:2100)
+    at URA (/$bunfs/root/claude:2435:1211)
+    at processTicksAndRejections (native:7:39)
+2026-03-01T16:09:50.795Z [DEBUG] [STARTUP] setup() completed in 38ms
+2026-03-01T16:09:50.795Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-03-01T16:09:50.800Z [DEBUG] [Claude in Chrome] Extension fcoeoabgfenejglbffodgkkbkcdhcgfn found in chrome Default
+2026-03-01T16:09:50.841Z [DEBUG] Git remote URL: https://github.com/SkogAI/claude-temp.git
+2026-03-01T16:09:50.841Z [DEBUG] Parsed repository: github.com/SkogAI/claude-temp from URL: https://github.com/SkogAI/claude-temp.git
+2026-03-01T16:09:50.845Z [DEBUG] Loaded 10 unique skills (10 unconditional, 0 conditional, managed: 0, user: 5, project: 0, additional: 0, legacy commands: 5)
+2026-03-01T16:09:50.845Z [DEBUG] getSkills returning: 10 skill dir commands, 0 plugin skills, 0 bundled skills
+2026-03-01T16:09:50.846Z [DEBUG] [STARTUP] Commands and agents loaded in 51ms
+2026-03-01T16:09:50.851Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-03-01T16:09:50.884Z [DEBUG] Path /home/skogix/gt/claude_temp/refinery/rig already tracked for repo skogai/claude-temp
+2026-03-01T16:09:50.885Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-03-01T16:09:50.886Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-03-01T16:09:50.899Z [DEBUG] [STARTUP] showSetupScreens() completed in 47ms
+2026-03-01T16:09:50.899Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-03-01T16:09:50.899Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-03-01T16:09:50.899Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-03-01T16:09:50.899Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:09:50.899Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:09:50.906Z [DEBUG] Total LSP servers loaded: 0
+2026-03-01T16:09:50.906Z [DEBUG] [STARTUP] MCP configs loaded in 153ms
+2026-03-01T16:09:50.907Z [DEBUG] CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR not set, no file descriptor token available
+2026-03-01T16:09:50.912Z [DEBUG] MCP server "skogai-arch-linux": Starting connection with timeout of 30000ms
+2026-03-01T16:09:50.915Z [DEBUG] MCP server "skogai-tools": Starting connection with timeout of 30000ms
+2026-03-01T16:09:50.918Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-03-01T16:09:50.918Z [DEBUG] LSP manager initialized with 0 servers
+2026-03-01T16:09:50.918Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:09:50.919Z [DEBUG] LSP server manager initialized successfully
+2026-03-01T16:09:50.919Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-03-01T16:09:51.037Z [ERROR] MCP server "skogai-tools" Server stderr: node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'uuid' imported from /home/skogix/.local/src/tools/mcp/server/index.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:859:18)
+    at defaultResolve (node:internal/modules/esm/resolve:991:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:719:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:736:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:765:52)
+    at #resolve (node:internal/modules/esm/loader:701:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:621:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:160:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.14.0
+2026-03-01T16:09:51.038Z [DEBUG] MCP server "skogai-tools": Connection failed after 124ms: MCP error -32000: Connection closed
+2026-03-01T16:09:51.038Z [ERROR] MCP server "skogai-tools" Connection failed: MCP error -32000: Connection closed
+2026-03-01T16:09:51.162Z [ERROR] Failed to fetch org fast mode status, defaulting to disabled: AxiosError: Request failed with status code 403
+2026-03-01T16:09:51.867Z [ERROR] MCP server "skogai-arch-linux" Server stderr: 2026-03-01 17:09:51,340 - arch_ops_server.utils - INFO - Detected Arch Linux via /etc/arch-release
+2026-03-01 17:09:51,850 - arch_ops_server - INFO - Starting Arch Linux MCP Server (STDIO)
+2026-03-01 17:09:51,850 - arch_ops_server - INFO - Running on Arch Linux: True
+2026-03-01T16:09:51.867Z [DEBUG] MCP server "skogai-arch-linux": Successfully connected to undefined server in 960ms
+2026-03-01T16:09:51.867Z [DEBUG] MCP server "skogai-arch-linux": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"arch-ops-server","version":"1.26.0"}}
+2026-03-01T16:09:51.867Z [DEBUG] [MCP] Server "skogai-arch-linux" connected with subscribe=false
+2026-03-01T16:09:51.898Z [DEBUG] Initialized versioned plugins system with 23 plugins
+2026-03-01T16:09:51.899Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-03-01T16:09:51.901Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1334994.1772381391901
+2026-03-01T16:09:51.901Z [DEBUG] Preserving file permissions: 100600
+2026-03-01T16:09:51.911Z [DEBUG] Temp file written successfully, size: 65842 bytes
+2026-03-01T16:09:51.911Z [DEBUG] Applied original permissions to temp file
+2026-03-01T16:09:51.911Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1334994.1772381391901 to /home/skogix/.claude.json
+2026-03-01T16:09:51.911Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-03-01T16:09:52.156Z [DEBUG] [keybindings] KeybindingSetup initialized with 104 bindings, 0 warnings
+2026-03-01T16:09:52.226Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:52.235Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:52.273Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-03-01T16:09:52.274Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-03-01T16:09:52.275Z [DEBUG] performStartupChecks called
+2026-03-01T16:09:52.275Z [DEBUG] Starting background plugin installations
+2026-03-01T16:09:52.279Z [DEBUG] Loaded 12 CLAUDE.md/rules files:
+  [User] /home/skogix/.claude/CLAUDE.md (405 chars)
+  [User] /home/skogix/skogai/CLAUDE.md (9250 chars) (included by /home/skogix/.claude/CLAUDE.md)
+  [User] /home/skogix/skogai/docs/skogix/user.md (3112 chars) (included by /home/skogix/skogai/CLAUDE.md)
+  [User] /home/skogix/skogai/docs/skogix/definitions.md (1223 chars) (included by /home/skogix/skogai/CLAUDE.md)
+  [Project] /home/skogix/gt/CLAUDE.md (329 chars)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md (1025 chars)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/RULES.md (1891 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/DECISIONS.md (6909 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/.claude/RTK.md (958 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/projects/skogapi/main.py (4472 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/email/SKOGAI.md (809 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/scripts/csync.sh (545 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+2026-03-01T16:09:52.314Z [DEBUG] performBackgroundPluginInstallations called
+2026-03-01T16:09:52.319Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-01T16:09:52.319Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-03-01T16:09:52.319Z [DEBUG] [claudeai-mcp] Disabled via env var
+2026-03-01T16:09:52.320Z [DEBUG] [bridge:repl] initReplBridge #1 starting (initialMessages=0)
+2026-03-01T16:09:52.325Z [DEBUG] [bridge:repl] Skipping: bridge not enabled
+2026-03-01T16:09:52.328Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-03-01T16:09:52.328Z [DEBUG] [bridge:repl] Init returned null (precondition or session creation failed)
+2026-03-01T16:09:52.367Z [DEBUG] [keybindings] Watching for changes to /home/skogix/.claude/keybindings.json
+2026-03-01T16:09:52.371Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-03-01T16:09:52.460Z [DEBUG] Security messages are fresh (<1h old), skipping fetch
+2026-03-01T16:09:52.465Z [DEBUG] [useDeferredValue] Messages deferred by 1 (0→1)
+2026-03-01T16:09:52.481Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:52.518Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-03-01T16:09:52.519Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-03-01T16:09:52.520Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.b3e; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:09:52.520Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:09:52.520Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:09:52.522Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:09:52.525Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:09:52.531Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:09:52.531Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:09:52.531Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:09:52.532Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:09:52.541Z [DEBUG] Watching for changes in setting files /home/skogix/.claude/settings.json, /home/skogix/gt/claude_temp/refinery/rig/.claude/settings.json, /home/skogix/gt/claude_temp/refinery/rig/.claude/settings.local.json...
+2026-03-01T16:09:52.544Z [DEBUG] [useDeferredValue] Messages deferred by 1 (0→1)
+2026-03-01T16:09:52.603Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:52.748Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/home/skogix/.local/share/claude/versions/2.1.63)
+2026-03-01T16:09:52.831Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2026-03-01T16:09:52.859Z [DEBUG] Total plugin agents loaded: 0
+2026-03-01T16:09:52.859Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-03-01T16:09:52.860Z [DEBUG] [useDeferredValue] Messages deferred by 1 (0→1)
+2026-03-01T16:09:52.894Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:52.929Z [DEBUG] High write ratio: blit=0, write=1021 (100.0% writes), screen=22x80
+2026-03-01T16:09:53.151Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:09:53.613Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:09:53.766Z [DEBUG] SSH config check: code=1 configured=true
+2026-03-01T16:09:53.777Z [DEBUG] git pull: cwd=/home/skogix/.claude/plugins/marketplaces/claude-plugins-official ref=default
+2026-03-01T16:09:53.802Z [DEBUG] SSH config check: code=1 configured=true
+2026-03-01T16:09:53.814Z [DEBUG] git pull: cwd=/home/skogix/.claude/plugins/marketplaces/claude-code-plugins ref=default
+2026-03-01T16:09:54.068Z [DEBUG] [useDeferredValue] Messages deferred by 1 (1→2)
+2026-03-01T16:09:54.079Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:54.085Z [DEBUG] High write ratio: blit=0, write=1047 (100.0% writes), screen=22x80
+2026-03-01T16:09:54.099Z [DEBUG] [useDeferredValue] Messages deferred by 1 (1→2)
+2026-03-01T16:09:54.151Z [DEBUG] High write ratio: blit=0, write=1103 (100.0% writes), screen=26x80
+2026-03-01T16:09:54.332Z [DEBUG] Checking for native installer update to version 2.1.63
+2026-03-01T16:09:54.336Z [DEBUG] Found 2.1.63 at /home/skogix/.local/bin/claude, skipping install
+2026-03-01T16:09:54.340Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:54.884Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:09:54.893Z [DEBUG] [useDeferredValue] Messages deferred by 1 (2→3)
+2026-03-01T16:09:54.899Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:54.906Z [DEBUG] High write ratio: blit=0, write=1127 (100.0% writes), screen=26x80
+2026-03-01T16:09:54.947Z [DEBUG] [useDeferredValue] Messages deferred by 1 (2→3)
+2026-03-01T16:09:54.951Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:54.956Z [DEBUG] High write ratio: blit=0, write=1127 (100.0% writes), screen=26x80
+2026-03-01T16:09:54.968Z [DEBUG] tree-sitter: loaded from embedded
+2026-03-01T16:09:54.979Z [DEBUG] Creating shell snapshot for zsh (/usr/bin/zsh)
+2026-03-01T16:09:54.979Z [DEBUG] Looking for shell config file: /home/skogix/.zshrc
+2026-03-01T16:09:54.981Z [DEBUG] [useDeferredValue] Messages deferred by 1 (2→3)
+2026-03-01T16:09:54.987Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:55.035Z [DEBUG] Snapshots directory: /home/skogix/.claude/shell-snapshots
+2026-03-01T16:09:55.042Z [DEBUG] Creating snapshot at: /home/skogix/.claude/shell-snapshots/snapshot-zsh-1772381395030-zm60tx.sh
+2026-03-01T16:09:55.042Z [DEBUG] Execution timeout: 10000ms
+2026-03-01T16:09:55.069Z [DEBUG] High write ratio: blit=0, write=1212 (100.0% writes), screen=29x80
+2026-03-01T16:09:55.519Z [DEBUG] Successfully refreshed marketplace: claude-plugins-official
+2026-03-01T16:09:55.553Z [DEBUG] Successfully refreshed marketplace: claude-code-plugins
+2026-03-01T16:09:55.553Z [DEBUG] Plugin autoupdate: checking installed plugins
+2026-03-01T16:09:55.614Z [DEBUG] Caching plugin from source: {"source":"url","url":"https://github.com/slackapi/slack-mcp-plugin.git"} to temporary path /home/skogix/.claude/plugins/cache/temp_git_1772381395614_z291ek
+2026-03-01T16:09:55.647Z [DEBUG] Using manifest version for claude-code-setup@claude-plugins-official: 1.0.0
+2026-03-01T16:09:55.647Z [DEBUG] Using manifest version for claude-md-management@claude-plugins-official: 1.0.0
+2026-03-01T16:09:55.648Z [DEBUG] Using manifest version for code-simplifier@claude-plugins-official: 1.0.0
+2026-03-01T16:09:55.665Z [DEBUG] Using provided version for pyright-lsp@claude-plugins-official: 1.0.0
+2026-03-01T16:09:55.666Z [DEBUG] Using git SHA for skill-creator@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.666Z [DEBUG] Using git SHA for frontend-design@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.666Z [DEBUG] Using git SHA for context7@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.666Z [DEBUG] Using git SHA for github@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.666Z [DEBUG] Using git SHA for feature-dev@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.666Z [DEBUG] Using git SHA for supabase@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.667Z [DEBUG] Using git SHA for hookify@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.667Z [DEBUG] Using git SHA for greptile@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.667Z [DEBUG] Using git SHA for code-review@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.667Z [DEBUG] Using git SHA for serena@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.667Z [DEBUG] Using git SHA for playwright@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:55.667Z [DEBUG] Using git SHA for playground@claude-plugins-official: 55b58ec6e564
+2026-03-01T16:09:56.208Z [DEBUG] Shell snapshot created successfully (203245 bytes)
+2026-03-01T16:09:56.216Z [DEBUG] No session environment scripts found
+2026-03-01T16:09:56.217Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:09:56.439Z [DEBUG] Cloned repository from https://github.com/slackapi/slack-mcp-plugin.git to /home/skogix/.claude/plugins/cache/temp_git_1772381395614_z291ek
+2026-03-01T16:09:56.440Z [DEBUG] Successfully cached plugin slack to /home/skogix/.claude/plugins/cache/slack
+2026-03-01T16:09:56.440Z [DEBUG] Using manifest version for slack@claude-plugins-official: 1.0.0
+2026-03-01T16:09:58.293Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:09:58.297Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:09:58.298Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:09:58.298Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:09:58.298Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:09:58.301Z [DEBUG] [useDeferredValue] Messages deferred by 1 (3→4)
+2026-03-01T16:09:58.309Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:09:58.316Z [DEBUG] [useDeferredValue] Messages deferred by 1 (3→4)
+2026-03-01T16:10:00.015Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:00.787Z [DEBUG] [useDeferredValue] Messages deferred by 1 (4→5)
+2026-03-01T16:10:00.790Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:00.793Z [DEBUG] [useDeferredValue] Messages deferred by 1 (4→5)
+2026-03-01T16:10:01.499Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:01.512Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:01.513Z [DEBUG] [useDeferredValue] Messages deferred by 1 (5→6)
+2026-03-01T16:10:01.520Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:01.529Z [DEBUG] High write ratio: blit=0, write=1865 (100.0% writes), screen=54x80
+2026-03-01T16:10:01.545Z [DEBUG] [useDeferredValue] Messages deferred by 1 (5→6)
+2026-03-01T16:10:01.553Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:02.029Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:02.031Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:02.032Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:02.032Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:02.032Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:02.037Z [DEBUG] [useDeferredValue] Messages deferred by 1 (6→7)
+2026-03-01T16:10:02.050Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:03.498Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:04.672Z [DEBUG] [useDeferredValue] Messages deferred by 1 (7→8)
+2026-03-01T16:10:04.679Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:05.434Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:05.456Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:05.457Z [DEBUG] [useDeferredValue] Messages deferred by 1 (8→9)
+2026-03-01T16:10:05.469Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:05.479Z [DEBUG] High write ratio: blit=0, write=2448 (100.0% writes), screen=73x80
+2026-03-01T16:10:05.682Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:05.683Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:05.684Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:05.684Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:05.685Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:05.687Z [DEBUG] [useDeferredValue] Messages deferred by 1 (9→10)
+2026-03-01T16:10:05.693Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:07.883Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:09.280Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:09.284Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:09.285Z [DEBUG] [useDeferredValue] Messages deferred by 1 (10→11)
+2026-03-01T16:10:09.292Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:09.301Z [DEBUG] High write ratio: blit=0, write=2552 (100.0% writes), screen=77x80
+2026-03-01T16:10:09.428Z [DEBUG] Bash tool error (144ms): Shell command failed
+2026-03-01T16:10:09.434Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:09.449Z [DEBUG] [useDeferredValue] Messages deferred by 1 (11→12)
+2026-03-01T16:10:09.457Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:09.505Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:09.514Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:09.515Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:09.515Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:09.516Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:09.522Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:10.960Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:11.772Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:11.784Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:11.786Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-01T16:10:11.793Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:11.803Z [DEBUG] High write ratio: blit=0, write=2654 (100.0% writes), screen=83x80
+2026-03-01T16:10:11.815Z [DEBUG] [useDeferredValue] Messages deferred by 1 (12→13)
+2026-03-01T16:10:11.891Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:11.892Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:11.893Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:11.893Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:11.893Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:11.895Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-03-01T16:10:11.901Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:15.167Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:16.219Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:16.230Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:16.231Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-03-01T16:10:16.239Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:16.249Z [DEBUG] High write ratio: blit=0, write=2707 (100.0% writes), screen=86x80
+2026-03-01T16:10:16.264Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-03-01T16:10:16.273Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:17.901Z [DEBUG] Detected deletion of /home/skogix/gt/claude_temp/refinery/rig/.claude/settings.local.json
+2026-03-01T16:10:18.795Z [DEBUG] Detected change to /home/skogix/gt/claude_temp/refinery/rig/.claude/settings.json
+2026-03-01T16:10:18.816Z [DEBUG] Settings changed from projectSettings, updating app state
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all allow rules for destination 'userSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all deny rules for destination 'userSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all ask rules for destination 'userSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all deny rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all ask rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all deny rules for destination 'localSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all ask rules for destination 'localSettings' with 0 rule(s): []
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all allow rules for destination 'userSettings' with 128 rule(s): ["Bash(git *)","Bash(br *)","Bash(skog *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)","Bash(rtk *)","Bash(/home/skogix/.claude/hooks/rtk-rewrite.sh *)","Bash(command *)","Bash(dolt *)","Bash(mysql *)"]
+2026-03-01T16:10:18.823Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 122 rule(s): ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-03-01T16:10:18.832Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:19.012Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:19.014Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:19.014Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:19.014Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:19.014Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:19.017Z [DEBUG] [useDeferredValue] Messages deferred by 1 (15→16)
+2026-03-01T16:10:19.037Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:19.612Z [DEBUG] Settings changed from localSettings, updating app state
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all allow rules for destination 'userSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all deny rules for destination 'userSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all ask rules for destination 'userSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all deny rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all ask rules for destination 'projectSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all deny rules for destination 'localSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all ask rules for destination 'localSettings' with 0 rule(s): []
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all allow rules for destination 'userSettings' with 128 rule(s): ["Bash(git *)","Bash(br *)","Bash(skog *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)","Bash(rtk *)","Bash(/home/skogix/.claude/hooks/rtk-rewrite.sh *)","Bash(command *)","Bash(dolt *)","Bash(mysql *)"]
+2026-03-01T16:10:19.616Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 122 rule(s): ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-03-01T16:10:19.623Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:21.143Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:21.734Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:21.755Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:21.757Z [DEBUG] [useDeferredValue] Messages deferred by 1 (16→17)
+2026-03-01T16:10:21.767Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:21.779Z [DEBUG] High write ratio: blit=0, write=3066 (100.0% writes), screen=95x80
+2026-03-01T16:10:21.798Z [DEBUG] [useDeferredValue] Messages deferred by 1 (16→17)
+2026-03-01T16:10:21.801Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:21.900Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:21.904Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:21.905Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:21.905Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:21.906Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:21.908Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-03-01T16:10:21.918Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:23.703Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:24.382Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:24.397Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:24.400Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-03-01T16:10:24.408Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:24.419Z [DEBUG] High write ratio: blit=0, write=3713 (100.0% writes), screen=119x80
+2026-03-01T16:10:24.564Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:25.285Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:25.288Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:25.288Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:25.288Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:25.289Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:25.293Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-03-01T16:10:25.305Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:25.324Z [DEBUG] [useDeferredValue] Messages deferred by 1 (19→20)
+2026-03-01T16:10:26.916Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:27.717Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:27.732Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:27.733Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-03-01T16:10:27.740Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:27.753Z [DEBUG] High write ratio: blit=0, write=3790 (100.0% writes), screen=123x80
+2026-03-01T16:10:27.829Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:27.861Z [DEBUG] Bash tool error (130ms): Shell command failed
+2026-03-01T16:10:27.863Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:27.864Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:27.864Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:27.864Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:27.865Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:27.867Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-03-01T16:10:27.879Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:29.804Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:30.523Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:30.530Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:30.533Z [DEBUG] [useDeferredValue] Messages deferred by 1 (22→23)
+2026-03-01T16:10:30.541Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:30.562Z [DEBUG] High write ratio: blit=0, write=3863 (100.0% writes), screen=126x80
+2026-03-01T16:10:30.651Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:30.782Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:30.783Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:30.784Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:30.784Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:30.784Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:30.787Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-03-01T16:10:30.797Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:32.349Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:37.210Z [DEBUG] [useDeferredValue] Messages deferred by 1 (24→25)
+2026-03-01T16:10:37.211Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:37.428Z [DEBUG] [useDeferredValue] Messages deferred by 1 (25→26)
+2026-03-01T16:10:37.430Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:37.451Z [DEBUG] [useDeferredValue] Messages deferred by 1 (25→26)
+2026-03-01T16:10:38.416Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:38.433Z [DEBUG] [useDeferredValue] Messages deferred by 1 (26→27)
+2026-03-01T16:10:38.439Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:38.461Z [DEBUG] High write ratio: blit=0, write=9491 (100.0% writes), screen=272x80
+2026-03-01T16:10:38.472Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:38.610Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:38.890Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:38.892Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:38.892Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:38.892Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:38.900Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:38.905Z [DEBUG] [useDeferredValue] Messages deferred by 1 (27→28)
+2026-03-01T16:10:38.912Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:41.027Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:42.216Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:42.233Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:42.233Z [DEBUG] [useDeferredValue] Messages deferred by 1 (28→29)
+2026-03-01T16:10:42.242Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:42.272Z [DEBUG] High write ratio: blit=0, write=12337 (100.0% writes), screen=395x80
+2026-03-01T16:10:45.300Z [DEBUG] [useDeferredValue] Messages deferred by 1 (29→30)
+2026-03-01T16:10:45.312Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:46.287Z [DEBUG] [useDeferredValue] Messages deferred by 1 (30→31)
+2026-03-01T16:10:46.296Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:47.294Z [DEBUG] [useDeferredValue] Messages deferred by 1 (31→32)
+2026-03-01T16:10:47.302Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:48.295Z [DEBUG] [useDeferredValue] Messages deferred by 1 (32→33)
+2026-03-01T16:10:48.301Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:49.298Z [DEBUG] [useDeferredValue] Messages deferred by 1 (33→34)
+2026-03-01T16:10:49.305Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:49.594Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:49.596Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:49.596Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:49.596Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:49.597Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:49.599Z [DEBUG] [useDeferredValue] Messages deferred by 1 (34→35)
+2026-03-01T16:10:49.607Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:49.635Z [DEBUG] High write ratio: blit=0, write=12475 (100.0% writes), screen=399x80
+2026-03-01T16:10:51.181Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:51.787Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:51.794Z [DEBUG] [useDeferredValue] Messages deferred by 1 (35→36)
+2026-03-01T16:10:51.802Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:51.835Z [DEBUG] High write ratio: blit=0, write=12681 (100.0% writes), screen=409x80
+2026-03-01T16:10:51.838Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:51.858Z [DEBUG] [useDeferredValue] Messages deferred by 1 (35→36)
+2026-03-01T16:10:51.866Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:52.317Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:52.318Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:52.318Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:52.318Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:52.318Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:52.320Z [DEBUG] [useDeferredValue] Messages deferred by 1 (36→37)
+2026-03-01T16:10:52.331Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:54.211Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:54.711Z [DEBUG] [useDeferredValue] Messages deferred by 1 (37→38)
+2026-03-01T16:10:54.717Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:54.733Z [DEBUG] [useDeferredValue] Messages deferred by 1 (37→38)
+2026-03-01T16:10:55.630Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:55.640Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:55.641Z [DEBUG] [useDeferredValue] Messages deferred by 1 (38→39)
+2026-03-01T16:10:55.648Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:55.676Z [DEBUG] High write ratio: blit=0, write=12967 (100.0% writes), screen=421x80
+2026-03-01T16:10:55.688Z [DEBUG] [useDeferredValue] Messages deferred by 1 (38→39)
+2026-03-01T16:10:55.709Z [DEBUG] [useDeferredValue] Messages deferred by 1 (38→39)
+2026-03-01T16:10:55.711Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:55.891Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:10:55.893Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:10:55.894Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:10:55.894Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:10:55.894Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:10:55.897Z [DEBUG] [useDeferredValue] Messages deferred by 1 (39→40)
+2026-03-01T16:10:55.907Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:57.660Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:10:58.631Z [DEBUG] [useDeferredValue] Messages deferred by 1 (40→41)
+2026-03-01T16:10:58.636Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:58.643Z [DEBUG] [useDeferredValue] Messages deferred by 1 (40→41)
+2026-03-01T16:10:58.656Z [DEBUG] [useDeferredValue] Messages deferred by 1 (40→41)
+2026-03-01T16:10:59.712Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:10:59.725Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:10:59.726Z [DEBUG] [useDeferredValue] Messages deferred by 1 (41→42)
+2026-03-01T16:10:59.738Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:10:59.762Z [DEBUG] High write ratio: blit=0, write=13157 (100.0% writes), screen=429x80
+2026-03-01T16:10:59.902Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:01.321Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:11:01.323Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:11:01.325Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:11:01.325Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:11:01.326Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:11:01.329Z [DEBUG] [useDeferredValue] Messages deferred by 1 (42→43)
+2026-03-01T16:11:01.338Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:02.868Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:11:03.247Z [DEBUG] [useDeferredValue] Messages deferred by 1 (43→44)
+2026-03-01T16:11:03.249Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:03.664Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-03-01T16:11:03.666Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:03.672Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-03-01T16:11:04.677Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:11:04.685Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:11:04.686Z [DEBUG] [useDeferredValue] Messages deferred by 1 (45→46)
+2026-03-01T16:11:04.694Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:04.721Z [DEBUG] High write ratio: blit=0, write=13526 (100.0% writes), screen=444x80
+2026-03-01T16:11:04.789Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:05.305Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:11:05.307Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:11:05.307Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:11:05.307Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:11:05.309Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:11:05.311Z [DEBUG] [useDeferredValue] Messages deferred by 1 (46→47)
+2026-03-01T16:11:05.320Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:06.934Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:11:17.478Z [DEBUG] [useDeferredValue] Messages deferred by 1 (47→48)
+2026-03-01T16:11:17.479Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:17.486Z [DEBUG] [useDeferredValue] Messages deferred by 1 (47→48)
+2026-03-01T16:11:17.513Z [DEBUG] [useDeferredValue] Messages deferred by 1 (47→48)
+2026-03-01T16:11:17.970Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:11:17.989Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:11:17.990Z [DEBUG] [useDeferredValue] Messages deferred by 1 (48→49)
+2026-03-01T16:11:17.998Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:18.032Z [DEBUG] High write ratio: blit=0, write=16290 (100.0% writes), screen=514x80
+2026-03-01T16:11:18.425Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:11:18.428Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:11:18.429Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:11:18.429Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:11:18.430Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:11:18.433Z [DEBUG] [useDeferredValue] Messages deferred by 1 (49→50)
+2026-03-01T16:11:18.440Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:20.579Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:11:22.064Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:11:22.091Z [DEBUG] [useDeferredValue] Messages deferred by 1 (50→51)
+2026-03-01T16:11:22.101Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:22.140Z [DEBUG] High write ratio: blit=0, write=20386 (100.0% writes), screen=664x80
+2026-03-01T16:11:22.155Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:11:22.161Z [DEBUG] [useDeferredValue] Messages deferred by 1 (50→51)
+2026-03-01T16:11:22.172Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:22.829Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:11:22.831Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:11:22.832Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:11:22.832Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:11:22.834Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:11:22.841Z [DEBUG] [useDeferredValue] Messages deferred by 1 (51→52)
+2026-03-01T16:11:22.855Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:24.744Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:11:33.508Z [DEBUG] [useDeferredValue] Messages deferred by 1 (52→53)
+2026-03-01T16:11:33.510Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:35.742Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:11:35.765Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:11:35.766Z [DEBUG] [useDeferredValue] Messages deferred by 1 (53→54)
+2026-03-01T16:11:35.775Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:35.827Z [DEBUG] High write ratio: blit=0, write=27168 (100.0% writes), screen=896x80
+2026-03-01T16:11:36.121Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:36.435Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:11:36.437Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:11:36.438Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:11:36.438Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:11:36.439Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:11:36.442Z [DEBUG] [useDeferredValue] Messages deferred by 1 (54→55)
+2026-03-01T16:11:36.454Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:38.027Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:11:46.022Z [DEBUG] [useDeferredValue] Messages deferred by 1 (55→56)
+2026-03-01T16:11:46.028Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:49.031Z [DEBUG] [useDeferredValue] Messages deferred by 1 (56→57)
+2026-03-01T16:11:49.046Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:49.051Z [DEBUG] [useDeferredValue] Messages deferred by 1 (56→57)
+2026-03-01T16:11:52.136Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:11:52.144Z [DEBUG] [useDeferredValue] Messages deferred by 1 (57→58)
+2026-03-01T16:11:52.152Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:52.212Z [DEBUG] High write ratio: blit=0, write=35154 (100.0% writes), screen=1187x80
+2026-03-01T16:11:52.215Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:11:52.236Z [DEBUG] [useDeferredValue] Messages deferred by 1 (57→58)
+2026-03-01T16:11:52.245Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:52.294Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:11:52.296Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:11:52.297Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:11:52.297Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:11:52.298Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:11:52.301Z [DEBUG] [useDeferredValue] Messages deferred by 1 (58→59)
+2026-03-01T16:11:52.310Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:54.201Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:11:56.064Z [DEBUG] [useDeferredValue] Messages deferred by 1 (59→60)
+2026-03-01T16:11:56.065Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:57.068Z [DEBUG] [useDeferredValue] Messages deferred by 1 (60→61)
+2026-03-01T16:11:57.071Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:57.077Z [DEBUG] [useDeferredValue] Messages deferred by 1 (60→61)
+2026-03-01T16:11:58.204Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:11:58.211Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:11:58.212Z [DEBUG] [useDeferredValue] Messages deferred by 1 (61→62)
+2026-03-01T16:11:58.222Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:58.282Z [DEBUG] High write ratio: blit=0, write=36009 (100.0% writes), screen=1210x80
+2026-03-01T16:11:58.296Z [DEBUG] [useDeferredValue] Messages deferred by 1 (61→62)
+2026-03-01T16:11:58.305Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:58.705Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:11:58.707Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:11:58.708Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:11:58.708Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:11:58.708Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:11:58.713Z [DEBUG] [useDeferredValue] Messages deferred by 1 (62→63)
+2026-03-01T16:11:58.723Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:11:58.732Z [DEBUG] [useDeferredValue] Messages deferred by 1 (62→63)
+2026-03-01T16:12:00.768Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:12:01.657Z [DEBUG] [useDeferredValue] Messages deferred by 1 (63→64)
+2026-03-01T16:12:01.659Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:01.666Z [DEBUG] [useDeferredValue] Messages deferred by 1 (63→64)
+2026-03-01T16:12:03.588Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:12:03.609Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:12:03.610Z [DEBUG] [useDeferredValue] Messages deferred by 1 (64→65)
+2026-03-01T16:12:03.620Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:03.681Z [DEBUG] High write ratio: blit=0, write=36334 (100.0% writes), screen=1222x80
+2026-03-01T16:12:03.694Z [DEBUG] [useDeferredValue] Messages deferred by 1 (64→65)
+2026-03-01T16:12:03.696Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:03.858Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:12:03.860Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:12:03.860Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:12:03.860Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:12:03.861Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:12:03.864Z [DEBUG] [useDeferredValue] Messages deferred by 1 (65→66)
+2026-03-01T16:12:03.876Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:05.683Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:12:06.723Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:12:06.734Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:12:06.735Z [DEBUG] [useDeferredValue] Messages deferred by 1 (66→67)
+2026-03-01T16:12:06.743Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:06.807Z [DEBUG] High write ratio: blit=0, write=36518 (100.0% writes), screen=1227x80
+2026-03-01T16:12:06.883Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:06.955Z [DEBUG] [useDeferredValue] Messages deferred by 1 (67→68)
+2026-03-01T16:12:06.968Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:07.072Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:12:07.073Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:12:07.074Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:12:07.074Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:12:07.074Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:12:07.078Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:09.045Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:12:10.168Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:12:10.197Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:12:10.198Z [DEBUG] [useDeferredValue] Messages deferred by 1 (68→69)
+2026-03-01T16:12:10.208Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:10.279Z [DEBUG] High write ratio: blit=0, write=37327 (100.0% writes), screen=1253x80
+2026-03-01T16:12:10.463Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:12:10.464Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:12:10.465Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:12:10.465Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:12:10.465Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:12:10.469Z [DEBUG] [useDeferredValue] Messages deferred by 1 (69→70)
+2026-03-01T16:12:10.480Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:12.432Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:12:13.473Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:12:13.485Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:12:13.486Z [DEBUG] [useDeferredValue] Messages deferred by 1 (70→71)
+2026-03-01T16:12:13.497Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:13.559Z [DEBUG] High write ratio: blit=0, write=37530 (100.0% writes), screen=1258x80
+2026-03-01T16:12:13.574Z [DEBUG] [useDeferredValue] Messages deferred by 1 (70→71)
+2026-03-01T16:12:13.589Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:13.754Z [DEBUG] Bash tool error (270ms): Shell command failed
+2026-03-01T16:12:13.755Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:12:13.757Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:12:13.758Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:12:13.758Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:12:13.758Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:12:13.760Z [DEBUG] [useDeferredValue] Messages deferred by 1 (71→72)
+2026-03-01T16:12:13.772Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:16.090Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:12:24.210Z [DEBUG] [useDeferredValue] Messages deferred by 1 (72→73)
+2026-03-01T16:12:24.212Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:25.857Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:12:25.871Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:12:25.871Z [DEBUG] [useDeferredValue] Messages deferred by 1 (73→74)
+2026-03-01T16:12:25.882Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:25.955Z [DEBUG] High write ratio: blit=0, write=39516 (100.0% writes), screen=1310x80
+2026-03-01T16:12:26.163Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:26.178Z [DEBUG] Bash tool error (308ms): Shell command failed
+2026-03-01T16:12:26.180Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:12:26.183Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:12:26.184Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:12:26.184Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:12:26.184Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:12:26.188Z [DEBUG] [useDeferredValue] Messages deferred by 1 (74→75)
+2026-03-01T16:12:26.202Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:28.978Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:12:35.244Z [DEBUG] [useDeferredValue] Messages deferred by 1 (75→76)
+2026-03-01T16:12:35.249Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:35.266Z [DEBUG] [useDeferredValue] Messages deferred by 1 (75→76)
+2026-03-01T16:12:35.903Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:12:35.924Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:12:35.925Z [DEBUG] [useDeferredValue] Messages deferred by 1 (76→77)
+2026-03-01T16:12:35.936Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:36.018Z [DEBUG] High write ratio: blit=0, write=41368 (100.0% writes), screen=1358x80
+2026-03-01T16:12:36.032Z [DEBUG] [useDeferredValue] Messages deferred by 1 (76→77)
+2026-03-01T16:12:36.045Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:36.317Z [DEBUG] Bash tool error (394ms): Shell command failed
+2026-03-01T16:12:36.319Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:12:36.321Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:12:36.322Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:12:36.322Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:12:36.322Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:12:36.326Z [DEBUG] [useDeferredValue] Messages deferred by 1 (77→78)
+2026-03-01T16:12:36.337Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:41.451Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:12:49.061Z [DEBUG] [useDeferredValue] Messages deferred by 1 (78→79)
+2026-03-01T16:12:49.063Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:49.701Z [DEBUG] [useDeferredValue] Messages deferred by 1 (79→80)
+2026-03-01T16:12:49.704Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:50.572Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:12:50.581Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:12:50.582Z [DEBUG] [useDeferredValue] Messages deferred by 1 (80→81)
+2026-03-01T16:12:50.593Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:50.670Z [DEBUG] High write ratio: blit=0, write=42444 (100.0% writes), screen=1389x80
+2026-03-01T16:12:50.910Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:51.335Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:12:51.337Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:12:51.337Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:12:51.337Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:12:51.338Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:12:51.341Z [DEBUG] [useDeferredValue] Messages deferred by 1 (81→82)
+2026-03-01T16:12:51.355Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:53.086Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:12:55.208Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:12:55.222Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:12:55.223Z [DEBUG] [useDeferredValue] Messages deferred by 1 (82→83)
+2026-03-01T16:12:55.235Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:55.340Z [DEBUG] High write ratio: blit=0, write=42520 (100.0% writes), screen=1393x80
+2026-03-01T16:12:55.361Z [DEBUG] [useDeferredValue] Messages deferred by 1 (82→83)
+2026-03-01T16:12:55.379Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:58.361Z [DEBUG] [useDeferredValue] Messages deferred by 1 (83→84)
+2026-03-01T16:12:58.371Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:12:59.358Z [DEBUG] [useDeferredValue] Messages deferred by 1 (84→85)
+2026-03-01T16:12:59.364Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:00.371Z [DEBUG] [useDeferredValue] Messages deferred by 1 (85→86)
+2026-03-01T16:13:00.377Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:01.373Z [DEBUG] [useDeferredValue] Messages deferred by 1 (86→87)
+2026-03-01T16:13:01.378Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:02.369Z [DEBUG] [useDeferredValue] Messages deferred by 1 (87→88)
+2026-03-01T16:13:02.374Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:03.370Z [DEBUG] [useDeferredValue] Messages deferred by 1 (88→89)
+2026-03-01T16:13:03.377Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:04.371Z [DEBUG] [useDeferredValue] Messages deferred by 1 (89→90)
+2026-03-01T16:13:04.377Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:05.373Z [DEBUG] [useDeferredValue] Messages deferred by 1 (90→91)
+2026-03-01T16:13:05.379Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:06.374Z [DEBUG] [useDeferredValue] Messages deferred by 1 (91→92)
+2026-03-01T16:13:06.378Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:07.374Z [DEBUG] [useDeferredValue] Messages deferred by 1 (92→93)
+2026-03-01T16:13:07.383Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:08.375Z [DEBUG] [useDeferredValue] Messages deferred by 1 (93→94)
+2026-03-01T16:13:08.381Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:09.376Z [DEBUG] [useDeferredValue] Messages deferred by 1 (94→95)
+2026-03-01T16:13:09.382Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:10.378Z [DEBUG] [useDeferredValue] Messages deferred by 1 (95→96)
+2026-03-01T16:13:10.383Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:11.382Z [DEBUG] [useDeferredValue] Messages deferred by 1 (96→97)
+2026-03-01T16:13:11.389Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:12.382Z [DEBUG] [useDeferredValue] Messages deferred by 1 (97→98)
+2026-03-01T16:13:12.389Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:13.382Z [DEBUG] [useDeferredValue] Messages deferred by 1 (98→99)
+2026-03-01T16:13:13.387Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:14.382Z [DEBUG] [useDeferredValue] Messages deferred by 1 (99→100)
+2026-03-01T16:13:14.387Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:15.383Z [DEBUG] [useDeferredValue] Messages deferred by 1 (100→101)
+2026-03-01T16:13:15.388Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:16.385Z [DEBUG] [useDeferredValue] Messages deferred by 1 (101→102)
+2026-03-01T16:13:16.392Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:17.388Z [DEBUG] [useDeferredValue] Messages deferred by 1 (102→103)
+2026-03-01T16:13:17.394Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:18.396Z [DEBUG] [useDeferredValue] Messages deferred by 1 (103→104)
+2026-03-01T16:13:18.428Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:19.392Z [DEBUG] [useDeferredValue] Messages deferred by 1 (104→105)
+2026-03-01T16:13:19.400Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:20.393Z [DEBUG] [useDeferredValue] Messages deferred by 1 (105→106)
+2026-03-01T16:13:20.397Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:21.392Z [DEBUG] [useDeferredValue] Messages deferred by 1 (106→107)
+2026-03-01T16:13:21.402Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:22.393Z [DEBUG] [useDeferredValue] Messages deferred by 1 (107→108)
+2026-03-01T16:13:22.399Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:23.394Z [DEBUG] [useDeferredValue] Messages deferred by 1 (108→109)
+2026-03-01T16:13:23.399Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:24.406Z [DEBUG] [useDeferredValue] Messages deferred by 1 (109→110)
+2026-03-01T16:13:24.413Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:25.405Z [DEBUG] [useDeferredValue] Messages deferred by 1 (110→111)
+2026-03-01T16:13:25.411Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:25.833Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:13:25.838Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:13:25.839Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:13:25.839Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:13:25.840Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:13:25.845Z [DEBUG] [useDeferredValue] Messages deferred by 1 (111→112)
+2026-03-01T16:13:25.859Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:25.963Z [DEBUG] High write ratio: blit=0, write=42688 (100.0% writes), screen=1398x80
+2026-03-01T16:13:27.678Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:13:30.638Z [DEBUG] [useDeferredValue] Messages deferred by 1 (112→113)
+2026-03-01T16:13:30.652Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:30.683Z [DEBUG] [useDeferredValue] Messages deferred by 1 (112→113)
+2026-03-01T16:13:30.882Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:13:30.902Z [DEBUG] [useDeferredValue] Messages deferred by 1 (113→114)
+2026-03-01T16:13:30.918Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:31.054Z [DEBUG] High write ratio: blit=0, write=43569 (100.0% writes), screen=1420x80
+2026-03-01T16:13:31.062Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:13:31.286Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:13:31.289Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:13:31.290Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:13:31.290Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:13:31.290Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:13:31.294Z [DEBUG] [useDeferredValue] Messages deferred by 1 (114→115)
+2026-03-01T16:13:31.309Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:33.236Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:13:34.277Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:13:34.292Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:13:34.293Z [DEBUG] [useDeferredValue] Messages deferred by 1 (115→116)
+2026-03-01T16:13:34.305Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:34.382Z [DEBUG] High write ratio: blit=0, write=43646 (100.0% writes), screen=1423x80
+2026-03-01T16:13:34.565Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:13:34.567Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:13:34.567Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:13:34.567Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:13:34.567Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:13:34.570Z [DEBUG] [useDeferredValue] Messages deferred by 1 (116→117)
+2026-03-01T16:13:34.582Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:37.484Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:13:38.318Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:13:38.328Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:13:38.331Z [DEBUG] [useDeferredValue] Messages deferred by 1 (117→118)
+2026-03-01T16:13:38.349Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:38.431Z [DEBUG] High write ratio: blit=0, write=43849 (100.0% writes), screen=1436x80
+2026-03-01T16:13:38.443Z [DEBUG] [useDeferredValue] Messages deferred by 1 (117→118)
+2026-03-01T16:13:38.460Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:38.518Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:13:38.520Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:13:38.521Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:13:38.521Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:13:38.521Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:13:38.524Z [DEBUG] [useDeferredValue] Messages deferred by 1 (118→119)
+2026-03-01T16:13:38.537Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:40.775Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:13:41.681Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:13:41.697Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:13:41.698Z [DEBUG] [useDeferredValue] Messages deferred by 1 (119→120)
+2026-03-01T16:13:41.710Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:41.787Z [DEBUG] High write ratio: blit=0, write=44001 (100.0% writes), screen=1447x80
+2026-03-01T16:13:41.809Z [DEBUG] [useDeferredValue] Messages deferred by 1 (119→120)
+2026-03-01T16:13:41.823Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:41.981Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:13:41.983Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:13:41.983Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:13:41.983Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:13:41.983Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:13:41.987Z [DEBUG] [useDeferredValue] Messages deferred by 1 (120→121)
+2026-03-01T16:13:42.007Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:43.637Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:13:49.253Z [DEBUG] [useDeferredValue] Messages deferred by 1 (121→122)
+2026-03-01T16:13:49.255Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:49.264Z [DEBUG] [useDeferredValue] Messages deferred by 1 (121→122)
+2026-03-01T16:13:49.634Z [DEBUG] [useDeferredValue] Messages deferred by 1 (122→123)
+2026-03-01T16:13:49.651Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:50.825Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:13:50.843Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:13:50.844Z [DEBUG] [useDeferredValue] Messages deferred by 1 (123→124)
+2026-03-01T16:13:50.857Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:50.937Z [DEBUG] High write ratio: blit=0, write=45089 (100.0% writes), screen=1477x80
+2026-03-01T16:13:50.999Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:13:51.002Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:13:51.002Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:13:51.002Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:13:51.003Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:13:51.007Z [DEBUG] [useDeferredValue] Messages deferred by 1 (124→125)
+2026-03-01T16:13:51.020Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:52.704Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:13:54.109Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:13:54.126Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:13:54.127Z [DEBUG] [useDeferredValue] Messages deferred by 1 (125→126)
+2026-03-01T16:13:54.143Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:54.217Z [DEBUG] High write ratio: blit=0, write=45182 (100.0% writes), screen=1480x80
+2026-03-01T16:13:54.236Z [DEBUG] [useDeferredValue] Messages deferred by 1 (125→126)
+2026-03-01T16:13:54.257Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:54.316Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:13:54.319Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:13:54.319Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:13:54.319Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:13:54.320Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:13:54.323Z [DEBUG] [useDeferredValue] Messages deferred by 1 (126→127)
+2026-03-01T16:13:54.338Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:54.347Z [DEBUG] [useDeferredValue] Messages deferred by 1 (126→127)
+2026-03-01T16:13:56.632Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:13:57.300Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:13:57.310Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:13:57.310Z [DEBUG] [useDeferredValue] Messages deferred by 1 (127→128)
+2026-03-01T16:13:57.322Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:13:57.416Z [DEBUG] High write ratio: blit=0, write=45482 (100.0% writes), screen=1494x80
+2026-03-01T16:13:57.469Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:13:57.471Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:13:57.471Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:13:57.471Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:13:57.471Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:13:57.474Z [DEBUG] [useDeferredValue] Messages deferred by 1 (128→129)
+2026-03-01T16:13:57.487Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:00.609Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:14:04.109Z [DEBUG] [useDeferredValue] Messages deferred by 1 (129→130)
+2026-03-01T16:14:04.114Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:04.132Z [DEBUG] [useDeferredValue] Messages deferred by 1 (129→130)
+2026-03-01T16:14:04.993Z [DEBUG] [useDeferredValue] Messages deferred by 1 (130→131)
+2026-03-01T16:14:04.996Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:07.292Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:14:07.310Z [DEBUG] [useDeferredValue] Messages deferred by 1 (131→132)
+2026-03-01T16:14:07.326Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:07.412Z [DEBUG] High write ratio: blit=0, write=46278 (100.0% writes), screen=1519x80
+2026-03-01T16:14:07.414Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:14:07.620Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:08.097Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:14:08.101Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:14:08.101Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:14:08.101Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:14:08.102Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:14:08.104Z [DEBUG] [useDeferredValue] Messages deferred by 1 (132→133)
+2026-03-01T16:14:08.119Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:10.340Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:14:11.601Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:14:11.611Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:14:11.612Z [DEBUG] [useDeferredValue] Messages deferred by 1 (133→134)
+2026-03-01T16:14:11.625Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:11.713Z [DEBUG] High write ratio: blit=0, write=46647 (100.0% writes), screen=1535x80
+2026-03-01T16:14:11.729Z [DEBUG] [useDeferredValue] Messages deferred by 1 (133→134)
+2026-03-01T16:14:11.746Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:13.049Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:14:13.050Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:14:13.051Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:14:13.051Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:14:13.051Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:14:13.053Z [DEBUG] [useDeferredValue] Messages deferred by 1 (134→135)
+2026-03-01T16:14:13.068Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:15.641Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:14:17.732Z [DEBUG] [useDeferredValue] Messages deferred by 1 (135→136)
+2026-03-01T16:14:17.748Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:17.768Z [DEBUG] [useDeferredValue] Messages deferred by 1 (135→136)
+2026-03-01T16:14:18.732Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:14:18.740Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:14:18.741Z [DEBUG] [useDeferredValue] Messages deferred by 1 (136→137)
+2026-03-01T16:14:18.755Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:18.842Z [DEBUG] High write ratio: blit=0, write=47041 (100.0% writes), screen=1549x80
+2026-03-01T16:14:18.860Z [DEBUG] [useDeferredValue] Messages deferred by 1 (136→137)
+2026-03-01T16:14:18.874Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:18.944Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:14:18.946Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:14:18.947Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:14:18.947Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:14:18.947Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:14:18.951Z [DEBUG] [useDeferredValue] Messages deferred by 1 (137→138)
+2026-03-01T16:14:18.967Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:20.515Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:14:20.806Z [DEBUG] [useDeferredValue] Messages deferred by 1 (138→139)
+2026-03-01T16:14:20.808Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:20.813Z [DEBUG] [useDeferredValue] Messages deferred by 1 (138→139)
+2026-03-01T16:14:23.123Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:14:23.136Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:14:23.137Z [DEBUG] [useDeferredValue] Messages deferred by 1 (139→140)
+2026-03-01T16:14:23.152Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:23.236Z [DEBUG] High write ratio: blit=0, write=47142 (100.0% writes), screen=1554x80
+2026-03-01T16:14:23.253Z [DEBUG] [useDeferredValue] Messages deferred by 1 (139→140)
+2026-03-01T16:14:23.268Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:23.280Z [DEBUG] [useDeferredValue] Messages deferred by 1 (139→140)
+2026-03-01T16:14:26.259Z [DEBUG] [useDeferredValue] Messages deferred by 1 (140→141)
+2026-03-01T16:14:26.266Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:27.260Z [DEBUG] [useDeferredValue] Messages deferred by 1 (141→142)
+2026-03-01T16:14:27.268Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:28.263Z [DEBUG] [useDeferredValue] Messages deferred by 1 (142→143)
+2026-03-01T16:14:28.269Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:29.265Z [DEBUG] [useDeferredValue] Messages deferred by 1 (143→144)
+2026-03-01T16:14:29.274Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:30.265Z [DEBUG] [useDeferredValue] Messages deferred by 1 (144→145)
+2026-03-01T16:14:30.271Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:31.277Z [DEBUG] [useDeferredValue] Messages deferred by 1 (145→146)
+2026-03-01T16:14:31.283Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:32.268Z [DEBUG] [useDeferredValue] Messages deferred by 1 (146→147)
+2026-03-01T16:14:32.276Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:33.270Z [DEBUG] [useDeferredValue] Messages deferred by 1 (147→148)
+2026-03-01T16:14:33.279Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:34.278Z [DEBUG] [useDeferredValue] Messages deferred by 1 (148→149)
+2026-03-01T16:14:34.282Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:35.271Z [DEBUG] [useDeferredValue] Messages deferred by 1 (149→150)
+2026-03-01T16:14:35.275Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:36.277Z [DEBUG] [useDeferredValue] Messages deferred by 1 (150→151)
+2026-03-01T16:14:36.282Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:37.277Z [DEBUG] [useDeferredValue] Messages deferred by 1 (151→152)
+2026-03-01T16:14:37.288Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:38.281Z [DEBUG] [useDeferredValue] Messages deferred by 1 (152→153)
+2026-03-01T16:14:38.287Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:39.287Z [DEBUG] [useDeferredValue] Messages deferred by 1 (153→154)
+2026-03-01T16:14:39.301Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:40.284Z [DEBUG] [useDeferredValue] Messages deferred by 1 (154→155)
+2026-03-01T16:14:40.291Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:41.289Z [DEBUG] [useDeferredValue] Messages deferred by 1 (155→156)
+2026-03-01T16:14:41.297Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:42.290Z [DEBUG] [useDeferredValue] Messages deferred by 1 (156→157)
+2026-03-01T16:14:42.296Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:43.293Z [DEBUG] [useDeferredValue] Messages deferred by 1 (157→158)
+2026-03-01T16:14:43.301Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:44.293Z [DEBUG] [useDeferredValue] Messages deferred by 1 (158→159)
+2026-03-01T16:14:44.301Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:45.298Z [DEBUG] [useDeferredValue] Messages deferred by 1 (159→160)
+2026-03-01T16:14:45.306Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:46.295Z [DEBUG] [useDeferredValue] Messages deferred by 1 (160→161)
+2026-03-01T16:14:46.302Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:47.297Z [DEBUG] [useDeferredValue] Messages deferred by 1 (161→162)
+2026-03-01T16:14:47.311Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:47.327Z [DEBUG] [useDeferredValue] Messages deferred by 1 (161→162)
+2026-03-01T16:14:48.298Z [DEBUG] [useDeferredValue] Messages deferred by 1 (162→163)
+2026-03-01T16:14:48.304Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:49.299Z [DEBUG] [useDeferredValue] Messages deferred by 1 (163→164)
+2026-03-01T16:14:49.303Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:50.300Z [DEBUG] [useDeferredValue] Messages deferred by 1 (164→165)
+2026-03-01T16:14:50.307Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:51.341Z [DEBUG] [useDeferredValue] Messages deferred by 1 (165→166)
+2026-03-01T16:14:51.378Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:52.342Z [DEBUG] [useDeferredValue] Messages deferred by 1 (166→167)
+2026-03-01T16:14:52.350Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:53.344Z [DEBUG] [useDeferredValue] Messages deferred by 1 (167→168)
+2026-03-01T16:14:53.351Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:53.635Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:14:53.640Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:14:53.641Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:14:53.641Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:14:53.642Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:14:53.647Z [DEBUG] [useDeferredValue] Messages deferred by 1 (168→169)
+2026-03-01T16:14:53.659Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:14:53.740Z [DEBUG] High write ratio: blit=0, write=47308 (100.0% writes), screen=1559x80
+2026-03-01T16:14:58.686Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:15:09.448Z [DEBUG] [useDeferredValue] Messages deferred by 1 (169→170)
+2026-03-01T16:15:09.450Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:09.457Z [DEBUG] [useDeferredValue] Messages deferred by 1 (169→170)
+2026-03-01T16:15:09.833Z [DEBUG] [useDeferredValue] Messages deferred by 1 (170→171)
+2026-03-01T16:15:09.837Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:11.811Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:15:11.824Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:15:11.825Z [DEBUG] [useDeferredValue] Messages deferred by 1 (171→172)
+2026-03-01T16:15:11.841Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:11.928Z [DEBUG] High write ratio: blit=0, write=48378 (100.0% writes), screen=1585x80
+2026-03-01T16:15:12.200Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:12.640Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:15:12.642Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:15:12.643Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:15:12.643Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:15:12.643Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:15:12.646Z [DEBUG] [useDeferredValue] Messages deferred by 1 (172→173)
+2026-03-01T16:15:12.662Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:14.876Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:15:15.293Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:15:15.306Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:15:15.307Z [DEBUG] [useDeferredValue] Messages deferred by 1 (173→174)
+2026-03-01T16:15:15.320Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:15.435Z [DEBUG] High write ratio: blit=0, write=48681 (100.0% writes), screen=1598x80
+2026-03-01T16:15:16.319Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:15:16.322Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:15:16.322Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:15:16.322Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:15:16.322Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:15:16.325Z [DEBUG] [useDeferredValue] Messages deferred by 1 (174→175)
+2026-03-01T16:15:16.342Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:19.059Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:15:20.031Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:15:20.043Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:15:20.044Z [DEBUG] [useDeferredValue] Messages deferred by 1 (175→176)
+2026-03-01T16:15:20.060Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:20.164Z [DEBUG] High write ratio: blit=0, write=48758 (100.0% writes), screen=1602x80
+2026-03-01T16:15:20.182Z [DEBUG] [useDeferredValue] Messages deferred by 1 (175→176)
+2026-03-01T16:15:20.200Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:23.182Z [DEBUG] [useDeferredValue] Messages deferred by 1 (176→177)
+2026-03-01T16:15:23.189Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:24.183Z [DEBUG] [useDeferredValue] Messages deferred by 1 (177→178)
+2026-03-01T16:15:24.189Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:25.184Z [DEBUG] [useDeferredValue] Messages deferred by 1 (178→179)
+2026-03-01T16:15:25.190Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:26.187Z [DEBUG] [useDeferredValue] Messages deferred by 1 (179→180)
+2026-03-01T16:15:26.196Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:27.186Z [DEBUG] [useDeferredValue] Messages deferred by 1 (180→181)
+2026-03-01T16:15:27.193Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:28.190Z [DEBUG] [useDeferredValue] Messages deferred by 1 (181→182)
+2026-03-01T16:15:28.199Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:29.188Z [DEBUG] [useDeferredValue] Messages deferred by 1 (182→183)
+2026-03-01T16:15:29.197Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:30.192Z [DEBUG] [useDeferredValue] Messages deferred by 1 (183→184)
+2026-03-01T16:15:30.202Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:31.192Z [DEBUG] [useDeferredValue] Messages deferred by 1 (184→185)
+2026-03-01T16:15:31.199Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:32.193Z [DEBUG] [useDeferredValue] Messages deferred by 1 (185→186)
+2026-03-01T16:15:32.207Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:33.195Z [DEBUG] [useDeferredValue] Messages deferred by 1 (186→187)
+2026-03-01T16:15:33.201Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:34.193Z [DEBUG] [useDeferredValue] Messages deferred by 1 (187→188)
+2026-03-01T16:15:34.200Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:35.194Z [DEBUG] [useDeferredValue] Messages deferred by 1 (188→189)
+2026-03-01T16:15:35.200Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:36.203Z [DEBUG] [useDeferredValue] Messages deferred by 1 (189→190)
+2026-03-01T16:15:36.211Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:37.204Z [DEBUG] [useDeferredValue] Messages deferred by 1 (190→191)
+2026-03-01T16:15:37.211Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:38.205Z [DEBUG] [useDeferredValue] Messages deferred by 1 (191→192)
+2026-03-01T16:15:38.211Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:39.206Z [DEBUG] [useDeferredValue] Messages deferred by 1 (192→193)
+2026-03-01T16:15:39.212Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:40.207Z [DEBUG] [useDeferredValue] Messages deferred by 1 (193→194)
+2026-03-01T16:15:40.217Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:41.208Z [DEBUG] [useDeferredValue] Messages deferred by 1 (194→195)
+2026-03-01T16:15:41.213Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:42.209Z [DEBUG] [useDeferredValue] Messages deferred by 1 (195→196)
+2026-03-01T16:15:42.213Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:43.211Z [DEBUG] [useDeferredValue] Messages deferred by 1 (196→197)
+2026-03-01T16:15:43.215Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:44.219Z [DEBUG] [useDeferredValue] Messages deferred by 1 (197→198)
+2026-03-01T16:15:44.226Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:45.217Z [DEBUG] [useDeferredValue] Messages deferred by 1 (198→199)
+2026-03-01T16:15:45.224Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:46.218Z [DEBUG] [useDeferredValue] Messages deferred by 1 (199→200)
+2026-03-01T16:15:46.224Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:47.220Z [DEBUG] [useDeferredValue] Messages deferred by 1 (200→201)
+2026-03-01T16:15:47.229Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:48.221Z [DEBUG] [useDeferredValue] Messages deferred by 1 (201→202)
+2026-03-01T16:15:48.231Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:49.223Z [DEBUG] [useDeferredValue] Messages deferred by 1 (202→203)
+2026-03-01T16:15:49.232Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:50.222Z [DEBUG] [useDeferredValue] Messages deferred by 1 (203→204)
+2026-03-01T16:15:50.228Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:50.587Z [DEBUG] Tool search disabled: ToolSearchTool is not available (may have been disallowed via disallowedTools).
+2026-03-01T16:15:50.591Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.63.464; cc_entrypoint=cli; cch=00000;
+2026-03-01T16:15:50.593Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-03-01T16:15:50.593Z [DEBUG] [API:auth] OAuth token check starting
+2026-03-01T16:15:50.593Z [DEBUG] [API:auth] OAuth token check complete
+2026-03-01T16:15:50.598Z [DEBUG] [useDeferredValue] Messages deferred by 1 (204→205)
+2026-03-01T16:15:50.617Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:50.700Z [DEBUG] High write ratio: blit=0, write=48925 (100.0% writes), screen=1607x80
+2026-03-01T16:15:52.563Z [DEBUG] Stream started - received first chunk
+2026-03-01T16:15:54.368Z [DEBUG] [useDeferredValue] Messages deferred by 1 (205→206)
+2026-03-01T16:15:54.370Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:54.998Z [DEBUG] [useDeferredValue] Messages deferred by 1 (206→207)
+2026-03-01T16:15:55.001Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:55.009Z [DEBUG] [useDeferredValue] Messages deferred by 1 (206→207)
+2026-03-01T16:15:58.526Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-03-01T16:15:58.550Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-03-01T16:15:58.553Z [DEBUG] [useDeferredValue] Messages deferred by 1 (207→208)
+2026-03-01T16:15:58.573Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-03-01T16:15:58.697Z [DEBUG] High write ratio: blit=0, write=49692 (100.0% writes), screen=1626x80
+2026-03-01T16:15:58.712Z [DEBUG] [useDeferredValue] Messages deferred by 1 (207→208)
+2026-03-01T16:15:58.728Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)

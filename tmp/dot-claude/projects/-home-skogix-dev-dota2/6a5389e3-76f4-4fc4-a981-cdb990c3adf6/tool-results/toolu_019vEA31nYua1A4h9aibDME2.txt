@@ -1,0 +1,403 @@
+     1→<!DOCTYPE html>
+     2→<html lang="en">
+     3→<head>
+     4→<meta charset="UTF-8">
+     5→<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→<title>Squad Stats - Skogix, ZCOPE & Brave Boy</title>
+     7→<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
+     8→<style>
+     9→:root {
+    10→  --bg: #0f1923; --card: #1a2332; --card-border: #243447;
+    11→  --accent: #e94560; --gold: #f5a623; --green: #4ade80; --red: #f87171;
+    12→  --blue: #60a5fa; --purple: #a78bfa; --cyan: #22d3ee;
+    13→  --text: #e2e8f0; --text-dim: #64748b;
+    14→  --str: #ef4444; --agi: #22c55e; --int: #3b82f6; --all: #eab308;
+    15→  --p1: #e94560; --p2: #60a5fa; --p3: #4ade80;
+    16→}
+    17→* { margin:0; padding:0; box-sizing:border-box; }
+    18→body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background:var(--bg); color:var(--text); }
+    19→.dash { max-width:1400px; margin:0 auto; padding:20px; }
+    20→
+    21→/* Title */
+    22→.title-bar {
+    23→  text-align:center; padding:24px; margin-bottom:20px;
+    24→  background:linear-gradient(135deg, #1a2332 0%, #0f3460 50%, #1a2332 100%);
+    25→  border-radius:16px; border:1px solid var(--card-border);
+    26→}
+    27→.title-bar h1 {
+    28→  font-size:32px; font-weight:900;
+    29→  background:linear-gradient(135deg, var(--accent), var(--gold), var(--cyan));
+    30→  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    31→}
+    32→.title-bar .sub { font-size:13px; color:var(--text-dim); margin-top:4px; }
+    33→
+    34→/* Player Cards Row */
+    35→.players-row { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-bottom:20px; }
+    36→@media (max-width:900px) { .players-row { grid-template-columns:1fr; } }
+    37→.player-card {
+    38→  background:var(--card); border-radius:14px; padding:20px;
+    39→  border:2px solid var(--card-border); transition:border-color 0.2s;
+    40→}
+    41→.player-card:nth-child(1) { border-color: color-mix(in srgb, var(--p1) 40%, transparent); }
+    42→.player-card:nth-child(2) { border-color: color-mix(in srgb, var(--p2) 40%, transparent); }
+    43→.player-card:nth-child(3) { border-color: color-mix(in srgb, var(--p3) 40%, transparent); }
+    44→
+    45→.pc-header { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+    46→.pc-header img { width:56px; height:56px; border-radius:50%; border:2px solid var(--card-border); }
+    47→.pc-header .pc-name { font-size:18px; font-weight:800; }
+    48→.pc-header .pc-rank { font-size:11px; color:var(--gold); }
+    49→.pc-header .pc-wr { font-size:12px; }
+    50→
+    51→.pc-stats { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin-bottom:14px; }
+    52→.pc-stat { background:var(--bg); border-radius:8px; padding:8px; text-align:center; }
+    53→.pc-stat .label { font-size:9px; text-transform:uppercase; letter-spacing:1px; color:var(--text-dim); }
+    54→.pc-stat .val { font-size:18px; font-weight:800; margin-top:2px; }
+    55→
+    56→.pc-form { display:flex; gap:3px; flex-wrap:wrap; }
+    57→.pc-form .dot { width:22px; height:22px; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:800; }
+    58→.pc-form .dot.w { background:rgba(74,222,128,0.2); color:var(--green); }
+    59→.pc-form .dot.l { background:rgba(248,113,113,0.2); color:var(--red); }
+    60→
+    61→.pc-heroes { margin-top:14px; }
+    62→.pc-heroes h4 { font-size:10px; text-transform:uppercase; letter-spacing:1px; color:var(--text-dim); margin-bottom:6px; }
+    63→.ph-item { display:flex; align-items:center; gap:6px; padding:3px 0; font-size:11px; }
+    64→.ph-item img { width:28px; height:16px; border-radius:3px; object-fit:cover; }
+    65→.ph-item .ph-wr { margin-left:auto; font-weight:700; font-size:10px; }
+    66→.ph-item .ph-g { font-size:9px; color:var(--text-dim); margin-left:4px; }
+    67→
+    68→/* Charts */
+    69→.chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+    70→@media (max-width:900px) { .chart-grid { grid-template-columns:1fr; } }
+    71→.chart-card { background:var(--card); border:1px solid var(--card-border); border-radius:12px; padding:20px; }
+    72→.chart-card h3 { font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--text-dim); margin-bottom:14px; }
+    73→.chart-full { grid-column: 1 / -1; }
+    74→
+    75→/* Comparison Table */
+    76→.comp-section { background:var(--card); border:1px solid var(--card-border); border-radius:12px; padding:20px; margin-bottom:20px; }
+    77→.comp-section h3 { font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--text-dim); margin-bottom:14px; }
+    78→table { width:100%; border-collapse:collapse; font-size:12px; }
+    79→th { text-align:left; padding:8px 10px; color:var(--text-dim); font-size:10px; text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid var(--card-border); }
+    80→td { padding:6px 10px; border-bottom:1px solid rgba(255,255,255,0.03); }
+    81→tr:hover td { background:rgba(255,255,255,0.02); }
+    82→.hero-cell { display:flex; align-items:center; gap:6px; }
+    83→.hero-cell img { width:28px; height:16px; border-radius:3px; object-fit:cover; }
+    84→
+    85→/* Player color dots */
+    86→.pdot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:4px; }
+    87→.pdot.p1 { background:var(--p1); } .pdot.p2 { background:var(--p2); } .pdot.p3 { background:var(--p3); }
+    88→
+    89→.footer { text-align:center; padding:20px; font-size:11px; color:var(--text-dim); }
+    90→.footer a { color:var(--accent); }
+    91→</style>
+    92→</head>
+    93→<body>
+    94→<div class="dash">
+    95→
+    96→<div class="title-bar">
+    97→  <h1>The Squad</h1>
+    98→  <div class="sub">Skogix + ZCOPE + Brave Boy &mdash; Dota 2 Team Stats</div>
+    99→</div>
+   100→
+   101→<div class="players-row" id="players-row"></div>
+   102→
+   103→<div class="chart-grid">
+   104→  <div class="chart-card">
+   105→    <h3>Win Rate Comparison</h3>
+   106→    <canvas id="chart-wr-comp"></canvas>
+   107→  </div>
+   108→  <div class="chart-card">
+   109→    <h3>Avg Stats Comparison</h3>
+   110→    <canvas id="chart-stats-comp"></canvas>
+   111→  </div>
+   112→  <div class="chart-card">
+   113→    <h3>Role Coverage (Top Roles by Games)</h3>
+   114→    <canvas id="chart-roles"></canvas>
+   115→  </div>
+   116→  <div class="chart-card">
+   117→    <h3>GPM / XPM Comparison</h3>
+   118→    <canvas id="chart-econ"></canvas>
+   119→  </div>
+   120→  <div class="chart-card chart-full">
+   121→    <h3>Top 10 Signature Heroes (by Games, All Players)</h3>
+   122→    <canvas id="chart-sig"></canvas>
+   123→  </div>
+   124→</div>
+   125→
+   126→<!-- Shared Hero Pool -->
+   127→<div class="comp-section">
+   128→  <h3>Overlapping Hero Pools (heroes 2+ squad members play)</h3>
+   129→  <div style="overflow-x:auto">
+   130→    <table id="overlap-table">
+   131→      <thead>
+   132→        <tr>
+   133→          <th>Hero</th>
+   134→          <th><span class="pdot p1"></span>Skogix</th>
+   135→          <th><span class="pdot p2"></span>ZCOPE</th>
+   136→          <th><span class="pdot p3"></span>Brave Boy</th>
+   137→        </tr>
+   138→      </thead>
+   139→      <tbody id="overlap-tbody"></tbody>
+   140→    </table>
+   141→  </div>
+   142→</div>
+   143→
+   144→<!-- Recent Matches Side by Side -->
+   145→<div class="comp-section">
+   146→  <h3>Recent Matches (Last 10 Each)</h3>
+   147→  <div style="overflow-x:auto">
+   148→    <table>
+   149→      <thead><tr>
+   150→        <th colspan="4" style="color:var(--p1)">Skogix</th>
+   151→        <th colspan="4" style="color:var(--p2)">ZCOPE</th>
+   152→        <th colspan="4" style="color:var(--p3)">Brave Boy</th>
+   153→      </tr><tr>
+   154→        <th>Hero</th><th>K/D/A</th><th>R</th><th>GPM</th>
+   155→        <th>Hero</th><th>K/D/A</th><th>R</th><th>GPM</th>
+   156→        <th>Hero</th><th>K/D/A</th><th>R</th><th>GPM</th>
+   157→      </tr></thead>
+   158→      <tbody id="recent-tbody"></tbody>
+   159→    </table>
+   160→  </div>
+   161→</div>
+   162→
+   163→<div class="footer">
+   164→  Data from <a href="https://opendota.com">OpenDota</a> &mdash; Generated Feb 2026
+   165→</div>
+   166→</div>
+   167→
+   168→<script>
+   169→var P = [{"name":"Skogix","avatar":"https://avatars.steamstatic.com/9759677800814d9e0cf4502b7c435e3bfa334cea_full.jpg","pid":"116550742","rank":"Guardian 4","rankTier":24,"wl":{"win":1577,"lose":1762},"totals":{"kills":9.5,"deaths":10.4,"assists":16.1,"kda":2.8,"gold_per_min":497.9,"xp_per_min":682.2,"last_hits":201.3,"denies":8.8,"lane_efficiency_pct":55.3,"duration":2541.7,"level":21.8,"hero_damage":32039.3,"tower_damage":2572.7,"hero_healing":1381.4,"stuns":29.5,"tower_kills":0.7,"neutral_kills":62.5,"courier_kills":0.2,"purchase_tpscroll":4.8,"purchase_ward_observer":6.0,"purchase_ward_sentry":9.2,"purchase_gem":1.0,"purchase_rapier":0,"pings":5.3,"throw":1747.5,"comeback":2667.3,"stomp":20259.1,"loss":23120.9,"actions_per_min":267.0},"heroStats":[{"name":"Viper","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/viper.png?","attr":"agi","roles":["Carry","Durable","Initiator","Disabler"],"g":316,"w":163,"wr":51.6},{"name":"Necrophos","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/necrolyte.png?","attr":"int","roles":["Carry","Nuker","Durable","Disabler"],"g":282,"w":154,"wr":54.6},{"name":"Nature's Prophet","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png?","attr":"all","roles":["Carry","Pusher","Escape","Nuker"],"g":231,"w":102,"wr":44.2},{"name":"Arc Warden","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/arc_warden.png?","attr":"all","roles":["Carry","Escape","Nuker"],"g":189,"w":84,"wr":44.4},{"name":"Undying","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png?","attr":"str","roles":["Support","Durable","Disabler","Nuker"],"g":186,"w":104,"wr":55.9},{"name":"Crystal Maiden","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png?","attr":"int","roles":["Support","Disabler","Nuker"],"g":124,"w":52,"wr":41.9},{"name":"Ember Spirit","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png?","attr":"agi","roles":["Carry","Escape","Nuker","Disabler","Initiator"],"g":114,"w":54,"wr":47.4},{"name":"Zeus","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png?","attr":"int","roles":["Nuker","Carry"],"g":107,"w":53,"wr":49.5},{"name":"Huskar","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/huskar.png?","attr":"str","roles":["Carry","Durable","Initiator"],"g":100,"w":45,"wr":45.0},{"name":"Axe","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/axe.png?","attr":"str","roles":["Initiator","Durable","Disabler","Carry"],"g":87,"w":37,"wr":42.5},{"name":"Lone Druid","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lone_druid.png?","attr":"agi","roles":["Carry","Pusher","Durable"],"g":72,"w":29,"wr":40.3},{"name":"Drow Ranger","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/drow_ranger.png?","attr":"agi","roles":["Carry","Disabler","Pusher"],"g":71,"w":38,"wr":53.5},{"name":"Bristleback","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bristleback.png?","attr":"str","roles":["Carry","Durable","Initiator","Nuker"],"g":71,"w":34,"wr":47.9},{"name":"Bloodseeker","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bloodseeker.png?","attr":"agi","roles":["Carry","Disabler","Nuker","Initiator"],"g":68,"w":31,"wr":45.6},{"name":"Wraith King","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skeleton_king.png?","attr":"str","roles":["Carry","Support","Durable","Disabler","Initiator"],"g":65,"w":35,"wr":53.8},{"name":"Timbersaw","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png?","attr":"str","roles":["Nuker","Durable","Escape"],"g":61,"w":29,"wr":47.5},{"name":"Warlock","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png?","attr":"int","roles":["Support","Initiator","Disabler"],"g":57,"w":34,"wr":59.6},{"name":"Lion","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png?","attr":"int","roles":["Support","Disabler","Nuker","Initiator"],"g":56,"w":19,"wr":33.9},{"name":"Lich","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png?","attr":"int","roles":["Support","Nuker"],"g":52,"w":29,"wr":55.8},{"name":"Sniper","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/sniper.png?","attr":"agi","roles":["Carry","Nuker"],"g":52,"w":24,"wr":46.2},{"name":"Legion Commander","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/legion_commander.png?","attr":"str","roles":["Carry","Disabler","Initiator","Durable","Nuker"],"g":50,"w":22,"wr":44.0},{"name":"Visage","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/visage.png?","attr":"all","roles":["Support","Nuker","Durable","Disabler","Pusher"],"g":45,"w":26,"wr":57.8},{"name":"Slardar","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slardar.png?","attr":"str","roles":["Carry","Durable","Initiator","Disabler","Escape"],"g":43,"w":20,"wr":46.5},{"name":"Kez","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kez.png?","attr":"agi","roles":["Carry","Escape","Disabler"],"g":43,"w":17,"wr":39.5},{"name":"Meepo","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/meepo.png?","attr":"agi","roles":["Carry","Escape","Nuker","Disabler","Initiator","Pusher"],"g":42,"w":11,"wr":26.2},{"name":"Abaddon","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png?","attr":"all","roles":["Support","Carry","Durable"],"g":41,"w":22,"wr":53.7},{"name":"Vengeful Spirit","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png?","attr":"agi","roles":["Support","Initiator","Disabler","Nuker","Escape"],"g":36,"w":15,"wr":41.7},{"name":"Marci","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/marci.png?","attr":"all","roles":["Support","Carry","Initiator","Disabler","Escape"],"g":34,"w":10,"wr":29.4},{"name":"Medusa","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/medusa.png?","attr":"agi","roles":["Carry","Disabler","Durable"],"g":33,"w":20,"wr":60.6},{"name":"Witch Doctor","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/witch_doctor.png?","attr":"int","roles":["Support","Nuker","Disabler"],"g":31,"w":18,"wr":58.1}],"recent":[{"hero":"Slardar","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slardar.png?","result":"Loss","k":8,"d":11,"a":19,"gpm":353,"xpm":492,"dur":"44:47","date":"02/28"},{"hero":"Grimstroke","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png?","result":"Loss","k":9,"d":18,"a":45,"gpm":444,"xpm":923,"dur":"78:31","date":"02/28"},{"hero":"Axe","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/axe.png?","result":"Loss","k":10,"d":15,"a":11,"gpm":463,"xpm":579,"dur":"41:15","date":"02/28"},{"hero":"Venomancer","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png?","result":"Loss","k":2,"d":9,"a":7,"gpm":275,"xpm":295,"dur":"21:56","date":"02/28"},{"hero":"Spectre","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/spectre.png?","result":"Win","k":12,"d":6,"a":25,"gpm":568,"xpm":853,"dur":"45:19","date":"02/27"},{"hero":"Viper","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/viper.png?","result":"Loss","k":15,"d":14,"a":10,"gpm":484,"xpm":686,"dur":"57:40","date":"02/26"},{"hero":"Slardar","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slardar.png?","result":"Win","k":23,"d":4,"a":16,"gpm":625,"xpm":937,"dur":"33:07","date":"02/26"},{"hero":"Necrophos","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/necrolyte.png?","result":"Loss","k":5,"d":11,"a":7,"gpm":385,"xpm":442,"dur":"27:39","date":"02/26"},{"hero":"Medusa","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/medusa.png?","result":"Win","k":9,"d":1,"a":9,"gpm":659,"xpm":760,"dur":"30:51","date":"02/26"},{"hero":"Marci","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/marci.png?","result":"Loss","k":13,"d":9,"a":28,"gpm":500,"xpm":780,"dur":"56:31","date":"02/26"},{"hero":"Monkey King","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/monkey_king.png?","result":"Win","k":13,"d":13,"a":31,"gpm":564,"xpm":968,"dur":"52:10","date":"02/26"},{"hero":"Undying","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png?","result":"Win","k":13,"d":4,"a":18,"gpm":552,"xpm":741,"dur":"33:26","date":"02/26"},{"hero":"Lion","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png?","result":"Loss","k":3,"d":12,"a":20,"gpm":281,"xpm":531,"dur":"45:43","date":"02/26"},{"hero":"Viper","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/viper.png?","result":"Win","k":15,"d":10,"a":24,"gpm":498,"xpm":676,"dur":"37:50","date":"02/25"},{"hero":"Razor","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/razor.png?","result":"Loss","k":8,"d":9,"a":8,"gpm":479,"xpm":648,"dur":"46:16","date":"02/22"},{"hero":"Viper","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/viper.png?","result":"Win","k":18,"d":6,"a":23,"gpm":668,"xpm":1217,"dur":"52:55","date":"02/21"},{"hero":"Ember Spirit","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png?","result":"Win","k":15,"d":4,"a":21,"gpm":535,"xpm":796,"dur":"41:18","date":"02/21"},{"hero":"Drow Ranger","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/drow_ranger.png?","result":"Win","k":7,"d":13,"a":15,"gpm":570,"xpm":698,"dur":"43:27","date":"02/21"},{"hero":"Phantom Lancer","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_lancer.png?","result":"Win","k":14,"d":11,"a":24,"gpm":697,"xpm":1084,"dur":"47:45","date":"02/21"},{"hero":"Viper","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/viper.png?","result":"Win","k":11,"d":7,"a":22,"gpm":497,"xpm":681,"dur":"27:26","date":"02/21"}],"form":[0,0,0,0,1,0,1,0,1,0,1,1,0,1,0,1,1,1,1,1],"roles":{"Carry":{"g":2469,"w":1158,"wr":46.9},"Nuker":{"g":2164,"w":1016,"wr":47.0},"Disabler":{"g":2163,"w":1035,"wr":47.9},"Durable":{"g":1606,"w":810,"wr":50.4},"Initiator":{"g":1300,"w":595,"wr":45.8},"Escape":{"g":1092,"w":470,"wr":43.0},"Support":{"g":921,"w":446,"wr":48.4},"Pusher":{"g":662,"w":291,"wr":44.0}}},{"name":"ZCOPE","avatar":"https://avatars.steamstatic.com/2bf240601f63ef0dcd02c280e20ba195d9baa1c9_full.jpg","pid":"37551669","rank":"Guardian 3","rankTier":23,"wl":{"win":2206,"lose":2415},"totals":{"kills":7.5,"deaths":9.6,"assists":16.9,"kda":2.6,"gold_per_min":406.4,"xp_per_min":606.7,"last_hits":132.9,"denies":9.1,"lane_efficiency_pct":41.5,"duration":2526.4,"level":21.4,"hero_damage":26580.3,"tower_damage":1691.2,"hero_healing":871.9,"stuns":51.9,"tower_kills":0.7,"neutral_kills":36.5,"courier_kills":0.2,"purchase_tpscroll":3.3,"purchase_ward_observer":6.7,"purchase_ward_sentry":11.3,"purchase_gem":0,"purchase_rapier":0,"pings":4.4,"throw":2756.1,"comeback":3318.8,"stomp":21144.9,"loss":20500.7,"actions_per_min":197.1},"heroStats":[{"name":"Mirana","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png?","attr":"agi","roles":["Carry","Support","Escape","Nuker","Disabler"],"g":642,"w":348,"wr":54.2},{"name":"Lion","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png?","attr":"int","roles":["Support","Disabler","Nuker","Initiator"],"g":527,"w":257,"wr":48.8},{"name":"Rubick","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png?","attr":"int","roles":["Support","Disabler","Nuker"],"g":316,"w":146,"wr":46.2},{"name":"Morphling","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png?","attr":"agi","roles":["Carry","Escape","Durable","Nuker","Disabler"],"g":183,"w":74,"wr":40.4},{"name":"Hoodwink","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/hoodwink.png?","attr":"agi","roles":["Support","Nuker","Escape","Disabler"],"g":182,"w":89,"wr":48.9},{"name":"Snapfire","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png?","attr":"all","roles":["Support","Nuker","Disabler","Escape"],"g":175,"w":95,"wr":54.3},{"name":"Lina","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lina.png?","attr":"int","roles":["Support","Carry","Nuker","Disabler"],"g":158,"w":72,"wr":45.6},{"name":"Vengeful Spirit","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png?","attr":"agi","roles":["Support","Initiator","Disabler","Nuker","Escape"],"g":121,"w":67,"wr":55.4},{"name":"Pugna","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pugna.png?","attr":"int","roles":["Nuker","Pusher"],"g":115,"w":48,"wr":41.7},{"name":"Bounty Hunter","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bounty_hunter.png?","attr":"agi","roles":["Escape","Nuker"],"g":96,"w":51,"wr":53.1},{"name":"Silencer","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png?","attr":"int","roles":["Carry","Support","Disabler","Initiator","Nuker"],"g":79,"w":44,"wr":55.7},{"name":"Skywrath Mage","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png?","attr":"int","roles":["Support","Nuker","Disabler"],"g":76,"w":36,"wr":47.4},{"name":"Omniknight","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/omniknight.png?","attr":"str","roles":["Support","Durable","Nuker"],"g":74,"w":37,"wr":50.0},{"name":"Necrophos","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/necrolyte.png?","attr":"int","roles":["Carry","Nuker","Durable","Disabler"],"g":65,"w":35,"wr":53.8},{"name":"Venomancer","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png?","attr":"all","roles":["Support","Nuker","Initiator","Pusher","Disabler"],"g":63,"w":33,"wr":52.4},{"name":"Queen of Pain","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/queenofpain.png?","attr":"int","roles":["Carry","Nuker","Escape"],"g":62,"w":25,"wr":40.3},{"name":"Tiny","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png?","attr":"str","roles":["Carry","Nuker","Pusher","Initiator","Durable","Disabler"],"g":59,"w":32,"wr":54.2},{"name":"Ember Spirit","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png?","attr":"agi","roles":["Carry","Escape","Nuker","Disabler","Initiator"],"g":59,"w":19,"wr":32.2},{"name":"Zeus","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png?","attr":"int","roles":["Nuker","Carry"],"g":58,"w":28,"wr":48.3},{"name":"Ogre Magi","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ogre_magi.png?","attr":"str","roles":["Support","Nuker","Disabler","Durable","Initiator"],"g":58,"w":29,"wr":50.0},{"name":"Dark Willow","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dark_willow.png?","attr":"int","roles":["Support","Nuker","Disabler","Escape"],"g":58,"w":32,"wr":55.2},{"name":"Sniper","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/sniper.png?","attr":"agi","roles":["Carry","Nuker"],"g":57,"w":20,"wr":35.1},{"name":"Mars","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png?","attr":"str","roles":["Carry","Initiator","Disabler","Durable"],"g":57,"w":21,"wr":36.8},{"name":"Crystal Maiden","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png?","attr":"int","roles":["Support","Disabler","Nuker"],"g":54,"w":23,"wr":42.6},{"name":"Windranger","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png?","attr":"all","roles":["Carry","Support","Disabler","Escape","Nuker"],"g":53,"w":20,"wr":37.7},{"name":"Nature's Prophet","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png?","attr":"all","roles":["Carry","Pusher","Escape","Nuker"],"g":49,"w":19,"wr":38.8},{"name":"Storm Spirit","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/storm_spirit.png?","attr":"int","roles":["Carry","Escape","Nuker","Initiator","Disabler"],"g":43,"w":23,"wr":53.5},{"name":"Grimstroke","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png?","attr":"int","roles":["Support","Nuker","Disabler","Escape"],"g":43,"w":19,"wr":44.2},{"name":"Earthshaker","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earthshaker.png?","attr":"str","roles":["Support","Initiator","Disabler","Nuker"],"g":40,"w":17,"wr":42.5},{"name":"Lich","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png?","attr":"int","roles":["Support","Nuker"],"g":40,"w":17,"wr":42.5}],"recent":[{"hero":"Mirana","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png?","result":"Win","k":9,"d":8,"a":18,"gpm":469,"xpm":667,"dur":"45:19","date":"02/27"},{"hero":"Snapfire","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png?","result":"Loss","k":12,"d":11,"a":15,"gpm":489,"xpm":660,"dur":"57:40","date":"02/26"},{"hero":"Vengeful Spirit","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png?","result":"Win","k":7,"d":5,"a":28,"gpm":453,"xpm":849,"dur":"33:07","date":"02/26"},{"hero":"Storm Spirit","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/storm_spirit.png?","result":"Loss","k":10,"d":9,"a":21,"gpm":610,"xpm":868,"dur":"56:31","date":"02/26"},{"hero":"Skywrath Mage","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png?","result":"Win","k":22,"d":12,"a":22,"gpm":546,"xpm":1076,"dur":"52:10","date":"02/26"},{"hero":"Morphling","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png?","result":"Win","k":7,"d":2,"a":14,"gpm":366,"xpm":530,"dur":"33:26","date":"02/26"},{"hero":"Mirana","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png?","result":"Loss","k":6,"d":7,"a":25,"gpm":418,"xpm":587,"dur":"40:46","date":"02/26"},{"hero":"Snapfire","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png?","result":"Loss","k":4,"d":8,"a":12,"gpm":319,"xpm":521,"dur":"46:16","date":"02/22"},{"hero":"Skywrath Mage","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png?","result":"Win","k":10,"d":9,"a":21,"gpm":465,"xpm":889,"dur":"52:55","date":"02/21"},{"hero":"Mirana","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png?","result":"Win","k":14,"d":8,"a":24,"gpm":450,"xpm":688,"dur":"41:18","date":"02/21"},{"hero":"Hoodwink","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/hoodwink.png?","result":"Win","k":6,"d":8,"a":18,"gpm":407,"xpm":591,"dur":"43:27","date":"02/21"},{"hero":"Nyx Assassin","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png?","result":"Win","k":6,"d":14,"a":22,"gpm":367,"xpm":725,"dur":"47:45","date":"02/21"},{"hero":"Nyx Assassin","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png?","result":"Win","k":10,"d":5,"a":26,"gpm":424,"xpm":604,"dur":"27:26","date":"02/21"},{"hero":"Lina","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lina.png?","result":"Loss","k":7,"d":15,"a":16,"gpm":448,"xpm":545,"dur":"48:02","date":"02/21"},{"hero":"Rubick","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png?","result":"Win","k":7,"d":14,"a":19,"gpm":403,"xpm":692,"dur":"53:54","date":"02/21"},{"hero":"Rubick","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png?","result":"Loss","k":1,"d":3,"a":0,"gpm":219,"xpm":214,"dur":"11:22","date":"02/21"},{"hero":"Mirana","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png?","result":"Win","k":5,"d":2,"a":21,"gpm":417,"xpm":476,"dur":"25:58","date":"02/21"},{"hero":"Muerta","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/muerta.png?","result":"Win","k":11,"d":10,"a":21,"gpm":471,"xpm":800,"dur":"45:27","date":"02/21"},{"hero":"Morphling","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png?","result":"Win","k":6,"d":3,"a":8,"gpm":552,"xpm":644,"dur":"29:10","date":"02/21"},{"hero":"Mirana","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png?","result":"Loss","k":6,"d":12,"a":24,"gpm":467,"xpm":914,"dur":"56:32","date":"02/21"}],"form":[1,0,1,0,1,1,0,0,1,1,1,1,1,0,1,0,1,1,1,0],"roles":{"Nuker":{"g":4216,"w":2042,"wr":48.4},"Disabler":{"g":3825,"w":1863,"wr":48.7},"Support":{"g":3098,"w":1554,"wr":50.2},"Escape":{"g":2169,"w":1050,"wr":48.4},"Carry":{"g":2133,"w":998,"wr":46.8},"Initiator":{"g":1473,"w":699,"wr":47.5},"Durable":{"g":833,"w":381,"wr":45.7},"Pusher":{"g":470,"w":225,"wr":47.9}}},{"name":"\"Nagasaki\" Brave Boy","avatar":"https://avatars.steamstatic.com/ecc0f912d07b8677890c3f0faf50e7d1d64eb18d_full.jpg","pid":"1191295354","rank":"Guardian 4","rankTier":24,"wl":{"win":212,"lose":258},"totals":{"kills":6.9,"deaths":8.2,"assists":17.2,"kda":3.5,"gold_per_min":435.5,"xp_per_min":632.8,"last_hits":143.3,"denies":5.0,"lane_efficiency_pct":52.6,"duration":2584.8,"level":21.2,"hero_damage":25167.6,"tower_damage":1913.0,"hero_healing":961.0,"stuns":21.5,"tower_kills":0.4,"neutral_kills":26.1,"courier_kills":0.5,"purchase_tpscroll":2.6,"purchase_ward_observer":5.2,"purchase_ward_sentry":12.5,"purchase_gem":0,"purchase_rapier":0,"pings":1.3,"throw":4592.0,"comeback":3886.2,"stomp":24054.0,"loss":22306.0,"actions_per_min":389.3},"heroStats":[{"name":"Dark Seer","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dark_seer.png?","attr":"int","roles":["Initiator","Escape","Disabler"],"g":66,"w":31,"wr":47.0},{"name":"Marci","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/marci.png?","attr":"all","roles":["Support","Carry","Initiator","Disabler","Escape"],"g":64,"w":27,"wr":42.2},{"name":"Primal Beast","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/primal_beast.png?","attr":"str","roles":["Initiator","Durable","Disabler"],"g":45,"w":23,"wr":51.1},{"name":"Bounty Hunter","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bounty_hunter.png?","attr":"agi","roles":["Escape","Nuker"],"g":33,"w":18,"wr":54.5},{"name":"Gyrocopter","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png?","attr":"agi","roles":["Carry","Nuker","Disabler"],"g":31,"w":17,"wr":54.8},{"name":"Lich","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png?","attr":"int","roles":["Support","Nuker"],"g":26,"w":14,"wr":53.8},{"name":"Phantom Lancer","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_lancer.png?","attr":"agi","roles":["Carry","Escape","Pusher","Nuker"],"g":25,"w":10,"wr":40.0},{"name":"Ogre Magi","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ogre_magi.png?","attr":"str","roles":["Support","Nuker","Disabler","Durable","Initiator"],"g":15,"w":6,"wr":40.0},{"name":"Visage","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/visage.png?","attr":"all","roles":["Support","Nuker","Durable","Disabler","Pusher"],"g":14,"w":2,"wr":14.3},{"name":"Enigma","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png?","attr":"all","roles":["Disabler","Initiator","Pusher"],"g":13,"w":9,"wr":69.2},{"name":"Ancient Apparition","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png?","attr":"int","roles":["Support","Disabler","Nuker"],"g":10,"w":4,"wr":40.0},{"name":"Timbersaw","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png?","attr":"str","roles":["Nuker","Durable","Escape"],"g":9,"w":4,"wr":44.4},{"name":"Queen of Pain","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/queenofpain.png?","attr":"int","roles":["Carry","Nuker","Escape"],"g":8,"w":4,"wr":50.0},{"name":"Chaos Knight","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/chaos_knight.png?","attr":"str","roles":["Carry","Disabler","Durable","Pusher","Initiator"],"g":8,"w":3,"wr":37.5},{"name":"Abaddon","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png?","attr":"all","roles":["Support","Carry","Durable"],"g":8,"w":7,"wr":87.5},{"name":"Centaur Warrunner","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/centaur.png?","attr":"str","roles":["Durable","Initiator","Disabler","Nuker","Escape"],"g":7,"w":3,"wr":42.9},{"name":"Omniknight","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/omniknight.png?","attr":"str","roles":["Support","Durable","Nuker"],"g":6,"w":5,"wr":83.3},{"name":"Crystal Maiden","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png?","attr":"int","roles":["Support","Disabler","Nuker"],"g":5,"w":0,"wr":0.0},{"name":"Juggernaut","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/juggernaut.png?","attr":"agi","roles":["Carry","Pusher","Escape"],"g":5,"w":2,"wr":40.0},{"name":"Weaver","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/weaver.png?","attr":"agi","roles":["Carry","Escape"],"g":5,"w":1,"wr":20.0},{"name":"Underlord","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abyssal_underlord.png?","attr":"str","roles":["Support","Nuker","Disabler","Durable","Escape"],"g":5,"w":2,"wr":40.0},{"name":"Morphling","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png?","attr":"agi","roles":["Carry","Escape","Durable","Nuker","Disabler"],"g":4,"w":0,"wr":0.0},{"name":"Necrophos","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/necrolyte.png?","attr":"int","roles":["Carry","Nuker","Durable","Disabler"],"g":4,"w":2,"wr":50.0},{"name":"Clinkz","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/clinkz.png?","attr":"agi","roles":["Carry","Escape","Pusher"],"g":4,"w":1,"wr":25.0},{"name":"Spectre","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/spectre.png?","attr":"agi","roles":["Carry","Durable","Escape"],"g":4,"w":1,"wr":25.0},{"name":"Shadow Demon","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shadow_demon.png?","attr":"int","roles":["Support","Disabler","Initiator","Nuker"],"g":3,"w":1,"wr":33.3},{"name":"Naga Siren","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/naga_siren.png?","attr":"agi","roles":["Carry","Support","Pusher","Disabler","Initiator","Escape"],"g":3,"w":0,"wr":0.0},{"name":"Phoenix","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png?","attr":"str","roles":["Support","Nuker","Initiator","Escape","Disabler"],"g":3,"w":1,"wr":33.3},{"name":"Drow Ranger","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/drow_ranger.png?","attr":"agi","roles":["Carry","Disabler","Pusher"],"g":2,"w":1,"wr":50.0},{"name":"Sven","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/sven.png?","attr":"str","roles":["Carry","Disabler","Initiator","Durable","Nuker"],"g":2,"w":1,"wr":50.0}],"recent":[{"hero":"Morphling","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png?","result":"Loss","k":10,"d":9,"a":13,"gpm":327,"xpm":550,"dur":"44:47","date":"02/28"},{"hero":"Phantom Lancer","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_lancer.png?","result":"Loss","k":19,"d":8,"a":28,"gpm":705,"xpm":995,"dur":"78:31","date":"02/28"},{"hero":"Primal Beast","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/primal_beast.png?","result":"Loss","k":4,"d":11,"a":16,"gpm":400,"xpm":585,"dur":"41:15","date":"02/28"},{"hero":"Visage","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/visage.png?","result":"Loss","k":5,"d":7,"a":5,"gpm":337,"xpm":351,"dur":"21:56","date":"02/28"},{"hero":"Lich","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png?","result":"Loss","k":6,"d":17,"a":9,"gpm":317,"xpm":352,"dur":"37:51","date":"02/27"},{"hero":"Omniknight","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/omniknight.png?","result":"Win","k":3,"d":8,"a":17,"gpm":342,"xpm":591,"dur":"45:19","date":"02/27"},{"hero":"Bounty Hunter","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bounty_hunter.png?","result":"Loss","k":1,"d":7,"a":8,"gpm":273,"xpm":311,"dur":"27:39","date":"02/26"},{"hero":"Lich","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png?","result":"Win","k":3,"d":3,"a":17,"gpm":331,"xpm":507,"dur":"30:51","date":"02/26"},{"hero":"Morphling","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png?","result":"Loss","k":2,"d":9,"a":34,"gpm":310,"xpm":610,"dur":"49:22","date":"02/26"},{"hero":"Ancient Apparition","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png?","result":"Loss","k":11,"d":9,"a":25,"gpm":357,"xpm":990,"dur":"56:31","date":"02/26"},{"hero":"Marci","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/marci.png?","result":"Loss","k":10,"d":11,"a":15,"gpm":359,"xpm":506,"dur":"40:46","date":"02/26"},{"hero":"Chaos Knight","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/chaos_knight.png?","result":"Loss","k":7,"d":9,"a":13,"gpm":308,"xpm":500,"dur":"45:43","date":"02/26"},{"hero":"Lich","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png?","result":"Win","k":10,"d":10,"a":16,"gpm":383,"xpm":553,"dur":"37:50","date":"02/25"},{"hero":"Medusa","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/medusa.png?","result":"Win","k":11,"d":2,"a":23,"gpm":574,"xpm":966,"dur":"41:18","date":"02/21"},{"hero":"Dark Seer","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dark_seer.png?","result":"Win","k":4,"d":5,"a":26,"gpm":411,"xpm":511,"dur":"41:54","date":"02/20"},{"hero":"Marci","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/marci.png?","result":"Win","k":10,"d":7,"a":20,"gpm":401,"xpm":632,"dur":"45:29","date":"02/20"},{"hero":"Marci","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/marci.png?","result":"Win","k":10,"d":6,"a":25,"gpm":397,"xpm":738,"dur":"46:52","date":"02/19"},{"hero":"Queen of Pain","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/queenofpain.png?","result":"Win","k":9,"d":7,"a":24,"gpm":516,"xpm":885,"dur":"53:28","date":"02/19"},{"hero":"Primal Beast","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/primal_beast.png?","result":"Win","k":8,"d":16,"a":38,"gpm":405,"xpm":725,"dur":"71:29","date":"02/18"},{"hero":"Bounty Hunter","img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bounty_hunter.png?","result":"Loss","k":9,"d":13,"a":35,"gpm":523,"xpm":818,"dur":"66:36","date":"02/18"}],"form":[0,0,0,0,0,1,0,1,0,0,0,0,1,1,1,1,1,1,1,0],"roles":{"Disabler":{"g":300,"w":131,"wr":43.7},"Escape":{"g":245,"w":105,"wr":42.9},"Initiator":{"g":227,"w":104,"wr":45.8},"Nuker":{"g":208,"w":93,"wr":44.7},"Carry":{"g":173,"w":75,"wr":43.4},"Support":{"g":162,"w":69,"wr":42.6},"Durable":{"g":129,"w":58,"wr":45.0},"Pusher":{"g":72,"w":27,"wr":37.5}}}];
+   170→var PCOLORS = ['#e94560', '#60a5fa', '#4ade80'];
+   171→var PCOLORS_A = ['rgba(233,69,96,0.7)', 'rgba(96,165,250,0.7)', 'rgba(74,222,128,0.7)'];
+   172→
+   173→function init() {
+   174→  buildPlayerCards();
+   175→  buildCharts();
+   176→  buildOverlapTable();
+   177→  buildRecentTable();
+   178→}
+   179→
+   180→function buildPlayerCards() {
+   181→  var row = document.getElementById('players-row');
+   182→  var html = '';
+   183→  P.forEach(function(p, i) {
+   184→    var total = p.wl.win + p.wl.lose;
+   185→    var wr = (p.wl.win / total * 100).toFixed(1);
+   186→    var wrColor = wr >= 50 ? 'var(--green)' : 'var(--red)';
+   187→    var avgK = p.totals.kills || 0;
+   188→    var avgD = p.totals.deaths || 0;
+   189→    var avgA = p.totals.assists || 0;
+   190→    var kda = ((avgK + avgA) / Math.max(avgD, 1)).toFixed(2);
+   191→    var fw = p.form.reduce(function(s,v){return s+v;}, 0);
+   192→
+   193→    html += '<div class="player-card">';
+   194→    html += '<div class="pc-header">';
+   195→    html += '<img src="' + p.avatar + '" alt="' + p.name + '">';
+   196→    html += '<div><div class="pc-name" style="color:' + PCOLORS[i] + '">' + p.name + '</div>';
+   197→    html += '<div class="pc-rank">' + p.rank + '</div>';
+   198→    html += '<div class="pc-wr" style="color:' + wrColor + '">' + wr + '% WR &mdash; ' + total.toLocaleString() + ' games</div>';
+   199→    html += '</div></div>';
+   200→
+   201→    html += '<div class="pc-stats">';
+   202→    html += '<div class="pc-stat"><div class="label">KDA</div><div class="val">' + kda + '</div></div>';
+   203→    html += '<div class="pc-stat"><div class="label">GPM</div><div class="val" style="color:var(--gold)">' + Math.round(p.totals.gold_per_min || 0) + '</div></div>';
+   204→    html += '<div class="pc-stat"><div class="label">XPM</div><div class="val" style="color:var(--blue)">' + Math.round(p.totals.xp_per_min || 0) + '</div></div>';
+   205→    html += '</div>';
+   206→
+   207→    // Form
+   208→    html += '<div class="pc-form">';
+   209→    p.form.forEach(function(w) {
+   210→      html += '<div class="dot ' + (w ? 'w' : 'l') + '">' + (w ? 'W' : 'L') + '</div>';
+   211→    });
+   212→    html += '</div>';
+   213→    html += '<div style="font-size:10px;color:var(--text-dim);margin-top:4px">' + fw + 'W ' + (20-fw) + 'L last 20</div>';
+   214→
+   215→    // Top 5 heroes
+   216→    html += '<div class="pc-heroes"><h4>Signature Heroes</h4>';
+   217→    p.heroStats.slice(0, 7).forEach(function(h) {
+   218→      var wrC = h.wr >= 55 ? 'var(--green)' : h.wr < 45 ? 'var(--red)' : 'var(--text)';
+   219→      html += '<div class="ph-item"><img src="' + h.img + '" alt="' + h.name + '"><span>' + h.name + '</span>';
+   220→      html += '<span class="ph-wr" style="color:' + wrC + '">' + h.wr + '%</span>';
+   221→      html += '<span class="ph-g">' + h.g + 'g</span></div>';
+   222→    });
+   223→    html += '</div></div>';
+   224→  });
+   225→  row.innerHTML = html;
+   226→}
+   227→
+   228→function buildCharts() {
+   229→  Chart.defaults.color = '#64748b';
+   230→  Chart.defaults.borderColor = 'rgba(255,255,255,0.05)';
+   231→
+   232→  // WR comparison
+   233→  var names = P.map(function(p){return p.name;});
+   234→  new Chart(document.getElementById('chart-wr-comp'), {
+   235→    type: 'bar',
+   236→    data: {
+   237→      labels: names,
+   238→      datasets: [{
+   239→        label: 'Win Rate %',
+   240→        data: P.map(function(p){ var t=p.wl.win+p.wl.lose; return t>0 ? Math.round(p.wl.win/t*1000)/10 : 0; }),
+   241→        backgroundColor: PCOLORS_A,
+   242→        borderRadius: 6
+   243→      }]
+   244→    },
+   245→    options: { responsive:true, plugins:{legend:{display:false}}, scales:{y:{min:40,max:55,ticks:{callback:function(v){return v+'%';}}}} }
+   246→  });
+   247→
+   248→  // Stats radar-style comparison (bar grouped)
+   249→  new Chart(document.getElementById('chart-stats-comp'), {
+   250→    type: 'bar',
+   251→    data: {
+   252→      labels: ['Kills', 'Deaths', 'Assists', 'Last Hits'],
+   253→      datasets: P.map(function(p, i) {
+   254→        return {
+   255→          label: p.name,
+   256→          data: [p.totals.kills||0, p.totals.deaths||0, p.totals.assists||0, Math.round((p.totals.last_hits||0)/10)],
+   257→          backgroundColor: PCOLORS_A[i],
+   258→          borderRadius: 4
+   259→        };
+   260→      })
+   261→    },
+   262→    options: { responsive:true, plugins:{legend:{position:'top'},tooltip:{callbacks:{label:function(ctx){
+   263→      if (ctx.dataIndex === 3) return ctx.dataset.label + ': ' + (ctx.raw * 10) + ' LH';
+   264→      return ctx.dataset.label + ': ' + ctx.raw;
+   265→    }}}}}
+   266→  });
+   267→
+   268→  // Role coverage
+   269→  var allRoles = {};
+   270→  P.forEach(function(p) {
+   271→    Object.keys(p.roles).forEach(function(r) { allRoles[r] = true; });
+   272→  });
+   273→  var roleLabels = Object.keys(allRoles).sort(function(a, b) {
+   274→    var sumA = P.reduce(function(s,p){return s+(p.roles[a]?p.roles[a].g:0);},0);
+   275→    var sumB = P.reduce(function(s,p){return s+(p.roles[b]?p.roles[b].g:0);},0);
+   276→    return sumB - sumA;
+   277→  }).slice(0, 8);
+   278→
+   279→  new Chart(document.getElementById('chart-roles'), {
+   280→    type: 'bar',
+   281→    data: {
+   282→      labels: roleLabels,
+   283→      datasets: P.map(function(p, i) {
+   284→        return {
+   285→          label: p.name,
+   286→          data: roleLabels.map(function(r) { return p.roles[r] ? p.roles[r].g : 0; }),
+   287→          backgroundColor: PCOLORS_A[i],
+   288→          borderRadius: 4
+   289→        };
+   290→      })
+   291→    },
+   292→    options: { responsive:true, plugins:{legend:{position:'top'}}, scales:{x:{},y:{}} }
+   293→  });
+   294→
+   295→  // Economy comparison
+   296→  new Chart(document.getElementById('chart-econ'), {
+   297→    type: 'bar',
+   298→    data: {
+   299→      labels: names,
+   300→      datasets: [{
+   301→        label: 'GPM', data: P.map(function(p){return Math.round(p.totals.gold_per_min||0);}),
+   302→        backgroundColor: 'rgba(245,166,35,0.7)', borderRadius: 4
+   303→      }, {
+   304→        label: 'XPM', data: P.map(function(p){return Math.round(p.totals.xp_per_min||0);}),
+   305→        backgroundColor: 'rgba(96,165,250,0.7)', borderRadius: 4
+   306→      }]
+   307→    },
+   308→    options: { responsive:true, plugins:{legend:{position:'top'}} }
+   309→  });
+   310→
+   311→  // Signature heroes
+   312→  var allHeroes = [];
+   313→  P.forEach(function(p, i) {
+   314→    p.heroStats.slice(0, 5).forEach(function(h) {
+   315→      allHeroes.push({name: h.name, games: h.g, player: p.name, pIdx: i, wr: h.wr});
+   316→    });
+   317→  });
+   318→  allHeroes.sort(function(a,b){return b.games - a.games;});
+   319→  var top12 = allHeroes.slice(0, 12);
+   320→
+   321→  new Chart(document.getElementById('chart-sig'), {
+   322→    type: 'bar',
+   323→    data: {
+   324→      labels: top12.map(function(h){return h.name + ' (' + h.player.split(' ')[0] + ')';}),
+   325→      datasets: [{
+   326→        label: 'Games',
+   327→        data: top12.map(function(h){return h.games;}),
+   328→        backgroundColor: top12.map(function(h){return PCOLORS_A[h.pIdx];}),
+   329→        borderRadius: 4
+   330→      }]
+   331→    },
+   332→    options: { indexAxis:'y', responsive:true, plugins:{legend:{display:false}} }
+   333→  });
+   334→}
+   335→
+   336→function buildOverlapTable() {
+   337→  // Find heroes that 2+ players play (10+ games)
+   338→  var heroPlayers = {};
+   339→  P.forEach(function(p, i) {
+   340→    p.heroStats.forEach(function(h) {
+   341→      if (h.g >= 10) {
+   342→        if (!heroPlayers[h.name]) heroPlayers[h.name] = [{},{},{}];
+   343→        heroPlayers[h.name][i] = h;
+   344→      }
+   345→    });
+   346→  });
+   347→
+   348→  var overlaps = [];
+   349→  Object.keys(heroPlayers).forEach(function(name) {
+   350→    var count = heroPlayers[name].filter(function(p){return p && p.g;}).length;
+   351→    if (count >= 2) overlaps.push({name: name, data: heroPlayers[name]});
+   352→  });
+   353→  overlaps.sort(function(a,b) {
+   354→    var ta = a.data.reduce(function(s,d){return s+(d&&d.g?d.g:0);},0);
+   355→    var tb = b.data.reduce(function(s,d){return s+(d&&d.g?d.g:0);},0);
+   356→    return tb - ta;
+   357→  });
+   358→
+   359→  var tbody = document.getElementById('overlap-tbody');
+   360→  var html = '';
+   361→  overlaps.forEach(function(o) {
+   362→    html += '<tr>';
+   363→    var anyImg = o.data.find(function(d){return d && d.img;});
+   364→    html += '<td><div class="hero-cell">' + (anyImg ? '<img src="'+anyImg.img+'">' : '') + o.name + '</div></td>';
+   365→    o.data.forEach(function(d) {
+   366→      if (d && d.g) {
+   367→        var wrC = d.wr >= 55 ? 'var(--green)' : d.wr < 45 ? 'var(--red)' : 'var(--text)';
+   368→        html += '<td><span style="color:'+wrC+';font-weight:700">' + d.wr + '%</span> <span style="color:var(--text-dim);font-size:10px">(' + d.g + 'g)</span></td>';
+   369→      } else {
+   370→        html += '<td style="color:var(--text-dim)">-</td>';
+   371→      }
+   372→    });
+   373→    html += '</tr>';
+   374→  });
+   375→  tbody.innerHTML = html;
+   376→}
+   377→
+   378→function buildRecentTable() {
+   379→  var tbody = document.getElementById('recent-tbody');
+   380→  var html = '';
+   381→  for (var i = 0; i < 10; i++) {
+   382→    html += '<tr>';
+   383→    P.forEach(function(p) {
+   384→      var m = p.recent[i];
+   385→      if (m) {
+   386→        var rc = m.result === 'Win' ? 'var(--green)' : 'var(--red)';
+   387→        html += '<td><div class="hero-cell"><img src="'+m.img+'">'+m.hero+'</div></td>';
+   388→        html += '<td>'+m.k+'/'+m.d+'/'+m.a+'</td>';
+   389→        html += '<td style="color:'+rc+';font-weight:700">'+m.result[0]+'</td>';
+   390→        html += '<td style="color:var(--gold)">'+m.gpm+'</td>';
+   391→      } else {
+   392→        html += '<td colspan="4">-</td>';
+   393→      }
+   394→    });
+   395→    html += '</tr>';
+   396→  }
+   397→  tbody.innerHTML = html;
+   398→}
+   399→
+   400→init();
+   401→</script>
+   402→</body>
+   403→</html>

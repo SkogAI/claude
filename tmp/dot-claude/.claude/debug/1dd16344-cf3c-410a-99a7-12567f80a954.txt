@@ -1,0 +1,1821 @@
+2026-02-27T11:36:47.418Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-27T11:36:47.418Z [DEBUG] MDM settings load completed in 1ms
+2026-02-27T11:36:47.428Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-27T11:36:47.428Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-27T11:36:47.428Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-27T11:36:47.428Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-27T11:36:47.432Z [DEBUG] Applying permission update: Adding 122 allow rule(s) to destination 'userSettings': ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-02-27T11:36:47.433Z [DEBUG] Applying permission update: Adding 1 directory with destination 'cliArg': ["/home/skogix/claude"]
+2026-02-27T11:36:47.433Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-27T11:36:47.435Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-27T11:36:47.436Z [DEBUG] [STARTUP] Running setup()...
+2026-02-27T11:36:47.438Z [DEBUG] Loading skills from: managed=/etc/claude-code/.claude/skills, user=/home/skogix/.claude/skills, project=[]
+2026-02-27T11:36:47.438Z [DEBUG] Error log sink initialized
+2026-02-27T11:36:47.445Z [DEBUG] [STARTUP] setup() completed in 9ms
+2026-02-27T11:36:47.445Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-27T11:36:47.448Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default
+2026-02-27T11:36:47.450Z [DEBUG] Loaded 5 installed plugins from /home/skogix/.claude/plugins/installed_plugins.json
+2026-02-27T11:36:47.454Z [DEBUG] [Claude in Chrome] Extension fcoeoabgfenejglbffodgkkbkcdhcgfn found in chrome Default
+2026-02-27T11:36:47.455Z [DEBUG] Git remote URL: git@github.com:SkogAI/Agent-Skills-for-Context-Engineering.git
+2026-02-27T11:36:47.455Z [DEBUG] Parsed repository: github.com/SkogAI/Agent-Skills-for-Context-Engineering from URL: git@github.com:SkogAI/Agent-Skills-for-Context-Engineering.git
+2026-02-27T11:36:47.463Z [DEBUG] Loading plugin agent-architecture from source: "./"
+2026-02-27T11:36:47.464Z [DEBUG] Loading plugin agent-evaluation from source: "./"
+2026-02-27T11:36:47.464Z [DEBUG] Loading plugin cognitive-architecture from source: "./"
+2026-02-27T11:36:47.464Z [DEBUG] Loading plugin context-engineering-fundamentals from source: "./"
+2026-02-27T11:36:47.464Z [DEBUG] Loading plugin agent-development from source: "./"
+2026-02-27T11:36:47.465Z [DEBUG] Loaded 3 unique skills (3 unconditional, 0 conditional, managed: 0, user: 1, project: 0, additional: 0, legacy commands: 2)
+2026-02-27T11:36:47.465Z [DEBUG] Using git SHA for agent-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T11:36:47.465Z [DEBUG] Using git SHA for cognitive-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T11:36:47.465Z [DEBUG] Using git SHA for agent-evaluation@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T11:36:47.465Z [DEBUG] Using git SHA for context-engineering-fundamentals@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T11:36:47.465Z [DEBUG] Using git SHA for agent-development@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Plugin cognitive-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Resolved local plugin cognitive-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Plugin agent-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Resolved local plugin agent-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Plugin context-engineering-fundamentals@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Resolved local plugin context-engineering-fundamentals to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Plugin agent-evaluation@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Resolved local plugin agent-evaluation to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Plugin agent-development@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-27T11:36:47.484Z [DEBUG] Resolved local plugin agent-development to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-27T11:36:47.485Z [DEBUG] Processing 1 skill paths for plugin cognitive-architecture
+2026-02-27T11:36:47.485Z [DEBUG] Processing 2 skill paths for plugin agent-evaluation
+2026-02-27T11:36:47.485Z [DEBUG] Processing 1 skill paths for plugin agent-development
+2026-02-27T11:36:47.485Z [DEBUG] Processing 5 skill paths for plugin agent-architecture
+2026-02-27T11:36:47.485Z [DEBUG] Processing 4 skill paths for plugin context-engineering-fundamentals
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/bdi-mental-states -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/project-development -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/multi-agent-patterns -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/context-fundamentals -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Found 1 valid skill paths for plugin cognitive-architecture, setting skillsPaths
+2026-02-27T11:36:47.485Z [DEBUG] Found 1 valid skill paths for plugin agent-development, setting skillsPaths
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/advanced-evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/memory-systems -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/context-degradation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Found 2 valid skill paths for plugin agent-evaluation, setting skillsPaths
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/tool-design -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/context-compression -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/filesystem-context -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/context-optimization -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Found 4 valid skill paths for plugin context-engineering-fundamentals, setting skillsPaths
+2026-02-27T11:36:47.485Z [DEBUG] Checking skill path: ./skills/hosted-agents -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents (exists: true)
+2026-02-27T11:36:47.485Z [DEBUG] Found 5 valid skill paths for plugin agent-architecture, setting skillsPaths
+2026-02-27T11:36:47.486Z [DEBUG] Found 5 plugins (5 enabled, 0 disabled)
+2026-02-27T11:36:47.486Z [DEBUG] getPluginSkills: Processing 5 enabled plugins
+2026-02-27T11:36:47.486Z [DEBUG] Checking plugin agent-architecture: skillsPath=exists, skillsPaths=5 paths
+2026-02-27T11:36:47.486Z [DEBUG] Attempting to load skills from plugin agent-architecture default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills
+2026-02-27T11:36:47.487Z [DEBUG] Total plugin commands loaded: 0
+2026-02-27T11:36:47.487Z [DEBUG] Registered 0 hooks from 5 plugins
+2026-02-27T11:36:47.487Z [DEBUG] Total plugin agents loaded: 0
+2026-02-27T11:36:47.487Z [DEBUG] Loaded 13 skills from plugin agent-architecture default directory
+2026-02-27T11:36:47.487Z [DEBUG] Attempting to load skills from plugin agent-architecture skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents
+2026-02-27T11:36:47.487Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns for plugin agent-architecture
+2026-02-27T11:36:47.489Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns
+2026-02-27T11:36:47.489Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems for plugin agent-architecture
+2026-02-27T11:36:47.489Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems
+2026-02-27T11:36:47.489Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design for plugin agent-architecture
+2026-02-27T11:36:47.489Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design
+2026-02-27T11:36:47.489Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context for plugin agent-architecture
+2026-02-27T11:36:47.489Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context
+2026-02-27T11:36:47.489Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents for plugin agent-architecture
+2026-02-27T11:36:47.489Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents
+2026-02-27T11:36:47.489Z [DEBUG] Checking plugin agent-development: skillsPath=exists, skillsPaths=1 paths
+2026-02-27T11:36:47.489Z [DEBUG] Attempting to load skills from plugin agent-development default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills
+2026-02-27T11:36:47.490Z [DEBUG] Loaded 13 skills from plugin agent-development default directory
+2026-02-27T11:36:47.490Z [DEBUG] Attempting to load skills from plugin agent-development skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development
+2026-02-27T11:36:47.490Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development for plugin agent-development
+2026-02-27T11:36:47.490Z [DEBUG] Loaded 0 skills from plugin agent-development custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development
+2026-02-27T11:36:47.490Z [DEBUG] Checking plugin agent-evaluation: skillsPath=exists, skillsPaths=2 paths
+2026-02-27T11:36:47.490Z [DEBUG] Attempting to load skills from plugin agent-evaluation default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills
+2026-02-27T11:36:47.492Z [DEBUG] Loaded 13 skills from plugin agent-evaluation default directory
+2026-02-27T11:36:47.492Z [DEBUG] Attempting to load skills from plugin agent-evaluation skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation
+2026-02-27T11:36:47.492Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation for plugin agent-evaluation
+2026-02-27T11:36:47.492Z [DEBUG] Loaded 0 skills from plugin agent-evaluation custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation
+2026-02-27T11:36:47.492Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation for plugin agent-evaluation
+2026-02-27T11:36:47.492Z [DEBUG] Loaded 0 skills from plugin agent-evaluation custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation
+2026-02-27T11:36:47.492Z [DEBUG] Checking plugin cognitive-architecture: skillsPath=exists, skillsPaths=1 paths
+2026-02-27T11:36:47.492Z [DEBUG] Attempting to load skills from plugin cognitive-architecture default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills
+2026-02-27T11:36:47.492Z [DEBUG] Loaded 13 skills from plugin cognitive-architecture default directory
+2026-02-27T11:36:47.493Z [DEBUG] Attempting to load skills from plugin cognitive-architecture skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states
+2026-02-27T11:36:47.493Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states for plugin cognitive-architecture
+2026-02-27T11:36:47.493Z [DEBUG] Loaded 0 skills from plugin cognitive-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states
+2026-02-27T11:36:47.493Z [DEBUG] Checking plugin context-engineering-fundamentals: skillsPath=exists, skillsPaths=4 paths
+2026-02-27T11:36:47.493Z [DEBUG] Attempting to load skills from plugin context-engineering-fundamentals default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills
+2026-02-27T11:36:47.494Z [DEBUG] Loaded 13 skills from plugin context-engineering-fundamentals default directory
+2026-02-27T11:36:47.494Z [DEBUG] Attempting to load skills from plugin context-engineering-fundamentals skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization
+2026-02-27T11:36:47.494Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals for plugin context-engineering-fundamentals
+2026-02-27T11:36:47.494Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals
+2026-02-27T11:36:47.494Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation for plugin context-engineering-fundamentals
+2026-02-27T11:36:47.494Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation
+2026-02-27T11:36:47.494Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression for plugin context-engineering-fundamentals
+2026-02-27T11:36:47.494Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression
+2026-02-27T11:36:47.494Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization for plugin context-engineering-fundamentals
+2026-02-27T11:36:47.494Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization
+2026-02-27T11:36:47.494Z [DEBUG] Total plugin skills loaded: 65
+2026-02-27T11:36:47.494Z [DEBUG] getSkills returning: 3 skill dir commands, 65 plugin skills, 3 bundled skills
+2026-02-27T11:36:47.495Z [DEBUG] [STARTUP] Commands and agents loaded in 50ms
+2026-02-27T11:36:47.498Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-02-27T11:36:47.513Z [DEBUG] Grove: Using fresh cached config
+2026-02-27T11:36:47.525Z [DEBUG] Path /home/skogix/dev/Agent-Skills-for-Context-Engineering already tracked for repo skogai/agent-skills-for-context-engineering
+2026-02-27T11:36:47.525Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-02-27T11:36:47.526Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-02-27T11:36:47.528Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-27T11:36:47.533Z [DEBUG] [keybindings] Watching for changes to /home/skogix/.claude/keybindings.json
+2026-02-27T11:36:47.909Z [DEBUG] [STARTUP] showSetupScreens() completed in 411ms
+2026-02-27T11:36:47.909Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-27T11:36:47.909Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-27T11:36:47.909Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-27T11:36:47.910Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:36:47.910Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:36:47.911Z [DEBUG] Passes: Using fresh cached eligibility data
+2026-02-27T11:36:47.915Z [DEBUG] [STARTUP] MCP configs loaded in 482ms
+2026-02-27T11:36:47.915Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:36:47.921Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-02-27T11:36:47.921Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T11:36:47.921Z [DEBUG] Matched 1 unique hooks for query "startup" (1 before deduplication)
+2026-02-27T11:36:47.939Z [DEBUG] Total LSP servers loaded: 0
+2026-02-27T11:36:47.939Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-27T11:36:47.940Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-27T11:36:47.940Z [DEBUG] LSP server manager initialized successfully
+2026-02-27T11:36:47.940Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-27T11:36:47.987Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T11:36:48.000Z [DEBUG] All plugins already exist, skipping migration
+2026-02-27T11:36:48.001Z [DEBUG] Initialized versioned plugins system with 5 plugins
+2026-02-27T11:36:48.005Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-02-27T11:36:48.008Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1221788.1772192208008
+2026-02-27T11:36:48.008Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T11:36:48.017Z [DEBUG] Temp file written successfully, size: 28514 bytes
+2026-02-27T11:36:48.017Z [DEBUG] Applied original permissions to temp file
+2026-02-27T11:36:48.017Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1221788.1772192208008 to /home/skogix/.claude.json
+2026-02-27T11:36:48.017Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T11:36:48.122Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-27T11:36:48.157Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-02-27T11:36:48.158Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-02-27T11:36:48.159Z [DEBUG] performStartupChecks called
+2026-02-27T11:36:48.159Z [DEBUG] Starting background plugin installations
+2026-02-27T11:36:48.159Z [DEBUG] performBackgroundPluginInstallations called
+2026-02-27T11:36:48.161Z [DEBUG] FileHistory: Added snapshot for 6a130f67-e976-4c35-a6cb-1ae5c47982cc, tracking 0 files
+2026-02-27T11:36:48.162Z [DEBUG] Loaded 2 CLAUDE.md/rules files:
+  [Project] /home/skogix/dev/Agent-Skills-for-Context-Engineering/CLAUDE.md (8086 chars)
+  [AutoMem] /home/skogix/.claude/projects/-home-skogix-dev-Agent-Skills-for-Context-Engineering/memory/MEMORY.md (1862 chars)
+2026-02-27T11:36:48.190Z [DEBUG] Plugin autoupdate: skipped (auto-updater disabled)
+2026-02-27T11:36:48.191Z [DEBUG] Watching for changes in setting files /home/skogix/.claude/settings.json, /home/skogix/dev/Agent-Skills-for-Context-Engineering/.claude/settings.json, /home/skogix/dev/Agent-Skills-for-Context-Engineering/.claude/settings.local.json...
+2026-02-27T11:36:48.203Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T11:36:48.203Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T11:36:48.203Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T11:36:48.203Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T11:36:48.204Z [DEBUG] Sending 70 skills via attachment (initial, 70 total sent)
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:context-compression" (userFacingName="context-compression")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:context-degradation" (userFacingName="context-degradation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:context-optimization" (userFacingName="context-optimization")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:evaluation" (userFacingName="evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:memory-systems" (userFacingName="memory-systems")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:project-development" (userFacingName="project-development")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-architecture:tool-design" (userFacingName="tool-design")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:context-compression" (userFacingName="context-compression")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:context-degradation" (userFacingName="context-degradation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:context-optimization" (userFacingName="context-optimization")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:evaluation" (userFacingName="evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:memory-systems" (userFacingName="memory-systems")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:project-development" (userFacingName="project-development")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-development:tool-design" (userFacingName="tool-design")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:context-compression" (userFacingName="context-compression")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:context-degradation" (userFacingName="context-degradation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:context-optimization" (userFacingName="context-optimization")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:evaluation" (userFacingName="evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:memory-systems" (userFacingName="memory-systems")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:project-development" (userFacingName="project-development")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "agent-evaluation:tool-design" (userFacingName="tool-design")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-compression" (userFacingName="context-compression")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-degradation" (userFacingName="context-degradation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-optimization" (userFacingName="context-optimization")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:evaluation" (userFacingName="evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:memory-systems" (userFacingName="memory-systems")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:project-development" (userFacingName="project-development")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "cognitive-architecture:tool-design" (userFacingName="tool-design")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-compression" (userFacingName="context-compression")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-degradation" (userFacingName="context-degradation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-optimization" (userFacingName="context-optimization")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:evaluation" (userFacingName="evaluation")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:memory-systems" (userFacingName="memory-systems")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:project-development" (userFacingName="project-development")
+2026-02-27T11:36:48.204Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:tool-design" (userFacingName="tool-design")
+2026-02-27T11:36:48.205Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-27T11:36:48.205Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-02-27T11:36:48.205Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-02-27T11:36:48.208Z [DEBUG] Found 5 enabled plugins
+2026-02-27T11:36:48.208Z [DEBUG] All plugins already exist, skipping migration
+2026-02-27T11:36:48.208Z [DEBUG] Found 5 installed plugins
+2026-02-27T11:36:48.208Z [DEBUG] Found 0 missing plugins (not installed):
+2026-02-27T11:36:48.208Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-02-27T11:36:48.210Z [DEBUG] Security messages are fresh (<1h old), skipping fetch
+2026-02-27T11:36:48.212Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-02-27T11:36:48.215Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-27T11:36:48.215Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:36:48.215Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-27T11:36:48.216Z [DEBUG] FileHistory: Making snapshot for message ccb4a3fd-7b53-40b0-935f-f9ad403d641e
+2026-02-27T11:36:48.216Z [DEBUG] FileHistory: Added snapshot for ccb4a3fd-7b53-40b0-935f-f9ad403d641e, tracking 0 files
+2026-02-27T11:36:48.227Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T11:36:48.269Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/opt/claude-code/bin/claude)
+2026-02-27T11:36:48.296Z [DEBUG] Watching for changes in skill/command directories: /home/skogix/.claude/skills, /home/skogix/.claude/commands...
+2026-02-27T11:36:48.298Z [DEBUG] Total plugin output styles loaded: 0
+2026-02-27T11:36:48.304Z [DEBUG] Detected pacman installation: /opt/claude-code/bin/claude is owned by claude-code 2.1.62-1
+2026-02-27T11:36:48.304Z [DEBUG] AutoUpdaterWrapper: Installation type: package-manager
+2026-02-27T11:36:48.307Z [DEBUG] autocompact: tokens=4011 threshold=167000 effectiveWindow=180000
+2026-02-27T11:36:48.308Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-27T11:36:48.314Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.023; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:36:48.314Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:36:48.314Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:36:48.315Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:36:48.326Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T11:36:48.334Z [DEBUG] Org fast mode: enabled
+2026-02-27T11:36:48.349Z [DEBUG] Loaded plugins - Enabled: 5, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-02-27T11:36:48.355Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T11:36:48.430Z [DEBUG] [claudeai-mcp] Fetched 16 servers
+2026-02-27T11:36:49.859Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:36:50.695Z [DEBUG] [useDeferredValue] Messages deferred by 1 (4→5)
+2026-02-27T11:36:51.143Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:36:51.145Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:36:51.145Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:36:51.145Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:36:51.155Z [DEBUG] [useDeferredValue] Messages deferred by 1 (5→6)
+2026-02-27T11:36:51.193Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:36:51.193Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:36:51.193Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:36:51.196Z [DEBUG] [useDeferredValue] Messages deferred by 1 (5→6)
+2026-02-27T11:36:51.767Z [DEBUG] [useDeferredValue] Messages deferred by 3 (6→9)
+2026-02-27T11:36:51.838Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:36:51.840Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:36:51.840Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:36:51.840Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:36:51.855Z [DEBUG] [useDeferredValue] Messages deferred by 4 (6→10)
+2026-02-27T11:36:51.905Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:36:51.905Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:36:51.905Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:36:51.906Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T11:36:51.906Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T11:36:51.906Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T11:36:51.906Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T11:36:51.908Z [DEBUG] autocompact: tokens=28817 threshold=167000 effectiveWindow=180000
+2026-02-27T11:36:51.909Z [DEBUG] Auto tool search disabled: 0 tokens (threshold: 20000, 10% of context) [source: query]
+2026-02-27T11:36:51.912Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.023; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:36:51.913Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:36:51.913Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:36:51.913Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:36:51.916Z [DEBUG] [useDeferredValue] Messages deferred by 7 (6→13)
+2026-02-27T11:36:54.398Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:36:56.773Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-02-27T11:36:56.785Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-02-27T11:36:57.755Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-27T11:36:57.785Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-27T11:36:57.812Z [DEBUG] [useDeferredValue] Messages deferred by 1 (14→15)
+2026-02-27T11:37:01.062Z [DEBUG] executePreToolHooks called for tool: Task
+2026-02-27T11:37:01.064Z [DEBUG] Getting matching hook commands for PreToolUse with query: Task
+2026-02-27T11:37:01.064Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:01.064Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:01.069Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2026-02-27T11:37:01.069Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:01.069Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2026-02-27T11:37:01.070Z [DEBUG] autocompact: tokens=90 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:01.071Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:01.073Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:01.074Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:01.074Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:01.074Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:01.078Z [DEBUG] [useDeferredValue] Messages deferred by 2 (15→17)
+2026-02-27T11:37:01.888Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:02.571Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:02.572Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:02.572Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:02.572Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:02.616Z [DEBUG] tree-sitter: loaded from embedded
+2026-02-27T11:37:02.650Z [DEBUG] Creating shell snapshot for zsh (/usr/bin/zsh)
+2026-02-27T11:37:02.650Z [DEBUG] Looking for shell config file: /home/skogix/.zshrc
+2026-02-27T11:37:02.650Z [DEBUG] Snapshots directory: /home/skogix/.claude/shell-snapshots
+2026-02-27T11:37:02.659Z [DEBUG] Creating snapshot at: /home/skogix/.claude/shell-snapshots/snapshot-zsh-1772192222650-uau5rw.sh
+2026-02-27T11:37:02.659Z [DEBUG] Execution timeout: 10000ms
+2026-02-27T11:37:02.935Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-02-27T11:37:02.942Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-02-27T11:37:03.076Z [DEBUG] executePreToolHooks called for tool: Task
+2026-02-27T11:37:03.077Z [DEBUG] Getting matching hook commands for PreToolUse with query: Task
+2026-02-27T11:37:03.077Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:03.077Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:03.079Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2026-02-27T11:37:03.079Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:03.079Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2026-02-27T11:37:03.080Z [DEBUG] autocompact: tokens=81 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:03.081Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:03.083Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:03.084Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:03.084Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:03.084Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:03.087Z [DEBUG] [useDeferredValue] Messages deferred by 2 (18→20)
+2026-02-27T11:37:03.260Z [DEBUG] Shell snapshot created successfully (204700 bytes)
+2026-02-27T11:37:03.261Z [DEBUG] No session environment scripts found
+2026-02-27T11:37:03.261Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:03.284Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:03.285Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.39c; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:03.285Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:03.285Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:03.285Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:03.287Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:03.287Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:03.287Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:03.289Z [DEBUG] autocompact: tokens=15696 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:03.289Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:03.291Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:03.291Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:03.291Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:03.291Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:03.511Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-02-27T11:37:03.535Z [DEBUG] [useDeferredValue] Messages deferred by 1 (20→21)
+2026-02-27T11:37:03.756Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:03.995Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:04.346Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:04.459Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:04.460Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:04.460Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:04.460Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:04.462Z [DEBUG] Read tool error (1ms): EISDIR: illegal operation on a directory, read '/home/skogix/dev/Agent-Skills-for-Context-Engineering/examples/digital-brain-skill'
+2026-02-27T11:37:04.462Z [ERROR] Error: Error: EISDIR: illegal operation on a directory, read '/home/skogix/dev/Agent-Skills-for-Context-Engineering/examples/digital-brain-skill'
+    at WsI (/$bunfs/root/claude:1650:420)
+    at processTicksAndRejections (native:7:39)
+2026-02-27T11:37:04.463Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Read
+2026-02-27T11:37:04.463Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:04.463Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:04.475Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-02-27T11:37:04.479Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-02-27T11:37:04.482Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-02-27T11:37:04.492Z [DEBUG] executePreToolHooks called for tool: Task
+2026-02-27T11:37:04.492Z [DEBUG] Getting matching hook commands for PreToolUse with query: Task
+2026-02-27T11:37:04.492Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:04.492Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:04.494Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2026-02-27T11:37:04.494Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:04.494Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2026-02-27T11:37:04.494Z [DEBUG] autocompact: tokens=67 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:04.494Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:04.496Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:04.496Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:04.496Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:04.496Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:04.498Z [DEBUG] [useDeferredValue] Messages deferred by 3 (21→24)
+2026-02-27T11:37:04.658Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:04.658Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:04.658Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:04.658Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:04.671Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:04.710Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:04.710Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.39c; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:04.710Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:04.710Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:04.710Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:04.712Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:04.712Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:04.712Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:04.714Z [DEBUG] autocompact: tokens=15362 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:04.714Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:04.716Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:04.716Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:04.716Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:04.716Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:04.865Z [DEBUG] [useDeferredValue] Messages deferred by 5 (24→29)
+2026-02-27T11:37:04.876Z [DEBUG] [useDeferredValue] Messages deferred by 5 (24→29)
+2026-02-27T11:37:05.343Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:05.428Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:05.694Z [DEBUG] autocompact: tokens=16651 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:05.694Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:05.696Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:05.696Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:05.696Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:05.696Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:05.925Z [DEBUG] [useDeferredValue] Messages deferred by 6 (29→35)
+2026-02-27T11:37:06.059Z [DEBUG] executePreToolHooks called for tool: Task
+2026-02-27T11:37:06.060Z [DEBUG] Getting matching hook commands for PreToolUse with query: Task
+2026-02-27T11:37:06.060Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:06.060Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:06.061Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2026-02-27T11:37:06.061Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:06.061Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2026-02-27T11:37:06.062Z [DEBUG] autocompact: tokens=69 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:06.062Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:06.064Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:06.064Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:06.064Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:06.064Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:06.067Z [DEBUG] [useDeferredValue] Messages deferred by 2 (35→37)
+2026-02-27T11:37:06.173Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:06.174Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:06.174Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:06.174Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:06.201Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:06.245Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:06.245Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.39c; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:06.245Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:06.245Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:06.245Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:06.247Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:06.247Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:06.247Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:06.538Z [DEBUG] [useDeferredValue] Messages deferred by 2 (37→39)
+2026-02-27T11:37:06.550Z [DEBUG] [useDeferredValue] Messages deferred by 2 (37→39)
+2026-02-27T11:37:06.558Z [DEBUG] [useDeferredValue] Messages deferred by 2 (37→39)
+2026-02-27T11:37:06.568Z [DEBUG] [useDeferredValue] Messages deferred by 2 (37→39)
+2026-02-27T11:37:06.690Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:06.696Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:06.697Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:06.697Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:06.697Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:06.701Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:06.739Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:06.740Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.aed; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:06.740Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:06.740Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:06.740Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:06.742Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:06.742Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:06.742Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:06.766Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:06.862Z [DEBUG] autocompact: tokens=14659 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:06.862Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:06.863Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:06.864Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:06.864Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:06.864Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:07.207Z [DEBUG] [useDeferredValue] Messages deferred by 2 (39→41)
+2026-02-27T11:37:07.268Z [DEBUG] [useDeferredValue] Messages deferred by 2 (39→41)
+2026-02-27T11:37:07.369Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:07.380Z [DEBUG] executePreToolHooks called for tool: Task
+2026-02-27T11:37:07.381Z [DEBUG] Getting matching hook commands for PreToolUse with query: Task
+2026-02-27T11:37:07.381Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:07.381Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:07.383Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2026-02-27T11:37:07.383Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:07.383Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2026-02-27T11:37:07.383Z [DEBUG] autocompact: tokens=59 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:07.383Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:07.385Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:07.385Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:07.385Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:07.385Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:07.387Z [DEBUG] [useDeferredValue] Messages deferred by 1 (41→42)
+2026-02-27T11:37:07.401Z [DEBUG] [useDeferredValue] Messages deferred by 1 (42→43)
+2026-02-27T11:37:07.406Z [DEBUG] [useDeferredValue] Messages deferred by 1 (42→43)
+2026-02-27T11:37:07.423Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:07.423Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:07.423Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:07.423Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:07.432Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:07.432Z [DEBUG] [useDeferredValue] Messages deferred by 1 (43→44)
+2026-02-27T11:37:07.464Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:07.464Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.39c; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:07.465Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:07.465Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:07.465Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:07.466Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:07.466Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:07.466Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:07.586Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-02-27T11:37:07.634Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:07.644Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:07.837Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-02-27T11:37:07.837Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-02-27T11:37:07.837Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:07.837Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-02-27T11:37:07.840Z [DEBUG] [useDeferredValue] Messages deferred by 1 (45→46)
+2026-02-27T11:37:07.979Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:07.986Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-02-27T11:37:07.986Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:07.986Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-02-27T11:37:07.987Z [DEBUG] autocompact: tokens=18206 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:07.987Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:07.988Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:07.988Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:07.988Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:07.988Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:07.990Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:07.991Z [DEBUG] [useDeferredValue] Messages deferred by 1 (46→47)
+2026-02-27T11:37:08.107Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:08.124Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.126Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.126Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.126Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.137Z [DEBUG] [useDeferredValue] Messages deferred by 1 (47→48)
+2026-02-27T11:37:08.181Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.181Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.181Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.185Z [DEBUG] [useDeferredValue] Messages deferred by 1 (47→48)
+2026-02-27T11:37:08.218Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.219Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.219Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.219Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.222Z [DEBUG] [useDeferredValue] Messages deferred by 1 (48→49)
+2026-02-27T11:37:08.227Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.227Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.227Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.228Z [DEBUG] [useDeferredValue] Messages deferred by 1 (48→49)
+2026-02-27T11:37:08.337Z [DEBUG] [useDeferredValue] Messages deferred by 1 (49→50)
+2026-02-27T11:37:08.343Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.343Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.343Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.343Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.345Z [DEBUG] [useDeferredValue] Messages deferred by 2 (49→51)
+2026-02-27T11:37:08.349Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.349Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.349Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.350Z [DEBUG] [useDeferredValue] Messages deferred by 2 (49→51)
+2026-02-27T11:37:08.438Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.439Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.439Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.439Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.440Z [DEBUG] [useDeferredValue] Messages deferred by 1 (51→52)
+2026-02-27T11:37:08.445Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.445Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.445Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.447Z [DEBUG] [useDeferredValue] Messages deferred by 2 (51→53)
+2026-02-27T11:37:08.456Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.456Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.456Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.456Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.458Z [DEBUG] [useDeferredValue] Messages deferred by 3 (51→54)
+2026-02-27T11:37:08.463Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.463Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.463Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.464Z [DEBUG] [useDeferredValue] Messages deferred by 3 (51→54)
+2026-02-27T11:37:08.473Z [DEBUG] [useDeferredValue] Messages deferred by 4 (51→55)
+2026-02-27T11:37:08.570Z [DEBUG] [useDeferredValue] Messages deferred by 1 (55→56)
+2026-02-27T11:37:08.584Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.584Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.584Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.585Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.588Z [DEBUG] [useDeferredValue] Messages deferred by 2 (55→57)
+2026-02-27T11:37:08.594Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.594Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.594Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.596Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:08.597Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:08.597Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.597Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:08.604Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:08.604Z [DEBUG] [useDeferredValue] Messages deferred by 3 (55→58)
+2026-02-27T11:37:08.634Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:08.634Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.39c; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:08.635Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:08.635Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:08.635Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:08.636Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:08.636Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.636Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:08.636Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:08.662Z [DEBUG] [useDeferredValue] Messages deferred by 1 (58→59)
+2026-02-27T11:37:08.675Z [DEBUG] autocompact: tokens=14120 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:08.675Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:08.677Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:08.677Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:08.677Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:08.677Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:08.681Z [DEBUG] [useDeferredValue] Messages deferred by 2 (58→60)
+2026-02-27T11:37:08.698Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.699Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.699Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.699Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.703Z [DEBUG] [useDeferredValue] Messages deferred by 3 (58→61)
+2026-02-27T11:37:08.729Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.729Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.729Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.731Z [DEBUG] [useDeferredValue] Messages deferred by 3 (58→61)
+2026-02-27T11:37:08.800Z [DEBUG] [useDeferredValue] Messages deferred by 1 (61→62)
+2026-02-27T11:37:08.810Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.810Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.810Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.810Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.812Z [DEBUG] [useDeferredValue] Messages deferred by 2 (61→63)
+2026-02-27T11:37:08.816Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.816Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.816Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.817Z [DEBUG] [useDeferredValue] Messages deferred by 2 (61→63)
+2026-02-27T11:37:08.948Z [DEBUG] [useDeferredValue] Messages deferred by 1 (63→64)
+2026-02-27T11:37:08.969Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:08.970Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:08.970Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:08.970Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:08.972Z [DEBUG] [useDeferredValue] Messages deferred by 2 (63→65)
+2026-02-27T11:37:08.992Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:08.992Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:08.992Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:08.994Z [DEBUG] [useDeferredValue] Messages deferred by 2 (63→65)
+2026-02-27T11:37:09.062Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.062Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.062Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.062Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.064Z [DEBUG] [useDeferredValue] Messages deferred by 1 (65→66)
+2026-02-27T11:37:09.073Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:09.073Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:09.073Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:09.074Z [DEBUG] [useDeferredValue] Messages deferred by 1 (65→66)
+2026-02-27T11:37:09.100Z [DEBUG] [useDeferredValue] Messages deferred by 2 (66→68)
+2026-02-27T11:37:09.113Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.113Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.113Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.113Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.115Z [DEBUG] [useDeferredValue] Messages deferred by 3 (66→69)
+2026-02-27T11:37:09.120Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:09.120Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:09.120Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:09.121Z [DEBUG] [useDeferredValue] Messages deferred by 3 (66→69)
+2026-02-27T11:37:09.152Z [DEBUG] [useDeferredValue] Messages deferred by 1 (69→70)
+2026-02-27T11:37:09.164Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.164Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.164Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.164Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.166Z [DEBUG] [useDeferredValue] Messages deferred by 1 (70→71)
+2026-02-27T11:37:09.170Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:09.170Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:09.170Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:09.171Z [DEBUG] [useDeferredValue] Messages deferred by 1 (70→71)
+2026-02-27T11:37:09.210Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.210Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.210Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.210Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.212Z [DEBUG] [useDeferredValue] Messages deferred by 1 (71→72)
+2026-02-27T11:37:09.221Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:09.221Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:09.221Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:09.223Z [DEBUG] [useDeferredValue] Messages deferred by 2 (71→73)
+2026-02-27T11:37:09.264Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:09.319Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:09.326Z [DEBUG] [useDeferredValue] Messages deferred by 1 (73→74)
+2026-02-27T11:37:09.341Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.341Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.341Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.341Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.343Z [DEBUG] [useDeferredValue] Messages deferred by 1 (74→75)
+2026-02-27T11:37:09.355Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:09.355Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:09.355Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:09.359Z [DEBUG] autocompact: tokens=24315 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:09.359Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:09.360Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:09.360Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:09.360Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:09.360Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:09.362Z [DEBUG] [useDeferredValue] Messages deferred by 2 (74→76)
+2026-02-27T11:37:09.450Z [DEBUG] [useDeferredValue] Messages deferred by 1 (76→77)
+2026-02-27T11:37:09.487Z [DEBUG] [useDeferredValue] Messages deferred by 1 (76→77)
+2026-02-27T11:37:09.585Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.585Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.585Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.585Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.587Z [DEBUG] [useDeferredValue] Messages deferred by 1 (77→78)
+2026-02-27T11:37:09.594Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:09.594Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:09.594Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:09.755Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.755Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.755Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.755Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.757Z [DEBUG] [useDeferredValue] Messages deferred by 1 (78→79)
+2026-02-27T11:37:09.763Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:09.763Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:09.763Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:09.763Z [DEBUG] [useDeferredValue] Messages deferred by 1 (78→79)
+2026-02-27T11:37:09.842Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.843Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.843Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.843Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.844Z [DEBUG] [useDeferredValue] Messages deferred by 1 (79→80)
+2026-02-27T11:37:09.856Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:09.856Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:09.856Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:09.857Z [DEBUG] [useDeferredValue] Messages deferred by 1 (79→80)
+2026-02-27T11:37:09.865Z [DEBUG] [useDeferredValue] Messages deferred by 1 (80→81)
+2026-02-27T11:37:09.892Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.892Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.892Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.892Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.893Z [DEBUG] [useDeferredValue] Messages deferred by 1 (81→82)
+2026-02-27T11:37:09.899Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:09.899Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:09.899Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:09.900Z [DEBUG] [useDeferredValue] Messages deferred by 1 (81→82)
+2026-02-27T11:37:09.917Z [DEBUG] [useDeferredValue] Messages deferred by 1 (82→83)
+2026-02-27T11:37:09.928Z [DEBUG] Read tool error (342ms): File content (41333 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+2026-02-27T11:37:09.928Z [ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (41333 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at seI (/$bunfs/root/claude:1787:7740)
+    at processTicksAndRejections (native:7:39)
+2026-02-27T11:37:09.929Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Read
+2026-02-27T11:37:09.929Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.929Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:09.932Z [DEBUG] autocompact: tokens=27549 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:09.932Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:09.934Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:09.934Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:09.934Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:09.934Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:09.936Z [DEBUG] [useDeferredValue] Messages deferred by 2 (82→84)
+2026-02-27T11:37:09.984Z [DEBUG] [useDeferredValue] Messages deferred by 1 (84→85)
+2026-02-27T11:37:09.998Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:09.998Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:09.998Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:09.998Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:10.000Z [DEBUG] [useDeferredValue] Messages deferred by 1 (85→86)
+2026-02-27T11:37:10.006Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:10.006Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:10.006Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:10.007Z [DEBUG] [useDeferredValue] Messages deferred by 1 (85→86)
+2026-02-27T11:37:10.214Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:10.216Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:10.216Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:10.216Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:10.230Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:10.230Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:10.230Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:10.238Z [DEBUG] [useDeferredValue] Messages deferred by 3 (86→89)
+2026-02-27T11:37:10.266Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:10.289Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:10.291Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:10.291Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:10.291Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:10.298Z [DEBUG] [useDeferredValue] Messages deferred by 4 (86→90)
+2026-02-27T11:37:10.333Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:10.334Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:10.334Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:10.334Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:10.354Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:10.354Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:10.354Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:10.361Z [DEBUG] autocompact: tokens=28259 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:10.361Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:10.363Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:10.364Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:10.364Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:10.364Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:10.369Z [DEBUG] [useDeferredValue] Messages deferred by 6 (86→92)
+2026-02-27T11:37:10.384Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:10.384Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:10.384Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:10.397Z [DEBUG] autocompact: tokens=26334 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:10.397Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:10.399Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:10.399Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:10.399Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:10.399Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:10.402Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:10.403Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:10.403Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:10.403Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:10.405Z [DEBUG] [useDeferredValue] Messages deferred by 8 (86→94)
+2026-02-27T11:37:10.431Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:10.431Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:10.431Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:10.433Z [DEBUG] [useDeferredValue] Messages deferred by 8 (86→94)
+2026-02-27T11:37:10.625Z [DEBUG] [useDeferredValue] Messages deferred by 1 (94→95)
+2026-02-27T11:37:10.729Z [DEBUG] autocompact: tokens=25872 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:10.729Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:10.734Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:10.735Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:10.735Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:10.735Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:11.037Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:11.039Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:11.039Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:11.039Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:11.045Z [DEBUG] [useDeferredValue] Messages deferred by 1 (95→96)
+2026-02-27T11:37:11.073Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:11.073Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:11.073Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:11.076Z [DEBUG] [useDeferredValue] Messages deferred by 1 (95→96)
+2026-02-27T11:37:11.315Z [DEBUG] [useDeferredValue] Messages deferred by 1 (96→97)
+2026-02-27T11:37:11.327Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:11.328Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:11.328Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:11.328Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:11.328Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:11.330Z [DEBUG] [useDeferredValue] Messages deferred by 2 (96→98)
+2026-02-27T11:37:11.334Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:11.334Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:11.334Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:11.338Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:11.338Z [DEBUG] [useDeferredValue] Messages deferred by 2 (96→98)
+2026-02-27T11:37:11.580Z [DEBUG] [useDeferredValue] Messages deferred by 1 (98→99)
+2026-02-27T11:37:11.595Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:11.595Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:11.595Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:11.595Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:11.597Z [DEBUG] [useDeferredValue] Messages deferred by 2 (98→100)
+2026-02-27T11:37:11.602Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:11.602Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:11.602Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:11.602Z [DEBUG] [useDeferredValue] Messages deferred by 2 (98→100)
+2026-02-27T11:37:11.651Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:11.797Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:11.844Z [DEBUG] [useDeferredValue] Messages deferred by 1 (100→101)
+2026-02-27T11:37:11.865Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:11.866Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:11.866Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:11.866Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:11.871Z [DEBUG] [useDeferredValue] Messages deferred by 2 (100→102)
+2026-02-27T11:37:11.895Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:11.895Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:11.895Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:11.898Z [DEBUG] [useDeferredValue] Messages deferred by 2 (100→102)
+2026-02-27T11:37:12.022Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.022Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.022Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.022Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.024Z [DEBUG] [useDeferredValue] Messages deferred by 1 (102→103)
+2026-02-27T11:37:12.036Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.036Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.036Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.037Z [DEBUG] [useDeferredValue] Messages deferred by 1 (102→103)
+2026-02-27T11:37:12.094Z [DEBUG] [useDeferredValue] Messages deferred by 1 (103→104)
+2026-02-27T11:37:12.114Z [DEBUG] [useDeferredValue] Messages deferred by 1 (104→105)
+2026-02-27T11:37:12.241Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.242Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.242Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.242Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.245Z [DEBUG] [useDeferredValue] Messages deferred by 1 (105→106)
+2026-02-27T11:37:12.259Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.259Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.259Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.260Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.260Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.260Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.261Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.262Z [DEBUG] [useDeferredValue] Messages deferred by 2 (105→107)
+2026-02-27T11:37:12.266Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.266Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.266Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.267Z [DEBUG] [useDeferredValue] Messages deferred by 2 (105→107)
+2026-02-27T11:37:12.320Z [DEBUG] [useDeferredValue] Messages deferred by 1 (107→108)
+2026-02-27T11:37:12.344Z [DEBUG] autocompact: tokens=29053 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:12.344Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:12.345Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:12.346Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:12.346Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:12.346Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:12.437Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.437Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.437Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.437Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.439Z [DEBUG] [useDeferredValue] Messages deferred by 1 (108→109)
+2026-02-27T11:37:12.449Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.449Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.449Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.450Z [DEBUG] [useDeferredValue] Messages deferred by 1 (108→109)
+2026-02-27T11:37:12.453Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.454Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.454Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.454Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.455Z [DEBUG] [useDeferredValue] Messages deferred by 2 (108→110)
+2026-02-27T11:37:12.460Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.460Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.460Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.461Z [DEBUG] [useDeferredValue] Messages deferred by 2 (108→110)
+2026-02-27T11:37:12.472Z [DEBUG] [useDeferredValue] Messages deferred by 1 (110→111)
+2026-02-27T11:37:12.532Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.532Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.532Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.532Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.534Z [DEBUG] [useDeferredValue] Messages deferred by 1 (111→112)
+2026-02-27T11:37:12.544Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.544Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.544Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.545Z [DEBUG] [useDeferredValue] Messages deferred by 1 (111→112)
+2026-02-27T11:37:12.592Z [DEBUG] autocompact: tokens=41832 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:12.593Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:12.596Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:12.597Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:12.597Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:12.597Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:12.602Z [DEBUG] [useDeferredValue] Messages deferred by 2 (111→113)
+2026-02-27T11:37:12.663Z [DEBUG] [useDeferredValue] Messages deferred by 1 (113→114)
+2026-02-27T11:37:12.675Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.676Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.676Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.676Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.678Z [DEBUG] [useDeferredValue] Messages deferred by 1 (114→115)
+2026-02-27T11:37:12.691Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.691Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.691Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.692Z [DEBUG] [useDeferredValue] Messages deferred by 1 (114→115)
+2026-02-27T11:37:12.795Z [DEBUG] [useDeferredValue] Messages deferred by 1 (115→116)
+2026-02-27T11:37:12.825Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.826Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.826Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.826Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.829Z [DEBUG] [useDeferredValue] Messages deferred by 2 (115→117)
+2026-02-27T11:37:12.843Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.843Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.843Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.844Z [DEBUG] [useDeferredValue] Messages deferred by 2 (115→117)
+2026-02-27T11:37:12.930Z [DEBUG] [useDeferredValue] Messages deferred by 1 (117→118)
+2026-02-27T11:37:12.957Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:12.957Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:12.957Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.957Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:12.959Z [DEBUG] [useDeferredValue] Messages deferred by 2 (117→119)
+2026-02-27T11:37:12.971Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:12.971Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:12.971Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:12.972Z [DEBUG] [useDeferredValue] Messages deferred by 2 (117→119)
+2026-02-27T11:37:12.989Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:12.990Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:12.990Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:12.990Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:12.994Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:12.994Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:12.996Z [DEBUG] [useDeferredValue] Messages deferred by 1 (119→120)
+2026-02-27T11:37:13.021Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:13.021Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.aed; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:13.021Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:13.021Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:13.021Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:13.022Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:13.022Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:13.022Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:13.024Z [DEBUG] autocompact: tokens=27929 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:13.024Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:13.025Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:13.025Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:13.025Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:13.025Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:13.027Z [DEBUG] [useDeferredValue] Messages deferred by 1 (120→121)
+2026-02-27T11:37:13.130Z [DEBUG] [useDeferredValue] Messages deferred by 1 (121→122)
+2026-02-27T11:37:13.175Z [DEBUG] [useDeferredValue] Messages deferred by 1 (122→123)
+2026-02-27T11:37:13.219Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:13.220Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:13.220Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:13.220Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:13.221Z [DEBUG] [useDeferredValue] Messages deferred by 1 (123→124)
+2026-02-27T11:37:13.228Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:13.228Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:13.228Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:13.228Z [DEBUG] [useDeferredValue] Messages deferred by 1 (123→124)
+2026-02-27T11:37:13.233Z [DEBUG] [useDeferredValue] Messages deferred by 2 (123→125)
+2026-02-27T11:37:13.253Z [DEBUG] autocompact: tokens=31671 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:13.253Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:13.255Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:13.255Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:13.255Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:13.255Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:13.258Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:13.259Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:13.259Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:13.259Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:13.260Z [DEBUG] [useDeferredValue] Messages deferred by 3 (123→126)
+2026-02-27T11:37:13.272Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:13.272Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:13.272Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:13.273Z [DEBUG] [useDeferredValue] Messages deferred by 4 (123→127)
+2026-02-27T11:37:13.422Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:13.422Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:13.422Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:13.422Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:13.424Z [DEBUG] [useDeferredValue] Messages deferred by 1 (127→128)
+2026-02-27T11:37:13.432Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:13.432Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:13.432Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:13.434Z [DEBUG] [useDeferredValue] Messages deferred by 2 (127→129)
+2026-02-27T11:37:13.439Z [DEBUG] autocompact: tokens=35162 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:13.440Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:13.441Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:13.441Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:13.441Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:13.441Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:13.446Z [DEBUG] [useDeferredValue] Messages deferred by 2 (127→129)
+2026-02-27T11:37:13.491Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:13.921Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:14.043Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:14.045Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:14.045Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:14.045Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:14.056Z [DEBUG] [useDeferredValue] Messages deferred by 1 (129→130)
+2026-02-27T11:37:14.106Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:14.106Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:14.106Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:14.108Z [DEBUG] [useDeferredValue] Messages deferred by 1 (129→130)
+2026-02-27T11:37:14.144Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:14.159Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:14.226Z [DEBUG] [useDeferredValue] Messages deferred by 1 (130→131)
+2026-02-27T11:37:14.242Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:14.242Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:14.242Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:14.242Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:14.244Z [DEBUG] [useDeferredValue] Messages deferred by 1 (131→132)
+2026-02-27T11:37:14.250Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:14.250Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:14.250Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:14.251Z [DEBUG] [useDeferredValue] Messages deferred by 1 (131→132)
+2026-02-27T11:37:14.492Z [DEBUG] [useDeferredValue] Messages deferred by 1 (132→133)
+2026-02-27T11:37:14.564Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:14.565Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:14.565Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:14.565Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:14.566Z [DEBUG] [useDeferredValue] Messages deferred by 1 (133→134)
+2026-02-27T11:37:14.577Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:14.577Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:14.577Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:14.579Z [DEBUG] [useDeferredValue] Messages deferred by 2 (133→135)
+2026-02-27T11:37:14.588Z [DEBUG] autocompact: tokens=35357 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:14.588Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:14.590Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:14.590Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:14.590Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:14.590Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:14.962Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:14.963Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:14.963Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:14.963Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:14.965Z [DEBUG] [useDeferredValue] Messages deferred by 1 (135→136)
+2026-02-27T11:37:14.985Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:14.985Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:14.985Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:14.986Z [DEBUG] [useDeferredValue] Messages deferred by 1 (135→136)
+2026-02-27T11:37:15.074Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:15.075Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:15.075Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:15.076Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:15.081Z [DEBUG] [useDeferredValue] Messages deferred by 1 (136→137)
+2026-02-27T11:37:15.115Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:15.115Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:15.115Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:15.115Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:15.116Z [DEBUG] [useDeferredValue] Messages deferred by 1 (136→137)
+2026-02-27T11:37:15.224Z [DEBUG] [useDeferredValue] Messages deferred by 1 (137→138)
+2026-02-27T11:37:15.333Z [DEBUG] [useDeferredValue] Messages deferred by 1 (138→139)
+2026-02-27T11:37:15.339Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:15.339Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:15.339Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:15.339Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:15.341Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:15.341Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:15.341Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:15.341Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:15.343Z [DEBUG] [useDeferredValue] Messages deferred by 3 (138→141)
+2026-02-27T11:37:15.353Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:15.353Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:15.353Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:15.354Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:15.354Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:15.354Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:15.355Z [DEBUG] [useDeferredValue] Messages deferred by 3 (138→141)
+2026-02-27T11:37:15.379Z [DEBUG] [useDeferredValue] Messages deferred by 1 (141→142)
+2026-02-27T11:37:15.394Z [DEBUG] autocompact: tokens=53798 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:15.394Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:15.396Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:15.396Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:15.396Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:15.396Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:15.550Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:15.586Z [DEBUG] [useDeferredValue] Messages deferred by 1 (142→143)
+2026-02-27T11:37:15.632Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:15.634Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:15.634Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:15.634Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:15.644Z [DEBUG] [useDeferredValue] Messages deferred by 2 (142→144)
+2026-02-27T11:37:15.662Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:15.662Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:15.662Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:15.664Z [DEBUG] [useDeferredValue] Messages deferred by 2 (142→144)
+2026-02-27T11:37:15.817Z [DEBUG] [useDeferredValue] Messages deferred by 1 (144→145)
+2026-02-27T11:37:15.865Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:15.867Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:15.867Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:15.867Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:15.874Z [DEBUG] [useDeferredValue] Messages deferred by 2 (144→146)
+2026-02-27T11:37:15.915Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:15.915Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:15.916Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:15.922Z [DEBUG] autocompact: tokens=36013 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:15.923Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:15.925Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:15.925Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:15.925Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:15.925Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:15.928Z [DEBUG] [useDeferredValue] Messages deferred by 3 (144→147)
+2026-02-27T11:37:16.472Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:16.599Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:16.599Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:16.599Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:16.599Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:16.605Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:16.606Z [DEBUG] [useDeferredValue] Messages deferred by 1 (147→148)
+2026-02-27T11:37:16.637Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:16.637Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.363; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:16.637Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:16.637Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:16.638Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:16.639Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:16.639Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:16.639Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:16.639Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:16.640Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:16.640Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:16.640Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:16.641Z [DEBUG] [useDeferredValue] Messages deferred by 1 (148→149)
+2026-02-27T11:37:16.651Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:16.651Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:16.651Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:16.652Z [DEBUG] [useDeferredValue] Messages deferred by 1 (148→149)
+2026-02-27T11:37:16.658Z [DEBUG] [useDeferredValue] Messages deferred by 1 (149→150)
+2026-02-27T11:37:16.838Z [DEBUG] [useDeferredValue] Messages deferred by 1 (150→151)
+2026-02-27T11:37:16.921Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:16.921Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:16.921Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:16.921Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:16.923Z [DEBUG] [useDeferredValue] Messages deferred by 1 (151→152)
+2026-02-27T11:37:16.929Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:16.929Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:16.930Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:16.931Z [DEBUG] [useDeferredValue] Messages deferred by 2 (151→153)
+2026-02-27T11:37:16.941Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:17.016Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T11:37:17.017Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T11:37:17.018Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:17.018Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:17.029Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T11:37:17.030Z [DEBUG] [useDeferredValue] Messages deferred by 1 (153→154)
+2026-02-27T11:37:17.066Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:17.066Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.aed; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:17.066Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:17.066Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:17.066Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:17.068Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T11:37:17.068Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:17.068Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T11:37:17.069Z [DEBUG] autocompact: tokens=37957 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:17.069Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:17.070Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:17.070Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:17.070Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:17.070Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:17.072Z [DEBUG] [useDeferredValue] Messages deferred by 1 (154→155)
+2026-02-27T11:37:17.131Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:17.154Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:17.156Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:17.156Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:17.156Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:17.163Z [DEBUG] [useDeferredValue] Messages deferred by 1 (155→156)
+2026-02-27T11:37:17.186Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:17.186Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:17.186Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:17.187Z [DEBUG] [useDeferredValue] Messages deferred by 1 (155→156)
+2026-02-27T11:37:17.200Z [DEBUG] [useDeferredValue] Messages deferred by 2 (155→157)
+2026-02-27T11:37:17.215Z [DEBUG] autocompact: tokens=42271 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:17.215Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:17.217Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:17.217Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:17.217Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:17.217Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:17.523Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:17.623Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:17.623Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:17.623Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:17.623Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:17.624Z [DEBUG] [useDeferredValue] Messages deferred by 1 (157→158)
+2026-02-27T11:37:17.635Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:17.635Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:17.635Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:17.636Z [DEBUG] [useDeferredValue] Messages deferred by 1 (157→158)
+2026-02-27T11:37:17.918Z [DEBUG] [useDeferredValue] Messages deferred by 1 (158→159)
+2026-02-27T11:37:17.997Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:17.999Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:17.999Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:17.999Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:18.005Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:18.006Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:18.006Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:18.006Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:18.014Z [DEBUG] [useDeferredValue] Messages deferred by 3 (158→161)
+2026-02-27T11:37:18.035Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:18.035Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:18.035Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:18.039Z [DEBUG] autocompact: tokens=63138 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:18.039Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:18.042Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:18.042Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:18.042Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:18.042Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:18.049Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:18.049Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:18.049Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:18.051Z [DEBUG] [useDeferredValue] Messages deferred by 4 (158→162)
+2026-02-27T11:37:18.089Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:18.089Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:18.089Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:18.119Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:18.188Z [DEBUG] [useDeferredValue] Messages deferred by 1 (162→163)
+2026-02-27T11:37:18.203Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:18.204Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:18.204Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:18.204Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:18.206Z [DEBUG] [useDeferredValue] Messages deferred by 2 (162→164)
+2026-02-27T11:37:18.214Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:18.214Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:18.214Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:18.215Z [DEBUG] [useDeferredValue] Messages deferred by 2 (162→164)
+2026-02-27T11:37:18.291Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:18.403Z [ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (41333 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at seI (/$bunfs/root/claude:1787:7740)
+    at processTicksAndRejections (native:7:39)
+2026-02-27T11:37:18.457Z [DEBUG] [useDeferredValue] Messages deferred by 1 (164→165)
+2026-02-27T11:37:18.704Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:18.705Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:18.706Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:18.706Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:18.711Z [DEBUG] [useDeferredValue] Messages deferred by 1 (165→166)
+2026-02-27T11:37:18.754Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:18.754Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:18.754Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:18.759Z [DEBUG] [useDeferredValue] Messages deferred by 1 (165→166)
+2026-02-27T11:37:18.843Z [DEBUG] [useDeferredValue] Messages deferred by 1 (166→167)
+2026-02-27T11:37:18.861Z [DEBUG] autocompact: tokens=41144 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:18.861Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:18.864Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:18.864Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:18.864Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:18.864Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:19.167Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:19.297Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:19.300Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:19.300Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:19.300Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:19.310Z [DEBUG] [useDeferredValue] Messages deferred by 1 (167→168)
+2026-02-27T11:37:19.355Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:19.355Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:19.355Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:19.361Z [DEBUG] [useDeferredValue] Messages deferred by 1 (167→168)
+2026-02-27T11:37:19.419Z [DEBUG] [useDeferredValue] Messages deferred by 1 (167→168)
+2026-02-27T11:37:19.474Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:19.474Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:19.474Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:19.474Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:19.477Z [DEBUG] [useDeferredValue] Messages deferred by 1 (168→169)
+2026-02-27T11:37:19.539Z [DEBUG] [useDeferredValue] Messages deferred by 1 (169→170)
+2026-02-27T11:37:19.557Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:19.558Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:19.558Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:19.558Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:19.566Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:19.566Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:19.566Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:19.567Z [DEBUG] [useDeferredValue] Messages deferred by 2 (169→171)
+2026-02-27T11:37:19.768Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:19.768Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:19.768Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:19.779Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:19.779Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:19.779Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:19.779Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:19.780Z [DEBUG] [useDeferredValue] Messages deferred by 2 (171→173)
+2026-02-27T11:37:19.793Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:19.793Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:19.793Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:19.793Z [DEBUG] [useDeferredValue] Messages deferred by 2 (171→173)
+2026-02-27T11:37:19.818Z [DEBUG] [useDeferredValue] Messages deferred by 1 (173→174)
+2026-02-27T11:37:19.881Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:19.883Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:19.883Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:19.883Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:19.891Z [DEBUG] [useDeferredValue] Messages deferred by 1 (174→175)
+2026-02-27T11:37:19.923Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:19.923Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:19.923Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:19.926Z [DEBUG] [useDeferredValue] Messages deferred by 1 (174→175)
+2026-02-27T11:37:19.950Z [DEBUG] [useDeferredValue] Messages deferred by 1 (175→176)
+2026-02-27T11:37:19.977Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:19.977Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:19.977Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:19.977Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:19.980Z [DEBUG] [useDeferredValue] Messages deferred by 1 (176→177)
+2026-02-27T11:37:19.992Z [DEBUG] [useDeferredValue] Messages deferred by 1 (176→177)
+2026-02-27T11:37:19.998Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:19.998Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:19.998Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:20.001Z [DEBUG] autocompact: tokens=44674 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:20.001Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:20.003Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:20.003Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:20.003Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:20.003Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:20.008Z [DEBUG] [useDeferredValue] Messages deferred by 1 (177→178)
+2026-02-27T11:37:20.095Z [DEBUG] [useDeferredValue] Messages deferred by 1 (178→179)
+2026-02-27T11:37:20.140Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:20.140Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:20.140Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:20.140Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:20.142Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:20.144Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:20.144Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:20.144Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:20.145Z [DEBUG] [useDeferredValue] Messages deferred by 1 (179→180)
+2026-02-27T11:37:20.221Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:20.221Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:20.221Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:20.221Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:20.223Z [DEBUG] [useDeferredValue] Messages deferred by 1 (180→181)
+2026-02-27T11:37:20.230Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:20.230Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:20.230Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:20.231Z [DEBUG] [useDeferredValue] Messages deferred by 1 (180→181)
+2026-02-27T11:37:20.294Z [DEBUG] [useDeferredValue] Messages deferred by 1 (181→182)
+2026-02-27T11:37:20.322Z [DEBUG] autocompact: tokens=47968 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:20.322Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:20.325Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:20.325Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:20.325Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:20.325Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:20.330Z [DEBUG] [useDeferredValue] Messages deferred by 1 (181→182)
+2026-02-27T11:37:20.401Z [DEBUG] [useDeferredValue] Messages deferred by 1 (182→183)
+2026-02-27T11:37:20.418Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:20.418Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:20.418Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:20.418Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:20.421Z [DEBUG] [useDeferredValue] Messages deferred by 2 (182→184)
+2026-02-27T11:37:20.436Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:20.436Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:20.436Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:20.437Z [DEBUG] [useDeferredValue] Messages deferred by 2 (182→184)
+2026-02-27T11:37:20.676Z [DEBUG] [useDeferredValue] Messages deferred by 1 (184→185)
+2026-02-27T11:37:20.725Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:20.726Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:20.726Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:20.726Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:20.727Z [DEBUG] [useDeferredValue] Messages deferred by 1 (185→186)
+2026-02-27T11:37:20.734Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:20.734Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:20.734Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:21.012Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:21.012Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:21.012Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:21.016Z [DEBUG] autocompact: tokens=79813 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:21.016Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:21.019Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:21.019Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:21.019Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:21.019Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:21.024Z [DEBUG] [useDeferredValue] Messages deferred by 1 (186→187)
+2026-02-27T11:37:21.389Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:21.390Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:21.390Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:21.390Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:21.391Z [DEBUG] [useDeferredValue] Messages deferred by 1 (187→188)
+2026-02-27T11:37:21.401Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:21.401Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:21.401Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:21.402Z [DEBUG] [useDeferredValue] Messages deferred by 1 (187→188)
+2026-02-27T11:37:21.406Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:21.411Z [DEBUG] [useDeferredValue] Messages deferred by 2 (187→189)
+2026-02-27T11:37:21.552Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:21.930Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:21.930Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:21.930Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:21.930Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:21.932Z [DEBUG] [useDeferredValue] Messages deferred by 1 (189→190)
+2026-02-27T11:37:21.942Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:21.942Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:21.942Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:21.943Z [DEBUG] [useDeferredValue] Messages deferred by 1 (189→190)
+2026-02-27T11:37:21.974Z [DEBUG] [useDeferredValue] Messages deferred by 1 (190→191)
+2026-02-27T11:37:22.227Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:22.559Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:22.559Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:22.559Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:22.559Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:22.560Z [DEBUG] [useDeferredValue] Messages deferred by 1 (191→192)
+2026-02-27T11:37:22.567Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:22.567Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:22.567Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:22.569Z [DEBUG] [useDeferredValue] Messages deferred by 2 (191→193)
+2026-02-27T11:37:22.836Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:22.837Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:22.837Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:22.837Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:22.838Z [DEBUG] [useDeferredValue] Messages deferred by 1 (193→194)
+2026-02-27T11:37:22.844Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:22.844Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:22.844Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:22.845Z [DEBUG] [useDeferredValue] Messages deferred by 1 (193→194)
+2026-02-27T11:37:22.940Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:22.941Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:22.941Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:22.941Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:22.942Z [DEBUG] [useDeferredValue] Messages deferred by 1 (194→195)
+2026-02-27T11:37:22.952Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:22.952Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:22.952Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:22.953Z [DEBUG] [useDeferredValue] Messages deferred by 1 (194→195)
+2026-02-27T11:37:22.994Z [DEBUG] [useDeferredValue] Messages deferred by 1 (195→196)
+2026-02-27T11:37:23.081Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:23.081Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:23.081Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:23.082Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:23.083Z [DEBUG] [useDeferredValue] Messages deferred by 1 (196→197)
+2026-02-27T11:37:23.092Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:23.092Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:23.092Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:23.092Z [DEBUG] [useDeferredValue] Messages deferred by 1 (196→197)
+2026-02-27T11:37:23.145Z [DEBUG] [useDeferredValue] Messages deferred by 1 (197→198)
+2026-02-27T11:37:23.157Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:23.158Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:23.158Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:23.158Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:23.159Z [DEBUG] [useDeferredValue] Messages deferred by 1 (198→199)
+2026-02-27T11:37:23.163Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:23.163Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:23.163Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:23.163Z [DEBUG] [useDeferredValue] Messages deferred by 1 (198→199)
+2026-02-27T11:37:23.383Z [DEBUG] [useDeferredValue] Messages deferred by 1 (199→200)
+2026-02-27T11:37:23.391Z [DEBUG] [useDeferredValue] Messages deferred by 2 (199→201)
+2026-02-27T11:37:23.500Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:23.501Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:23.501Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:23.501Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:23.503Z [DEBUG] [useDeferredValue] Messages deferred by 1 (201→202)
+2026-02-27T11:37:23.509Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:23.509Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:23.509Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:23.510Z [DEBUG] [useDeferredValue] Messages deferred by 1 (201→202)
+2026-02-27T11:37:23.535Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:23.535Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:23.535Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:23.535Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:23.537Z [DEBUG] [useDeferredValue] Messages deferred by 1 (202→203)
+2026-02-27T11:37:23.541Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:23.541Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:23.541Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:23.543Z [DEBUG] [useDeferredValue] Messages deferred by 2 (202→204)
+2026-02-27T11:37:23.554Z [DEBUG] autocompact: tokens=50652 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:23.554Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:23.556Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:23.556Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:23.556Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:23.556Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:23.558Z [DEBUG] [useDeferredValue] Messages deferred by 2 (202→204)
+2026-02-27T11:37:23.764Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:23.764Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:23.764Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:23.766Z [DEBUG] autocompact: tokens=92814 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:23.767Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:23.769Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:23.769Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:23.769Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:23.769Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:23.772Z [DEBUG] [useDeferredValue] Messages deferred by 1 (204→205)
+2026-02-27T11:37:23.913Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:23.914Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:23.914Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:23.914Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:23.917Z [DEBUG] [useDeferredValue] Messages deferred by 1 (205→206)
+2026-02-27T11:37:23.936Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:23.936Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:23.936Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:23.937Z [DEBUG] [useDeferredValue] Messages deferred by 1 (205→206)
+2026-02-27T11:37:24.206Z [DEBUG] [useDeferredValue] Messages deferred by 1 (206→207)
+2026-02-27T11:37:24.240Z [DEBUG] autocompact: tokens=48848 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:24.240Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:24.242Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:24.242Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:24.242Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:24.242Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:24.405Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:25.043Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:25.275Z [DEBUG] executePreToolHooks called for tool: Glob
+2026-02-27T11:37:25.276Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2026-02-27T11:37:25.276Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:25.276Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2026-02-27T11:37:25.280Z [DEBUG] [useDeferredValue] Messages deferred by 1 (207→208)
+2026-02-27T11:37:25.422Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2026-02-27T11:37:25.422Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:25.422Z [DEBUG] Matched 1 unique hooks for query "Glob" (1 before deduplication)
+2026-02-27T11:37:25.423Z [DEBUG] autocompact: tokens=51801 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:25.423Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:25.426Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:25.426Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:25.426Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:25.426Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:25.429Z [DEBUG] [useDeferredValue] Messages deferred by 1 (208→209)
+2026-02-27T11:37:25.595Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:26.029Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:26.030Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:26.030Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:26.030Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:26.037Z [DEBUG] [useDeferredValue] Messages deferred by 1 (209→210)
+2026-02-27T11:37:26.091Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:26.091Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:26.091Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:26.096Z [DEBUG] [useDeferredValue] Messages deferred by 2 (209→211)
+2026-02-27T11:37:26.221Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:26.482Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:26.482Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:26.482Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:26.482Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:26.484Z [DEBUG] [useDeferredValue] Messages deferred by 1 (211→212)
+2026-02-27T11:37:26.490Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:26.490Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:26.490Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:26.490Z [DEBUG] [useDeferredValue] Messages deferred by 1 (211→212)
+2026-02-27T11:37:26.551Z [DEBUG] [useDeferredValue] Messages deferred by 1 (212→213)
+2026-02-27T11:37:26.571Z [DEBUG] autocompact: tokens=99080 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:26.572Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:26.575Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:26.575Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:26.575Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:26.575Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:26.581Z [DEBUG] [useDeferredValue] Messages deferred by 1 (212→213)
+2026-02-27T11:37:26.739Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:26.739Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:26.739Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:26.740Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:26.742Z [DEBUG] [useDeferredValue] Messages deferred by 1 (213→214)
+2026-02-27T11:37:26.773Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:26.773Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:26.773Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:26.779Z [DEBUG] [useDeferredValue] Messages deferred by 2 (213→215)
+2026-02-27T11:37:26.822Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:26.823Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:26.823Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:26.823Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:26.831Z [DEBUG] [useDeferredValue] Messages deferred by 3 (213→216)
+2026-02-27T11:37:26.892Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:26.892Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:26.892Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:26.896Z [DEBUG] [useDeferredValue] Messages deferred by 3 (213→216)
+2026-02-27T11:37:26.995Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:26.997Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:26.997Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:26.997Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:27.006Z [DEBUG] [useDeferredValue] Messages deferred by 1 (216→217)
+2026-02-27T11:37:27.053Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:27.053Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:27.053Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:27.058Z [DEBUG] [useDeferredValue] Messages deferred by 2 (216→218)
+2026-02-27T11:37:27.092Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:27.093Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:27.093Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:27.093Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:27.096Z [DEBUG] [useDeferredValue] Messages deferred by 3 (216→219)
+2026-02-27T11:37:27.113Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:27.113Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:27.113Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:27.115Z [DEBUG] [useDeferredValue] Messages deferred by 3 (216→219)
+2026-02-27T11:37:27.292Z [DEBUG] [useDeferredValue] Messages deferred by 1 (219→220)
+2026-02-27T11:37:27.316Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:27.317Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:27.317Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:27.317Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:27.321Z [DEBUG] [useDeferredValue] Messages deferred by 2 (219→221)
+2026-02-27T11:37:27.350Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:27.350Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:27.350Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:27.355Z [DEBUG] [useDeferredValue] Messages deferred by 3 (219→222)
+2026-02-27T11:37:27.375Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:27.376Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:27.376Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:27.376Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:27.379Z [DEBUG] [useDeferredValue] Messages deferred by 4 (219→223)
+2026-02-27T11:37:27.394Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:27.394Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:27.394Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:27.396Z [DEBUG] [useDeferredValue] Messages deferred by 4 (219→223)
+2026-02-27T11:37:27.565Z [DEBUG] [useDeferredValue] Messages deferred by 1 (223→224)
+2026-02-27T11:37:27.598Z [DEBUG] [useDeferredValue] Messages deferred by 1 (224→225)
+2026-02-27T11:37:27.709Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:27.709Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:27.709Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:27.709Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:27.711Z [DEBUG] [useDeferredValue] Messages deferred by 1 (225→226)
+2026-02-27T11:37:27.722Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:27.722Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:27.722Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:27.724Z [DEBUG] [useDeferredValue] Messages deferred by 1 (225→226)
+2026-02-27T11:37:27.739Z [DEBUG] [useDeferredValue] Messages deferred by 1 (226→227)
+2026-02-27T11:37:27.752Z [DEBUG] autocompact: tokens=53862 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:27.752Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:27.754Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:27.754Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:27.754Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:27.754Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:27.787Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:27.787Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:27.787Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:27.787Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:27.789Z [DEBUG] [useDeferredValue] Messages deferred by 1 (227→228)
+2026-02-27T11:37:27.797Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:27.797Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:27.797Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:27.798Z [DEBUG] [useDeferredValue] Messages deferred by 1 (227→228)
+2026-02-27T11:37:27.832Z [DEBUG] [useDeferredValue] Messages deferred by 1 (228→229)
+2026-02-27T11:37:27.847Z [DEBUG] autocompact: tokens=56589 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:27.848Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:27.849Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:27.849Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:27.849Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:27.849Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:28.526Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:28.644Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:28.702Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:29.245Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:29.261Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:29.262Z [DEBUG] AutoUpdaterWrapper: Installation type: package-manager
+2026-02-27T11:37:29.262Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-27T11:37:29.262Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-02-27T11:37:29.262Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-02-27T11:37:29.457Z [DEBUG] [claudeai-mcp] Fetched 16 servers
+2026-02-27T11:37:29.616Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:29.616Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:29.616Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:29.617Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:29.618Z [DEBUG] [useDeferredValue] Messages deferred by 1 (229→230)
+2026-02-27T11:37:29.625Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:29.625Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:29.625Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:29.626Z [DEBUG] [useDeferredValue] Messages deferred by 1 (229→230)
+2026-02-27T11:37:29.650Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:29.705Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:29.705Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:29.705Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:29.705Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:29.707Z [DEBUG] [useDeferredValue] Messages deferred by 1 (230→231)
+2026-02-27T11:37:29.712Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:29.712Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:29.712Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:29.713Z [DEBUG] [useDeferredValue] Messages deferred by 2 (230→232)
+2026-02-27T11:37:29.735Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:29.887Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:29.887Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:29.887Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:29.888Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:29.891Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:29.891Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:29.891Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:29.892Z [DEBUG] [useDeferredValue] Messages deferred by 2 (232→234)
+2026-02-27T11:37:29.913Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:30.073Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:30.073Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:30.073Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:30.073Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:30.075Z [DEBUG] [useDeferredValue] Messages deferred by 1 (234→235)
+2026-02-27T11:37:30.084Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:30.084Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:30.084Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:30.085Z [DEBUG] [useDeferredValue] Messages deferred by 1 (234→235)
+2026-02-27T11:37:30.100Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:30.320Z [DEBUG] [useDeferredValue] Messages deferred by 1 (235→236)
+2026-02-27T11:37:30.344Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:30.344Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:30.344Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:30.344Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:30.347Z [DEBUG] [useDeferredValue] Messages deferred by 3 (235→238)
+2026-02-27T11:37:30.369Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:30.369Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:30.369Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:30.371Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:30.371Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:30.371Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:30.371Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:30.373Z [DEBUG] [useDeferredValue] Messages deferred by 4 (235→239)
+2026-02-27T11:37:30.403Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:30.403Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:30.403Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:30.404Z [DEBUG] [useDeferredValue] Messages deferred by 4 (235→239)
+2026-02-27T11:37:30.459Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:30.586Z [DEBUG] [useDeferredValue] Messages deferred by 1 (239→240)
+2026-02-27T11:37:30.608Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:30.612Z [DEBUG] [useDeferredValue] Messages deferred by 1 (240→241)
+2026-02-27T11:37:30.630Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:30.672Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:30.673Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:30.673Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:30.673Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:30.674Z [DEBUG] [useDeferredValue] Messages deferred by 1 (241→242)
+2026-02-27T11:37:30.685Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:30.685Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:30.685Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:30.686Z [DEBUG] executePreToolHooks called for tool: Read
+2026-02-27T11:37:30.686Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2026-02-27T11:37:30.686Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:30.686Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2026-02-27T11:37:30.688Z [DEBUG] [useDeferredValue] Messages deferred by 2 (241→243)
+2026-02-27T11:37:30.691Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2026-02-27T11:37:30.691Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T11:37:30.691Z [DEBUG] Matched 1 unique hooks for query "Read" (1 before deduplication)
+2026-02-27T11:37:30.692Z [DEBUG] [useDeferredValue] Messages deferred by 2 (241→243)
+2026-02-27T11:37:30.702Z [DEBUG] [useDeferredValue] Messages deferred by 4 (241→245)
+2026-02-27T11:37:30.713Z [DEBUG] autocompact: tokens=63489 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:30.714Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:30.716Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:30.716Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:30.716Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:30.716Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:30.721Z [DEBUG] autocompact: tokens=57272 threshold=167000 effectiveWindow=180000
+2026-02-27T11:37:30.721Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T11:37:30.723Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.68f; cc_entrypoint=cli; cch=00000;
+2026-02-27T11:37:30.723Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T11:37:30.723Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T11:37:30.723Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T11:37:30.726Z [DEBUG] [useDeferredValue] Messages deferred by 4 (241→245)
+2026-02-27T11:37:30.747Z [DEBUG] High write ratio: blit=0, write=1348 (100.0% writes), screen=33x85
+2026-02-27T11:37:31.638Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:31.677Z [DEBUG] Stream started - received first chunk
+2026-02-27T11:37:32.239Z [DEBUG] [onCancel] focusedInputDialog=undefined streamMode=tool-use
+2026-02-27T11:37:32.242Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1221788.1772192252242
+2026-02-27T11:37:32.242Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T11:37:32.251Z [DEBUG] Temp file written successfully, size: 28514 bytes
+2026-02-27T11:37:32.251Z [DEBUG] Applied original permissions to temp file
+2026-02-27T11:37:32.251Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1221788.1772192252242 to /home/skogix/.claude.json
+2026-02-27T11:37:32.251Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T11:37:32.252Z [ERROR] Stream completed with message_start but no content blocks completed - triggering non-streaming fallback
+2026-02-27T11:37:32.252Z [ERROR] Error streaming, falling back to non-streaming mode: Stream ended without receiving any events
+2026-02-27T11:37:32.252Z [ERROR] Error in API request: Request was aborted.
+2026-02-27T11:37:32.253Z [ERROR] Error: Error: Request was aborted.
+    at i6$ (/$bunfs/root/claude:820:96592)
+    at next (native:1:11)
+    at UIB (/$bunfs/root/claude:6021:6980)
+    at next (native:1:11)
+    at FIB (/$bunfs/root/claude:6026:9145)
+    at processTicksAndRejections (native:7:39)
+2026-02-27T11:37:32.255Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Task
+2026-02-27T11:37:32.255Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:32.255Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:32.255Z [ERROR] Stream completed with message_start but no content blocks completed - triggering non-streaming fallback
+2026-02-27T11:37:32.255Z [ERROR] Error streaming, falling back to non-streaming mode: Stream ended without receiving any events
+2026-02-27T11:37:32.255Z [ERROR] Error in API request: Request was aborted.
+2026-02-27T11:37:32.255Z [ERROR] Error: Error: Request was aborted.
+    at i6$ (/$bunfs/root/claude:820:96592)
+    at next (native:1:11)
+    at UIB (/$bunfs/root/claude:6021:6980)
+    at next (native:1:11)
+    at FIB (/$bunfs/root/claude:6026:9145)
+    at processTicksAndRejections (native:7:39)
+2026-02-27T11:37:32.256Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Task
+2026-02-27T11:37:32.256Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:32.256Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:32.257Z [ERROR] Stream completed with message_start but no content blocks completed - triggering non-streaming fallback
+2026-02-27T11:37:32.257Z [ERROR] Error streaming, falling back to non-streaming mode: Stream ended without receiving any events
+2026-02-27T11:37:32.257Z [ERROR] Error in API request: Request was aborted.
+2026-02-27T11:37:32.257Z [ERROR] Error: Error: Request was aborted.
+    at i6$ (/$bunfs/root/claude:820:96592)
+    at next (native:1:11)
+    at UIB (/$bunfs/root/claude:6021:6980)
+    at next (native:1:11)
+    at FIB (/$bunfs/root/claude:6026:9145)
+    at processTicksAndRejections (native:7:39)
+2026-02-27T11:37:32.258Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Task
+2026-02-27T11:37:32.258Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:32.258Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:32.259Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Task
+2026-02-27T11:37:32.259Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:32.259Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:32.260Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Task
+2026-02-27T11:37:32.260Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T11:37:32.260Z [DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+2026-02-27T11:37:32.262Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1221788.1772192252262
+2026-02-27T11:37:32.262Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T11:37:32.265Z [DEBUG] Temp file written successfully, size: 28514 bytes
+2026-02-27T11:37:32.265Z [DEBUG] Applied original permissions to temp file
+2026-02-27T11:37:32.265Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1221788.1772192252262 to /home/skogix/.claude.json
+2026-02-27T11:37:32.265Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T11:37:32.266Z [DEBUG] [useDeferredValue] Messages deferred by 6 (245→251)
+2026-02-27T11:37:32.278Z [DEBUG] High write ratio: blit=0, write=1070 (100.0% writes), screen=30x85
+2026-02-27T11:37:35.630Z [DEBUG] AutoUpdaterWrapper: Installation type: package-manager
+2026-02-27T11:37:35.882Z [DEBUG] AutoUpdaterWrapper: Installation type: package-manager
+2026-02-27T11:37:36.173Z [DEBUG] FileHistory: Making snapshot for message d9437658-913a-4081-9fdb-02789cddb711
+2026-02-27T11:37:36.173Z [DEBUG] FileHistory: Added snapshot for d9437658-913a-4081-9fdb-02789cddb711, tracking 0 files
+2026-02-27T11:37:36.174Z [DEBUG] [useDeferredValue] Messages deferred by 2 (251→253)
+2026-02-27T11:37:36.184Z [DEBUG] High write ratio: blit=0, write=1149 (100.0% writes), screen=35x85
+2026-02-27T11:37:36.189Z [DEBUG] [useDeferredValue] Messages deferred by 2 (251→253)
+2026-02-27T11:37:36.229Z [DEBUG] High write ratio: blit=0, write=1105 (100.0% writes), screen=32x85

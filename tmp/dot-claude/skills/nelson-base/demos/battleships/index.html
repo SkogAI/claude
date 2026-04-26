@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battleships</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/accessibility.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/weapons.css">
+  <link rel="stylesheet" href="styles/drag-placement.css">
+  <link rel="stylesheet" href="styles/fog-of-war.css">
+  <link rel="stylesheet" href="styles/mobile.css">
+</head>
+<body>
+
+<!-- Mode Selection Screen -->
+<div id="mode-select-screen" style="
+  position: fixed; inset: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(6,14,24,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+">
+  <div style="
+    text-align: center; max-width: 680px; width: 92%; padding: 2.5rem 2rem;
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    border-radius: 12px; box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    position: relative; overflow: hidden;
+  ">
+    <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);"></div>
+    <h1 style="font-size:2.2rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-primary);text-shadow:0 0 30px rgba(46,204,113,0.25);margin-bottom:0.3rem;">Battleships</h1>
+    <p style="font-size:0.8rem;color:var(--text-muted);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2rem;">Naval Warfare Command</p>
+
+    <!-- Mode Cards -->
+    <div id="mode-cards" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.8rem;">
+      <button class="mode-card" data-mode="classic" aria-label="Classic mode" style="
+        flex:1;min-width:160px;max-width:200px;padding:1.2rem 1rem;cursor:pointer;
+        background:rgba(30,58,95,0.6);border:2px solid var(--signal-green);
+        border-radius:8px;color:var(--text-primary);font-family:inherit;
+        transition:all 0.3s ease;text-align:center;position:relative;overflow:hidden;
+        box-shadow:0 0 15px rgba(46,204,113,0.2),inset 0 0 15px rgba(46,204,113,0.1);
+      ">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">&#9875;</div>
+        <div style="font-size:1rem;font-weight:700;margin-bottom:0.3rem;">Classic</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4;">Standard battleships &mdash; one shot per turn.</div>
+      </button>
+      <button class="mode-card" data-mode="salvo" aria-label="Salvo mode" style="
+        flex:1;min-width:160px;max-width:200px;padding:1.2rem 1rem;cursor:pointer;
+        background:rgba(30,58,95,0.6);border:2px solid var(--glass-border);
+        border-radius:8px;color:var(--text-primary);font-family:inherit;
+        transition:all 0.3s ease;text-align:center;position:relative;overflow:hidden;
+      ">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">&#128165;</div>
+        <div style="font-size:1rem;font-weight:700;margin-bottom:0.3rem;">Salvo</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4;">Fire one shot per surviving ship each turn.</div>
+      </button>
+      <button class="mode-card" data-mode="campaign" aria-label="Campaign mode" style="
+        flex:1;min-width:160px;max-width:200px;padding:1.2rem 1rem;cursor:pointer;
+        background:rgba(30,58,95,0.6);border:2px solid var(--glass-border);
+        border-radius:8px;color:var(--text-primary);font-family:inherit;
+        transition:all 0.3s ease;text-align:center;position:relative;overflow:hidden;
+      ">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">&#127775;</div>
+        <div style="font-size:1rem;font-weight:700;margin-bottom:0.3rem;">Campaign</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4;">Five battles of escalating difficulty.</div>
+      </button>
+      <button class="mode-card" data-mode="fogofwar" aria-label="Fog of War mode" style="
+        flex:1;min-width:160px;max-width:200px;padding:1.2rem 1rem;cursor:pointer;
+        background:rgba(30,58,95,0.6);border:2px solid var(--glass-border);
+        border-radius:8px;color:var(--text-primary);font-family:inherit;
+        transition:all 0.3s ease;text-align:center;position:relative;overflow:hidden;
+      ">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">&#127787;&#65039;</div>
+        <div style="font-size:1rem;font-weight:700;margin-bottom:0.3rem;">Fog of War</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);line-height:1.4;">Enemy waters shrouded in fog. Fire to reveal.</div>
+      </button>
+    </div>
+
+    <!-- Difficulty Selector -->
+    <div id="difficulty-row" style="display:flex;align-items:center;justify-content:center;gap:0.6rem;margin-bottom:1.8rem;flex-wrap:wrap;">
+      <label for="difficulty-select" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;">Difficulty</label>
+      <select id="difficulty-select" aria-label="Select difficulty" style="
+        padding:0.4rem 2rem 0.4rem 0.8rem;background:var(--glass-bg);color:var(--text-primary);
+        border:1px solid var(--glass-border);border-radius:4px;font-size:0.85rem;font-family:inherit;
+        cursor:pointer;backdrop-filter:blur(4px);appearance:none;-webkit-appearance:none;
+        background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%2712%27 viewBox=%270 0 12 12%27%3E%3Cpath fill=%27%23778da9%27 d=%27M6 8L1 3h10z%27/%3E%3C/svg%3E');
+        background-repeat:no-repeat;background-position:right 8px center;
+      ">
+        <option value="recruit">Recruit</option>
+        <option value="cadet">Cadet</option>
+        <option value="officer" selected>Officer</option>
+        <option value="captain">Captain</option>
+        <option value="admiral">Admiral</option>
+        <option value="adaptive">Adaptive</option>
+      </select>
+    </div>
+
+    <!-- Start Button -->
+    <button id="start-game-btn" aria-label="Start game" style="
+      padding:0.8rem 3rem;font-size:1.05rem;font-weight:700;
+      color:var(--ocean-abyss);background:linear-gradient(135deg,var(--signal-green),var(--signal-green-dark));
+      border:none;border-radius:6px;cursor:pointer;text-transform:uppercase;
+      letter-spacing:0.1em;font-family:inherit;transition:all 0.3s ease;
+      position:relative;overflow:hidden;
+    ">Start Game</button>
+  </div>
+</div>
+
+<!-- Pause Overlay -->
+<div id="pause-overlay" style="
+  display:none;position:fixed;inset:0;z-index:80;
+  background:rgba(6,14,24,0.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  justify-content:center;align-items:center;
+">
+  <div style="
+    text-align:center;padding:3rem 3.5rem;
+    background:var(--glass-bg);border:1px solid var(--glass-border);
+    border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.5);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    max-width:400px;width:90%;
+  ">
+    <div style="font-size:2rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-primary);margin-bottom:1.5rem;">Game Paused</div>
+    <button id="resume-btn" aria-label="Resume game" style="
+      padding:0.75rem 2.5rem;font-size:1rem;font-weight:700;
+      color:var(--ocean-abyss);background:linear-gradient(135deg,var(--signal-green),var(--signal-green-dark));
+      border:none;border-radius:6px;cursor:pointer;text-transform:uppercase;
+      letter-spacing:0.1em;font-family:inherit;transition:all 0.3s ease;
+    ">Resume</button>
+  </div>
+</div>
+
+<!-- Achievement Toast Area -->
+<div id="achievement-toast-area" style="
+  position:fixed;top:1rem;right:1rem;z-index:200;
+  display:flex;flex-direction:column;gap:0.5rem;
+  pointer-events:none;
+" aria-live="polite"></div>
+
+<div class="game-container">
+  <header>
+    <h1>Battleships</h1>
+    <p class="subtitle">Naval Warfare Command</p>
+  </header>
+
+  <!-- Top Controls -->
+  <div class="top-controls">
+    <button id="settings-btn" aria-label="Open settings" title="Settings" style="
+      padding:0.35rem 0.7rem;background:var(--glass-bg);color:var(--text-muted);
+      border:1px solid var(--glass-border);border-radius:4px;font-size:1.1rem;
+      cursor:pointer;transition:all 0.3s ease;font-family:inherit;line-height:1;
+    ">&#9881;</button>
+    <button id="pause-btn" aria-label="Pause game" title="Pause (Esc)" style="
+      display:none;padding:0.35rem 0.7rem;background:var(--glass-bg);color:var(--text-muted);
+      border:1px solid var(--glass-border);border-radius:4px;font-size:0.9rem;
+      cursor:pointer;transition:all 0.3s ease;font-family:inherit;
+    ">&#9208; Pause</button>
+    <button class="sound-toggle" id="sound-toggle" title="Toggle sound" aria-label="Toggle sound">Sound: ON</button>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="settings-panel" style="
+    display:none;margin:0.6rem auto;padding:1rem 1.4rem;
+    background:var(--glass-bg);border:1px solid var(--glass-border);
+    border-radius:8px;max-width:500px;width:92%;
+    backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);position:relative;
+  ">
+    <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.8rem;">
+      <h3 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);font-weight:700;margin:0;">Settings</h3>
+      <button id="settings-close-btn" aria-label="Close settings" style="
+        background:transparent;border:none;color:var(--text-muted);font-size:1.2rem;cursor:pointer;
+        padding:0.2rem 0.4rem;line-height:1;font-family:inherit;
+      ">&times;</button>
+    </div>
+
+    <!-- Volume -->
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.7rem;">
+      <label for="settings-volume" style="font-size:0.8rem;color:var(--text-muted);min-width:70px;font-weight:500;">Volume</label>
+      <input type="range" id="settings-volume" min="0" max="100" value="50" aria-label="Volume" style="flex:1;accent-color:var(--signal-green);">
+      <span id="settings-volume-value" style="font-size:0.8rem;color:var(--text-primary);min-width:30px;text-align:right;">50</span>
+    </div>
+
+    <!-- Sound Toggle -->
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.7rem;">
+      <label for="settings-sound" style="font-size:0.8rem;color:var(--text-muted);min-width:70px;font-weight:500;">Sound</label>
+      <input type="checkbox" id="settings-sound" checked aria-label="Enable sound">
+    </div>
+
+    <!-- Animation Speed -->
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.7rem;">
+      <label for="settings-animation" style="font-size:0.8rem;color:var(--text-muted);min-width:70px;font-weight:500;">Animation</label>
+      <select id="settings-animation" aria-label="Animation speed" style="
+        padding:0.3rem 1.8rem 0.3rem 0.6rem;background:var(--glass-bg);color:var(--text-primary);
+        border:1px solid var(--glass-border);border-radius:4px;font-size:0.8rem;font-family:inherit;
+        cursor:pointer;appearance:none;-webkit-appearance:none;
+        background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%2712%27 viewBox=%270 0 12 12%27%3E%3Cpath fill=%27%23778da9%27 d=%27M6 8L1 3h10z%27/%3E%3C/svg%3E');
+        background-repeat:no-repeat;background-position:right 6px center;
+      ">
+        <option value="slow">Slow</option>
+        <option value="normal" selected>Normal</option>
+        <option value="fast">Fast</option>
+      </select>
+    </div>
+
+    <!-- Colorblind Mode -->
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.7rem;">
+      <label for="settings-colorblind" style="font-size:0.8rem;color:var(--text-muted);min-width:70px;font-weight:500;">Colorblind</label>
+      <input type="checkbox" id="settings-colorblind" aria-label="Colorblind mode">
+    </div>
+
+    <!-- High Contrast -->
+    <div style="display:flex;align-items:center;gap:0.8rem;margin-bottom:0.7rem;">
+      <label for="settings-highcontrast" style="font-size:0.8rem;color:var(--text-muted);min-width:70px;font-weight:500;">High Contrast</label>
+      <input type="checkbox" id="settings-highcontrast" aria-label="High contrast mode">
+    </div>
+
+    <!-- Reduced Motion -->
+    <div style="display:flex;align-items:center;gap:0.8rem;">
+      <label for="settings-reducedmotion" style="font-size:0.8rem;color:var(--text-muted);min-width:70px;font-weight:500;">Reduced Motion</label>
+      <input type="checkbox" id="settings-reducedmotion" aria-label="Reduced motion">
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <div id="status-message" aria-live="polite">Place your ships to begin</div>
+    <div id="live-score" class="live-score" style="display:none;">Score: <span id="score-value">0</span></div>
+  </div>
+
+  <!-- Weapons Panel -->
+  <div id="weapons-panel" class="weapons-panel" style="display:none;">
+    <button class="weapon-btn" data-weapon="torpedo" aria-label="Torpedo, 2 uses"><span class="weapon-icon">&#128165;</span><span class="weapon-name">Torpedo</span><span class="weapon-uses">2</span></button>
+    <button class="weapon-btn" data-weapon="airstrike" aria-label="Airstrike, 1 use"><span class="weapon-icon">&#9992;&#65039;</span><span class="weapon-name">Airstrike</span><span class="weapon-uses">1</span></button>
+    <button class="weapon-btn" data-weapon="sonar" aria-label="Sonar, 2 uses"><span class="weapon-icon">&#128225;</span><span class="weapon-name">Sonar</span><span class="weapon-uses">2</span></button>
+  </div>
+  <div id="direction-picker" class="direction-picker" style="display:none;">
+    <button class="direction-btn" data-direction="horizontal">&#8596; Horizontal</button>
+    <button class="direction-btn" data-direction="vertical">&#8597; Vertical</button>
+    <button class="direction-btn cancel" data-direction="cancel">&#10005; Cancel</button>
+  </div>
+
+  <!-- Ship Placement Panel -->
+  <div id="placement-panel" class="hidden">
+    <h3>Deploy Your Fleet</h3>
+    <div class="ship-option active" data-ship="carrier" data-size="5" role="button" tabindex="0" aria-label="Select Carrier, 5 cells">Carrier <span class="ship-size">(5)</span></div>
+    <div class="ship-option" data-ship="battleship" data-size="4" role="button" tabindex="0" aria-label="Select Battleship, 4 cells">Battleship <span class="ship-size">(4)</span></div>
+    <div class="ship-option" data-ship="cruiser" data-size="3" role="button" tabindex="0" aria-label="Select Cruiser, 3 cells">Cruiser <span class="ship-size">(3)</span></div>
+    <div class="ship-option" data-ship="submarine" data-size="3" role="button" tabindex="0" aria-label="Select Submarine, 3 cells">Submarine <span class="ship-size">(3)</span></div>
+    <div class="ship-option" data-ship="destroyer" data-size="2" role="button" tabindex="0" aria-label="Select Destroyer, 2 cells">Destroyer <span class="ship-size">(2)</span></div>
+    <button id="rotate-btn" title="Press R to rotate" aria-label="Rotate ship placement direction">Rotate (R)</button>
+    <button id="auto-place-btn" title="Auto-place ships randomly" aria-label="Automatically place all ships">Auto Place</button>
+    <p class="placement-instructions">Click on your grid to place. Press <strong>R</strong> to rotate. <strong>Right-click</strong> a placed ship to remove it. Or use <strong>Auto Place</strong>.</p>
+  </div>
+
+  <!-- Game Boards -->
+  <div class="boards-container">
+    <div class="board-section">
+      <h2 id="player-grid-label">Your Fleet</h2>
+      <div class="grid" id="player-grid" role="grid" aria-label="Your fleet grid" aria-describedby="player-grid-label"></div>
+    </div>
+    <div class="board-section">
+      <h2 id="enemy-grid-label">Enemy Waters</h2>
+      <div class="grid" id="enemy-grid" role="grid" aria-label="Enemy waters grid" aria-describedby="enemy-grid-label"></div>
+    </div>
+  </div>
+
+  <!-- Bottom Panels: Fleet Status + Combat Log -->
+  <div class="bottom-panels">
+    <div class="fleet-status" id="player-fleet-status">
+      <h3>Your Fleet</h3>
+      <div id="player-fleet-list"></div>
+    </div>
+    <div class="combat-log">
+      <h3>Combat Log</h3>
+      <div class="log-entries" id="log-entries" aria-live="polite"></div>
+    </div>
+    <div class="fleet-status" id="enemy-fleet-status">
+      <h3>Enemy Fleet</h3>
+      <div id="enemy-fleet-list"></div>
+    </div>
+  </div>
+
+  <!-- Achievements Panel -->
+  <div class="stats-panel" id="achievements-panel" style="margin-bottom:0.5rem;">
+    <div class="stats-panel-header" id="achievements-panel-header">
+      <span>Achievements</span>
+      <span class="stats-toggle-arrow">&#9654;</span>
+    </div>
+    <div class="stats-panel-body" id="achievements-panel-body" style="display:none;padding:0 1.2rem 1rem;">
+      <div id="achievements-list" style="display:flex;flex-wrap:wrap;gap:0.6rem;"></div>
+    </div>
+  </div>
+
+  <!-- Stats Panel -->
+  <div class="stats-panel" id="stats-panel">
+    <div class="stats-panel-header" id="stats-panel-header">
+      <span>Career Statistics</span>
+      <span class="stats-toggle-arrow">&#9654;</span>
+    </div>
+    <div class="stats-panel-body" id="stats-panel-body" style="display:none;">
+      <div class="stat-item">
+        <span class="stat-item-label">Games Played</span>
+        <span class="stat-item-value" id="stat-games-played">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item-label">Win Rate</span>
+        <span class="stat-item-value" id="stat-win-rate">0%</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item-label">Best Accuracy</span>
+        <span class="stat-item-value" id="stat-best-accuracy">0%</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item-label">Win Streak</span>
+        <span class="stat-item-value" id="stat-win-streak">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item-label">Highest Score</span>
+        <span class="stat-item-value" id="stat-highest-score">0</span>
+      </div>
+      <button class="reset-btn" id="reset-stats-btn">Reset Stats</button>
+    </div>
+  </div>
+</div>
+
+<!-- Game Over Overlay -->
+<div id="game-over-overlay">
+  <div class="game-over-box" id="game-over-box">
+    <div id="game-over-message">Victory!</div>
+    <div class="game-over-stats" id="game-over-stats"></div>
+    <div id="game-over-buttons" style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+      <button id="play-again-btn" aria-label="Play again">Play Again</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts loaded in dependency order -->
+<script src="js/stats.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/sfx.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/modes.js"></script>
+<script src="js/weapons.js"></script>
+<script src="js/drag-placement.js"></script>
+<script src="js/fog-of-war.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/tutorial.js"></script>
+<script src="js/game.js"></script>
+
+</body>
+</html>

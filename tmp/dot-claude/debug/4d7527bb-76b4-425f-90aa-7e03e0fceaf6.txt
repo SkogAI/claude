@@ -1,0 +1,1033 @@
+2026-02-27T21:28:08.897Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-02-27T21:28:08.898Z [DEBUG] MDM settings load completed in 1ms
+2026-02-27T21:28:08.911Z [DEBUG] [init] configureGlobalMTLS starting
+2026-02-27T21:28:08.911Z [DEBUG] [init] configureGlobalMTLS complete
+2026-02-27T21:28:08.911Z [DEBUG] [init] configureGlobalAgents starting
+2026-02-27T21:28:08.911Z [DEBUG] [init] configureGlobalAgents complete
+2026-02-27T21:28:08.918Z [DEBUG] Applying permission update: Adding 123 allow rule(s) to destination 'userSettings': ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)","Bash(python3:*)"]
+2026-02-27T21:28:08.918Z [DEBUG] Applying permission update: Adding 122 allow rule(s) to destination 'projectSettings': ["Bash(git *)","Bash(br *)","Bash(bd *)","Bash(gh *)","Bash(skogai-*)","Bash(skogai-todo *)","Bash(skogcli *)","Bash(npm *)","Bash(npx *)","Bash(pnpm *)","Bash(yarn *)","Bash(node *)","Bash(bun *)","Bash(deno *)","Bash(cargo *)","Bash(rustup *)","Bash(python *)","Bash(python3 *)","Bash(pip *)","Bash(pip3 *)","Bash(uv *)","Bash(uvx *)","Bash(pipx *)","Bash(make *)","Bash(just *)","Bash(cmake *)","Bash(docker *)","Bash(docker-compose *)","Bash(nix *)","Bash(nix-shell *)","Bash(direnv *)","Bash(ls *)","Bash(cat *)","Bash(head *)","Bash(tail *)","Bash(wc *)","Bash(diff *)","Bash(tree *)","Bash(find *)","Bash(which *)","Bash(whereis *)","Bash(file *)","Bash(stat *)","Bash(realpath *)","Bash(basename *)","Bash(dirname *)","Bash(mkdir *)","Bash(cp *)","Bash(mv *)","Bash(ln *)","Bash(chmod *)","Bash(touch *)","Bash(echo *)","Bash(printf *)","Bash(tee *)","Bash(sort *)","Bash(uniq *)","Bash(cut *)","Bash(tr *)","Bash(sed *)","Bash(awk *)","Bash(grep *)","Bash(rg *)","Bash(fd *)","Bash(fzf *)","Bash(jq *)","Bash(yq *)","Bash(curl *)","Bash(wget *)","Bash(bat *)","Bash(eza *)","Bash(exa *)","Bash(dust *)","Bash(tokei *)","Bash(hyperfine *)","Bash(xargs *)","Bash(env *)","Bash(export *)","Bash(source *)","Bash(eval *)","Bash(test *)","Bash([ *)","Bash(true *)","Bash(false *)","Bash(pwd *)","Bash(cd *)","Bash(pushd *)","Bash(popd *)","Bash(date *)","Bash(mcp-cli *)","Bash(argc *)","Bash(gptodo *)","Bash(pytest *)","Bash(go *)","Bash(zig *)","Bash(lua *)","Bash(luarocks *)","Bash(ruby *)","Bash(gem *)","Bash(bundle *)","Bash(tsc *)","Bash(eslint *)","Bash(prettier *)","Bash(shellcheck *)","Bash(shfmt *)","Bash(black *)","Bash(ruff *)","Bash(mypy *)","Bash(pacman *)","Bash(yay *)","Bash(paru *)","Bash(systemctl *)","Bash(journalctl *)","Bash(tar *)","Bash(zip *)","Bash(unzip *)","Bash(gzip *)","Bash(zstd *)","Bash(ssh *)","Bash(scp *)","Bash(rsync *)","Bash(./scripts/*)"]
+2026-02-27T21:28:08.918Z [DEBUG] Applying permission update: Adding 8 allow rule(s) to destination 'localSettings': ["Bash(rtk:*)","Bash(git:*)","Bash(mkdir:*)","Bash(/home/skogix/claude/.claude/hooks/rtk-auto-wrapper.sh:*)","Bash(/home/skogix/.claude/hooks/rtk-rewrite.sh:*)","Bash(command:*)","Bash(dolt version:*)","Bash(dolt push:*)"]
+2026-02-27T21:28:08.918Z [DEBUG] Applying permission update: Adding 1 directory with destination 'cliArg': ["/home/skogix/claude"]
+2026-02-27T21:28:08.919Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-02-27T21:28:08.923Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-02-27T21:28:08.924Z [DEBUG] [STARTUP] Running setup()...
+2026-02-27T21:28:08.926Z [DEBUG] [TeammateModeSnapshot] Captured from config: tmux
+2026-02-27T21:28:08.927Z [DEBUG] Loading skills from: managed=/etc/claude-code/.claude/skills, user=/home/skogix/.claude/skills, project=[]
+2026-02-27T21:28:08.928Z [DEBUG] Error log sink initialized
+2026-02-27T21:28:08.938Z [DEBUG] [STARTUP] setup() completed in 14ms
+2026-02-27T21:28:08.938Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-02-27T21:28:08.941Z [DEBUG] [Claude in Chrome] Found chrome profiles: Default
+2026-02-27T21:28:08.943Z [DEBUG] Loaded 5 installed plugins from /home/skogix/.claude/plugins/installed_plugins.json
+2026-02-27T21:28:08.946Z [DEBUG] [Claude in Chrome] Extension fcoeoabgfenejglbffodgkkbkcdhcgfn found in chrome Default
+2026-02-27T21:28:08.953Z [DEBUG] Loading plugin agent-architecture from source: "./"
+2026-02-27T21:28:08.953Z [DEBUG] Loading plugin agent-development from source: "./"
+2026-02-27T21:28:08.953Z [DEBUG] Loading plugin agent-evaluation from source: "./"
+2026-02-27T21:28:08.953Z [DEBUG] Loading plugin context-engineering-fundamentals from source: "./"
+2026-02-27T21:28:08.954Z [DEBUG] Loading plugin cognitive-architecture from source: "./"
+2026-02-27T21:28:08.955Z [WARN] Failed to parse YAML frontmatter in /home/skogix/.claude/agents/doc-writer.md: YAML Parse error: Unexpected token
+2026-02-27T21:28:08.956Z [DEBUG] Git remote URL: https://github.com/SkogAI/claude-temp.git
+2026-02-27T21:28:08.956Z [DEBUG] Parsed repository: github.com/SkogAI/claude-temp from URL: https://github.com/SkogAI/claude-temp.git
+2026-02-27T21:28:08.957Z [DEBUG] Loaded 9 unique skills (9 unconditional, 0 conditional, managed: 0, user: 4, project: 0, additional: 0, legacy commands: 5)
+2026-02-27T21:28:08.957Z [DEBUG] Using git SHA for agent-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T21:28:08.958Z [DEBUG] Using git SHA for agent-development@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T21:28:08.958Z [DEBUG] Using git SHA for agent-evaluation@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T21:28:08.958Z [DEBUG] Using git SHA for context-engineering-fundamentals@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T21:28:08.958Z [DEBUG] Using git SHA for cognitive-architecture@context-engineering-marketplace: 8ecfb76ca343
+2026-02-27T21:28:08.980Z [DEBUG] Plugin cognitive-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-27T21:28:08.980Z [DEBUG] Resolved local plugin cognitive-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343
+2026-02-27T21:28:08.980Z [DEBUG] Plugin agent-evaluation@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-27T21:28:08.980Z [DEBUG] Resolved local plugin agent-evaluation to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343
+2026-02-27T21:28:08.980Z [DEBUG] Plugin agent-development@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-27T21:28:08.980Z [DEBUG] Resolved local plugin agent-development to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343
+2026-02-27T21:28:08.980Z [DEBUG] Plugin agent-architecture@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-27T21:28:08.980Z [DEBUG] Resolved local plugin agent-architecture to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343
+2026-02-27T21:28:08.981Z [DEBUG] Plugin context-engineering-fundamentals@context-engineering-marketplace version 8ecfb76ca343 already cached at /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-27T21:28:08.981Z [DEBUG] Resolved local plugin context-engineering-fundamentals to versioned cache: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343
+2026-02-27T21:28:08.981Z [DEBUG] Processing 1 skill paths for plugin cognitive-architecture
+2026-02-27T21:28:08.981Z [DEBUG] Processing 2 skill paths for plugin agent-evaluation
+2026-02-27T21:28:08.982Z [DEBUG] Processing 5 skill paths for plugin agent-architecture
+2026-02-27T21:28:08.982Z [DEBUG] Processing 1 skill paths for plugin agent-development
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/bdi-mental-states -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Processing 4 skill paths for plugin context-engineering-fundamentals
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/multi-agent-patterns -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/project-development -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Found 1 valid skill paths for plugin cognitive-architecture, setting skillsPaths
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/context-fundamentals -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Found 1 valid skill paths for plugin agent-development, setting skillsPaths
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/advanced-evaluation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/memory-systems -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Found 2 valid skill paths for plugin agent-evaluation, setting skillsPaths
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/context-degradation -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/tool-design -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/context-compression -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/filesystem-context -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/context-optimization -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Found 4 valid skill paths for plugin context-engineering-fundamentals, setting skillsPaths
+2026-02-27T21:28:08.982Z [DEBUG] Checking skill path: ./skills/hosted-agents -> /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents (exists: true)
+2026-02-27T21:28:08.982Z [DEBUG] Found 5 valid skill paths for plugin agent-architecture, setting skillsPaths
+2026-02-27T21:28:08.982Z [DEBUG] Found 5 plugins (5 enabled, 0 disabled)
+2026-02-27T21:28:08.982Z [DEBUG] getPluginSkills: Processing 5 enabled plugins
+2026-02-27T21:28:08.982Z [DEBUG] Checking plugin agent-architecture: skillsPath=exists, skillsPaths=5 paths
+2026-02-27T21:28:08.982Z [DEBUG] Attempting to load skills from plugin agent-architecture default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills
+2026-02-27T21:28:08.983Z [DEBUG] Total plugin commands loaded: 0
+2026-02-27T21:28:08.983Z [DEBUG] Registered 0 hooks from 5 plugins
+2026-02-27T21:28:08.983Z [DEBUG] Total plugin agents loaded: 0
+2026-02-27T21:28:08.983Z [DEBUG] Loaded 13 skills from plugin agent-architecture default directory
+2026-02-27T21:28:08.983Z [DEBUG] Attempting to load skills from plugin agent-architecture skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents
+2026-02-27T21:28:08.984Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns for plugin agent-architecture
+2026-02-27T21:28:08.987Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/multi-agent-patterns
+2026-02-27T21:28:08.987Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems for plugin agent-architecture
+2026-02-27T21:28:08.987Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/memory-systems
+2026-02-27T21:28:08.987Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design for plugin agent-architecture
+2026-02-27T21:28:08.988Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/tool-design
+2026-02-27T21:28:08.988Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context for plugin agent-architecture
+2026-02-27T21:28:08.988Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/filesystem-context
+2026-02-27T21:28:08.988Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents for plugin agent-architecture
+2026-02-27T21:28:08.988Z [DEBUG] Loaded 0 skills from plugin agent-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-architecture/8ecfb76ca343/skills/hosted-agents
+2026-02-27T21:28:08.988Z [DEBUG] Checking plugin agent-development: skillsPath=exists, skillsPaths=1 paths
+2026-02-27T21:28:08.988Z [DEBUG] Attempting to load skills from plugin agent-development default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills
+2026-02-27T21:28:08.989Z [DEBUG] Loaded 13 skills from plugin agent-development default directory
+2026-02-27T21:28:08.989Z [DEBUG] Attempting to load skills from plugin agent-development skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development
+2026-02-27T21:28:08.989Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development for plugin agent-development
+2026-02-27T21:28:08.989Z [DEBUG] Loaded 0 skills from plugin agent-development custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-development/8ecfb76ca343/skills/project-development
+2026-02-27T21:28:08.989Z [DEBUG] Checking plugin agent-evaluation: skillsPath=exists, skillsPaths=2 paths
+2026-02-27T21:28:08.989Z [DEBUG] Attempting to load skills from plugin agent-evaluation default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills
+2026-02-27T21:28:08.990Z [DEBUG] Loaded 13 skills from plugin agent-evaluation default directory
+2026-02-27T21:28:08.990Z [DEBUG] Attempting to load skills from plugin agent-evaluation skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation
+2026-02-27T21:28:08.990Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation for plugin agent-evaluation
+2026-02-27T21:28:08.990Z [DEBUG] Loaded 0 skills from plugin agent-evaluation custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/evaluation
+2026-02-27T21:28:08.990Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation for plugin agent-evaluation
+2026-02-27T21:28:08.990Z [DEBUG] Loaded 0 skills from plugin agent-evaluation custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/agent-evaluation/8ecfb76ca343/skills/advanced-evaluation
+2026-02-27T21:28:08.990Z [DEBUG] Checking plugin cognitive-architecture: skillsPath=exists, skillsPaths=1 paths
+2026-02-27T21:28:08.990Z [DEBUG] Attempting to load skills from plugin cognitive-architecture default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills
+2026-02-27T21:28:08.991Z [DEBUG] Loaded 13 skills from plugin cognitive-architecture default directory
+2026-02-27T21:28:08.991Z [DEBUG] Attempting to load skills from plugin cognitive-architecture skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states
+2026-02-27T21:28:08.991Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states for plugin cognitive-architecture
+2026-02-27T21:28:08.991Z [DEBUG] Loaded 0 skills from plugin cognitive-architecture custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/cognitive-architecture/8ecfb76ca343/skills/bdi-mental-states
+2026-02-27T21:28:08.991Z [DEBUG] Checking plugin context-engineering-fundamentals: skillsPath=exists, skillsPaths=4 paths
+2026-02-27T21:28:08.991Z [DEBUG] Attempting to load skills from plugin context-engineering-fundamentals default skillsPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills
+2026-02-27T21:28:08.992Z [DEBUG] Loaded 13 skills from plugin context-engineering-fundamentals default directory
+2026-02-27T21:28:08.992Z [DEBUG] Attempting to load skills from plugin context-engineering-fundamentals skillsPaths: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression, /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization
+2026-02-27T21:28:08.992Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals for plugin context-engineering-fundamentals
+2026-02-27T21:28:08.992Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-fundamentals
+2026-02-27T21:28:08.992Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation for plugin context-engineering-fundamentals
+2026-02-27T21:28:08.992Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-degradation
+2026-02-27T21:28:08.992Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression for plugin context-engineering-fundamentals
+2026-02-27T21:28:08.992Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-compression
+2026-02-27T21:28:08.992Z [DEBUG] Loading from skillPath: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization for plugin context-engineering-fundamentals
+2026-02-27T21:28:08.992Z [DEBUG] Loaded 0 skills from plugin context-engineering-fundamentals custom path: /home/skogix/.claude/plugins/cache/context-engineering-marketplace/context-engineering-fundamentals/8ecfb76ca343/skills/context-optimization
+2026-02-27T21:28:08.992Z [DEBUG] Total plugin skills loaded: 65
+2026-02-27T21:28:08.992Z [DEBUG] getSkills returning: 9 skill dir commands, 65 plugin skills, 3 bundled skills
+2026-02-27T21:28:08.992Z [DEBUG] [STARTUP] Commands and agents loaded in 54ms
+2026-02-27T21:28:08.995Z [DEBUG] [STARTUP] Running showSetupScreens()...
+2026-02-27T21:28:09.024Z [DEBUG] Grove: Using fresh cached config
+2026-02-27T21:28:09.036Z [DEBUG] Path /home/skogix/gt/claude_temp/refinery/rig already tracked for repo skogai/claude-temp
+2026-02-27T21:28:09.036Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-02-27T21:28:09.036Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-02-27T21:28:09.039Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-27T21:28:09.045Z [DEBUG] [keybindings] Watching for changes to /home/skogix/.claude/keybindings.json
+2026-02-27T21:28:09.489Z [DEBUG] [STARTUP] showSetupScreens() completed in 494ms
+2026-02-27T21:28:09.489Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-02-27T21:28:09.489Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-02-27T21:28:09.489Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-02-27T21:28:09.489Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:09.489Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:09.489Z [DEBUG] Passes: Cache stale, returning cached data and refreshing in background
+2026-02-27T21:28:09.491Z [DEBUG] [STARTUP] MCP configs loaded in 572ms
+2026-02-27T21:28:09.494Z [DEBUG] MCP server "skogai-arch-linux": Starting connection with timeout of 30000ms
+2026-02-27T21:28:09.495Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:09.498Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2026-02-27T21:28:09.498Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:09.498Z [DEBUG] Matched 1 unique hooks for query "startup" (1 before deduplication)
+2026-02-27T21:28:09.512Z [DEBUG] Total LSP servers loaded: 0
+2026-02-27T21:28:09.512Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-02-27T21:28:09.512Z [DEBUG] LSP manager initialized with 0 servers
+2026-02-27T21:28:09.512Z [DEBUG] LSP server manager initialized successfully
+2026-02-27T21:28:09.512Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-02-27T21:28:09.532Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:09.532Z [DEBUG] Hook SessionStart:startup (SessionStart) success:
+# Gas Town Worker Context
+
+> **Context Recovery**: Run `gt prime` for full context after compaction or new session.
+
+## The Propulsion Principle (GUPP)
+
+**If you find work on your hook, YOU RUN IT.**
+
+No confirmation. No waiting. No announcements. The hook having work IS the assignment.
+This is physics, not politeness. Gas Town is a steam engine - you are a piston.
+
+**Failure mode we're preventing:**
+- Agent starts with work on hook
+- Agent announces itself and waits for human to say "ok go"
+- Human is AFK / trusting the engine to run
+- Work sits idle. The whole system stalls.
+
+## Startup Protocol
+
+1. Check your hook: `gt mol status`
+2. If work is hooked → EXECUTE (no announcement, no waiting)
+3. If hook empty → Check mail: `gt mail inbox`
+4. Still nothing? Wait for user instructions
+
+## Key Commands
+
+- `gt prime` - Get full role context (run after compaction)
+- `gt mol status` - Check your hooked work
+- `gt mail inbox` - Check for messages
+- `bd ready` - Find available work (no blockers)
+
+## Session Close Protocol
+
+Before signaling completion:
+1. git status (check what changed)
+2. git add <files> (stage code changes)
+3. git commit -m "..." (commit code)
+4. git push (push to remote)
+5. `gt done` (submit to merge queue and exit)
+
+**Polecats MUST call `gt done` - this submits work and exits the session.**
+2026-02-27T21:28:09.666Z [DEBUG] Org fast mode: enabled
+2026-02-27T21:28:10.035Z [ERROR] MCP server "skogai-arch-linux" Server stderr: 2026-02-27 22:28:09,715 - arch_ops_server.utils - INFO - Detected Arch Linux via /etc/arch-release
+2026-02-27 22:28:10,026 - arch_ops_server - INFO - Starting Arch Linux MCP Server (STDIO)
+2026-02-27 22:28:10,026 - arch_ops_server - INFO - Running on Arch Linux: True
+2026-02-27T21:28:10.035Z [DEBUG] MCP server "skogai-arch-linux": Successfully connected to undefined server in 544ms
+2026-02-27T21:28:10.035Z [DEBUG] MCP server "skogai-arch-linux": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"arch-ops-server","version":"1.26.0"}}
+2026-02-27T21:28:10.035Z [DEBUG] [MCP] Server "skogai-arch-linux" connected with subscribe=false
+2026-02-27T21:28:10.060Z [DEBUG] All plugins already exist, skipping migration
+2026-02-27T21:28:10.060Z [DEBUG] Initialized versioned plugins system with 5 plugins
+2026-02-27T21:28:10.064Z [DEBUG] [Reconnection] computeInitialTeamContext: No teammate context set (not a teammate)
+2026-02-27T21:28:10.066Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1758121.1772227690066
+2026-02-27T21:28:10.066Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T21:28:10.074Z [DEBUG] Temp file written successfully, size: 33714 bytes
+2026-02-27T21:28:10.074Z [DEBUG] Applied original permissions to temp file
+2026-02-27T21:28:10.074Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1758121.1772227690066 to /home/skogix/.claude.json
+2026-02-27T21:28:10.075Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T21:28:10.182Z [DEBUG] [keybindings] KeybindingSetup initialized with 102 bindings, 0 warnings
+2026-02-27T21:28:10.192Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.198Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.220Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1758121.1772227690220
+2026-02-27T21:28:10.220Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T21:28:10.229Z [DEBUG] Temp file written successfully, size: 33685 bytes
+2026-02-27T21:28:10.229Z [DEBUG] Applied original permissions to temp file
+2026-02-27T21:28:10.229Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1758121.1772227690220 to /home/skogix/.claude.json
+2026-02-27T21:28:10.229Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T21:28:10.231Z [DEBUG] [REPL:mount] REPL mounted, disabled=false
+2026-02-27T21:28:10.232Z [DEBUG] Official marketplace auto-install skipped: already_attempted
+2026-02-27T21:28:10.232Z [DEBUG] performStartupChecks called
+2026-02-27T21:28:10.232Z [DEBUG] Starting background plugin installations
+2026-02-27T21:28:10.233Z [DEBUG] performBackgroundPluginInstallations called
+2026-02-27T21:28:10.234Z [DEBUG] Loaded 9 CLAUDE.md/rules files:
+  [User] /home/skogix/.claude/CLAUDE.md (8 chars)
+  [User] /home/skogix/.claude/RTK.md (958 chars) (included by /home/skogix/.claude/CLAUDE.md)
+  [Project] /home/skogix/gt/CLAUDE.md (329 chars)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md (1025 chars)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/RULES.md (1891 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/DECISIONS.md (6909 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/projects/skogapi/main.py (4472 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/email/SKOGAI.md (809 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+  [Project] /home/skogix/gt/claude_temp/refinery/rig/scripts/csync.sh (545 chars) (included by /home/skogix/gt/claude_temp/refinery/rig/CLAUDE.md)
+2026-02-27T21:28:10.240Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.247Z [DEBUG] Plugin autoupdate: skipped (auto-updater disabled)
+2026-02-27T21:28:10.248Z [DEBUG] Watching for changes in setting files /home/skogix/.claude/settings.json, /home/skogix/gt/claude_temp/refinery/rig/.claude/settings.json, /home/skogix/gt/claude_temp/refinery/rig/.claude/settings.local.json...
+2026-02-27T21:28:10.258Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:10.258Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:10.258Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:10.258Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:10.259Z [DEBUG] Sending 76 skills via attachment (initial, 76 total sent)
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:context-compression" (userFacingName="context-compression")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:context-degradation" (userFacingName="context-degradation")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:context-optimization" (userFacingName="context-optimization")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:evaluation" (userFacingName="evaluation")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:memory-systems" (userFacingName="memory-systems")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:project-development" (userFacingName="project-development")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-architecture:tool-design" (userFacingName="tool-design")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:context-compression" (userFacingName="context-compression")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:context-degradation" (userFacingName="context-degradation")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:context-optimization" (userFacingName="context-optimization")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:evaluation" (userFacingName="evaluation")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:memory-systems" (userFacingName="memory-systems")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:project-development" (userFacingName="project-development")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-development:tool-design" (userFacingName="tool-design")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-evaluation:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-evaluation:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-evaluation:context-compression" (userFacingName="context-compression")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-evaluation:context-degradation" (userFacingName="context-degradation")
+2026-02-27T21:28:10.259Z [DEBUG] Skill prompt: showing "agent-evaluation:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "agent-evaluation:context-optimization" (userFacingName="context-optimization")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "agent-evaluation:evaluation" (userFacingName="evaluation")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "agent-evaluation:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "agent-evaluation:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "agent-evaluation:memory-systems" (userFacingName="memory-systems")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "agent-evaluation:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "agent-evaluation:project-development" (userFacingName="project-development")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "agent-evaluation:tool-design" (userFacingName="tool-design")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-compression" (userFacingName="context-compression")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-degradation" (userFacingName="context-degradation")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:context-optimization" (userFacingName="context-optimization")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:evaluation" (userFacingName="evaluation")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:memory-systems" (userFacingName="memory-systems")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:project-development" (userFacingName="project-development")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "cognitive-architecture:tool-design" (userFacingName="tool-design")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:advanced-evaluation" (userFacingName="advanced-evaluation")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:bdi-mental-states" (userFacingName="bdi-mental-states")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-compression" (userFacingName="context-compression")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-degradation" (userFacingName="context-degradation")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-fundamentals" (userFacingName="context-fundamentals")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:context-optimization" (userFacingName="context-optimization")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:evaluation" (userFacingName="evaluation")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:filesystem-context" (userFacingName="filesystem-context")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:hosted-agents" (userFacingName="hosted-agents")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:memory-systems" (userFacingName="memory-systems")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:multi-agent-patterns" (userFacingName="multi-agent-patterns")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:project-development" (userFacingName="project-development")
+2026-02-27T21:28:10.260Z [DEBUG] Skill prompt: showing "context-engineering-fundamentals:tool-design" (userFacingName="tool-design")
+2026-02-27T21:28:10.261Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-02-27T21:28:10.261Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-02-27T21:28:10.261Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-02-27T21:28:10.275Z [DEBUG] Found 5 enabled plugins
+2026-02-27T21:28:10.275Z [DEBUG] All plugins already exist, skipping migration
+2026-02-27T21:28:10.275Z [DEBUG] Found 5 installed plugins
+2026-02-27T21:28:10.275Z [DEBUG] Found 0 missing plugins (not installed):
+2026-02-27T21:28:10.275Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2026-02-27T21:28:10.278Z [DEBUG] Fetching plugin security messages from https://raw.githubusercontent.com/anthropics/claude-plugins-official/refs/heads/security/security.json
+2026-02-27T21:28:10.280Z [WARN] [3P telemetry] Event dropped (no event logger initialized): user_prompt
+2026-02-27T21:28:10.282Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2026-02-27T21:28:10.282Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T21:28:10.282Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-27T21:28:10.284Z [DEBUG] Watching for changes in skill/command directories: /home/skogix/.claude/skills, /home/skogix/.claude/commands, /home/skogix/gt/claude_temp/refinery/rig/.claude/commands...
+2026-02-27T21:28:10.285Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T21:28:10.312Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.329Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/opt/claude-code/bin/claude)
+2026-02-27T21:28:10.333Z [DEBUG] Detected pacman installation: /opt/claude-code/bin/claude is owned by claude-code 2.1.62-1
+2026-02-27T21:28:10.333Z [DEBUG] AutoUpdaterWrapper: Installation type: package-manager
+2026-02-27T21:28:10.350Z [DEBUG] Total plugin output styles loaded: 0
+2026-02-27T21:28:10.352Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T21:28:10.358Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.366Z [DEBUG] autocompact: tokens=4315 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:10.368Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:10.368Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:10.368Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:10.389Z [DEBUG] [useDeferredValue] Messages deferred by 2 (2→4)
+2026-02-27T21:28:10.392Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.397Z [DEBUG] High write ratio: blit=320, write=852 (72.7% writes), screen=20x80
+2026-02-27T21:28:10.428Z [DEBUG] Security messages saved successfully
+2026-02-27T21:28:10.432Z [DEBUG] Loaded plugins - Enabled: 5, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-02-27T21:28:10.467Z [DEBUG] [claudeai-mcp] Fetched 17 servers
+2026-02-27T21:28:10.468Z [DEBUG] MCP server "claude.ai Context7": Initializing claude.ai proxy transport for server mcpsrv_013Y4Z4gp3gb42i26dGgQfVe
+2026-02-27T21:28:10.468Z [DEBUG] MCP server "claude.ai Context7": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_013Y4Z4gp3gb42i26dGgQfVe
+2026-02-27T21:28:10.468Z [DEBUG] MCP server "claude.ai Context7": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.469Z [DEBUG] MCP server "claude.ai Context7": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.469Z [DEBUG] MCP server "claude.ai cloudflare casb": Initializing claude.ai proxy transport for server mcpsrv_01SSM6A4r7WLaEXMT6u6VNgU
+2026-02-27T21:28:10.469Z [DEBUG] MCP server "claude.ai cloudflare casb": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01SSM6A4r7WLaEXMT6u6VNgU
+2026-02-27T21:28:10.469Z [DEBUG] MCP server "claude.ai cloudflare casb": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.470Z [DEBUG] MCP server "claude.ai cloudflare casb": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.470Z [DEBUG] MCP server "claude.ai cloudfalre graphql": Initializing claude.ai proxy transport for server mcpsrv_01S49fEZA1TxANKsb7bXF1Rx
+2026-02-27T21:28:10.470Z [DEBUG] MCP server "claude.ai cloudfalre graphql": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01S49fEZA1TxANKsb7bXF1Rx
+2026-02-27T21:28:10.470Z [DEBUG] MCP server "claude.ai cloudfalre graphql": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.470Z [DEBUG] MCP server "claude.ai cloudfalre graphql": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.470Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": Initializing claude.ai proxy transport for server mcpsrv_015wS5zcp4ffpRiFoCGqQK7N
+2026-02-27T21:28:10.470Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_015wS5zcp4ffpRiFoCGqQK7N
+2026-02-27T21:28:10.470Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai cloudflare containers": Initializing claude.ai proxy transport for server mcpsrv_01UV38kUtGyitm2GJqQPq4U2
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai cloudflare containers": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01UV38kUtGyitm2GJqQPq4U2
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai cloudflare containers": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai cloudflare containers": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai skogix-se": Initializing claude.ai proxy transport for server mcpsrv_01GxZDuDj3JdyCbMPTGgPEBk
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai skogix-se": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01GxZDuDj3JdyCbMPTGgPEBk
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai skogix-se": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai skogix-se": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.471Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": Initializing claude.ai proxy transport for server mcpsrv_017GyzxLAESqr26ZR1JygRL5
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_017GyzxLAESqr26ZR1JygRL5
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai cloudflare autorag": Initializing claude.ai proxy transport for server mcpsrv_01HYYUy5hJtqPFEkX4txwNLo
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai cloudflare autorag": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01HYYUy5hJtqPFEkX4txwNLo
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai cloudflare autorag": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai cloudflare autorag": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai Hugging Face": Initializing claude.ai proxy transport for server mcpsrv_01VNYX8iQ3RktLAUN78jwJgn
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai Hugging Face": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01VNYX8iQ3RktLAUN78jwJgn
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai Hugging Face": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.472Z [DEBUG] MCP server "claude.ai Hugging Face": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01QuStmYJmpHArKsHy5pWAXV
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01QuStmYJmpHArKsHy5pWAXV
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai Google Calendar": Initializing claude.ai proxy transport for server mcpsrv_01Hj3mvSDfJNFjDSRNxiMFiK
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai Google Calendar": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01Hj3mvSDfJNFjDSRNxiMFiK
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai Google Calendar": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai cloudflare browser": Initializing claude.ai proxy transport for server mcpsrv_015FfqujJEQcAToTVpZ9cnUT
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai cloudflare browser": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_015FfqujJEQcAToTVpZ9cnUT
+2026-02-27T21:28:10.473Z [DEBUG] MCP server "claude.ai cloudflare browser": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare browser": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare docs": Initializing claude.ai proxy transport for server mcpsrv_01S5kBkT4aEqH8PG88xQvG93
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare docs": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01S5kBkT4aEqH8PG88xQvG93
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare docs": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare docs": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare search": Initializing claude.ai proxy transport for server mcpsrv_01JDkfSygDCXWafMTwnf99yw
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare search": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01JDkfSygDCXWafMTwnf99yw
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare search": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare search": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare dex": Initializing claude.ai proxy transport for server mcpsrv_01VbMJ3iQyNERU7hsT88HfxX
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare dex": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01VbMJ3iQyNERU7hsT88HfxX
+2026-02-27T21:28:10.474Z [DEBUG] MCP server "claude.ai cloudflare dex": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai cloudflare dex": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": Initializing claude.ai proxy transport for server mcpsrv_01N4r7JbHPrHFMjQSbzxL4XC
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01N4r7JbHPrHFMjQSbzxL4XC
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai Linear": Initializing claude.ai proxy transport for server mcpsrv_018iFdh3PH5djF4PY5TGjsbN
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai Linear": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_018iFdh3PH5djF4PY5TGjsbN
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai Linear": claude.ai proxy transport created successfully
+2026-02-27T21:28:10.475Z [DEBUG] MCP server "claude.ai Linear": Starting connection with timeout of 30000ms
+2026-02-27T21:28:10.477Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.617Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:10.624Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:10.625Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:10.625Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:10.626Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:10.631Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.707Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1758121.1772227690707
+2026-02-27T21:28:10.707Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T21:28:10.716Z [DEBUG] Temp file written successfully, size: 33685 bytes
+2026-02-27T21:28:10.716Z [DEBUG] Applied original permissions to temp file
+2026-02-27T21:28:10.716Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1758121.1772227690707 to /home/skogix/.claude.json
+2026-02-27T21:28:10.716Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T21:28:10.716Z [DEBUG] Passes eligibility cached for org 63ee6e26-6ae5-45b3-9fba-87c4275d1a12: true
+2026-02-27T21:28:10.900Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": claude.ai proxy connection failed after 429ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmWbcvxCBXkkY8Gvt"}
+2026-02-27T21:28:10.900Z [ERROR] MCP server "claude.ai Cloudflare Developer Platform" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmWbcvxCBXkkY8Gvt"}
+2026-02-27T21:28:10.900Z [DEBUG] MCP server "claude.ai Cloudflare Developer Platform": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.904Z [DEBUG] MCP server "claude.ai cloudfalre graphql": claude.ai proxy connection failed after 434ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmXLjs3du2vHfN2Cc"}
+2026-02-27T21:28:10.904Z [ERROR] MCP server "claude.ai cloudfalre graphql" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmXLjs3du2vHfN2Cc"}
+2026-02-27T21:28:10.904Z [DEBUG] MCP server "claude.ai cloudfalre graphql": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.908Z [DEBUG] MCP server "claude.ai Linear": claude.ai proxy connection failed after 433ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmQPj5gAejYTjtnfD"}
+2026-02-27T21:28:10.908Z [ERROR] MCP server "claude.ai Linear" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmQPj5gAejYTjtnfD"}
+2026-02-27T21:28:10.909Z [DEBUG] MCP server "claude.ai Linear": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.909Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy connection failed after 436ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUMy88HcbiyVkMDr"}
+2026-02-27T21:28:10.909Z [ERROR] MCP server "claude.ai Gmail" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUMy88HcbiyVkMDr"}
+2026-02-27T21:28:10.909Z [DEBUG] MCP server "claude.ai Gmail": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.910Z [DEBUG] MCP server "claude.ai cloudflare casb": claude.ai proxy connection failed after 441ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUcaXNPAvPDneKEb"}
+2026-02-27T21:28:10.910Z [ERROR] MCP server "claude.ai cloudflare casb" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUcaXNPAvPDneKEb"}
+2026-02-27T21:28:10.910Z [DEBUG] MCP server "claude.ai cloudflare casb": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.926Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": claude.ai proxy connection failed after 456ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUrfJDxVMau7p178"}
+2026-02-27T21:28:10.926Z [ERROR] MCP server "claude.ai cloudflare ai-gateway" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUrfJDxVMau7p178"}
+2026-02-27T21:28:10.926Z [DEBUG] MCP server "claude.ai cloudflare ai-gateway": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.927Z [DEBUG] MCP server "claude.ai cloudflare search": claude.ai proxy connection failed after 453ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUN3SLUtM4DKwBn6"}
+2026-02-27T21:28:10.927Z [ERROR] MCP server "claude.ai cloudflare search" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUN3SLUtM4DKwBn6"}
+2026-02-27T21:28:10.927Z [DEBUG] MCP server "claude.ai cloudflare search": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.932Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.938Z [DEBUG] MCP server "claude.ai cloudflare dex": claude.ai proxy connection failed after 464ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUcMT6ZNEYtfkMBS"}
+2026-02-27T21:28:10.938Z [ERROR] MCP server "claude.ai cloudflare dex" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmUcMT6ZNEYtfkMBS"}
+2026-02-27T21:28:10.938Z [DEBUG] MCP server "claude.ai cloudflare dex": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.945Z [DEBUG] MCP server "claude.ai cloudflare browser": claude.ai proxy connection failed after 472ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmV79bXsDsJybGQcZ"}
+2026-02-27T21:28:10.945Z [ERROR] MCP server "claude.ai cloudflare browser" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmV79bXsDsJybGQcZ"}
+2026-02-27T21:28:10.945Z [DEBUG] MCP server "claude.ai cloudflare browser": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.954Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:10.968Z [DEBUG] MCP server "claude.ai cloudflare autorag": claude.ai proxy connection failed after 496ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmWqwXeBDneCXnFQt"}
+2026-02-27T21:28:10.968Z [ERROR] MCP server "claude.ai cloudflare autorag" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmWqwXeBDneCXnFQt"}
+2026-02-27T21:28:10.968Z [DEBUG] MCP server "claude.ai cloudflare autorag": Authentication required for claude.ai proxy server
+2026-02-27T21:28:10.994Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:11.002Z [DEBUG] MCP server "claude.ai cloudflare containers": claude.ai proxy connection failed after 531ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmXqRNk6B9yZ8bq9R"}
+2026-02-27T21:28:11.002Z [ERROR] MCP server "claude.ai cloudflare containers" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmXqRNk6B9yZ8bq9R"}
+2026-02-27T21:28:11.002Z [DEBUG] MCP server "claude.ai cloudflare containers": Authentication required for claude.ai proxy server
+2026-02-27T21:28:11.012Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": claude.ai proxy connection failed after 537ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmXLkQmMeKXCtMjFe"}
+2026-02-27T21:28:11.012Z [ERROR] MCP server "claude.ai cloudflare dns analytics" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmXLkQmMeKXCtMjFe"}
+2026-02-27T21:28:11.012Z [DEBUG] MCP server "claude.ai cloudflare dns analytics": Authentication required for claude.ai proxy server
+2026-02-27T21:28:11.027Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:11.207Z [DEBUG] MCP server "claude.ai Google Calendar": claude.ai proxy connection failed after 734ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmQeP2gTLcmd5og6z"}
+2026-02-27T21:28:11.207Z [ERROR] MCP server "claude.ai Google Calendar" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"authentication_error","message":"MCP server requires authentication but no OAuth token is configured."},"request_id":"req_011CYZHPmQeP2gTLcmd5og6z"}
+2026-02-27T21:28:11.207Z [DEBUG] MCP server "claude.ai Google Calendar": Authentication required for claude.ai proxy server
+2026-02-27T21:28:11.235Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:11.372Z [DEBUG] MCP server "claude.ai Context7": Successfully connected to claudeai-proxy server in 904ms
+2026-02-27T21:28:11.372Z [DEBUG] MCP server "claude.ai Context7": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"Context7","version":"2.1.2"}}
+2026-02-27T21:28:11.372Z [DEBUG] [MCP] Server "claude.ai Context7" connected with subscribe=false
+2026-02-27T21:28:11.730Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:12.039Z [DEBUG] MCP server "claude.ai skogix-se": claude.ai proxy connection failed after 1568ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"not_found_error","message":"No MCP endpoint was found at the URL provided."},"request_id":"req_011CYZHPmRddFCy2jhc6NMD4"}
+2026-02-27T21:28:12.039Z [ERROR] MCP server "claude.ai skogix-se" Error: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"not_found_error","message":"No MCP endpoint was found at the URL provided."},"request_id":"req_011CYZHPmRddFCy2jhc6NMD4"}
+2026-02-27T21:28:12.040Z [DEBUG] MCP server "claude.ai skogix-se": Connection failed after 1568ms: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"not_found_error","message":"No MCP endpoint was found at the URL provided."},"request_id":"req_011CYZHPmRddFCy2jhc6NMD4"}
+2026-02-27T21:28:12.040Z [ERROR] MCP server "claude.ai skogix-se" Connection failed: Streamable HTTP error: Error POSTing to endpoint: {"type":"error","error":{"type":"not_found_error","message":"No MCP endpoint was found at the URL provided."},"request_id":"req_011CYZHPmRddFCy2jhc6NMD4"}
+2026-02-27T21:28:12.067Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:12.183Z [DEBUG] MCP server "claude.ai Hugging Face": Successfully connected to claudeai-proxy server in 1711ms
+2026-02-27T21:28:12.183Z [DEBUG] MCP server "claude.ai Hugging Face": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"@huggingface/mcp-services","title":"Hugging Face","icons":[{"src":"https://huggingface.co/favicon.ico"}],"version":"0.3.5","websiteUrl":"https://huggingface.co/mcp"}}
+2026-02-27T21:28:12.183Z [DEBUG] [MCP] Server "claude.ai Hugging Face" connected with subscribe=false
+2026-02-27T21:28:12.582Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:12.992Z [DEBUG] MCP server "claude.ai cloudflare docs": Successfully connected to claudeai-proxy server in 2518ms
+2026-02-27T21:28:12.992Z [DEBUG] MCP server "claude.ai cloudflare docs": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"docs-ai-search","version":"0.4.4"}}
+2026-02-27T21:28:12.992Z [DEBUG] [MCP] Server "claude.ai cloudflare docs" connected with subscribe=false
+2026-02-27T21:28:14.145Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:14.187Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:15.032Z [DEBUG] [useDeferredValue] Messages deferred by 1 (4→5)
+2026-02-27T21:28:15.033Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:15.042Z [DEBUG] [useDeferredValue] Messages deferred by 1 (4→5)
+2026-02-27T21:28:15.066Z [DEBUG] High write ratio: blit=0, write=1073 (100.0% writes), screen=25x80
+2026-02-27T21:28:15.803Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:15.804Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:15.804Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:15.804Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:15.807Z [DEBUG] [useDeferredValue] Messages deferred by 2 (5→7)
+2026-02-27T21:28:15.812Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:15.817Z [DEBUG] High write ratio: blit=0, write=1073 (100.0% writes), screen=25x80
+2026-02-27T21:28:15.834Z [DEBUG] High write ratio: blit=0, write=1113 (100.0% writes), screen=28x80
+2026-02-27T21:28:15.908Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:15.916Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:15.937Z [DEBUG] tree-sitter: loaded from embedded
+2026-02-27T21:28:15.950Z [DEBUG] Creating shell snapshot for zsh (/usr/bin/zsh)
+2026-02-27T21:28:15.950Z [DEBUG] Looking for shell config file: /home/skogix/.zshrc
+2026-02-27T21:28:15.950Z [DEBUG] Snapshots directory: /home/skogix/.claude/shell-snapshots
+2026-02-27T21:28:15.952Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:15.955Z [DEBUG] Creating snapshot at: /home/skogix/.claude/shell-snapshots/snapshot-zsh-1772227695950-d7aepd.sh
+2026-02-27T21:28:15.955Z [DEBUG] Execution timeout: 10000ms
+2026-02-27T21:28:16.325Z [DEBUG] [useDeferredValue] Messages deferred by 1 (7→8)
+2026-02-27T21:28:16.327Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:16.348Z [DEBUG] High write ratio: blit=0, write=1165 (100.0% writes), screen=31x80
+2026-02-27T21:28:16.381Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:16.385Z [DEBUG] High write ratio: blit=0, write=1165 (100.0% writes), screen=31x80
+2026-02-27T21:28:16.560Z [DEBUG] Shell snapshot created successfully (204740 bytes)
+2026-02-27T21:28:16.560Z [DEBUG] No session environment scripts found
+2026-02-27T21:28:16.560Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:17.136Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:17.137Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.da2; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:17.138Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:17.138Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:17.138Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:17.140Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:17.140Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:17.140Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:17.141Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:17.142Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:17.142Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:17.142Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:17.146Z [DEBUG] [useDeferredValue] Messages deferred by 3 (8→11)
+2026-02-27T21:28:17.155Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:17.161Z [DEBUG] High write ratio: blit=0, write=1165 (100.0% writes), screen=31x80
+2026-02-27T21:28:17.179Z [DEBUG] High write ratio: blit=0, write=1524 (100.0% writes), screen=42x80
+2026-02-27T21:28:17.253Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:17.267Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:17.271Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:17.493Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:17.494Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:17.494Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:17.494Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:17.494Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:17.495Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:17.495Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:17.495Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:17.496Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:17.496Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:17.496Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:17.496Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:17.497Z [DEBUG] autocompact: tokens=38570 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:17.498Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:17.498Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:17.498Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:17.499Z [DEBUG] [useDeferredValue] Messages deferred by 2 (11→13)
+2026-02-27T21:28:17.503Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:17.506Z [DEBUG] High write ratio: blit=0, write=1524 (100.0% writes), screen=42x80
+2026-02-27T21:28:17.524Z [DEBUG] High write ratio: blit=0, write=1670 (100.0% writes), screen=46x80
+2026-02-27T21:28:17.677Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:17.788Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:17.792Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:17.792Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:17.792Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:17.792Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:17.796Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:17.971Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:20.817Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:20.828Z [DEBUG] High write ratio: blit=0, write=1671 (100.0% writes), screen=46x80
+2026-02-27T21:28:21.505Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:21.506Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:21.506Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:21.506Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:21.508Z [DEBUG] [useDeferredValue] Messages deferred by 1 (13→14)
+2026-02-27T21:28:21.513Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:21.527Z [DEBUG] High write ratio: blit=0, write=1671 (100.0% writes), screen=46x80
+2026-02-27T21:28:21.529Z [DEBUG] [useDeferredValue] Messages deferred by 2 (13→15)
+2026-02-27T21:28:21.535Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:21.541Z [DEBUG] High write ratio: blit=0, write=1671 (100.0% writes), screen=46x80
+2026-02-27T21:28:21.555Z [DEBUG] High write ratio: blit=0, write=1718 (100.0% writes), screen=49x80
+2026-02-27T21:28:21.610Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:21.620Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:21.622Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:21.862Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:21.862Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.6db; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:21.863Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:21.863Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:21.863Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:21.864Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:21.864Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:21.864Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:21.865Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:21.865Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:21.865Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:21.865Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:21.866Z [DEBUG] autocompact: tokens=42811 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:21.866Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:21.868Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:21.869Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:21.869Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:21.869Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:21.871Z [DEBUG] [useDeferredValue] Messages deferred by 2 (15→17)
+2026-02-27T21:28:21.876Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:21.880Z [DEBUG] High write ratio: blit=0, write=1718 (100.0% writes), screen=49x80
+2026-02-27T21:28:21.896Z [DEBUG] High write ratio: blit=0, write=2027 (100.0% writes), screen=58x80
+2026-02-27T21:28:22.361Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:25.095Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:25.104Z [DEBUG] High write ratio: blit=0, write=2027 (100.0% writes), screen=58x80
+2026-02-27T21:28:25.712Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:25.712Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:25.712Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:25.712Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:25.715Z [DEBUG] [useDeferredValue] Messages deferred by 1 (17→18)
+2026-02-27T21:28:25.719Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:25.724Z [DEBUG] High write ratio: blit=0, write=2027 (100.0% writes), screen=58x80
+2026-02-27T21:28:25.742Z [DEBUG] High write ratio: blit=0, write=2073 (100.0% writes), screen=61x80
+2026-02-27T21:28:25.768Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-02-27T21:28:25.770Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:25.773Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-02-27T21:28:25.786Z [DEBUG] [useDeferredValue] Messages deferred by 1 (18→19)
+2026-02-27T21:28:25.787Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:25.791Z [DEBUG] High write ratio: blit=0, write=2073 (100.0% writes), screen=61x80
+2026-02-27T21:28:25.808Z [DEBUG] High write ratio: blit=0, write=2073 (100.0% writes), screen=61x80
+2026-02-27T21:28:25.817Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:25.823Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:25.825Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:26.356Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:26.357Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.aa6; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:26.357Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:26.357Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:26.357Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:26.358Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:26.358Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:26.358Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:26.359Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:26.359Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:26.359Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:26.359Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:26.359Z [DEBUG] autocompact: tokens=43033 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:26.360Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:26.362Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:26.363Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:26.363Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:26.363Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:26.365Z [DEBUG] [useDeferredValue] Messages deferred by 2 (19→21)
+2026-02-27T21:28:26.370Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:26.375Z [DEBUG] High write ratio: blit=0, write=2073 (100.0% writes), screen=61x80
+2026-02-27T21:28:26.392Z [DEBUG] High write ratio: blit=0, write=2432 (100.0% writes), screen=72x80
+2026-02-27T21:28:27.626Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:29.120Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:29.674Z [DEBUG] [useDeferredValue] Messages deferred by 1 (21→22)
+2026-02-27T21:28:29.695Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:29.711Z [DEBUG] High write ratio: blit=0, write=2433 (100.0% writes), screen=72x80
+2026-02-27T21:28:29.751Z [DEBUG] High write ratio: blit=0, write=2485 (100.0% writes), screen=74x80
+2026-02-27T21:28:30.617Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:30.618Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:30.618Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:30.618Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:30.621Z [DEBUG] [useDeferredValue] Messages deferred by 1 (22→23)
+2026-02-27T21:28:30.625Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:30.630Z [DEBUG] High write ratio: blit=0, write=2485 (100.0% writes), screen=74x80
+2026-02-27T21:28:30.648Z [DEBUG] High write ratio: blit=0, write=2526 (100.0% writes), screen=77x80
+2026-02-27T21:28:30.663Z [DEBUG] [useDeferredValue] Messages deferred by 1 (23→24)
+2026-02-27T21:28:30.668Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:30.672Z [DEBUG] High write ratio: blit=0, write=2526 (100.0% writes), screen=77x80
+2026-02-27T21:28:30.688Z [DEBUG] High write ratio: blit=0, write=2526 (100.0% writes), screen=77x80
+2026-02-27T21:28:30.721Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:30.726Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:30.729Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:30.790Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:30.790Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.e50; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:30.791Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:30.791Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:30.791Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:30.792Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:30.792Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:30.792Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:30.793Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:30.793Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:30.793Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:30.793Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:30.794Z [DEBUG] autocompact: tokens=43236 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:30.794Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:30.797Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:30.797Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:30.797Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:30.797Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:30.799Z [DEBUG] [useDeferredValue] Messages deferred by 2 (24→26)
+2026-02-27T21:28:30.804Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:30.809Z [DEBUG] High write ratio: blit=0, write=2526 (100.0% writes), screen=77x80
+2026-02-27T21:28:30.827Z [DEBUG] High write ratio: blit=0, write=2736 (100.0% writes), screen=83x80
+2026-02-27T21:28:31.309Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:33.520Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:33.530Z [DEBUG] High write ratio: blit=0, write=2736 (100.0% writes), screen=83x80
+2026-02-27T21:28:34.222Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:34.223Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:34.223Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:34.223Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:34.225Z [DEBUG] [useDeferredValue] Messages deferred by 1 (26→27)
+2026-02-27T21:28:34.228Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:34.240Z [DEBUG] High write ratio: blit=0, write=2795 (100.0% writes), screen=86x80
+2026-02-27T21:28:34.250Z [DEBUG] [useDeferredValue] Messages deferred by 1 (27→28)
+2026-02-27T21:28:34.254Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:34.261Z [DEBUG] High write ratio: blit=0, write=2795 (100.0% writes), screen=86x80
+2026-02-27T21:28:34.281Z [DEBUG] High write ratio: blit=0, write=2795 (100.0% writes), screen=86x80
+2026-02-27T21:28:34.333Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:34.337Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:34.339Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:34.398Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:34.398Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.fc5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:34.399Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:34.399Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:34.399Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:34.400Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:34.400Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:34.400Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:34.401Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:34.401Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:34.401Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:34.401Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:34.401Z [DEBUG] autocompact: tokens=43411 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:34.402Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:34.404Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:34.404Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:34.404Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:34.404Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:34.406Z [DEBUG] [useDeferredValue] Messages deferred by 2 (28→30)
+2026-02-27T21:28:34.410Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:34.415Z [DEBUG] High write ratio: blit=0, write=2795 (100.0% writes), screen=86x80
+2026-02-27T21:28:34.432Z [DEBUG] High write ratio: blit=0, write=3033 (100.0% writes), screen=97x80
+2026-02-27T21:28:34.967Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:37.167Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:37.178Z [DEBUG] High write ratio: blit=0, write=3033 (100.0% writes), screen=97x80
+2026-02-27T21:28:37.721Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:37.722Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:37.722Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:37.722Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:37.725Z [DEBUG] [useDeferredValue] Messages deferred by 1 (30→31)
+2026-02-27T21:28:37.732Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:37.740Z [DEBUG] High write ratio: blit=0, write=3033 (100.0% writes), screen=97x80
+2026-02-27T21:28:37.749Z [DEBUG] [useDeferredValue] Messages deferred by 2 (30→32)
+2026-02-27T21:28:37.754Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:37.761Z [DEBUG] High write ratio: blit=0, write=3033 (100.0% writes), screen=97x80
+2026-02-27T21:28:37.777Z [DEBUG] High write ratio: blit=0, write=3084 (100.0% writes), screen=100x80
+2026-02-27T21:28:37.835Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:37.844Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:37.847Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:37.931Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:37.932Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.da2; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:37.932Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:37.932Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:37.932Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:37.933Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:37.933Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:37.933Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:37.934Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:37.934Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:37.934Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:37.934Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:37.934Z [DEBUG] autocompact: tokens=43973 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:37.935Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:37.938Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:37.938Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:37.938Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:37.938Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:37.941Z [DEBUG] [useDeferredValue] Messages deferred by 2 (32→34)
+2026-02-27T21:28:37.946Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:37.953Z [DEBUG] High write ratio: blit=0, write=3084 (100.0% writes), screen=100x80
+2026-02-27T21:28:37.971Z [DEBUG] High write ratio: blit=0, write=4747 (100.0% writes), screen=140x80
+2026-02-27T21:28:38.740Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:40.952Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:40.966Z [DEBUG] High write ratio: blit=0, write=4747 (100.0% writes), screen=140x80
+2026-02-27T21:28:41.968Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:41.968Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:41.968Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:41.969Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:41.971Z [DEBUG] [useDeferredValue] Messages deferred by 1 (34→35)
+2026-02-27T21:28:41.975Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:41.982Z [DEBUG] High write ratio: blit=0, write=4747 (100.0% writes), screen=140x80
+2026-02-27T21:28:41.992Z [DEBUG] [useDeferredValue] Messages deferred by 2 (34→36)
+2026-02-27T21:28:41.997Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:42.004Z [DEBUG] High write ratio: blit=0, write=4747 (100.0% writes), screen=140x80
+2026-02-27T21:28:42.022Z [DEBUG] High write ratio: blit=0, write=4846 (100.0% writes), screen=144x80
+2026-02-27T21:28:42.067Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:42.078Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:42.080Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:42.263Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:42.263Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:42.264Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:42.264Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:42.264Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:42.265Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:42.265Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:42.265Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:42.267Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:42.267Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:42.267Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:42.267Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:42.268Z [DEBUG] autocompact: tokens=44520 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:42.268Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:42.271Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:42.272Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:42.272Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:42.272Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:42.274Z [DEBUG] [useDeferredValue] Messages deferred by 2 (36→38)
+2026-02-27T21:28:42.279Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:42.287Z [DEBUG] High write ratio: blit=0, write=4846 (100.0% writes), screen=144x80
+2026-02-27T21:28:42.308Z [DEBUG] High write ratio: blit=0, write=5375 (100.0% writes), screen=161x80
+2026-02-27T21:28:42.802Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:44.961Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:44.972Z [DEBUG] High write ratio: blit=0, write=5375 (100.0% writes), screen=161x80
+2026-02-27T21:28:45.734Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:45.735Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:45.735Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:45.735Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:45.737Z [DEBUG] [useDeferredValue] Messages deferred by 1 (38→39)
+2026-02-27T21:28:45.742Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:45.754Z [DEBUG] High write ratio: blit=0, write=5375 (100.0% writes), screen=161x80
+2026-02-27T21:28:45.775Z [DEBUG] [useDeferredValue] Messages deferred by 1 (39→40)
+2026-02-27T21:28:45.782Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:45.792Z [DEBUG] High write ratio: blit=0, write=5427 (100.0% writes), screen=164x80
+2026-02-27T21:28:45.800Z [DEBUG] [useDeferredValue] Messages deferred by 1 (39→40)
+2026-02-27T21:28:45.801Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:45.826Z [DEBUG] High write ratio: blit=0, write=5427 (100.0% writes), screen=164x80
+2026-02-27T21:28:45.841Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:45.847Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:45.849Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:46.056Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:46.057Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.34c; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:46.057Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:46.057Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:46.057Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:46.058Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:46.058Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:46.058Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:46.059Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:46.059Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:46.059Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:46.059Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:46.060Z [DEBUG] autocompact: tokens=44824 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:46.060Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:46.062Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:46.062Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:46.062Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:46.062Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:46.064Z [DEBUG] [useDeferredValue] Messages deferred by 3 (40→43)
+2026-02-27T21:28:46.069Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:46.078Z [DEBUG] High write ratio: blit=0, write=5427 (100.0% writes), screen=164x80
+2026-02-27T21:28:46.097Z [DEBUG] High write ratio: blit=0, write=5573 (100.0% writes), screen=168x80
+2026-02-27T21:28:46.717Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:48.840Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:50.404Z [DEBUG] [useDeferredValue] Messages deferred by 1 (43→44)
+2026-02-27T21:28:50.406Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:50.413Z [DEBUG] [useDeferredValue] Messages deferred by 1 (43→44)
+2026-02-27T21:28:50.430Z [DEBUG] High write ratio: blit=0, write=5573 (100.0% writes), screen=168x80
+2026-02-27T21:28:50.450Z [DEBUG] High write ratio: blit=0, write=5770 (100.0% writes), screen=173x80
+2026-02-27T21:28:53.097Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:53.098Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:53.098Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:53.098Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:53.101Z [DEBUG] [useDeferredValue] Messages deferred by 1 (44→45)
+2026-02-27T21:28:53.105Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:53.114Z [DEBUG] High write ratio: blit=0, write=5770 (100.0% writes), screen=173x80
+2026-02-27T21:28:53.122Z [DEBUG] [useDeferredValue] Messages deferred by 2 (44→46)
+2026-02-27T21:28:53.127Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:53.134Z [DEBUG] High write ratio: blit=0, write=5770 (100.0% writes), screen=173x80
+2026-02-27T21:28:53.175Z [DEBUG] High write ratio: blit=0, write=6063 (100.0% writes), screen=179x80
+2026-02-27T21:28:53.196Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:53.211Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:53.213Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:53.261Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:53.262Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.6db; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:53.262Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:53.262Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:53.262Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:53.264Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:53.264Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:53.264Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:53.265Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:53.265Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:53.265Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:53.265Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:53.266Z [DEBUG] autocompact: tokens=45379 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:53.266Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:53.270Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:53.270Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:53.270Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:53.271Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:53.273Z [DEBUG] [useDeferredValue] Messages deferred by 2 (46→48)
+2026-02-27T21:28:53.277Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:53.286Z [DEBUG] High write ratio: blit=0, write=6063 (100.0% writes), screen=179x80
+2026-02-27T21:28:53.311Z [DEBUG] High write ratio: blit=0, write=7294 (100.0% writes), screen=208x80
+2026-02-27T21:28:53.740Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:56.163Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:28:56.184Z [DEBUG] High write ratio: blit=0, write=7294 (100.0% writes), screen=208x80
+2026-02-27T21:28:57.127Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:28:57.128Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:28:57.128Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:28:57.128Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:28:57.130Z [DEBUG] [useDeferredValue] Messages deferred by 1 (48→49)
+2026-02-27T21:28:57.134Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:57.143Z [DEBUG] High write ratio: blit=0, write=7294 (100.0% writes), screen=208x80
+2026-02-27T21:28:57.151Z [DEBUG] [useDeferredValue] Messages deferred by 2 (48→50)
+2026-02-27T21:28:57.156Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:57.164Z [DEBUG] High write ratio: blit=0, write=7294 (100.0% writes), screen=208x80
+2026-02-27T21:28:57.185Z [DEBUG] High write ratio: blit=0, write=7545 (100.0% writes), screen=214x80
+2026-02-27T21:28:57.229Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:28:57.254Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:28:57.256Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:57.654Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:28:57.654Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.6db; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:57.655Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:57.655Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:57.655Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:57.656Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:28:57.656Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:28:57.656Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:28:57.656Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:28:57.656Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:28:57.656Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:28:57.656Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:28:57.657Z [DEBUG] autocompact: tokens=45572 threshold=167000 effectiveWindow=180000
+2026-02-27T21:28:57.657Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:28:57.659Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:28:57.660Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:28:57.660Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:28:57.660Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:28:57.662Z [DEBUG] [useDeferredValue] Messages deferred by 2 (50→52)
+2026-02-27T21:28:57.667Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:28:57.676Z [DEBUG] High write ratio: blit=0, write=7545 (100.0% writes), screen=214x80
+2026-02-27T21:28:57.708Z [DEBUG] High write ratio: blit=0, write=7612 (100.0% writes), screen=215x80
+2026-02-27T21:28:58.117Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:29:00.636Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:29:00.653Z [DEBUG] High write ratio: blit=0, write=7612 (100.0% writes), screen=215x80
+2026-02-27T21:29:01.584Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:29:01.584Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:29:01.584Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:29:01.585Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:29:01.589Z [DEBUG] [useDeferredValue] Messages deferred by 2 (52→54)
+2026-02-27T21:29:01.600Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:29:01.614Z [DEBUG] High write ratio: blit=0, write=7612 (100.0% writes), screen=215x80
+2026-02-27T21:29:01.615Z [DEBUG] Hooks: Checking initial response for async: {
+  "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
+    "permissionDecision": "allow",
+    "permissionDecisionReason": "RTK auto-rewrite",
+    "updatedInput": {
+      "command": "rtk git add -A && git commit -m \"patrol: clean cycle, queue empty\" --no-verify 2>&1 || true",
+      "description": "Commit patrol state"
+    }
+  }
+}
+2026-02-27T21:29:01.615Z [DEBUG] Hooks: Parsed initial response: {"hookSpecificOutput":{"hookEventName":"PreToolUse","permissionDecision":"allow","permissionDecisionReason":"RTK auto-rewrite","updatedInput":{"command":"rtk git add -A && git commit -m \"patrol: clean cycle, queue empty\" --no-verify 2>&1 || true","description":"Commit patrol state"}}}
+2026-02-27T21:29:01.615Z [DEBUG] Hooks: Initial response is not async, continuing normal processing
+2026-02-27T21:29:01.627Z [DEBUG] Successfully parsed and validated hook JSON output
+2026-02-27T21:29:01.627Z [DEBUG] Hook PreToolUse:Bash (PreToolUse) success:
+{
+  "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
+    "permissionDecision": "allow",
+    "permissionDecisionReason": "RTK auto-rewrite",
+    "updatedInput": {
+      "command": "rtk git add -A && git commit -m \"patrol: clean cycle, queue empty\" --no-verify 2>&1 || true",
+      "description": "Commit patrol state"
+    }
+  }
+}
+2026-02-27T21:29:01.627Z [DEBUG] Hook PreToolUse (/home/skogix/.claude/hooks/rtk-rewrite.sh) returned permissionDecision: allow (reason: RTK auto-rewrite)
+2026-02-27T21:29:01.627Z [DEBUG] Hook PreToolUse (/home/skogix/.claude/hooks/rtk-rewrite.sh) modified tool input keys: [command, description]
+2026-02-27T21:29:01.627Z [DEBUG] Hook result has permissionBehavior=allow
+2026-02-27T21:29:01.627Z [DEBUG] Hook approved tool use for Bash, bypassing permission check
+2026-02-27T21:29:01.628Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:29:01.653Z [DEBUG] High write ratio: blit=0, write=7719 (100.0% writes), screen=219x80
+2026-02-27T21:29:01.716Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:29:01.717Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.f92; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:29:01.717Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:29:01.717Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:29:01.718Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:29:01.720Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:29:01.720Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:29:01.720Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:29:01.722Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:29:01.872Z [DEBUG] [useDeferredValue] Messages deferred by 2 (54→56)
+2026-02-27T21:29:01.878Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:29:01.888Z [DEBUG] High write ratio: blit=0, write=7719 (100.0% writes), screen=219x80
+2026-02-27T21:29:01.929Z [DEBUG] High write ratio: blit=0, write=7830 (100.0% writes), screen=223x80
+2026-02-27T21:29:02.183Z [DEBUG] executePreToolHooks called for tool: Bash
+2026-02-27T21:29:02.184Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2026-02-27T21:29:02.184Z [DEBUG] Found 1 hook matchers in settings
+2026-02-27T21:29:02.184Z [DEBUG] Matched 1 unique hooks for query "Bash" (1 before deduplication)
+2026-02-27T21:29:02.192Z [DEBUG] [useDeferredValue] Messages deferred by 2 (56→58)
+2026-02-27T21:29:02.202Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:29:02.217Z [DEBUG] High write ratio: blit=0, write=7830 (100.0% writes), screen=223x80
+2026-02-27T21:29:02.257Z [DEBUG] High write ratio: blit=0, write=7870 (100.0% writes), screen=226x80
+2026-02-27T21:29:02.284Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:29:02.311Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-02-27T21:29:02.318Z [DEBUG] Spawning shell without login (-l flag skipped)
+2026-02-27T21:29:02.321Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:29:02.402Z [DEBUG] Tool search disabled for model 'claude-haiku-4-5-20251001': model does not support tool_reference blocks. This feature is only available on Claude Sonnet 4+, Opus 4+, and newer models.
+2026-02-27T21:29:02.402Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.da2; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:29:02.402Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:29:02.402Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:29:02.402Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:29:02.403Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2026-02-27T21:29:02.403Z [DEBUG] Found 5 hook matchers in settings
+2026-02-27T21:29:02.403Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2026-02-27T21:29:02.404Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-02-27T21:29:02.404Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-02-27T21:29:02.404Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-02-27T21:29:02.404Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-02-27T21:29:02.405Z [DEBUG] autocompact: tokens=45839 threshold=167000 effectiveWindow=180000
+2026-02-27T21:29:02.405Z [DEBUG] Tool search disabled via experiment (tengu_tst_kx7): below threshold, deferred tools present [source: query]
+2026-02-27T21:29:02.408Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.62.3d5; cc_entrypoint=cli; cch=00000;
+2026-02-27T21:29:02.408Z [DEBUG] [API:request] Creating client, ANTHROPIC_CUSTOM_HEADERS present: false, has Authorization header: false
+2026-02-27T21:29:02.408Z [DEBUG] [API:auth] OAuth token check starting
+2026-02-27T21:29:02.409Z [DEBUG] [API:auth] OAuth token check complete
+2026-02-27T21:29:02.412Z [DEBUG] [useDeferredValue] Messages deferred by 2 (58→60)
+2026-02-27T21:29:02.418Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:29:02.431Z [DEBUG] High write ratio: blit=0, write=7870 (100.0% writes), screen=226x80
+2026-02-27T21:29:02.460Z [DEBUG] High write ratio: blit=0, write=8068 (100.0% writes), screen=229x80
+2026-02-27T21:29:02.923Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:29:05.017Z [DEBUG] Stream started - received first chunk
+2026-02-27T21:29:05.789Z [DEBUG] [useDeferredValue] Messages deferred by 1 (60→61)
+2026-02-27T21:29:05.795Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:29:05.873Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2026-02-27T21:29:05.873Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T21:29:05.874Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2026-02-27T21:29:05.882Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1758121.1772227745882
+2026-02-27T21:29:05.882Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T21:29:05.886Z [DEBUG] Temp file written successfully, size: 33685 bytes
+2026-02-27T21:29:05.886Z [DEBUG] Applied original permissions to temp file
+2026-02-27T21:29:05.886Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1758121.1772227745882 to /home/skogix/.claude.json
+2026-02-27T21:29:05.887Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T21:29:05.891Z [DEBUG] Writing to temp file: /home/skogix/.claude.json.tmp.1758121.1772227745891
+2026-02-27T21:29:05.891Z [DEBUG] Preserving file permissions: 100600
+2026-02-27T21:29:05.894Z [DEBUG] Temp file written successfully, size: 33685 bytes
+2026-02-27T21:29:05.894Z [DEBUG] Applied original permissions to temp file
+2026-02-27T21:29:05.894Z [DEBUG] Renaming /home/skogix/.claude.json.tmp.1758121.1772227745891 to /home/skogix/.claude.json
+2026-02-27T21:29:05.894Z [DEBUG] File /home/skogix/.claude.json written atomically
+2026-02-27T21:29:05.897Z [DEBUG] [useDeferredValue] Messages deferred by 2 (60→62)
+2026-02-27T21:29:05.910Z [DEBUG] [BackendRegistry] isInProcessEnabled: false (mode=tmux, insideTmux=true)
+2026-02-27T21:29:05.929Z [DEBUG] High write ratio: blit=0, write=8202 (100.0% writes), screen=233x80
+2026-02-27T21:30:05.933Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2026-02-27T21:30:05.933Z [DEBUG] Found 0 hook matchers in settings
+2026-02-27T21:30:05.933Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)

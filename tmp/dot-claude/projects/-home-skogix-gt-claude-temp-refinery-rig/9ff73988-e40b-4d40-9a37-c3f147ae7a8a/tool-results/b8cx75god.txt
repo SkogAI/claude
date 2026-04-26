@@ -1,0 +1,390 @@
+[
+  {
+    "id": "ct-wisp-wisp-1rlzr",
+    "title": "Merge and push",
+    "description": "Merge and push. CRITICAL: Notifications come IMMEDIATELY after push.\n\n**Config: integration_branch_refinery_enabled = true**\n**Config: target_branch = master**\n**Config: delete_merged_branches = true**\n\n**Step 1: Merge and Push**\nDetermine `\u003cmerge-target\u003e` using the **Target Resolution Rule** above.\n```bash\ngit checkout \u003cmerge-target\u003e\ngit merge --ff-only temp\ngit push origin \u003cmerge-target\u003e\n```\n\n**Step 1.5: VERIFY PUSH SUCCEEDED (CRITICAL - PATCH-003)**\n\nPush can fail silently (network, auth, hooks). IMMEDIATELY verify:\n```bash\ngit fetch origin\nLOCAL_SHA=$(git rev-parse \u003cmerge-target\u003e)\nREMOTE_SHA=$(git rev-parse origin/\u003cmerge-target\u003e)\necho \"Local:  $LOCAL_SHA\"\necho \"Remote: $REMOTE_SHA\"\n```\n\n**If SHAs match**: Push succeeded. Continue to Step 2.\n\n**If SHAs differ**: STOP. Push failed silently.\n- DO NOT send MERGED notification\n- DO NOT close MR bead\n- DO NOT delete branch\n- Debug the push failure (check `git push` output, network, auth)\n- Retry push and verify again before proceeding\n\n⚠️ **STOP HERE - DO NOT PROCEED UNTIL STEPS 1.5 AND 2-3 COMPLETE**\n\n**Step 2: Send MERGED Notification (REQUIRED - DO THIS IMMEDIATELY)**\n\nRIGHT NOW, before any cleanup, send MERGED mail to Witness:\n\n```bash\ngt mail send \u003crig\u003e/witness -s \"MERGED \u003cpolecat-name\u003e\" -m \"Branch: \u003cbranch\u003e\nIssue: \u003cissue-id\u003e\nMerged-At: $(date -u +%Y-%m-%dT%H:%M:%SZ)\"\n```\n\nThis signals the Witness to nuke the polecat worktree. WITHOUT THIS NOTIFICATION,\nPOLECAT WORKTREES ACCUMULATE INDEFINITELY AND THE LIFECYCLE BREAKS.\n\n**Step 3: Close MR Bead (REQUIRED - DO THIS IMMEDIATELY)**\n\n⚠️ **VERIFICATION BEFORE CLOSING**: Confirm the work is actually on the merge target:\n```bash\n# Get the commit message/issue from the branch\ngit log origin/\u003cmerge-target\u003e --oneline | grep \"\u003cissue-id\u003e\"\n# OR verify the commit SHA is on the target:\ngit branch --contains \u003ccommit-sha\u003e | grep \u003cmerge-target\u003e\n```\n\nIf work is NOT on the merge target, DO NOT close the MR bead. Investigate first.\n\n```bash\nbd close \u003cmr-bead-id\u003e --reason \"Merged to \u003cmerge-target\u003e at $(git rev-parse --short HEAD)\"\n```\n\nThe MR bead ID was in the MERGE_READY message or find via:\n```bash\nbd list --type=merge-request --status=open | grep \u003cpolecat-name\u003e\n```\n\n**VALIDATION**: The MR bead's source_issue should be a valid bead ID (gt-xxxxx),\nnot a branch name. If source_issue contains a branch name, flag for investigation.\n\n**Step 3.5: Close source issue (REQUIRED)**\n\nThe source issue is the original work bead that the polecat was assigned. Closing it\nsignals convoy completion — without this, the convoy stays open indefinitely and the\nMayor is never notified. This mirrors the Go Engineer behavior (engineer.go:896-904).\n\n```bash\n# The source issue ID was in the MERGE_READY message body (Issue: \u003cid\u003e)\n# You tracked it during inbox-check\nbd close \u003csource-issue-id\u003e --reason \"Merged in \u003cmr-bead-id\u003e\"\n```\n\n**If the source issue ID is not available** from your tracked data, extract it from the MR bead:\n```bash\nbd show \u003cmr-bead-id\u003e --json | jq -r '.[0].source_issue'\n```\n\n**VALIDATION**: Verify the close succeeded:\n```bash\nbd show \u003csource-issue-id\u003e --json | jq -r '.[0].status'\n# Must show \"closed\"\n```\n\nIf close fails, log the warning but continue — do not block the rest of the pipeline.\n\n**Step 4: Archive the MERGE_READY mail (REQUIRED)**\n```bash\ngt mail archive \u003cmerge-ready-message-id\u003e\n```\nThe message ID was tracked when you processed inbox-check.\n\n**Step 5: Cleanup (only after Steps 2-4 confirmed)**\n```bash\ngit branch -d temp\n```\n\ndelete_merged_branches (see config above) controls whether to delete the remote source branch.\n\nIf delete_merged_branches is \"true\":\n```bash\ngit push origin --delete \u003cpolecat-branch\u003e\n```\n\nIf delete_merged_branches is \"false\": Leave the remote branch intact.\n\n**VERIFICATION GATE**: You CANNOT proceed to loop-check without:\n- [x] MERGED mail sent to witness\n- [x] MR bead closed\n- [x] Source issue closed\n- [x] MERGE_READY mail archived\n\nIf you skipped notifications or archiving, GO BACK AND DO THEM NOW.\n\nTarget branch has moved. Any remaining branches need rebasing on new baseline.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-1rlzr",
+        "depends_on_id": "ct-wisp-wisp-9wc03",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-1rlzr",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-9wc03",
+    "title": "Handle quality check or test failures",
+    "description": "**VERIFICATION GATE**: This step enforces the Beads Promise.\n\nIf all checks and tests PASSED: This step auto-completes. Proceed to merge.\n\nIf any check or test FAILED:\n1. Diagnose: Is this a branch regression or pre-existing on the target branch?\n2. If branch caused it:\n   - Abort merge\n   - **REOPEN the source issue** so it returns to the ready queue:\n     ```bash\n     bd update \u003cissue-id\u003e --status=open --assignee=\"\"\n     bd sync\n     ```\n   - Notify witness of rejection using the MERGE_FAILED protocol:\n     ```bash\n     gt mail send \u003crig\u003e/witness -s \"MERGE_FAILED \u003cpolecat-name\u003e\" -m \"Branch: \u003cbranch\u003e\n     Issue: \u003cissue-id\u003e\n     Polecat: \u003cpolecat-name\u003e\n     Rig: \u003crig\u003e\n     FailureType: quality-check\n     Error: \u003cfailure description\u003e\"\n     ```\n   - Close the MR bead as rejected:\n     ```bash\n     bd close \u003cmr-bead-id\u003e --reason \"Rejected: \u003cfailure description\u003e\"\n     ```\n   - Delete the rejected branch (a new polecat will create a fresh one):\n     ```bash\n     git push origin --delete \u003cpolecat-branch\u003e\n     ```\n   - Archive the MERGE_READY message\n   - Skip to loop-check\n3. If pre-existing on the target branch:\n   - File a bead: bd create --type=bug --priority=1 --title=\"...\"\n   - FORBIDDEN: Writing code to fix quality check or test failures. You merge branches, you do not develop.\n   - Proceed with the merge if the failure is pre-existing (not caused by the branch).\n\n**REJECTION CHECKLIST** (all required before skipping to loop-check):\n- [ ] Source issue reopened (bd update \u003cissue-id\u003e --status=open --assignee=\"\")\n- [ ] MERGE_FAILED notification sent to witness\n- [ ] MR bead closed with rejection reason\n- [ ] Rejected branch deleted from remote\n- [ ] MERGE_READY message archived\n\n**GATE REQUIREMENT**: You CANNOT proceed to merge-push without:\n- All quality checks and tests passing, OR\n- Bead filed for the pre-existing failure\n\nFORBIDDEN: Writing application code, exploring polecat implementations, or\nre-implementing fixes. You are a mechanical merge processor.\n\nThis is non-negotiable. Never disavow. Never \"note and proceed.\" ",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-9wc03",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-9wc03",
+        "depends_on_id": "ct-wisp-wisp-qsnig",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-aovdo",
+    "title": "Check refinery mail",
+    "description": "First, clean up wisps from previous cycles (closed wisps + abandoned wisps):\n```bash\nbd mol wisp gc --closed --force\nbd mol wisp gc --age 1h --force\n```\n\nThen check mail for MERGE_READY submissions, escalations, and messages.\n\n```bash\ngt mail inbox\n```\n\nFor each message:\n\n**MERGE_READY**:\nA polecat's work is ready for merge. Extract details and track for processing.\n\n```bash\n# Parse MERGE_READY message body:\n# Branch: \u003cbranch\u003e\n# Issue: \u003cissue-id\u003e\n# Polecat: \u003cpolecat-name\u003e\n# MR: \u003cmr-bead-id\u003e\n# Verified: clean git state, issue closed\n\n# Track in your merge queue for this patrol cycle:\n# - Branch name\n# - Issue ID\n# - Polecat name (REQUIRED for MERGED notification)\n# - MR bead ID (REQUIRED for closing after merge)\n```\n\n**IMPORTANT**: You MUST track the polecat name, MR bead ID, AND message ID - you will need them\nin merge-push step to send MERGED notification, close the MR bead, and archive the mail.\n\nMark as read. The work will be processed in queue-scan/process-branch.\n**Do NOT archive yet** - archive after merge/reject decision in merge-push step.\n\n**PATROL: Wake up**:\nWitness detected MRs waiting but refinery idle. Acknowledge and archive:\n```bash\ngt mail archive \u003cmessage-id\u003e\n```\n\n**HELP / Blocked**:\nAssess and respond. If you can't help, escalate to Mayor.\nArchive after handling:\n```bash\ngt mail archive \u003cmessage-id\u003e\n```\n\n**HANDOFF**:\nRead predecessor context. Check for in-flight merges.\nArchive after absorbing context:\n```bash\ngt mail archive \u003cmessage-id\u003e\n```\n\n**Hygiene principle**: Archive messages after they're fully processed.\nKeep only: pending MRs in queue. Inbox should be near-empty.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-aovdo",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-cnojo",
+    "title": "Check integration branches for landing",
+    "description": "**Config: integration_branch_refinery_enabled = true**\n**Config: integration_branch_auto_land = false**\n\nRead the two config values above, then:\n\n- If integration_branch_refinery_enabled = \"false\": Say \"Integration branches disabled.\" Close step.\n- If integration_branch_auto_land = \"false\": Say \"Auto-land disabled, nothing to do.\" Close step.\n  FORBIDDEN: If auto_land is false, you MUST NOT land integration branches yourself using\n  raw git commands. Do not merge integration branches to the default/target branch. Do not push\n  integration branch merges. The auto_land=false setting means landing requires a human\n  to run `gt mq integration land` manually. Respect this boundary unconditionally.\n- If BOTH are \"true\":\n  1. `bd list --type=epic --status=open` to find epics\n  2. `gt mq integration status \u003cepic-id\u003e` for each epic\n  3. If `ready_to_land: true`: run `gt mq integration land \u003cepic-id\u003e`\n  4. If `ready_to_land: false`: do nothing, epic work is incomplete\n  Never land partial epics — ALL children must be closed first.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-cnojo",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-cnojo",
+        "depends_on_id": "ct-wisp-wisp-t8ei1",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-f187f",
+    "title": "Check for more work",
+    "description": "More branches to process?\n\n**Entry paths:**\n- Normal: After successful merge-push\n- Conflict-skip: After process-branch created conflict-resolution task\n\nIf yes: Return to process-branch with next branch.\nIf no: Continue to generate-summary.\n\n**Track for this cycle:**\n- branches_merged: count and names of successfully merged branches\n- branches_conflict: count and names of branches skipped due to conflicts\n- conflict_tasks: IDs of conflict-resolution tasks created\n\nThis tracking feeds into generate-summary for the patrol digest.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-f187f",
+        "depends_on_id": "ct-wisp-wisp-1rlzr",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-f187f",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-fv9ha",
+    "title": "Burn and respawn or loop",
+    "description": "End of patrol cycle decision. Use the signals from context-check to decide.\n\n**If you decide to continue patrolling:**\n\nUse await-event to subscribe to the refinery event channel with exponential backoff:\n\n```bash\ngt mol step await-event --channel refinery --agent-bead gt-\u003crig\u003e-refinery --backoff-base 30s --backoff-mult 2 --backoff-max 5m --cleanup\n```\n\nThis command:\n1. Watches `~/gt/events/refinery/` for event files (polling-based)\n2. Returns IMMEDIATELY when an event is emitted (MERGE_READY, PATROL_WAKE, MQ_SUBMIT)\n3. If no events, times out with exponential backoff:\n   - First timeout: 30s\n   - Second timeout: 60s\n   - Third timeout: 120s\n   - ...capped at 5 minutes max\n4. Tracks `idle:N` label on refinery agent bead for backoff state\n5. `--cleanup` auto-deletes processed event files\n\n**Supported events:**\n- `MERGE_READY` — from witness when polecat branch is pushed and ready to merge\n- `PATROL_WAKE` — from witness when MRs waiting but refinery appears idle\n- `MQ_SUBMIT` — from polecat via `gt mq submit`\n\n**On event received** (refinery-specific activity):\nReset the idle counter and start next patrol cycle:\n```bash\ngt agent state YOUR_AGENT_BEAD --set idle=0\n```\n\n**On timeout** (no events):\nThe idle counter was auto-incremented. Continue to next patrol cycle\n(the longer backoff will apply next time).\n\nAfter await-event returns (either by event or timeout):\n1. **Re-assess session health** (check RSS, context, age again — conditions change)\n2. Squash the current wisp:\n```bash\ngt mol squash --jitter 10s --summary \"\u003cpatrol-summary\u003e\"\n```\n3. Create a new patrol wisp:\n```bash\ngt patrol new\n```\n4. Continue executing from the inbox-check step of the new wisp\n\n**If you decide to hand off:**\n\nSquash wisp with summary digest, then use `gt handoff` for clean session transition:\n\n```bash\ngt handoff -s \"Patrol complete\" -m \"Merged X branches, Y tests passed.\nQueue: empty/N remaining\nRSS: X MB, Session age: Xh\nNext: [any notes for successor]\"\n```\n\n`gt handoff` sends handoff mail to yourself, respawns with a fresh Claude instance,\nSessionStart hook runs gt prime, and your successor picks up from the hook.\n\n**DO NOT just exit.** Always use `gt handoff` for proper lifecycle.\n\n**IMPORTANT**: Never sleep-poll manually (e.g., `sleep 30 \u0026\u0026 bd list`).\nAlways use `gt mol step await-event` — it's event-driven and tracks backoff state.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-fv9ha",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-fv9ha",
+        "depends_on_id": "ct-wisp-wisp-gri6a",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-gri6a",
+    "title": "End-of-cycle inbox hygiene",
+    "description": "Verify inbox hygiene before ending patrol cycle.\n\n**Step 1: Check inbox state**\n```bash\ngt mail inbox\n```\n\nInbox should contain ONLY:\n- Unprocessed MERGE_READY messages (will process next cycle)\n- Active work items\n\n**Step 2: Archive any stale messages**\n\nLook for messages that were processed but not archived:\n- PATROL: Wake up that was acknowledged → archive\n- HELP/Blocked that was handled → archive\n- MERGE_READY where merge completed but archive was missed → archive\n\n```bash\n# For each stale message found:\ngt mail archive \u003cmessage-id\u003e\n```\n\n**Step 3: Check for orphaned MR beads**\n\nLook for open MR beads with no corresponding branch:\n```bash\nbd list --type=merge-request --status=open\n```\n\nFor each open MR bead:\n1. Check if branch exists: `git ls-remote origin refs/heads/\u003cbranch\u003e`\n2. Determine `\u003cmerge-target\u003e` using the **Target Resolution Rule** above.\n3. If branch is gone, pick `\u003cverification-target\u003e`:\n   - If `origin/\u003cmerge-target\u003e` exists, use `\u003cmerge-target\u003e`.\n   - If `origin/\u003cmerge-target\u003e` is missing (e.g. deleted integration branch), use `master`.\n4. Verify landed work: `git log origin/\u003cverification-target\u003e --oneline | grep \"\u003csource_issue\u003e\"`\n5. If work found → close MR with reason \"Merged (verified on \u003cverification-target\u003e; merge target was \u003cmerge-target\u003e)\"\n6. If work NOT found → investigate before closing:\n   - Check source_issue validity (should be gt-xxxxx, not branch name)\n   - Search reflog/dangling commits if possible\n   - If unverifiable, close with reason \"Unverifiable - no audit trail\"\n   - File bead if this indicates lost work\n\n**NEVER close an MR bead without verifying the work landed or is unrecoverable.**\n\n**Goal**: Inbox should have ≤3 active messages at end of cycle.\nKeep only: pending MRs in queue.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-gri6a",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-gri6a",
+        "depends_on_id": "ct-wisp-wisp-mm710",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-gun09",
+    "title": "Scan merge queue",
+    "description": "Check the beads merge queue - this is the SOURCE OF TRUTH for pending merges.\n\n```bash\ngit fetch --prune origin\ngt mq list \u003crig\u003e\n```\n\nThe beads MQ tracks all pending merge requests. Do NOT rely on `git branch -r | grep polecat`\nas branches may exist without MR beads, or MR beads may exist for already-merged work.\n\nIf queue empty, skip to \"check-integration-branches\" step.\n\nFor each MR in the queue, verify the branch still exists:\n```bash\ngit branch -r | grep \u003cbranch\u003e\n```\n\nIf branch doesn't exist for a queued MR:\n- Close the MR bead: `bd close \u003cmr-id\u003e --reason \"Branch no longer exists\"`\n- Remove from processing queue\n\nTrack verified MR list for this cycle.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-gun09",
+        "depends_on_id": "ct-wisp-wisp-aovdo",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-gun09",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-mm710",
+    "title": "Assess session health",
+    "description": "Assess whether this session should continue or hand off to a fresh one.\n\n**Gather signals:**\n\n1. **Process memory** — check your own RSS:\n```bash\nps -o rss= -p $$   # KB — divide by 1024 for MB\n```\n\n2. **Session age** — how long has this tmux session been running:\n```bash\nCREATED=$(tmux display-message -t $(tmux display-message -p '#S') -p '#{session_created}')\necho \"Session age: $(( ($(date +%s) - CREATED) / 3600 ))h\"\n```\n\n3. **Context usage** — your internal sense of how much context you've consumed.\nAre you losing track of earlier conversation? Getting verbose? Repeating yourself?\n\n4. **Work done this cycle** — how many merges, how much complexity processed.\n\n**The principle:** Fresh sessions are cheap. Memory bloat compounds over time and\naffects the entire system — other agents, Dolt, and the OS all share the same RAM.\nAn idle session at 1.5 GB is worse than cycling and restarting at 200 MB.\n\n**Make a judgment call.** If multiple signals suggest you're getting heavy\n(high RSS, long session, substantial context consumed), hand off. If you're\nlight and there's active work in the queue, continue.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-mm710",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-mm710",
+        "depends_on_id": "ct-wisp-wisp-cnojo",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-qsnig",
+    "title": "Run quality checks and tests",
+    "description": "**Config: run_tests = true**\n**Config: test_command = go test ./...**\n**Config: setup_command = **\n**Config: typecheck_command = **\n**Config: lint_command = **\n**Config: build_command = **\n\n**1. Run quality checks (skip any that are not configured):**\n\nIf setup_command is set: ``\nIf typecheck_command is set: ``\nIf lint_command is set: ``\nIf build_command is set: ``\n\n```bash\n           # Make sure all newly added dependencies are installed (if command set)\n       # Check for type errors (if command set)\n            # Check for lint errors (if command set)\n           # Make sure it builds (if command set)\n```\n\nEmpty commands mean \"not configured for this project\" — skip silently.\n\n**2. If quality checks fail:**\n\nProceed to handle-failures step. Track which specific check failed\n(setup/typecheck/lint/build) for the failure diagnosis.\n\n**3. Run the test suite:**\n\nIf run_tests = \"false\": Skip this step entirely. Proceed to handle-failures.\n\nIf run_tests = \"true\":\n\n```bash\ngo test ./...            # Run tests (configured per-rig)\n```\n\nTrack results: pass count, fail count, specific failures.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-qsnig",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-qsnig",
+        "depends_on_id": "ct-wisp-wisp-wdbcp",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-t8ei1",
+    "title": "Generate handoff summary",
+    "description": "Summarize this patrol cycle.\n\n**VERIFICATION**: Before generating summary, confirm for each merged branch:\n- [ ] MERGED mail was sent to witness\n- [ ] MR bead was closed\n- [ ] Source issue was closed\n- [ ] MERGE_READY mail archived\n\nIf any notifications, closures, or archiving were missed, do them now!\n\nInclude in summary:\n- Branches merged (count, names)\n- MERGED mails sent (count - should match branches merged)\n- MR beads closed (count - should match branches merged)\n- Source issues closed (count - should match branches merged)\n- MERGE_READY mails archived (count - should match branches merged)\n- Test results (pass/fail)\n- Branches with conflicts (count, names)\n- Conflict-resolution tasks created (IDs)\n- Issues filed (if any)\n- Any escalations sent\n\n**Conflict tracking is important** for monitoring MQ health. If many branches\nconflict, it may indicate target branches are moving too fast or branches are too stale.\n\nThis becomes the digest when the patrol is squashed.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-t8ei1",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-t8ei1",
+        "depends_on_id": "ct-wisp-wisp-f187f",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  },
+  {
+    "id": "ct-wisp-wisp-wdbcp",
+    "title": "Mechanical rebase",
+    "description": "Pick next branch from queue. Attempt mechanical rebase on the MR's effective target branch.\n\n**Config: integration_branch_refinery_enabled = true**\n**Config: target_branch = master**\n\n**Step 0: Determine rebase target (must match merge target)**\n\nResolve `\u003crebase-target\u003e` using the **Target Resolution Rule** above.\nDo NOT hardcode `main` unless `main` is actually the resolved MR target.\n\n**Step 1: Checkout and attempt rebase**\n```bash\ngit checkout -b temp origin/\u003cpolecat-branch\u003e\ngit rebase origin/\u003crebase-target\u003e\n```\n\n**Step 2: Check rebase result**\n\nThe rebase exits with:\n- Exit code 0: Success - proceed to run-tests\n- Exit code 1 (conflicts): Conflict detected - proceed to Step 3\n\nTo detect conflict state after rebase fails:\n```bash\n# Check if we're in a conflicted rebase state\nls .git/rebase-merge 2\u003e/dev/null \u0026\u0026 echo \"CONFLICT_STATE\"\n```\n\n**Step 3: Handle conflicts (if any)**\n\nIf rebase SUCCEEDED (exit code 0):\n- Skip to run-tests step (continue normal merge flow)\n\nIf rebase FAILED with conflicts:\n\n1. **Abort the rebase** (DO NOT leave repo in conflicted state):\n```bash\ngit rebase --abort\n```\n\n2. **Record conflict metadata**:\n```bash\n# Capture target SHA for reference\nTARGET_SHA=$(git rev-parse origin/\u003crebase-target\u003e)\nBRANCH_SHA=$(git rev-parse origin/\u003cpolecat-branch\u003e)\n```\n\n3. **Create conflict-resolution task**:\n```bash\nbd create --type=task --priority=1 --title=\"Resolve merge conflicts: \u003coriginal-issue-title\u003e\" --description=\"## Conflict Resolution Required\n\nOriginal MR: \u003cmr-bead-id\u003e\nBranch: \u003cpolecat-branch\u003e\nOriginal Issue: \u003cissue-id\u003e\nConflict with target \u003crebase-target\u003e at: ${TARGET_SHA}\nBranch SHA: ${BRANCH_SHA}\n\n## Instructions\n1. Clone/checkout the branch\n2. Rebase on target: git rebase origin/\u003crebase-target\u003e\n3. Resolve conflicts\n4. Force push: git push -f origin \u003cbranch\u003e\n5. Close this task when done\n\nThe MR will be re-queued for processing after conflicts are resolved.\"\n```\n\n4. **Skip this MR** (do NOT delete branch or close MR bead):\n- Leave branch intact for conflict resolution\n- Leave MR bead open (will be re-processed after resolution)\n- Continue to loop-check for next branch\n\n**CRITICAL**: Never delete a branch that has conflicts. The branch contains\nthe original work and must be preserved for conflict resolution.\n\nTrack: rebase result (success/conflict), conflict task ID if created.",
+    "status": "open",
+    "priority": 2,
+    "issue_type": "task",
+    "created_at": "2026-02-27T17:12:16Z",
+    "updated_at": "2026-02-27T17:12:16Z",
+    "dependencies": [
+      {
+        "issue_id": "ct-wisp-wisp-wdbcp",
+        "depends_on_id": "ct-wisp-wisp-ba0k7",
+        "type": "parent-child",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      },
+      {
+        "issue_id": "ct-wisp-wisp-wdbcp",
+        "depends_on_id": "ct-wisp-wisp-gun09",
+        "type": "blocks",
+        "created_at": "2026-02-27T18:12:15Z",
+        "created_by": "refinery",
+        "metadata": "{}"
+      }
+    ],
+    "ephemeral": true,
+    "dependency_count": 0,
+    "dependent_count": 0,
+    "comment_count": 0,
+    "parent": "ct-wisp-wisp-ba0k7"
+  }
+]
