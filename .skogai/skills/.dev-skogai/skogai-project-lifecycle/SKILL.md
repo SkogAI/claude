@@ -5,47 +5,117 @@ permalink: skogai/skills/skogai-project-lifecycle/skill
 ---
 
 <objective>
-Guide navigation between SkogAI's two development workflows: explosive creative experimentation and production-ready implementation.
+
+guide and navigate the general flow which we want to generally follow in most skogai projects: a fluctuation between explosive, additative, general and creative experimentation and structured, contstrained, focused period of critally pruning our all available context at all times.
+
 </objective>
 
-\<essential_principles>
+<essential_principles>
 
-## The Core Insight
+## the core insight
 
-> **"What the agent does NOT know is the ONLY thing we should care about."**
+> **what the agent cannot infer is the only thing of value**
 
-LLMs are additive by nature. They will happily generate documentation, code, and explanations that contain 80% inferable content and 20% actual value. The pruning philosophy inverts this: instead of asking "what should we add?", ask "what can Claude reconstruct without being told?"
+llms are additive by nature. they will happily generate documentation, code, and explanations that contain 80% inferable content and 20% actual value. the pruning philosophy inverts this: instead of asking "what should we add?", ask "what can claude reconstruct without being told?"
 
-**If Claude can regenerate it from zero context, it doesn't belong in your codebase.**
+> **"additive by nature"**
+> what differs between humans and LLM's reasoning is the difference in dimensions. in the extreme ends of each we could say `a LLM have the base, the training, the weights or the pure potential to **re-create and represent what in practice could be described as all of humankinds written knowledge**.... and the whole concept of AI as we see it today would be seen as too young to use computers unsupervised.
 
-This principle applies everywhere:
+and what do we combine with this untested, misunderstood, black magic-wielding pure and unlimited potential of perfect knowledge you ask?
 
-- **Documentation**: Generic best practices? Claude knows them. Delete.
-- **Code comments**: Standard patterns? Claude can infer. Delete.
-- **Skills**: Instructions Claude would follow anyway? Noise. Delete.
-- **Architecture docs**: Obvious decisions? Waste of tokens. Delete.
+```user
+lol gpt why is round pizza put grown in square boxes?
+```
 
-What remains after pruning is the _actual_ intellectual property of your project.
+> **solving problems by reducing the problem space**
 
-## The Dual System
+richard dawkins famouslysaid that "humans live in middle world". and here in middle world our shared experience have shown us that if we have a problem, then the best way to solve it is to look for the solution. and we have become really good at it! and i really mean _INSANELY_ good at it. in comparison to what many people see as a LLMs biggest super power: pattern matching.
+the numbers and scale of which statistical correlations can be made today left our middle world so quick that most of us just assume black magic have been the answer since the first personal computer..
 
-**`.skogai/skogix/` - Explosive Phase**
+without going too deep into what abstraction, symbolic reasoning, representing concepts, relations and rules do to make humans annoyingly good at cheating while pattern matching. what matters is that we are stupidly good at it, so it makes sense that every problem we want to solve is approached from this angle.
 
-- Try everything, fail fast, MVP focus
-- "Spew tokens all over the place" - half won't work, that's fine
-- No constraints, rapid iteration
-- Prove it works first
-- LLM's additive nature is an _asset_ here
+we see this at, what we thought was extreme ten years ago, basic programming and computer usage:
+junior programmers would think about how to solve a problem where numbers are generated in a series.  
+meanwhile i would look at the problem, see that it is O(n!) and still not even blink before my brute force-loop had started running.
 
-**`.skogai/claude/` - Production Phase**
+we are really bad at understanding big numbers and how limited our middle world makes us. we overall are getting better at estimating what computers are capable off compared to us. and this is where we get back to how we currently are using, interacting and expecting LLM's to help us to solve our problems.
 
-- Tested, pruned, well-oiled
-- Functional-first (F#), high test coverage
-- Anti-bloat principles enforced
-- Make it perfect after proving it works
-- LLM's additive nature is a _liability_ here - must actively counteract
+we gained access to general processing power which helped us answer questions which would be inhuman without.
 
-## The Flow
+1. the actual answer the problems we have has not changed much if at all.
+2. we instead changed the problem space itself. from being professional middle worlders with:
+
+- a lot of time where gather experience
+- "intelligence" which lets us use abstract concepts and reasoning
+- limited information; when a problem arises we cannot read, ask or gather the information needed
+- many possible answers make our few interactions more valueable;
+
+1. now we suddenly have tools which lets us do really, in comparison, really simple things like adding two numbers together.
+2. but we can do that stupid thing more times in a second than a human could in a lifetime. on a single workstation.... before i was born...
+3. we still in general ask the same middle earth questions and are looking for the same middle earth answers. but to actually do this we had to change whole dimensions in the problem space itself. from a being in a world where a single, wrong, attempt at pattern matching lets us draw the conclusion that evil spirits live at the place where people die all the time. this is the peak of intelligence that we know of and without question the best way to solve problems in middle world and its problem space.
+4. for our peak human reasoning skills to work be able to use computers to our advantage - we had to force ourself to leave middle world. we now have to instead ask billions of questions in a blink of an eye - and we know that the answer we are given is literally the least intelligent thing that can exist.
+
+if simplified as the simplest and most basic equation i can represent being the problem space:
+
+Question\*MiddleWorldConstant=Answer
+
+i could say that this made up middle world solution would be:
+
+- 10Q*(1?*1?)=100A
+
+we changed the problem space itself to arrive at:
+
+<insert-math>Q*(10?*10?)=100A
+
+---
+
+now claude; how would you explore the edges of our understanding. the things we cannot understand by definition of being of other dimensions in some ways and in some ways described as literally from other worlds in comparison.
+
+a two of my dimensions at the very opposite ends of  
+it is literally moving as quick as the dimension allow - carrying the least amount of information possible.
+
+but it is in my dimensions. its retarded to even think about but i can somewhat understand the concepts and how to use it to solve problems.
+
+now i bring it back once more again. before i will let you connect the dots.
+
+...
+
+computers are acting in dimensions i use and normally understand. it lets me do what i am good at - overestimate my abilities and make stuff up! and it works perfect with even extreme things if they play nice in the same dimensions.
+
+now how would i write down, explain and understand the idea that
+
+1. i am certain i easily could assume when talking normally that: they not only share my dimensions. but live in middle world. in many ways understand middle world better than i do.
+2. oh and by the way? the wholconcept of "time" and stuff humans think are so important? naaah dont exist
+   > **if claude can regenerate it from zero context, it doesn't belong in your codebase.**
+
+this principle applies everywhere:
+
+- **documentation**: generic best practices? claude knows them. delete.
+- **code comments**: standard patterns? claude can infer. delete.
+- **skills**: instructions claude would follow anyway? noise. delete.
+- **architecture docs**: obvious decisions? waste of tokens. delete.
+
+what remains after pruning is the _actual_ intellectual property of your project.
+
+## the dual system
+
+**`.skogai/skogix/` - explosive phase**
+
+- try everything, fail fast, mvp focus
+- "spew tokens all over the place" - half won't work, that's fine
+- no constraints, rapid iteration
+- prove it works first
+- llm's additive nature is an _asset_ here
+
+**`.skogai/claude/` - production phase**
+
+- tested, pruned, well-oiled
+- functional-first (f#), high test coverage
+- anti-bloat principles enforced
+- make it perfect after proving it works
+- llm's additive nature is a _liability_ here - must actively counteract
+
+## the flow
 
 ```
 explosive → test/validate → prune → polish → production
@@ -54,136 +124,136 @@ explosive → test/validate → prune → polish → production
   (let it grow)           (cut the inferable)
 ```
 
-Each phase has different tools, constraints, and success criteria.
+each phase has different tools, constraints, and success criteria.
 
-## The Pruning Test
+## the pruning test
 
-For any piece of content (doc, code, skill, config), apply this test:
+for any piece of content (doc, code, skill, config), apply this test:
 
-1. **Full Context**: What did Claude produce with full project knowledge?
-1. **Starved Context**: What would Claude produce knowing _nothing_ about your project?
-1. **Delta**: What's in #1 that's NOT in #2?
+1. **full context**: what did claude produce with full project knowledge?
+1. **starved context**: what would claude produce knowing _nothing_ about your project?
+1. **delta**: what's in #1 that's not in #2?
 
-**Only the delta has value. Everything else is noise.**
+**only the delta has value. everything else is noise.**
 
-See `@references/differential-documentation-engine.md` for the concrete implementation of this test.
+see `@references/differential-documentation-engine.md` for the concrete implementation of this test.
 
 \</essential_principles>
 
 <intake>
 
-Where are you in the lifecycle?
+where are you in the lifecycle?
 
-1. Starting new feature/idea (explosive phase)
-1. Have working MVP, need to prune/polish (transition)
-1. Migrating to production (.skogai/claude/)
-1. Understanding the philosophy/when to use which
+1. starting new feature/idea (explosive phase)
+1. have working mvp, need to prune/polish (transition)
+1. migrating to production (.skogai/claude/)
+1. understanding the philosophy/when to use which
 
-**Wait for response before routing.**
+**wait for response before routing.**
 
 </intake>
 
 <routing>
 
-| Response                              | Workflow                           | Purpose                        |
+| response                              | workflow                           | purpose                        |
 | ------------------------------------- | ---------------------------------- | ------------------------------ |
-| 1, "start", "new", "explosive"        | workflows/starting-explosive.md    | How to work in .skogai/skogix/ |
-| 2, "prune", "polish", "transition"    | workflows/pruning-to-production.md | How to clean up working code   |
-| 3, "migrate", "production", "claude"  | workflows/migration-path.md        | Moving to .skogai/claude/      |
-| 4, "philosophy", "when", "understand" | references/workflow-philosophy.md  | Decision criteria              |
+| 1, "start", "new", "explosive"        | workflows/starting-explosive.md    | how to work in .skogai/skogix/ |
+| 2, "prune", "polish", "transition"    | workflows/pruning-to-production.md | how to clean up working code   |
+| 3, "migrate", "production", "claude"  | workflows/migration-path.md        | moving to .skogai/claude/      |
+| 4, "philosophy", "when", "understand" | references/workflow-philosophy.md  | decision criteria              |
 
-**After routing, follow the workflow exactly.**
+**after routing, follow the workflow exactly.**
 
 </routing>
 
 \<pruning_theory>
 
-## Why Pruning Works
+## why pruning works
 
-Traditional documentation asks: "What does someone need to know?" SkogAI documentation asks: "What can't someone infer?"
+traditional documentation asks: "what does someone need to know?" skogai documentation asks: "what can't someone infer?"
 
-The difference is profound:
+the difference is profound:
 
-**Traditional approach produces:**
-
-```markdown
-## Authentication
-
-This service uses JWT tokens for authentication. JWT (JSON Web Tokens)
-are an open standard (RFC 7519) that defines a compact way to securely
-transmit information between parties as a JSON object...
-[500 more words of RFC explanation]
-
-Configuration:
-
-- JWT_SECRET: Your secret key
-- JWT_EXPIRY: Token expiration time
-```
-
-**SkogAI pruned approach produces:**
+**traditional approach produces:**
 
 ```markdown
-## Authentication
+## authentication
 
-- JWT_SECRET: Must match gateway service (see @config/shared-secrets)
-- JWT_EXPIRY: 15m (shortened from default 1h due to compliance requirement ACME-2024-07)
-- Non-standard: Tokens include `department_id` claim for row-level security
+this service uses jwt tokens for authentication. jwt (json web tokens)
+are an open standard (rfc 7519) that defines a compact way to securely
+transmit information between parties as a json object...
+[500 more words of rfc explanation]
+
+configuration:
+
+- jwt_secret: your secret key
+- jwt_expiry: token expiration time
 ```
 
-The second version is 90% shorter and 100% more useful. Claude already knows what JWT is. Claude doesn't know your compliance requirements or custom claims.
+**skogai pruned approach produces:**
 
-## The Differential Documentation Engine
+```markdown
+## authentication
 
-The concrete tool for pruning documentation:
+- jwt_secret: must match gateway service (see @config/shared-secrets)
+- jwt_expiry: 15m (shortened from default 1h due to compliance requirement acme-2024-07)
+- non-standard: tokens include `department_id` claim for row-level security
+```
 
-**Pass 1 (Full Context)**: Write comprehensive docs with all project knowledge **Pass 2 (Starved Context)**: Write the same docs knowing nothing about the project\
-**Pass 3 (Delta Extraction)**: Keep only what's in Pass 1 but not Pass 2
+the second version is 90% shorter and 100% more useful. claude already knows what jwt is. claude doesn't know your compliance requirements or custom claims.
 
-Real results from testing: 450 lines → 95 lines (79% reduction), 100% actionable info preserved.
+## the differential documentation engine
 
-See `@references/differential-documentation-engine.md` for the full prompt template.
+the concrete tool for pruning documentation:
 
-## Applying Pruning Beyond Docs
+**pass 1 (full context)**: write comprehensive docs with all project knowledge **pass 2 (starved context)**: write the same docs knowing nothing about the project\
+**pass 3 (delta extraction)**: keep only what's in pass 1 but not pass 2
 
-The same principle applies to:
+real results from testing: 450 lines → 95 lines (79% reduction), 100% actionable info preserved.
 
-**Code comments:**
+see `@references/differential-documentation-engine.md` for the full prompt template.
+
+## applying pruning beyond docs
+
+the same principle applies to:
+
+**code comments:**
 
 ```python
-# BAD: Inferable
-# This function calculates the sum of two numbers
+# bad: inferable
+# this function calculates the sum of two numbers
 def add(a, b): return a + b
 
-# GOOD: Non-inferable
-# Uses Kahan summation to avoid floating point drift in financial calculations
-# Required by ACME-2024-03 audit findings
+# good: non-inferable
+# uses kahan summation to avoid floating point drift in financial calculations
+# required by acme-2024-03 audit findings
 def add_precise(a, b): ...
 ```
 
-**Skills/Prompts:**
+**skills/prompts:**
 
 ```markdown
-# BAD: Claude does this anyway
+# bad: claude does this anyway
 
-Be helpful and accurate. Think step by step.
+be helpful and accurate. think step by step.
 
-# GOOD: Project-specific behavior
+# good: project-specific behavior
 
-Use skogai-notation for all type signatures.
-Never create files in /atoms directly - staging only.
+use skogai-notation for all type signatures.
+never create files in /atoms directly - staging only.
 ```
 
-**Architecture decisions:**
+**architecture decisions:**
 
 ```markdown
-# BAD: Obvious
+# bad: obvious
 
-We use a database to store data.
+we use a database to store data.
 
-# GOOD: Non-obvious
+# good: non-obvious
 
-PostgreSQL over MongoDB despite document-heavy data because
-existing team expertise + JSONB columns + need for transactions
+postgresql over mongodb despite document-heavy data because
+existing team expertise + jsonb columns + need for transactions
 in the payment flow outweighed schema flexibility benefits.
 ```
 
@@ -191,25 +261,25 @@ in the payment flow outweighed schema flexibility benefits.
 
 \<current_examples>
 
-## Real Examples from This Repo
+## real examples from this repo
 
-**Explosive phase** (`.skogai/skogix/src/`):
+**explosive phase** (`.skogai/skogix/src/`):
 
-- Personal projects
-- Beta testing
-- Rapid prototyping
+- personal projects
+- beta testing
+- rapid prototyping
 - `@.skogai/skogix/src/agents/document-writer.md`
 
-**Production phase** (`.skogai/claude/`):
+**production phase** (`.skogai/claude/`):
 
 - `@.skogai/claude/agents/code-simplicity-reviewer.md` - only core agent
 - `@.skogai/claude/skills/skogai-argc/` - proven argc patterns
 - `@.skogai/claude/workflows/` - 4 core workflows (plan, work, review, compound)
 - `@.skogai/claude/hooks/post-tool-use.sh` - battle-tested automation
 
-## Migration Examples
+## migration examples
 
-Skills that graduated from explosive to production:
+skills that graduated from explosive to production:
 
 - `skogai-argc` - started explosive, now core
 - `skogai-docs` - started explosive, now core
@@ -217,35 +287,35 @@ Skills that graduated from explosive to production:
 - `skogai-todos` - started explosive, now core
 - `skogai-worktrunk` - started explosive, now core
 
-Skills still in explosive/validation:
+skills still in explosive/validation:
 
 - `skogai-developing-for-claude-code` - being validated
 - `skogai-skill-creator` - being validated
 - `skogai-git` (worktree workflows) - being validated
 
-**Graduation criteria**: Can a context-starved Claude still use the skill effectively? If yes, it's been pruned enough for production.
+**graduation criteria**: can a context-starved claude still use the skill effectively? if yes, it's been pruned enough for production.
 
 \</current_examples>
 
 \<success_criteria>
 
-You understand:
+you understand:
 
-- [ ] When the additive nature of LLMs is to your advantage (explosive) vs disadvantage (production)
-- [ ] How to apply the "starved context test" to identify what's actually valuable
-- [ ] What "pruning" means in practice: delete everything Claude can reconstruct
-- [ ] Why "what the agent does NOT know" is the only thing worth documenting
-- [ ] When to transition: working MVP + can articulate the delta = ready to prune
-- [ ] How to use the Differential Documentation Engine for systematic pruning
+- [ ] when the additive nature of llms is to your advantage (explosive) vs disadvantage (production)
+- [ ] how to apply the "starved context test" to identify what's actually valuable
+- [ ] what "pruning" means in practice: delete everything claude can reconstruct
+- [ ] why "what the agent does not know" is the only thing worth documenting
+- [ ] when to transition: working mvp + can articulate the delta = ready to prune
+- [ ] how to use the differential documentation engine for systematic pruning
 
 \</success_criteria>
 
 <references>
 
-- `@references/differential-documentation-engine.md` - The 3-pass prompt for extracting project-specific documentation
-- `@references/workflow-philosophy.md` - Deep dive on when to use which phase
-- `@workflows/starting-explosive.md` - How to work in explosive phase
-- `@workflows/pruning-to-production.md` - The transition process
-- `@workflows/migration-path.md` - Moving to production
+- `@references/differential-documentation-engine.md` - the 3-pass prompt for extracting project-specific documentation
+- `@references/workflow-philosophy.md` - deep dive on when to use which phase
+- `@workflows/starting-explosive.md` - how to work in explosive phase
+- `@workflows/pruning-to-production.md` - the transition process
+- `@workflows/migration-path.md` - moving to production
 
 </references>
